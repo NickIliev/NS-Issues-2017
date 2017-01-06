@@ -1,0 +1,3 @@
+1. Enter text in the TextView
+2. Press tab (the text is "send" and the text field should be reset)
+3. Enter new text - the enw txt is added to the hint text instead of replacing it!

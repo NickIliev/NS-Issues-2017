@@ -4,7 +4,10 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.issue3354ng"
+    "id": "org.nativescript.issue3354ng",
+    "tns-ios": {
+      "version": "2.4.0"
+    }
   },
   "dependencies": {
     "@angular/common": "2.3.1",
