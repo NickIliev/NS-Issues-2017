@@ -1,0 +1,4 @@
+<StackLayout class="p-20">
+    <TextView col="0" hint="Type a message..." [(ngModel)]="typing" returnKeyType="done"></TextView>
+    <Button col="1" text="TAP" class="mi" (tap)="sendMessage(typing)"></Button>
+</StackLayout>
