@@ -1,0 +1,1 @@
+Take photo with nativescript-camera, save the file and upload it via nativescript-background-http

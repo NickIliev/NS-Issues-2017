@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <StackLayout class="p-20">
+        <Label text="Issue 3351" class="h1 text-center"/>
+        <Button text="Take Photo and upload it!" tap="takePhoto" class="btn btn-primary btn-active"/>
+    </StackLayout>
+</Page>
