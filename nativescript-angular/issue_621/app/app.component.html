@@ -1,0 +1,11 @@
+<TabView #tabView>
+  <TabViewItem title="Tab 1" *ngIf="isVisible">
+    <Label text="This is Label in Tab 1"></Label>
+  </TabViewItem>
+  <TabViewItem title="Tab 2" *ngIf="isVisible">
+    <Label text="This is Label in Tab 2"></Label>
+  </TabViewItem>
+    <TabViewItem title="Tab 3" *ngIf="!isVisible">
+    <Label text="This is Label in Tab 2"></Label>
+  </TabViewItem>
+</TabView>
