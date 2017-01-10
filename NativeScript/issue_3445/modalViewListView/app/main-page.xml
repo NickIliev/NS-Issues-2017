@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" backgroundColor="Red" loaded="onLoaded">
+<Page.actionBar>
+    <ActionBar title="Title" icon="">
+        <NavigationButton text="Back" icon="" tap="" />
+        <ActionBar.actionItems>
+            <ActionItem icon="" text="Page Two" tap="goToPageTwo" ios.position="right" />
+        </ActionBar.actionItems>
+    </ActionBar>
+</Page.actionBar>
+  <StackLayout backgroundColor="PaleGreen">
+    <Button text="First Page"/>
+  </StackLayout>
+</Page>
