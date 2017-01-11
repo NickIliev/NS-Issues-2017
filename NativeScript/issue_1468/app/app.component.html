@@ -1,0 +1,44 @@
+<TabView iosIconRenderingMode="alwaysOriginal" class="c-tabs" #tabview [(ngModel)]="tabSelectedIndex" ios.style.fontSize="12">
+  <ActionBar uglifyTabs="true" class="c-actionbar" android:horizontalAlignment="left" title="">
+    <NavigationButton text="Back to" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <StackLayout orientation="horizontal" android:horizontalAlignment="left" ios:horizontalAlignment="center" class="c-actionbar__title-container">
+      <Label [text]="tabTitle" class="c-actionbar__title" horizontalAlignment="center"></Label>
+    </StackLayout>
+  </ActionBar>
+
+  <StackLayout *tabItem="{title: 'Tab 1'}">
+    <StackLayout>
+      <Label text="Tab 1"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout *tabItem="{title: 'Tab 2'}">
+    <StackLayout>
+      <Label text="Tab 2"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout *tabItem="{title: 'Tab 3'}">
+    <StackLayout>
+      <Label text="Tab 3"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout *tabItem="{title: 'Tab 4'}">
+    <StackLayout>
+      <Label text="Tab 4"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout *tabItem="{title: 'Tab 5'}">
+    <StackLayout>
+      <Label text="Tab 5"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout *tabItem="{title: 'Tab 6'}">
+    <StackLayout>
+      <Label text="Tab 6"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout *tabItem="{title: 'Tab 7'}">
+    <StackLayout>
+      <Label text="Tab 7"></Label>
+    </StackLayout>
+  </StackLayout>
+</TabView>
