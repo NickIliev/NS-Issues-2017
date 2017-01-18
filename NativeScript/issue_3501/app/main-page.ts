@@ -4,11 +4,11 @@ import { HelloWorldModel } from './main-view-model';
 
 import * as moment from "moment";
 
-export function navigatingTo(args: EventData) {
 
-    let page = <Page>args.object;
+export function navigatingTo(args: EventData) {
     
     console.log(moment().format("dddd"));
 
-    page.bindingContext = new HelloWorldModel();
+    console.log(moment.locale("bg"))
+    console.log(moment().locale());
 }
