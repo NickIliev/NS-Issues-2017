@@ -11,4 +11,6 @@ export function navigatingTo(args: EventData) {
 
     console.log(moment.locale("bg"))
     console.log(moment.locale());
+
+    console.log(moment().format("dddd"));
 }

@@ -1,9 +1,9 @@
 <ActionBar class="action-bar" title="Scheduler">
 </ActionBar>
 
-<GridLayout rows="*, 50, *" columns="*">
+<StackLayout>
     
-    <RadCalendar row="0" [eventSource]="eventSource"   
+    <RadCalendar [eventSource]="eventSource"   
                 eventsViewMode="None" 
                 minDate="1/1/1900"
                 [viewMode]="calViewMode" 
@@ -13,11 +13,11 @@
                 (viewModeChanged)="onCalViewModeChanged($event)">
     </RadCalendar>
 
-    <GridLayout row="1" rows="auto" >
+    <GridLayout rows="auto" >
         <Label text="Date goes here"></Label>
     </GridLayout>
 
-    <RadListView row="2" [items]="myItems">
+    <RadListView [items]="myItems">
         <template tkListItemTemplate let-item="item">
                 <GridLayout rows="auto" columns="*, *" borderColor="#BCBCBC" borderWidth="0 0 1 0">
                     <Label col="0" text="name: " textWrap="true"></Label>
@@ -26,4 +26,4 @@
         </template>
     </RadListView>
 
-</GridLayout>
+</StackLayout>
