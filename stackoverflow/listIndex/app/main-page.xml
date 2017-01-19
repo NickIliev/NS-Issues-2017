@@ -1,0 +1,27 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+ <!--<ListView items="{{ items }}" itemTemplateSelector="$index % 2 === 0 ? 'even' : 'odd'">
+    <ListView.itemTemplates>
+      <template key="even">
+        <StackLayout>
+
+            <Label text="EVEN" textWrap="true" />
+        </StackLayout>
+      </template>
+      <template key="odd">
+        <StackLayout>
+            <Label text="{{ $index }}" textWrap="true" />
+            <Label text="OOD" textWrap="true" />
+        </StackLayout>
+      </template>
+    </ListView.itemTemplates>
+ </ListView>-->
+
+<Repeater items="{{ items }}">
+    <Repeater.itemsLayout>
+        <StackLayout />
+    </Repeater.itemsLayout>
+    <Repeater.itemTemplate>
+            <Label text="{{ $index }}" textWrap="true" />
+    </Repeater.itemTemplate>
+</Repeater>
+</Page>

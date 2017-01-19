@@ -27,5 +27,4 @@ export class AppComponent implements OnInit {
     public scrollTo() {
         this.scrollLayout.scrollToVerticalOffset(this.grid.getLocationRelativeTo(this.button).y, false);   
     }
-
 }
