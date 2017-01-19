@@ -1,0 +1,13 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo" navigatingFrom="onNavigatingFrom">
+    <Page.actionBar>
+        <ActionBar title="Sub Page" icon="">
+            <NavigationButton text="Back" icon="" tap="{{ goBack }}" />
+        </ActionBar>
+    </Page.actionBar>
+
+    <ScrollView id="scrollView" style="margin-top: -64" backgroundColor="salmon">
+        <StackLayout style="height: 800">
+            <Image src="~/img/enjoying-a-tasty-burger-picjumbo-com.jpg" />
+        </StackLayout>
+    </ScrollView>
+</Page>
