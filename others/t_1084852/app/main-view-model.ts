@@ -8,7 +8,7 @@ export class HelloWorldModel extends Observable {
     constructor() {
         super();
 
-        this.pdfUrl = "http://quranmalayalam.com/files/quran_ml_full.pdf";
+        this.pdfUrl = "https://ia601708.us.archive.org/6/items/sreyas-ebooks/sree-vishnusahasranamasthothram.pdf";
     }
 
     get pdfUrl(): string {

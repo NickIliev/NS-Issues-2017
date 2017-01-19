@@ -3,7 +3,8 @@
 
     <StackLayout class="p-20">
         <Label text="Malayalam text test" class="h1 text-center"/>
-        <Label text="ഖസാക്കിന്റെ ഇതിഹാസം നാടകം മലയാള­നാടക­" class="h2 text-center" textWrap="true"/>
+        <Label text="«ഗുരുഗീത അര്‍ത്ഥസഹിതം Guru Gita Malayalam (Parameswari Commentary)ശ്രീനിര്‍മ്മലാനന്ദചരിതം – നിര്‍മ്മലാനന്ദസ്വാമികളുടെ ജീവചരിത്രം »
+ശ്രീ വിഷ്ണു സഹസ്രനാമസ്തോത്രം (നാമാവലി സഹിതം " class="h2 text-center" textWrap="true"/>
 
         <pdf:PDFView src="{{ pdfUrl }}" load="{{ onLoad }}"/>
     </StackLayout>
