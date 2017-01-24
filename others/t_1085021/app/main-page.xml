@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <StackLayout class="p-20" backgroundColor="gray" >
+        <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading ? 'visible' : 'collapsed' }}"  backgroundColor="blue" color="yellow"/>
+        <Button text="Show/Hide act.bar" tap="onTap" />
+    </StackLayout>
+</Page>
