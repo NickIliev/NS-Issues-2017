@@ -1,0 +1,11 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+    <Page.actionBar>
+        <ActionBar title="SUB Page" icon="">
+            <NavigationButton visibility="collapsed" text="Back" icon="" tap="" />
+            <ActionBar.actionItems>
+                <ActionItem icon=""vtext="Left" tap="" ios.position="left" />
+                <ActionItem icon="" text="Right" tap="" ios.position="right" />
+            </ActionBar.actionItems>
+        </ActionBar>
+    </Page.actionBar>
+</Page>
