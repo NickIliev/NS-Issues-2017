@@ -6,4 +6,9 @@
 
 .landscape Button {
     background-color: red;
+    color: white;
+}
+
+.landscape Page {
+    background-color: gray;
 }
