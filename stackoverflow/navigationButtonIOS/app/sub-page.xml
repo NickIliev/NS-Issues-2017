@@ -1,0 +1,10 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+
+    <ActionBar title="Title" icon="">
+        <NavigationButton text="Back" icon="" tap="goBack" />
+    </ActionBar>
+
+    <StackLayout>
+        <Label text="Sub Page" textWrap="true" />
+    </StackLayout>
+</Page>
