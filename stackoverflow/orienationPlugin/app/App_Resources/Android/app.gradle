@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.orienationPlugin" 
+    applicationId = "org.nativescript.orientNew" 
     
     //override supported platforms
     // ndk {

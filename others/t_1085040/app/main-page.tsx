@@ -18,7 +18,6 @@ export function navigatingTo(args: EventData) {
         <Label text="{{ $value }}" />
     </StackLayout>;
 
-
     // list.itemTemplate = () => {
     //     var stack = new StackLayout();
     //     var lbl = new Label();
