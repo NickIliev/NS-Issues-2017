@@ -1,0 +1,22 @@
+<Page xmlns:elv="./extended-list-view">
+  <!-- Doesn't work -->
+  <!--<elv:ExtendedListView items="{{ someItems }}">
+    <elv:ExtendedListView.itemTemplate>
+      <Label text="Hello world" />
+    </elv:ExtendedListView.itemTemplate>
+  </elv:ExtendedListView>
+  -->
+  <!-- Doesn't work -->
+  <elv:ExtendedListView2 items="{{ someItems }}">
+    <elv:ExtendedListView2.itemTemplate>
+      <Label text="Hello world" />
+    </elv:ExtendedListView2.itemTemplate>
+  </elv:ExtendedListView2>
+  
+  <!-- Does work (of course) -->
+  <ListView items="{{ someItems }}">
+    <ListView.itemTemplate>
+      <Label text="Hello world" />
+    </ListView.itemTemplate>
+  </ListView>
+</Page>

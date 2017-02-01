@@ -1,0 +1,15 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <TextField hint="Select Lead" [(ngModel)]="longName" textWrap="true" . id="tf"></TextField>
+
+    <Label [text]="longName" textWrap="true" id="lbl"></Label>
+    <TextView [(ngModel)]="longName"  editable="false" textWrap="true" id="tv"></TextView>
+    
+    <!--<ListView [items]="items" class="list-group">
+        <template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </template>
+    </ListView>-->
+</StackLayout>
