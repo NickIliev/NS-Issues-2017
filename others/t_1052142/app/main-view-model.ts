@@ -3,14 +3,33 @@ import * as httpModule from "http";
 
 export class HelloWorldModel extends Observable {
 
-    public items: Array<any> = [];
-    public items2: Array<any> = [];
+    public items = [];
+    public items2 = [];
+
     constructor() {
         super();
 
-        this.items = [1111, 2222, 3333, 4444, 5555, 6666, 7777];
-
-        this.items2 = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg"];
-
+        this.loadCountries()
     }
+
+    loadCountries() {
+
+        httpModule.request({
+            url: "http://services.groupkt.com/country/get/all",
+            method: "GET",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(response => {
+            var list = response.content.toJSON().RestResponse.result;
+
+            list.forEach(country => {
+                console.log(country.name);
+                this.items.push(country);
+                this.items2.push(country);
+            });
+
+        });
+    }
+
 }

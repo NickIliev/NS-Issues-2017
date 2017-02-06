@@ -8,7 +8,8 @@
         <TabView.items>
             <TabViewItem title="Tab 1">
                 <TabViewItem.view>
-                    <lv:RadListView items="{{ items }}"
+                    <GridLayout rows="*" columns="*">
+                        <lv:RadListView items="{{ items }}"
                                     id="listviewCountries1"
                                     itemTap="loadCountry"
                                     itemSelected="itemSelected"
@@ -20,30 +21,34 @@
                         </lv:RadListView.listViewLayout>
                         <lv:RadListView.itemTemplate>
                             <StackLayout cssClass="listItem">
-                                <Label text="{{ $value }}" class="p-16 title"/>
+                                <Label text="{{ name }}" class="p-16 title"/>
                             </StackLayout>
                         </lv:RadListView.itemTemplate>
                     </lv:RadListView>
+                    </GridLayout>\
                 </TabViewItem.view>
             </TabViewItem>
+
             <TabViewItem title="Tab 2">
                 <TabViewItem.view>
-                    <lv:RadListView items="{{ items2 }}"
-                                    id="listviewCountries2"
-                                    itemTap="loadCountry"
-                                    itemSelected="itemSelected"
-                                    itemDeselected="itemDeselected"
-                                    selectionBehavior="LongPress"
-                                    multipleSelection="true">>
-                        <lv:RadListView.listViewLayout>
-                            <lv:ListViewLinearLayout scrollDirection="Vertical" />
-                        </lv:RadListView.listViewLayout>
-                        <lv:RadListView.itemTemplate>
-                            <StackLayout cssClass="listItem">
-                                <Label text="{{ $value }}" class="p-16 title"/>
-                            </StackLayout>
-                        </lv:RadListView.itemTemplate>
-                    </lv:RadListView>
+                    <GridLayout rows="*" columns="*">
+                        <lv:RadListView items="{{ items2 }}"
+                                        id="listviewCountries2"
+                                        itemTap="loadCountry"
+                                        itemSelected="itemSelected"
+                                        itemDeselected="itemDeselected"
+                                        selectionBehavior="LongPress"
+                                        multipleSelection="true">>
+                            <lv:RadListView.listViewLayout>
+                                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                            </lv:RadListView.listViewLayout>
+                            <lv:RadListView.itemTemplate>
+                                <StackLayout cssClass="listItem">
+                                    <Label text="{{ name }}" class="p-16 title"/>
+                                </StackLayout>
+                            </lv:RadListView.itemTemplate>
+                        </lv:RadListView>
+                    </GridLayout>    
                 </TabViewItem.view>
             </TabViewItem>
         </TabView.items>
