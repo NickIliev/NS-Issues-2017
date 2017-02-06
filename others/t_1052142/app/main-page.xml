@@ -1,0 +1,51 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui-pro/listview" navigatingTo="navigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="t_1052142" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <TabView id="tabViewContainer">
+        <TabView.items>
+            <TabViewItem title="Tab 1">
+                <TabViewItem.view>
+                    <lv:RadListView items="{{ items }}"
+                                    id="listviewCountries1"
+                                    itemTap="loadCountry"
+                                    itemSelected="itemSelected"
+                                    itemDeselected="itemDeselected"
+                                    selectionBehavior="LongPress"
+                                    multipleSelection="true">
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate>
+                            <StackLayout cssClass="listItem">
+                                <Label text="{{ $value }}" class="p-16 title"/>
+                            </StackLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Tab 2">
+                <TabViewItem.view>
+                    <lv:RadListView items="{{ items2 }}"
+                                    id="listviewCountries2"
+                                    itemTap="loadCountry"
+                                    itemSelected="itemSelected"
+                                    itemDeselected="itemDeselected"
+                                    selectionBehavior="LongPress"
+                                    multipleSelection="true">>
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate>
+                            <StackLayout cssClass="listItem">
+                                <Label text="{{ $value }}" class="p-16 title"/>
+                            </StackLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
+</Page>
