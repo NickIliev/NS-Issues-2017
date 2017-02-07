@@ -1,0 +1,13 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="issue 3584" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout class="p-20">
+        <TextView hint="0.0" editable="true" />
+        
+    </StackLayout>
+</Page>
