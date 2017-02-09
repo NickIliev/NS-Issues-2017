@@ -1,0 +1,72 @@
+{
+  "description": "Mobile Application",
+  "license": "",
+  "readme": "",
+  "repository": "",
+  "nativescript": {
+    "id": "com.nativescript.test",
+    "tns-android": {
+      "version": "2.5.0"
+    }
+  },
+  "dependencies": {
+    "@angular/common": "2.4.6",
+    "@angular/compiler": "2.4.6",
+    "@angular/core": "2.4.6",
+    "@angular/forms": "2.4.6",
+    "@angular/http": "2.4.6",
+    "@angular/platform-browser": "2.4.6",
+    "@angular/platform-browser-dynamic": "2.4.6",
+    "@angular/router": "3.4.6",
+    "nativescript-angular": "1.4.0",
+    "nativescript-angular-snapshot": "1.4.0-5.5.372.32",
+    "nativescript-geolocation": "0.0.18",
+    "nativescript-gif": "^1.0.8",
+    "nativescript-google-maps-sdk": "^1.4.3",
+    "nativescript-phone": "^1.2.4",
+    "nativescript-platform-css": "^1.4.0",
+    "nativescript-theme-core": "1.0.2",
+    "nativescript-vibrate": "^1.1.2",
+    "reflect-metadata": "^0.1.9",
+    "rxjs": "5.1.0",
+    "tns-core-modules": "2.5.0",
+    "tns-platform-declarations": "^2.5.0"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "2.4.6",
+    "@ngtools/webpack": "1.2.4",
+    "babel-traverse": "6.22.1",
+    "babel-types": "6.22.0",
+    "babylon": "6.15.0",
+    "copy-webpack-plugin": "~4.0.1",
+    "extract-text-webpack-plugin": "~2.0.0-beta.4",
+    "htmlparser2": "~3.9.2",
+    "lazy": "1.0.11",
+    "nativescript-css-loader": "~0.26.1",
+    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-dev-typescript": "^0.3.7",
+    "nativescript-dev-webpack": "^0.3.3",
+    "raw-loader": "~0.5.1",
+    "resolve-url-loader": "~1.6.1",
+    "typescript": "~2.1.5",
+    "webpack": "2.2.0",
+    "webpack-sources": "~0.1.4",
+    "zone.js": "^0.7.6"
+  },
+  "scripts": {
+    "clean-android": "tns clean-app android",
+    "clean-ios": "tns clean-app ios",
+    "prewebpack-android": "npm run clean-android",
+    "prewebpack-ios": "npm run clean-ios",
+    "webpack-android": "webpack --config=webpack.android.js --progress",
+    "webpack-ios": "webpack --config=webpack.ios.js --progress",
+    "prestart-android-bundle": "npm run webpack-android",
+    "prestart-ios-bundle": "npm run webpack-ios",
+    "start-android-bundle": "tns run android --bundle --disable-npm-install",
+    "start-ios-bundle": "tns run ios --bundle --disable-npm-install",
+    "prebuild-android-bundle": "npm run webpack-android",
+    "prebuild-ios-bundle": "npm run webpack-ios",
+    "build-android-bundle": "tns build android --bundle --disable-npm-install",
+    "build-ios-bundle": "tns build ios --bundle --disable-npm-install"
+  }
+}
