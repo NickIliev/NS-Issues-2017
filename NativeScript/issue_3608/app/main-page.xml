@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <GridLayout id="message-manual-journey" class='message message-danger' columns="auto, *" tap="tapSyncUnsynced"  borderWidth="2" borderColor="green">
+        <Image col="0" src="~/images/exclamation-circle-white@2x.png" class="icon" />
+        <Label col="1" id="message-manual-journey-label" Text="Journey data found. Tap to upload." />
+    </GridLayout>  
+</Page>
