@@ -1,0 +1,14 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ScrollView>
+        <StackLayout>
+            <!-- WORKING as expected-->
+            <Image src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01563/opgs/edr/ncam/NLB_536234013EDR_S0593016NCAM00568M_.JPG" borderWidth="1" width="200" height="200" stretch="aspectFit" />
+            <Image src="https://static.pexels.com/photos/33045/lion-wild-africa-african.jpg" width="200" height="200" borderWidth="1" stretch="aspectFit" />
+
+            <!-- NOT WORKING-->
+            <Image src="http://apod.nasa.gov/apod/image/1612/lmcapodgleason960.jpg " width="200" height="200" borderWidth="1" stretch="aspectFit" />
+            <Image src="http://apod.nasa.gov/apod/image/1612/farside_lro800.jpg " width="200" height="200" borderWidth="1" stretch="aspectFit" />
+        </StackLayout>
+    </ScrollView>
+</Page>
