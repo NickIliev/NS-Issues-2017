@@ -4,16 +4,12 @@ of which NativeScript renders with a platform-specific iOS or Android native con
 You can find a full list of user interface components you can use in your app at
 https://docs.nativescript.org/ui/components.
 -->
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:RL="nativescript-ripple"  navigatingTo="navigatingTo" class="page">
-    <!--
-    The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
-    http://docs.nativescript.org/ui/action-bar
-    -->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      xmlns:RL="nativescript-ripple"  
+      navigatingTo="navigatingTo" 
+      class="page">
     <ActionBar title="Index">
         <ActionBar.actionItems>
-
-            <!-- Icon using image resource -->
-            <ActionItem text="Default ActionItem" position="right" icon="res://icon" />
 
             <!-- Icon using custom ActionView -->
             <ActionItem text="Custom ActionItem" position="right">
@@ -26,20 +22,4 @@ https://docs.nativescript.org/ui/components.
 
         </ActionBar.actionItems>
     </ActionBar>
-    <!--
-    The StackLayout stacks UI components on the screen—either vertically or horizontally.
-    In this case, the StackLayout does vertical stacking; you can change the stacking to
-    horizontal by applying a orientation="horizontal" attribute to the <StackLayout> element.
-    You can learn more about NativeScript layouts at
-    https://docs.nativescript.org/ui/layout-containers.
-
-    These components make use of several CSS class names that are part of the NativeScript
-    core theme, such as p-20, btn, h2, and text-center. You can view a full list of the
-    class names available for styling your app at https://docs.nativescript.org/ui/theme.
-    -->
-    <StackLayout class="p-20">
-        <Label text="Tap the button" class="h1 text-center"/>
-        <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
-        <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
-    </StackLayout>
 </Page>

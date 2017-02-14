@@ -1,0 +1,5 @@
+.page {
+    color: #222;
+}
+
+@import 'nativescript-theme-core/css/core.light.css';
