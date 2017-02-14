@@ -7,8 +7,8 @@
             <Image src="https://static.pexels.com/photos/33045/lion-wild-africa-african.jpg" width="200" height="200" borderWidth="1" stretch="aspectFit" />
 
             <!-- NOT WORKING-->
-            <Image src="http://apod.nasa.gov/apod/image/1612/lmcapodgleason960.jpg " width="200" height="200" borderWidth="1" stretch="aspectFit" />
-            <Image src="http://apod.nasa.gov/apod/image/1612/farside_lro800.jpg " width="200" height="200" borderWidth="1" stretch="aspectFit" />
+            <Image src="http://apod.nasa.gov/apod/image/1612/lmcapodgleason960.jpg" width="200" height="200" borderWidth="1" stretch="aspectFit" />
+            <Image src="http://apod.nasa.gov/apod/image/1612/farside_lro800.jpg" width="200" height="200" borderWidth="1" stretch="aspectFit" />
         </StackLayout>
     </ScrollView>
 </Page>
