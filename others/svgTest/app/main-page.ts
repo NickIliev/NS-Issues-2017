@@ -9,7 +9,7 @@ import { Page } from 'ui/page';
 import { HelloWorldModel } from './main-view-model';
 
 
-import ImageSourceSVGModule = require("nativescript-svg");
+var ImageSourceSVGModule = require("nativescript-svg");
 // var svgFile = new ImageSourceSVGModule.ImageSourceSVG();
  
 // var url = 'https://upload.wikimedia.org/wikipedia/commons/3/30/Vector-based_example.svg';

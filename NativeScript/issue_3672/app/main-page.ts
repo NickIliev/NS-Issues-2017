@@ -1,4 +1,3 @@
-
 import { EventData } from 'data/observable';
 import { Page } from 'ui/page';
 import * as builder from "ui/builder";
