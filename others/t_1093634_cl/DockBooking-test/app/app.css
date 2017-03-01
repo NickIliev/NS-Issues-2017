@@ -1,0 +1,56 @@
+﻿/* platform specific */
+@import url('~/platform.css');
+
+
+/* --------------------------------------------------------
+** GENERAL
+** ----------------------------------------------------- */
+
+.fa {
+    font-family: 'FontAwesome';
+}
+
+Button {
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 1;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+Label, TextField {
+    font-family: 'GT America';
+    font-weight: 300;
+    font-size: 16;
+}
+
+.pageContainer {
+    width: 100%;
+    height: 100%;
+}
+
+/* header */
+.header {
+    width: 100%;
+    background-color: #07354c;
+}
+.header GridLayout {
+    width: 100%;
+}
+.header Button {
+    color: #ffffff;
+    font-size: 22;
+    height: 50;
+    width: 50;
+}
+.header Label {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* body */
+.body {
+    top: 50;
+    width: 100%;
+    padding: 20;
+}

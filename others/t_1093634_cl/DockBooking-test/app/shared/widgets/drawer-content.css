@@ -1,0 +1,24 @@
+/* --------------------------------------------------------
+** Drawer
+** ----------------------------------------------------- */
+
+.drawer-content {
+    padding-top: 20;
+    color: #ffffff;
+    background-color: #07354c;
+}
+
+.drawer-content Image {
+    margin: 10;
+    height: 45;
+    horizontal-align: left;
+}
+
+.drawer-content Button {
+    margin: 10;
+    text-align: left;
+}
+
+.drawer-content Button.disabled {
+    color: #aaa;
+}

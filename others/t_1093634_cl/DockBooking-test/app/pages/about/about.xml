@@ -1,0 +1,36 @@
+<dpg:DrawerPage
+    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:navigation="navigation/example-drawer-page"
+    xmlns:dpg="nativescript-telerik-ui-pro/sidedrawer/drawerpage"
+    xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+    xmlns:widgets="shared/widgets"
+    loaded="basepageLoaded"
+    navigatedTo="onNavigatedTo"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="true"
+    class="page">
+
+    <!-- drawer [repeated in all DrawerPage(s) -->
+    <dpg:DrawerPage.sideDrawer>
+        <drawer:RadSideDrawer id="drawer" drawerTransition="pushtransition">
+            <drawer:RadSideDrawer.drawerContent> <widgets:drawer-content /> </drawer:RadSideDrawer.drawerContent>
+        </drawer:RadSideDrawer> 
+    </dpg:DrawerPage.sideDrawer>
+
+    <!-- page content -->
+    <StackLayout loaded="contentLoaded">
+        <AbsoluteLayout class="header">
+            <GridLayout columns="auto,*,auto">
+                <Button text="&#xf0c9;" col="0" class="fa" tap="toggleDrawer" />
+                <Label text="{{ pageTitle }}" col="1" />
+                <Button text="?" col="2" class="fa" tap="" />
+            </GridLayout>
+        </AbsoluteLayout>
+        <StackLayout class="body">
+            <label text="About Dockbooking™" style="margin: 10 0"></label>
+            <label textWrap="true" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." style="margin: 10 0"/>
+            <label textWrap="true" text="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." style="margin: 10 0"/>
+        </StackLayout>
+    </StackLayout>
+
+</dpg:DrawerPage>
