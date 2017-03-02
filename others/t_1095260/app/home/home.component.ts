@@ -26,6 +26,10 @@ export class HomeComponent extends Observable implements OnInit {
     }
 
     @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
+
+    // OR you can also use Angular ID in your HTML and get reference to your sidedrawer via that id (e.g. #myDrawer in HTML file)
+    // @ViewChild("myDrawer") public drawerComponent: RadSideDrawerComponent;
+
     private drawer: SideDrawerType;
 
     ngAfterViewInit() {
