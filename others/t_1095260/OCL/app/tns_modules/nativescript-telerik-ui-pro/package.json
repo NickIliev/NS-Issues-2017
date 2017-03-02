@@ -1,0 +1,108 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "nativescript-telerik-ui-pro",
+        "scope": null,
+        "escapedName": "nativescript-telerik-ui-pro",
+        "name": "nativescript-telerik-ui-pro",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/jeremiahminton/Documents/NativeScript_App/OCL"
+    ]
+  ],
+  "_from": "nativescript-telerik-ui-pro@latest",
+  "_id": "nativescript-telerik-ui-pro@1.6.1",
+  "_inCache": true,
+  "_location": "/nativescript-telerik-ui-pro",
+  "_nodeVersion": "6.9.2",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/nativescript-telerik-ui-pro-1.6.1.tgz_1487781185044_0.7518577626906335"
+  },
+  "_npmUser": {
+    "name": "dginev",
+    "email": "deyan.ginev@telerik.com"
+  },
+  "_npmVersion": "3.10.9",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "nativescript-telerik-ui-pro",
+    "scope": null,
+    "escapedName": "nativescript-telerik-ui-pro",
+    "name": "nativescript-telerik-ui-pro",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-telerik-ui-pro/-/nativescript-telerik-ui-pro-1.6.1.tgz",
+  "_shasum": "718256ebe0fd1cef27c65a4202ae526f387ee117",
+  "_shrinkwrap": null,
+  "_spec": "nativescript-telerik-ui-pro",
+  "_where": "/Users/jeremiahminton/Documents/NativeScript_App/OCL",
+  "author": {
+    "name": "Progress AD"
+  },
+  "dependencies": {},
+  "description": "Telerik UI for NativeScript Pro is an upgrade of Telerik UI for NativeScript - a cross-platform UI components suite based on the native iOS and Android libraries provided by Telerik.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "718256ebe0fd1cef27c65a4202ae526f387ee117",
+    "tarball": "https://registry.npmjs.org/nativescript-telerik-ui-pro/-/nativescript-telerik-ui-pro-1.6.1.tgz"
+  },
+  "files": [
+    "**/*.js",
+    "**/*.metadata.json",
+    "**/*.d.ts",
+    "platforms/",
+    "!hooks/"
+  ],
+  "keywords": [
+    "nativescript",
+    "ui",
+    "listview",
+    "sidedrawer",
+    "chart",
+    "calendar",
+    "dataform",
+    "gauges"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "maintainers": [
+    {
+      "name": "amiorkov",
+      "email": "v.amiorkov@gmail.com"
+    },
+    {
+      "name": "dginev",
+      "email": "deyan.ginev@telerik.com"
+    },
+    {
+      "name": "tns-bot",
+      "email": "nativescript@telerik.com"
+    }
+  ],
+  "name": "nativescript-telerik-ui-pro",
+  "nativescript": {
+    "ios": "2.5.0",
+    "android": "2.5.0"
+  },
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com/telerik/nativescript-ui-samples.git"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/email-prompt.js dev_uins_free",
+    "preinstall": "node ./scripts/eula-prompt.js"
+  },
+  "version": "1.6.1"
+}

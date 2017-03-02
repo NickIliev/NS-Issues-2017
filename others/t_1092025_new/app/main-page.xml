@@ -1,0 +1,16 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout>
+
+        <Label text="before webn view" textWrap="true" />
+        <WebView id="wv" src="{{ htmlString }}"  />
+        <Label text="after webn view" textWrap="true" />
+        
+    </StackLayout>
+</Page>

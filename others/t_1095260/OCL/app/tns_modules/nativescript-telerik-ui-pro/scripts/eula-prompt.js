@@ -1,0 +1,1 @@
+console.log("Telerik UI for NativeScript Pro (Trial) is licensed under the Telerik End User License Agreement for UI for NativeScript Pro (TRIAL version): http://www.telerik.com/purchase/license-agreement/ui-for-nativescript-pro-trial");
