@@ -1,0 +1,27 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+<GridLayout rows="*, auto, auto" columns="*">
+
+    <ListView row="0" items="{{ items }}">
+        <ListView.itemTemplate>
+            <StackLayout>
+                <Label text="{{ $value }}" col="0"/>
+                <Label text="{{ $parents['ListView'], $parents['ListView'].name }}" tap="{{ $parents['ListView'], $parents['ListView'].onTap }}" />
+            </StackLayout>
+        </ListView.itemTemplate>
+    </ListView>
+
+    <Button id="btn" row="1" text="onOtherTap" tap="{{ onOtherTap }}" />
+
+    <TextField row="2"  id="textField" hint="" text="{{  }}" />
+    
+
+</GridLayout>
+
+</Page>
