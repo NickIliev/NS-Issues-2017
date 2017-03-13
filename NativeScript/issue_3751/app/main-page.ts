@@ -1,21 +1,34 @@
 import { EventData } from 'data/observable';
 import { Page } from 'ui/page';
 import { HelloWorldModel } from './main-view-model';
+import { AbsoluteLayout } from "ui/layouts/absolute-layout";
 
-export function navigatingTo(args: EventData) {
+var ab: AbsoluteLayout;
+var abMeuseredHeight: number;
 
+var vm = new HelloWorldModel();
+
+export function onLoaded(args: EventData) {
     let page = <Page>args.object;
 
-    page.bindingContext = new HelloWorldModel();
+    var ab = <AbsoluteLayout>page.getViewById("ab");
+
+    setTimeout(function() {
+      console.log(ab.getMeasuredHeight());
+
+      abMeuseredHeight = (ab.getMeasuredHeight()/5) * 4; // 80%
+      vm.set("abMeuseredHeight", abMeuseredHeight);
+
+      page.bindingContext = vm;
+    }, 300);
+
 }
 
 
-export function onParentTap(args: EventData) {
-  console.log("onParentTap");
+export function onMapTap(args: EventData) {
+  console.log("onMapTap");
 }
 
-export function onChildTap(args) {
-  console.log("onChildTap");
-  var view = args.object;
-  view.parent.off("tap"); // same valid for touch
+export function onDockTap(args) {
+  console.log("onDockTap");
 }

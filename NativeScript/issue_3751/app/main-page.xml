@@ -1,9 +1,17 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" navigatingTo="navigatingTo" class="page">
 
-    <StackLayout id="wrapper" tap="onParentTap" style="width: 100%; height: 100%" backgroundColor="green">
-        <StackLayout id="click-me" tap="onChildTap" width="200" height="300" backgroundColor="red"  >
-            <Label text="test"></Label>
-        </StackLayout>
-    </StackLayout>
+<AbsoluteLayout id="ab" style="width: 100%; height: 100%;">
+
+	<!-- gmaps element -->
+	<GridLayout rows="*" columns="*" style="width: 100%; height: 100%;" backgroundColor="gray" tap="onMapTap">      
+    </GridLayout>
+
+	<DockLayout top="{{ abMeuseredHeight }}" style="width: 100%; height: 100%;">
+		<StackLayout dock="bottom" class="dynamic-content-holder" style="width: 100%;" backgroundColor="blue" tap="onDockTap">
+			<Label text="Click me and I'll do magic!"></Label>
+		</StackLayout>
+	</DockLayout>
+    
+</AbsoluteLayout>
 
 </Page>
