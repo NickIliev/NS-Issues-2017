@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <StackLayout id="wrapper" tap="onParentTap" style="width: 100%; height: 100%" backgroundColor="green">
+        <StackLayout id="click-me" tap="onChildTap" width="200" height="300" backgroundColor="red"  >
+            <Label text="test"></Label>
+        </StackLayout>
+    </StackLayout>
+
+</Page>
