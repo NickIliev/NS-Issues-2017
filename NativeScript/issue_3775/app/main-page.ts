@@ -24,7 +24,7 @@ export function goToPage() {
         moduleName: "sub-page",
         animated: true,
         transition: {
-            name: "flip",
+            name: "slide",
             duration: 380
         }
     });
