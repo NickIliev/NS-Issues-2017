@@ -1,0 +1,22 @@
+﻿
+.btn {
+    font-size: 18;
+}
+
+.rb-black {
+    font-family: "Roboto-Black"
+}
+
+.rb-black-italic {
+    font-family: "Roboto-BlackItalic"
+}
+
+.rb-bold {
+    font-family: "Roboto-Bold"
+}
+
+.rb-medium {
+    font-family: "Roboto-Medium"
+}
+
+@import 'nativescript-theme-core/css/core.light.css';
