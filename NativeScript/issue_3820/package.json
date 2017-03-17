@@ -6,7 +6,7 @@
   "nativescript": {
     "id": "org.nativescript.issue3820",
     "tns-android": {
-      "version": "2.5.0"
+      "version": "3.0.0-next-2017-03-14-1698"
     }
   },
   "dependencies": {
