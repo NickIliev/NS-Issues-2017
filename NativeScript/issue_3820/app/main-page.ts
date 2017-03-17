@@ -11,11 +11,11 @@ export function onLoaded(args: EventData) {
     scroll.android.setVerticalScrollBarEnabled(true);
     scroll.android.setVerticalFadingEdgeEnabled(false);
 
-    console.dir(scroll.android);
+    console.log(scroll.android);
 
     scroll.android.setScrollBarDefaultDelayBeforeFade(5000);
-    scroll.android.setScrollBarFadeDuration(1);
+    scroll.android.setScrollBarFadeDuration(10);
 
-    console.log(scroll.android.getScrollBarDefaultDelayBeforeFade())
-    console.log(scroll.android.getScrollBarFadeDuration())
+    console.log(scroll.android.getScrollBarDefaultDelayBeforeFade()) // 5000
+    console.log(scroll.android.getScrollBarFadeDuration()) // 10
 }
