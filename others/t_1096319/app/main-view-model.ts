@@ -14,23 +14,23 @@ export class TicketViewModel  {
         return this._ticketOrder;
     }
 
-    get movies() {
-        if (!this._movies) {
-            this._movies = new Array<Movie>();
-            this._movies.push(new Movie(123, "Zootopia"));
-            this._movies.push(new Movie(217, "Captain America"));
-            this._movies.push(new Movie(324, "The Jungle Book"));
-        }
-        return this._movies;
+get movies() {
+    if (!this._movies) {
+        this._movies = new Array<Movie>();
+        this._movies.push(new Movie(123, "Zootopia"));
+        this._movies.push(new Movie(217, "Captain America"));
+        this._movies.push(new Movie(324, "The Jungle Book"));
     }
+    return this._movies;
+}
 
 
-    get movieNames() {
-        if (!this._movieNames) {
-            this._movieNames = this.movies.map((value: Movie) => value.name);
-        }
-        return this._movieNames;
+get movieNames() {
+    if (!this._movieNames) {
+        this._movieNames = this.movies.map((value: Movie) => value.name);
     }
+    return this._movieNames;
+}
 
 }
 

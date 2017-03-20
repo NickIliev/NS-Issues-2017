@@ -43,9 +43,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>waze</string>
-    </array>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+	<string>waze</string>
+</array>
 </dict>
 </plist>

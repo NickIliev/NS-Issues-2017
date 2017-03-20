@@ -1,0 +1,19 @@
+<Page >
+  <ScrollView>
+    <StackLayout width="50">    
+      
+      <Label text="Label Normal" style="white-space:normal" />
+      <Label text="Label Nowrap" style="white-space:nowrap; margin-bottom:10;" />
+
+      <TextField text="TextField Normal" style="white-space:normal" />
+      <TextField text="TextField Nowrap" style="white-space:nowrap; margin-bottom:10;" />
+
+      <TextView text="TextView Normal" style="white-space:normal" />
+      <TextView text="TextView Nowrap" style="white-space:nowrap; margin-bottom:10;" />
+
+      <Button text="Button Normal" style="white-space:normal" />
+      <Button text="Button Nowrap" style="white-space:nowrap; margin-bottom:10;" />
+      
+    </StackLayout>
+  </ScrollView>
+</Page>
