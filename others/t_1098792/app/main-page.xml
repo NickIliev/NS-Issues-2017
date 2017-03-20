@@ -10,7 +10,7 @@ https://docs.nativescript.org/ui/components.
     http://docs.nativescript.org/ui/action-bar
     -->
     <Page.actionBar>
-        <ActionBar title="My App" icon="" class="action-bar">
+        <ActionBar title="My App" icon="">
         </ActionBar>
     </Page.actionBar>
     <!--
