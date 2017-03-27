@@ -1,0 +1,17 @@
+<Page loaded="pageLoaded">
+    <GridLayout rows="*">
+        <ListView id="lv2" row="0" items="{{ items }}" itemTap="onItemTap" itemTemplateSelector="id % 10 === 0 ? 'red' : id % 2 === 0 ? 'green' : 'yellow'">
+            <ListView.itemTemplates>
+                <template key="red">
+                    <Label text="{{ $value }}" textWrap="true" style.backgroundColor="red"/>
+                </template>
+                <template key="green">
+                    <Label text="{{ $value }}" textWrap="true" style.backgroundColor="green"/>
+                </template>
+                <template key="yellow">
+                    <Label text="{{ $value }}" textWrap="true" style.backgroundColor="yellow"/>
+                </template>
+            </ListView.itemTemplates>
+        </ListView>
+    </GridLayout>
+</Page>
