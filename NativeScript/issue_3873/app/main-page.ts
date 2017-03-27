@@ -25,7 +25,24 @@ export function pageLoaded(args: EventData) {
 
 export function onItemTap(args: EventData) {
     console.log("onItemTap");
-    vm.set("items", new ObservableArray([new Item("new item", 111), new Item("new item", 222), new Item("new item", 333), new Item("new item", 444), new Item("new item", 555), new Item("new item", 666), new Item("new item", 777), new Item("new item", 888)]))
+    var items = vm.get("items");
+
+    // templates will load based on this statement in XMl itemTemplateSelector="id % 10 === 0 ? 'red' : id % 2 === 0 ? 'green' : 'yellow'"
+    items.push(new Item("new item", 111)); // yellow
+    items.push(new Item("new item", 1000)); // red
+    items.push(new Item("new item", 222)); // green
+    items.push(new Item("new item", 333)); // yellow
+    items.push(new Item("new item", 444)); // green
+    items.push(new Item("new item", 555)); // yellow
+    items.push(new Item("new item", 2000)); // red
+    items.push(new Item("new item", 666)); // green
+    items.push(new Item("new item", 777)); // yellow
+    items.push(new Item("new item", 888)); // green
+    items.push(new Item("new item", 999)); // yellow
+    items.push(new Item("new item", 3000)); // red
+
+    vm.set("items", items);
+    // vm.set("items", new ObservableArray([new Item("new item", 111), new Item("new item", 222), new Item("new item", 333), new Item("new item", 444), new Item("new item", 555), new Item("new item", 666), new Item("new item", 777), new Item("new item", 888)]))
 }
 
 let scrollToBottom = true;
