@@ -1,0 +1,42 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<TabView #tabView>
+
+    <StackLayout *tabItem="{title: 'Karte', iconSource: 'res://icon'}">
+        <map></map>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Route', iconSource: 'res://icon'}">
+        <route></route>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Hinzufügen', iconSource: 'res://icon'}">
+        <Label text="Hinzufügen"></Label>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Facebook', iconSource: 'res://icon'}">
+        <Label text="Facebook"></Label>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'News', iconSource: 'res://icon'}">
+        <ListView [items]="items" class="list-group">
+            <template let-item="item">
+                <Label [nsRouterLink]="['/item', item.id]" [text]="item.name" class="list-group-item"></Label>
+            </template>
+        </ListView>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Forum', iconSource: 'res://icon'}">
+        <Label text="Facebook"></Label>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Bußgeldrechner', iconSource: 'res://icon'}">
+        <Label text="Facebook"></Label>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Einstellungen', iconSource: 'res://icon'}">
+        <Label text="Facebook"></Label>
+    </StackLayout>
+
+</TabView>
