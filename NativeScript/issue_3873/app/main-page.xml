@@ -5,7 +5,7 @@
                 <template key="red">
                     <StackLayout orientation="horizontal" tap="onStackTap">
                         <Label text="{{ $value }}" textWrap="true" style.backgroundColor="red"/>
-                        <Button text="tap me" tap="onTap" />
+                        <Button text="tap me" tap="onButtonTap" />
                     </StackLayout>
                 </template>
                 <template key="green">

@@ -49,8 +49,8 @@ export function onItemTap(args: EventData) {
 export function onStackTap(args: EventData) {
     console.log("onStackTap fired");
 } 
-export function onTap(args: EventData) {
-    console.log("onTap fired");
+export function onButtonTap(args: EventData) {
+    console.log("onButtonTap fired");
 } 
 
 let scrollToBottom = true;
