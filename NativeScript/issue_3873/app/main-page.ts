@@ -7,6 +7,7 @@ import { ListView } from "ui/list-view";
 import { Label } from "ui/label";
 import { GridLayout } from "ui/layouts/grid-layout";
 import { Color } from "color";
+import { StackLayout } from "ui/layouts/stack-layout";
 
 let vm = new ViewModel();
 var lv: ListView;
@@ -48,7 +49,14 @@ export function onItemTap(args: EventData) {
 
 export function onStackTap(args: EventData) {
     console.log("onStackTap fired");
+
+    var stack = <StackLayout>args.object;
+    var listview = <ListView>stack.parent;
+
+    console.log(stack)
+    console.log(stack.bindingContext)
 } 
+
 export function onButtonTap(args: EventData) {
     console.log("onButtonTap fired");
 } 
