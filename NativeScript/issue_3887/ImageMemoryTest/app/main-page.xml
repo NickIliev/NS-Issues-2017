@@ -1,0 +1,16 @@
+ <Page loaded="onLoaded" navigatedTo="onNavigatedTo" actionBarHidden="true" xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:IC="nativescript-web-image-cache">
+    <GridLayout id="questions-wrap" row="0" rows="50*, 50*">     
+        <GridLayout id="image1_wrap" class="question" tap="tapQuestion" row="0" rows="*" columns="*">
+            <Image id="question-1-image" stretch="aspectFill" />
+
+            <!-- this will work without memory exception -->
+            <!--<IC:WebImage id="question-1-image" stretch="aspectFill" ></IC:WebImage> -->
+        </GridLayout>
+        <GridLayout id="image2_wrap" class="question" tap="tapQuestion" row="1" rows="*" columns="*">
+            <Image id="question-2-image" stretch="aspectFill" />
+
+            <!-- this will work without memory exception -->
+            <!--<IC:WebImage id="question-2-image" stretch="aspectFill" ></IC:WebImage> -->
+        </GridLayout>
+    </GridLayout>
+</Page>
