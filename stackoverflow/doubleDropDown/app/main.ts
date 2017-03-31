@@ -4,6 +4,5 @@ import { AppModule } from "./app.module";
 import { registerElement } from "nativescript-angular/element-registry";
  
 registerElement("DropDown", () => require("nativescript-drop-down/drop-down").DropDown);
-registerElement("SecondDropDown", () => require("nativescript-drop-down/drop-down").DropDown);
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);
