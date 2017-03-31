@@ -1,0 +1,21 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<StackLayout orientation="horizontal" width="100%" class="padding">
+
+    <StackLayout orientation="horizontal" horizontalAlignment="left" width="50%">
+        <GridLayout rows="auto, auto, *" columns="auto, *" class="newstack">
+            <TextField text="userRegister.langauge" class="noline"></TextField>
+            <DropDown #Langauge hint="Langauge" class="Nopadding" backgroundcolor="transparent" [items]="items" [selectedIndex]="selectedIndex"
+                (selectedIndexChange)="onchangeState(Langauge.selectedIndex)" (opened)="onopen()" row="0" colSpan="1"></DropDown>
+        </GridLayout>
+    </StackLayout>
+
+    <StackLayout orientation="horizontal" horizontalAlignment="left" width="50%">
+        <GridLayout rows="auto, auto, *" columns="auto, *" class="newstack">
+            <TextField text="userRegister.langauge" class="noline"></TextField>
+            <DropDown #NewLangauge hint="Langauge" class="Nopadding" backgroundcolor="transparent" [items]="secondaryItems" [selectedIndex]="newSelectedIndex"
+                (selectedIndexChange)="onchangeState(NewLangauge.selectedIndex)" (opened)="onopen()" row="0" colSpan="1"></DropDown>
+        </GridLayout>
+    </StackLayout>
+
+</StackLayout>
