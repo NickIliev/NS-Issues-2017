@@ -1,0 +1,21 @@
+<GridLayout columns="*,*" rows="*,*">
+    <GridLayout col="0" row="0" columns="*" rows="*" class="push">
+        <Image row="0" src="res://notification" stretch="none"></Image>
+        <Button row="0" text="Benachrichtigung" (tap)="showNotifications()"></Button>
+    </GridLayout>
+
+    <GridLayout col="1" row="0" columns="*" rows="*" class="pro">
+        <Image row="0" src="res://plus_filled" stretch="none"></Image>
+        <Button row="0" text="PRO Version" (tap)="showPro()"></Button>
+    </GridLayout>
+
+    <GridLayout col="0" row="1" columns="*" rows="*" class="facebook">
+        <Image row="0" src="res://facebook_settings" stretch="none"></Image>
+        <Button row="0" text="Facebook" (tap)="showFacebookGroups()"></Button>
+    </GridLayout>
+
+    <GridLayout col="1" row="1" columns="*" rows="*" class="login">
+        <Image row="0" src="res://login_filled" stretch="none"></Image>
+        <Button row="1" text="Anmelden" (tap)="showLogin()"></Button>
+    </GridLayout>
+</GridLayout>

@@ -1,0 +1,28 @@
+{
+  "ProjectName": "Prueba",
+  "ProjectGuid": "e011894a-9293-406e-b8f0-3108a6621af7",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.Prueba",
+  "DisplayName": "Prueba",
+  "Author": "",
+  "Description": "Prueba",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{F0A65104-D4F4-4012-B799-F612D75820F6}",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "FrameworkVersion": "2.5.0",
+  "Framework": "NativeScript"
+}

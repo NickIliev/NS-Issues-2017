@@ -20,11 +20,13 @@
     </StackLayout>
 
     <StackLayout *tabItem="{title: 'News', iconSource: 'res://icon'}">
-        <ListView [items]="items" class="list-group">
-            <template let-item="item">
-                <Label [nsRouterLink]="['/item', item.id]" [text]="item.name" class="list-group-item"></Label>
-            </template>
-        </ListView>
+        <GridLayout>
+            <ListView [items]="items" class="list-group">
+                <template let-item="item">
+                    <Label [nsRouterLink]="['/item', item.id]" [text]="item.name" class="list-group-item"></Label>
+                </template>
+            </ListView>
+        <GridLayout>
     </StackLayout>
 
     <StackLayout *tabItem="{title: 'Forum', iconSource: 'res://icon'}">

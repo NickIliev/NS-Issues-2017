@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    xmlns:widgets="utils/widgets"
+    xmlns:stripe="nativescript-stripe"
+    loaded="pageLoaded" id="homeViewScreen" cssClass="screen">
+    <stripe:CreditCardView id="card"/>
+</Page>

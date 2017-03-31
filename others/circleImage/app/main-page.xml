@@ -1,0 +1,8 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <StackLayout class="avatar" >
+
+            <Image src="res://icon" class="circle-wrapper"/>
+
+    </StackLayout>
+</Page>

@@ -1,0 +1,18 @@
+ListView {
+    background-color: red;
+}
+StackLayout {
+    margin: 10px 0px;
+}
+
+.title {
+  color: darkgray;
+  font-weight: bold;
+}
+
+.text {
+    font-size: 12px;
+}
+.small-spacing {
+  margin: 5;
+}

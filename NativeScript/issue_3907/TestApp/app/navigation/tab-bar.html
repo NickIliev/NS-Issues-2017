@@ -1,0 +1,39 @@
+<TabView #tabView>
+
+    <StackLayout *tabItem="{title: 'Karte', iconSource: 'res://Map'}">
+        <map></map>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Route', iconSource: 'res://Route'}">
+        <route></route>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Hinzufügen', iconSource: 'res://Add'}">
+        <Label text="Hinzufügen"></Label>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Facebook', iconSource: 'res://Facebook'}">
+        <Label text="Facebook"></Label>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'News', iconSource: 'res://News'}">
+        <news></news>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Forum', iconSource: 'res://Forum'}">
+        <GridLayout>
+            <WebView src="https://google.de"> </WebView>
+        </GridLayout>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Bußgeldrechner', iconSource: 'res://Calculator'}">
+        <GridLayout>
+            <WebView src="https://bussgeldrechner.expert/bussgeldbescheid-pruefen"> </WebView>
+        </GridLayout>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Einstellungen', iconSource: 'res://Settings'}">
+        <settings></settings>
+    </StackLayout>
+
+</TabView>
