@@ -1,0 +1,43 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.issue3928",
+    "tns-android": {
+      "version": "3.0.0-rc.1"
+    }
+  },
+  "dependencies": {
+    "@angular/common": "4.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/core": "4.0.0",
+    "@angular/forms": "4.0.0",
+    "@angular/http": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
+    "@angular/router": "4.0.0",
+    "es6-shim": "^0.35.3",
+    "nativescript-angular": "rc",
+    "nativescript-couchbase": "^1.0.17",
+    "nativescript-orientation": "^1.5.5",
+    "nativescript-theme-core": "~1.0.2",
+    "nativescript-videoplayer": "^2.4.0",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "~5.2.0",
+    "serializer.ts": "0.0.12",
+    "tns-core-modules": "rc",
+    "zone.js": "~0.8.2"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.23.1",
+    "babel-types": "6.23.0",
+    "babylon": "6.16.1",
+    "lazy": "1.0.11",
+    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-dev-typescript": "^0.4.2",
+    "tns-platform-declarations": "^2.5.0",
+    "typescript": "^2.2.2"
+  }
+}
