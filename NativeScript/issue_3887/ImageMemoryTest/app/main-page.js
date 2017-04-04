@@ -44,14 +44,8 @@ function fetchQuestions() {
 
 function loadQuestionImages() {
 
-    // This code is for test with nativescript-web-image-cache
-    // var imageSRC_1 = 'https://placehold.it/2000x2000';
-    // var imageSRC_2 = 'https://placehold.it/2000x2000';
-    // imagesLoaded();
+    global.__collect(); // manually trigger the GC
 
-
-    // ## Load both images before binding to ensure
-    // ## both display at same time.
     var loadedImages = 0;
     var imageSRC_1;
     var imageSRC_2;

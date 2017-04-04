@@ -1,0 +1,42 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" navigatingFrom="navigatingFrom" xmlns:fkz="views/home" backgroundSpanUnderStatusBar="true">
+
+        <TabView id="mainTabView" selectedIndexChanged="selectedIndexChanged"
+            ios:tabBackgroundColor="#0362A2" ios:selectedTabTextColor="#fff" ios:tabTextColor="#cccccc"
+            android:tabBackgroundColor="#0362A2" android:selectedTabTextColor="#fff" android:tabTextColor="#cccccc" androidSelectedTabHighlightColor="#fff">
+            <TabView.items>
+
+                <TabViewItem title="Novosti" iconSource="res://newspaper" android:visibility="collapsed">
+                    <TabViewItem.view>
+                        <fkz:home id="dashPartial" class="page" marginBottom="-60"/> 
+                    </TabViewItem.view>
+                </TabViewItem>
+
+                <TabViewItem title="1921tv" iconSource="res://tv">
+                    <TabViewItem.view>
+                        <Label text="ala" textWrap="true" />
+                    </TabViewItem.view>
+                </TabViewItem>
+                
+                <TabViewItem title="Utakmice" iconSource="res://scoreboard">
+                    <TabViewItem.view>
+                        <Label text="ala" textWrap="true" />
+                    </TabViewItem.view>
+                </TabViewItem>
+                
+               <TabViewItem title="Prvi tim" iconSource="res://players">
+                    <TabViewItem.view>
+                        <Label text="ala" textWrap="true" />
+                    </TabViewItem.view>
+                </TabViewItem>
+                
+                <TabViewItem title="Više" iconSource="res://more">
+                    <TabViewItem.view>
+                        <Label text="ala" textWrap="true" />
+                    </TabViewItem.view>
+                </TabViewItem>
+            
+            </TabView.items>
+        </TabView>
+
+</Page>

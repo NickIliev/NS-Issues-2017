@@ -1,0 +1,13 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<TabView #tabview loaded="onTabLoaded" iosIconRenderingMode="alwaysTemplate">
+	<StackLayout *tabItem="{title: 'NativeScript', iconSource: '~/images/icon.png'}">
+        <Label text="NativeScript (1st TAB)" textWrap="true" class="h2 m-x-auto" color="blue"></Label>
+		<Image class="m-t-30 m-b-15" src="~/images/icon.png" width="80" height="80"></Image>
+	</StackLayout>
+	<StackLayout *tabItem="{title: 'Icon', iconSource: '~/images/icon.png'}">
+		<Image class="m-t-30 m-b-15" src="~/images/icon.png" width="80" height="80"></Image>
+		<Label text="NativeScript (2nd TAB)" textWrap="true" class="h2 m-x-auto" color="blue"></Label>
+	</StackLayout>
+</TabView>

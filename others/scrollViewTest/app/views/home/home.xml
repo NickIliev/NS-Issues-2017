@@ -1,0 +1,11 @@
+<StackLayout loaded="viewLoaded" xmlns:fkz="views/home/">
+    <StackLayout height="2" backgroundColor="#FFFFFF" visibility="collapsed"/>
+    
+    <ScrollView id="dashScrollView" ios.showsVerticalScrollIndicator="false">
+        <StackLayout>
+            <Label text="ala" textWrap="true" />
+            <Label text="bala" textWrap="true" />
+            <Label text="nica" textWrap="true" /> 
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

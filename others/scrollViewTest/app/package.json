@@ -1,0 +1,9 @@
+{
+  "android": {
+    "v8Flags": "--expose_gc",
+    "gcThrottleTime": 500
+  },
+  "main": "app.js",
+  "name": "tns-template-hello-world-ts",
+  "version": "2.5.0"
+}
