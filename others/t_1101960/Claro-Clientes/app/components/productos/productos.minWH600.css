@@ -1,0 +1,87 @@
+/*Filtros*/
+
+.filtro{
+    font-size: 30;
+    padding-bottom: 20;
+    padding-top: 20;
+}
+
+.filtro Image {
+    margin-left: 10;
+}
+
+.filtrolabel {
+    font-size: 20;
+    padding: 10;
+    background-color: #999;
+    border-radius: 30;
+    color: #fff;
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 20;
+}
+
+/*Repeater*/
+
+.contenedor {
+    border-width: 1;
+    border-style: solid;
+    border-color: #d8d8d8;
+    margin: 50;
+    background-color: #f1f1f1;
+    text-align: center;
+    border-radius: 20;
+}
+
+.nuevo {
+    margin-left: 30;
+}
+
+.online {
+    margin-left: 10;
+    margin-top: 200;
+}
+
+.lte4g {
+    margin-left: 10;
+    margin-top: 380;
+}
+
+
+/*MODAL*/
+
+#modal {
+    border-radius: 15;
+    height: 80%;
+    width: 35%;
+}
+
+.acordeon {
+    background-color: #fff;
+    border-color: #da262d;
+    border-style: solid;
+    border-width: 2;
+    border-radius: 15;
+    padding: 50;
+}
+
+.filtrar {
+    padding: 20;
+    color: #da262d;
+    font-size: 30;
+}
+
+.etiquetafiltro {
+    color: #da262d;
+    font-size: 20;
+    font-weight: bold;
+    text-align: center;
+    padding: 20;
+}
+
+.form-item-border {
+    background-color: #da262d;
+    vertical-align: bottom;
+    height: 1;
+    opacity: 0.2;
+}

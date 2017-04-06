@@ -1,0 +1,14 @@
+Page {
+    background-color: #da262d;
+}
+
+ActionBar {
+    height: 0;
+}
+
+Label {
+    color: #ffffff;
+    font-size: 25;
+    text-align: center;
+    
+}

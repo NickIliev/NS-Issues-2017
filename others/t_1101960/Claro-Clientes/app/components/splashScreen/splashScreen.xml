@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded" id="splashScreen">
+    <StackLayout> 
+        <Image id="Imagen" src='~/images/logo.png' stretch="aspectFit" margin="10% 20% 10% 20%" />
+        <Label id="Label" text="Gracias por solicitar su evaluación. Pronto estaremos en contacto." margin="0 10% 0 10%" textWrap="true" android:fontSize="100" translateY="400"/>
+    </StackLayout>
+</Page>

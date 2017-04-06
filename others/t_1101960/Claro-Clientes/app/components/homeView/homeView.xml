@@ -1,0 +1,11 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded" id="homeViewScreen" cssClass="screen" tap="tapPage">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+
+    <StackLayout verticalAlignment="middle" >
+        <Image src="~/images/logo.png"  margin="0 20% 10% 20%"/>
+        <Label text="Encuentra el equipo que deseas." textWrap="true"  />
+        <Label text="Haz click aquí" textWrap="true" />
+    </StackLayout>
+</Page> 

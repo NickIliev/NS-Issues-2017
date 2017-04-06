@@ -1,0 +1,75 @@
+@keyframes play {
+    from {
+        opacity: 0.5;
+        transform: scale(0.5, 0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1, 1.1);
+        animation-timing-function: ease-out;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+Page {
+    background-color: #ffffff;
+}
+
+ActionBar {
+    height: 0;
+}
+
+.label {
+    color: #000000;
+    font-size: 40;
+    text-align: center;
+    font-weight: bold;
+    animation-name: play;
+    animation-duration: 15;
+    transform: scale(0.5, 0.5);
+}
+
+.btn1, .btn2, .btn3, .btn4 {
+    color: #ffffff;
+    background-color: #da262d;
+    border-style: solid;
+    border-color: #999999;
+    border-width: 4;
+    border-radius: 20;
+    font-size: 30;
+    text-align: center;
+    margin: 40 10% 0 10%;
+    font-weight: bold;
+    height: 70;
+}
+
+.btn1 {
+    animation-delay: 0.8;
+    animation-name: play;
+    animation-duration: 0.4;
+    visibility: visible;
+}
+
+.btn2 {
+    animation-delay: 1.2;
+    animation-name: play;
+    animation-duration: 0.4;
+    visibility: visible;
+}
+
+.btn3 {
+    animation-delay: 1.6;
+    animation-name: play;
+    animation-duration: 0.4;
+    visibility: visible;
+}
+
+.btn4 {
+    animation-delay: 2;
+    animation-name: play;
+    animation-duration: 0.4;
+    visibility: visible;
+}

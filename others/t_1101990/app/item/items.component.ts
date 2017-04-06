@@ -1,7 +1,8 @@
 import { Component, ElementRef, ViewChild, OnInit, AfterViewInit } from "@angular/core";
 import { WebView, LoadEventData } from "ui/web-view"
 
-declare var android: any;
+declare var android: any; // this is needed only to overcome the missing declarations files for android API
+// if you need intellisense for Andriod api then you can install tns-platform-declarations
 
 @Component({
     selector: "ns-items",
@@ -29,13 +30,11 @@ export class ItemsComponent implements OnInit, AfterViewInit {
 
     show() {
         let webView = <WebView>this.webviewField.nativeElement;
-
         console.log(webView.android); // android.webkit.WebView
 
         webView.android.getSettings().setUseWideViewPort(true);
         webView.android.getSettings().setLoadWithOverviewMode(true);
         webView.android.getSettings().setJavaScriptEnabled(true);
         webView.android.getSettings().setLayoutAlgorithm(android.webkit.WebSettings.LayoutAlgorithm.SINGLE_COLUMN); // notice this parameter is coming from the android API
-
     }
 }

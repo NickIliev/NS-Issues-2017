@@ -1,0 +1,20 @@
+{
+    "name": "tns-template-blank",
+    "main": "app.js",
+    "version": "2.3.0",
+    "author": "Telerik <support@telerik.com>",
+    "description": "Nativescript blank project template",
+    "license": "Apache-2.0",
+    "keywords": [
+        "telerik",
+        "mobile",
+        "nativescript",
+        "{N}",
+        "tns",
+        "appbuilder",
+        "template"
+    ],
+    "repository": {
+        "url": "https://github.com/NativeScript/NativeScript/commit/dbeb0360c8567a803bb92d104f2683fed61aa541"
+    }
+}
