@@ -1,0 +1,29 @@
+.searchTextField {
+    font-weight: 300;
+    font-size: 24;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 2;
+}
+
+.suggestion-element {
+    color: #f8e;
+    background-color: #07354c;
+    margin: 0;
+}
+
+.suggestion-element Label {
+    color: #ffff00;
+    background-color: #0000ff;
+    margin: 0;
+}
+
+.suggestion-view {
+    background-color: #07354c;
+}
+
+
+.autoComplete {
+  color: red;
+  font-size: 24;
+}
