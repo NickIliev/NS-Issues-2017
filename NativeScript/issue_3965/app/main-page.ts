@@ -2,6 +2,8 @@ import { EventData } from 'data/observable';
 import { Page } from 'ui/page';
 import { HelloWorldModel } from './main-view-model';
 import { SearchBar } from "ui/search-bar";
+import { topmost } from "ui/frame";
+
 let sb;
 let vm = new HelloWorldModel();
 
@@ -27,4 +29,8 @@ export function updateQuery() {
     vm.set("message", "New Query");
 
     // sb.text = "Some new query" // this also works
+}
+
+export function goToSubPage() {
+    topmost().navigate("sub-page");
 }

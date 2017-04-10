@@ -2,6 +2,6 @@
     <StackLayout class="p-20">
         <SearchBar id="searchBar" hint="Search" text="{{ message }}" clear="onClear" submit="onSubmit" clear="onClear"/>
         <Button text="Tap To Update Query" tap="updateQuery" />
-        
+        <Button text="go to next page" tap="goToSubPage" />
     </StackLayout>
 </Page>

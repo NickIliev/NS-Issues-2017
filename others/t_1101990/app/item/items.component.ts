@@ -36,5 +36,16 @@ export class ItemsComponent implements OnInit, AfterViewInit {
         webView.android.getSettings().setLoadWithOverviewMode(true);
         webView.android.getSettings().setJavaScriptEnabled(true);
         webView.android.getSettings().setLayoutAlgorithm(android.webkit.WebSettings.LayoutAlgorithm.SINGLE_COLUMN); // notice this parameter is coming from the android API
+
+        var WebChromClient = android.webkit.WebChromeClient.extend({
+            onProgressChanged(view, newProgress) {
+                console.log(view);
+                console.log("this is loading " + newProgress);
+            }
+        })
+
+        var client = new WebChromClient();
+
+        webView.android.setWebChromeClient(client);
     }
 }
