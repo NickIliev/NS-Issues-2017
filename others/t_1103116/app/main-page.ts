@@ -16,13 +16,23 @@ export function onLoaded(args: EventData) {
     let page = <Page>args.object;
     page.bindingContext = new HelloWorldModel();
 
-    var documents = fs.knownFolders.documents();
-    var currentApp = fs.knownFolders.currentApp();
-    var temp = fs.knownFolders.temp();
+    var documentsPath = fs.knownFolders.documents().path;
 
-    console.log("documents: " + documents.path);
+    console.log("documents: " + documentsPath);
     // this path will remain the same when the app is installed
     // each new re-deploy of the app will change the path
     // simply chaning the JS or XML files will livesync the app without re-deploy aso the path will remain the same
 
+
+    // withi this check
+    var path = fs.path.join(documentsPath, "myFolder");
+    var myFolder;
+
+    if(!fs.Folder.exists(path)){
+        myFolder = fs.Folder.fromPath(path);
+    } else {
+        myFolder = fs.knownFolders.documents().getFolder("myFolder");
+    }
+
+    alert("myFolder: " + myFolder.path);
 }
