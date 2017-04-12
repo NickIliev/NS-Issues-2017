@@ -1,0 +1,8 @@
+"use strict";
+// A sample Jasmine test
+describe("A suite", function () {
+    it("contains spec with an expectation", function () {
+        expect(true).toBe(false);
+    });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXhhbXBsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImV4YW1wbGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUVBLHdCQUF3QjtBQUN4QixRQUFRLENBQUMsU0FBUyxFQUFFO0lBQ2xCLEVBQUUsQ0FBQyxtQ0FBbUMsRUFBRTtRQUN0QyxNQUFNLENBQUMsSUFBSSxDQUFDLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxDQUFDO0lBQzNCLENBQUMsQ0FBQyxDQUFDO0FBQ0wsQ0FBQyxDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyByZWZsZWN0IGZyb20gXCJyZWZsZWN0LW1ldGFkYXRhXCI7XG4gXG4vLyBBIHNhbXBsZSBKYXNtaW5lIHRlc3RcbmRlc2NyaWJlKFwiQSBzdWl0ZVwiLCBmdW5jdGlvbigpIHtcbiAgaXQoXCJjb250YWlucyBzcGVjIHdpdGggYW4gZXhwZWN0YXRpb25cIiwgZnVuY3Rpb24oKSB7XG4gICAgZXhwZWN0KHRydWUpLnRvQmUoZmFsc2UpO1xuICB9KTtcbn0pO1xuXG4iXX0=
