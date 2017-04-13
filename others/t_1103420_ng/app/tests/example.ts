@@ -1,13 +1,7 @@
-import 'reflect-metadata';
+
+import "nativescript-angular/platform";
 
 import { AppComponent } from "../app.component";
-
-// A sample Jasmine test
-describe("A suite", function() {
-  it("contains spec with an expectation", function() {
-    expect(true).toBe(true);
-  });
-});
 
 describe("Tests for app/app.component.ts", function() {
     it("Verify default message", function() {
@@ -16,3 +10,9 @@ describe("Tests for app/app.component.ts", function() {
     });
 });
 
+// A sample Jasmine test
+describe("A suite", function() {
+  it("contains spec with an expectation", function() {
+    expect(true).toBe(true);
+  });
+});
