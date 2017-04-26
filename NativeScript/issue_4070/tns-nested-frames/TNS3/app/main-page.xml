@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <Page.actionBar>
+      <ActionBar title="Nested frames (TNS3)">
+      </ActionBar>
+  </Page.actionBar>
+
+  <Frame id="navFrame" loaded="navFrameLoaded" />
+</Page>

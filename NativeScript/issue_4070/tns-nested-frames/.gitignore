@@ -1,0 +1,6 @@
+TNS2/platforms/
+TNS2/node_modules/
+TNS3/platforms/
+TNS3/node_modules/
+.vscode/
+.DS_Store
