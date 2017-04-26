@@ -9,11 +9,11 @@ var scroll;
 export function onLoaded(args: EventData) {
     let page = <Page>args.object;
     
-    scroll = <ScrollView>page.getViewById("scroll");
-    
-    setTimeout(function() {
-        console.log(scroll.scrollableWidth)
-    }, 300);
+scroll = <ScrollView>page.getViewById("scroll");
+
+setTimeout(function() {
+    console.log(scroll.scrollableWidth)
+}, 300);
 
     page.bindingContext = new HelloWorldModel();
 }

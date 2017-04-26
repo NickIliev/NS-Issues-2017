@@ -1,0 +1,15 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded">
+    <Page.actionBar>
+        <ActionBar title="Photo" icon="" backgroundColor="white" color="black">
+            <!--<NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="" /> -->
+            <!--<ActionBar.actionItems> -->
+                <ActionItem id="flashCtr" icos="" text="Flash On" tap="onTapFlash" ios.position="left" />
+                <ActionItem icon="" text="Take Shot" tap="onTakeShot" ios.position="left"  />
+                <ActionItem icon="" text="Return"  ios.position="left" tap="onCancel" />
+            <!--</ActionBar.actionItems> -->
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout>
+        <!--<Placeholder creatingView="onCreatingView" id="placeholder-view"/>-->
+    </StackLayout>
+</Page>

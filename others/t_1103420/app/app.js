@@ -1,0 +1,5 @@
+"use strict";
+require("./bundle-config");
+var app = require("application");
+app.start({ moduleName: 'main-page' });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSwyQkFBeUI7QUFDekIsaUNBQW1DO0FBRW5DLEdBQUcsQ0FBQyxLQUFLLENBQUMsRUFBRSxVQUFVLEVBQUUsV0FBVyxFQUFFLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBcIi4vYnVuZGxlLWNvbmZpZ1wiO1xuaW1wb3J0ICogYXMgYXBwIGZyb20gJ2FwcGxpY2F0aW9uJztcblxuYXBwLnN0YXJ0KHsgbW9kdWxlTmFtZTogJ21haW4tcGFnZScgfSk7XG4iXX0=

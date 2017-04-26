@@ -4,7 +4,10 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.testHtmlView"
+    "id": "org.nativescript.testHtmlView",
+    "tns-android": {
+      "version": "3.0.0-rc.1"
+    }
   },
   "dependencies": {
     "@angular/animations": "4.0.0",
@@ -24,6 +27,10 @@
     "zone.js": "~0.8.2"
   },
   "devDependencies": {
+    "babel-traverse": "6.4.5",
+    "babel-types": "6.4.5",
+    "babylon": "6.4.5",
+    "lazy": "1.0.11",
     "nativescript-dev-android-snapshot": "^0.*.*",
     "nativescript-dev-typescript": "~0.3.5",
     "typescript": "~2.1.0"
