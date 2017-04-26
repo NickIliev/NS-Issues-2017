@@ -4,5 +4,7 @@
       </ActionBar>
   </Page.actionBar>
 
-  <Frame id="navFrame" loaded="navFrameLoaded" />
+  <StackLayout>
+      <Frame id="navFrame" loaded="navFrameLoaded" />
+  </StackLayout>
 </Page>
