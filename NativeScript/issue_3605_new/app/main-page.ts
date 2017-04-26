@@ -6,14 +6,32 @@ import * as fs from "file-system";
 
 declare var android: any;
 
-export function navigatingTo(args: EventData) {
+var permissions = require("nativescript-permissions");
 
-    let page = <Page>args.object;
+export function onLoaded(args) {
+    let page = args.object;
+
+    permissions.requestPermission([
+        "android.permission.INTERNET",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.SET_WALLPAPER",
+        "android.permission.ACCESS_NETWORK_STATE"
+    ], "I need these permissions")
+        .then(function (res) {
+            console.log("Permissions granted!");
+        })
+        .catch(function () {
+            console.log("No permissions - plan B time!");
+        });
+}
+
+export function saveImage() {
 
     var folderPath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).toString();
     console.log("folderPath; " + folderPath)
 
-    // var documents = fs.knownFolders.documents();
+    // var documents = fs.knownFolders.documents();-
     // console.log("documents: " + documents);
 
     var fileName = 'img_' + new Date().getTime() + '.png';
