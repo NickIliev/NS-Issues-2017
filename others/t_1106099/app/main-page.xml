@@ -1,0 +1,17 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" actionBarHidden="true">
+	<GridLayout rows="*" columns="*">
+		<AbsoluteLayout>
+			<Image src="res://icon" width="32" height="32" top="10" left="20" zIndex="999" opacity=".5" />
+		</AbsoluteLayout>
+		<DockLayout stretchLastChild="true">
+			<GridLayout orientation="horizontal" dock="bottom" width="*" height="60">
+				<Button text="Flash" tap="onTapFlash" horizontalAlignment="left" />
+				<Button text="Take Shot" tap="onTakeShot" horizontalAlignment="center" />
+				<Button text="Return" tap="onCancel" dock="right" horizontalAlignment="right" />
+			</GridLayout>
+			<StackLayout>
+				<Placeholder creatingView="onCreatingView" id="placeholder-view" />
+			</StackLayout>
+		</DockLayout>
+	</GridLayout>
+</Page>
