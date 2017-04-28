@@ -1,3 +1,5 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-  <Label text="It works!" />
+  <StackLayout>
+      <Label text="It works!" />
+  </StackLayout>
 </Page>

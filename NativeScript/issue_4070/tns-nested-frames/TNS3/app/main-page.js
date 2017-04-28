@@ -1,6 +1,8 @@
 let page;
 let navFrame;
 
+var frame = require("ui/frame");
+
 exports.onNavigatingTo = function(args) {
   page = args.object;
 };
@@ -8,7 +10,7 @@ exports.onNavigatingTo = function(args) {
 exports.navFrameLoaded = function(args) {
   navFrame = args.object;
 
-  navFrame.navigate({
-    moduleName: "frame/frame"
-  });
+  console.log("navFrame: " + navFrame)
+
+  navFrame.navigate("frame/frame");
 };

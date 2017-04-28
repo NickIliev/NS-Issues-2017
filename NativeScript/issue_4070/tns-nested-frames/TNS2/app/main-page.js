@@ -8,6 +8,8 @@ exports.onNavigatingTo = function(args) {
 exports.navFrameLoaded = function(args) {
   navFrame = args.object;
 
+  console.log("navFrame: " + navFrame);
+
   navFrame.navigate({
     moduleName: "frame/frame"
   });
