@@ -1,0 +1,16 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" >
+
+    <ActionBar title="icon test">
+        <NavigationButton icon="res://icon"></NavigationButton>
+        <ActionItem ios.position="right">
+            <StackLayout>
+                <Image src="res://icon" stretch="none" />
+            </StackLayout>
+        </ActionItem>
+    </ActionBar>
+
+    <StackLayout class="p-20">
+        <Label text="Sub Page" class="h1 text-center"/>
+    </StackLayout>
+
+</Page>
