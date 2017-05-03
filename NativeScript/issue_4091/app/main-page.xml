@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
 
         <StackLayout class="p-20" >
-            <Button text="Work with timeout" tap="onTapt" class="btn btn-primary btn-active"/>
+            <Button text="Work with timeout" tap="onTap" class="btn btn-primary btn-active"/>
                     <ActivityIndicator  busy="{{ busy }}" />
         </StackLayout>
 
