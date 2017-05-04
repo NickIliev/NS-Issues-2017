@@ -1,0 +1,49 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.issue4112",
+    "tns-android": {
+      "version": "3.0.0"
+    }
+  },
+  "dependencies": {
+    "@angular/common": "~4.1.0",
+    "@angular/compiler": "~4.1.0",
+    "@angular/core": "~4.1.0",
+    "@angular/forms": "~4.1.0",
+    "@angular/http": "~4.1.0",
+    "@angular/platform-browser": "~4.1.0",
+    "@angular/platform-browser-dynamic": "~4.1.0",
+    "@angular/router": "~4.1.0",
+    "nativescript-angular": "3.0.0",
+    "nativescript-background-http": "3.0.0",
+    "nativescript-bottombar": "2.0.1",
+    "nativescript-drop-down": "3.0.0",
+    "nativescript-exit": "^1.0.0",
+    "nativescript-imagepicker": "3.0.0",
+    "nativescript-loading-indicator-new": "^2.1.0",
+    "nativescript-telerik-ui": "2.0.1",
+    "nativescript-textinputlayout": "^0.1.5",
+    "nativescript-theme-core": "1.0.4",
+    "nativescript-toast": "1.4.5",
+    "nativescript-toolbox": "^1.49.2",
+    "nativescript-vibrate": "^1.1.2",
+    "nativescript-xmlobjects": "1.1.4",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "5.3.1",
+    "tns-core-modules": "^3.0.0",
+    "zone.js": "~0.8.2"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.24.1",
+    "babel-types": "6.24.1",
+    "babylon": "6.17.0",
+    "lazy": "1.0.11",
+    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-dev-typescript": "^0.4.2",
+    "typescript": "2.3.2"
+  }
+}
