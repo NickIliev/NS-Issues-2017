@@ -18,7 +18,7 @@ export function navigatingTo(args: EventData) {
     let stack = <StackLayout>page.getViewById("container");
 
     const webView = new WebView();
-    webView.src = "~/index.html";
+    webView.src = "~/index.html"; // or "<html></hmtl>" or "https://docs.nativescript.org"
     webView.on(WebView.loadedEvent, () => {
         console.log("TEST TEST TEST")
     });
