@@ -18,7 +18,7 @@ export function navigatingTo(args: EventData) {
     let stack = <StackLayout>page.getViewById("container");
 
     const webView = new WebView();
-    webView.src = "<html></html>";
+    webView.src = "~/index.html";
     webView.on(WebView.loadedEvent, () => {
         console.log("TEST TEST TEST")
     });
