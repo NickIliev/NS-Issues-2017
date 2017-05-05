@@ -27,12 +27,10 @@ export class ItemsComponent implements OnInit {
 
         applicationOn(resumeEvent, (args: ApplicationEventData) => {
             if (args.android) {
-                // For Android applications, args.android is an android activity class.
-
+                // For Android applications, args.android is an android activity class
 
                 this.routerExtensions.navigate(['/pin'], { clearHistory: true, animated: false });
-
-
+                
                 console.log("resumeEvent")
                 console.log("Activity: " + args.android);
             } else if (args.ios) {
