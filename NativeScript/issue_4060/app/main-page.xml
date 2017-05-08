@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+	<ListView items="{{ source }}" loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap" height="200" rowHeight="200" borderWidth="2" borderColor="green">
+		<ListView.itemTemplate>
+			<StackLayout>
+				<Label text="{{ $value }}" textWrap="true" />
+			</StackLayout>
+		</ListView.itemTemplate>
+	</ListView>
+</Page>
