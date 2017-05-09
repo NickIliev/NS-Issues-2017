@@ -1,8 +1,9 @@
 <!--<page-router-outlet></page-router-outlet>-->
+<ActionBar title="Title" class="action-bar">
+    <SearchBar hint="Enter search string" ></SearchBar>
+</ActionBar>
 
-
-<StackLayout sdkToggleNavButton orientation="horizontal">
-    <ActionBar>
-        <SearchBar id="searchbarid" (loaded)="searchBarLoaded()" #sbcontent hint="Enter search string" [text]="searchPhrase"></SearchBar>
-    </ActionBar>
+<StackLayout orientation="horizontal">
+    <Label text="Some Content" textWrap="true"></Label>
 </StackLayout>
+

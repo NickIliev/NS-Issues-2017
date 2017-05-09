@@ -1,15 +1,17 @@
 import { Component } from "@angular/core";
-import { device } from "platform";
-import { DeviceType } from "ui/enums";
+// import { device } from "platform";
+// import { DeviceType } from "ui/enums";
 
-const isTablet: boolean = (device.deviceType == DeviceType.Tablet);
+// const isTablet: boolean = (device.deviceType == DeviceType.Tablet);
+// console.log("isTablet: " + isTablet);
 
-console.log(isTablet);
+// let cssPath = isTablet ? './tablet.css' : './phone.css';
 
 @Component({
     selector: "ns-app",
     moduleId: module.id,
     templateUrl: "./app.component.html",
-    styleUrls: [ './phone.css']
+    styleUrls: ['./custom.css']
 })
+
 export class AppComponent { }
