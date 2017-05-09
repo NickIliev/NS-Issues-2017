@@ -4,11 +4,8 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.issue4147",
+    "id": "org.nativescript.cssTestNg",
     "tns-android": {
-      "version": "3.0.0"
-    },
-    "tns-ios": {
       "version": "3.0.0"
     }
   },
@@ -29,9 +26,9 @@
     "zone.js": "~0.8.2"
   },
   "devDependencies": {
-    "babel-traverse": "6.4.5",
-    "babel-types": "6.4.5",
-    "babylon": "6.4.5",
+    "babel-traverse": "6.24.1",
+    "babel-types": "6.24.1",
+    "babylon": "6.17.0",
     "lazy": "1.0.11",
     "nativescript-dev-typescript": "~0.4.0",
     "typescript": "~2.2.1"
