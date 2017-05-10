@@ -1,0 +1,36 @@
+<Page xmlns:navigation="navigation/example-page" loaded="onPageLoaded" xmlns:df="nativescript-telerik-ui-pro/dataform" xmlns="http://www.nativescript.org/tns.xsd">
+	<ScrollView>
+		<GridLayout rows="*, auto">
+			<df:RadDataForm row="0" id="registerDataForm" source="{{ registerFormData }}">
+				<df:RadDataForm.properties>
+					<df:EntityProperty name="nickname" displayName="Nickname" hintText="Nickname..." index="0">
+						<df:EntityProperty.editor>
+							<df:PropertyEditor type="Text" />
+						</df:EntityProperty.editor>
+					</df:EntityProperty>
+					<df:EntityProperty name="email1" displayName="Email" hintText="Email..." index="1">
+						<df:EntityProperty.editor>
+							<df:PropertyEditor type="Email" />
+						</df:EntityProperty.editor>
+					</df:EntityProperty>
+					<df:EntityProperty name="email2" displayName="Confirm email" hintText="Confirm email..." index="2">
+						<df:EntityProperty.editor>
+							<df:PropertyEditor type="Email" />
+						</df:EntityProperty.editor>
+					</df:EntityProperty>
+					<df:EntityProperty name="password1" displayName="Password" hintText="Password..." index="3">
+						<df:EntityProperty.editor>
+							<df:PropertyEditor type="Password" />
+						</df:EntityProperty.editor>
+					</df:EntityProperty>
+					<df:EntityProperty name="password2" displayName="Confirm Password" hintText="Confirm Password..." index="4">
+						<df:EntityProperty.editor>
+							<df:PropertyEditor type="Password" />
+						</df:EntityProperty.editor>
+					</df:EntityProperty>
+				</df:RadDataForm.properties>
+			</df:RadDataForm>
+			<Button row="1" text="Register" tap="register" className="btn-primary" />
+		</GridLayout>
+	</ScrollView>
+</Page>
