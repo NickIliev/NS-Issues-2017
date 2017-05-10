@@ -1,0 +1,30 @@
+// Add your native dependencies here:
+
+// Uncomment to add recyclerview-v7 dependency
+//dependencies {
+//	compile 'com.android.support:recyclerview-v7:+'
+//}
+
+android {  
+	defaultConfig {  
+		generatedDensities = []
+		applicationId = "org.nativescript.issue4158"
+		minSdkVersion 17
+		targetSdkVersion 25
+	}  
+	aaptOptions {  
+		additionalParameters "--no-version-vectors"  
+	}
+} 
+
+project.ext {
+    googlePlayServicesVersion = "+"
+}
+
+dependencies {
+	compile('com.github.eoinsha:JavaPhoenixChannels:0.2') {
+		exclude module: 'groovy-all'
+	}
+    compile 'com.google.android.gms:play-services-location:+'
+    compile 'com.google.maps.android:android-maps-utils:+'
+}
