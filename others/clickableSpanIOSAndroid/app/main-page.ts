@@ -3,8 +3,7 @@ import { Page } from 'ui/page';
 import { HelloWorldModel } from './main-view-model';
 import { Label } from "ui/label";
 import { TextView } from "ui/text-view";
-import { isAndroid } from "platform";
-import { isIOS } from "platform"
+import { isAndroid, isIOS } from "platform";
 import { Color } from "color";
 var delegateModule;
 
@@ -54,8 +53,7 @@ export function textViewloaded(args) {
 
         textview.android.setText(ss);
         textview.android.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
-    }
-    else {
+    } else if (isIOS){
         var tv = <any>textview;
 
         var attrsting = NSMutableAttributedString.alloc().initWithString("test ala bala"); // lenght == 13
