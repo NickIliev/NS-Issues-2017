@@ -1,0 +1,13 @@
+.DS_Store
+/platforms/
+/lib/
+
+/app/**/*.js
+/app/**/*.map
+!/app/tns_modules/**/*.js
+/node_modules/
+
+
+/keystore/
+*.apk
+*.ipa
