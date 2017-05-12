@@ -1,14 +1,11 @@
-
 import { EventData } from 'data/observable';
 import { Page } from 'ui/page';
 import { HelloWorldModel } from './main-view-model';
-import { Label }  from "ui/label";
+import { Label } from "ui/label";
 import { TextView } from "ui/text-view";
 import { isAndroid } from "platform";
 import { isIOS } from "platform"
-import formattedStringModule = require("text/formatted-string");
-import spanModule = require("text/span");
-import colorModule = require("color");
+import { Color } from "color";
 var delegateModule;
 
 declare var android: any;
@@ -19,22 +16,14 @@ if (isIOS) {
 }
 
 export function navigatingTo(args: EventData) {
-
     let page = <Page>args.object;
-
-
 }
 
 
 export function textViewloaded(args) {
     var textview: TextView = <TextView>args.object;
 
-
-    console.log("---------------ios view-----------------");
-    console.log(textview.ios);
     if (isAndroid) {
-
-
         var ss = new android.text.SpannableString("Android is a Software stack");
         var ClickableSpanClass = android.text.style.ClickableSpan.extend({
             onClick: function (view) {
@@ -43,6 +32,7 @@ export function textViewloaded(args) {
             updateDrawState: function (tp) {
                 this.super.updateDrawState(tp);
                 tp.setUnderlineText(false);
+                tp.setColor(new Color("red").android);
             }
         });
 
@@ -58,10 +48,6 @@ export function textViewloaded(args) {
         });
         var clickablespan = new ClickableSpanClass();
         var clickablespan2 = new ClickableSpanClass2();
-
-        console.log("-----------------------click span-------------------------");
-        console.dump(clickablespan);
-
 
         ss.setSpan(clickablespan, 0, 7, 33);
         ss.setSpan(clickablespan2, 13, 21, 33);
