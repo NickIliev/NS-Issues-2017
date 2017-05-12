@@ -9,6 +9,7 @@ var delegateModule;
 
 declare var android: any;
 declare var UIEdgeInsetsMake: any;
+declare var NSDictionary: any;
 
 if (isIOS) {
     delegateModule = require("./delegate/delegate");
@@ -53,19 +54,30 @@ export function textViewloaded(args) {
 
         textview.android.setText(ss);
         textview.android.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
-    } else if (isIOS){
+    } else if (isIOS) {
         var tv = <any>textview;
 
         var attrsting = NSMutableAttributedString.alloc().initWithString("test ala bala"); // lenght == 13
 
+
         attrsting.addAttributeValueRange(NSForegroundColorAttributeName, UIColor.redColor, { location: 0, length: 13 }); // apply the default color for your whole TetView (0. 13)
-        attrsting.addAttributeValueRange(NSForegroundColorAttributeName, UIColor.greenColor, { location: 6, length: 2 }); // apply the color for your clickable spans
-        attrsting.addAttributeValueRange(NSForegroundColorAttributeName, UIColor.brownColor, { location: 9, length: 3 }); // apply the color for your clickable spans
+        // attrsting.addAttributeValueRange(NSForegroundColorAttributeName, UIColor.greenColor, { location: 6, length: 2 }); // apply the color for your clickable spans
+        attrsting.addAttributeValueRange(NSLinkAttributeName, "link", { location: 6, length: 2 });
+        // attrsting.addAttributeValueRange(NSForegroundColorAttributeName, UIColor.brownColor, { location: 9, length: 3 }); // apply the color for your clickable spans
+        attrsting.addAttributeValueRange(NSLinkAttributeName, "linkPhone", { location: 9, length: 3 });
 
         tv.ios.text = undefined;
         tv.ios.attributedText = attrsting;
 
         var uiTextView = tv.ios;
+
+        let dictionary = new NSDictionary(
+            [UIColor.greenColor],
+            [NSForegroundColorAttributeName]
+        )
+
+        tv.ios.linkTextAttributes = dictionary;
+
         let newDelegate = delegateModule.newUITextViewDelegateImpl.initWithOriginalDelegate(tv._delegate);
         tv._delegate = newDelegate;
 
