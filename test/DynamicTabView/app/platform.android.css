@@ -1,0 +1,47 @@
+TextField {
+    height: 40;
+    font-size: 15;
+}
+
+
+.textview,
+.textview-bordered {
+    border-radius: 0;
+}
+
+
+.btn-primary,
+.btn-secondary {
+    height: 50;
+    width: 260;
+}
+
+
+.btn-breadcrumb,
+.btn-breadcrumb-last
+{
+    height: 35;
+    width: auto;
+    font-size: 10;
+}
+
+
+.btn-breadcrumb-last {
+    background-color: #124a59;
+    color: #ffffff;
+}
+
+
+.btn-small {
+    height: 40;
+}
+
+
+.fab-right {
+    background-color: #124a59;
+}
+
+
+.rlv-item {
+    padding: 8 15 8 15;
+}

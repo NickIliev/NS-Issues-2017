@@ -1,0 +1,617 @@
+@import url('~/platform.css');
+
+
+ActivityIndicator {
+    horizontal-align: center;
+    vertical-align: center;
+    color: #D1993E;
+    margin-top: 10;
+    margin-bottom: 10;
+}
+
+
+Button {
+    width: auto;
+}
+
+
+Progress {
+    color: #D1993E;
+    margin: 5;
+}
+
+
+WebView {
+    min-height: 400;
+}
+
+
+.font-awesome {
+    font-family: 'FontAwesome';
+}
+
+
+.glyph-icon {
+    font-family: 'GlyphIcon';
+}
+
+
+.fab-right {
+    height: 55;
+    width: 55;
+    margin: 0 15 15 0;
+    horizontal-align: right;
+    vertical-align: bottom;
+}
+
+
+.fab-center {
+    margin: 0 0 10 0;
+    vertical-align: bottom;
+    horizontal-align: center;
+}
+
+
+.placeholder-fab {
+    height: 40
+}
+
+
+.disabled {
+    opacity: 0.4;
+}
+
+
+.ic-edit {
+    horizontal-align: right;
+    vertical-align: center;
+}
+
+
+.btn-autowidth {
+    width: auto;
+    min-width: 75;
+}
+
+
+.btn-block {
+    width: 100%;
+}
+
+
+.btn-small {
+    font-size: 11;
+}
+
+
+.btn-primary {
+    margin: 10 0 10 0;
+    background-color: #124a59;
+    color: #ffffff;
+    horizontal-align: center;
+}
+
+
+.btn-secondary {
+    background-color: #fcfcf6;
+    color: #124a59;
+}
+
+
+.btn-circle {
+    width: 30;
+    height: 30;
+    border-radius: 15;
+}
+
+
+.btn-circle-edit {
+    horizontal-align: right;
+    vertical-align: center;
+}
+
+
+.btn-browse {
+    font-family: "FontAwesome";
+    font-size: 35;
+    vertical-align: center;
+    margin: 0 10 0 10;
+}
+
+
+.btn-transparent,
+.btn-transparent-white {
+    background-color: transparent;
+}
+
+
+.btn-transparent-white {
+    color: white;
+}
+
+
+.btn-modal-confirm,
+.btn-modal-cancel {
+    font-size: 11;
+    width: auto;
+    height: 35;
+}
+
+
+.btn-modal-confirm {
+
+    background-color: #124a59;
+    color: #ffffff;
+}
+
+
+.btn-modal-cancel {
+    background-color: #fcfcf6;
+}
+
+
+.text-supersmall {
+    font-size: 10;
+}
+
+
+.text-large,
+.text-large-bold {
+    font-size: 18;
+}
+
+
+.text-superlarge,
+.text-superlarge-bold {
+    font-size: 22;
+}
+
+
+.text-normal,
+.text-normal-bold,
+.text-normal-italic,
+.text-normal-pale,
+.text-normal-underlined {
+    font-size: 14;
+}
+
+
+.text-small-bold,
+.text-small-bold-pale,
+.text-normal-bold,
+.text-large-bold,
+.text-superlarge-bold {
+    font-weight: bold;
+}
+
+
+.text-normal-italic {
+    font-style: italic;
+}
+
+
+.text-normal-underlined {
+    text-decoration: underline;
+}
+
+
+.text-small,
+.text-small-italic,
+.text-small-bold,
+.text-small-pale,
+.text-small-bold-pale,
+.text-small-italic-pale,
+.text-small-underlined,
+.text-small-italic-underlined {
+    font-size: 12;
+}
+
+
+.text-small-italic,
+.text-small-italic-pale,
+.text-small-italic-underlined {
+    font-style: italic;
+}
+
+
+.text-small-underlined,
+.text-small-italic-underlined {
+    text-decoration: underline;
+}
+
+
+.text-small-pale,
+.text-small-italic-pale,
+.text-small-bold-pale,
+.text-normal-pale {
+    opacity: 0.7;
+}
+
+
+.text-light {
+    color: white
+}
+
+
+.textview,
+.textview-bordered {
+    margin-top: 5;
+    height: auto;
+    min-height: 300;
+    font-size: 15;
+    border-style: solid;
+    border-width: 1;
+}
+
+
+.textview {
+    border-color: transparent;
+}
+
+
+.textview-bordered {
+    border-color: #d3d3d3;
+}
+
+
+.text-highlighted {
+    color: #D1993E;
+}
+
+
+.text-highlighted-background {
+    background-color: #F5F5F5;
+}
+
+
+.text-indented {
+    margin-left: 20;
+}
+
+
+.dropdown {
+    height: 30;
+    padding: 4;
+    margin: 5 0 5 0;
+    font-size: 15;
+    border-radius: 3;
+    border-style: solid;
+    border-width: 1.0;
+    border-color: #C7C7CC;
+}
+
+
+.form-label {
+    margin-top: 10;
+    font-size: 12;
+    font-style: italic;
+}
+
+
+.list-item {
+    min-height: 40;
+    padding: 8 15 8 15;
+}
+
+
+.page-content {
+    padding: 5 15 15 15;
+}
+
+
+.margin-vertical {
+    margin: 10 0 10 0;
+}
+
+
+.margin-vertical-small {
+    margin: 5 0 5 0;
+}
+
+
+.margin-horizontal-small {
+    margin: 0 5 0 5;
+}
+
+
+.margin-bottom {
+    margin: 0 0 10 0;
+}
+
+
+.margin-bottom-small {
+    margin: 0 0 5 0;
+}
+
+
+.padded {
+    padding: 5 15 5 15;
+}
+
+
+.padded-horizontal {
+    padding: 0 15 0 15;
+}
+
+
+.center {
+    horizontal-align: center;
+    vertical-align: center;
+}
+
+
+.center-horizontal {
+    horizontal-align: center;
+}
+
+
+.center-vertical {
+    vertical-align: center;
+}
+
+
+.right {
+    horizontal-align: right;
+}
+
+
+.bottom {
+    vertical-align: bottom;
+}
+
+
+.hr,
+.hr-margin-top,
+.hr-margin-vertical {
+    height: 0.5;
+    background-color: #d3d3d3;
+}
+
+
+.hr-margin-top {
+    margin: 15 0 0 0;
+}
+
+
+.hr-margin-vertical {
+    margin: 15 0 15 0;
+}
+
+
+.vr {
+    height: 100%;
+    width: 1;
+    background-color: #d3d3d3;
+}
+
+
+.separator-rlv {
+    height: 0.5;
+    opacity: 0.5;
+    background-color: #d3d3d3
+}
+
+
+.link,
+.link-colored {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+
+.link-colored {
+    color: blue;
+}
+
+
+.infobox-container {
+    /*width: 250;*/
+    /*width: auto;
+    horizontal-align: center;*/
+    padding: 10;
+    border-radius: 4;
+    border-width: 1;
+    border-style: solid;
+    border-color: #b7e5ff;
+    background-color: #d0e6ff;
+    color: #004690;
+}
+
+
+.warning-container {
+    margin: 15;
+    padding: 10;
+    border-width: 1;
+    border-style: solid;
+    border-color: darkred;
+}
+
+
+.category-searchbar {
+    color: #000000;
+    width: 100%;
+}
+
+
+.modal-page {
+    width: 300;
+}
+
+
+.modal-title {
+    padding: 15;
+    font-size: 20;
+    color: black;
+}
+
+
+.image-fullsize-centered {
+    horizontal-align: center;
+    vertical-align: center;
+}
+
+
+.profile-header-container {
+    background-color: gray;
+    color: white;
+    padding: 10;
+}
+
+
+.actionbar-imageview {
+    background-color: black;
+    color: white;
+}
+
+
+.page-imageview {
+    background-color: black;
+}
+
+
+.flexbox,
+.flexbox-center {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.flexbox-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*align-items: center;*/
+}
+
+
+.header-strip {
+    background-color: #F5F5F5;
+    padding: 5 20 5 20;
+}
+
+
+.entry-container {
+    height: 45;
+    width: 100%;
+}
+
+.entry-container > Label {
+    vertical-align: center;
+}
+
+
+/* LOGIN Formular */
+.login-page {
+    background-color: #003240;
+}
+
+
+#loginMainContainer {
+    vertical-align: center;
+    width: 270;
+    padding: 10 0 10 0;
+}
+
+
+#loginFormContainer {
+    margin: 35 0 0 0;
+    padding: 15;
+    border-radius: 10;
+    background-color: #FFFFFF;
+}
+
+
+#loginLogoContainer {
+    width: 150;
+}
+
+
+/* Profilbilder mit verschiedenen Größen: */
+.activityindicator-image {
+    width: 20;
+    height: 20;
+}
+
+
+.activityindicator-textfield {
+    horizontal-align: right;
+    vertical-align: center;
+    margin-right: 15;
+    height: 15;
+    width: 15;
+}
+
+
+.profileimage-list {
+    width: 35;
+    height: 35;
+    border-radius: 17.5;
+}
+
+
+.profileimage-sidedrawer {
+    width: 50;
+    height: 50;
+    border-radius: 25;
+}
+
+
+.profileimage-normal {
+    width: 50;
+    height: 50;
+    border-radius: 25;
+}
+
+
+.profileimage-medium {
+    width: 80;
+    height: 80;
+    border-radius: 40;
+}
+
+
+.profileimage-large,
+.profileimage-large-bordered {
+    width: 100;
+    height: 100;
+    border-radius: 50;
+}
+
+
+.profileimage-large-bordered {
+    border-style: solid;
+    border-width: 1;
+    border-color: lightgray;
+}
+
+
+.profileimage-superlarge {
+    width: 130;
+    height: 130;
+    border-radius: 65;
+}
+
+
+/* FontAwesome-Icons */
+.ic-fa-small,
+.ic-fa-medium,
+.ic-fa-large {
+    font-family: 'FontAwesome';
+    vertical-align: center;
+    horizontal-align: center;
+}
+
+
+.ic-fa-small {
+    font-size: 11;
+}
+
+
+.ic-fa-medium {
+    font-size: 21;
+}
+
+
+.ic-fa-large {
+    font-size: 25;
+}
