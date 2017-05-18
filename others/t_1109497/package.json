@@ -7,6 +7,9 @@
     "id": "org.nativescript.t1109497",
     "tns-android": {
       "version": "3.0.0"
+    },
+    "tns-ios": {
+      "version": "3.0.1"
     }
   },
   "dependencies": {
@@ -21,6 +24,7 @@
     "lazy": "1.0.11",
     "nativescript-dev-android-snapshot": "^0.*.*",
     "nativescript-dev-typescript": "~0.4.0",
+    "tns-platform-declarations": "^3.0.1",
     "typescript": "~2.2.1"
   }
 }
