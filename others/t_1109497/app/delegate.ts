@@ -22,8 +22,8 @@ export class newUITextFieldDelegateImpl extends NSObject implements UITextFieldD
 
     public textFieldShouldBeginEditing(textField: UITextField): boolean {
         console.log("textFieldShouldBeginEditing");
-        
-        var returnBoolean = true;
+
+        var returnBoolean = true; // the method implementation in IOS requires returing boolean value (returnunt true just for test)
         return returnBoolean;
     }
 
@@ -35,14 +35,14 @@ export class newUITextFieldDelegateImpl extends NSObject implements UITextFieldD
     public textFieldShouldReturn(textField: UITextField): boolean {
         console.log("textFieldShouldReturn");
 
-        var returnBoolean = true;
+        var returnBoolean = true; // the method implementation in IOS requires returing boolean value (returnunt true just for test)
         return returnBoolean;
     }
 
     public textFieldShouldChangeCharactersInRangeReplacementString(textField: UITextField, range: NSRange, replacementString: string): boolean {
         console.log("textFieldDidEndEditing");
         
-        var returnBoolean = true;
+        var returnBoolean = true; // the method implementation in IOS requires returing boolean value (returnunt true just for test)
         return returnBoolean;
     }
 }
