@@ -1,6 +1,7 @@
 import { EventData } from 'data/observable';
 import { Page } from 'ui/page';
-import { HelloWorldModel } from './main-view-model';
+
+declare var android: any;
 
 export function navigatingTo(args: EventData) {
 
