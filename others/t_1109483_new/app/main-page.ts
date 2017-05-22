@@ -46,7 +46,7 @@ export function changeTo66() {
     activeIndicator.maximum = 66;
 }
 
-export function changeTo100() {
+export function changeBoth() {
     console.log("here")
     console.log(gaugeView)
     var scale = <GaugeScale>gaugeView.scales.getItem(0);
@@ -54,5 +54,6 @@ export function changeTo100() {
     var inactiveIndiicator = <any>scale.indicators.getItem(0);
     var activeIndicator = <any>scale.indicators.getItem(1);
 
-    activeIndicator.maximum = 100;
+    activeIndicator.maximum = 10;
+    inactiveIndiicator.maximum = 75;
 }

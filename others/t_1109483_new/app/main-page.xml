@@ -3,38 +3,38 @@
 
     <GridLayout rows="*, *" class="p-20">
 
-        <gauge:RadRadialGauge id="gaugeView" row="0">
-            <gauge:RadRadialGauge.scales>
+<gauge:RadRadialGauge id="gaugeView" row="0">
+    <gauge:RadRadialGauge.scales>
 
-                <gauge:RadialScale startAngle="270" sweepAngle="360" minimum="0" maximum="100" radius="0.6">
-                
-                    <gauge:RadialScale.scaleStyle>
-                        <gauge:ScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0" />
-                    </gauge:RadialScale.scaleStyle>
+        <gauge:RadialScale startAngle="270" sweepAngle="360" minimum="0" maximum="100" radius="0.6">
+        
+            <gauge:RadialScale.scaleStyle>
+                <gauge:ScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0" />
+            </gauge:RadialScale.scaleStyle>
 
-                    <gauge:RadialScale.indicators>
-                        <gauge:RadialBarIndicator minimum="0" maximum="100" location="1">
-                        <gauge:RadialBarIndicator.indicatorStyle>
-                            <gauge:BarIndicatorStyle fillColor="rgba(0,153,255,0.25)" barWidth="0.2"/>
-                        </gauge:RadialBarIndicator.indicatorStyle>
-                        </gauge:RadialBarIndicator>
-                        <gauge:RadialBarIndicator minimum="0" maximum="50" location="1" isAnimated="true">
-                        <gauge:RadialBarIndicator.indicatorStyle>
-                            <gauge:BarIndicatorStyle cap="Round" fillColor="rgba(0,153,255,1)" barWidth="0.2"/>
-                        </gauge:RadialBarIndicator.indicatorStyle>
-                        </gauge:RadialBarIndicator>
-                    </gauge:RadialScale.indicators>
+            <gauge:RadialScale.indicators>
+                <gauge:RadialBarIndicator minimum="0" maximum="100" location="1" isAnimated="true">
+                <gauge:RadialBarIndicator.indicatorStyle>
+                    <gauge:BarIndicatorStyle cap="Round" fillColor="rgba(0,153,255,0.25)" barWidth="0.2"/>
+                </gauge:RadialBarIndicator.indicatorStyle>
+                </gauge:RadialBarIndicator>
+                <gauge:RadialBarIndicator minimum="0" maximum="50" location="1" isAnimated="true">
+                <gauge:RadialBarIndicator.indicatorStyle>
+                    <gauge:BarIndicatorStyle cap="Round" fillColor="rgba(0,153,255,1)" barWidth="0.2"/>
+                </gauge:RadialBarIndicator.indicatorStyle>
+                </gauge:RadialBarIndicator>
+            </gauge:RadialScale.indicators>
 
-                </gauge:RadialScale>
+        </gauge:RadialScale>
 
-            </gauge:RadRadialGauge.scales>
-        </gauge:RadRadialGauge>
+    </gauge:RadRadialGauge.scales>
+</gauge:RadRadialGauge>
 
         <StackLayout row="1">
             <Button text="Change active indicator to 10" tap="changeTo10" />
             <Button text="Change active indicator to 33" tap="changeTo33" />
             <Button text="Change active indicator to 66" tap="changeTo66" />
-            <Button text="Change active indicator to 100" tap="changeTo100" />
+            <Button text="Change both indicqators!" tap="changeBoth" />
         </StackLayout>
     
     </GridLayout>
