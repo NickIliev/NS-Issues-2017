@@ -31,15 +31,11 @@ export class ItemsComponent implements OnInit {
     }
 
     itemSelected(args: ListViewEventData) {
-        console.log("Item selected!");
-        // console.log("itemIndex: " + args.itemIndex);
-        // console.log("groupIndex: " + args.groupIndex);
+        this.items[args.itemIndex].isSelected = true;
     }
 
     itemDeselected(args: ListViewEventData) {
-        console.log("Item deselected!");
-        // console.log("itemIndex: " + args.itemIndex);
-        // console.log("groupIndex: " + args.groupIndex);
+        this.items[args.itemIndex].isSelected = false;
     }
 
     onItemLoading(args: ItemEventArgs) {
