@@ -20,15 +20,18 @@ export class ItemsComponent implements OnInit {
 
         http.request({
             url: "https://httpbin.org/patch",
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
+            method: "POST",
+            headers: { 
+                "X-HTTP-Method-Override": "PATCH",
+                "Content-Type": "application/json"
+            },
             content: JSON.stringify({ MyVariableOne: "ValueOne", MyVariableTwo: "ValueTwo" })
         }).then(function (response) {
-            let result = response.content.toJSON();
 
-            for (var key in result) {
-                if (result.hasOwnProperty(key)) {
-                    var element = result[key];
+
+            for (var key in response) {
+                if (response.hasOwnProperty(key)) {
+                    var element = response[key];
                     console.log(key + " " + element);
                 }
             }
