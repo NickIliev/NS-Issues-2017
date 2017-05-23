@@ -13,6 +13,11 @@ refer to http://docs.nativescript.org/ui/theme.
     font-size:32;
 }
 
+.bigger-head{
+    font-size:48;
+}
+
+
 .fa {
     font-family: "FontAwesome"
 }
