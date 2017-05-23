@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <StackLayout class="p-20">
+        <Label text="HTTP Patch test" class="h1 text-center"/>
+    </StackLayout>
+</Page>

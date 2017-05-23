@@ -1,0 +1,245 @@
+
+TextField {
+  color: white;
+  background-color: transparent;
+  font-size: 15;
+  border-width: 0;
+  padding: 0;
+  margin-left: 1;
+}
+
+ActivityIndicator {
+  horizontal-align: center;
+  vertical-align: center;
+  color: white;
+}
+
+.item_stacklayout{
+  vertical-align: middle;
+  margin-left: 20;
+  margin-right: 20;
+  margin-top: 15;
+  margin-bottom: 15;
+}
+
+.lineseperator{
+    background-color:grey;
+}
+
+.documentAvatar{
+  border-radius: 13;
+  border-width: 1;
+  margin: 4;
+  padding: 5;
+  vertical-align: middle;
+  min-width:20;
+  width: 26;
+  background-image: url("res://background_chat");
+  height: 26;
+  margin-top: 15;
+  margin-left: 15;
+  margin-right: 5;}
+
+.avatar{
+  border-radius: 20;
+  border-width: 1;
+  border-color: #000000;
+  margin: 4;
+  padding: 5;
+  vertical-align: middle;
+  min-width:20;
+  width: 40;
+  height: 40;
+  margin-left: 15;
+  margin-right: 5;
+}
+
+.contactName{
+    width: auto;
+    font: bolder;
+    font-size: 18;
+    margin-bottom: 1;
+    margin-top: 5;
+    padding: 2;
+    margin-left: 10;
+    vertical-align: middle;
+}
+.grpName{
+      width: auto;
+    font: bolder;
+    font-size: 18;
+    margin-bottom: 1;
+    margin-top: -2;
+    padding: 2;
+    margin-left: 10;
+    vertical-align: middle;
+}
+
+.chatMsg{
+    width: auto;
+    height: 100%;
+    color: #717171;
+    margin-bottom: 5;
+    margin-top: -1;
+    padding: 2;
+    font-size: 13;
+    overflow: hidden;
+    margin-left: 10;
+    vertical-align: middle;
+}
+
+
+.openFullMsg{
+  margin-top:20;
+  horizontal-align: right;
+  vertical-align: middle;
+  min-width:10;
+  width: 15;
+  height: 15;
+  margin-right: 5;
+
+
+}
+
+.customToolBar{
+  background-color: #363940;
+}
+
+.documentTime{
+  font-size: 8;
+  margin-top: 20;
+  margin-left: 5;
+  margin-right: 5;
+  color: black;
+  height: 10;
+  width: 23.5;
+  text-align: center;
+}
+
+
+
+
+.writeMessage{
+  text-align: left; 
+  margin-top: 5;
+  margin-left: 5;
+  width: auto;
+  margin-right: 5;
+  margin-bottom: 5;
+  border-radius: 12px;
+  padding: 5;
+  color: black;
+  background-color: white;
+  vertical-align: middle;
+   
+}
+
+.addButton {
+  width: 8%;
+  height: 100%;
+  margin-left: 5;
+  background-image: url("res://add_icon");
+  margin-top: 5;
+  margin-right: 5;
+  background-repeat: no-repeat;
+  background-color:black; 
+  margin-bottom: 5;
+  border-radius: 2px;
+  padding: 5;
+  
+}
+
+.cancelButton{
+  width: 100%;
+  height: 100%;
+  padding: 5;
+  margin-top: 2;
+  margin-right: 2;
+  margin-bottom: 2;
+  margin-left: 2;
+  border-radius: 2px;
+}
+
+
+.group-name-container{
+  horizontal-align: center;
+  vertical-align: top;
+  height: 70;
+  width: 300;
+  margin-left: 30;
+  margin-right: 30;
+  margin-top: 10;
+  background-color: white;
+}
+.picker{
+  margin-top: 5;
+  margin-left: 50;
+  margin-right: 50;
+}
+
+
+.group-type-container{
+  horizontal-align: center;
+  vertical-align: top;
+  height: 50;
+  width: 100;
+  margin-left: 30;
+  margin-right: 30;
+  margin-top: 5;
+  background-color: white;
+}
+
+
+TextView.writeMessage{
+  text-align: left; 
+  margin-top: 2;
+  margin-left: 2;
+  width: auto;
+  margin-right: 2;
+  margin-bottom: 2;
+  border-radius: 6px;
+  padding: 2;
+  color: black;
+  background-color: white;
+    vertical-align: middle;
+   
+}
+
+.bubble{
+    background-color: #F2F2F2;
+    border-radius: 2px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 2px 4px;
+    position: relative;
+    vertical-align: top;
+}
+
+
+.chatlist{
+   background-image:  url("res://background_chat"); 
+}
+
+.listDate{
+ font-size: 9; 
+ color:#757575; 
+ margin-top: 10; 
+ margin-bottom: 5;
+}
+
+.itemNewMsgBubble{
+  font-size: 9; 
+  vertical-align: middle; 
+  border-radius: 10;
+  border-width: 1;
+  border-color:#FFFFFF;
+  background-color:#448AFF;
+  color: white;
+  width: auto;
+  height: auto;
+  text-align: center;
+  min-height: 20;
+  min-width: 20;
+  margin-top: 30;
+  margin-left: 20;
+}

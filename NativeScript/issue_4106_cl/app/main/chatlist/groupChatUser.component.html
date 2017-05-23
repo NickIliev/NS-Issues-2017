@@ -1,0 +1,23 @@
+<GridLayout rows="*">
+    <ListView id="lvChatGroup" [row]="row" [items]="chatGrps" (itemTap)="groupChatItemSelected($event)">
+        <ng-template let-item="item">
+            <GridLayout columns="auto,*,auto,auto" class="writeMessage bubble">
+                <GridLayout>
+                    <Image col="0" src="res://login_icon" class="avatar" stretch="aspectFit" style="background-color: #DBDBDB;"></Image>
+                </GridLayout>
+                <StackLayout col="1" columns="*" rows="*">
+                    <Label [text]="item.name" class="contactName"></Label>
+                    <!--<Label  [text]="item.chatGroupId" class="chatMsg" [visibility]="isItemVisible ? 'collapsed' : 'collapsed'"></Label> -->
+                    <Label [text]="item.messageText" class="chatMsg"></Label>
+                    <!--<Label  [text]="item.userid" class="chatMsg"></Label> -->
+                </StackLayout>
+                <WrapLayout col="2" visibility="{{item.grpNumber ? 'visible' : 'collapsed'}}" style="vertical-align: middle;">
+                    <Label text="{{item.msgUnread}}" class="itemNewMsgBubble" style="margin-top: 30;font-size: 9; vertical-align: middle; color: white;"></Label>
+                </WrapLayout>
+                <WrapLayout col="2">
+                    <Label col="2" text="{{item.Date | date: 'M/d/yy HH:mm'}}" class="listDate"></Label>
+                </WrapLayout>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

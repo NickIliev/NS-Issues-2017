@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "61367930050",
+    "firebase_url": "https://cosmos-databank.firebaseio.com",
+    "project_id": "cosmos-databank",
+    "storage_bucket": "cosmos-databank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61367930050:android:885811f46753dd67",
+        "android_client_info": {
+          "package_name": "org.nativescript.curiosity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61367930050-3mmueggdmskbd2ja1ui5la63gn50o4ir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.nativescript.curiosity",
+            "certificate_hash": "AC7F8C71931601B3EB4850C242346C7721183282"
+          }
+        },
+        {
+          "client_id": "61367930050-7b20h6jo2nelorbf6mf282vlffij0q5j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.nativescript.curiosity",
+            "certificate_hash": "B8D1F568273C6A28E5D010C7E3C6ADE773F3173C"
+          }
+        },
+        {
+          "client_id": "61367930050-llhdbd2lh051dgntqn40ght1kd9j3mh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmba0gddo76jgjRTWNe5Bl8BxNWu_mrVY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61367930050-llhdbd2lh051dgntqn40ght1kd9j3mh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

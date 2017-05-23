@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <GridLayout rows="*" backgroundColor="gray">
+        <Label text="Email" textWrap="true" style="padding-top: 50%;" />
+    </GridLayout>
+</Page>

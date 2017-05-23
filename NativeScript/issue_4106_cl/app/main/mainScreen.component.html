@@ -1,0 +1,349 @@
+<GridLayout rows="auto *" columns="*" exampleTitle toggleNavButton>
+
+    <!--<GridLayout row="1" columns="54, *, auto" class="action-bar-custom">
+        <image col="0" src="res://login_icon" class="main_screen_image_icon"></image>
+<ActionItem ios:icon="res://ic_broadcast" ios:position="right" (tap)="broadcastMsg()" *ngIf="activeTab == 'Chat'"> </ActionItem>
+        <StackLayout col="2" (tap)="showMenu()">
+            <Image src="res://ic_menu_black" stretch="none"></Image>
+        </StackLayout>
+    </GridLayout>-->
+
+
+    <ActionBar android:title="Hieber" ios:title="Hieber" class="customToolBar">
+        <!--<ActionItem text="left item" ios.position="left"></ActionItem>
+        <ActionItem text="Item" ios.position="right" android.position="popup"></ActionItem>-->
+
+        <!--<ActionItem ios.systemIcon="12" icon="res://ic_account_search" ios.position="right" *ngIf = "activeTab == 'Docs'" ></ActionItem>-->
+        <ActionItem ios.systemIcon="9" icon="res://ic_menu_white_24dp" ios.position="right" (tap)="showMenu()" *ngIf="activeTab == 'Docs'"></ActionItem>
+        <ActionItem ios.icon="res://ic_person_addwhite" ios.position="left"></ActionItem>
+
+        <!--<ActionItem ios.systemIcon="12" icon="res://ic_contact_mail_white" ios.position="right"  (tap)="showContactAll($event)"  android:orderInCategory="3" *ngIf = "activeTab == 'Chat'"></ActionItem>
+        <ActionItem ios.systemIcon="12" icon="res://ic_group_white" ios.position="right"  android:orderInCategory="2" *ngIf = "activeTab == 'Chat'" ></ActionItem>-->
+        <ActionItem ios:icon="res://ic_groupadd_white" ios.position="right" (tap)="createGroup()" android:orderInCategory="1" *ngIf="activeTab == 'Chat'"></ActionItem>
+        <ActionItem ios.systemIcon="9" icon="res://ic_menu_white_24dp" ios.position="right" (tap)="showMenu()" *ngIf="activeTab == 'Chat'"></ActionItem>
+        <ActionItem ios:icon="res://ic_broadcast" ios:position="right" (tap)="broadcastMsg()" *ngIf="activeTab == 'Chat'"> </ActionItem>
+        <!--<ActionItem ios:icon="res://app_icon" ios:position="right" (tap) = "broadcastMsg()" *ngIf = "activeTab == 'Chat'"> </ActionItem>-->
+        <!--<ActionItem ios.systemIcon="12" icon="res://ic_menu_white_24dp" ios.position="right" (tap)="showMenu()" *ngIf = "activeTab == 'Chat'"></ActionItem>-->
+        <!-- << action-bar-platform-specific-icons-html -->
+        <!-- << action-bar-custom-action-item-html -->
+        <!-- >> action-bar-platform-specific-icons-html -->
+        <ActionItem ios.systemIcon="9" icon="res://ic_account_search" ios.position="right" (tap)="showMenu()" *ngIf="activeTab == 'Home'"></ActionItem>
+        <!--<ActionItem ios.systemIcon="12" icon="res://ic_menu_black" ios.position="right" (tap)="showMenu()"  *ngIf = "activeTab == 'Home'"></ActionItem>-->
+        <ActionItem ios.systemIcon="9" icon="res://ic_account_search" ios.position="right" (tap)="showMenu()" *ngIf="activeTab == 'News'"></ActionItem>
+        <!--<ActionItem ios.systemIcon="12" icon="res://ic_menu_white_24dp" ios.position="right" (tap)="showMenu()" *ngIf = "activeTab == 'News'"></ActionItem>-->
+
+        <!-- << action-bar-platform-specific-icons-html -->
+        <!--<NavigationButton ios.systemIcon="12" ></NavigationButton>-->
+    </ActionBar>
+
+    <!--   <StackLayout style="margin-top: 20;">
+        <SearchBar #sb hint="{{'HOME.search' | translate}}" returnKeyType="done" [text]="searchPhrase" (submit)="onSubmit(sb.text)"></SearchBar>
+    </StackLayout>-->
+    <GridLayout row="1" col="0" [visibility]="isAdmin ? 'visible' : 'collapsed'">
+        <!--tab view class added for iOS-->
+        <TabView #tabview (selectedIndexChanged)="tabIndexChanged($event)" class="tab-view" selectedColor="#004FFF" backgroundColor="#FFFFFF">
+            <GridLayout *tabItem="{title: 'Home', iconSource:'res://ic_homewhite'}">
+                <!--<ListView class="list-group" [items]="countries" (itemTap)="onItemTapSecondList($event)" class="lineseperator" >
+            <template let-country="item" >
+                <GridLayout class="list-group-item" columns="auto,*">
+                    <StackLayout col="1" class="item_stacklayout">
+                        <Label class="list-group-item-heading" [text]="country.name"></Label>
+                        <Label class="list-group-item-text" [text]="''+country.desc"></Label>  
+                        <button text="Delete" (tap)="remove($event)"> </button>
+                    </StackLayout>
+                    
+                    <GridLayout class="item_stacklayout">
+                        <Image col="0" [src]="country.imageSrc" class="img-rounded" width="40" height="40" ></Image>
+                    </GridLayout >
+                    <GridLayout class="item_stacklayout">
+                        <Image col="2" [src]="country.imageSrc" class="img-rounded" width="40" height="40" ></Image>
+                    </GridLayout >
+                </GridLayout>
+            </template>
+        </ListView>-->
+
+                <!--
+            this is short code to implement listview in located in different component and lsit it over here..
+            To implement Pipe for dynamically sync.... -->
+                <StackLayout>
+                    <!-- >> segmentedbar-show-views -->
+                    <SegmentedBar class="m-5" #sb [items]="homeSegmentedbarItems" (selectedIndexChange)="onChatSegmentBarIndexChange(sb.selectedIndex)"
+                        style="margin-left: 10; margin-right: 10; margin-bottom: 5; margin-top: 25;"></SegmentedBar>
+                    <StackLayout visibility="{{ allChat ? 'visible' : 'collapsed' }}">
+                        <gr-home-list [row]="2"></gr-home-list>
+                    </StackLayout>
+                </StackLayout>
+
+            </GridLayout>
+      <!--     
+          Hiding News Tab
+           <GridLayout *tabItem="{title: 'News',iconSource:'res://ic_newsticker'}">
+                <!-<ListView class="list-group" [items]="countries" (itemTap)="onItemTapSecondList($event)" class="lineseperator" >
+                    <template let-country="item">
+                        <GridLayout rows="* auto" columns="*" class="list-group-item" style="border:1;" (tap)="newstickerDetail($event)"> 
+                            <Image row="0" col="0" [src]="country.imageSrc"></Image>
+                            <StackLayout row="1" col="0" backgroundColor="white" class="list-group-item">
+                                <Label class="list-group-item-heading" [text]="country.name"></Label>
+                                <Label class="list-group-item-text" [text]="''+country.desc"></Label>      
+                            </StackLayout>
+                        </GridLayout>
+                    </template>
+         </ListView>->
+                <!-
+            this is short code to implement listview in located in different component and lsit it over here..
+            To implement Pipe for dynamically sync.... ->
+                <gr-news-list [row]="2"></gr-news-list>
+            </GridLayout>-->
+
+            <!--
+                Hide Document Tab
+                <GridLayout *tabItem="{title: 'Docs',iconSource:'res://ic_docswhite'}">
+                <StackLayout>
+                    <SegmentedBar class="m-5" #sb [items]="docSegmentedBarItems" (selectedIndexChange)="onDocmentIndexChange(sb.selectedIndex)"
+                        style="margin-top: 25;">
+                    </SegmentedBar>
+                    <StackLayout visibility="{{ allDocument ? 'visible' : 'collapsed' }}">
+                        <!-<ListView [items] = "document" (itemTap)="onDocumentItemListClick($event)">
+                        <template let-document="item">
+                            <GridLayout columns= "auto,*,auto">
+                                <GridLayout >
+                                    <Image col="0" [src]="document.imageSrc" class="documentAvatar" stretch="aspectFit"></Image>
+                                </GridLayout>
+                                <StackLayout col="1" columns= "auto,*" rows="auto,*">
+                                    <Label [text]="document.name" class="contactName"> </Label>
+                                    <Label [text]="document.desc" class="chatMsg"> </Label>
+                                </StackLayout>
+                                <GridLayout col="2" >
+                                   <Label [text]="document.time" class="documentTime"> </Label>
+                                </GridLayout> 
+                            </GridLayout>
+                        </template>
+                    </ListView>
+                        <!-
+            this is short code to implement listview in located in different component and lsit it over here..
+            To implement Pipe for dynamically sync.... 
+                        <gr-doc-list></gr-doc-list>
+                    </StackLayout>
+                    <StackLayout visibility="{{ allRecent ? 'visible' : 'collapsed' }}">
+                        <Label [text]="'All recent Document here in this view : ' + selectedIndex" class="m-15 h3 p-5 text-center"></Label>
+                    </StackLayout>
+                    <StackLayout visibility="{{ groupDocument ? 'visible' : 'collapsed' }}">
+                        <Label [text]="'All gorup Document goes here in this view : ' + selectedIndex" class="m-15 h3 p-5 text-center"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </GridLayout>-->
+            <GridLayout #chats *tabItem="{title: 'Chat',iconSource:'res://ic_chatwhite'}">
+                <StackLayout>
+                    <!-- >> segmentedbar-views -->
+                    <SegmentedBar class="m-5" #sb [items]="chatSegmentedBarItems" (selectedIndexChange)="onChatSegmentBarIndexChange(sb.selectedIndex)"
+                        style="margin-bottom: 5; margin-top: 25;"></SegmentedBar>
+                    <StackLayout visibility="{{ allChat ? 'visible' : 'collapsed' }}">
+                        <!--<ListView [items]="chat" (itemTap)="chatItemSelected($event)" >
+            <template let-item="item">
+                <GridLayout columns="auto,*,auto" >
+                    <GridLayout >
+                        <Image col="0" src="res://logo_login" class="avatar" stretch="aspectFit"  ></Image>
+                    </GridLayout >    
+                    <StackLayout col="1" columns="auto, *" rows="auto,*" >
+                        <Label  [text]="item.name" class="contactName"></Label>
+                     
+                        <Label  text="123" class="chatMsg"></Label>  
+                    </StackLayout>  
+                    <GridLayout col="2" >
+                        <Image col="2" src="res://logo_login" class="openFullMsg" stretch="aspectFit"  ></Image>
+                    </GridLayout> 
+                </GridLayout>
+            </template>
+        </ListView>-->
+                        <!--
+            this is short code to implement listview in located in different component and lsit it over here..
+            To implement Pipe once we have all the contacts and chats dynamically sync.... -->
+                        <gr-all-chat-list [row]="2"></gr-all-chat-list>
+                    </StackLayout>
+
+                    <StackLayout visibility="{{ allContactPrivateChat ? 'visible' : 'collapsed' }}">
+                        <gr-chat-list [row]="2"></gr-chat-list>
+                        <!--<Label [text]="'All recent Document here in this view : ' + selectedIndex" class="m-15 h3 p-5 text-center"></Label>-->
+
+                    </StackLayout>
+
+                    <StackLayout visibility="{{ allGroupContactChat ? 'visible' : 'collapsed' }}">
+                        <gr-all-chatgroups-list [row]="2"> </gr-all-chatgroups-list>
+                    </StackLayout>
+                    <StackLayout visibility="{{ allContactsList ? 'visible' : 'collapsed' }}">
+                        <!--<button [text]="'All Contactlist goes here in this view : ' + selectedIndex" class="m-15 h3 p-5 text-center" (tap)="onContactListItemSelected($event)"></button>-->
+                        <gr-all-contacts-list [row]="2"></gr-all-contacts-list>
+
+                        <!--<ListView [items]="chat" (itemTap)="chatItemSelected($event)" >
+            <template let-item="item">
+                <GridLayout columns="auto,*,auto" >
+                    <GridLayout >
+                        <Image col="0" src="res://logo_login" class="avatar" stretch="aspectFit"  ></Image>
+                    </GridLayout >    
+                    <StackLayout col="1" columns="auto, *" rows="auto,*" >
+                        <Label  [text]="item.name" class="contactName"></Label>
+                        <Label  [text]="item.userid" class="chatMsg" [visibility]="isItemVisible ? 'collapsed' : 'collapsed'"></Label>  
+                        <Label  [text]="item.userid" class="chatMsg"></Label>  
+                    </StackLayout>  
+                    <GridLayout col="2" >
+                        <Image col="2" src="res://logo_login" class="openFullMsg" stretch="aspectFit"  ></Image>
+                    </GridLayout> 
+                </GridLayout>
+            </template>
+</ListView>-->
+
+                    </StackLayout>
+                    <!-- << segmentedbar-show-views -->
+                </StackLayout>
+            </GridLayout>
+            <!-- 
+               E mail tab..
+               <GridLayout *tabItem="{title:'Email',iconSource:'res://ic_emailwhite'}">
+                <gr-mail-list [row]="2" style="margin-top: 35;"></gr-mail-list>
+            </GridLayout>-->
+        </TabView>
+    </GridLayout>
+
+    <GridLayout row="1" col="0" [visibility]="isAdmin ? 'collapsed' : 'visible'">
+        <!--tab view class added for iOS-->
+        <TabView #tabview (selectedIndexChanged)="tabIndexChanged($event)" class="tab-view" selectedColor="#004FFF" backgroundColor="#FFFFFF">
+            <GridLayout *tabItem="{title: 'Home', iconSource:'res://ic_homewhite'}">
+                <!--<ListView class="list-group" [items]="countries" (itemTap)="onItemTapSecondList($event)" class="lineseperator" >
+            <template let-country="item" >
+                <GridLayout class="list-group-item" columns="auto,*">
+                    <StackLayout col="1" class="item_stacklayout">
+                        <Label class="list-group-item-heading" [text]="country.name"></Label>
+                        <Label class="list-group-item-text" [text]="''+country.desc"></Label>  
+                        <button text="Delete" (tap)="remove($event)"> </button>
+                    </StackLayout>
+                    
+                    <GridLayout class="item_stacklayout">
+                        <Image col="0" [src]="country.imageSrc" class="img-rounded" width="40" height="40" ></Image>
+                    </GridLayout >
+                    <GridLayout class="item_stacklayout">
+                        <Image col="2" [src]="country.imageSrc" class="img-rounded" width="40" height="40" ></Image>
+                    </GridLayout >
+                </GridLayout>
+            </template>
+        </ListView>-->
+
+                <!--
+            this is short code to implement listview in located in different component and lsit it over here..
+            To implement Pipe for dynamically sync.... -->
+                <StackLayout>
+                    <!-- >> segmentedbar-show-views -->
+                    <SegmentedBar class="m-5" #sb [items]="homeSegmentedbarItems" (selectedIndexChange)="onChatSegmentBarIndexChange(sb.selectedIndex)"
+                        style="margin-left: 10; margin-right: 10; margin-bottom: 5;"></SegmentedBar>
+                    <StackLayout visibility="{{ allChat ? 'visible' : 'collapsed' }}">
+                        <gr-home-list [row]="2"></gr-home-list>
+                    </StackLayout>
+                </StackLayout>
+
+            </GridLayout>
+
+
+            <GridLayout *tabItem="{title: 'Docs',iconSource:'res://ic_docswhite'}">
+                <StackLayout>
+                    <SegmentedBar class="m-5" #sb [items]="docSegmentedBarItems" (selectedIndexChange)="onDocmentIndexChange(sb.selectedIndex)">
+                    </SegmentedBar>
+                    <StackLayout visibility="{{ allDocument ? 'visible' : 'collapsed' }}">
+                        <!--<ListView [items] = "document" (itemTap)="onDocumentItemListClick($event)">
+                        <template let-document="item">
+                            <GridLayout columns= "auto,*,auto">
+                                <GridLayout >
+                                    <Image col="0" [src]="document.imageSrc" class="documentAvatar" stretch="aspectFit"></Image>
+                                </GridLayout>
+                                <StackLayout col="1" columns= "auto,*" rows="auto,*">
+                                    <Label [text]="document.name" class="contactName"> </Label>
+                                    <Label [text]="document.desc" class="chatMsg"> </Label>
+                                </StackLayout>
+                                <GridLayout col="2" >
+                                   <Label [text]="document.time" class="documentTime"> </Label>
+                                </GridLayout> 
+                            </GridLayout>
+                        </template>
+                    </ListView>-->
+                        <!--
+            this is short code to implement listview in located in different component and lsit it over here..
+            To implement Pipe for dynamically sync.... -->
+                        <gr-doc-list></gr-doc-list>
+                    </StackLayout>
+                    <StackLayout visibility="{{ allRecent ? 'visible' : 'collapsed' }}">
+                        <Label [text]="'All recent Document here in this view : ' + selectedIndex" class="m-15 h3 p-5 text-center"></Label>
+                    </StackLayout>
+                    <StackLayout visibility="{{ groupDocument ? 'visible' : 'collapsed' }}">
+                        <Label [text]="'All gorup Document goes here in this view : ' + selectedIndex" class="m-15 h3 p-5 text-center"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </GridLayout>
+            <GridLayout #chats *tabItem="{title: 'Chat',iconSource:'res://ic_chatwhite'}">
+                <StackLayout>
+                    <!-- >> segmentedbar-show-views -->
+                    <SegmentedBar class="m-5" #sb [items]="chatSegmentedBarItems" (selectedIndexChange)="onChatSegmentBarIndexChange(sb.selectedIndex)"
+                        style="margin-bottom: 5;"></SegmentedBar>
+                    <StackLayout visibility="{{ allChat ? 'visible' : 'collapsed' }}">
+                        <!--<ListView [items]="chat" (itemTap)="chatItemSelected($event)" >
+            <template let-item="item">
+                <GridLayout columns="auto,*,auto" >
+                    <GridLayout >
+                        <Image col="0" src="res://logo_login" class="avatar" stretch="aspectFit"  ></Image>
+                    </GridLayout >    
+                    <StackLayout col="1" columns="auto, *" rows="auto,*" >
+                        <Label  [text]="item.name" class="contactName"></Label>
+                     
+                        <Label  text="123" class="chatMsg"></Label>  
+                    </StackLayout>  
+                    <GridLayout col="2" >
+                        <Image col="2" src="res://logo_login" class="openFullMsg" stretch="aspectFit"  ></Image>
+                    </GridLayout> 
+                </GridLayout>
+            </template>
+        </ListView>-->
+                        <!--
+            this is short code to implement listview in located in different component and lsit it over here..
+            To implement Pipe once we have all the contacts and chats dynamically sync.... -->
+                        <gr-all-chat-list [row]="2"></gr-all-chat-list>
+                    </StackLayout>
+
+                    <StackLayout visibility="{{ allContactPrivateChat ? 'visible' : 'collapsed' }}">
+                        <gr-chat-list [row]="2"></gr-chat-list>
+                        <!--<Label [text]="'All recent Document here in this view : ' + selectedIndex" class="m-15 h3 p-5 text-center"></Label>-->
+
+                    </StackLayout>
+
+                    <StackLayout visibility="{{ allGroupContactChat ? 'visible' : 'collapsed' }}">
+                        <gr-all-chatgroups-list [row]="2"> </gr-all-chatgroups-list>
+                    </StackLayout>
+                    <StackLayout visibility="{{ allContactsList ? 'visible' : 'collapsed' }}">
+                        <!--<button [text]="'All Contactlist goes here in this view : ' + selectedIndex" class="m-15 h3 p-5 text-center" (tap)="onContactListItemSelected($event)"></button>-->
+                        <gr-all-contacts-list [row]="2"></gr-all-contacts-list>
+
+                        <!--<ListView [items]="chat" (itemTap)="chatItemSelected($event)" >
+            <template let-item="item">
+                <GridLayout columns="auto,*,auto" >
+                    <GridLayout >
+                        <Image col="0" src="res://logo_login" class="avatar" stretch="aspectFit"  ></Image>
+                    </GridLayout >    
+                    <StackLayout col="1" columns="auto, *" rows="auto,*" >
+                        <Label  [text]="item.name" class="contactName"></Label>
+                        <Label  [text]="item.userid" class="chatMsg" [visibility]="isItemVisible ? 'collapsed' : 'collapsed'"></Label>  
+                        <Label  [text]="item.userid" class="chatMsg"></Label>  
+                    </StackLayout>  
+                    <GridLayout col="2" >
+                        <Image col="2" src="res://logo_login" class="openFullMsg" stretch="aspectFit"  ></Image>
+                    </GridLayout> 
+                </GridLayout>
+            </template>
+</ListView>-->
+
+                    </StackLayout>
+                    <!-- << segmentedbar-show-views -->
+                </StackLayout>
+            </GridLayout>
+            <GridLayout *tabItem="{title:'Email',iconSource:'res://ic_emailwhite'}">
+                <gr-mail-list [row]="2"></gr-mail-list>
+            </GridLayout>
+        </TabView>
+    </GridLayout>
+    <ActivityIndicator #activityIndicatior [busy]="isAuthenticating" rowSpan="2"></ActivityIndicator>
+</GridLayout>

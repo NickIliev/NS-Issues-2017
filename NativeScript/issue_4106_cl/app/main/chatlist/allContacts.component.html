@@ -1,0 +1,19 @@
+<GridLayout rows="*">
+    <ListView id="lvChatAll" [row]="row" [items]="chat" (itemTap)="chatItemSelected($event)">
+        <ng-template let-item="item">
+            <GridLayout columns="auto,*,auto" class="writeMessage bubble">
+                <GridLayout>
+                    <Image col="0" src="res://login_icon" class="avatar" stretch="aspectFit" style="background-color: #DBDBDB;"></Image>
+                </GridLayout>
+                <StackLayout col="1" columns="auto, *" rows="auto,*">
+                    <Label [text]="item.name" class="contactName"></Label>
+                    <!--<Label  [text]="item.userid" class="chatMsg" [visibility]="isItemVisible ? 'collapsed' : 'collapsed'"></Label>  -->
+                    <!--<Label  [text]="item.userid" class="chatMsg"></Label>  -->
+                </StackLayout>
+                <GridLayout col="2">
+                    <Image col="2" src="res://ic_next" class="openFullMsg" stretch="aspectFit"></Image>
+                </GridLayout>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
