@@ -3,7 +3,8 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 @Component({
     selector: "list",
     moduleId: module.id,
-    templateUrl: "items.component.html"
+    templateUrl: "items.component.html",
+    styleUrls: ["list-common.css", "list.css"]
 })
 export class ItemsComponent implements OnInit {
     groceryList: Array<Object> = [];
