@@ -1,0 +1,7 @@
+<GridLayout>
+    <ListView [items]="groceryList">
+        <ng-template let-item="item">
+            <Label [text]="item.name"></Label>
+        </ng-template>
+    </ListView>
+</GridLayout>
