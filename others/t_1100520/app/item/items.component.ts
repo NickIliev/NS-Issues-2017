@@ -30,6 +30,13 @@ export class ItemsComponent implements OnInit {
         // }
     }
 
+
+    radListLoaded(args: ListViewEventData) {
+        var listView = args.object;
+        console.log("itemSelected'");
+        listView.selectItemAt(0);
+    }
+
     itemSelected(args: ListViewEventData) {
         console.log("itemSelected'");
         this.items[args.itemIndex].isSelected = true;
