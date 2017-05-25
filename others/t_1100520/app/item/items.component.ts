@@ -31,14 +31,16 @@ export class ItemsComponent implements OnInit {
     }
 
     itemSelected(args: ListViewEventData) {
+        console.log("itemSelected'");
         this.items[args.itemIndex].isSelected = true;
     }
 
     itemDeselected(args: ListViewEventData) {
+        console.log("itemDeselected'");
         this.items[args.itemIndex].isSelected = false;
     }
 
     onItemLoading(args: ItemEventArgs) {
-
+        console.log("onItemLoading'");
     }
 }
