@@ -31,11 +31,15 @@ export class ItemsComponent implements OnInit {
     }
 
 
-    radListLoaded(args: ListViewEventData) {
-        var listView = args.object;
-        console.log("itemSelected'");
-        listView.selectItemAt(0);
-    }
+radListLoaded(args: ListViewEventData) {
+    var listView = args.object;
+    console.log("itemSelected'");
+
+    listView.selectItemAt(0); // based on the isSelected property in item.service.ts
+    listView.selectItemAt(2);
+    listView.selectItemAt(4);
+    listView.selectItemAt(6);
+}
 
     itemSelected(args: ListViewEventData) {
         console.log("itemSelected'");
