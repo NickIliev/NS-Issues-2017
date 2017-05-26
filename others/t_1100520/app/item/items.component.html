@@ -11,8 +11,8 @@
     </RadListView>-->
 
 <RadListView [items]="items" selectionBehavior="Press" multipleSelection="true" (loaded)="radListLoaded($event)" (itemSelected)="itemSelected($event)" (itemDeselected)="itemDeselected($event)">
-    <ng-template tkListItemTemplate let-item="item" let-i="index">
-        <GridLayout columns="*, *, *" rows="40" [ngClass]="item.isSelected ? 'selected' : 'non-selected'" >
+    <ng-template tkListItemTemplate let-item="item" let-i="index" let-isSelected="item.isSelected">
+        <GridLayout columns="*, *, *" rows="40" [ngClass]="isSelected ? 'selected' : 'non-selected'" >
             <Label col="0" [text]="item.id"></Label>
             <Label col="1" [text]="item.name"></Label>
             <Label col="2" [text]="item.role" [visibility]="item.isSelected ? 'visible' : 'collapsed'"></Label>

@@ -6,14 +6,14 @@ import { Item } from "./item";
 export class ItemService {
     private items = new Array<Item>(
         { id: 1, name: "Ter Stegen", role: "Goalkeeper", isSelected: true },
-        { id: 3, name: "Piqué", role: "Defender", isSelected: false },
+        { id: 3, name: "Piqué", role: "Defender", isSelected: true },
         { id: 4, name: "I. Rakitic", role: "Midfielder", isSelected: true },
-        { id: 5, name: "Sergio", role: "Midfielder", isSelected: false },
+        { id: 5, name: "Sergio", role: "Midfielder", isSelected: true },
         { id: 6, name: "Denis Suárez", role: "Midfielder", isSelected: true },
         { id: 7, name: "Arda", role: "Midfielder", isSelected: false },
         { id: 8, name: "A. Iniesta", role: "Midfielder", isSelected: true },
         { id: 9, name: "Suárez", role: "Forward", isSelected: false },
-        { id: 10, name: "Messi", role: "Forward", isSelected: true },
+        { id: 10, name: "Messi", role: "Forward", isSelected: false },
         { id: 11, name: "Neymar", role: "Forward", isSelected: false },
         { id: 12, name: "Rafinha", role: "Midfielder", isSelected: true },
         { id: 13, name: "Cillessen", role: "Goalkeeper", isSelected: false },

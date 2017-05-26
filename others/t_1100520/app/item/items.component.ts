@@ -3,8 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { Item } from "./item";
 import { ItemService } from "./item.service";
 
-import { ListViewEventData  } from "nativescript-telerik-ui-pro/listview"
-import { ItemEventArgs  } from "nativescript-telerik-ui-pro/listview/angular"
+import { ListViewEventData } from "nativescript-telerik-ui-pro/listview"
+import { ItemEventArgs } from "nativescript-telerik-ui-pro/listview/angular"
 @Component({
     selector: "ns-items",
     moduleId: module.id,
@@ -31,15 +31,18 @@ export class ItemsComponent implements OnInit {
     }
 
 
-radListLoaded(args: ListViewEventData) {
-    var listView = args.object;
-    console.log("itemSelected'");
+    radListLoaded(args: ListViewEventData) {
+        var listView = args.object;
 
-    listView.selectItemAt(0); // based on the isSelected property in item.service.ts
-    listView.selectItemAt(2);
-    listView.selectItemAt(4);
-    listView.selectItemAt(6);
-}
+        // based on the isSelected property in item.service.ts
+        for (var index = 0; index < this.items.length; index++) {
+            var item = this.items[index];
+            console.log("item.isSelected: " + item.isSelected)
+            if (item.isSelected) {
+                listView.selectItemAt(index);
+            }
+        }
+    }
 
     itemSelected(args: ListViewEventData) {
         console.log("itemSelected'");
