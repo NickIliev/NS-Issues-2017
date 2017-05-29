@@ -1,0 +1,17 @@
+﻿
+.btn {
+    font-size: 18;
+}
+
+@keyframes example {
+    from { background-color: red; }
+    to { background-color: green; }
+}
+
+.view {
+    animation-name: example;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@import 'nativescript-theme-core/css/core.light.css';
