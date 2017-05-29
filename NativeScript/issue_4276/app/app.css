@@ -12,6 +12,7 @@
     animation-name: example;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+    animation-iteration-count:infinite;
 }
 
 @import 'nativescript-theme-core/css/core.light.css';
