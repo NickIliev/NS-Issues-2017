@@ -1,0 +1,6 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <TextView [text]="message" hint="Enter some text" returnKeyType="send" (returnPress)="submit($event)" [editable]="editState" ></TextView>
+    <Button text="Change editState" (tap)="onTap()"></Button>
+</StackLayout>
