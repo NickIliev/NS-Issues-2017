@@ -6,8 +6,8 @@
     <!-- not working only on API24 -->
     <!-- change row size to * or assign hardcoded value and SearchBar will show up -->
     <!-- cAssign width or height for SearchBar and it will show up -->
-    <GridLayout rows="auto, *">
-        <SearchBar row="0" id="searchBar" hint="Search" text="" clear="onClear" submit="onSubmit" />
+    <GridLayout rows="100, *" columns="*">
+        <SearchBar row="0" col="0" id="searchBar" hint="Search" text="" clear="onClear" submit="onSubmit" />
         <Label row="1" text="Test SearchBar on API24 and above" class="text-center"/>
     </GridLayout>
     
