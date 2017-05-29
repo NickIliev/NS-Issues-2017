@@ -1,0 +1,18 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ScrollView>
+	<StackLayout>
+		<StackLayout class="p-20" borderWidth="1" borderColor="black">
+			<Button text="This a test of a wrapping button [CENTER]" textWrap="true" style="text-align:center;width:100;margin-bottom:60;" />
+			<Button text="This a test of a wrapping button [RIGHT]" textWrap="true" style="text-align:right;width:100;margin-bottom:60;" />
+			<Button text="This a test of a wrapping button [LEFT]" textWrap="true" style="text-align:left;width:100;margin-bottom:60;" />
+			<Button text="&#xf8ff; This a test of a wrapping button [CENTER ICON]" textWrap="true" style="text-align:center;width:100;margin-bottom:60;" />
+		</StackLayout>
+		<StackLayout class="p-20" borderWidth="1" borderColor="black">
+			<Button text="This a test of a wrapping button [CENTER]" textWrap="true" style="text-align:center;width:100;margin-bottom:20;" />
+			<Button text="This a test of a wrapping button [RIGHT]" textWrap="true" style="text-align:right;width:100;margin-bottom:20;" />
+			<Button text="This a test of a wrapping button [LEFT]" textWrap="true" style="text-align:left;width:100;margin-bottom:20;" />
+			<Button text="&#xf8ff; This a test of a wrapping button [CENTER ICON]" textWrap="true" style="text-align:center;width:100;margin-bottom:20;" />
+		</StackLayout>
+	</StackLayout>
+    </ScrollView>
+</Page>
