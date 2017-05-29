@@ -2,6 +2,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onPageLoaded" navigatingTo="navigatingTo" class="page">
     <GridLayout>
             <!--<GridLayout id="view1" class="p-20" width="200" height="200"></GridLayout>-->
-            <GridLayout id="view2" class="view" width="200" height="200"></GridLayout>
+            <GridLayout class="view" width="200" height="200" backgroundColor="gray"></GridLayout>
     </GridLayout>
 </Page>
