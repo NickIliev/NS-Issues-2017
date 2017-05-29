@@ -1,10 +1,14 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="Title" class="action-bar" />
+    </Page.actionBar>
 
-    <GridLayout rows="auto, *" class="p-20">
+    <!-- not working only on API24 -->
+    <!-- change row size to * or assign hardcoded value and SearchBar will show up -->
+    <!-- cAssign width or height for SearchBar and it will show up -->
+    <GridLayout rows="auto, *">
         <SearchBar row="0" id="searchBar" hint="Search" text="" clear="onClear" submit="onSubmit" />
         <Label row="1" text="Test SearchBar on API24 and above" class="text-center"/>
-        <!--<GridLayout rows="*" columns="*">
-            <SearchBar row="0" col="0" id="searchBar" hint="Search" text="" clear="onClear" submit="onSubmit" />
-        </GridLayout>-->
     </GridLayout>
+    
 </Page>
