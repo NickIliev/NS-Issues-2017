@@ -1,0 +1,21 @@
+{
+  "nativescript": {
+    "id": "org.nativescript.auth0demo",
+    "tns-ios": {
+      "version": "3.0.1"
+    }
+  },
+  "dependencies": {
+    "nativescript-auth0": "1.2.2",
+    "tns-core-modules": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.4.5",
+    "babel-types": "6.4.5",
+    "babylon": "6.4.5",
+    "lazy": "1.0.11",
+    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-dev-typescript": "~0.4.0",
+    "typescript": "~2.2.1"
+  }
+}
