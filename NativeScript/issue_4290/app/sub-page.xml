@@ -1,0 +1,8 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+    <Page.actionBar>
+        <ActionBar title="Title" icon="" />
+    </Page.actionBar>
+    <StackLayout>
+        <Label text="SUB PAGE (action bar and pageTransition slideURight" textWrap="true" />
+    </StackLayout>
+</Page>
