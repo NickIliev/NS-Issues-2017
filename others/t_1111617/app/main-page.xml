@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onPageLoaded" xmlns:lv="nativescript-telerik-ui-pro/listview" class="page">
     <GridLayout orientation="vertical" rows="auto, *, auto" >
-        <lv:RadListView id="listView" items="{{ dataItems }}" row="1" itemLoading="onItemLoading" selectionBehavior="Press" itemSelected="onItemSelected" itemDeselected="onItemDeselected">
+        <lv:RadListView id="listView" backgroundColor="transparent" items="{{ dataItems }}" row="1" itemLoading="onItemLoading" selectionBehavior="Press" itemSelected="onItemSelected" itemDeselected="onItemDeselected">
             <lv:RadListView.listViewLayout>
                 <lv:ListViewLinearLayout scrollDirection="Vertical"/>
             </lv:RadListView.listViewLayout>
