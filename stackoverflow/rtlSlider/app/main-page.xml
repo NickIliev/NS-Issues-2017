@@ -1,0 +1,4 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+   <Slider loaded="onSliderLoaded" minValue="0" maxValue="100" value="25" />
+</Page>

@@ -1,0 +1,16 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:df="nativescript-telerik-ui-pro/dataform" navigatingTo="navigatingTo" class="page">
+    <GridLayout rows="*" columns="*">
+        <df:RadDataForm id="myDataForm" source="{{ person }}">
+            <df:EntityProperty name="patient">
+                <df:EntityProperty.editor>
+                
+                    <df:CustomPropertyEditor 
+                        editorNeedsView="editorNeedsView" 
+                        editorHasToApplyValue="editorHasToApplyValue" 
+                        editorNeedsValue="editorNeedsValue"/>
+
+                </df:EntityProperty.editor>
+            </df:EntityProperty>
+        </df:RadDataForm>
+    </GridLayout>
+</Page>

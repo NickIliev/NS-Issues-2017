@@ -1,0 +1,13 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <GridLayout rows="*" columns="*">
+        <ListView items="{{ source }}"  loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
+            <ListView.itemTemplate>
+                <StackLayout>
+                    <Button text="test button" tap="noTap" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>

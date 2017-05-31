@@ -1,0 +1,212 @@
+Loading extensions.
+execFile: C:\Users\niliev\AppData\Local\Android\sdk\platform-tools\adb "help"
+Exec npm -v 
+ stdout: 3.10.8
+ 
+ stderr: 
+spawn: java "-version"
+Exec node-gyp -v 
+ stdout:  
+ stderr: 'node-gyp' is not recognized as an internal or external command,
+operable program or batch file.
+
+Exec "C:\Users\niliev\AppData\Local\Android\sdk\platform-tools\adb" version 
+ stdout: Android Debug Bridge version 1.0.39
+Revision 3db08f2c6889-android
+Installed as C:\Users\niliev\AppData\Local\Android\sdk\platform-tools\adb.exe
+ 
+ stderr: 
+spawn: C:\Users\niliev\AppData\Local\Android\sdk\emulator\emulator "-help"
+Result when throw error is false:
+{ stdout: 'Android Emulator usage: emulator [options] [-qemu args]\r\n  options:\r\n    -list-avds                     list available AVDs\r\n    -sysdir <dir>                  search for system disk images in <dir>\r\n    -system <file>                 read initial system image from <file>\r\n    -writable-system               make system image writable after \'adb remount\'\r\n    -datadir <dir>                 write user data into <dir>\r\n    -kernel <file>                 use specific emulated kernel\r\n    -ramdisk <file>                ramdisk image (default <system>/ramdisk.img\r\n    -image <file>                  obsolete, use -system <file> instead\r\n    -initdata <file>               same as \'-init-data <file>\'\r\n    -data <file>                   data image (default <datadir>/userdata-qemu.img\r\n    -partition-size <size>         system/data partition size in MBs\r\n    -cache <file>                  cache partition image (default is temporary file)\r\n    -cache-size <size>             cache partition size in MBs\r\n    -no-cache                      disable the cache partition\r\n    -nocache                       same as -no-cache\r\n    -sdcard <file>                 SD card image (default <datadir>/sdcard.img\r\n    -snapstorage <file>            file that contains all state snapshots (default <datadir>/snapshots.img)\r\n    -no-snapstorage                do not mount a snapshot storage file (this disables all snapshot functionality)\r\n    -snapshot <name>               name of snapshot within storage file for auto-start and auto-save (default \'default-boot\')\r\n    -no-snapshot                   perform a full boot and do not do not auto-save, but qemu vmload and vmsave operate on snapstorage\r\n    -no-snapshot-save              do not auto-save to snapshot on exit: abandon changed state\r\n    -no-snapshot-load              do not auto-start from snapshot: perform a full boot\r\n    -snapshot-list                 show a list of available snapshots\r\n    -no-snapshot-update-time       do not do try to correct snapshot time on restore\r\n    -wipe-data                     reset the user data image (copy it from initdata)\r\n    -avd <name>                    use a specific android virtual device\r\n    -skindir <dir>                 search skins in <dir> (default <system>/skins)\r\n    -skin <name>                   select a given skin\r\n    -no-skin                       deprecated: create an AVD with no skin instead\r\n    -noskin                        same as -no-skin\r\n    -memory <size>                 physical RAM size in MBs\r\n    -cores <number>                Set number of CPU cores to emulator\r\n    -accel <mode>                  Configure emulation acceleration\r\n    -no-accel                      Same as \'-accel off\'\r\n    -ranchu                        Use new emulator backend instead of the classic one\r\n    -engine <engine>               Select engine. auto|classic|qemu2\r\n    -netspeed <speed>              maximum network download/upload speeds\r\n    -netdelay <delay>              network latency emulation\r\n    -netfast                       disable network shaping\r\n    -code-profile <name>           enable code profiling\r\n    -show-kernel                   display kernel messages\r\n    -shell                         enable root shell on current terminal\r\n    -no-jni                        disable JNI checks in the Dalvik runtime\r\n    -nojni                         same as -no-jni\r\n    -logcat <tags>                 enable logcat output with given tags\r\n    -no-audio                      disable audio support\r\n    -noaudio                       same as -no-audio\r\n    -audio <backend>               use specific audio backend\r\n    -radio <device>                redirect radio modem interface to character device\r\n    -port <port>                   TCP port that will be used for the console\r\n    -ports <consoleport>,<adbport> TCP ports used for the console and adb bridge\r\n    -onion <image>                 use overlay PNG image over screen\r\n    -onion-alpha <%age>            specify onion-skin translucency\r\n    -onion-rotation 0|1|2|3        specify onion-skin rotation\r\n    -dpi-device <dpi>              specify device\'s resolution in dpi (default 165)\r\n    -scale <scale>                 scale emulator window (deprecated)\r\n    -http-proxy <proxy>            make TCP connections through a HTTP/HTTPS proxy\r\n    -timezone <timezone>           use this timezone instead of the host\'s default\r\n    -dns-server <servers>          use this DNS server(s) in the emulated system\r\n    -cpu-delay <cpudelay>          throttle CPU emulation\r\n    -no-boot-anim                  disable animation for faster boot\r\n    -no-window                     disable graphical window display\r\n    -version                       display emulator version number\r\n    -report-console <socket>       report console port to remote socket\r\n    -gps <device>                  redirect NMEA GPS to character device\r\n    -shell-serial <device>         specific character device for root shell\r\n    -tcpdump <file>                capture network packets to file\r\n    -bootchart <timeout>           enable bootcharting\r\n    -charmap <file>                use specific key character map\r\n    -prop <name>=<value>           set system property on boot\r\n    -shared-net-id <number>        join the shared network, using IP address 10.1.2.<number>\r\n    -gpu <mode>                    set hardware OpenGLES emulation mode\r\n    -camera-back <mode>            set emulation mode for a camera facing back\r\n    -camera-front <mode>           set emulation mode for a camera facing front\r\n    -webcam-list                   lists web cameras available for emulation\r\n    -screen <mode>                 set emulated screen mode\r\n    -force-32bit                   always use 32-bit emulator\r\n    -selinux <disabled|permissive> Set SELinux to either disabled or permissive mode\r\n    -unix-pipe <path>              Add <path> to the list of allowed Unix pipes\r\n    -fixed-scale                   Use fixed 1:1 scale for the initial emulator window.\r\n    -wait-for-debugger             Pause on launch and wait for a debugger process to attach before resuming\r\n    -skip-adb-auth                 Skip adb authentication dialogue\r\n\r\n     -qemu args...                 pass arguments to qemu\r\n     -qemu -h                      display qemu help\r\n\r\n     -verbose                      same as \'-debug-init\'\r\n     -debug <tags>                 enable/disable debug messages\r\n     -debug-<tag>                  enable specific debug messages\r\n     -debug-no-<tag>               disable specific debug messages\r\n\r\n     -help                         print this help\r\n     -help-<option>                print option-specific help\r\n\r\n     -help-disk-images             about disk images\r\n     -help-debug-tags              debug tags for -debug <tags>\r\n     -help-char-devices            character <device> specification\r\n     -help-environment             environment variables\r\n     -help-virtual-device          virtual device management\r\n     -help-sdk-images              about disk images when using the SDK\r\n     -help-build-images            about disk images when building Android\r\n     -help-all                     prints all help content\r\n\r\n',
+  stderr: '',
+  exitCode: 0 }
+The result of checking is Android Emulator installed is:
+- stdout: Android Emulator usage: emulator [options] [-qemu args]
+  options:
+    -list-avds                     list available AVDs
+    -sysdir <dir>                  search for system disk images in <dir>
+    -system <file>                 read initial system image from <file>
+    -writable-system               make system image writable after 'adb remount'
+    -datadir <dir>                 write user data into <dir>
+    -kernel <file>                 use specific emulated kernel
+    -ramdisk <file>                ramdisk image (default <system>/ramdisk.img
+    -image <file>                  obsolete, use -system <file> instead
+    -initdata <file>               same as '-init-data <file>'
+    -data <file>                   data image (default <datadir>/userdata-qemu.img
+    -partition-size <size>         system/data partition size in MBs
+    -cache <file>                  cache partition image (default is temporary file)
+    -cache-size <size>             cache partition size in MBs
+    -no-cache                      disable the cache partition
+    -nocache                       same as -no-cache
+    -sdcard <file>                 SD card image (default <datadir>/sdcard.img
+    -snapstorage <file>            file that contains all state snapshots (default <datadir>/snapshots.img)
+    -no-snapstorage                do not mount a snapshot storage file (this disables all snapshot functionality)
+    -snapshot <name>               name of snapshot within storage file for auto-start and auto-save (default 'default-boot')
+    -no-snapshot                   perform a full boot and do not do not auto-save, but qemu vmload and vmsave operate on snapstorage
+    -no-snapshot-save              do not auto-save to snapshot on exit: abandon changed state
+    -no-snapshot-load              do not auto-start from snapshot: perform a full boot
+    -snapshot-list                 show a list of available snapshots
+    -no-snapshot-update-time       do not do try to correct snapshot time on restore
+    -wipe-data                     reset the user data image (copy it from initdata)
+    -avd <name>                    use a specific android virtual device
+    -skindir <dir>                 search skins in <dir> (default <system>/skins)
+    -skin <name>                   select a given skin
+    -no-skin                       deprecated: create an AVD with no skin instead
+    -noskin                        same as -no-skin
+    -memory <size>                 physical RAM size in MBs
+    -cores <number>                Set number of CPU cores to emulator
+    -accel <mode>                  Configure emulation acceleration
+    -no-accel                      Same as '-accel off'
+    -ranchu                        Use new emulator backend instead of the classic one
+    -engine <engine>               Select engine. auto|classic|qemu2
+    -netspeed <speed>              maximum network download/upload speeds
+    -netdelay <delay>              network latency emulation
+    -netfast                       disable network shaping
+    -code-profile <name>           enable code profiling
+    -show-kernel                   display kernel messages
+    -shell                         enable root shell on current terminal
+    -no-jni                        disable JNI checks in the Dalvik runtime
+    -nojni                         same as -no-jni
+    -logcat <tags>                 enable logcat output with given tags
+    -no-audio                      disable audio support
+    -noaudio                       same as -no-audio
+    -audio <backend>               use specific audio backend
+    -radio <device>                redirect radio modem interface to character device
+    -port <port>                   TCP port that will be used for the console
+    -ports <consoleport>,<adbport> TCP ports used for the console and adb bridge
+    -onion <image>                 use overlay PNG image over screen
+    -onion-alpha <%age>            specify onion-skin translucency
+    -onion-rotation 0|1|2|3        specify onion-skin rotation
+    -dpi-device <dpi>              specify device's resolution in dpi (default 165)
+    -scale <scale>                 scale emulator window (deprecated)
+    -http-proxy <proxy>            make TCP connections through a HTTP/HTTPS proxy
+    -timezone <timezone>           use this timezone instead of the host's default
+    -dns-server <servers>          use this DNS server(s) in the emulated system
+    -cpu-delay <cpudelay>          throttle CPU emulation
+    -no-boot-anim                  disable animation for faster boot
+    -no-window                     disable graphical window display
+    -version                       display emulator version number
+    -report-console <socket>       report console port to remote socket
+    -gps <device>                  redirect NMEA GPS to character device
+    -shell-serial <device>         specific character device for root shell
+    -tcpdump <file>                capture network packets to file
+    -bootchart <timeout>           enable bootcharting
+    -charmap <file>                use specific key character map
+    -prop <name>=<value>           set system property on boot
+    -shared-net-id <number>        join the shared network, using IP address 10.1.2.<number>
+    -gpu <mode>                    set hardware OpenGLES emulation mode
+    -camera-back <mode>            set emulation mode for a camera facing back
+    -camera-front <mode>           set emulation mode for a camera facing front
+    -webcam-list                   lists web cameras available for emulation
+    -screen <mode>                 set emulated screen mode
+    -force-32bit                   always use 32-bit emulator
+    -selinux <disabled|permissive> Set SELinux to either disabled or permissive mode
+    -unix-pipe <path>              Add <path> to the list of allowed Unix pipes
+    -fixed-scale                   Use fixed 1:1 scale for the initial emulator window.
+    -wait-for-debugger             Pause on launch and wait for a debugger process to attach before resuming
+    -skip-adb-auth                 Skip adb authentication dialogue
+
+     -qemu args...                 pass arguments to qemu
+     -qemu -h                      display qemu help
+
+     -verbose                      same as '-debug-init'
+     -debug <tags>                 enable/disable debug messages
+     -debug-<tag>                  enable specific debug messages
+     -debug-no-<tag>               disable specific debug messages
+
+     -help                         print this help
+     -help-<option>                print option-specific help
+
+     -help-disk-images             about disk images
+     -help-debug-tags              debug tags for -debug <tags>
+     -help-char-devices            character <device> specification
+     -help-environment             environment variables
+     -help-virtual-device          virtual device management
+     -help-sdk-images              about disk images when using the SDK
+     -help-build-images            about disk images when building Android
+     -help-all                     prints all help content
+
+
+- stderr: 
+Exec mono --version 
+ stdout:  
+ stderr: 'mono' is not recognized as an internal or external command,
+operable program or batch file.
+
+Exec git --version 
+ stdout: git version 2.12.2.windows.2
+ 
+ stderr: 
+Exec gradle -v 
+ stdout:  
+ stderr: 'gradle' is not recognized as an internal or external command,
+operable program or batch file.
+
+Exec "C:\Program Files\Java\jdk1.8.0_131\bin\javac" -version 
+ stdout:  
+ stderr: javac 1.8.0_131
+
+System information:
+{ procInfo: 'nativescript/3.0.1',
+  platform: 'win32',
+  os: 'Windows 10 Pro 6.3.14393',
+  shell: 'C:\\WINDOWS\\system32\\cmd.exe',
+  dotNetVer: '4.6.01586',
+  procArch: 'x64',
+  nodeVer: 'v6.9.1',
+  npmVer: '3.10.8',
+  javaVer: '1.8.0',
+  nodeGypVer: null,
+  xcodeVer: null,
+  xcodeprojGemLocation: null,
+  itunesInstalled: false,
+  cocoapodVer: null,
+  adbVer: 'Android Debug Bridge version 1.0.39',
+  emulatorInstalled: true,
+  monoVer: null,
+  gitVer: '2.12.2.windows.2',
+  gradleVer: null,
+  javacVersion: '1.8.0_131' }
+Starting watch on killswitch C:\Users\niliev\AppData\Local\Temp\niliev\KillSwitches\cli
+Looking for project in 'D:\git-NickIliev\NativeScript-Issues-2017\android-runtime'
+Looking for project in 'D:\git-NickIliev\NativeScript-Issues-2017'
+Looking for project in 'D:\git-NickIliev'
+Looking for project in 'D:\'
+No project found at or above 'D:\git-NickIliev\NativeScript-Issues-2017\android-runtime'.
+Unable to find project. projectDir: null, options.path: undefined, D:\git-NickIliev\NativeScript-Issues-2017\android-runtime
+No project found at or above '%s' and neither was a --path specified.
+Initializing analytics statuses.
+Analytics statuses: 
+{ TrackFeatureUsage: 1, TrackExceptions: 1 }
+Trying to track feature 'Non-interactive' with value 'help'.
+List of registered commands: /?, appstore, appstore|upload, autocomplete, autocomplete|disable, autocomplete|enable, autocomplete|status, build, build|android, build|ios, clean-app, clean-app|android, clean-app|ios, create, debug, debug|android, debug|ios, deploy, dev-generate-help, dev-generate-messages, dev-post-install, dev-preuninstall, dev-test, dev-test|android, dev-test|ios, device, devices, devices|android, devices|ios, device|android, device|get-file, device|ios, device|list-applications, device|list-files, device|log, device|put-file, device|run, device|stop, device|uninstall, doctor, emulate, emulate|android, emulate|ios, error-reporting, extension, extension|install, extension|uninstall, help, info, init, install, platform, platform|add, platform|clean, platform|remove, platform|update, plugin, plugin|add, plugin|install, plugin|remove, plugin|update, post-install-cli, prepare, proxy, proxy|clear, proxy|set, publish, publish|ios, run, run|android, run|ios, test, test|android, test|init, test|ios, update, usage-reporting
+Reading help for command 'run|android'. FileName is 'run-android.md'.
+# run android
+
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Usage                                                                                                                                 │ Synopsis                                                                                                                                                                                        │
+│ Run on all connected devices and running emulators                                                                                    │ $ tns run android [--key-store-path <File Path> --key-store-password <Password> --key-store-alias <Name> --key-store-alias-password <Password>] [--release] [--justlaunch]                      │
+│ Run on a selected connected device or running emulator. Will start emulator with specified Device Identifier, if not already running. │ $ tns run android --device <Device ID> [--key-store-path <File Path> --key-store-password <Password> --key-store-alias <Name> --key-store-alias-password <Password>] [--release] [--justlaunch] │
+│ Start a default emulator if none are running, or run application on all connected emulators.                                          │ $ tns run android --emulator [--key-store-path <File Path> --key-store-password <Password> --key-store-alias <Name> --key-store-alias-password <Password>] [--release] [--justlaunch]           │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Runs your project on a connected Android device or in a native Android emulator, if configured. This is shorthand for prepare, build and deploy. While your app is running, prints the output from the application in the console and watches for changes in your code. Once a change is detected, it synchronizes the change with all selected devices and restarts/refreshes the application.
+
+### Options
+
+    * --device - Specifies a connected device/emulator to start and run the app.
+    * --emulator - If set, runs the app in all available and configured android emulators. It will start an emulator if none are already running.
+    * --justlaunch - If set, does not print the application output in the console.
+    * --clean - If set, forces rebuilding the native application.
+    * --no-watch - If set, changes in your code will not be reflected during the execution of this command.
+    * --release - If set, produces a release build. Otherwise, produces a debug build. When set, you must also specify the --key-store-* options.
+    * --key-store-path - Specifies the file path to the keystore file (P12) which you want to use to code sign your APK. You can use the --key-store-* options along with --release to produce a signed release build. You need to specify all --key-store-* options.
+    * --key-store-password - Provides the password for the keystore file specified with --key-store-path. You can use the --key-store-* options along with --release to produce a signed release build. You need to specify all --key-store-* options.
+    * --key-store-alias - Provides the alias for the keystore file specified with --key-store-path. You can use the --key-store-* options along with --release to produce a signed release build. You need to specify all --key-store-* options.
+    * --key-store-alias-password - Provides the password for the alias specified with --key-store-alias-password. You can use the --key-store-* options along with --release to produce a signed release build. You need to specify all --key-store-* options.
+
+### Attributes
+
+    * <Device ID> is the index or Device Identifier of the target device as listed by $ tns device android --available-devices
+
