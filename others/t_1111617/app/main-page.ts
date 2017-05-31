@@ -8,10 +8,9 @@ import { RadListView } from "nativescript-telerik-ui-pro/listview";
 
 import * as utilsModule from "utils/utils";
 
-declare var UIColor: any;
-
 var listView;
 var lblSelection;
+let isRad : boolean;
 
 export function onPageLoaded(args) {
     var page = args.object;
@@ -51,8 +50,6 @@ export function onItemDeselected(args) {
     lblSelection.text = selectedTitles;
 }
 
-let isRad : boolean;
-
 export function onRadListLoaded(args) {
     let radList = <RadListView>args.object;
 
@@ -73,7 +70,6 @@ export function onItemLoading(args) {
 function setIosListItemTransparentBackground(args) {
     if (isRad) { //RadListView?
         console.log("isRad RadListView");
-        //not executed - in RadListViews itemLoading event: args.object is undefined
         var iosColor = new Color(20, 255, 0, 0).ios;
         args.ios.backgroundView.backgroundColor = iosColor;
     }
