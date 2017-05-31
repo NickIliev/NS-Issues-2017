@@ -19,7 +19,7 @@ export class ItemDetailComponent implements OnInit {
         private itemService: ItemService,
         private route: ActivatedRoute,
         private routerExtensions: RouterExtensions,
-        private nav: Router 
+        private nav: Router
     ) { }
 
     ngOnInit() {
@@ -31,7 +31,7 @@ export class ItemDetailComponent implements OnInit {
     openDetails(): void {
         console.log("openDetails clicked");
         console.log(this.id);
-        
+
         this.routerExtensions.navigate(['/item', this.id]);  // This doesn't work
 
         this.id--;
