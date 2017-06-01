@@ -1,9 +1,10 @@
 <ActionBar title="My App" class="action-bar">
 </ActionBar>
 <StackLayout class="page">
-    <Slider minValue="1" maxValue="999" [(ngModel)]="intertialResolution" (valueChange)="onValueChange($event)"></Slider>
-
-    <Label [text]="'intertialResolution: ' + intertialResolution" textWrap="false"></Label>
-
-    <Label [text]="'myOtherProp: ' + myOtherProp" textWrap="false"></Label>
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
 </StackLayout>

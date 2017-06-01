@@ -9,18 +9,13 @@ import { ItemService } from "./item.service";
     templateUrl: "./items.component.html",
 })
 export class ItemsComponent implements OnInit {
-    intertialResolution: number;
+    items: Item[];
 
-    myOtherProp: number;
-
-    constructor(private itemService: ItemService) { }
-
-    ngOnInit(): void {
-        this.intertialResolution = 10;
+    constructor(private itemService: ItemService) {
+        
     }
 
-    onValueChange(args) {
-        console.log(args.value);
-        this.myOtherProp = args.value;
+    ngOnInit(): void {
+        this.items = this.itemService.getItems();
     }
 }

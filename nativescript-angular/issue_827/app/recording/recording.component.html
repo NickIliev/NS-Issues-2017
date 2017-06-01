@@ -1,0 +1,29 @@
+<ActionBar title="Recording" class="action-bar">
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"></NavigationButton>
+    <ActionItem (tap)="record()" ios.systemIcon="15" ios.position="right" android.systemIcon="ic_menu_camera" android.position="actionBar"></ActionItem>
+</ActionBar>
+<StackLayout class="container">
+    <TextField hint="Recording name" [(ngModel)]="name"></TextField>
+    <TextField hint="Inertial resolution (milliseconds)" [(ngModel)]="intertialResolution"></TextField>
+
+    <ListPicker [items]="devices"
+                [selectedIndex]="devicesIndex" 
+                (selectedIndexChange)="devicesIndexChanged($event.value)">
+    </ListPicker>
+
+    <!--<ListPicker [items]="viedoResolutions"
+                [selectedIndex]="viedoResolutionsIndex" 
+                (selectedIndexChange)="viedoResolutionsIndexChanged($event.value)">
+    </ListPicker>
+
+    <StackLayout orientation="horizontal" width="210" h>
+        <StackLayout>
+            <Label text="Min video resolution"></Label>
+            <TextField hint="Min video resolution" [(ngModel)]="minVideoResolution"></TextField>
+        </StackLayout>
+        <StackLayout>
+            <Label text="Max video resolution"></Label>
+            <TextField hint="Min video resolution" [(ngModel)]="minVideoResolution"></TextField>
+        </StackLayout>
+    </StackLayout>-->
+</StackLayout>
