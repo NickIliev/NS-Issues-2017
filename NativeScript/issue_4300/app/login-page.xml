@@ -1,0 +1,21 @@
+<!--<Page xmlns="http://schemas.nativescript.org/tns.xsd" shownModally="onShownModally" loaded="onLoaded" unloaded="onUnloaded" backgroundColor="Red">
+  <StackLayout backgroundColor="PaleGreen" margin="10">
+    <TextField hint="username" id="username" text="username"/>
+    <TextField hint="password" id="password" text="password" secure="true"/>
+    <Button text="Login" tap="onLoginButtonTap"/>
+  </StackLayout>
+</Page>-->
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" shownModally="onShownModally" backgroundColor="transparent">
+    <GridLayout class="mainstack" rows="auto, auto, auto" columns="auto">
+      <Label row="0" text="  " class="avatar-circle-halo" row="0" />
+      <Label row="1" text="&#xE7FB;" horizontalAlignment="center" class="avatar-circle-icon" row="0" />
+      <GridLayout row="2" rows="auto, auto, auto, auto, auto" columns="auto" class="headerFooter" row="1">
+          <Label text="Connect with Us" class="headingtxt align-center" row="0"/>
+          <Button text="&#xf099; Twitter" horizontalAlignment="center" tap="moveTo" class="socialbtn" row="1" id="twitter"/>
+          <Button text="&#xf230; Facebook" horizontalAlignment="center" tap="moveTo" class="socialbtn" row="2" id="fb"/>
+          <Button text="&#xf16d; Instagram" horizontalAlignment="center" tap="moveTo" class="socialbtn" row="3" id="insta"/>
+          <Button text="&#xf166; YouTube" horizontalAlignment="center" tap="moveTo" class="socialbtn" row="4" id="youtube"/>
+      </GridLayout>
+    </GridLayout>
+</Page>

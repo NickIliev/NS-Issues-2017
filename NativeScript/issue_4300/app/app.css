@@ -1,0 +1,68 @@
+﻿
+.btn {
+    font-size: 18;
+}
+
+.mainstack {
+    margin-left: 10;
+    margin-right: 10;
+    margin-top: 10;
+    background-color: transparent;
+    opacity: 0.8;
+    border-radius: 10;
+}
+.socialbtn {
+    font-family: FontAwesome, fontawesome;
+    padding: 10;
+    font-size: 24;
+    background-color: #7D110C;
+    color: white;
+    border-radius: 15;
+    height: 45;
+    width: 160;
+    margin-left: 20;
+    margin-right: 20;
+    margin-bottom: 10;
+    margin-top: 2;
+    text-transform: capitalize;
+}
+ 
+ 
+.headerFooter {
+    background-color: white;
+    border-radius: 10;
+    width: 200;
+}
+ 
+.avatar-circle-icon {
+    font-size:40px;
+    height: 50;
+    width: 50;
+    color: #fff;
+    background-color: #7D110C;
+    border-radius: 30;
+    margin-left: 12;
+    margin-top: 3.75;
+    margin-bottom: 3.75;
+    text-align: center;
+    font-family: MaterialIcons, Material Icons;
+    vertical-align: middle;
+}
+ 
+.avatar-circle-halo {
+    /*font-size:20;*/
+    height: 60;
+    width: 60;
+    color: #fff;
+    background-color: white;
+    border-radius: 30;
+    margin-left: 12;
+    margin-top: 3.75;
+    margin-bottom: 3.75;
+    text-align: center;
+    font-family: MaterialIcons, Material Icons;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 42px;   /*Preferred icon size */
+}
+@import 'nativescript-theme-core/css/core.light.css';
