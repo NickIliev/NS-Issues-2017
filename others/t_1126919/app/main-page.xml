@@ -2,10 +2,10 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:gr="nativescript-gradient" navigatingTo="navigatingTo" class="page">
 
     <gr:Gradient direction="to right" colors="#FF0077, green, #FF00FF">
-        <StackLayout class="p-20">
+
             <Label text="Tap the button" class="h1 text-center"/>
             <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
             <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
-        </StackLayout>
+
     </gr:Gradient>
 </Page>
