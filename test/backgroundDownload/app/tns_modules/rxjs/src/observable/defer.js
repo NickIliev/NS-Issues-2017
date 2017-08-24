@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var DeferObservable_1 = require("./DeferObservable");
+exports.defer = DeferObservable_1.DeferObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVmZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJkZWZlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHFEQUFzRDtBQUV6QyxRQUFBLEtBQUssR0FBRyxpQ0FBZSxDQUFDLE1BQU0sQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7ICBEZWZlck9ic2VydmFibGUgIH0gZnJvbSAnLi9EZWZlck9ic2VydmFibGUnO1xuXG5leHBvcnQgY29uc3QgZGVmZXIgPSBEZWZlck9ic2VydmFibGUuY3JlYXRlOyJdfQ==

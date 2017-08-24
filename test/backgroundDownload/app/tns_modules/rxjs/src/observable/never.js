@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var NeverObservable_1 = require("./NeverObservable");
+exports.never = NeverObservable_1.NeverObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmV2ZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZXZlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHFEQUFzRDtBQUV6QyxRQUFBLEtBQUssR0FBRyxpQ0FBZSxDQUFDLE1BQU0sQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7ICBOZXZlck9ic2VydmFibGUgIH0gZnJvbSAnLi9OZXZlck9ic2VydmFibGUnO1xuXG5leHBvcnQgY29uc3QgbmV2ZXIgPSBOZXZlck9ic2VydmFibGUuY3JlYXRlOyJdfQ==

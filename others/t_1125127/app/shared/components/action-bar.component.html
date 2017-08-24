@@ -1,0 +1,28 @@
+<ActionBar class="action-bar" [title]="title" *nsIfIos>
+  <NavigationButton *ngIf="false"></NavigationButton>
+
+  <ActionItem [visibility]="showBack ? 'visible' : 'collapsed'" text="< Back" ios.position="left"
+    (tap)="onBack()">
+  </ActionItem>
+
+  <ActionItem *ngIf="showIndex"
+    ios.position="right" text="Index" (tap)="onIndex()">
+  </ActionItem>
+
+  <ActionItem *ngIf="showDrawer"
+    ios.position="right" text="Menu" (tap)="onDrawer()">
+  </ActionItem>
+</ActionBar>
+
+<ActionBar class="action-bar" [title]="title" *nsIfAndroid>
+  <NavigationButton *ngIf="showBack" android.systemIcon="ic_menu_back" (tap)="onBack()">
+  </NavigationButton>
+
+  <ActionItem *ngIf="showIndex"
+    ios.position="right" text="Index" (tap)="onIndex()">
+  </ActionItem>
+
+  <ActionItem *ngIf="showDrawer"
+    ios.position="right" text="Menu" (tap)="onDrawer()">
+  </ActionItem>
+</ActionBar>

@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var race_1 = require("../../operator/race");
+Observable_1.Observable.race = race_1.raceStatic;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmFjZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInJhY2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQ0FBOEM7QUFDOUMsNENBQWlEO0FBRWpELHVCQUFVLENBQUMsSUFBSSxHQUFHLGlCQUFVLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyByYWNlU3RhdGljIH0gZnJvbSAnLi4vLi4vb3BlcmF0b3IvcmFjZSc7XG5cbk9ic2VydmFibGUucmFjZSA9IHJhY2VTdGF0aWM7XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIG5hbWVzcGFjZSBPYnNlcnZhYmxlIHtcbiAgICBleHBvcnQgbGV0IHJhY2U6IHR5cGVvZiByYWNlU3RhdGljO1xuICB9XG59Il19

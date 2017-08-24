@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var nativescript_background_fetch_1 = require("nativescript-background-fetch");
+var CustomAppDelegate = (function (_super) {
+    __extends(CustomAppDelegate, _super);
+    function CustomAppDelegate() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    CustomAppDelegate.prototype.applicationPerformFetchWithCompletionHandler = function (applicaiton, completionHandler) {
+        nativescript_background_fetch_1.BackgroundFetch.performFetchWithCompletionHandler(completionHandler);
+    };
+    return CustomAppDelegate;
+}(UIResponder));
+CustomAppDelegate.ObjCProtocols = [UIApplicationDelegate];
+exports.CustomAppDelegate = CustomAppDelegate;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3VzdG9tLWRlbGVnYXRlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY3VzdG9tLWRlbGVnYXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0VBQWdFO0FBRWhFO0lBQXVDLHFDQUFXO0lBQWxEOztJQU1BLENBQUM7SUFIVSx3RUFBNEMsR0FBbkQsVUFBb0QsV0FBZ0IsRUFBRSxpQkFBc0I7UUFDeEYsK0NBQWUsQ0FBQyxpQ0FBaUMsQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDO0lBQ3pFLENBQUM7SUFDTCx3QkFBQztBQUFELENBQUMsQUFORCxDQUF1QyxXQUFXO0FBQ2hDLCtCQUFhLEdBQUcsQ0FBQyxxQkFBcUIsQ0FBQyxDQUFDO0FBRDdDLDhDQUFpQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEJhY2tncm91bmRGZXRjaCB9IGZyb20gXCJuYXRpdmVzY3JpcHQtYmFja2dyb3VuZC1mZXRjaFwiO1xuXG5leHBvcnQgY2xhc3MgQ3VzdG9tQXBwRGVsZWdhdGUgZXh0ZW5kcyBVSVJlc3BvbmRlciBpbXBsZW1lbnRzIFVJQXBwbGljYXRpb25EZWxlZ2F0ZSB7XG4gICAgcHVibGljIHN0YXRpYyBPYmpDUHJvdG9jb2xzID0gW1VJQXBwbGljYXRpb25EZWxlZ2F0ZV07XG5cbiAgICBwdWJsaWMgYXBwbGljYXRpb25QZXJmb3JtRmV0Y2hXaXRoQ29tcGxldGlvbkhhbmRsZXIoYXBwbGljYWl0b246IGFueSwgY29tcGxldGlvbkhhbmRsZXI6IGFueSkge1xuICAgICAgICBCYWNrZ3JvdW5kRmV0Y2gucGVyZm9ybUZldGNoV2l0aENvbXBsZXRpb25IYW5kbGVyKGNvbXBsZXRpb25IYW5kbGVyKTtcbiAgICB9XG59Il19

@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <StackLayout>
+        <Label text="repeater" textWrap="true" />
+
+<Repeater id="rp" items="{{ myItems }}">
+    <Repeater.itemTemplate>
+        <StackLayout tap="onTap" >
+            <Label text="{{ color || 'Downloading...' }}" />
+        </StackLayout>
+    </Repeater.itemTemplate>
+</Repeater>
+
+    </StackLayout>
+</Page>

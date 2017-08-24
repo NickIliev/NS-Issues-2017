@@ -1,0 +1,7 @@
+<StackLayout class="page">
+    <ListView [items]="recordings" class="list-group">
+        <ng-template let-item="recording">
+            <Label [nsRouterLink]="['/recording', recording.id]" [text]="recording.name" class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>

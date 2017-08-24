@@ -1,0 +1,6 @@
+﻿ActionBar {
+    background-color:  #3C5AFD;
+    color: white;
+}
+
+@import 'nativescript-theme-core/css/core.light.css';

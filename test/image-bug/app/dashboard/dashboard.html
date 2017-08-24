@@ -1,0 +1,31 @@
+<navigation-drawer>
+    <DockLayout stretchLastChild="true">
+        <StackLayout dock="bottom" class="dock-btm">
+            <StackLayout orientation="horizontal" >
+                <Button text="Search" [nsRouterLink]="['/search']" pageTransition="slide"></Button>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView>
+            <StackLayout dock="top">
+                <Image #userImage class="profile-img"></Image>
+                <StackLayout>
+                    <Label text="Welcome" class=""></Label>                    
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </DockLayout>
+</navigation-drawer>
+
+<navigation-drawer>
+    <DockLayout stretchLastChild="true">
+        <StackLayout dock="bottom" class="dock-btm">
+            <Button text="Search" [nsRouterLink]="['/search']" pageTransition="slide"></Button>
+        </StackLayout>
+        <ScrollView>
+            <StackLayout dock="top">
+                <Image #userImage class="profile-img"></Image>
+                <Label text="Welcome" class=""></Label>                    
+            </StackLayout>
+        </ScrollView>
+    </DockLayout>
+</navigation-drawer>

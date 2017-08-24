@@ -1,0 +1,37 @@
+<GridLayout rows="*">
+    <ListView id="lvChatAll" [row]="row" [items]="chat" (itemTap)="chatItemSelected($event)">
+        <ng-template let-item="item">
+            <GridLayout columns="auto,*,auto,auto" class="writeMessage bubble">
+                <GridLayout>
+                    <Image col="0" [src]="item.profileimage" class="avatar" stretch="aspectFit" style="background-color: #DBDBDB;"></Image>
+                    <AbsoluteLayout >
+                        <Image col="0" style="margin-left: 43; margin-top: 34; padding:2; height: 12; width: 12; background-color: green;  border-width: 2; border-color: white;border-radius:6;" *ngIf="'{{item.userName}}' != ''"></Image>
+                    </AbsoluteLayout>
+                </GridLayout>
+                <StackLayout col="1" columns="*" rows="*">
+                    <WrapLayout *ngIf="'{{item.userName}}' !== ''">
+                        <Label [text]="item.userName" class="contactName"></Label>
+                    </WrapLayout>
+                    <WrapLayout *ngIf="'{{item.groupName}}' !== ''">
+                        <Label [text]="item.groupName" class="grpName"></Label>
+                    </WrapLayout>
+
+                    <!--<Label col="2" [text]="item.Date" class="listDate"></Label>-->
+                    <!--<Label  [text]="item.userId" class="chatMsg" [visibility]="isItemVisible ? 'collapsed' : 'collapsed'"></Label>  -->
+                    <!--<Label  [text]="item.groupId" class="chatMsg" [visibility]="isItemVisible ? 'collapsed' : 'collapsed'"></Label>  -->
+                    <Label [text]="item.messageText" class="chatMsg"></Label>
+                    <!--<WrapLayout *ngIf = "'item.msgUnread' > '0'">
+                           <Label  [text]="item.messageText" style="color: red;" ></Label>  </WrapLayout>
+                           <WrapLayout *ngIf = "'item.msgUnread' !== ''">      *ngIf = "activeTab == 'Docs'"
+                        <Label  [text]="item.messageText" class="chatMsg"></Label>  </WrapLayout>-->
+                </StackLayout>
+                <WrapLayout col="2" visibility="{{item.grpNumber ? 'visible' : 'collapsed'}}" style="vertical-align: middle;">
+                    <Label text="{{item.msgUnread}}" class="itemNewMsgBubble"></Label>
+                </WrapLayout>
+                <WrapLayout col="2">
+                    <Label col="2" text="{{item.Date | date: 'M/d/yy HH:mm'}}" class="listDate"></Label>
+                </WrapLayout>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

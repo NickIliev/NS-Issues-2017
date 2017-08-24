@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <StackLayout class="p-20">
+        <Button text="writeSync" tap="writeSync" class="btn btn-primary btn-active"/>
+        <Button text="readSync" tap="readSync" class="btn btn-primary btn-active"/>
+    </StackLayout>
+</Page>

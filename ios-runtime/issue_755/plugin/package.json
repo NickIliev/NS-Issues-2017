@@ -1,0 +1,21 @@
+
+{
+  "name": "nativescript-ogg",
+  "version": "1.0.0",
+  "description": "Your awesome NativeScript plugin.",
+  "main": "ns-ogg",
+  "typings": "ns-ogg.d.ts",
+  "nativescript": {
+    "platforms": {
+      "android": "2.5.0",
+      "ios": "2.5.0"
+    }
+  },
+  "devDependencies": {
+    "tns-core-modules": "2.5.2",
+    "tns-platform-declarations": "2.5.2",
+    "typescript": "2.0.8",
+    "prompt": "1.0.0",
+    "rimraf": "2.5.0"
+  }
+}

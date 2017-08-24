@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded">
+    <Page.actionBar>
+        <ActionBar title="RadListView issue" />
+    </Page.actionBar>
+    <StackLayout>
+        <Button text="Go to RadListView" tap="onTap"/>
+    </StackLayout>
+</Page>

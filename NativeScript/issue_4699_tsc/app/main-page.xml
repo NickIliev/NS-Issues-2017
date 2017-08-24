@@ -1,0 +1,63 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:nsDrawer="nativescript-telerik-ui-pro/sidedrawer" loaded="onLoaded" navigatedTo="onNavigatedTo">
+
+
+<nsDrawer:RadSideDrawer id="sideDrawer">
+  <nsDrawer:RadSideDrawer.drawerContent>
+    <StackLayout backgroundColor="gray">
+      <StackLayout height="56" style="text-align: center; vertical-align: center;">
+        <Label text="Navigation Menu"/>
+      </StackLayout>
+      <StackLayout>
+        <Label text="Primary" padding="10" backgroundColor="lightgray"/>
+        <Label text="Social" padding="10"/>
+        <Label text="Promotions" padding="10" />
+        <Label text="Labels" padding="10" backgroundColor="lightgray" />
+        <Label text="Important" padding="10" />
+        <Label text="Starred" padding="10" />
+        <Label text="Sent Mail" padding="10" />
+        <Label text="Drafts" padding="10" />
+      </StackLayout>
+
+    </StackLayout>
+  </nsDrawer:RadSideDrawer.drawerContent>
+
+  <nsDrawer:RadSideDrawer.mainContent>
+        <ScrollView>
+            <StackLayout class="searchContent" backgroundColor="gray" height="1500">
+                <Label text="Search Filteration" class="search_title" />
+                <TextField text="searchKey" hint="Search Keyword" class="keyword" color="#fff" />
+                <Label text="Projects Starting Price" class="search_title" />
+
+                <Slider minValue="0" maxValue="800" value="100" class="slider"></Slider>
+
+                <GridLayout rows="auto" columns="*, *" class="textslider">
+                    <Label row="0" col="0" text="startingPrice.value" class="label1">
+                    </Label>
+                    <Label row="0" col="1" text="maxPrice.value" class="label2">
+                    </Label>
+                </GridLayout>
+
+                <label class="hr" />
+                <Label text="Area From (Sqm)" class="search_title" />
+
+                <Slider minValue="0" maxValue="1000" value="50" valueChange="onSecondSliderChange($event)" class="slider" ></Slider>
+
+                <GridLayout rows="auto" columns="*, *" class="textslider">
+                    <Label row="0" col="0" text="areafrom.value" class="label1">
+                    </Label>
+                    <Label row="0" col="1" text="areato.value" class="label2">
+                    </Label>
+                </GridLayout>
+
+                <label class="hr" />
+                <Label text="Project Include" class="search_title" />
+                <Label text="Project Facilities" class="search_title" />
+                <label class="hr" />
+                <label height="100" />
+            </StackLayout>
+        </ScrollView>
+  </nsDrawer:RadSideDrawer.mainContent>
+</nsDrawer:RadSideDrawer>
+
+
+</Page>

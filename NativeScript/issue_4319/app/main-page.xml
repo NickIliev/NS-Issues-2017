@@ -1,0 +1,10 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+  <Page.actionBar>
+    <ActionBar title="My App" icon="" class="action-bar">
+    </ActionBar>
+  </Page.actionBar>
+  <StackLayout id="searchArea" class="p-20 searchArea">
+    <Label text="Hello!" textWrap="true" />
+    <SearchBar id="searchBar" class="searchBar" hint="Search" text="" loaded="onSearchLoaded"/>
+  </StackLayout>
+</Page>

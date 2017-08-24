@@ -1,0 +1,10 @@
+﻿@import 'nativescript-theme-core/css/core.light.css';
+
+.btn {
+    font-size: 18;
+}
+
+ TextField {
+    border-width: 0 0 5 0;
+    border-bottom-color: red;
+} 

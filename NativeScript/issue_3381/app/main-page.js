@@ -1,0 +1,17 @@
+"use strict";
+var imageSource = require("image-source");
+// Event handler for Page "navigatingTo" event attached in main-page.xml
+function navigatingTo(args) {
+    var page = args.object;
+    // http://apod.nasa.gov/apod/image/1612/lmcapodgleason960.jpg  - NOT OK
+    // http://apod.nasa.gov/apod/image/1612/farside_lro800.jpg  - NOT OK
+    imageSource.fromUrl("http://apod.nasa.gov/apod/image/1612/lmcapodgleason960.jpg").then(function (res) {
+        console.log("Succsess!");
+    }).catch(function (err) {
+        console.log(err); // throwing with  JS: Error: Response content may not be converted to an Image
+    });
+    // https://static.pexels.com/photos/33045/lion-wild-africa-african.jpg OK
+    // http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01563/opgs/edr/ncam/NLB_536234013EDR_S0593016NCAM00568M_.JPG - OK
+}
+exports.navigatingTo = navigatingTo;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi1wYWdlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWFpbi1wYWdlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFHQSwwQ0FBNEM7QUFFNUMsd0VBQXdFO0FBQ3hFLHNCQUE2QixJQUFlO0lBRXhDLElBQUksSUFBSSxHQUFTLElBQUksQ0FBQyxNQUFNLENBQUM7SUFFN0IsdUVBQXVFO0lBQ3ZFLG9FQUFvRTtJQUVwRSxXQUFXLENBQUMsT0FBTyxDQUFDLDREQUE0RCxDQUFDLENBQUMsSUFBSSxDQUFDLFVBQUEsR0FBRztRQUN0RixPQUFPLENBQUMsR0FBRyxDQUFDLFdBQVcsQ0FBQyxDQUFBO0lBQzVCLENBQUMsQ0FBQyxDQUFDLEtBQUssQ0FBQyxVQUFBLEdBQUc7UUFDUixPQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUMsOEVBQThFO0lBQ3BHLENBQUMsQ0FBQyxDQUFBO0lBRUYseUVBQXlFO0lBQ3pFLDRJQUE0STtBQUNoSixDQUFDO0FBZkQsb0NBZUMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB7IEV2ZW50RGF0YSB9IGZyb20gJ2RhdGEvb2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBQYWdlIH0gZnJvbSAndWkvcGFnZSc7XG5pbXBvcnQgKiBhcyBpbWFnZVNvdXJjZSBmcm9tIFwiaW1hZ2Utc291cmNlXCI7XG5cbi8vIEV2ZW50IGhhbmRsZXIgZm9yIFBhZ2UgXCJuYXZpZ2F0aW5nVG9cIiBldmVudCBhdHRhY2hlZCBpbiBtYWluLXBhZ2UueG1sXG5leHBvcnQgZnVuY3Rpb24gbmF2aWdhdGluZ1RvKGFyZ3M6IEV2ZW50RGF0YSkge1xuXG4gICAgbGV0IHBhZ2UgPSA8UGFnZT5hcmdzLm9iamVjdDtcblxuICAgIC8vIGh0dHA6Ly9hcG9kLm5hc2EuZ292L2Fwb2QvaW1hZ2UvMTYxMi9sbWNhcG9kZ2xlYXNvbjk2MC5qcGcgIC0gTk9UIE9LXG4gICAgLy8gaHR0cDovL2Fwb2QubmFzYS5nb3YvYXBvZC9pbWFnZS8xNjEyL2ZhcnNpZGVfbHJvODAwLmpwZyAgLSBOT1QgT0tcblxuICAgIGltYWdlU291cmNlLmZyb21VcmwoXCJodHRwOi8vYXBvZC5uYXNhLmdvdi9hcG9kL2ltYWdlLzE2MTIvbG1jYXBvZGdsZWFzb245NjAuanBnXCIpLnRoZW4ocmVzID0+IHtcbiAgICAgICAgY29uc29sZS5sb2coXCJTdWNjc2VzcyFcIilcbiAgICB9KS5jYXRjaChlcnIgPT4ge1xuICAgICAgICBjb25zb2xlLmxvZyhlcnIpOyAvLyB0aHJvd2luZyB3aXRoICBKUzogRXJyb3I6IFJlc3BvbnNlIGNvbnRlbnQgbWF5IG5vdCBiZSBjb252ZXJ0ZWQgdG8gYW4gSW1hZ2VcbiAgICB9KVxuXG4gICAgLy8gaHR0cHM6Ly9zdGF0aWMucGV4ZWxzLmNvbS9waG90b3MvMzMwNDUvbGlvbi13aWxkLWFmcmljYS1hZnJpY2FuLmpwZyBPS1xuICAgIC8vIGh0dHA6Ly9tYXJzLmpwbC5uYXNhLmdvdi9tc2wtcmF3LWltYWdlcy9wcm9qL21zbC9yZWRvcHMvb2RzL3N1cmZhY2Uvc29sLzAxNTYzL29wZ3MvZWRyL25jYW0vTkxCXzUzNjIzNDAxM0VEUl9TMDU5MzAxNk5DQU0wMDU2OE1fLkpQRyAtIE9LXG59Il19

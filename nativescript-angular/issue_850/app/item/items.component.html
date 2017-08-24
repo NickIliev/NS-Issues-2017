@@ -1,0 +1,24 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<TabView selectedIndex="0" (selectedIndexChange)="onIndexChanged($event)" >
+
+    <StackLayout *tabItem="{title: 'tab1'}">
+        <Button text="change ngif" (tap)="onChange()"></Button>    
+    </StackLayout>
+    
+    <StackLayout *tabItem="{title: 'tab2'}">
+    </StackLayout>
+
+    <ng-template [ngIf]="isLoggedIn">
+        <StackLayout *tabItem="{title: 'tab3'}">
+        </StackLayout>
+    </ng-template>
+
+    <StackLayout *tabItem="{title: 'tab4'}">
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'tab5'}">
+    </StackLayout>
+
+</TabView>
+

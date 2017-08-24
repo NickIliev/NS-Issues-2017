@@ -1,0 +1,8 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <GridLayout rows="auto" columns="auto, *" class="p-5">
+        <Label row="0" col="0" text="Goodbye" textWrap="true" />
+        <Label row="0" col="1" text="Hello" textWrap="true" />
+    </GridLayout>
+</Page>

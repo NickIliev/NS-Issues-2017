@@ -1,0 +1,37 @@
+<TabView row="0" selectedIndex="0" (selectedIndexChange)="onIndexChanged($event)">
+	<StackLayout *tabItem="{title: 'Details'}">
+		<GridLayout rows="*, auto">
+			<ScrollView>
+				<StackLayout class="list-group">
+					<GridLayout class="list-group-item" rows="auto, auto">
+						<GridLayout columns="auto, 10, *" rows="auto, auto">
+							<!-- TODO: insert properties of editableList here -->
+							<!--<Label class="list-group-item-heading fa"></Label>-->
+							<StackLayout col="2">
+								<Label class="list-group-item-heading" [text]="item.data.oBuilding.Name"></Label>
+							</StackLayout>
+							<Label class="list-group-item-text m-l-10 m-t-10" row="1" colSpan="3" [text]="item.data.Name" textWrap="true"></Label>
+						</GridLayout>
+						<GridLayout row="1">
+							<!--- master detail form -->
+						</GridLayout>
+					</GridLayout>
+				</StackLayout>
+				<!-- START_CUSTOM_CODE_spaceViewModel -->
+				<!-- END_CUSTOM_CODE_spaceViewModel -->
+			</ScrollView>
+			<GridLayout row="1">
+				<Button class="btn btn-primary" text="Edit" (tap)="onEdit()"></Button> </GridLayout>
+		</GridLayout>
+	</StackLayout>
+	<StackLayout *tabItem="{title: 'Requests'}">
+		<GridLayout rows="*, auto">
+			<ns-requestView embedded="true" [spaceID]="item.data.Id"></ns-requestView>
+			<!--<GridLayout row="1">
+				<Button class="btn btn-primary" text="New Request" (tap)="onNewRequest()"></Button>
+			</GridLayout>-->
+		</GridLayout>
+	</StackLayout>
+	<StackLayout *tabItem="{title: 'Documents'}"> </StackLayout>
+</TabView>
+<ActivityIndicator class="activity-indicator" rowSpan="2" [busy]="!item" [visibility]="item ? 'collapse' : 'visible'"> </ActivityIndicator>

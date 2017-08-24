@@ -1,0 +1,19 @@
+
+<ScrollView  orientation="horizontal">
+    <StackLayout class="summary-content">
+<RadCartesianChart #chart height="300" width="600" allowAnimation="true" seriesSelectionMode="none">
+    <CategoricalAxis tkCartesianHorizontalAxis labelSize="14" lineColor="#ccc"></CategoricalAxis>
+    <LinearAxis tkCartesianVerticalAxis hidden="true"></LinearAxis>
+
+    <BarSeries tkCartesianSeries seriesName="inbound"
+        [items]="categoricalSource" categoryProperty="Country"showLabels="true"n valueProperty="Amount" selectionMode="none">
+        <PointLabelStyle tkBarLabelStyle fillColor="purple" textColor="white" textSize="15"></PointLabelStyle>
+    </BarSeries>
+
+    <Palette tkCartesianPalette seriesName="inbound">
+        <PaletteEntry tkCartesianPaletteEntry fillColor="#F4BB57" strokeColor="Transparent"></PaletteEntry>
+    </Palette>
+
+</RadCartesianChart>
+    </StackLayout>
+</ScrollView>

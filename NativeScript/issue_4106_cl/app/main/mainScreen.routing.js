@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var router_1 = require("@angular/router");
+var mainScreen_component_1 = require("./mainScreen.component");
+var allChatUser_component_1 = require("./chatlist/allChatUser.component");
+var auth_guard_service_1 = require("../auth-guard.service");
+var mainMenuRoutes = [
+    {
+        path: "main-menu",
+        component: mainScreen_component_1.MainScreen,
+        canActivate: [auth_guard_service_1.AuthGuard]
+    },
+    {
+        path: "gr-all-chat-list",
+        component: allChatUser_component_1.AllChatUser,
+        canActivate: [auth_guard_service_1.AuthGuard]
+    },
+];
+exports.mainMenuRouting = router_1.RouterModule.forChild(mainMenuRoutes);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpblNjcmVlbi5yb3V0aW5nLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWFpblNjcmVlbi5yb3V0aW5nLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsMENBQXVEO0FBRXZELCtEQUFvRDtBQUNwRCwwRUFBK0Q7QUFDL0QsNERBQWtEO0FBRWxELElBQU0sY0FBYyxHQUFXO0lBRTdCO1FBQ0UsSUFBSSxFQUFFLFdBQVc7UUFDakIsU0FBUyxFQUFFLGlDQUFVO1FBQ3JCLFdBQVcsRUFBRSxDQUFDLDhCQUFTLENBQUM7S0FDekI7SUFDRDtRQUNFLElBQUksRUFBRSxrQkFBa0I7UUFDeEIsU0FBUyxFQUFFLG1DQUFXO1FBQ3RCLFdBQVcsRUFBRSxDQUFDLDhCQUFTLENBQUM7S0FDekI7Q0FHRixDQUFDO0FBRVcsUUFBQSxlQUFlLEdBQXdCLHFCQUFZLENBQUMsUUFBUSxDQUFDLGNBQWMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTW9kdWxlV2l0aFByb3ZpZGVycyB9IGZyb20gXCJAYW5ndWxhci9jb3JlXCI7XG5pbXBvcnQgeyBSb3V0ZXMsIFJvdXRlck1vZHVsZSB9IGZyb20gXCJAYW5ndWxhci9yb3V0ZXJcIjtcblxuaW1wb3J0IHsgTWFpblNjcmVlbiB9IGZyb20gXCIuL21haW5TY3JlZW4uY29tcG9uZW50XCI7XG5pbXBvcnQgeyBBbGxDaGF0VXNlciB9IGZyb20gXCIuL2NoYXRsaXN0L2FsbENoYXRVc2VyLmNvbXBvbmVudFwiO1xuaW1wb3J0IHsgQXV0aEd1YXJkIH0gZnJvbSBcIi4uL2F1dGgtZ3VhcmQuc2VydmljZVwiO1xuXG5jb25zdCBtYWluTWVudVJvdXRlczogUm91dGVzID0gW1xuXG4gIHtcbiAgICBwYXRoOiBcIm1haW4tbWVudVwiLFxuICAgIGNvbXBvbmVudDogTWFpblNjcmVlbixcbiAgICBjYW5BY3RpdmF0ZTogW0F1dGhHdWFyZF1cbiAgfSxcbiAge1xuICAgIHBhdGg6IFwiZ3ItYWxsLWNoYXQtbGlzdFwiLFxuICAgIGNvbXBvbmVudDogQWxsQ2hhdFVzZXIsXG4gICAgY2FuQWN0aXZhdGU6IFtBdXRoR3VhcmRdXG4gIH0sXG5cblxuXTtcblxuZXhwb3J0IGNvbnN0IG1haW5NZW51Um91dGluZzogTW9kdWxlV2l0aFByb3ZpZGVycyA9IFJvdXRlck1vZHVsZS5mb3JDaGlsZChtYWluTWVudVJvdXRlcyk7XG5cblxuIl19

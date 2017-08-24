@@ -1,0 +1,11 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <StackLayout class="p-20">
+        <Image src="res://logo" width="150" borderRadius="100"></Image>
+        <Image src="res://logo" width="50" borderRadius="100"></Image>
+
+        <Image src="res://icon" width="150" borderRadius="100"></Image>
+        <Image src="res://icon" width="50" borderRadius="100"></Image>
+    </StackLayout>
+</Page>

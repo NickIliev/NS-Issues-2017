@@ -1,0 +1,48 @@
+/**
+ * Created by jeremiahminton on 2/27/17.
+ */
+"use strict";
+var core_1 = require("@angular/core");
+var page_1 = require("ui/page");
+var observable_1 = require("data/observable");
+var angular_1 = require("nativescript-telerik-ui-pro/sidedrawer/angular");
+var HomeComponent = (function (_super) {
+    __extends(HomeComponent, _super);
+    function HomeComponent(page, _changeDetectionRef) {
+        var _this = _super.call(this) || this;
+        _this.page = page;
+        _this._changeDetectionRef = _changeDetectionRef;
+        return _this;
+    }
+    HomeComponent.prototype.ngAfterViewInit = function () {
+        this.drawer = this.drawerComponent.sideDrawer;
+        this._changeDetectionRef.detectChanges();
+    };
+    HomeComponent.prototype.ngOnInit = function () {
+        this.set("mainContentText", "SideDrawer for NativeScript can be easily setup in the XML definition of your page by defining main- and drawer-content. The component"
+            + " has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.");
+    };
+    HomeComponent.prototype.openDrawer = function () {
+        this.drawer.showDrawer();
+    };
+    HomeComponent.prototype.closeDrawer = function () {
+        this.drawer.closeDrawer();
+    };
+    return HomeComponent;
+}(observable_1.Observable));
+__decorate([
+    core_1.ViewChild(angular_1.RadSideDrawerComponent),
+    __metadata("design:type", angular_1.RadSideDrawerComponent)
+], HomeComponent.prototype, "drawerComponent", void 0);
+HomeComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'home',
+        templateUrl: 'home.component.html',
+        styleUrls: ['home.component.css']
+    }),
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [page_1.Page, core_1.ChangeDetectorRef])
+], HomeComponent);
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9tZS5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJob21lLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRzs7QUFHSCxzQ0FBd0c7QUFHeEcsZ0NBQStCO0FBRy9CLDhDQUE2QztBQUM3QywwRUFBd0c7QUFVeEcsSUFBYSxhQUFhO0lBQVMsaUNBQVU7SUFDekMsdUJBQW9CLElBQVUsRUFBVSxtQkFBc0M7UUFBOUUsWUFDSSxpQkFBTyxTQUNWO1FBRm1CLFVBQUksR0FBSixJQUFJLENBQU07UUFBVSx5QkFBbUIsR0FBbkIsbUJBQW1CLENBQW1COztJQUU5RSxDQUFDO0lBU0QsdUNBQWUsR0FBZjtRQUNJLElBQUksQ0FBQyxNQUFNLEdBQUcsSUFBSSxDQUFDLGVBQWUsQ0FBQyxVQUFVLENBQUM7UUFDOUMsSUFBSSxDQUFDLG1CQUFtQixDQUFDLGFBQWEsRUFBRSxDQUFDO0lBQzdDLENBQUM7SUFFRCxnQ0FBUSxHQUFSO1FBQ0ksSUFBSSxDQUFDLEdBQUcsQ0FBQyxpQkFBaUIsRUFBRSx3SUFBd0k7Y0FDOUosNklBQTZJLENBQUMsQ0FBQztJQUN6SixDQUFDO0lBRU0sa0NBQVUsR0FBakI7UUFDSSxJQUFJLENBQUMsTUFBTSxDQUFDLFVBQVUsRUFBRSxDQUFDO0lBQzdCLENBQUM7SUFFTSxtQ0FBVyxHQUFsQjtRQUNJLElBQUksQ0FBQyxNQUFNLENBQUMsV0FBVyxFQUFFLENBQUM7SUFDOUIsQ0FBQztJQUNMLG9CQUFDO0FBQUQsQ0FBQyxBQTdCRCxDQUFtQyx1QkFBVSxHQTZCNUM7QUF4QnNDO0lBQWxDLGdCQUFTLENBQUMsZ0NBQXNCLENBQUM7OEJBQXlCLGdDQUFzQjtzREFBQztBQUx6RSxhQUFhO0lBUnpCLGdCQUFTLENBQUM7UUFDUCxRQUFRLEVBQUUsTUFBTSxDQUFDLEVBQUU7UUFDbkIsUUFBUSxFQUFFLE1BQU07UUFDaEIsV0FBVyxFQUFFLHFCQUFxQjtRQUNsQyxTQUFTLEVBQUUsQ0FBQyxvQkFBb0IsQ0FBQztLQUNwQyxDQUFDO0lBRUQsaUJBQVUsRUFBRTtxQ0FFaUIsV0FBSSxFQUErQix3QkFBaUI7R0FEckUsYUFBYSxDQTZCekI7QUE3Qlksc0NBQWEiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcclxuICogQ3JlYXRlZCBieSBqZXJlbWlhaG1pbnRvbiBvbiAyLzI3LzE3LlxyXG4gKi9cclxuXHJcblxyXG5pbXBvcnQgeyBDb21wb25lbnQsIEVsZW1lbnRSZWYsIFZpZXdDaGlsZCwgSW5qZWN0YWJsZSwgT25Jbml0LCBDaGFuZ2VEZXRlY3RvclJlZiB9IGZyb20gXCJAYW5ndWxhci9jb3JlXCI7XHJcbmltcG9ydCB7IFZpZXcgfSBmcm9tIFwidWkvY29yZS92aWV3XCI7XHJcbmltcG9ydCB7IFJhZFNpZGVEcmF3ZXIgfSBmcm9tIFwibmF0aXZlc2NyaXB0LXRlbGVyaWstdWktcHJvL3NpZGVkcmF3ZXJcIjtcclxuaW1wb3J0IHsgUGFnZSB9IGZyb20gXCJ1aS9wYWdlXCI7XHJcbmltcG9ydCB7IEFjdGlvbkl0ZW0gfSBmcm9tIFwidWkvYWN0aW9uLWJhclwiO1xyXG5pbXBvcnQgc2lkZURyYXdlck1vZHVsZSA9IHJlcXVpcmUoJ25hdGl2ZXNjcmlwdC10ZWxlcmlrLXVpLXByby9zaWRlZHJhd2VyJyk7XHJcbmltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tIFwiZGF0YS9vYnNlcnZhYmxlXCI7XHJcbmltcG9ydCB7IFJhZFNpZGVEcmF3ZXJDb21wb25lbnQsIFNpZGVEcmF3ZXJUeXBlIH0gZnJvbSBcIm5hdGl2ZXNjcmlwdC10ZWxlcmlrLXVpLXByby9zaWRlZHJhd2VyL2FuZ3VsYXJcIjtcclxuXHJcbkBDb21wb25lbnQoe1xyXG4gICAgbW9kdWxlSWQ6IG1vZHVsZS5pZCxcclxuICAgIHNlbGVjdG9yOiAnaG9tZScsXHJcbiAgICB0ZW1wbGF0ZVVybDogJ2hvbWUuY29tcG9uZW50Lmh0bWwnLFxyXG4gICAgc3R5bGVVcmxzOiBbJ2hvbWUuY29tcG9uZW50LmNzcyddXHJcbn0pXHJcblxyXG5ASW5qZWN0YWJsZSgpXHJcbmV4cG9ydCBjbGFzcyBIb21lQ29tcG9uZW50IGV4dGVuZHMgT2JzZXJ2YWJsZSBpbXBsZW1lbnRzIE9uSW5pdCB7XHJcbiAgICBjb25zdHJ1Y3Rvcihwcml2YXRlIHBhZ2U6IFBhZ2UsIHByaXZhdGUgX2NoYW5nZURldGVjdGlvblJlZjogQ2hhbmdlRGV0ZWN0b3JSZWYpIHtcclxuICAgICAgICBzdXBlcigpO1xyXG4gICAgfVxyXG5cclxuICAgIEBWaWV3Q2hpbGQoUmFkU2lkZURyYXdlckNvbXBvbmVudCkgcHVibGljIGRyYXdlckNvbXBvbmVudDogUmFkU2lkZURyYXdlckNvbXBvbmVudDtcclxuXHJcbiAgICAvLyBPUiB5b3UgY2FuIGFsc28gdXNlIEFuZ3VsYXIgSUQgaW4geW91ciBIVE1MIGFuZCBnZXQgcmVmZXJlbmNlIHRvIHlvdXIgc2lkZWRyYXdlciB2aWEgdGhhdCBpZCAoZS5nLiAjbXlEcmF3ZXIgaW4gSFRNTCBmaWxlKVxyXG4gICAgLy8gQFZpZXdDaGlsZChcIm15RHJhd2VyXCIpIHB1YmxpYyBkcmF3ZXJDb21wb25lbnQ6IFJhZFNpZGVEcmF3ZXJDb21wb25lbnQ7XHJcblxyXG4gICAgcHJpdmF0ZSBkcmF3ZXI6IFNpZGVEcmF3ZXJUeXBlO1xyXG5cclxuICAgIG5nQWZ0ZXJWaWV3SW5pdCgpIHtcclxuICAgICAgICB0aGlzLmRyYXdlciA9IHRoaXMuZHJhd2VyQ29tcG9uZW50LnNpZGVEcmF3ZXI7XHJcbiAgICAgICAgdGhpcy5fY2hhbmdlRGV0ZWN0aW9uUmVmLmRldGVjdENoYW5nZXMoKTtcclxuICAgIH1cclxuXHJcbiAgICBuZ09uSW5pdCgpIHtcclxuICAgICAgICB0aGlzLnNldChcIm1haW5Db250ZW50VGV4dFwiLCBcIlNpZGVEcmF3ZXIgZm9yIE5hdGl2ZVNjcmlwdCBjYW4gYmUgZWFzaWx5IHNldHVwIGluIHRoZSBYTUwgZGVmaW5pdGlvbiBvZiB5b3VyIHBhZ2UgYnkgZGVmaW5pbmcgbWFpbi0gYW5kIGRyYXdlci1jb250ZW50LiBUaGUgY29tcG9uZW50XCJcclxuICAgICAgICAgICAgKyBcIiBoYXMgYSBkZWZhdWx0IHRyYW5zaXRpb24gYW5kIHBvc2l0aW9uIGFuZCBhbHNvIGV4cG9zZXMgbm90aWZpY2F0aW9ucyByZWxhdGVkIHRvIGNoYW5nZXMgaW4gaXRzIHN0YXRlLiBTd2lwZSBmcm9tIGxlZnQgdG8gb3BlbiBzaWRlIGRyYXdlci5cIik7XHJcbiAgICB9XHJcblxyXG4gICAgcHVibGljIG9wZW5EcmF3ZXIoKSB7XHJcbiAgICAgICAgdGhpcy5kcmF3ZXIuc2hvd0RyYXdlcigpO1xyXG4gICAgfVxyXG5cclxuICAgIHB1YmxpYyBjbG9zZURyYXdlcigpIHtcclxuICAgICAgICB0aGlzLmRyYXdlci5jbG9zZURyYXdlcigpO1xyXG4gICAgfVxyXG59Il19

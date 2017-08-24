@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var filter_1 = require("../../operator/filter");
+Observable_1.Observable.prototype.filter = filter_1.filter;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmlsdGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZmlsdGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsK0NBQThDO0FBQzlDLGdEQUErQztBQUUvQyx1QkFBVSxDQUFDLFNBQVMsQ0FBQyxNQUFNLEdBQUcsZUFBTSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBmaWx0ZXIgfSBmcm9tICcuLi8uLi9vcGVyYXRvci9maWx0ZXInO1xuXG5PYnNlcnZhYmxlLnByb3RvdHlwZS5maWx0ZXIgPSBmaWx0ZXI7XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIGludGVyZmFjZSBPYnNlcnZhYmxlPFQ+IHtcbiAgICBmaWx0ZXI6IHR5cGVvZiBmaWx0ZXI7XG4gIH1cbn0iXX0=

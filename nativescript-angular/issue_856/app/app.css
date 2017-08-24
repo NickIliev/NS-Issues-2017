@@ -1,0 +1,13 @@
+@import 'nativescript-theme-core/css/core.light.css';
+
+.view {
+    animation-name: example;
+    animation-duration: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes example {
+    from { transform: translate(0, 0); }
+    to { transform: translate(0, 100); }
+}

@@ -1,0 +1,6 @@
+<GridLayout rows="auto" columns="*,auto" paddingTop="10">  
+    <Label verticalAlignment="center" marginLeft="5"
+        id="lblHeadingText" row="0" col="0" text="My Awesome App" />
+    <Image src="res://icon" row="0" col="1" stretch ="none"
+        marginRight="5" />
+</GridLayout>  

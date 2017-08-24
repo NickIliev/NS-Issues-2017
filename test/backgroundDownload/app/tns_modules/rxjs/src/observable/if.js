@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var IfObservable_1 = require("./IfObservable");
+exports._if = IfObservable_1.IfObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaWYuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpZi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtDQUFnRDtBQUVuQyxRQUFBLEdBQUcsR0FBRywyQkFBWSxDQUFDLE1BQU0sQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7ICBJZk9ic2VydmFibGUgIH0gZnJvbSAnLi9JZk9ic2VydmFibGUnO1xuXG5leHBvcnQgY29uc3QgX2lmID0gSWZPYnNlcnZhYmxlLmNyZWF0ZTsiXX0=

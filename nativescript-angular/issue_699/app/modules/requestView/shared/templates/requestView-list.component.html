@@ -1,0 +1,47 @@
+<GridLayout rows="auto, *, auto, auto">
+	<android>
+		<TabView *ngIf="!embedded" row="0" selectedIndex="0" (selectedIndexChange)="onIndexChanged($event)">
+			<StackLayout *tabItem="{title: 'All'}"></StackLayout>
+			<StackLayout *tabItem="{title: 'Mine'}"></StackLayout>
+			<StackLayout *tabItem="{title: 'My Building'}"></StackLayout>
+		</TabView>
+	</android>
+	<RadListView row="1" class="list-group " [items]="items" loadOnDemandMode="Auto" (loadMoreDataRequested)="onLoadMoreItemsRequested($event)">
+		<!--pullToRefresh="true">-->
+		<template tkListItemTemplate let-item="item">
+			<GridLayout class="list-group-item" (tap)="onSelect(item)" rows="auto, auto, auto">
+				<GridLayout [class]="isComplete(item.data.Status) ? 'completed' : 'outstanding'" columns="auto, 10, *">
+					<Image class="image" width="60" height="50" [src]="item.data.Photo | nsImage:['everlive', service.provider.instance]"></Image>
+					<!--<Label class="badge Entered" textWrap="true" [text]="item.data.CallRef4D"></Label>-->
+					<Label [class]="statusBadgeClass(item.data.Status)" textWrap="true" [text]="item.data.CallRef4D"></Label>
+					<StackLayout col="3">
+						<Label textWrap="true" [text]="item.data.Description"></Label>
+						<Label *ngIf="item.data.oBuilding" class="list-group-item-text" textWrap="true" [text]="item.data.oBuilding.Name"></Label>
+					</StackLayout>
+				</GridLayout>
+				<GridLayout row="1">
+					<!--- master detail form -->
+				</GridLayout>
+				<StackLayout row="2" class="hr-light"></StackLayout>
+			</GridLayout>
+		</template>
+		<ListViewLinearLayout tkListViewLayout scrollDirection="Vertical" itemInsertAnimation="Default"> </ListViewLinearLayout>
+	</RadListView>
+	<GridLayout row="2">
+		<Button class="btn btn-primary" text="Add" (tap)="onAdd()"></Button> </GridLayout>
+	<ios>
+		<TabView *ngIf="!embedded" row="3" selectedIndex="0" (selectedIndexChange)="onIndexChanged($event)">
+			<StackLayout *tabItem="{title: 'All'}">
+				<Label text="Test"></Label>
+				<Label text="Test"></Label> </StackLayout>
+			<StackLayout *tabItem="{title: 'Mine'}">
+				<Label text="Test"></Label>
+				<Label text="Test"></Label> </StackLayout>
+			<StackLayout *tabItem="{title: 'My Building'}">
+				<Label text="Test"></Label>
+				<Label text="Test"></Label> </StackLayout>
+		</TabView>
+	</ios>
+	<ActivityIndicator class="activity-indicator" rowSpan="2" [busy]="!items.length" [visibility]="items.length ? 'collapse' : 'visible'">
+	</ActivityIndicator>
+</GridLayout>

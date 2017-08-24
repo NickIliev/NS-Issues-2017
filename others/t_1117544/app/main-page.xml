@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui/listview" navigatedTo="navigatedTo">
+    <ActionBar title="RadListView FolderList" />
+    <lv:RadListView loaded="lvloaded" items="{{ myItems }}">
+        <lv:RadListView.listViewLayout>
+            <lv:ListViewGridLayout scrollDirection="Vertical" spanCount="3" itemHeight="100" itemWidth="100"/>
+        </lv:RadListView.listViewLayout>
+        <lv:RadListView.itemTemplate>
+            <GridLayout rows="*" columns="*">
+                <Image src="{{ path }}"  loadMode="async" />
+            </GridLayout>
+        </lv:RadListView.itemTemplate>
+    </lv:RadListView>
+</Page>

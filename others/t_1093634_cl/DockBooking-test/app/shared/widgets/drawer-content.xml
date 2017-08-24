@@ -1,0 +1,10 @@
+
+<StackLayout orientation="vertical" class="drawer-content">
+    <Image src="~/shared/images/logo-white.png" />
+    <Button text="Home" tap="navigate" color="{{ selectedPage == 'home' ? '#f0f' : '#fff' }}" />
+    <Button text="Map" class="disabled" />
+    <Button text="About" tap="navigate" color="{{ selectedPage == 'about' ? '#f0f' : '#fff' }}" />
+    <Button text="Account" tap="navigate" class="disabled" />
+    <Button text="Prenotazioni" tap="" class="disabled" />
+    <Button text="Close Drawer" tap="closeDrawer" />
+</StackLayout>

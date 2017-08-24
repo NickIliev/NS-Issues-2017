@@ -1,0 +1,26 @@
+<GridLayout rows="*, auto">
+    <ScrollView>
+        <StackLayout class="list-group">
+            <GridLayout class="list-group-item" rows="auto, auto">
+                <GridLayout columns="auto, 10, *" rows="auto, auto">
+                    <!-- TODO: insert properties of editableList here -->
+
+                    <!--<Label class="list-group-item-heading fa"></Label>-->
+
+
+                </GridLayout>
+
+                <GridLayout row="1">
+                    <!--- master detail form -->
+                </GridLayout>
+            </GridLayout>
+        </StackLayout>
+        <!-- START_CUSTOM_CODE_notificationViewModel -->
+
+        <!-- END_CUSTOM_CODE_notificationViewModel -->
+    </ScrollView>
+
+
+    <ActivityIndicator class="activity-indicator" rowSpan="2" [busy]="!item" [visibility]="item ? 'collapse' : 'visible'">
+    </ActivityIndicator>
+</GridLayout>

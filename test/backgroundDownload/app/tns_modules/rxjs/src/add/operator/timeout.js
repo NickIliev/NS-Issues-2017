@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var timeout_1 = require("../../operator/timeout");
+Observable_1.Observable.prototype.timeout = timeout_1.timeout;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGltZW91dC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRpbWVvdXQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSwrQ0FBOEM7QUFDOUMsa0RBQWlEO0FBRWpELHVCQUFVLENBQUMsU0FBUyxDQUFDLE9BQU8sR0FBRyxpQkFBTyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyB0aW1lb3V0IH0gZnJvbSAnLi4vLi4vb3BlcmF0b3IvdGltZW91dCc7XG5cbk9ic2VydmFibGUucHJvdG90eXBlLnRpbWVvdXQgPSB0aW1lb3V0O1xuXG5kZWNsYXJlIG1vZHVsZSAnLi4vLi4vT2JzZXJ2YWJsZScge1xuICBpbnRlcmZhY2UgT2JzZXJ2YWJsZTxUPiB7XG4gICAgdGltZW91dDogdHlwZW9mIHRpbWVvdXQ7XG4gIH1cbn0iXX0=

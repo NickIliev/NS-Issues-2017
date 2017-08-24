@@ -1,0 +1,3 @@
+/// <reference path="./node_modules/tns-platform-declarations/ios.d.ts" />
+/// <reference path="./node_modules/tns-platform-declarations/android.d.ts" /> 
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVmZXJlbmNlcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInJlZmVyZW5jZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsMEVBQTBFO0FBQzFFLDhFQUE4RSIsInNvdXJjZXNDb250ZW50IjpbIi8vLyA8cmVmZXJlbmNlIHBhdGg9XCIuL25vZGVfbW9kdWxlcy90bnMtcGxhdGZvcm0tZGVjbGFyYXRpb25zL2lvcy5kLnRzXCIgLz5cbi8vLyA8cmVmZXJlbmNlIHBhdGg9XCIuL25vZGVfbW9kdWxlcy90bnMtcGxhdGZvcm0tZGVjbGFyYXRpb25zL2FuZHJvaWQuZC50c1wiIC8+Il19

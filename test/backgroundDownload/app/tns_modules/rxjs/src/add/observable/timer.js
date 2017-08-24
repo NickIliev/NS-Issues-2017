@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var timer_1 = require("../../observable/timer");
+Observable_1.Observable.timer = timer_1.timer;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGltZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0aW1lci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtDQUE4QztBQUM5QyxnREFBOEQ7QUFFOUQsdUJBQVUsQ0FBQyxLQUFLLEdBQUcsYUFBVyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgT2JzZXJ2YWJsZSB9IGZyb20gJy4uLy4uL09ic2VydmFibGUnO1xuaW1wb3J0IHsgdGltZXIgYXMgc3RhdGljVGltZXIgfSBmcm9tICcuLi8uLi9vYnNlcnZhYmxlL3RpbWVyJztcblxuT2JzZXJ2YWJsZS50aW1lciA9IHN0YXRpY1RpbWVyO1xuXG5kZWNsYXJlIG1vZHVsZSAnLi4vLi4vT2JzZXJ2YWJsZScge1xuICBuYW1lc3BhY2UgT2JzZXJ2YWJsZSB7XG4gICAgZXhwb3J0IGxldCB0aW1lcjogdHlwZW9mIHN0YXRpY1RpbWVyO1xuICB9XG59Il19

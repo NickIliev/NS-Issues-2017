@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <StackLayout height="300" class="p-20">
+        <Slider minValue="0" maxValue="100" value="35" android.style="@style/SeekBarStyle"/>
+    </StackLayout>
+</Page>

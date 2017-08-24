@@ -1,0 +1,19 @@
+<RadSideDrawer [drawerLocation]="sideDrawerDirection" tkToggleNavButton>
+    <StackLayout tkDrawerContent class="sideStackLayout">
+        <StackLayout>
+            <Label text="Menu"></Label>
+        </StackLayout>
+        <StackLayout>
+            <StackLayout orientation="horizontal"></StackLayout>    
+            <StackLayout orientation="horizontal">
+                <Label text="Search"></Label>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    <DockLayout stretchLastChild="true" tkMainContent>
+        <ActionBar title="Test"></ActionBar>
+        <AbsoluteLayout>
+            <ng-content></ng-content>
+        </AbsoluteLayout>
+    </DockLayout>
+</RadSideDrawer>

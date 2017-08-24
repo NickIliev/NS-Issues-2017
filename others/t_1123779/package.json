@@ -1,0 +1,30 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.t1123779",
+    "tns-android": {
+      "version": "3.1.1"
+    },
+    "tns-ios": {
+      "version": "3.1.0"
+    }
+  },
+  "dependencies": {
+    "nativescript-geolocation": "^3.0.0",
+    "nativescript-na-camera": "^1.2.0",
+    "nativescript-theme-core": "~1.0.2",
+    "tns-core-modules": "~3.1.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.4.5",
+    "babel-types": "6.4.5",
+    "babylon": "6.4.5",
+    "lazy": "1.0.11",
+    "nativescript-dev-typescript": "~0.5.0",
+    "tns-platform-declarations": "^3.1.0",
+    "typescript": "~2.2.1"
+  }
+}

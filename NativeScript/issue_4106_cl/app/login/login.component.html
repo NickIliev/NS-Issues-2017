@@ -1,0 +1,31 @@
+<GridLayout>
+
+    <GridLayout #background scaleX="1.4" scaleY="1.4" class="background" (loaded)="startBackgroundAnimation(background)"></GridLayout>
+
+<!--coommmenrt added-->
+    <StackLayout #initialContainer class="initial-container">
+        <Label text="" class="initial-label"></Label>
+        <StackLayout (tap)="showMainContent()" class="initial-button">
+            <Label text="{{'HOME.login' | translate}}" class="initial-button-label"></Label>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout #mainContainer class="main-container">
+        <StackLayout orientation="horizontal">
+            <Image src="res://login_icon" stretch="aspectFit" style="width: 80; height: 80; margin-left: 20;" class="initial-logo"></Image>
+            <Label class="main-label" text="{{'HOME.login' | translate}}"></Label>
+        </StackLayout>
+        <GridLayout #formControls class="form-controls" rows="auto, auto" translateY="50">
+            <TextField #email id="email" hint="{{'HOME.username' | translate}}" keyboardType="text" returnKeyType="next" (returnPress)="focusPassword()"
+                [(ngModel)]="user.email" [isEnabled]="!isAuthenticating" autocorrect="false" autocapitalizationType="none" row="0">
+            </TextField>
+            <TextField #password id="pwd" hint="{{'HOME.password' | translate}}" secure="true" returnKeyType="done" (returnPress)="submit()" [(ngModel)]="user.password"
+                [isEnabled]="!isAuthenticating" row="1">
+            </TextField>
+
+            <ActivityIndicator [busy]="isAuthenticating" rowSpan="2"></ActivityIndicator>
+        </GridLayout>
+        <Label class="forgot-password-label" text="{{'HOME.forgot_password' | translate}}" (tap)="openForgotPasswordDialog()"></Label>
+        <Button text="{{'HOME.login' | translate}}" [isEnabled]="!isAuthenticating" class="submit-button" (tap)="submit()"></Button>
+
+    </StackLayout>
+</GridLayout>

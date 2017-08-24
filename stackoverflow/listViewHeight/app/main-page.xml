@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" >
+    <StackLayout>
+        <ListView items="{{ items }}" height="{{ userSelectionHeight }}" rowHeight="35" backgroundColor="green" separatorColor="white" padding="0" margin="0">
+            <ListView.itemTemplate>
+                <StackLayout>
+                    <Label text="ala" textWrap="true" />
+                    <Label text="bala" textWrap="true" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+</Page>

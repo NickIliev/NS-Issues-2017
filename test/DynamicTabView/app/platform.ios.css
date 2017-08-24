@@ -1,0 +1,84 @@
+ActionBar {
+    background-color:  #D1993E;
+    color: white;
+}
+
+
+Button {
+    margin: 5;
+    padding: 5;
+    background-color: #fcfcf6;
+    color: #124a59;
+    border-width: 1;
+    border-style: solid;
+    border-radius: 3;
+
+    /*TODO: wenn color festgelegt, ist Button bei disabled-Status nicht mehr als solcher erkennbar*/
+    /*color: #124a59;*/
+}
+
+
+TabView {
+    selected-tab-text-color: #124a59;
+}
+
+
+TextField {
+    font-size: 15;
+    height: 30;
+    margin: 5 0 5 0;
+    padding: 5;
+    border-radius: 3;
+    border-color: #C7C7CC;
+    border-width: 1;
+    border-style: solid;
+}
+
+
+.textview,
+.textview-bordered {
+    padding: 5;
+    border-radius: 3;
+}
+
+
+.btn-primary,
+.btn-secondary {
+    width: 250;
+    height: 40;
+}
+
+
+.btn-breadcrumb,
+.btn-breadcrumb-last {
+    height: 25;
+    width: auto;
+    font-size: 9;
+    border-color: #124a59;
+}
+
+
+.btn-breadcrumb-last {
+    background-color: #124a59;
+    color: #ffffff;
+}
+
+
+.btn-transparent-white {
+    border-color: white;
+}
+
+
+.fab-right {
+    background-color: #124a59;
+}
+
+
+.modal-title {
+    horizontal-align: center;
+}
+
+
+.rlv-item {
+    padding: 8 15 8 40;
+}

@@ -1,0 +1,32 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<GridLayout>
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item" let-i="index">
+
+            <!--<DockLayout [id]="'element' + i" class="page" [nsRouterLink]="['/item', item.id]">
+                <StackLayout dock="right" orientation="horizontal">
+                    <Label [text]="item.name" style="text-align: right"></Label>
+                    <Label style="padding-left: 5; padding-top: 5; padding-bottom: 5;" class="material-icons" text="&#xE5D4;" (tap)="actionMenu()"></Label>
+                </StackLayout>
+
+                <GridLayout dock="left" rows="auto, auto, auto" columns="auto, *" style="margin-bottom: 5">
+                    <Label row="0" col="0" text="Type: " class="title"></Label>
+                    <Label row="0" col="1" [text]="item.id" class="content"></Label>
+                    <Label row="1" col="0" text="Priority: " class="title"></Label>
+                    <Label row="1" col="1" [text]="item.name"></Label>
+                    <Label row="2" col="0" text="Beneficary: " class="title"></Label>
+                    <Label row="2" col="1" [text]="item.role"></Label>
+                </GridLayout>
+            </DockLayout>-->
+                <GridLayout dock="left" rows="auto, auto, auto" columns="auto, *" style="margin-bottom: 5" [nsRouterLink]="['/item', item.id]">
+                    <Label row="0" col="0" text="Type: " class="title"></Label>
+                    <Label row="0" col="1" [text]="item.id" class="content"></Label>
+                    <Label row="1" col="0" text="Priority: " class="title"></Label>
+                    <Label row="1" col="1" [text]="item.name"></Label>
+                    <Label row="2" col="0" text="Beneficary: " class="title"></Label>
+                    <Label row="2" col="1" [text]="item.role"></Label>
+                </GridLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

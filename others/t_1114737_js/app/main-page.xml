@@ -1,0 +1,53 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui/listview" loaded="onPageLoaded" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout>
+        <ListView id="list" items="{{ items }}"  loaded="onLoaded" itemLoading="onItemLoading" itemTap="itemTap">
+            <ListView.itemTemplate>
+                <GridLayout rows="auto, auto" class="list-item ece">
+                    <StackLayout height="80" class="m-10 p-10" backgroundColor="gray" orientation="vertical">
+                        <Label fontSize="20" text="{{ id + ' tap to change the visibility of the second label'}} " backgroundColor="white"/>
+                        <Label fontSize="20" text="{{ name }}" visibility="{{ status+id ? 'visible' : 'collapsed' }}" backgroundColor="blue"//>
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+
+    <!--<GridLayout rows="100, 500" class="p-20">
+
+        <lv:RadListView row="1" id="list" items="{{ items }}"     
+                        selectionBehavior="None" 
+                        itemSwipeProgressEnded="onSwipeCellFinished"
+                        itemSwipeProgressStarted="onSwipeStarted" 
+                        itemSwipeProgressChanged="onCellSwiping" 
+                        swipeActions="true" visibility="{{ isInitialized ? 'visible' : 'collapse' }}">
+
+            <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" itemDeleteAnimation="Slide" itemAddAnimation="Slide" />
+            </lv:RadListView.listViewLayout>
+
+            <lv:RadListView.itemTemplate>
+                <GridLayout rows="auto, auto" class="list-item ece">
+                    <StackLayout height="80" class="m-10 p-10" backgroundColor="gray" orientation="vertical">
+                        <Label fontSize="20" text="{{ id + ' swipe to change the visibility'}} " backgroundColor="white"/>
+                        <Label fontSize="20" text="{{ name }}" visibility="{{ status+id ? 'visible' : 'collapsed' }}" backgroundColor="blue"//>
+                    </StackLayout>
+                </GridLayout>
+            </lv:RadListView.itemTemplate>
+
+            <lv:RadListView.itemSwipeTemplate>
+                <GridLayout columns="*, 50" rows="*" class="bg-accent swipe-template">
+                    <Label col="0" text="" textWrap="false" class="swipeText" />
+                    <Label col="1" text="&#xf00c;" class="fa swipeIcon bg-accent" />
+                </GridLayout>
+            </lv:RadListView.itemSwipeTemplate>
+
+        </lv:RadListView>
+    </GridLayout>-->
+
+</Page>

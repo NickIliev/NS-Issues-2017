@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var merge_1 = require("../operator/merge");
+exports.merge = merge_1.mergeStatic;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVyZ2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZXJnZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDJDQUFrRDtBQUVyQyxRQUFBLEtBQUssR0FBRyxtQkFBVyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgIG1lcmdlU3RhdGljICB9IGZyb20gJy4uL29wZXJhdG9yL21lcmdlJztcblxuZXhwb3J0IGNvbnN0IG1lcmdlID0gbWVyZ2VTdGF0aWM7Il19

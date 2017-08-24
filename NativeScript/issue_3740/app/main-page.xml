@@ -1,0 +1,6 @@
+<widgets:drawer xmlns:widgets="widgets" loaded="onLoaded" navigatedTo="onNavigatedTo">
+    <StackLayout orientation="vertical">
+        <Button text="Button 1" id="btn1"/>
+    </StackLayout>
+</widgets:drawer>
+

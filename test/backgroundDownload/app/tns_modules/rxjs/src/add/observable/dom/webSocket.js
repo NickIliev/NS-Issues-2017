@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../../Observable");
+var webSocket_1 = require("../../../observable/dom/webSocket");
+Observable_1.Observable.webSocket = webSocket_1.webSocket;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid2ViU29ja2V0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsid2ViU29ja2V0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsa0RBQWlEO0FBQ2pELCtEQUFpRjtBQUVqRix1QkFBVSxDQUFDLFNBQVMsR0FBRyxxQkFBZSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgT2JzZXJ2YWJsZSB9IGZyb20gJy4uLy4uLy4uL09ic2VydmFibGUnO1xuaW1wb3J0IHsgd2ViU29ja2V0IGFzIHN0YXRpY1dlYlNvY2tldCB9IGZyb20gJy4uLy4uLy4uL29ic2VydmFibGUvZG9tL3dlYlNvY2tldCc7XG5cbk9ic2VydmFibGUud2ViU29ja2V0ID0gc3RhdGljV2ViU29ja2V0O1xuXG5kZWNsYXJlIG1vZHVsZSAnLi4vLi4vLi4vT2JzZXJ2YWJsZScge1xuICBuYW1lc3BhY2UgT2JzZXJ2YWJsZSB7XG4gICAgZXhwb3J0IGxldCB3ZWJTb2NrZXQ6IHR5cGVvZiBzdGF0aWNXZWJTb2NrZXQ7XG4gIH1cbn0iXX0=

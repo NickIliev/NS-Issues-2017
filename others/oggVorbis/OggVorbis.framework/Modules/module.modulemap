@@ -1,0 +1,6 @@
+framework module OggVorbis {
+  umbrella header "OggVorbis.h"
+
+  export *
+  module * { export * }
+}

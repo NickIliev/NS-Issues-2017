@@ -1,0 +1,7 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <StackLayout class="p-20">
+        <HtmlView html="<span><b><font size='10' color='blue' face='lato'>this is some blue text</font> and some non-blue text</b></span>"></HtmlView>
+    </StackLayout>
+</Page>

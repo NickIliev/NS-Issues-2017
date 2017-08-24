@@ -1,0 +1,16 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<ScrollView>
+    <GridLayout rows="100, 500" columns="">
+        <Label row="0" text="title" class="h1" textWrap="true"></Label>
+        <GridLayout row="1" rows="*">
+            <RadListView row="0" [items]="items">
+                <ng-template tkListItemTemplate let-item="item">
+                    <StackLayout orientation="vertical">
+                        <Label class="nameLabel" [text]="item.name"></Label>
+                    </StackLayout>
+                </ng-template>
+            </RadListView>
+        </GridLayout>
+    </GridLayout>
+</ScrollView>

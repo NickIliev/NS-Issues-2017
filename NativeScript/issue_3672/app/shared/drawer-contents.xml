@@ -1,0 +1,7 @@
+<ScrollView>
+  <grid-layout class="drawer-content">
+    <stack-layout margin="20" padding="20">
+      <Label class="material-icon" text="TAP on Service Log" tap="onTap" textWrap="true"/>
+    </stack-layout>
+  </grid-layout>
+</ScrollView>

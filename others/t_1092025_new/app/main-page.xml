@@ -1,0 +1,14 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page">
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <!-- content layouts can only have one root element - in this case the StackLayouut is our root container -->
+    <StackLayout id="content">
+        <Label text="before web view" textWrap="true" />
+        <WebView id="wv" src="{{ htmlString }}"  />
+        <Label text="after webn view" textWrap="true" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,9 @@
+Label {
+    background-color: green;
+    font-size: 36;
+}
+
+SearchBar {
+    font-size: 30;
+    background-color: red;
+}

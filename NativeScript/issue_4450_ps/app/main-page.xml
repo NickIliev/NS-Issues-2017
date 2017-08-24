@@ -1,0 +1,12 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:dd="nativescript-drop-down" loaded="onLoaded" class="page">
+
+    <StackLayout class="p-20">
+        <Label text="{{ message }}" class="{{ cssClass }}" textWrap="true"/>
+        <Button text="changeStyles" tap="changeStyles" class="btn btn-primary btn-active"/>
+        <dd:DropDown id="dd" hint="{{ hint }}" items="{{ items }}" selectedIndex="{{ selectedIndex }}" 
+                  opened="dropDownOpened" closed="dropDownClosed" selectedIndexChanged="dropDownSelectedIndexChanged" 
+                  class="{{ cssClass }}" isEnabled="{{ isEnabled }}"
+                  row="0" colSpan="2" /> 
+    </StackLayout>
+</Page>

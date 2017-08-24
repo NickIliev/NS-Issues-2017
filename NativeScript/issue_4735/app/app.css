@@ -1,0 +1,19 @@
+﻿@import 'nativescript-theme-core/css/core.light.css';
+
+.comment-item .avatar {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 26;
+}
+
+.align-left .comment-item .text {
+    flex-grow: 1;
+    order: 2;
+    justify-content: flex-end;
+}
+
+.align-right .comment-item .text {
+    flex-grow: 1;
+    order: 1;
+    justify-content: flex-end;
+}

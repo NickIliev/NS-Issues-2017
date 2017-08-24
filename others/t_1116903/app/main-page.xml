@@ -1,0 +1,324 @@
+<Page
+  xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:chart="nativescript-telerik-ui-pro/chart"
+  loaded="pageLoaded">
+  <!--<ActivityIndicator row="1" width="100" height="100" class="activity-indicator" busy="true"></ActivityIndicator>-->
+  <Page.actionBar>
+    <ActionBar style="margin-left:-40; margin-right:-20;" >
+      <GridLayout  rows="65" columns="auto,*,auto,auto">
+        <Image col="0" src="res://icon" stretch="fill" />
+        <Image col="1" src="res://icon" stretch="fill" />
+        <Label col="1" id="lblActionBar"  text="  max-O-net Parent" verticalAlignment="middle" style="font-size:24; font-weight:bold; margin-left:20" />
+        <Image col="2" src="res://icon" />
+        <Image col="3" src="res://icon" stretch="fill" />
+      </GridLayout>
+    </ActionBar>
+    <ios>
+      <ActionBar title="max-O-net Parent" backgroundImage="res://icon" >
+      </ActionBar>
+    </ios>
+  </Page.actionBar>
+
+  <GridLayout rows="*" columns="*">
+    <TabView cssClass="customTabView" tabsBackgroundColor="#D2691E" selectedColor="#ffffff" >
+      <TabView.items>
+
+        <TabViewItem title="ผลงาน" iconSource="res://icon">
+          <TabViewItem.view>
+            <ScrollView>
+              <GridLayout class="tab-content" rows="auto,*, *,auto" >
+                <!-- ชื่อนามสกุล นักเรียน -->
+                <GridLayout row="0" rows="auto" columns="*" cssClass="layOutStudentName" >
+                  <Label id="lblStudentName" row="0" text="รอโหลดข้อมูลจากเซิร์ฟเวอร์ค่ะ" color="Black" fontSize="22"  />
+                  <Button backgroundImage="res://icon" id="btnRefresh1" cssClass="refresh" horizontalAlignment="right" tap="Refresh1"/>
+                </GridLayout>
+
+                <GridLayout row="1" rows="auto,auto,auto,auto,auto,auto" columns="*" cssClass="layOut" id="gridSubjects" >
+                  <Label row="0" id="PercentResult" text="0%" cssClass="title"/>
+                  <!--<Label row="1" col="0" text="" cssClass="lblRight" id="lblSubject1" />
+                <Label row="1" col="1" text=""  id="lblSubjectScore1" />
+                <Label row="1" col="2" text="คะแนน" cssClass="lblLeft" id="lblScoreTxt1" visibility="collapsed" />
+
+                <Label row="2" col="0" text="" cssClass="lblRight" id="lblSubject2" />
+                <Label row="2" col="1" text=""  id="lblSubjectScore2" />
+                <Label row="2" col="2" text="คะแนน" cssClass="lblLeft" id="lblScoreTxt2" visibility="collapsed"  />
+
+                <Label row="3" col="0" text="" cssClass="lblRight" id="lblSubject3" />
+                <Label row="3" col="1" text="" id="lblSubjectScore3" />
+                <Label row="3" col="2" text="คะแนน" cssClass="lblLeft" id="lblScoreTxt3" visibility="collapsed" />
+
+                <Label row="4" col="0" text="" cssClass="lblRight" id="lblSubject4" />
+                <Label row="4" col="1" text="" id="lblSubjectScore4" />
+                <Label row="4" col="2" text="คะแนน" cssClass="lblLeft" id="lblScoreTxt4" visibility="collapsed" />
+
+                <Label row="5" col="0" text="" cssClass="lblRight" id="lblSubject5" />
+                <Label row="5" col="1" text="" id="lblSubjectScore5" />
+                <Label row="5" col="2" text="คะแนน" cssClass="lblLeft" id="lblScoreTxt5" visibility="collapsed" />-->
+                  <chart:RadCartesianChart id="allScoreChart" height="300" col="1" row="1" >
+                    <chart:RadCartesianChart.series>
+                      <!--<chart:BarSeries items="{{ a }}" categoryProperty="subjectName" valueProperty="score" >-->
+
+                      <chart:BarSeries.horizontalAxis>
+                        <chart:CategoricalAxis labelSize="14"/>
+                      </chart:BarSeries.horizontalAxis>
+                      <chart:BarSeries.verticalAxis >
+                        <chart:LinearAxis majorStep="100" labelFormat="%.0f" labelSize="14"/>
+                      </chart:BarSeries.verticalAxis>
+
+                      <!--</chart:BarSeries>-->
+                    </chart:RadCartesianChart.series>
+                  </chart:RadCartesianChart>
+                </GridLayout>
+
+                <GridLayout row="2" rows="*" columns="*" cssClasss="layOut" backgroundImage="res://icon">
+                </GridLayout>
+
+                <GridLayout row="3" rows="auto,auto,auto,auto" columns="*" cssClass="tabDataBGImage" >
+                  <GridLayout row="0" columns="auto, *,auto" cssClass="item">
+                    <GridLayout backgroundColor="#f4c542" cssClass="category" />
+                    <GridLayout col="1" rows="auto, auto" cssClass="expense-details-container">
+                      <Label textWrap="true" row="0" text="จำนวนครั้งในการเข้าทำกิจกรรม / ฝึกฝน" cssClass="item-label" />
+                      <Label textWrap="true" id="lblNumberOfTimes" row="1" text="รอโหลดข้อมูลจากเซิร์ฟเวอร์ค่ะ" cssClass="item-details-label" />
+                    </GridLayout>
+                    <GridLayout col="2" cssClass="category" />
+                  </GridLayout>
+
+                  <GridLayout row="1" columns="auto, *,auto" cssClass="item">
+                    <GridLayout backgroundColor="#250B7D" cssClass="category" />
+                    <GridLayout col="1" rows="auto, auto" cssClass="expense-details-container">
+                      <Label  textWrap="true"  id="Tab1Title3" row="0" text="รวมเวลาในการทำ" cssClass="item-label" />
+                      <Label  textWrap="true"  id="lblTotalTime" row="1" text="รอโหลดข้อมูลจากเซิร์ฟเวอร์ค่ะ" cssClass="item-details-label" />
+                    </GridLayout>
+                    <GridLayout col="2" cssClass="category" />
+                  </GridLayout>
+
+                  <GridLayout row="2" columns="auto, *,auto" cssClass="item">
+                    <GridLayout backgroundColor="#9F0B0F" cssClass="category" />
+                    <GridLayout col="1" rows="auto, auto" cssClass="expense-details-container">
+                      <Label textWrap="true" id="Tab1Title1" row="0" text="ผลงาน" cssClass="item-label" />
+                      <Label textWrap="true" id="lblWorkings" row="1" text="รอโหลดข้อมูลจากเซิร์ฟเวอร์ค่ะ" cssClass="item-details-label" />
+                    </GridLayout>
+                    <GridLayout col="2" cssClass="category" />
+                  </GridLayout>
+
+                  <GridLayout row="3" columns="auto, *,auto" cssClass="item">
+                    <GridLayout backgroundColor="#005E00" cssClass="category" />
+                    <GridLayout col="1" rows="auto, auto" cssClass="expense-details-container">
+                      <Label textWrap="true"  id="Tab1Title2" row="0" text="สิ่งที่ควรเพิ่มเติม" cssClass="item-label" />
+                      <Label textWrap="true"  id="lblRecommend" row="1" text="รอโหลดข้อมูลจากเซิร์ฟเวอร์ค่ะ" cssClass="item-details-label" />
+                    </GridLayout>
+                    <GridLayout col="2" cssClass="category" />
+                  </GridLayout>
+                </GridLayout>
+
+              </GridLayout>
+            </ScrollView>
+          </TabViewItem.view>
+        </TabViewItem>
+
+
+        <TabViewItem title="กิจกรรมประจำวัน" iconSource="res://icon" cssClass="tabViewItem">
+          <TabViewItem.view>
+
+            <ScrollView>
+              <StackLayout class="tab-content">
+                <Button backgroundImage="res://icon" id="btnRefresh2" cssClass="refresh" horizontalAlignment="right" tap="Refresh2"/>
+                <Button text="เลือกวันที่และวิชา" tap="postRequest"  width="200" backgroundColor="#D2691E" height="50" borderRadius="5" style="margin-top:-35xp;" />
+
+                <!--<Button text="test" tap="getRequest" style="width:100px;height:50px;" />-->
+                <GridLayout style="text-align:center;" rows="*,*,*">
+                  <Label id="Label1" text="คะแนนรวมกิจกรรมประจำวัน" row="0" color="Black" fontSize="22" />
+
+                  <GridLayout style="text-align:center;margin-left:50px;" row="1">
+                    <DockLayout id="legendLayout" stretchLastChild="false" style="margin-left:auto;margin-right:auto;">
+
+                    </DockLayout>
+                  </GridLayout>
+
+
+                  <chart:RadCartesianChart id="cartesianChart" height="300" row="2" >
+                    <chart:RadCartesianChart.series>
+
+                      <chart:LineSeries.horizontalAxis>
+                        <!--<chart:CategoricalAxis labelFitMode="rotate" />-->
+                        <!--<chart:DateTimeCategoricalAxis  labelFitMode="rotate" minimum="1/1/2015" maximum="31/12/2018" dateFormat="dd/MM/yy" majorStep="Month" />-->
+                        <!-- minimum="01/02/2015" maximum="01/10/2015" dateFormat="dd-MM-yy" labelRotationAngle="1.2"-->
+                        <chart:DateTimeContinuousAxis  majorStep="Month"  labelFitMode="Rotate"  dateFormat="dd/MM/yyyy"/>
+                      </chart:LineSeries.horizontalAxis>
+                      <chart:LineSeries.verticalAxis>
+                        <chart:LinearAxis majorStep="5" labelFormat="%.0f" labelSize="14"/>
+                      </chart:LineSeries.verticalAxis>
+
+                      <chart:RadCartesianChart.palettes>
+                        <chart:Palette seriesName="t0">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#d675d6" strokeColor="#d675d6" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t1">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#b0bdb3" strokeColor="#b0bdb3" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t2">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#003b65" strokeColor="#003b65" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t3">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#2bc5cc" strokeColor="#2bc5cc" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t4">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#a25b58" strokeColor="#a25b58" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t5">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#006699" strokeColor="#006699" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t6">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#44094d" strokeColor="#44094d" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t7">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry strokeColor="#ffff99" strokeColor="#ffff99" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                      </chart:RadCartesianChart.palettes>
+
+                    </chart:RadCartesianChart.series>
+                  </chart:RadCartesianChart>
+
+                </GridLayout>
+
+                <StackLayout style="text-align:center;">
+                  <GridLayout backgroundColor="#005E00" cssClass="underline" />
+                  <Label id="Label2" text="ปริมาณการทำกิจกรรมประจำวัน" color="Black" fontSize="22" />
+                  <chart:RadCartesianChart id="quantityActivityChart" height="300" col="1" row="1" >
+                    <chart:RadCartesianChart.series>
+                      <!--<chart:BarSeries items="{{ quantityActivityData }}" categoryProperty="subjectName" valueProperty="amount">-->
+                      <chart:BarSeries.horizontalAxis>
+                        <chart:CategoricalAxis/>
+                      </chart:BarSeries.horizontalAxis>
+                      <chart:BarSeries.verticalAxis>
+                        <chart:LinearAxis majorStep="5" labelFormat="%.0f" labelSize="14"/>
+                      </chart:BarSeries.verticalAxis>
+                      <!--</chart:BarSeries>-->
+                    </chart:RadCartesianChart.series>
+                  </chart:RadCartesianChart>
+                </StackLayout>
+
+              </StackLayout>
+
+            </ScrollView>
+          </TabViewItem.view>
+        </TabViewItem>
+
+        <TabViewItem title="ฝึกฝน" >
+          <TabViewItem.view>
+            <ScrollView>
+              <StackLayout class="tab-content">
+                <Button  id="btnRefresh3" cssClass="refresh" horizontalAlignment="right" tap="Refresh3"/>
+                <Button text="เลือกวันที่และวิชา" tap="practicePostRequest" width="200" backgroundColor="#D2691E" height="50" borderRadius="5" style="margin-top:-35xp;" />
+
+                <GridLayout style="text-align:center;" rows="*,*,*">
+                  <Label id="Label1" text="คะแนนรวมฝึกฝน" row="0" color="Black" fontSize="22" />
+
+                  <GridLayout style="text-align:center;margin-left:50px;" row="1">
+                    <DockLayout id="legendLayout2" stretchLastChild="false" style="margin-left:auto;margin-right:auto;">
+
+                    </DockLayout>
+                  </GridLayout>
+
+                  <chart:RadCartesianChart id="scorePracticeChart" height="300" row="2">
+                    <chart:RadCartesianChart.series>
+
+                      <chart:LineSeries.horizontalAxis>
+                        <!--<chart:CategoricalAxis labelFitMode="rotate"/>-->
+                        <chart:DateTimeContinuousAxis  majorStep="Month"  labelFitMode="Rotate"  dateFormat="dd/MM/yyyy"/>
+                      </chart:LineSeries.horizontalAxis>
+                      <chart:LineSeries.verticalAxis>
+                        <chart:LinearAxis majorStep="5" labelFormat="%.0f" labelSize="14"/>
+                      </chart:LineSeries.verticalAxis>
+
+                      <chart:RadCartesianChart.palettes>
+                        <chart:Palette seriesName="t0">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#d675d6" strokeColor="#d675d6" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t1">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#b0bdb3" strokeColor="#b0bdb3" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t2">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#003b65" strokeColor="#003b65" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t3">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#2bc5cc" strokeColor="#2bc5cc" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t4">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#a25b58" strokeColor="#a25b58" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t5">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#006699" strokeColor="#006699" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t6">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry fillColor="#44094d" strokeColor="#44094d" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                        <chart:Palette seriesName="t7">
+                          <chart:Palette.entries>
+                            <chart:PaletteEntry strokeColor="#ffff99" strokeColor="#ffff99" strokeWidth="3"/>
+                          </chart:Palette.entries>
+                        </chart:Palette>
+                      </chart:RadCartesianChart.palettes>
+
+                    </chart:RadCartesianChart.series>
+                  </chart:RadCartesianChart>
+
+                </GridLayout>
+
+                <StackLayout style="text-align:center;">
+                  <GridLayout backgroundColor="#005E00" cssClass="underline" />
+                  <Label id="Label2" text="ปริมาณการทำฝึกฝน" color="Black" fontSize="22" />
+                  <chart:RadCartesianChart id="quantityPracticeChart" height="300" >
+                    <chart:RadCartesianChart.series>
+                      <!--<chart:BarSeries items="{{ quantityActivityData }}" categoryProperty="subjectName" valueProperty="amount">-->
+                      <chart:BarSeries.horizontalAxis>
+                        <chart:CategoricalAxis />
+                      </chart:BarSeries.horizontalAxis>
+                      <chart:BarSeries.verticalAxis>
+                        <chart:LinearAxis majorStep="5" labelFormat="%.0f" labelSize="14"/>
+                      </chart:BarSeries.verticalAxis>
+                      <!--</chart:BarSeries>-->
+                    </chart:RadCartesianChart.series>
+                  </chart:RadCartesianChart>
+                </StackLayout>
+
+              </StackLayout>
+            </ScrollView>
+          </TabViewItem.view>
+        </TabViewItem>
+      </TabView.items>
+    </TabView>
+  </GridLayout>
+
+
+</Page>

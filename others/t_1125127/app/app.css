@@ -1,0 +1,44 @@
+@import "nativescript-theme-core/css/blue.css";
+.fa {
+    font-family: "FontAwesome", "fontawesome-webfont";
+    vertical-align: center;
+}
+
+.switch {
+    margin: 0;
+}
+
+.form .input-field .h3,
+.form .input-field .h4 {
+    vertical-align: top;
+}
+
+
+/* START_CUSTOM_CODE_AdditionalStyles */
+/*.example-container {    
+    font-size: 15;
+    padding:15
+}
+Page Button {
+    background-color: #30BCFF;
+    color: #FFFFFF;
+    margin-top: 10;
+    margin-bottom: 10;
+    height: 38;
+    font-size: 15;
+    border-radius: 2;
+}
+ Button {
+    font-size: 15;
+}*/
+TextField, TextView {
+    border-color: lightgray;
+    border-width: 1;
+    border-radius: 2;
+}
+/*ListView {
+    padding: 15;
+    font-size: 15;   
+}*/
+
+/* END_CUSTOM_CODE_AdditionalStyles */

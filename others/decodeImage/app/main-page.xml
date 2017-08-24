@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+<StackLayout>
+    <Image src="https://apod.nasa.gov/apod/image/1705/m13Block.jpg" decodeWidth="400" decodeHeight="400" loadMode="async" />
+    <Label text="With loadMode=async the UI won't be blocked" textWrap="true" />
+</StackLayout>
+</Page>

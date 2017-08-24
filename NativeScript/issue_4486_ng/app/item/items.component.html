@@ -1,0 +1,14 @@
+<StackLayout class="page">
+
+    <Button text="writeSync" (tap)="writeSync()"></Button>
+    
+    <Button text="readFile" (tap)="readFile()"></Button>
+    <Button text="checkIfFileExists" (tap)="checkIfFileExists()"></Button>
+    
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>

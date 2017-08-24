@@ -1,0 +1,8 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" class="page">
+
+    <StackLayout class="p-20">
+        <TextView hint="hint" id="tv" editable="true" />
+        
+    </StackLayout>
+</Page>

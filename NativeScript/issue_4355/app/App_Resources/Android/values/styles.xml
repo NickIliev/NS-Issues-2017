@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- theme to use FOR launch screen-->
+    <style name="LaunchScreenThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarStyle">@style/NativeScriptToolbarStyle</item>
+
+        <item name="colorPrimary">@color/ns_primary</item>
+        <item name="colorPrimaryDark">@color/ns_primaryDark</item>
+        <item name="colorAccent">@color/ns_accent</item>
+
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        
+        <item name="android:windowActionBarOverlay">true</item>  
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <item name="android:seekBarStyle">@style/customSeekBar</item>
+
+    </style>
+
+    <style name="LaunchScreenTheme" parent="LaunchScreenThemeBase">
+    </style>
+
+    <!-- theme to use AFTER launch screen is loaded-->
+    <style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarStyle">@style/NativeScriptToolbarStyle</item>
+        <item name="colorPrimary">@color/material_green_500</item>
+        <item name="colorPrimaryDark">@color/material_green_500</item>
+        <item name="colorAccent">@color/selector_green_pressed</item>
+    </style>
+
+  <style name="customSeekBar" parent="Widget.AppCompat.SeekBar">
+    <item name="android:indeterminateOnly">false</item>
+    <item name="android:progressDrawable">@drawable/background</item>
+    <item name="android:indeterminateDrawable">@drawable/background</item>
+    <item name="android:minHeight">20dip</item>
+    <item name="android:maxHeight">20dip</item>
+    <item name="android:thumb">@drawable/icon</item>
+    <item name="android:thumbOffset">8px</item>
+    <item name="android:focusable">true</item>
+  </style>
+
+    <style name="AppTheme" parent="AppThemeBase">
+    </style>
+
+    <!-- theme for actioon-bar -->
+    <style name="NativeScriptToolbarStyleBase" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/ns_primary</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
+
+    </style>
+
+    <style name="NativeScriptToolbarStyle" parent="NativeScriptToolbarStyleBase">
+    </style>
+</resources> 

@@ -1,0 +1,18 @@
+<ns-action-bar [title]="title" <!--- component view navigation directive --->
+    ></ns-action-bar>
+
+
+<ScrollView style="background-image: url('~/resources/About-Oundle-5.jpg'); background-position: center; background-size: cover;">
+    <GridLayout *ngIf="!showSignUp">
+        <ns-authenticationView-sign-in [user]="user" [signedInOption]="isSignedInOption" [signedInAutoOption]="isSingedInAutoOption" (signin)="onSignIn($event)" (signout)="onSignOut($event)" (navigate)="onNavigate($event)">
+        </ns-authenticationView-sign-in>
+    </GridLayout>
+
+</ScrollView>
+
+<!-- additional view content -->
+
+<!-- START_CUSTOM_CODE_authenticationView -->
+<!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+<!-- END_CUSTOM_CODE_authenticationView -->

@@ -1,0 +1,31 @@
+<ns-action-bar [title]="title" [showBack]="mode != modes.LIST" (back)="onNavigateBack($event)" <!--- component view navigation directive --->
+
+    ></ns-action-bar>
+
+
+<GridLayout>
+
+    <GridLayout *ngIf="mode == modes.LIST">
+        <ns-spaceView-list [items]="items$" [service]="service" (select)="onSelect($event)" (navigate)="onNavigate(modes.ADD)" (loadMore)="onLoadMoreItemsRequested($event)">
+        </ns-spaceView-list>
+    </GridLayout>
+
+
+    <GridLayout *ngIf="mode == modes.DETAIL">
+        <ns-spaceView-detail [current]="currentItem$ | async" [service]="service" (navigate)="onNavigate(modes.EDIT)">
+        </ns-spaceView-detail>
+    </GridLayout>
+
+
+    <GridLayout *ngIf="mode == modes.EDIT">
+        <ns-spaceView-edit [current]="currentItem$ | async" [service]="service" (update)="onUpdate($event)">
+        </ns-spaceView-edit>
+    </GridLayout>
+
+</GridLayout>
+<!-- additional view content -->
+
+<!-- START_CUSTOM_CODE_spaceView -->
+<!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+<!-- END_CUSTOM_CODE_spaceView -->

@@ -1,0 +1,20 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<StackLayout class="page" backgroundColor="green">
+    <Button text="ClearHistory" (tap)="goToFiveWithClearHistory()"></Button>
+
+    <Button text="ClearHistory and Transition" (tap)="goToFiveWithClearHistoryAndTransition()"></Button>
+
+    <Button text="ClearHIstory witout Transition" (tap)="goToFiveWithClearHistoryAndNoTransition()"></Button>
+    
+    <Button text="NO ClearHistory" (tap)="goToFiveWithoutClearHistory()"></Button>
+    
+    <ListView [items]="items" class="list-group" backgroundColor="gray">
+        <ng-template let-item="item">
+            <GridLayout rows="50, 50" borderWdith="2" borderColor="black">
+                <Button row="0" [nsRouterLink]="['/item', item.id]" clearHistory="true" text="Go with ClearHistory" ></Button>
+                <Button row="1" [nsRouterLink]="['/item', item.id]" text="Go without ClearHistory" ></Button>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

@@ -1,0 +1,10 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <ListView [items]="items" (itemTap)="tapInListView($event)" class="list-group">
+        <ng-template let-item="item">
+            <Label [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>

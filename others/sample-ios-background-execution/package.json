@@ -1,0 +1,19 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.BkgdExecExample",
+    "tns-ios": {
+      "version": "3.0.1"
+    }
+  },
+  "dependencies": {
+    "tns-core-modules": "3.0.1"
+  },
+  "devDependencies": {
+    "nativescript-dev-typescript": "^0.4.0",
+    "typescript": "^2.2.2"
+  }
+}

@@ -1,0 +1,10 @@
+﻿.searchArea {
+    color: white;
+    background-color: #0e88a0;
+}   
+
+.searchBar {
+    background-color: #0e88a0;
+}
+
+@import 'nativescript-theme-core/css/core.light.css';

@@ -1,0 +1,6 @@
+SearchBar {
+    color: green;
+    background-color: yellow;
+}
+
+@import 'nativescript-theme-core/css/core.light.css';

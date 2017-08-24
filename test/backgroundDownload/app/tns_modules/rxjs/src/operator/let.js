@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @param func
+ * @return {Observable<R>}
+ * @method let
+ * @owner Observable
+ */
+function letProto(func) {
+    return func(this);
+}
+exports.letProto = letProto;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGV0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibGV0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRUE7Ozs7O0dBS0c7QUFDSCxrQkFBb0QsSUFBZ0Q7SUFDbEcsTUFBTSxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQztBQUNwQixDQUFDO0FBRkQsNEJBRUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vT2JzZXJ2YWJsZSc7XG5cbi8qKlxuICogQHBhcmFtIGZ1bmNcbiAqIEByZXR1cm4ge09ic2VydmFibGU8Uj59XG4gKiBAbWV0aG9kIGxldFxuICogQG93bmVyIE9ic2VydmFibGVcbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGxldFByb3RvPFQsIFI+KHRoaXM6IE9ic2VydmFibGU8VD4sIGZ1bmM6IChzZWxlY3RvcjogT2JzZXJ2YWJsZTxUPikgPT4gT2JzZXJ2YWJsZTxSPik6IE9ic2VydmFibGU8Uj4ge1xuICByZXR1cm4gZnVuYyh0aGlzKTtcbn1cbiJdfQ==

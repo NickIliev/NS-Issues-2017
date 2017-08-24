@@ -1,0 +1,72 @@
+<GridLayout rows="*, auto" backgroundColor="green">
+	<ScrollView>
+		<StackLayout class="form">
+			<GridLayout class="input-field" columns="*, *">
+				<Label class="h3 text-muted" text="Site"></Label>
+				<Label col="1" [class]="(selectedSite | async) ? 'input hasData' : 'input'" (tap)="showSites()" [text]="(selectedSite | async) ? (selectedSite | async) : 'Tap to choose...'"></Label>
+			</GridLayout>
+			<GridLayout class="input-field" columns="*, *" *ngIf="(selectedSite | async)">
+				<Label class="h3 text-muted" text="Building"></Label>
+				<Label col="1" [class]="(selectedBuilding | async) ? 'input hasData' : 'input'" (tap)="showBuildings()" [text]="(selectedBuilding | async) ? (selectedBuilding | async) : 'Tap to choose...'"></Label>
+			</GridLayout>
+			<GridLayout class="input-field" columns="*, *" *ngIf="(selectedBuilding | async)">
+				<Label class="h3 text-muted" text="Space"></Label>
+				<Label col="1" [class]="(selectedSpace | async) ? 'input hasData' : 'input'" (tap)="showSpaces()" [text]="(selectedSpace | async) ? (selectedSpace | async) : 'Tap to choose...'"></Label>
+			</GridLayout>
+			<GridLayout class="input-field" columns="*, *">
+				<Label class="h3 text-muted" text="Request"></Label>
+				<TextField #description class="input" col="1" [(ngModel)]="item.data.Description" hint="specific location as necessary"></TextField>
+			</GridLayout>
+			<GridLayout class="input-field" columns="*, *">
+				<Label class="h3 text-muted" text="Details"></Label>
+				<TextField #actionRequired class="input" col="1" [(ngModel)]="item.data.ActionRequired" hint="action required to be taken and other specifications"></TextField>
+			</GridLayout>
+			<GridLayout class="input-field" columns="*, *">
+				<Label class="h3 text-muted" text="Access arrangements"></Label>
+				<TextField #accessArrangements class="input" col="1" [(ngModel)]="item.data.AccessArrangements" hint="if required"></TextField>
+			</GridLayout>
+			<GridLayout class="input-field" columns="*, *">
+				<Label class="h3 text-muted" text="Priority"></Label>
+				<Label col="1" [class]="(selectedPriority | async) ? 'input hasData' : 'input'" (tap)="showPriority()" [text]="(selectedPriority | async) ? (selectedPriority | async) : 'Tap to choose...'"></Label>
+			</GridLayout>
+			<GridLayout class="input-field" columns="*, *">
+				<Label class="h3 text-muted" text="Job Type"></Label>
+				<Label col="1" [class]="(selectedJobType | async) ? 'input hasData' : 'input'" (tap)="showJobType()" [text]="(selectedJobType | async) ? (selectedJobType | async) : 'Tap to choose...'"></Label>
+			</GridLayout>
+			<GridLayout class="input-field" columns="*, *">
+				<Label class="h3 text-muted" text="Notify Me"></Label>
+				<Switch class="switch" #emailNotification [(ngModel)]="item.data.EmailNotificationEnabled" col="1"></Switch>
+			</GridLayout>
+			<!--- editableListForm6 additional fields -->
+		</StackLayout>
+		<!--- master detail form -->
+	</ScrollView>
+	<GridLayout row="1">
+		<Button class="btn btn-primary" text="Add" (tap)="onAdd()"></Button> </GridLayout>
+	<ActivityIndicator class="activity-indicator" rowSpan="2" [busy]="!item" [visibility]="item ? 'collapse' : 'visible'">
+	</ActivityIndicator>
+</GridLayout>
+
+
+
+<!-- START: Long list picker from https://www.nativescript.org/blog/filterable-list-picker-in-nativescript by Dave Coffin (@davecoffin)-->
+<GridLayout #picker [visibility]="showingLongListPicker ? 'visible' : 'collapse'" rows="30, *, 30" columns="30, *, 30" backgroundColor="red">
+	<GridLayout style="background-color: rgba(0,0,0,0.8);" rowSpan="3" colSpan="3" #longListPickerDimmer></GridLayout>
+	<StackLayout row="1" col="1" #longListPickerContainer style="background-color: white; border-radius: 10;">
+		<GridLayout rows="auto, *, auto">
+			<TextField row="0" hint="Edit text to filter..." [(ngModel)]="filterItem" (ngModelChange)="filterLongList($event)" style="font-size: 14;"></TextField>
+			<ListView row="1" [items]="itemsToShow" class="list-group" >
+				<template let-item="item" let-odd="odd" let-even="even">
+					<StackLayout>
+						<Label [text]="item" (tap)="chooseLongList($event)" class="list-group-item"></Label>
+
+					</StackLayout>
+				</template>
+			</ListView>
+			<GridLayout row="2" columns="auto, *, auto" style="background-color: #E0E0E0;" paddingTop="5" paddingBottom="5">
+				<Button col="1" class="transBtn sm" text="Cancel" (tap)="closeLongListPicker()"></Button>
+			</GridLayout>
+		</GridLayout>
+	</StackLayout>
+</GridLayout>
+<!-- END: Long list picker -->

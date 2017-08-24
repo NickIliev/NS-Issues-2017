@@ -1,0 +1,11 @@
+<TabView #tabview [selectedIndex]="tabindex" sdkExampleTitle sdkToggleNavButton>
+    <StackLayout *tabItem="{title: 'First'}">
+        <Label text="First" class="m-15 h2 text-left" color="blue"></Label>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Second'}" >
+        <Label text="Second" textWrap="true" class="h2 m-x-auto" color="blue"></Label>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Third'}">
+        <Label text="Third" textWrap="true" class="h2 m-x-auto" color="blue"></Label>
+    </StackLayout>
+</TabView>

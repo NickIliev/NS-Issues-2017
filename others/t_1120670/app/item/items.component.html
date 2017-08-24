@@ -1,0 +1,32 @@
+
+<ActionBar title="Title" icon="" class="action-bar">
+</ActionBar>
+<RadSideDrawer showOverNavigation="true" tkExampleTitle tkToggleNavButton>
+
+    <StackLayout tkDrawerContent class="drawer">
+
+        <ScrollView>
+            <StackLayout backgroundColor="gray">
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+                <Label text="some drawer content" textWrap="true"></Label>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+
+    <StackLayout tkMainContent>
+        <!-- <Button text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button> -->
+        <router-outlet></router-outlet>
+    </StackLayout>
+</RadSideDrawer>

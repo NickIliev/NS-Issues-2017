@@ -1,0 +1,23 @@
+/*
+In NativeScript, a file with the same name as an XML file is known as
+a code-behind file. The code-behind is a great place to place your view
+logic, and to set up your page’s data binding.
+*/
+"use strict";
+var main_view_model_1 = require("./main-view-model");
+var ImageSourceSVGModule = require("nativescript-svg");
+// var svgFile = new ImageSourceSVGModule.ImageSourceSVG();
+// var url = 'https://upload.wikimedia.org/wikipedia/commons/3/30/Vector-based_example.svg';
+// var loaded = svgFile.loadFromUrl(url);
+// if(loaded){
+//     console.log("object loaded");
+// } else {
+//     console.log("error");
+// }
+// Event handler for Page "navigatingTo" event attached in main-page.xml
+function navigatingTo(args) {
+    var page = args.object;
+    page.bindingContext = new main_view_model_1.HelloWorldModel();
+}
+exports.navigatingTo = navigatingTo;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi1wYWdlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWFpbi1wYWdlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7O0VBSUU7O0FBSUYscURBQW9EO0FBR3BELElBQUksb0JBQW9CLEdBQUcsT0FBTyxDQUFDLGtCQUFrQixDQUFDLENBQUM7QUFDdkQsMkRBQTJEO0FBRTNELDRGQUE0RjtBQUM1Rix5Q0FBeUM7QUFFekMsY0FBYztBQUNkLG9DQUFvQztBQUNwQyxXQUFXO0FBQ1gsNEJBQTRCO0FBQzVCLElBQUk7QUFHSix3RUFBd0U7QUFDeEUsc0JBQTZCLElBQWU7SUFFeEMsSUFBSSxJQUFJLEdBQVMsSUFBSSxDQUFDLE1BQU0sQ0FBQztJQUU3QixJQUFJLENBQUMsY0FBYyxHQUFHLElBQUksaUNBQWUsRUFBRSxDQUFDO0FBQ2hELENBQUM7QUFMRCxvQ0FLQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG5JbiBOYXRpdmVTY3JpcHQsIGEgZmlsZSB3aXRoIHRoZSBzYW1lIG5hbWUgYXMgYW4gWE1MIGZpbGUgaXMga25vd24gYXNcbmEgY29kZS1iZWhpbmQgZmlsZS4gVGhlIGNvZGUtYmVoaW5kIGlzIGEgZ3JlYXQgcGxhY2UgdG8gcGxhY2UgeW91ciB2aWV3XG5sb2dpYywgYW5kIHRvIHNldCB1cCB5b3VyIHBhZ2XigJlzIGRhdGEgYmluZGluZy5cbiovXG5cbmltcG9ydCB7IEV2ZW50RGF0YSB9IGZyb20gJ2RhdGEvb2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBQYWdlIH0gZnJvbSAndWkvcGFnZSc7XG5pbXBvcnQgeyBIZWxsb1dvcmxkTW9kZWwgfSBmcm9tICcuL21haW4tdmlldy1tb2RlbCc7XG5cblxudmFyIEltYWdlU291cmNlU1ZHTW9kdWxlID0gcmVxdWlyZShcIm5hdGl2ZXNjcmlwdC1zdmdcIik7XG4vLyB2YXIgc3ZnRmlsZSA9IG5ldyBJbWFnZVNvdXJjZVNWR01vZHVsZS5JbWFnZVNvdXJjZVNWRygpO1xuIFxuLy8gdmFyIHVybCA9ICdodHRwczovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9jb21tb25zLzMvMzAvVmVjdG9yLWJhc2VkX2V4YW1wbGUuc3ZnJztcbi8vIHZhciBsb2FkZWQgPSBzdmdGaWxlLmxvYWRGcm9tVXJsKHVybCk7XG4gXG4vLyBpZihsb2FkZWQpe1xuLy8gICAgIGNvbnNvbGUubG9nKFwib2JqZWN0IGxvYWRlZFwiKTtcbi8vIH0gZWxzZSB7XG4vLyAgICAgY29uc29sZS5sb2coXCJlcnJvclwiKTtcbi8vIH1cblxuXG4vLyBFdmVudCBoYW5kbGVyIGZvciBQYWdlIFwibmF2aWdhdGluZ1RvXCIgZXZlbnQgYXR0YWNoZWQgaW4gbWFpbi1wYWdlLnhtbFxuZXhwb3J0IGZ1bmN0aW9uIG5hdmlnYXRpbmdUbyhhcmdzOiBFdmVudERhdGEpIHtcblxuICAgIGxldCBwYWdlID0gPFBhZ2U+YXJncy5vYmplY3Q7XG5cbiAgICBwYWdlLmJpbmRpbmdDb250ZXh0ID0gbmV3IEhlbGxvV29ybGRNb2RlbCgpO1xufSJdfQ==

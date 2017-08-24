@@ -1,0 +1,18 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <StackLayout class="p-20">
+
+        <Label class="logo-label" textWrap="false">
+            <Label.formattedText>
+                <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="MED" class="prefix" />
+                        <Span text="PORTAL" class="postfix" />
+                    </FormattedString.spans>
+                </FormattedString>
+            </Label.formattedText>
+        </Label>
+        
+    </StackLayout>
+
+</Page>

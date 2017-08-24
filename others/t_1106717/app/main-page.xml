@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" class="page">
+<GridLayout rows="*" columns="*" id="grid" class="p-20" backgroundColor="orange">
+    <WebView row="0" col="0" id="wv" src="https://github.com/NickIliev/NativeScript-Issues-2017" /> 
+</GridLayout>
+</Page>

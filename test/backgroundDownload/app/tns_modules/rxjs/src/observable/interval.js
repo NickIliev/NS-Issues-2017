@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var IntervalObservable_1 = require("./IntervalObservable");
+exports.interval = IntervalObservable_1.IntervalObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW50ZXJ2YWwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbnRlcnZhbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDJEQUE0RDtBQUUvQyxRQUFBLFFBQVEsR0FBRyx1Q0FBa0IsQ0FBQyxNQUFNLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyAgSW50ZXJ2YWxPYnNlcnZhYmxlICB9IGZyb20gJy4vSW50ZXJ2YWxPYnNlcnZhYmxlJztcblxuZXhwb3J0IGNvbnN0IGludGVydmFsID0gSW50ZXJ2YWxPYnNlcnZhYmxlLmNyZWF0ZTsiXX0=

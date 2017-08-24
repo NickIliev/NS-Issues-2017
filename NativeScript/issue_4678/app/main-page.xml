@@ -1,0 +1,69 @@
+<Page loaded="onLoaded">
+
+ <!-- WORKING - multiple item templtates working when they are not in TabView -->   
+ 
+    <!-- <GridLayout rows="300, 20, 300" columns="">
+        <ListView row="0" items="{{ myItems }}" itemTemplateSelector="($value > 3) ? 'green' : 'red'">
+
+    <GridLayout rows="300, 20, 300" columns="">
+
+         <ListView row="0" items="{{ myItems }}" itemTemplateSelector="($value > 3) ? 'green' : 'red'">
+            <ListView.itemTemplates>
+            <template key="green">
+                <Label text="{{ $value + ' ala' }}" style.backgroundColor="green" />
+            </template>
+            <template key="red">
+                <Label text="{{ $value }}" style.backgroundColor="red" />
+            </template>
+            </ListView.itemTemplates>
+        </ListView>
+
+        <StackLayout row="1" backgroundColor="gray"></StackLayout>
+
+         <ListView row="2" items="{{ myNewItems }}" itemTemplateSelector="($value > 3) ? 'blue' : 'yellow'">
+            <ListView.itemTemplates>
+            <template key="blue">
+                <Label text="{{ $value }}" style.backgroundColor="blue" />
+            </template>
+            <template key="yellow">
+                <Label text="{{ $value }}" style.backgroundColor="yellow" />
+            </template>
+            </ListView.itemTemplates>
+        </ListView> 
+    </GridLayout> -->
+
+
+<!-- NOT WORKING -  ListView with multiple item templates is now wrking when nested in TabView -->
+<TabView id="tabViewContainer">
+    <TabView.items>
+        <TabViewItem title="Tab 1">
+            <TabViewItem.view>
+                <GridLayout rows="100, *" columns="*">
+                        <Label row="0" text="ala bala" textWrap="true" />
+                        
+                            <ListView row="1" items="{{ myItems }}" itemTemplateSelector="($value > 3) ? 'green' : 'red'">
+                            <ListView.itemTemplates>
+                            <template key="green">
+                                <Label text="{{ $value + ' ala' }}" style.backgroundColor="green" />
+                            </template>
+                            <template key="red">
+                                <Label text="{{ $value }}" style.backgroundColor="red" />
+                            </template>
+                            </ListView.itemTemplates>
+                        </ListView>  
+
+
+                </GridLayout>
+            </TabViewItem.view>
+        </TabViewItem>
+        <TabViewItem title="Tab 2">
+            <TabViewItem.view>
+                <Label text="This is Label in Tab 2" />
+            </TabViewItem.view>
+        </TabViewItem>
+    </TabView.items>
+</TabView>
+
+    
+
+</Page>

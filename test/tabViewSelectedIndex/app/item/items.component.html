@@ -1,0 +1,13 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<TabView #tv iosIconRenderingMode="alwaysTemplate" (selectedIndexChange)="onIndexChange($event)" selectedTabTextColor="green">
+    <StackLayout *tabItem="myFirstItem">
+        <Label text="First tap" textWrap="true"></Label>
+    </StackLayout>
+    <StackLayout *tabItem="mySecondItem">
+        <Label text="Second tab item"></Label>
+    </StackLayout>
+    <StackLayout *tabItem="myThirdItem">
+        <Label text="Third tab item"></Label>
+    </StackLayout>
+</TabView>

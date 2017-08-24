@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onPageLoaded" class="page">
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+<ScrollView id="scroll">
+    <StackLayout id="stack" loaded="onStackLoaded" class="p-0 m-0" backgroundColor="gray" height="2000">
+        <GridLayout width="200" height="200" backgroundColor="white"><Label text="1: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="blue"><Label text="2: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="white"><Label text="2: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="blue"><Label text="4: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="white"><Label text="5: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="blue"><Label text="6: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="white"><Label text="7: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="blue"><Label text="8: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="white"><Label text="9: 200 x 200"/></GridLayout>
+        <GridLayout width="200" height="200" backgroundColor="blue" ><Label text="10: 200 x 200"/></GridLayout>
+    </StackLayout>
+</ScrollView>
+</Page>

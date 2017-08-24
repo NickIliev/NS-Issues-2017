@@ -1,0 +1,28 @@
+
+Image {
+    margin-top: 50px;
+    horizontal-align: center;
+}
+
+
+Button {
+    margin-bottom: -100px;
+    overflow: hidden;
+    color: white;
+}
+
+.push {
+    background-color: #f09199;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.login {
+    background-color: #b3d64d;
+}
+
+.pro {
+    background-color: #e9dc6a;
+}

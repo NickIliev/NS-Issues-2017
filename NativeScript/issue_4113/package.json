@@ -1,0 +1,46 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.issue4113",
+    "tns-android": {
+      "version": "3.0.0"
+    }
+  },
+  "dependencies": {
+    "@angular/common": "4.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/core": "4.0.0",
+    "@angular/forms": "4.0.0",
+    "@angular/http": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
+    "@angular/router": "4.0.0",
+    "nativescript-angular": "3.0.0",
+    "nativescript-dom": "2.0.0",
+    "nativescript-iqkeyboardmanager": "^1.0.1",
+    "nativescript-loading-indicator": "^2.3.2",
+    "nativescript-platform-css": "^1.4.0",
+    "nativescript-plugin-firebase": "^3.11.4",
+    "nativescript-telerik-ui": "2.0.1",
+    "nativescript-theme-core": "1.0.4",
+    "nativescript-toast": "^1.4.5",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "5.0.0-rc.4",
+    "tns-core-modules": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.22.1",
+    "babel-types": "6.22.0",
+    "babylon": "6.15.0",
+    "codelyzer": "^3.0.0",
+    "lazy": "1.0.11",
+    "tslint": "5.0.0",
+    "nativescript-dev-android-snapshot": "^0.0.9",
+    "nativescript-dev-typescript": "^0.4.2",
+    "typescript": "^2.3.2",
+    "zone.js": "~0.8.10"
+  }
+}

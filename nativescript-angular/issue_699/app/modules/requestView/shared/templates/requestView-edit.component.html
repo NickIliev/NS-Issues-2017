@@ -1,0 +1,13 @@
+<GridLayout rows="*, auto">
+    <ScrollView>
+        <!--- master detail form -->
+    </ScrollView>
+
+    <GridLayout row="1" columns="*, *">
+        <Button class="btn btn-primary" text="Update" (tap)="onUpdate()"></Button>
+        <Button class="btn btn-outline" col="1" text="Delete" (tap)="onDelete()"></Button>
+    </GridLayout>
+
+    <ActivityIndicator class="activity-indicator" rowSpan="2" [busy]="!item" [visibility]="item ? 'collapse' : 'visible'">
+    </ActivityIndicator>
+</GridLayout>

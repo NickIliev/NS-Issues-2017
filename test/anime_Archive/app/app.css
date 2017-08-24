@@ -1,0 +1,37 @@
+﻿.btn {
+    font-size: 18;
+}
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+@keyframes example {
+    from{
+        transform: rotate(0) translateX(0);
+    }
+   to{
+       transform: rotate(180) translateX(145);
+   }
+}
+
+.view {
+    animation-name: example;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    font-size: 30;
+    top:100;
+    left:100;
+    width: 100;
+    height: 100;
+    background-color: #000;
+    border-radius: 10;
+}
+
+.box {
+    width: 500;
+    height: 500;
+    background-color: #cc0000;
+	margin: 0;
+}

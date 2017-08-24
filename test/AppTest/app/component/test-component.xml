@@ -1,0 +1,5 @@
+<ListView items="{{ myItems }}" itemTap="{{ openPage }}">
+    <ListView.itemTemplate>
+        <Label style="margin: 16" text="{{ $value }}"/>
+    </ListView.itemTemplate>
+</ListView>

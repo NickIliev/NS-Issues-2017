@@ -1,0 +1,11 @@
+{
+  "name": "sentry-ios",
+  "main": "sentry",
+  "typings": "index.d.ts",
+  "version": "0.0.1",
+  "nativescript": {
+    "platforms": {
+      "ios": "2.5.0"
+    }
+  }
+}

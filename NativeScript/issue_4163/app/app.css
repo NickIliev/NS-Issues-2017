@@ -1,0 +1,8 @@
+﻿.btn {
+    font-size: 18;
+}
+
+.pad {
+    padding: 10%
+}
+@import 'nativescript-theme-core/css/core.light.css';

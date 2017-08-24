@@ -1,0 +1,16 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<GridLayout rows="400, 100" columns="">
+  <RadListView row="0" [items]="dataItems">
+      <ng-template let-item="item" tkListItemTemplate>
+        <StackLayout>
+          <Label fontSize="20" text="{{ item.name }}"></Label>
+          <Label fontSize="14" text="{{ item.description }}"></Label>
+        </StackLayout>
+      </ng-template>
+  </RadListView>
+  <TextField row="1" hint="Enter some text" text=""></TextField>
+</GridLayout>
+
+

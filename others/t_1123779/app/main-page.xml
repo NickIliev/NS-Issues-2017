@@ -1,0 +1,8 @@
+<Page navigatingTo="navigatingTo">
+  <StackLayout>
+
+    <Button text="capturePhoto" tap="capturePhoto" />
+    
+    
+  </StackLayout>
+</Page>

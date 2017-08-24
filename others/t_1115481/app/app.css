@@ -1,0 +1,25 @@
+﻿@import 'nativescript-theme-core/css/core.light.css';
+
+@keyframes example {
+    0% { transform: scale(1.0, 1.0); }
+    25% { transform: scale(1.2, 1.2); }
+    50% { transform: scale(1.0, 1.0); }
+    75% { transform: scale(1.2, 1.2); }
+    100% { transform: scale(1.0, 1.0); }
+}
+
+.animate-spring {
+    animation-name: example;
+    animation-duration: 1.0s;
+    animation-timing-function: ease;
+    animation-fill-mode: initial;
+}
+
+
+/*@keyframes example {
+    0%   { background-color: red; transform: translate(0, 0); }
+    25%  { background-color: yellow; transform: translate(200, 0); }
+    50%  { background-color: blue; transform: translate(200, 200);  }
+    75%  { background-color: green; transform: translate(0, 200); }
+    100% { background-color: red; transform: translate(0, 0); }
+}*/

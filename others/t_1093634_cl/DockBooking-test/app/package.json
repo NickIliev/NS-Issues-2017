@@ -1,0 +1,8 @@
+{
+  "android": {
+    "v8Flags": "--expose_gc"
+  },
+  "main": "app.js",
+  "name": "dockbooking",
+  "version": "0.0.3"
+}

@@ -1,0 +1,15 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ListView items="{{ myItems }}" itemTemplateSelector="selectItemTemplate">
+        <ListView.itemTemplates>
+        <template key="base">
+            <Label text="{{ age }}" style.backgroundColor="green" />
+        </template>
+        <template key="empty">
+            <StackLayout>
+            <!-- your empty template follows here -->
+            </StackLayout>
+        </template>
+        </ListView.itemTemplates>
+    </ListView>
+</Page>

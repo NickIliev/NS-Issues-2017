@@ -1,0 +1,12 @@
+
+<ActionBar title="My App" class="action-bar">
+    <ActionItem text="save" (tap)="save()"></ActionItem>   
+</ActionBar>
+
+<StackLayout [formGroup]="form">
+    <label text="Name"></label>
+    <TextField formControlName="Name"></TextField>   
+    <label text="Last Name"></label>
+    <TextField formControlName="LastName"></TextField>
+    <button text="save" (tap)="save()"></button>
+</StackLayout>

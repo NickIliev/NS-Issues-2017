@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var FromObservable_1 = require("./FromObservable");
+exports.from = FromObservable_1.FromObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZnJvbS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImZyb20udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxtREFBb0Q7QUFFdkMsUUFBQSxJQUFJLEdBQUcsK0JBQWMsQ0FBQyxNQUFNLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyAgRnJvbU9ic2VydmFibGUgIH0gZnJvbSAnLi9Gcm9tT2JzZXJ2YWJsZSc7XG5cbmV4cG9ydCBjb25zdCBmcm9tID0gRnJvbU9ic2VydmFibGUuY3JlYXRlOyJdfQ==

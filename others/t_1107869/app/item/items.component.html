@@ -1,0 +1,21 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+    <RadListView [items]="items" multipleSelection="true" selectionBehavior="Press" (itemSelecting)="itemSelecting($event)" (itemSelected)="itemSelected($event)" (itemDeselected)="itemDeselected($event)">
+        <ng-template tkListItemTemplate let-item="item">
+            <StackLayout [backgroundColor]="item.selected ? 'red' : 'white'">
+                    <Label [text]="item.name" class="list-group-item"></Label>
+            </StackLayout>
+        </ng-template>
+        <ListViewLinearLayout tkListViewLayout scrollDirection="Vertical"></ListViewLinearLayout>
+    </RadListView>
+
+
+
+
+    <!--<ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>-->

@@ -1,0 +1,19 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <StackLayout class="p-20">
+            <Label textWrap="true"  >
+                <Label.formattedText>
+                    <FormattedString>
+                        <FormattedString.spans>
+                            <Span text="I confirm that I am "></Span>
+                            <Span text="{{ ObserverName }}" style="font-weight: bold"></Span>
+                            <Span text=" and I am Observing "></Span>
+                            <Span text="{{ LearnerName }}" style="font-weight: bold"></Span>
+                        </FormattedString.spans>
+                    </FormattedString>
+                </Label.formattedText>
+            </Label>
+    </StackLayout>
+    
+</Page>

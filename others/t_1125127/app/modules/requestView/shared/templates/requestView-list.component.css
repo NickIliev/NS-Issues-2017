@@ -1,0 +1,33 @@
+.outstanding {
+				font-weight: bold;
+				/*color: red;*/
+}
+
+.complete {
+				/*font-size: 0.75em;*/
+				color: green;
+}
+.badge {
+    width: 70px;
+    height: 70px;
+    color: black;
+    text-align: center;
+    text-overflow: clip;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.entered {
+    background-color: #BDD7EE;
+}
+.allocated {
+    background-color: #FFD966;
+}
+.completed {
+    background-color: #A9D08E;
+}
+.overdue {
+    background-color: #FF5050;
+}
+.held {
+    background-color: #CC3399; 
+}

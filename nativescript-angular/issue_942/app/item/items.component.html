@@ -1,0 +1,21 @@
+
+<ActionBar android:title="Title">
+    <ActionItem text="left item" ios.position="left"></ActionItem>
+    <ActionItem *ngIf="isVisible" text="Item" ios.position="right" android.position="popup"></ActionItem>
+    <ActionItem>
+        <Label class="m-5" text="Custom item" color="#8C489F"></Label>
+    </ActionItem>
+    <ActionItem ios.systemIcon="12" android.systemIcon="ic_menu_search"></ActionItem>
+</ActionBar>
+
+
+<StackLayout class="page">
+    <Button text="Show/Hide ActionItem using ngIf" (tap)="toggle()"></Button>
+    
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>

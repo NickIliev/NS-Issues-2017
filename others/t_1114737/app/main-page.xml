@@ -1,0 +1,90 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+xmlns:lv="nativescript-telerik-ui/listview"
+xmlns:x="nativescript-statusbar" 
+xmlns:shared="~/views/shared/infobox"
+loaded="onPageLoaded" navigatingTo="onNavigatingTo">
+<x:StatusBar ios:barStyle="light"/>
+    <Page.actionBar>
+        <ActionBar title="{{ clerkshipName }}" icon="">
+            <NavigationButton text="Back" icon="" tap="" />
+            <ActionBar.actionItems>
+            <ActionItem  ios.position="left" tap="onShowLocation" class="actioniconitem">
+                    <ActionItem.actionView>
+                        <Label text="&#xf05a;" class="fa actionicon" />
+                    </ActionItem.actionView>
+                </ActionItem>
+                <ActionItem  ios.position="right" tap="onChangeLocation" class="actioniconitem">
+                    <ActionItem.actionView>
+                        <Label text="&#xf1de;" class="fa actionicon" />
+                    </ActionItem.actionView>
+                </ActionItem>
+            </ActionBar.actionItems>
+        </ActionBar>
+    </Page.actionBar>
+      <GridLayout id="layout" rows="auto, auto, *"  >
+            <GridLayout rows="auto, auto, auto" row="0" class="searchZone">
+                <SearchBar id="searchBar" row="0" hint="Search Encounters" text="{{ searchText }}" clear="onSearchClear" submit="onSearch" android:style="height: 50;"  />
+                <ScrollView row="1" id="globalScroll" orientation="horizontal" class="bg-grey">
+                    <GridLayout class="filter-button-wrapper " columns="auto, auto, auto, auto">
+                        <Label col="0" text="Required" textWrap="false" class="{{ globalFilter == 'Required' ? 'btn-primary btn btn-sm' : 'btn-default btn btn-sm' }}" tap="onGlobalFilter" filter="Required"  />
+                        <Label col="1" text="All Encounters" textWrap="false" class="{{ globalFilter == 'All' ? 'btn-primary btn btn-sm' : 'btn-default btn btn-sm' }}" tap="onGlobalFilter" filter="All" />
+                        <Label col="2" text="Incomplete" textWrap="false" class="{{ globalFilter == 'Incomplete' ? 'btn-primary btn btn-sm' : 'btn-default btn btn-sm' }}" tap="onGlobalFilter" filter="Incomplete" />
+                        <Label col="3" text="Complete" textWrap="false" class="{{ globalFilter == 'Complete' ? 'btn-primary btn btn-sm' : 'btn-default btn btn-sm' }}" tap="onGlobalFilter" filter="Complete" />
+                    </GridLayout>
+                </ScrollView>
+                <ScrollView row="2" id="subScroll" orientation="horizontal" class="bg-grey">
+                    <GridLayout class="filter-button-wrapper " columns="auto, auto, auto, auto">
+                        <Label col="0" text="Show all" textWrap="false" class="{{ subfilter == 'Show%20All' ? 'btn-primary btn btn-sm' : 'btn-default btn btn-sm' }}" tap="onSubFilter" filter="Show%20All"  />
+                        <Label col="1" text="Primary" textWrap="false" class="{{ subfilter == 'Primary%20Presentation' ? 'btn-primary btn btn-sm' : 'btn-default btn btn-sm' }}" tap="onSubFilter" filter="Primary%20Presentation" />
+                        <Label col="2" text="Procedure" textWrap="false" class="{{ subfilter == 'Procedure' ? 'btn-primary btn btn-sm' : 'btn-default btn btn-sm' }}" tap="onSubFilter" filter="Procedure" />
+                        <Label col="3" text="Procomp" textWrap="false" class="{{ subfilter == 'Professional%20Competencies' ? 'btn-primary btn btn-sm' : 'btn-default btn btn-sm' }}" tap="onSubFilter" filter="Professional%20Competencies" />
+                    </GridLayout>
+                </ScrollView>
+            </GridLayout>
+            <StackLayout row="1">
+                <shared:infobox id="list-box-1" text="Encounters that have a lightbulb contain probing questions. Click the encounter to view more details." icon="&#xf0eb;" allowClose="true" />
+                <shared:infobox id="list-box-2" text="Log an encounter as complete by swiping it to the left. If you would like to enter more detail, just tap the encounter." icon="&#xf00c;" allowClose="true" />
+            </StackLayout>
+            <GridLayout row="2" rows="*" visibility="{{ isInitalized && items.length == 0 ? 'visible' : 'collapsed' }}" >
+                <Label text="No Items" textWrap="true" class="noitems" />
+            </GridLayout>
+            <GridLayout row="2" rows="*" visibility="{{ !isInitalized  ? 'visible' : 'collapsed' }}" >
+                <ActivityIndicator width="50" height="50" busy="true" class="noitems" />
+            </GridLayout>
+            <lv:RadListView row="2" 
+                                    id="list"
+                                    items="{{ items }}" 
+                                    itemTap="onItemTap" 
+                                    swipeActions="true"
+                                    itemSwipeProgressStarted="onSwipeStarted"  
+                                    itemSwipeProgressEnded="onSwipeEnded" 
+                                    pullToRefresh="true" 
+                                    pullToRefreshInitiated="pullToRefreshInitiated"
+                                    itemDeleteAnimation="Scale"
+                                    visibility="{{ isInitalized && items.length > 0 ? 'visible' : 'collapsed' }}">
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewLinearLayout scrollDirection="Vertical" itemDeleteAnimation="Slide" itemAddAnimation="Slide" />
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate>
+                        <GridLayout rows="auto, auto" class="list-item ece">
+                            <StackLayout class="title" row="0">
+                                <Label class="itemName" textWrap="true" text="{{ Name }}" />    
+                            </StackLayout>
+                            <StackLayout row="1" orientation="horizontal" class="types">
+                                <Label text="&#xf0eb;" class="fa meta-item bg-accent" textWrap="true" visibility="{{ HasProbingQuestions || HasResources ? 'visible' : 'collapsed' }}" />
+                                <Label text="{{ PatientTypeName }}" textWrap="false" class="meta-item type" />
+                                <Label text="{{ RoleName }}" textWrap="false" class="meta-item type" />
+                                <Label id="status" text="complete" textWrap="false" class="completed bg-accent" visibility="{{ Status == 'complete' ? 'visible' : 'collapsed' }}"  />
+                                
+                            </StackLayout>
+                        </GridLayout>
+                </lv:RadListView.itemTemplate>
+                <lv:RadListView.itemSwipeTemplate>
+                        <GridLayout columns="*, 50" rows="*" class="bg-accent swipe-template">
+                            <Label col="0" text="" textWrap="false" class="swipeText" />
+                            <Label col="1" text="&#xf00c;" class="fa swipeIcon bg-accent" />
+                        </GridLayout>
+                    </lv:RadListView.itemSwipeTemplate>
+            </lv:RadListView>
+        </GridLayout>
+</Page>

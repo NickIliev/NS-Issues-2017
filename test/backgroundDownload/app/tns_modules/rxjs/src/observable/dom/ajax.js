@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var AjaxObservable_1 = require("./AjaxObservable");
+exports.ajax = AjaxObservable_1.AjaxObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWpheC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImFqYXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxtREFBd0U7QUFFM0QsUUFBQSxJQUFJLEdBQXVCLCtCQUFjLENBQUMsTUFBTSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgIEFqYXhPYnNlcnZhYmxlLCBBamF4Q3JlYXRpb25NZXRob2QgIH0gZnJvbSAnLi9BamF4T2JzZXJ2YWJsZSc7XG5cbmV4cG9ydCBjb25zdCBhamF4OiBBamF4Q3JlYXRpb25NZXRob2QgPSBBamF4T2JzZXJ2YWJsZS5jcmVhdGU7Il19

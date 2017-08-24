@@ -1,0 +1,31 @@
+<GridLayout rows="*, auto">
+
+	<RadListView class="list-group " [items]="items" loadOnDemandMode="Auto" (loadMoreDataRequested)="onLoadMoreItemsRequested($event)">
+
+			<template tkListItemTemplate let-item="item">
+				<GridLayout class="list-group-item" (tap)="onSelect(item)" rows="auto, auto, auto">
+
+					<StackLayout>
+
+
+						<Label class="list-group-item-heading" textWrap="true" [text]="item.data.CodeName"></Label>
+
+
+					</StackLayout>
+
+
+					<GridLayout row="1">
+						<!--- master detail form -->
+					</GridLayout>
+
+
+				</GridLayout>
+			</template>
+		<ListViewLinearLayout tkListViewLayout scrollDirection="Vertical" itemInsertAnimation="Default"></ListViewLinearLayout>
+
+	</RadListView>
+
+
+	<ActivityIndicator class="activity-indicator" rowSpan="2" [busy]="!items.length" [visibility]="items.length ? 'collapse' : 'visible'">
+	</ActivityIndicator>
+</GridLayout>

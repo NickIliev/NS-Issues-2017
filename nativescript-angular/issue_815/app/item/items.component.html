@@ -1,0 +1,23 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <Label [text]="now | date:'medium'"></Label> <!-- NOPE (seconds and missing comma!) 'medium': equivalent to 'yMMMdjms' (e.g. Sep 3, 2010, 12:05:08 PM for en-US) -->
+    <Label [text]="now | date:'short'"></Label> <!--OK 'short': equivalent to 'yMdjm' (e.g. 9/3/2010, 12:05 PM for en-US)-->
+    <Label [text]="now | date:'fullDate'"></Label> <!-- OK'fullDate': equivalent to 'yMMMMEEEEd' (e.g. Friday, September 3, 2010 for en-US)-->
+    <Label [text]="now | date:'longDate'"></Label> <!--OK 'longDate': equivalent to 'yMMMMd' (e.g. September 3, 2010 for en-US) -->
+    <Label [text]="now | date:'mediumDate'"></Label> <!--OK 'mediumDate': equivalent to 'yMMMd' (e.g. Sep 3, 2010 for en-US)-->
+    <Label [text]="now | date:'shortDate'"></Label> <!-- OK 'shortDate': equivalent to 'yMd' (e.g. 9/3/2010 for en-US)-->
+    <Label [text]="now | date:'mediumTime'"></Label> <!-- NOPE (seconds!) 'mediumTime': equivalent to 'jms' (e.g. 12:05:08 PM for en-US)-->
+    <Label [text]="now | date:'shortTime'"></Label> <!-- OK 'shortTime': equivalent to 'jm' (e.g. 12:05 PM for en-US) -->
+
+    <Label [text]="now" textWrap="true"></Label> <!-- row miliseconds from 1.1.1970 to now-->
+</StackLayout>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var TimerObservable_1 = require("./TimerObservable");
+exports.timer = TimerObservable_1.TimerObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGltZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0aW1lci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHFEQUFzRDtBQUV6QyxRQUFBLEtBQUssR0FBRyxpQ0FBZSxDQUFDLE1BQU0sQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7ICBUaW1lck9ic2VydmFibGUgIH0gZnJvbSAnLi9UaW1lck9ic2VydmFibGUnO1xuXG5leHBvcnQgY29uc3QgdGltZXIgPSBUaW1lck9ic2VydmFibGUuY3JlYXRlOyJdfQ==

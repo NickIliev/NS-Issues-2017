@@ -1,0 +1,22 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<!--<StackLayout class="page">
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>-->
+
+<GridLayout tkExampleTitle tkToggleNavButton #showContainer id="showContainer">
+    <RadListView [items]="items">
+        <ng-template tkListItemTemplate let-item="item">
+            <StackLayout orientation="horizontal" [nsRouterLink]="['/item', item.id]" >
+                <Label class="nameLabel" [text]="item.id + '. '"></Label>
+                <Label class="nameLabel" [text]="item.name"></Label>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>

@@ -1,0 +1,32 @@
+// ------------------------------------
+// IMAGE STYLING
+// ------------------------------------
+
+.profile-img {
+    border-radius: 63;
+    -moz-border-radius: 63;
+    -webkit-border-radius: 63;
+    height:125;
+    width:125;
+    border-width:2;
+    border-color:white;
+    margin-bottom:15;
+    background-color: red;
+    &--small {
+        width:60;
+        height:60;
+        border-radius: 30;
+        -moz-border-radius: 30;
+        -webkit-border-radius: 30;
+        border-width:2;
+        border-color:white;
+    }
+}
+
+.company-logo{
+    width:200;
+    height: 200 * 0.35;
+    margin-top:20;
+    margin-bottom:20;
+}
+

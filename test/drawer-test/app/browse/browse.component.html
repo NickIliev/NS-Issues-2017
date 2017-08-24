@@ -1,0 +1,19 @@
+<ActionBar class="action-bar">
+    <!--HACK - we should remove the navigation button-->
+    <NavigationButton visibility="collapsed"></NavigationButton>
+    <ActionItem (tap)="onDrawerButtonTap()"
+        ios.position="left"
+        android.position="actionBar">
+        <Label text="&#xf0c9;" class="fa p-r-15"></Label>
+    </ActionItem>
+    <Label class="action-bar-title" text="Browse"></Label>
+</ActionBar>
+
+<RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition" tkExampleTitle tkToggleNavButton>
+    <StackLayout tkDrawerContent>
+        <MyDrawer [selectedPage]="'Browse'"></MyDrawer>
+    </StackLayout>
+    
+    <StackLayout class="page appPage browsePage" tkMainContent>
+    </StackLayout>
+</RadSideDrawer>

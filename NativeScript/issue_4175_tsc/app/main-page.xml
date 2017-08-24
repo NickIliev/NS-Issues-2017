@@ -1,0 +1,7 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <StackLayout class="p-20">
+        <Label text="Switch not showing on iOS (unless horizontalAlignment is set)" textWrap="true" />
+        <Switch checked="{{ checked }}" /> <!-- This won't' work -->
+        <Switch checked="{{ checked }}" horizontalAlignment="center" /> <!-- This will work -->
+    </StackLayout>
+</Page>

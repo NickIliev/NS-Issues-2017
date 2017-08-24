@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <StackLayout class="p-20" backgroundColor="gray">
+        <Button text="ClearHistory (no transition)" tap="navWithClearHistory" />
+    </StackLayout>
+</Page>

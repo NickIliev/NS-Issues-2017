@@ -1,0 +1,57 @@
+<!--<GridLayout rows="*">
+  Home Screen Layout Listout all the Notification for the User 
+    <ListView [row]="row" [items]= "homeList" >
+        emplate for the Home screen all notification
+        <template let-item ="item">
+           Application icon and row
+            <GridLayout columns="auto,*,auto" class="writeMessage bubble">
+                <Image col="0" src="res://login_icon" class="avatar" stretch="aspectFit" style="background-color: #DBDBDB"> </Image>
+            </GridLayout>
+             Data in the ListItem Home Screen Notification
+            <StackLayout col="1" columns="auto,*" rows="auto,*">
+                <Label text= "item.name" class="contactName"> </Label>
+            </StackLayout>
+            Image button for View full Notification
+            <GridLayout col="2">
+                <Image col="2" src="res://ic_next" class="openFullMsg" stretch="aspectFit"  > </Image>
+            </GridLayout>
+        </template>
+    </ListView>
+</GridLayout>-->
+
+<GridLayout rows="*">
+
+    <ListView id="homeListdlt" [row]="row" [items]="homeList" (itemTap)="homeNotificationListItemSelected($event)" [visibility]="itemVisible ? 'visible' : 'collapsed'">
+        <ng-template let-item="item">
+            <GridLayout columns="auto,*,auto,auto" class="writeMessage bubble">
+                <GridLayout>
+                    <Image col="0" src="res://login_icon" class="avatar" stretch="aspectFit" style="background-color: #DBDBDB;"></Image>
+                </GridLayout>
+                <StackLayout col="1" columns="*" rows="*">
+                    <WrapLayout *ngIf="'{{item.userName}}' !== ''">
+                        <Label [text]="item.userName" class="contactName"></Label>
+                    </WrapLayout>
+                    <WrapLayout *ngIf="'{{item.groupName}}' !== ''">
+                        <Label [text]="item.groupName" class="grpName"></Label>
+                    </WrapLayout>
+
+                    <!--<Label col="2" [text]="item.Date" class="listDate"></Label>-->
+                    <!--<Label  [text]="item.userId" class="chatMsg" [visibility]="isItemVisible ? 'collapsed' : 'collapsed'"></Label>  -->
+                    <!--<Label  [text]="item.groupId" class="chatMsg" [visibility]="isItemVisible ? 'collapsed' : 'collapsed'"></Label>  -->
+                    <Label [text]="item.messageText" class="chatMsg"></Label>
+                    <!--<WrapLayout *ngIf = "'item.msgUnread' > '0'">
+                           <Label  [text]="item.messageText" style="color: red;" ></Label>  </WrapLayout>
+                           <WrapLayout *ngIf = "'item.msgUnread' !== ''">      *ngIf = "activeTab == 'Docs'"
+                        <Label  [text]="item.messageText" class="chatMsg"></Label>  </WrapLayout>-->
+                </StackLayout>
+                <WrapLayout col="2" visibility="{{item.grpNumber ? 'visible' : 'collapsed'}}" style="vertical-align: middle;">
+                    <Label text="{{item.msgUnread}}" class="itemNewMsgBubble"></Label>
+                </WrapLayout>
+                <WrapLayout col="2">
+                    <Label col="2" text="{{item.Date | date: 'M/d/yy HH:mm'}}" class="listDate"></Label>
+                </WrapLayout>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+    <!--<Label   text="You do not have new Notification"  style="vertical-align: middle" [visibility]="contactListItems ? 'collapsed' : 'visible'"> </Label>-->
+</GridLayout>

@@ -1,0 +1,18 @@
+<Page xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      loaded="pageCategoriesRootLoaded">
+    <Page.actionBar>
+        <ActionBar title="Kategorien">
+            <ios>
+                <NavigationButton/> <!--leerer Back-Button (ohne Text) für iOS-->
+            </ios>
+        </ActionBar>
+    </Page.actionBar>
+    <GridLayout rows="auto,*">
+        <Label row="0" text="Es konnten leider keine Kategorien geladen werden." className="text-normal page-content" textWrap="true"
+               visibility="{{ categoriesRoot.length, categoriesRoot.length !== 0 ? 'collapse' : 'visible' }}" />
+
+        <TabView row="1" id="tabViewRootCategories" selectedIndex="{{ selectedTabIndex }}" visibility="{{ categoriesRoot, categoriesRoot.length === 0 ? 'collapse' : 'visible' }}">
+            <!-- wird dynamisch geladen und mit Inhalten gefüllt -->
+        </TabView>
+    </GridLayout>
+</Page>

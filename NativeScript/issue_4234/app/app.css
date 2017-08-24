@@ -1,0 +1,12 @@
+﻿.classA {
+ font:24 Arial;
+}
+
+Label.classB {
+ /*color: red;   
+ font-size: 24;*/
+
+ font:bold 31 Arial;
+}
+
+@import 'nativescript-theme-core/css/core.light.css';

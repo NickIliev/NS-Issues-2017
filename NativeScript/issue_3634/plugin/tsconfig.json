@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "declaration": true,
+        "noEmitOnError": false,
+        "noEmitHelpers": true,
+        "noImplicitUseStrict": true
+    },
+    "files": [
+        "sentry.ios.ts"
+    ],
+    "compileOnSave": false
+}

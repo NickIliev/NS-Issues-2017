@@ -1,0 +1,9 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <StackLayout class="p-20">
+        <Button text="Encode" tap="encode" class="btn btn-primary btn-active"/>
+        <Label text="{{ baseString }}" class="h2 text-center" textWrap="true"/>
+        <Button text="Decode" tap="decode" class="btn btn-primary btn-active"/>
+        <Label text="{{ decoded }}" class="h2 text-center" textWrap="true"/>
+    </StackLayout>
+</Page>

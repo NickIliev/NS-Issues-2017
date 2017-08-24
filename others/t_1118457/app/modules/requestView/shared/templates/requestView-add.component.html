@@ -1,0 +1,49 @@
+<GridLayout rows="*, auto">
+    <ScrollView>
+
+        <StackLayout class="form">
+            <GridLayout class="input-field" columns="*, *">
+    <Label class="h3 text-muted" text="Building"></Label>
+
+    <ListPicker col="1" class="input" [items]="dropdownlistBuildingDropDown.items$ | async" #dropdownlistBuilding (selectedIndexChange)="onSelectedPickerChanged(dropdownlistBuilding, 'dropdownlistBuildingDropDown', 'Building')" [selectedIndex]="dropdownlistBuildingDropDown.index">
+    </ListPicker>
+</GridLayout><GridLayout class="input-field" columns="*, *">
+    <Label class="h3 text-muted" text="Space"></Label>
+
+    <ListPicker col="1" class="input" [items]="dropdownlistSpaceDropDown.items$ | async" #dropdownlistSpace (selectedIndexChange)="onSelectedPickerChanged(dropdownlistSpace, 'dropdownlistSpaceDropDown', 'Space')" [selectedIndex]="dropdownlistSpaceDropDown.index">
+    </ListPicker>
+</GridLayout><GridLayout class="input-field" columns="*, *">
+    <Label class="h3 text-muted" text="Request"></Label>
+    <TextField #description class="input" col="1" [(ngModel)]="item.data.Description" hint="specific location as necessary"></TextField>
+</GridLayout><GridLayout class="input-field" columns="*, *">
+    <Label class="h3 text-muted" text="Details"></Label>
+    <TextField #actionRequired class="input" col="1" [(ngModel)]="item.data.ActionRequired" hint="action required to be taken and other specifications"></TextField>
+</GridLayout><GridLayout class="input-field" columns="*, *">
+    <Label class="h3 text-muted" text="Access arrangements"></Label>
+    <TextField #accessArrangements class="input" col="1" [(ngModel)]="item.data.AccessArrangements" hint="if required"></TextField>
+</GridLayout><GridLayout class="input-field" columns="*, *">
+    <Label class="h3 text-muted" text="Priority"></Label>
+
+    <ListPicker col="1" class="input" [items]="dropdownlistPriorityDropDown.items$ | async" #dropdownlistPriority (selectedIndexChange)="onSelectedPickerChanged(dropdownlistPriority, 'dropdownlistPriorityDropDown', 'Priority')" [selectedIndex]="dropdownlistPriorityDropDown.index">
+    </ListPicker>
+</GridLayout><GridLayout class="input-field" columns="*, *">
+    <Label class="h3 text-muted" text="Job Type"></Label>
+
+    <ListPicker col="1" class="input" [items]="dropdownlistJobTypeDropDown.items$ | async" #dropdownlistJobType (selectedIndexChange)="onSelectedPickerChanged(dropdownlistJobType, 'dropdownlistJobTypeDropDown', 'JobType')" [selectedIndex]="dropdownlistJobTypeDropDown.index">
+    </ListPicker>
+</GridLayout><GridLayout class="input-field" columns="*, *">
+    <Label class="h3 text-muted" text="Notify Me"></Label>
+    <Switch class="switch" #emailNotification [(ngModel)]="item.data.EmailNotificationEnabled" col="1"></Switch>
+</GridLayout><!--- editableListForm6 additional fields -->
+        </StackLayout>
+        <!--- master detail form -->
+
+    </ScrollView>
+
+    <GridLayout row="1">
+        <Button class="btn btn-primary" text="Add" (tap)="onAdd()"></Button>
+    </GridLayout>
+
+    <ActivityIndicator class="activity-indicator" rowSpan="2" [busy]="!item" [visibility]="item ? 'collapse' : 'visible'">
+    </ActivityIndicator>
+</GridLayout>

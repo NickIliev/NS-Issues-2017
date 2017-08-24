@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <GridLayout class="m-30 p-20 borders" backgroundColor="gray">
+        <Label text="Test border radius for concrete borders" class="h1 text-center"/>
+    </GridLayout>
+</Page>

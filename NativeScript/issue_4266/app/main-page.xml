@@ -1,0 +1,9 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <GridLayout class="p-20" backgroundColor="lightgray">
+
+        <Button text="This is a test of a Button text wrapping" textWrap="true" style="text-align:center;width:100;" borderWidth="1"/>
+
+    </GridLayout>
+</Page>

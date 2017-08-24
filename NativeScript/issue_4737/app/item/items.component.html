@@ -1,0 +1,6 @@
+
+<StackLayout>
+    <DatePicker [date]="date"></DatePicker>
+    <DatePicker [date]="newDate" (dateChange)="onDateChanged($event)"></DatePicker>
+    <!-- <DatePicker [ngModel]="newDate"></DatePicker> this does not work on iOS ! -->
+</StackLayout>

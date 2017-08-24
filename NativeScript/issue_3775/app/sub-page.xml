@@ -1,0 +1,11 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" >
+    
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>  
+
+    <StackLayout class="p-20" backgroundColor="gray">
+        <Button text="go to MAIN" tap="goToPage" class="btn btn-primary btn-active"/>
+    </StackLayout>
+</Page>

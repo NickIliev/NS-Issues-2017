@@ -1,0 +1,30 @@
+<GridLayout style="background-color: rgba(0,0,0,0.8);" [visibility]="showingCreateTicket ? 'visible' : 'collapsed'">
+    <StackLayout row="1" col="1" style="background-color: white; margin: 30 10 -10 10; border-radius: 10;">
+        // heres where all my ticket fields live. example field to launch the filterable list picker:
+        <StackLayout class="input_group">
+            <Label class="label" text="Choose your product."></Label>
+            <Label [class]="selectedProduct ? 'input hasData' : 'input'" (tap)="showProducts()" [text]="selectedProduct ? selectedProduct : 'Tap to choose...'"></Label>
+        </StackLayout>
+    </StackLayout>
+    <ActivityIndicator [visibility]="loadingTicketFields ? 'visible' : 'collapsed'" [busy]="loadingTicketFields"></ActivityIndicator>
+</GridLayout>
+
+<GridLayout [visibility]="showingLongListPicker ? 'visible' : 'collapsed'" rows="*, auto, *" columns="30, *, 30">
+    <GridLayout style="background-color: rgba(0,0,0,0.8);" rowSpan="3" colSpan="3" #longListPickerDimmer></GridLayout>
+    <StackLayout row="1" col="1" #longListPickerContainer style="background-color: white; border-radius: 10;">
+        <StackLayout>
+            <TextField hint="Edit text to filter..." [(ngModel)]="filterItem" (ngModelChange)="filterLongList($event)" style="font-size: 14;"></TextField>
+            <ListView [items]="itemsToShow" class="list-group" height="300" (itemTap)="chooseLongList($event)">
+                <template let-item="item" let-odd="odd" let-even="even">
+                  <StackLayout>
+                    <Label [text]="item" class="list-group-item"></Label>
+
+                  </StackLayout>
+                </template>
+            </ListView>
+        </StackLayout>
+        <GridLayout columns="auto, *, auto" style="background-color: #E0E0E0;" paddingTop="5" paddingBottom="5">
+            <Button class="transBtn sm" text="Cancel" (tap)="closeLongListPicker()"></Button>
+        </GridLayout>
+    </StackLayout>    
+</GridLayout>

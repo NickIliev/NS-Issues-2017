@@ -1,0 +1,54 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.smartcities",
+    "tns-android": {
+      "version": "3.0.0"
+    }
+  },
+  "dependencies": {
+    "@angular/animations": "~4.1.0",
+    "@angular/common": "~4.1.0",
+    "@angular/compiler": "~4.1.0",
+    "@angular/core": "~4.1.0",
+    "@angular/forms": "~4.1.0",
+    "@angular/http": "~4.1.0",
+    "@angular/platform-browser": "~4.1.0",
+    "@angular/router": "~4.1.0",
+    "angular2-jwt": "^0.2.3",
+    "email-validator": "^1.0.7",
+    "nativescript-angular": "~3.0.0",
+    "nativescript-audio": "^3.4.2",
+    "nativescript-camera": "^3.0.0",
+    "nativescript-checkbox": "^2.0.0",
+    "nativescript-drop-down": "^3.0.1",
+    "nativescript-geolocation": "^3.0.0",
+    "nativescript-google-maps-sdk": "^2.0.3",
+    "nativescript-i18n": "^0.2.1",
+    "nativescript-imagepicker": "^3.0.1",
+    "nativescript-oauth": "^2.0.0",
+    "nativescript-push-notifications": "^0.1.3",
+    "nativescript-ripple": "^1.1.0",
+    "nativescript-telerik-ui": "^2.0.1",
+    "nativescript-theme-core": "~1.0.2",
+    "nativescript-toast": "^1.4.5",
+    "nativescript-vibrate": "^1.1.2",
+    "nativescript-web-image-cache": "^4.1.0",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "~5.3.0",
+    "tns-android": "3.0.0",
+    "tns-core-modules": "~3.0.0",
+    "zone.js": "~0.8.2"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.24.1",
+    "babel-types": "6.24.1",
+    "babylon": "6.17.1",
+    "lazy": "1.0.11",
+    "nativescript-dev-typescript": "~0.4.0",
+    "typescript": "~2.2.1"
+  }
+}

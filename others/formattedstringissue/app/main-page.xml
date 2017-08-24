@@ -1,0 +1,36 @@
+<Page xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" navigatedTo="pageMainNavigated">
+    <ActionBar title="My App" class="action-bar">
+        <NavigationButton icon="res://drawer" tap="openSideDrawer" />
+    </ActionBar>
+    <drawer:RadSideDrawer id="ffSideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <StackLayout backgroundColor="yellow">
+                <Label text="SideDrawer" />
+            </StackLayout>
+        </drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <StackLayout>
+
+                <!-- The short syntax is not working in NativeScript 3.x.x-->
+                <Label backgroundColor="lightblue">
+                    <FormattedString>
+                        <Span text="&#xf0d7; " fontFamily="FontAwesome" />
+                        <Span text="Test 1234" fontStyle="italic"  />
+                        <Span text="Test 5678" />
+                    </FormattedString>
+                </Label>
+                <!--<Label>
+                    <Label.formattedText>
+                        <FormattedString>
+                            <FormattedString.spans>
+                                <Span text="&#xf0d7; " fontFamily="FontAwesome" />
+                                <Span text="Test 1234" fontStyle="italic"  />
+                                <Span text="Test 5678" />
+                            </FormattedString.spans>
+                        </FormattedString>
+                    </Label.formattedText>
+                </Label>-->
+            </StackLayout>
+        </drawer:RadSideDrawer.mainContent>
+    </drawer:RadSideDrawer>
+</Page>

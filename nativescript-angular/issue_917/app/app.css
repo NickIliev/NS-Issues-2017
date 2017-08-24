@@ -1,0 +1,9 @@
+@import 'nativescript-theme-core/css/core.light.css';
+
+Page {
+    color: #ff1744;
+}
+
+.span {
+    color: blue;
+}

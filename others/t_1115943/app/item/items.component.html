@@ -1,0 +1,9 @@
+<Gridlayout rows="400, 100" class="page">
+    <ListView row="0" [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+    <TextField row="1" hint="Enter some text" text=""></TextField>
+</Gridlayout>

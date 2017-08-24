@@ -1,0 +1,9 @@
+<RadCartesianChart row="1" tkExampleTitle tkToggleNavButton>
+    <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+    <DateTimeContinuousAxis tkCartesianHorizontalAxis id="hAxis" minimum="01/05/2017" maximum="31/05/2017" majorStep="Day" dateFormat="dd"
+        labelFitMode="Rotate" labelRotationAngle="1.2"></DateTimeContinuousAxis>
+    <LineSeries tkCartesianSeries [items]="categoricalSource" categoryProperty="timestamp" valueProperty="Amount"></LineSeries>
+    <ChartGridLineAnnotation tkCartesianAnnotations axisId="hAxis" hidden="false" zPosition="BelowSeries" strokeWidth="4" value="1494633600000"
+        strokeColor="#EB916580">
+    </ChartGridLineAnnotation>
+</RadCartesianChart>

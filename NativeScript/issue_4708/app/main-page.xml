@@ -1,0 +1,31 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:controls="nativescript-carousel-view" xmlns:Slides="nativescript-slides" navigatingTo="navigatingTo" class="page">
+
+    <StackLayout class="p-20">
+        <Slides:SlideContainer id="slides" pageIndicators="true">
+                <Slides:Slide class="slide-1">
+                    <Label text="This is Panel 1"  />
+                </Slides:Slide>
+                <Slides:Slide class="slide-2">
+                    <Label text="This is Panel 2"  />
+                </Slides:Slide>
+                <Slides:Slide class="slide-3">
+                    <Label text="This is Panel 3"  />
+                </Slides:Slide>
+                <Slides:Slide class="slide-4">
+                    <Label text="This is Panel 4"  />
+                </Slides:Slide>
+                <Slides:Slide class="slide-5">
+                    <Label text="This is Panel 5"  />
+                </Slides:Slide>
+        </Slides:SlideContainer>
+        
+        <controls:CarouselView
+                id="carouselView"
+                position="0"
+                orientation="horizontal"
+                interPageSpacing="5"
+                itemsSource="{{ itemsSource }}"
+                templateSelector="{{ templateSelector }}"/>
+    </StackLayout>
+</Page>

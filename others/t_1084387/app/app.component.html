@@ -1,0 +1,29 @@
+<ActionBar class="action-bar" title="Scheduler">
+</ActionBar>
+
+<StackLayout>
+    
+    <RadCalendar [eventSource]="eventSource"   
+                eventsViewMode="None" 
+                minDate="1/1/1900"
+                [viewMode]="calViewMode" 
+                transitionMode="Slide" 
+                (navigatedToDate)="onCalNavigatedToDate($event)"
+                (dateSelected)="onCalDateSelected($event)" 
+                (viewModeChanged)="onCalViewModeChanged($event)">
+    </RadCalendar>
+
+    <GridLayout rows="auto" >
+        <Label text="Date goes here"></Label>
+    </GridLayout>
+
+    <RadListView [items]="myItems">
+        <template tkListItemTemplate let-item="item">
+                <GridLayout rows="auto" columns="*, *" borderColor="#BCBCBC" borderWidth="0 0 1 0">
+                    <Label col="0" text="name: " textWrap="true"></Label>
+                    <Label col="1" [text]="item.name" textWrap="true"></Label>
+                </GridLayout>
+        </template>
+    </RadListView>
+
+</StackLayout>

@@ -1,0 +1,317 @@
+﻿.filter-button-wrapper{
+    padding: 10;
+}
+
+.filter-button-wrapper Label{
+    margin-right: 10;
+    min-width: 100;
+    text-align: center;
+}
+
+.filter-sub-button-wrapper{
+    padding: 5;
+}
+
+.filter-sub-button-wrapper Label{
+    padding: 5;
+    margin-right: 10;
+}
+
+.ece{
+
+}
+
+.ece .itemName{
+    font-size: 14;
+    margin-bottom: 5;
+    vertical-align: top;
+}
+
+.ece .title .fa{
+    font-size: 14;
+    margin-bottom: 10;
+}
+
+.ece .types{
+    margin-top: 10;
+}
+
+.ece .btn{
+    margin-right: 5;
+    min-width: 50;
+    text-align: center;
+}
+
+.swipe-template{
+    font-size: 30;
+}
+
+.swipe-template .swipeIcon{
+    border-width: 0;
+    vertical-align: middle;
+}
+
+.meta-item{
+    border-radius: 50%;
+    padding: 3 5;
+    margin-right: 5;
+    text-align: center;
+
+}
+
+.meta-item.fa{
+    font-size: 10;
+}
+
+.type{
+    font-size: 8;
+    color: #8F939B;
+    background-color: #F5F7F8;
+    min-width: 50;
+}
+
+.completed{
+    border-radius: 50%;
+    font-size: 10;
+    padding: 0 5;
+
+}
+
+.noitems{
+    vertical-align: top;
+    horizontal-align: center;
+    margin-top: 20;
+}
+
+//app.css
+
+ActionBar{
+    background-color: #4990E2;
+    color: #FFF;
+}
+
+Page{
+    color: #6D747F;
+    font-family: "Roboto";
+
+}
+
+.login Image{
+    horizontal-align: center;
+    vertical-align: middle;
+}
+
+
+.bold{
+    font-weight: 700;
+}
+
+.primary-button-lg{
+    background-color: #4990E2;
+    color: #FFF;
+    padding: 50 0;
+    font-weight: bold;
+}
+
+.primary-button-sm{
+    background-color: #4990E2;
+    color: #FFF;
+    padding: 30 0;
+    font-weight: bold;
+}
+
+.default-button-sm{
+    background-color: #F5F7F8;
+    color: #8F939B;
+    padding: 30 0;
+    font-weight: bold;
+}
+
+.bottom-border,
+.border-bottom{
+    border-width: 0 0 1 0;
+    border-color: #DBE0E8;
+}
+
+.top-border,
+.border-top{
+    border-width: 1 0 0 0;
+    border-color: #DBE0E8;
+}
+
+.list-item{
+    background-color: #FFF;
+    padding: 15 20;
+    border-bottom-width: 1;
+    border-bottom-color: #DBE0E8;
+}
+
+.icon{
+    margin-right: 10;
+}
+
+.md{
+    font-family: "MaterialIcons-Regular";
+}
+
+.fa{
+    font-family: "FontAwesome";
+}
+
+.complete{
+    color: #9EDA62;
+}
+
+.incomplete{
+    color: #EBD900;
+}
+
+.bg-grey{
+    background-color: #f5f7f8;
+}
+
+.link{
+    color: #4990E2;
+}
+
+.text-white{
+    color: #FFF;
+}
+
+.text-accent{
+    color: #34CD94;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.bg-accent{
+    background-color: #34CD94;
+    color: #FFF;
+}
+
+.btn{
+    border-radius: 50%;
+    padding: 5 10;
+    font-size: 14;
+}
+
+.padding-5{ padding: 5;}
+.padding-10{ padding: 10;}
+.padding-15{ padding: 15;}
+.padding-20{ padding: 20;}
+.padding-30{ padding: 30;}
+
+.margin-5{ margin: 5;}
+.margin-10{ margin: 10;}
+.margin-15{ margin: 15;}
+.margin-20{ margin: 20;}
+.margin-30{ margin: 30;}
+
+.btn-sm{
+    font-size: 12;
+}
+
+.btn-xs{
+    padding: 2 5;
+    font-size: 8;
+}
+
+.btn-primary{
+    background-color: #34CD94;
+    color: #FFF;
+}
+
+.btn-default{
+    background-color: #F5F7F8;
+    color: #8F939B;
+}
+
+.btn-ghost{
+    border-color: #34CD94;
+    border-width: 1;
+    color: #34CD94;
+}
+
+
+.btn-disabled{
+    background-color: #DBE0E8;
+    color: #fff;
+}
+
+.form-group{
+    margin-bottom: 20;
+}
+
+
+.form-group Label{
+    margin-bottom: 5;
+}
+
+.infobox{
+    padding: 20 0;
+}
+
+.infobox .icon{
+    color: #34CD94;
+    text-align: center;
+    padding: 0 20;
+    font-size: 20;
+    vertical-align: top;
+}
+
+.infobox .close{
+    color: #DBE0E8;
+    text-align: center;
+    padding-right: 20;
+    padding-left: 10;
+    font-size: 15;
+    vertical-align: center;
+}
+
+.infobox .text{
+    font-size: 10;
+    color: #6D747F;
+}
+
+.jumbotron{
+    padding: 30 80 40 80;
+    text-align: center;
+    color: #6D747F;
+}
+
+.jumbotron .fa{
+    font-size: 22;
+    margin-bottom: 10
+}
+
+.jumbotron .title{
+    font-size: 18;
+    padding-bottom: 10;
+}
+
+.jumbotron .content{
+    font-size: 13;
+}
+
+.jumbotron .button{
+    
+}
+
+TextView.form-control {
+    background-color: #F5F7F8;
+    border-width: 1px;
+    border-color: #DBE0E8;
+    padding: 5;
+    min-height: 200;
+    font-size: 18;
+    vertical-align: top;
+}
+
+TextField.form-control {
+    background-color: #F5F7F8;
+    border-width: 1px;
+    border-color: #DBE0E8;
+    padding: 5;
+}

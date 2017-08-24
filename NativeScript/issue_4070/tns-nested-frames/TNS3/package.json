@@ -1,0 +1,39 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.TNS3",
+    "tns-ios": {
+<<<<<<< HEAD
+      "version": "3.0.0-rc.1-2017-3-28-2"
+    },
+    "tns-android": {
+      "version": "2.5.0"
+=======
+      "version": "2.5.0"
+    },
+    "tns-android": {
+      "version": "3.0.0-rc.1"
+>>>>>>> 2f0aa41688175753fcae8202afa6f3daa9ed5485
+    }
+  },
+  "dependencies": {
+    "nativescript-theme-core": "~1.0.2",
+    "tns-core-modules": "rc"
+  },
+  "devDependencies": {
+<<<<<<< HEAD
+    "babel-traverse": "6.4.5",
+    "babel-types": "6.4.5",
+    "babylon": "6.4.5",
+=======
+    "babel-traverse": "6.24.1",
+    "babel-types": "6.24.1",
+    "babylon": "6.17.0",
+>>>>>>> 2f0aa41688175753fcae8202afa6f3daa9ed5485
+    "lazy": "1.0.11",
+    "nativescript-dev-android-snapshot": "^0.*.*"
+  }
+}

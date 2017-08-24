@@ -1,0 +1,10 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <GridLayout rows="100, *" columns="*">
+        <Button row="0" text="Add next Fibonachi" tap="{{ addFibo }}" />
+        <ListView row="1" id="list" items="{{ items }}"  loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
+            <ListView.itemTemplate>
+                <Label text="{{ $value }}" textWrap="true" />
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>

@@ -1,0 +1,21 @@
+<FlexboxLayout flexDirection="column">
+    <Label text="Activity Step Bar Chart" height="150"></Label>
+    <RadCartesianChart tkExampleTitle tkToggleNavButton>
+        
+        <DateTimeCategoricalAxis tkCartesianHorizontalAxis dateFormat="MM/dd/YYYY" labelFitMode="Rotate" labelRotationAngle="-1.2" plotMode="OnTicks"></DateTimeCategoricalAxis>
+
+        <LinearAxis tkCartesianVerticalAxis majorStep="1"></LinearAxis>
+
+        <BarSeries tkCartesianSeries [items]="chartData" stackMode="Stack" categoryProperty="{{ categoryAxisField }}" valueProperty="{{valueAxisField}}">
+        </BarSeries>
+        <BarSeries tkCartesianSeries [items]="chartData" stackMode="Stack" categoryProperty="{{ categoryAxisField }}" valueProperty="DistanceMiles">
+        </BarSeries>
+
+        <RadCartesianChartGrid tkCartesianGrid horizontalLinesVisible="true" verticalLinesVisible="true" horizontalStripLinesVisible="true"
+        verticalStripLinesVisible="true" verticalStrokeColor="#804d0026" horizontalStrokeColor="#ffffcc80" horizontalStrokeWidth="2"
+        verticalStrokeWidth="3" horizontalStripLineColor="#8059005c, #804d0026"></RadCartesianChartGrid>
+
+        <LineSeries tkCartesianSeries [items]="chartData" categoryProperty="{{ categoryAxisField }}" valueProperty="Duration"></LineSeries>
+
+    </RadCartesianChart>
+</FlexboxLayout>

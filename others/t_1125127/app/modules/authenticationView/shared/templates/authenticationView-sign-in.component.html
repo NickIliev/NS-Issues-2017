@@ -1,0 +1,35 @@
+<StackLayout class="form" *ngIf="!signedInOption" backgroundColor="rgba(255, 255, 255, 0.85)">
+    <GridLayout class="input-field" columns="*, *">
+        <Label class="h3 text-muted" text="Email"></Label>
+        <TextField class="input" col="1" [(ngModel)]="selectedUser.username" hint="" keyboardType="email"></TextField>
+    </GridLayout>
+
+    <GridLayout class="input-field" columns="*, *">
+        <Label class="h3 text-muted" text="Password"></Label>
+        <TextField class="input" col="1" [(ngModel)]="selectedUser.password" hint="" secure="true"></TextField>
+    </GridLayout>
+
+    <GridLayout class="input-field" columns="*, *" *ngIf="signedInAutoOption">
+        <Label class="h3 text-muted" text="Remember Me"></Label>
+        <Switch class="switch pull-left" col="1" [(ngModel)]="autoSignedIn"></Switch>
+    </GridLayout>
+
+    <GridLayout rows="auto, 5, auto">
+        <Button class="btn btn-primary" text="Sign In" (tap)="onSignIn()"></Button>
+        <Label class="h4 text-center text-primary" row="2" text="" (tap)="onNavigate()"></Label>
+    </GridLayout>
+</StackLayout>
+
+<StackLayout class="form" *ngIf="signedInOption" backgroundColor="rgba(255, 255, 255, 0.85)">
+    <GridLayout class="input-field" rows="auto, auto, auto">
+        <Label class="h3 text-muted"></Label>
+        <Label class="h3" row="1" text="Welcome {{service.displayName | async}}"></Label>
+        <!--<Label class="h3" row="1" text="Welcome {{displayName | async}}"></Label>-->
+        <Label class="h3" row="2" text="[Dashboard items placeholder]"></Label>
+    </GridLayout>
+
+    <GridLayout rows="auto, 5, auto">
+        <Button class="btn btn-outline" text="Sign Out" (tap)="onSignOut()"></Button>
+    </GridLayout>
+
+</StackLayout>

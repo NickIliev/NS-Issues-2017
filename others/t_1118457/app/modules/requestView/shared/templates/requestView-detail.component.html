@@ -1,0 +1,54 @@
+<GridLayout rows="*, auto">
+	<ScrollView>
+		<StackLayout class="list-group">
+			<GridLayout class="list-group-item" rows="auto, auto">
+				<GridLayout columns="auto, 10, *" rows="auto, auto">
+					<!-- TODO: insert properties of editableList here -->
+					<!--<Label class="list-group-item-heading fa"></Label>-->
+					<StackLayout col="2">
+						<Label class="list-group-item-heading" [text]="item.data.Description" textWrap="true"></Label> </StackLayout>
+					<GridLayout row="1" colSpan="3" columns="auto,*" rows="auto,auto,auto,auto,auto,auto,auto,auto">
+						<Label row="0" col="0" class="list-group-item-text m-l-10 m-t-10" text="Call Ref:"></Label>
+						<Label row="0" col="1" class="list-group-item-text m-l-10 m-t-10" [text]="item.data.CallRef4D"></Label>
+						<Label row="1" col="0" *ngIf="item.data.oRequestOriginator" class="list-group-item-text m-l-10 m-t-10" text="Requested By:"></Label>
+						<Label row="1" col="1" *ngIf="item.data.oRequestOriginator" class="list-group-item-text m-l-10 m-t-10" [text]="item.data.oRequestOriginator.DisplayName"
+							textWrap="true"></Label>
+						<Label row="2" col="0" *ngIf="item.data.oSpace" class="list-group-item-text m-l-10 m-t-10" text="Space:"></Label>
+						<WrapLayout row="2" col="1" *ngIf="item.data.oSpace">
+							<Label class="list-group-item-text m-l-10 m-t-10" [text]="item.data.oSpace.Code"
+								textWrap="true"></Label>
+							<Label class="list-group-item-text m-l-10 m-t-10" text="-"
+								textWrap="true"></Label>
+							<Label class="list-group-item-text m-l-10 m-t-10" [text]="item.data.oSpace.Name"
+								textWrap="true"></Label>
+						</WrapLayout>
+						<Label row="3" col="0" *ngIf="item.data.oReferredTo" class="list-group-item-text m-l-10 m-t-10" text="Referred To:"></Label>
+						<Label row="3" col="1" *ngIf="item.data.oReferredTo" class="list-group-item-text m-l-10 m-t-10" [text]="item.data.oReferredTo.DisplayName"
+							textWrap="true"></Label>
+						<Label row="4" col="0" *ngIf="item.data.oReferredToTeam" class="list-group-item-text m-l-10 m-t-10" text="Team:"></Label>
+						<Label row="4" col="1" *ngIf="item.data.oReferredToTeam" class="list-group-item-text m-l-10 m-t-10" [text]="item.data.oReferredToTeam.Name"
+							textWrap="true"></Label>
+						<Label row="5" col="0" *ngIf="item.data.oPriority" class="list-group-item-text m-l-10 m-t-10" text="Priority:"></Label>
+						<Label row="5" col="1" *ngIf="item.data.oPriority" class="list-group-item-text m-l-10 m-t-10" [text]="item.data.oPriority.Name"
+							textWrap="true"></Label>
+						<Label row="6" col="0" *ngIf="item.data.oJobType" class="list-group-item-text m-l-10 m-t-10" text="Job Type:"></Label>
+						<Label row="6" col="1" *ngIf="item.data.oJobType" class="list-group-item-text m-l-10 m-t-10" [text]="item.data.oJobType.Name"
+							textWrap="true"></Label>
+						<Label row="7" col="0" class="list-group-item-text m-l-10 m-t-10" text="Status:"></Label>
+						<Label row="7" col="1" class="list-group-item-text m-l-10 m-t-10" [text]="statusName"
+							textWrap="true"></Label>
+					</GridLayout>
+				</GridLayout>
+				<GridLayout row="1">
+					<!--- master detail form -->
+				</GridLayout>
+			</GridLayout>
+		</StackLayout>
+		<!-- START_CUSTOM_CODE_requestViewModel -->
+		<!-- END_CUSTOM_CODE_requestViewModel -->
+	</ScrollView>
+	<GridLayout row="1">
+		<Button class="btn btn-primary" text="Edit" (tap)="onEdit()"></Button> </GridLayout>
+	<ActivityIndicator class="activity-indicator" rowSpan="2" [busy]="!item" [visibility]="item ? 'collapse' : 'visible'">
+	</ActivityIndicator>
+</GridLayout>

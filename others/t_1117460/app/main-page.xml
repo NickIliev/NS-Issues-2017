@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <GridLayout class="p-20">
+
+        <WebView loaded="onWebViewLoaded" src="<html><body><p><a href='http://www.uhhospitals.org/~/media/UH/documents/about/policy-ce20.pdf'>View UH’s policy</a> (PDF) on practitioner-industry relationships.</p></body></html>" />
+    
+    </GridLayout>
+</Page>

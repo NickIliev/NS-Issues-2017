@@ -1,0 +1,26 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui-pro/listview" navigatingTo="navigatingTo" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <GridLayout rows="*, 100, 100" columns="*">
+        <lv:RadListView id="lv" row="0" items="{{ dataItems }}" >
+
+            <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+            </lv:RadListView.listViewLayout>
+
+            <lv:RadListView.itemTemplate>
+                <StackLayout orientation="vertical" width="400" borderWidth="1" borderColor="black">
+                    <Label fontSize="20" text="{{ id }}"/>
+                    <Label fontSize="14" text="{{ name }}"/>
+                </StackLayout>
+            </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+        <Button row="1" text="scrollToIndex" tap="scrollToIndex" />
+        <Button row="2" text="smoothScroll" tap="smoothScroll" />
+    </GridLayout>
+</Page>

@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout class="p-20">
+        <Label text="Slider binding test" class="h1 text-center"/>
+        <Slider class="slider" minValue="{{ minAmount }}" maxValue="{{ maxAmount }}" value="{{ amount }}" /> <!-- Not working if value preceeds minValue4 and maxValue-->
+        <Slider class="slider" minValue="300" maxValue="1500" value="{{ amount }}" /> <!-- Not working if value preceeds minValue4 and maxValue -->
+        <Slider class="slider" loaded="onSliderLoaded"  /> <!-- working -->
+    </StackLayout>
+</Page>
+

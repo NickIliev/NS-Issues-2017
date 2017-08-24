@@ -1,0 +1,20 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <Repeater id="rptComments" items="{{ comments }}">
+        <Repeater.itemTemplate>
+
+            <StackLayout class="m-b-20">
+
+                <StackLayout class="{{ $parents['Page'].MemberUserID, $parents['Page'].MemberUserID == MemberUserID ? 'align-right' : 'align-left' }}">
+                    <FlexboxLayout class="comment-item">
+                        <Label class="text" textWrap="true" text="{{ MemberUserID + ' Lorem ipsum'}}" />
+                        <StackLayout class="avatar">
+                            <Image src="res://icon" style="width:40" />
+                        </StackLayout>
+                    </FlexboxLayout>
+                </StackLayout>
+
+            </StackLayout>
+
+        </Repeater.itemTemplate>
+    </Repeater>
+</Page>

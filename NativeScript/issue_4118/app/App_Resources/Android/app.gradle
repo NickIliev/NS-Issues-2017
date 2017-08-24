@@ -1,0 +1,18 @@
+// Add your native dependencies here:
+
+// Uncomment to add recyclerview-v7 dependency
+dependencies {
+  compile 'com.google.android.gms:play-services:10.2.4'
+	compile 'com.google.maps.android:android-maps-utils:+'
+}
+
+android {  
+  defaultConfig {  
+    generatedDensities = []
+    applicationId = "org.nativescript.issue4118" 
+    multiDexEnabled true
+  }  
+  aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+  }  
+} 

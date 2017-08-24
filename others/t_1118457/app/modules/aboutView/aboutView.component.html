@@ -1,0 +1,35 @@
+<ns-action-bar [title]="title" <!--- component view navigation directive --->
+    ></ns-action-bar>
+
+
+<ScrollView>
+    <StackLayout class="form">
+
+        <GridLayout class="input-field" columns="auto, *" rows="auto, auto">
+
+            <StackLayout col="2">
+
+                <Label class="h1" text="Q+ Quadpro Plus Request"></Label>
+
+
+                <Label class="h3" text="Version 1"></Label>
+
+            </StackLayout>
+
+        </GridLayout>
+
+
+        <GridLayout rows="auto, auto, auto">
+
+            <Button class="btn btn-outline" text="Contact us" [hyperlink]="'mailto:help@quadpro.com'"></Button>
+
+
+        </GridLayout>
+    </StackLayout>
+</ScrollView>
+<!-- additional view content -->
+
+<!-- START_CUSTOM_CODE_aboutView -->
+<!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+<!-- END_CUSTOM_CODE_aboutView -->

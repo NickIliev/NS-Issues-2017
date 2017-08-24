@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <ScrollView id="scroll" orientation="horizontal">
+        <Repeater items="{{ items }}">
+            <Repeater.itemsLayout>
+                <StackLayout orientation="horizontal"/>
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+                <StackLayout width="150" borderColor="gray" borderWidth="2" margin="5">
+                    <Label text="{{$ value}}" textWrap="true" />
+                    <Image src="res://icon" stretch="none" />
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </ScrollView>
+</Page>

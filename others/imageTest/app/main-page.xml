@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ScrollView>
+        <StackLayout>
+            <Image src="~/images/aste.jpg" stretch="aspectFill" />
+            <Image src="~/images/cosmos.jpg"  stretch="aspectFill" />
+            <Image src="~/images/rover.jpg"  stretch="aspectFill" />
+        </StackLayout>
+    </ScrollView>
+</Page>

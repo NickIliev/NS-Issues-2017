@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <StackLayout class="p-20">
+        <GridLayout width="200" height="200" backgroundColor="red" visibility="{{ isItemVisible, isItemVisible ? 'visible' : 'collapsed' }}">
+        </GridLayout>
+
+        <Button busy="true" visibility="{{ isItemVisible, isItemVisible ? 'visible' : 'collapsed' }}"></Button>
+        <Button text="toggle Visibility" tap="{{ toggleVisibility }}" />
+    </StackLayout>
+</Page>

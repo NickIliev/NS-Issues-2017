@@ -1,0 +1,14 @@
+@import 'nativescript-theme-core/css/core.light.css';
+
+.btn {
+    font-size: 18;
+}
+
+.landscape Button {
+    background-color: red;
+    color: white;
+}
+
+.landscape StackLayout {
+    background-color: gray;
+}

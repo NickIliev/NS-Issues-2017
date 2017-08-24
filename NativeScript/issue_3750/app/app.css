@@ -1,0 +1,14 @@
+﻿
+.btn {
+    font-size: 18;
+}
+
+.img {
+    clip-path: circle(97% at 50% 50%);
+    background-image: url("res://icon");
+    background-size: 60% 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@import 'nativescript-theme-core/css/core.light.css';

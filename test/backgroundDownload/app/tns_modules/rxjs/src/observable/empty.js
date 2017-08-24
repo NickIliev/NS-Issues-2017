@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var EmptyObservable_1 = require("./EmptyObservable");
+exports.empty = EmptyObservable_1.EmptyObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW1wdHkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJlbXB0eS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHFEQUFzRDtBQUV6QyxRQUFBLEtBQUssR0FBRyxpQ0FBZSxDQUFDLE1BQU0sQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7ICBFbXB0eU9ic2VydmFibGUgIH0gZnJvbSAnLi9FbXB0eU9ic2VydmFibGUnO1xuXG5leHBvcnQgY29uc3QgZW1wdHkgPSBFbXB0eU9ic2VydmFibGUuY3JlYXRlOyJdfQ==

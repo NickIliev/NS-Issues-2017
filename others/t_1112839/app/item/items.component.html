@@ -1,0 +1,13 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<GridLayout class="page">
+    <RadListView [items]="items" class="list-group">
+        <ng-template tkListItemTemplate let-item="item" let-i="index">
+            <StackLayout orientation="horizontal" class="list-group-item">
+                <Label [text]="(i +  1) + ' : '" textWrap="true"></Label>
+                <Label [text]="item.name"></Label>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>

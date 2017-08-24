@@ -1,0 +1,16 @@
+<GridLayout rows="*, auto">
+  <router-outlet></router-outlet>
+
+  <StackLayout row="1">
+    <StackLayout class="hr-light"></StackLayout>
+    <ScrollView orientation="horizontal">
+      <StackLayout orientation="horizontal">
+        <GridLayout width="20%" padding="10" rows="auto, auto" *ngFor="let item of navigationItems" [nsRouterLink]="[item.path]">
+          <Label class="text-center fa" [text]="item.icon"></Label>
+          <Label class="text-center h5" row="1" [text]="item.title"></Label>
+        </GridLayout>
+		<!--<Label text="version"></Label><Label [text]="version"></Label>-->
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</GridLayout>

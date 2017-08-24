@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onPageLoaded" xmlns:lv="nativescript-telerik-ui-pro/listview" class="page">
+	<GridLayout rows="*" backgroundColor="green">
+		<Button text="show modal" class="h1" tap="onTap" />
+	</GridLayout>
+</Page>

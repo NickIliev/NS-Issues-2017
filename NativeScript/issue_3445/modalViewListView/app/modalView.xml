@@ -1,0 +1,11 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onPageLoaded" showingModally="onShowingModally" shownModally="onShownModally" style="height:300px; margin:30px;">
+    <StackLayout>
+        <ListView id="listview" items="{{ myItems }}" itemTap="listViewItemTap" >
+                <ListView.itemTemplate>
+                    <StackLayout orientation="horizontal" class="{{style}}" width="300px">
+                        <Label text="{{ title }}" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+    </StackLayout>  
+</Page>

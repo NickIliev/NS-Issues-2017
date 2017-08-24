@@ -1,0 +1,9 @@
+<ActionBar title="Title" icon="" class="action-bar">
+</ActionBar>
+<StackLayout>
+  <GridLayout rows="80" columns="*, *">
+    <Button text="First" [nsRouterLink]="['first']" col="0"></Button>
+    <Button text="Second" [nsRouterLink]="['second']" col="1"></Button>
+  </GridLayout>
+  <router-outlet></router-outlet>
+</StackLayout>

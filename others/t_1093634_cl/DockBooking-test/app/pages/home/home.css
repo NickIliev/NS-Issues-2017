@@ -1,0 +1,41 @@
+/*
+DrawerPage {
+}
+*/
+
+
+
+.pageContainer {
+    background-color: #07354c;
+    background-image: url('~/shared/images/photo/sample-bg-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* BODY */
+.body Label {
+    color: #fff;
+}
+
+Label.h1 {
+    font-size: 48;
+}
+
+Label.h2 {
+    font-size: 20;
+}
+
+#logo {
+    width: 70;
+    horizontal-align: left;
+}
+
+.search-textfield {
+    font-size: 18;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 15;
+    margin-top: 40;
+    border-radius: 2;
+}

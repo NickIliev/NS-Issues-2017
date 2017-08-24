@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var max_1 = require("../../operator/max");
+Observable_1.Observable.prototype.max = max_1.max;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWF4LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWF4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsK0NBQThDO0FBQzlDLDBDQUF5QztBQUV6Qyx1QkFBVSxDQUFDLFNBQVMsQ0FBQyxHQUFHLEdBQUcsU0FBRyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBtYXggfSBmcm9tICcuLi8uLi9vcGVyYXRvci9tYXgnO1xuXG5PYnNlcnZhYmxlLnByb3RvdHlwZS5tYXggPSBtYXg7XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIGludGVyZmFjZSBPYnNlcnZhYmxlPFQ+IHtcbiAgICBtYXg6IHR5cGVvZiBtYXg7XG4gIH1cbn0iXX0=
