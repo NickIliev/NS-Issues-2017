@@ -12,7 +12,7 @@ export function navigatingTo(args: EventData) {
         { code: "B", desc: "abc" }
     ];
 
-    var obj = array.find(reason => reason.code === "A");
+    var obj = array.find(reason => reason.code === "A"); // JS: {"code":"A","desc":"abc"}
 
     console.log(JSON.stringify(obj));
 
