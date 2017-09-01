@@ -2,7 +2,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
 
     <ScrollView loaded="onScrollLoaded" scroll="onScrollEvent">
-        <StackLayout class="p-20" height="1500" backgroundColor="gray">
+        <StackLayout class="p-20" height="1500" backgroundColor="gray" touch="onTouch">
             <Label text="Tap the button" class="h1 text-center"/>
             <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
             <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>

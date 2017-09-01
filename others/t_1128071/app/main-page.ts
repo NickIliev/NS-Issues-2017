@@ -1,7 +1,10 @@
 import { EventData } from 'data/observable';
 import { Page } from 'ui/page';
 import { HelloWorldModel } from './main-view-model';
+
 import { ScrollView, ScrollEventData } from "ui/scroll-view";
+import { TouchAction, TouchGestureEventData } from "ui/gestures";
+
 // Event handler for Page "navigatingTo" event attached in main-page.xml
 export function navigatingTo(args: EventData) {
 
@@ -26,4 +29,11 @@ export function onScrollLoaded(args) {
 export function onScrollEvent(args: ScrollEventData) {
     console.log("scrollX: " + args.scrollX);
     console.log("scrollY: " + args.scrollY);
+}
+
+export function onTouch(args:TouchGestureEventData) {
+    console.log(args.action)
+    console.log(args.getX())
+    console.log(args.getY())
+    console.log(args.view);
 }
