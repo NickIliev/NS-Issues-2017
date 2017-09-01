@@ -1,0 +1,21 @@
+
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<TabView #tabView>
+  <TabViewItem title="Tab 1">
+    <StackLayout class="page">
+        <ListView [items]="items" class="list-group">
+            <ng-template let-item="item">
+                <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                    class="list-group-item"></Label>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+  </TabViewItem>
+  <TabViewItem title="Tab 2">
+    <Label text="This is Label in Tab 2"></Label>
+  </TabViewItem>
+</TabView>
+
+
