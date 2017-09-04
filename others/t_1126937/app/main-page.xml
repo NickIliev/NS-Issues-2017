@@ -8,7 +8,7 @@ https://docs.nativescript.org/ui/components.
 
     <GridLayout rows="2*, *" pan="onPan" pinch="onPinch" doubleTap="onDoubleTap">
         <Image row="0" src="res://icon" stretch="aspectFit" id="item" width="300" height="400" backgroundColor="Green"/>
-        <TextView row="1" id="status" editable="false"/>
+        <1TextView row="1" id="status" editable="false"/>
     </GridLayout>
 
 </Page>
