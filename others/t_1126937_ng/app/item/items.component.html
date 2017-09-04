@@ -1,8 +1,8 @@
 <StackLayout class="page">
     <GridLayout rows="2*, *" (pan)="onPan($event)" (pinch)="onPinch($event)" (doubleTap)="onDoubleTap($event)">
-        <!-- <Image #item row="0" src="res://icon" stretch="aspectFit" width="300" height="400" backgroundColor="Green"></Image> -->
-        <StackLayout width="200" height="200" #item row="0" backgroundColor="Green">
-            <Label text="Pinch, pan or double tap" textWrap="true"></Label>
+        <StackLayout #item row="0" width="200" height="200" backgroundColor="Green">    <!-- notice the item id - this is the root element to scale-->
+            <Label text="Pinch, pan or double tap" textWrap="true" lass="p-20"></Label> <!-- all children ot the element #item will scale accordingly-->
+            <Image src="res://icon" width="50" height="50" class="p-20"></Image>        <!-- all children ot the element #item will scale accordingly-->
         </StackLayout>
         <TextView #status row="1" editable="false"></TextView>
     </GridLayout>
