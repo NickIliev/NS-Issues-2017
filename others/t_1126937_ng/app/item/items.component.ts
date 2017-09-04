@@ -14,7 +14,7 @@ import { GestureEventData, PinchGestureEventData, PanGestureEventData } from "ui
     templateUrl: "./items.component.html",
 })
 export class ItemsComponent {
-    @ViewChild("item") nativeItem: ElementRef;
+    @ViewChild("item") angularItem: ElementRef;
     item: View;
 
     @ViewChild("status") status: ElementRef;
@@ -29,7 +29,7 @@ export class ItemsComponent {
     constructor() { }
 
     ngOnInit() {
-        this.item = this.nativeItem.nativeElement;
+        this.item = this.angularItem.nativeElement;
         this.statusLbl = this.status.nativeElement;
 
         this.density = utils.layout.getDisplayDensity();
