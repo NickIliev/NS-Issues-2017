@@ -1,0 +1,19 @@
+
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<StackLayout class="page">
+    <StackLayout class="card">
+        <StackLayout>
+            <Label text="use the switch" textWrap="true"></Label>
+            <Switch [checked]="isReg ? 'true' : 'false'" (checkedChange)="onCheckedChange($event)" class="switch"></Switch>
+        </StackLayout>
+        <StackLayout *ngIf="isReg"> <!-- removing the border-radius (in app.css) will allow the content to show up -->
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"></Label>
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"></Label>
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"></Label>
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"></Label>
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"></Label>
+        </StackLayout>
+    </StackLayout>
+</StackLayout>
