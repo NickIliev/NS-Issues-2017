@@ -1,0 +1,9 @@
+<StackLayout class="page">
+    <GridLayout rows="2*, *" (pan)="onPan($event)" (pinch)="onPinch($event)" (doubleTap)="onDoubleTap($event)">
+        <!-- <Image #item row="0" src="res://icon" stretch="aspectFit" width="300" height="400" backgroundColor="Green"></Image> -->
+        <StackLayout width="200" height="200" #item row="0" backgroundColor="Green">
+            <Label text="Pinch, pan or double tap" textWrap="true"></Label>
+        </StackLayout>
+        <TextView #status row="1" editable="false"></TextView>
+    </GridLayout>
+</StackLayout>
