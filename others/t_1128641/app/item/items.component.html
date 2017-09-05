@@ -2,6 +2,10 @@
     <ListView [items]="items" class="list-group">
         <ng-template let-item="item">
             <StackLayout>
+                <Button text="002910" ></Button>
+                <Button text="10.520" ></Button>
+                <Button [text]="leading" ></Button>
+                <Button [text]="preceding" ></Button>
                 <Label text="002910" textWrap="true"></Label>
                 <Label text="10.520" textWrap="true"></Label>
                 <TextField text="002910"></TextField>
@@ -10,6 +14,7 @@
                 <TextView text="10.520" editable="true"></TextView>
                 <Label [text]="leading" textWrap="true"></Label>
                 <Label [text]="preceding" textWrap="true"></Label>
+
             </StackLayout>
         </ng-template>
     </ListView>
