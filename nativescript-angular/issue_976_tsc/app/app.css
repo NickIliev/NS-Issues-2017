@@ -1,0 +1,8 @@
+﻿@import 'nativescript-theme-core/css/core.light.css';
+
+.radius {
+    background-color: yellow;
+    border-width: 1;
+    border-color: red;
+    border-radius: 20;
+}

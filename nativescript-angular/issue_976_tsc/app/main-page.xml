@@ -1,0 +1,21 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+
+<StackLayout class="page">
+    <StackLayout class="radius">
+        <StackLayout>
+            <Label text="use the switch" textWrap="true"/>
+            <Switch checked="{{ isReg }}" class="switch"/>
+        </StackLayout>
+        <StackLayout visibility="{{ isReg ? 'visible' : 'collapsed' }}"> <!-- removing the border-radius (in app.css) will allow the content to show up -->
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"/>
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"/>
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"/>
+            <Label text="removing the border-radius (in app.css) will allow the content to show up in iOS" textWrap="true"/>
+            <Label text="removing the border-radius (in app.css) will allow the content to show up" textWrap="true"/>
+        </StackLayout>
+    </StackLayout>
+</StackLayout>
+
+</Page>
