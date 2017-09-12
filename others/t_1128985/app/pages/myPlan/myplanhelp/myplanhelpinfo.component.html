@@ -1,0 +1,15 @@
+<GridLayout rows="*" columns="*" id="myplanHelInfoModal">
+    <StackLayout orientation="vertical" class="help-info-stack">
+        <Image src="~/images/icon/close-type2.png" (tap)="closeHelpInfo()" class="help-info-close-image" horizontalAlignment="right"></Image>
+        <StackLayout class="help-inner-stack">
+            <ScrollView>
+                <GridLayout class="label-text-stacklayout" columns="*" rows="*" *mbIfAndroid>
+                    <WebView [src]="myplanInfoHtml" class="privacy-html"></WebView>
+                </GridLayout>
+                <GridLayout class="label-text-stacklayout" columns="*" rows="*" height="100%" *mbIfIos>
+                    <WebView [src]="myplanInfoHtml" class="privacy-html"></WebView>
+                </GridLayout>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
+</GridLayout>

@@ -1,0 +1,198 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*" class="main-container">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView>
+        <StackLayout>
+            <StackLayout class="mt20">
+                <Label text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true" style="text-align: right; font-size:0em; padding-right: 5;"> </Label>
+                <Label class="m15 mb15">
+                        <FormattedString>
+                            <Span text="Sign up! " className="sign-up-txt"></Span>
+                            <Span text="All fields are required." className="all-field-txt"></Span>
+                        </FormattedString>
+                </Label>
+                <!--Tab Buttons StackLayout-->
+                <StackLayout class="form-choices mb20">
+                    <GridLayout columns="*, *" rows="auto">
+                        <Button text="Email Address" autocapitalizationType="none" row="1" col="0" class="form-choice-btns" (tap)="switchView('fromemail')" [ngClass]="{'switch-btn-color': highlightedDiv == 'fromemail'}"></Button>
+                        <Button id="btnMobile" text="Mobile Number" class="form-choice-btns" autocapitalizationType="none" row="1" col="1" (tap)="switchView('frommobile')" [ngClass]="{'switch-btn-color': highlightedDiv == 'frommobile' }"></Button>
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+            <!--Mobile Tab Content StackLayout | Starts-->
+            <StackLayout class="form-fields" visibility="{{ isMobileForm ? 'visible' : 'collapsed' }}" [formGroup]="mobileForm">
+                <GridLayout rows="*" columns="*">
+                    <StackLayout>
+                        <StackLayout class="input-field">
+                            <Label class="label-text" text="Mobile Number" row="1" col="0" textWrap="true"></Label>
+                            <TextField #mobNo class="userTxtFld" id="mobileNo" text="" row="1" col="1" [(ngModel)]="mobileNo" name="mobileNo" keyboardType="phone" formControlName="mobileNo" maxLength="10" eturnKeyType="next" hint="Mobile Number" (returnPress)="goToMobPwd()" (blur)="validCheck(mobileNo,'mobile')"></TextField>
+                            <Label text="Invalid mobile number" textWrap="true" class="alert-danger bodyText ml15" visibility="{{(!isValidMobileNumber) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="*Required Field" textWrap="true" class="alert-danger bodyText ml15" visibility="{{(!isMobileNumberFilled) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label class="label-text extrapadding" text="Password" row="1" col="0" textWrap="true"></Label>
+                            <GridLayout rows="*" columns="*,100" class="pwdTxtFld">
+                                <TextField #mobPwd row="0" col="0" hint="Password" id="password" [secure]="isMobilePwdSecure" text="" [(ngModel)]="mobilePassword" name="mobilePassword" formControlName="mobilePassword" (blur)="validCheck(mobilePassword,'mpassword')"></TextField>
+                                <Label row="0" col="1" [text]="showOrHideMobilePwdLabel" class="show-label" verticalAlignment="center" horizontalAlignment="center" (tap)="showOrHideMobilePassword();"></Label>
+                            </GridLayout>
+                            <Label text="Password didnt match the minimum criteria " textWrap="true" class="alert-danger bodyText ml15" visibility="{{(!isMobilePasswordValid) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="*Required Field" class="alert-danger bodyText ml15" textWrap="true" visibility="{{(!isMobilePasswordFilled) ? 'visible' : 'collapsed' }}"></Label>
+                        </StackLayout>
+                        <!--Password Info StackLayout for mobile tab| Starts-->
+                        <StackLayout textWrap="true" class="pwd-info-container">
+                            <Label class="m15 mb15" textWrap="true">
+                                <FormattedString>
+                                    <Span text="Password must include: &nbsp;" className="pwd-include-span"></Span>
+                                    <Span text="&nbsp;7 or more characters, 1 number, 1 uppercase letter, no special character, no spaces" className="pwd-info-span"></Span>
+                                </FormattedString>
+                            </Label>
+                        </StackLayout>
+                        <StackLayout class="acceptTerms-container">
+                            <GridLayout rows="*" columns="60,*" class="get-authenticated">
+                                <Switch #CB2 checked="true" row="0" col="0"></Switch>
+                                <Label text="Yes, I wish to receive information from Blue Cross Blue Shield of Massachusetts." textWrap="true" row="0" col="1" class="font14"></Label>
+                            </GridLayout>
+                            <GridLayout rows="*" columns="60,*" class="get-authenticated">
+                                <Switch #CB1 checked="false" row="0" col="0"></Switch>
+                                <!-- <Label text="Terms & Conditions\n" textWrap="true" row="0" col="1" class="font14 boldFont"></Label> -->
+                                <GridLayout row="0" col="1" rows="*,*" columns="*">
+                                    <Label row="0" col="0" text="Terms & Conditions" textWrap="true" class="font14 boldFont"></Label>
+                                    <Label row="1" col="0" textWrap="true" class="font14">
+                                                        <FormattedString class="font14">
+                                                            <Span text="I have read and agree to the Blue Cross Blue Shield Massachusetts "></Span>
+                                                            <Span class="underline" text="Terms of Service"></Span>
+                                                            <Span text=" and "></Span>
+                                                            <Span class="underline" text="Privacy Statement."></Span>
+                                                        </FormattedString>
+                                                    </Label>
+                                </GridLayout>
+
+                            </GridLayout>
+                        </StackLayout>
+                        <Label text="*Please accept the Terms and conditions" textWrap="true" class="alert-danger bodyText m15" visibility="{{(!mobileCheckboxesChecked) ? 'visible' : 'collapsed' }}"></Label>
+                        <StackLayout class="input-field m15">
+                            <android>
+                                <Ripple rippleColor="#d50000">
+                                    <Button text="Continue" autocapitalizationType="none" (tap)="createUser('mobileNo',mobileNo,mobilePassword)" class="next-btn mt10 primary"></Button>
+                                </Ripple>
+                            </android>
+                            <ios>
+                                <Button text="Continue" autocapitalizationType="none" (tap)="createUser('mobileNo',mobileNo,mobilePassword)" class="next-btn mt10 primary"></Button>
+                            </ios>
+                            <StackLayout orientation="horizontal" row="2" class="black-text signin-link mb20" horizontalAlignment="center" textWrap="true">
+                                <Label text="Already have an account? " class="font12"> </Label>
+                                <android>
+                                    <Ripple rippleColor="#d50000">
+                                        <Button text=" Sign in" autocapitalizationType="none" class="flat-blue-button flat-font-bold flat-button-margin secondary font12" (tap)="login()"></Button>
+                                    </Ripple>
+                                </android>
+                                <ios>
+                                    <Button text=" Sign in" autocapitalizationType="none" class="flat-blue-button flat-font-bold flat-button-margin secondary font12" (tap)="login()"></Button>
+                                </ios>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <!--Email Tab Content StackLayout || starts-->
+            <StackLayout class="form-fields" visibility="{{ !isMobileForm ? 'visible' : 'collapsed' }}" [formGroup]="emailForm">
+                <GridLayout rows="*" columns="*">
+                    <StackLayout>
+                        <StackLayout class="input-field">
+                            <Label class="label-text" text="Email Address" row="1" col="0" textWrap="true"></Label>
+                            <TextField #email class="text-field-bordered" hint="Email Address" keyboardType="email" id="emailId" text="" row="1" col="1" [(ngModel)]="emailId" formControlName="emailId" returnKeyType="next" (returnPress)="goToEmailPwd()" (blur)="validCheck(emailId,'emailId')"></TextField>
+                            <Label text="Invalid email address" textWrap="true" class="alert-danger bodyText ml15" visibility="{{(!isValidEmail) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="*Required Field" textWrap="true" class="alert-danger bodyText ml15" visibility="{{(!isEmailFilled) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label class="label-text extrapadding" text="Password" row="1" col="0" textWrap="true"></Label>
+                            <GridLayout rows="*" columns="*,100" class="pwdTxtFld">
+                                <TextField row="0" col="0" #emailPwd hint="Password" id="epassword" [secure]="isEmailPwdSecure" text="" [(ngModel)]="emailPswd" formControlName="emailPswd" (blur)="validCheck(emailPswd,'epassword')"></TextField>
+                                <Label row="0" col="1" [text]="showOrHideEmailPwdLabel" class="show-label" verticalAlignment="center" horizontalAlignment="center" (tap)="showOrHideEmailPassword();"></Label>
+                            </GridLayout>
+                            <Label text="Password didnt match the minimum criteria" textWrap="true" class="alert-danger bodyText ml15" visibility="{{(!isEmailPasswordValid) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="*Required Field" textWrap="true" class="alert-danger bodyText ml15" visibility="{{(!isEmailPasswordFilled) ? 'visible' : 'collapsed' }}"></Label>
+                        </StackLayout>
+                        <!--Password Info StackLayout for Email tab| Starts-->
+                        <StackLayout textWrap="true" class="pwd-info-container">
+                            <Label class="m15 mb15" textWrap="true">
+                                <FormattedString>
+                                    <Span text="Password must include: &nbsp;" className="pwd-include-span"></Span>
+                                    <Span text="&nbsp;7 or more characters, 1 number, 1 uppercase letter, 1 special character, no spaces" className="pwd-info-span"></Span>
+                                </FormattedString>
+                            </Label>
+                        </StackLayout>
+                        <StackLayout class="acceptTerms-container">
+                            <GridLayout rows="*" columns="60,*" class="get-authenticated">
+                                <Switch #CB4 checked="true" row="0" col="0"></Switch>
+                                <Label text="Yes, I wish to receive information from Blue Cross Blue Shield of Massachusetts." textWrap="true" row="0" col="1" class="font14"></Label>
+                            </GridLayout>
+                            <GridLayout rows="*" columns="60,*" class="get-authenticated">
+                                <Switch #CB3 checked="false" row="0" col="0"></Switch>
+                                <!-- <Label text="Terms & Conditions\n" textWrap="true" row="0" col="1" class="font14 boldFont"></Label> -->
+                                <GridLayout row="0" col="1" rows="*,*" columns="*">
+                                    <Label row="0" col="0" text="Terms & Conditions" textWrap="true" class="font14 boldFont"></Label>
+                                    <Label row="1" col="0" textWrap="true" class="font14">
+                                                <FormattedString class="font14">
+                                                    <Span text="I have read and agree to the Blue Cross Blue Shield Massachusetts "></Span>
+                                                    <Span class="underline" text="Terms of Service"></Span>
+                                                    <Span text=" and "></Span>
+                                                    <Span class="underline" text="Privacy Statement."></Span>
+                                                </FormattedString>
+                                            </Label>
+                                </GridLayout>
+
+                            </GridLayout>
+                        </StackLayout>
+                        <Label text="*Please accept the Terms and conditions" textWrap="true" class="alert-danger bodyText m15" visibility="{{(!emailCheckboxesChecked) ? 'visible' : 'collapsed' }}"></Label>
+                        <StackLayout class="input-field m15">
+                            <android>
+                                <Ripple rippleColor="#d50000">
+                                    <Button text="Continue" autocapitalizationType="none" (tap)="createUser('emailId',emailId,emailPswd)" class="next-btn mt10 primary"></Button>
+                                </Ripple>
+                            </android>
+                            <ios>
+                                <Button text="Continue" autocapitalizationType="none" (tap)="createUser('emailId',emailId,emailPswd)" class="next-btn mt10 primary"></Button>
+                            </ios>
+
+                            <StackLayout orientation="horizontal" row="2" class="black-text signin-link mb10" horizontalAlignment="center">
+                                <Label text="Already have an account? " class="font12"> </Label>
+                                <!--<Label text=" Sign in " class="anchor-text font-bold " [nsRouterLink]="['/login']"> </Label>-->
+                                <android>
+                                    <Ripple rippleColor="#d50000">
+                                        <Button text=" Sign in" autocapitalizationType="none" class="flat-blue-button flat-font-bold flat-button-margin secondary font12" (tap)="login()"></Button>
+                                    </Ripple>
+                                </android>
+                                <ios>
+                                    <Button text=" Sign in" autocapitalizationType="none" class="flat-blue-button flat-font-bold flat-button-margin secondary font12" (tap)="login()"></Button>
+                                </ios>
+
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="shadow-img">
+                <Image src="~/images/myblue-app2.0-card-shadow.png"></Image>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+    <StackLayout class="" visibility="{{isBusy ? 'visible' : 'collapsed'}}" isUserInteractionEnabled=false>
+        <GridLayout rows="*">
+            <ActivityIndicator row="1" #activityIndicator busy="true" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+        </GridLayout>
+    </StackLayout>
+
+</GridLayout>

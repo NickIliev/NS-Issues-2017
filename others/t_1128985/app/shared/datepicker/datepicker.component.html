@@ -1,0 +1,32 @@
+<StackLayout class="date-picker-control">
+    <GridLayout rows="*" columns="*,50">
+    <StackLayout class="date-inner-container" horizontalAlignment="left" row="0" col="0">
+    <GridLayout rows="50" columns="*,*,*,*,*,*,*,*,*,*" class="grid">
+
+        <TextField #m1Field [(ngModel)]="m1" id="m1Field" (ngModelChange)="onDateValueChange($event, m1, m1Field, m2Field, 'm1', 'm1Field'); "
+            hint="M" col="0" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+        <TextField #m2Field [(ngModel)]="m2" id="m2Field" (ngModelChange)="onDateValueChange($event, m2, m2Field, d1Field, 'm2', 'm2Field');"
+            hint="M" col="1" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+
+        <Label text="/" col="2"></Label>
+
+        <TextField #d1Field [(ngModel)]="d1" id="d1Field" (ngModelChange)="onDateValueChange($event, d1, d1Field, d2Field, 'd1', 'd1Field'); "
+            hint="D" col="3" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+        <TextField #d2Field [(ngModel)]="d2" id="d2Field" (ngModelChange)="onDateValueChange($event, d2, d2Field, y1Field, 'd2', 'd2Field'); "
+            hint="D" col="4" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+
+        <Label text="/" col="5"></Label>
+
+        <TextField #y1Field [(ngModel)]="y1" id="y1Field" (ngModelChange)="onDateValueChange($event, y1, y1Field, y2Field, 'y1', 'y1Field'); "
+            hint="Y" col="6" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+        <TextField #y2Field [(ngModel)]="y2" id="y2Field" (ngModelChange)="onDateValueChange($event, y2, y2Field, y3Field, 'y2', 'y2Field'); "
+            hint="Y" col="7" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+        <TextField #y3Field [(ngModel)]="y3" id="y3Field" (ngModelChange)="onDateValueChange($event, y3, y3Field, y4Field, 'y3', 'y3Field'); "
+            hint="Y" col="8" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+        <TextField #y4Field [(ngModel)]="y4" id="y4Field" (ngModelChange)="onDateValueChange($event, y4, y4Field, '', 'y4', 'y4Field'); "
+            hint="Y" col="9" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+    </GridLayout>
+ </StackLayout>
+ <Label text="X" class="clear" (tap)="clearDate()" row="0" col="1" horizontalAlignment="right"></Label>
+ </GridLayout>
+</StackLayout>

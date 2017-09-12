@@ -1,0 +1,12 @@
+
+@import 'nativescript-theme-core/css/core.light.css';
+
+.myBtn {
+    background-color:green; 
+    color:black;
+}
+
+.myBtn:highlighted {
+    background-color: cyan;
+    color:blue;
+}

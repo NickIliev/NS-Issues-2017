@@ -1,0 +1,214 @@
+<ActionBar class="header">
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <StackLayout>
+        <mb-header [logo]="true"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView>
+
+        <StackLayout [formGroup]="personForm">
+            <StackLayout class="welcome-container" horizontalAlignment="center">
+                <Label text="Welcome Gretchen."></Label>
+            </StackLayout>
+            <StackLayout class="curveImage">
+                <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+            </StackLayout>
+            <StackLayout visibility="{{ !isAuthDismissed ? 'visible' : 'collapsed' }}">
+                <GridLayout #congratsGrid rows="*" columns="*,50" class="reg-congrats-grid">
+                    <StackLayout row="0" col="0" class="congrats-stack">
+                        <Label class="congrats-label" textWrap="true" text="Congratulations! You are now Registered with an account on MyBlue"></Label>
+                    </StackLayout>
+                    <StackLayout row="0" col="1" orientation="horizontal" horizontalAlignment="right" verticalAlignment="top" class="close-col" (tap)="closeCongratsGrid()">
+                        <Image src="~/images/icon/close-type2.png"></Image>
+                    </StackLayout>
+                </GridLayout>
+                <StackLayout #congratsShadow class="reg-home-shadow">
+                    <Image src="~/images/myblue-app2.0-card-shadow.png"></Image>
+                </StackLayout>
+                <GridLayout rows="*" columns="*,50" class="reg-auth-grid">
+                    <StackLayout row="0" col="0" class="congrats-stack">
+                        <Label class="congrats-label" textWrap="true" text="Connect Your Account to Your Plan."></Label>
+                        <Label class="congrats-label" textWrap="true" text="Get full access to your personal health information, claims and more."></Label>
+                    </StackLayout>
+                    <StackLayout row="0" col="1" orientation="horizontal" horizontalAlignment="right" verticalAlignment="top" class="close-col" (tap)="onAuthenticateGridClose()">
+                        <Image src="~/images/icon/close-type2.png"></Image>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout>
+                <StackLayout class="main-container" visibility="{{ !isAuthDismissed ? 'visible' : 'collapsed' }}">
+                    <StackLayout class=" mb10 black-text inner-container heading-container">
+                        <Label text="Personal Information" class="heading"></Label>
+                        <Label text="All fields are required." textWrap="true" class="sub-text black-text"></Label>
+                    </StackLayout>
+                    <StackLayout class="form">
+                        <StackLayout>
+                            <StackLayout class="input-field ">
+                                <Label class="label-text inner-container" text="First Name" textWrap="true"></Label>
+                                <StackLayout class=" text-field-bordered bold-border-top ">
+                                    <TextField #firstNameField hint="First Name" class="input " id="firstName" text="" [(ngModel)]="firstName" name="firstName" formControlName="firstName" returnKeyType="next" (returnPress)="goToLastName()" (blur)="validCheck(firstName,'firstName')"></TextField>
+                                </StackLayout>
+                                <Label text="Invalid first name" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isFirstNameValid) ? 'visible' : 'collapsed' }}"></Label>
+                                <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isFirstNameFilled) ? 'visible' : 'collapsed' }}"></Label>
+                            </StackLayout>
+                            <StackLayout class="input-field ">
+                                <Label class="label-text inner-container" text="Last Name" textWrap="true"></Label>
+                                <StackLayout class="text-field-bordered light-border">
+                                    <TextField hint="Last Name" #lastNameField class="input " id="lastName" text="" [(ngModel)]="lastName" name="lastName" formControlName="lastName" returnKeyType="next" (returnPress)="goToDOB()" (blur)="validCheck(lastName,'lastName')"></TextField>
+                                </StackLayout>
+                                <Label text="Invalid last name" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isLastNameValid) ? 'visible' : 'collapsed' }}"></Label>
+                                <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isLastNameFilled) ? 'visible' : 'collapsed' }}"></Label>
+                            </StackLayout>
+                            <StackLayout class="input-field">
+                                <Label class="label-text inner-container" text="Date of Birth" textWrap="true"></Label>
+                                <StackLayout class=" text-field-bordered ">
+                                    <TextField class="input " id="dob" #DOBTextField text="" [(ngModel)]="dob" name="dob" [hint]="hintText " formControlName="dob" (blur)="validCheck(dob,'dob')" maxLength="10" returnKeyType="next" (returnPress)="goToMoEmail()" (ngModelChange)="autoFormat(dob)"
+                                        keyboardType="phone"></TextField>
+                                </StackLayout>
+                                <Label text="Please enter a valid Date of Birth" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isDOBValid) ? 'visible' : 'collapsed' }}"></Label>
+                                <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isDOBFilled) ? 'visible' : 'collapsed' }}"></Label>
+                                <Label text="Minimum age limit is 18" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isAgeValid) ? 'visible' : 'collapsed' }}"></Label>
+                            </StackLayout>
+                            <StackLayout class="input-field" visibility="{{ (register_type=='email') ? 'visible' : 'collapsed' }}">
+                                <Label class="label-text inner-container" text="Mobile Number" textWrap="true"></Label>
+                                <StackLayout class="text-field-bordered">
+                                    <TextField hint="Enter 10 digit number" #moTextField class="input  " id="mobileNum" keyboardType="phone" text="" [(ngModel)]="mobileNum" name="mobileNum" (blur)="validCheck(mobileNum,'mobileNum')" formControlName="mobileNum" maxLength="10"></TextField>
+                                </StackLayout>
+                                <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isMobileFilled) ? 'visible' : 'collapsed' }}"></Label>
+                                <Label text="Invalid mobile number" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isValidMobileNo) ? 'visible' : 'collapsed' }}"></Label>
+                            </StackLayout>
+                            <StackLayout class="input-field " visibility="{{ (register_type=='mobile') ? 'visible' : 'collapsed' }}">
+                                <Label class="label-text inner-container" text="Email Address" textWrap="true"></Label>
+                                <StackLayout class=" text-field-bordered  bold-border-bottom ">
+                                    <TextField class="input" #emailTextField hint="yourname@domain.name" id="emailAddress" text="" keyboardType="email" [(ngModel)]="emailAddress" name="emailAddress" formControlName="emailAddress" (blur)="validCheck(emailAddress,'emailAddress')"></TextField>
+                                </StackLayout>
+                                <Label text="Invalid email address" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isValidEmail) ? 'visible' : 'collapsed' }}"></Label>
+                                <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isEmailFilled) ? 'visible' : 'collapsed' }}"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                        <android>
+                            <Ripple rippleColor="#d50000">
+                                <Button text="Continue" autocapitalizationType="none" class="continue-btn-innerwidth primary" (tap)="onContinue(firstName,lastName,mobileNum,emailAddress,dob)"></Button>
+                            </Ripple>
+                        </android>
+                        <ios>
+                            <Button text="Continue" autocapitalizationType="none" class="continue-btn-innerwidth primary" (tap)="onContinue(firstName,lastName,mobileNum,emailAddress,dob)"></Button>
+                        </ios>
+
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="reg-home-shadow" visibility="{{ !isAuthDismissed ? 'visible' : 'collapsed' }}">
+                    <Image src="~/images/myblue-app2.0-card-shadow.png"></Image>
+                </StackLayout>
+                <!--Find a doctor-->
+                <StackLayout>
+                    <StackLayout class="mbhealthyCard mbStackLayoutSpace" style="background-color: #ffffff;">
+                        <GridLayout rows="*,*,*" columns="*" class="mbarticleGrid">
+                            <StackLayout orientation="horizontal" class="fadTitile font-arial" row="0">
+                                <Image src="~/images/redesign/find-a-doc-iconhdpi.png"> </Image>
+                                <Label text="Find a Doctor" textWrap="true"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" class="FADList">
+                                <GridLayout rows="*, *" columns="*">
+                                    <StackLayout orientation="horizontal" row="0">
+                                        <Image src="~/images/icon/square.png"> </Image>
+                                        <Label text="Find and compare doctors, dentists, hospitals, and other healthcare providers." textWrap="true"></Label>
+                                    </StackLayout>
+                                    <StackLayout orientation="horizontal" row="1">
+                                        <Image src="~/images/icon/square.png"> </Image>
+                                        <Label text="Get estimates for over 1,600 common medical procedures." textWrap="true"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="*">
+                            <!--<Button text="Search Now" autocapitalizationType="none" class="flat-blue-button font-arial flat-font-bold flat-button-margin text-right margin-right-15" (tap)="searchNow()"></Button>-->
+                            <Label text="Search Now" class="searchNow font-arial" verticalAlignment="middle" horizontalAlignment="right" (tap)="searchNow()"></Label>
+
+                        </GridLayout>
+                    </StackLayout>
+                    <StackLayout class="curveImage">
+                        <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                    </StackLayout>
+                </StackLayout>
+                <!-- End of find a doctor-->
+                <!-- Healthy Livivng Details -->
+                <ListView [items]="healthyAricles">
+                    <ng-template let-item="item" let-index="index">
+                        <ListView.itemTemplate>
+                            <StackLayout class="mbhealthyCard mbStackLayoutSpace" style="background-color: #ffffff;">
+                                <GridLayout rows="*,*" columns="*" class="mbarticleGrid">
+                                    <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                                        <Image loadMode="async" [src]="item.titleImageURL"> </Image>
+                                        <Label verticalalignment="center" [text]="item.title" textWrap="true"></Label>
+                                    </StackLayout>
+                                    <StackLayout row="1" col="0" class="mbhealthyBanner">
+                                        <GridLayout columns="auto, *" rows="auto, 30">
+                                            <Image loadMode="async" [src]="item.imageURL" stretch="fill" class="mbTileImage" rowSpan="2" col="0"></Image>
+                                            <StackLayout orientation="vertical" col="1" rowSpan="2" class="mbhealthyGridTitle" horizontalAlignment="left" verticalAlignment="top">
+                                                <Label [text]="item.subtitle" class="mbhealthySubTitle font-arial" textWrap="true"></Label>
+                                                <Label [text]="item.description" class="mbhealthySub" textWrap="true"></Label>
+                                            </StackLayout>
+                                        </GridLayout>
+                                        <GridLayout rows="*" columns="*">
+                                            <!--<Button text="Read Article" autocapitalizationType="none" class="flat-blue-button font-arial flat-font-bold flat-button-margin text-right" (tap)="articleDetail();"></Button>-->
+                                            <Label text="Read Article" class="readArticle font-arial" (touch)="articleDetail();" verticalAlignment="middle" horizontalAlignment="right"></Label>
+                                        </GridLayout>
+                                    </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                            <StackLayout class="curveImage">
+                                <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                            </StackLayout>
+                        </ListView.itemTemplate>
+                    </ng-template>
+                </ListView>
+                <StackLayout class="mbStackLayoutSpace" style="background-color: #ffffff;">
+                    <GridLayout rows="*,*" columns="*" class="mbarticleGrid">
+                        <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                            <Image loadMode="async" src="~/images/redesign/wellness.png"> </Image>
+                            <Label verticalalignment="center" text="Wellness" textWrap="true"></Label>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" class="mbhealthyBanner">
+                            <StackLayout orientation="vertical" class="" horizontalAlignment="left" verticalAlignment="top">
+                                <Label text="Good reasons well" class="mbhealthySubTitle font-arial" textWrap="true"></Label>
+                                <Label text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout." class="mbhealthySub" textWrap="true"></Label>
+                            </StackLayout>
+                            <GridLayout rows="*" columns="*">
+                                <!--<Button text="Read Article" autocapitalizationType="none" class="flat-blue-button font-arial flat-font-bold flat-button-margin text-right" (tap)="articleDetail();"></Button>-->
+                                <Label text="Read Article" class="readArticle font-arial" (touch)="articleDetail();" verticalAlignment="middle" horizontalAlignment="right"></Label>
+                            </GridLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+                <!--End Healthy Livivng Details -->
+                <StackLayout class="mbStackLayoutSpace" style="background-color: #ffffff;">
+                    <GridLayout rows="*,*" columns="*" class="">
+                        <StackLayout orientation="horizontal" class="mbContactlogo" row="0" col="0" verticalalignment="middle" horizontalAlignment="center">
+                            <Image loadMode="async" src="~/images/logo.png"> </Image>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" (tap)="contactUs();">
+                            <GridLayout rows="*" columns="*, 50" class="mblblContact">
+                                <Label text="Contact Us" class="font-arial" row="0" col="0"></Label>
+                                <Image loadMode="async" class="arrowImage" src="~/images/icon/right2.png" col="2" verticalalignment="middle" horizontalAlignment="right" row="0"></Image>
+                            </GridLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+   
+</GridLayout>

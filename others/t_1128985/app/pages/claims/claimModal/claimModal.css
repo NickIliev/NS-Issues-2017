@@ -1,0 +1,104 @@
+#claim-filter-modal{
+    padding:25 20 25 20;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#fff;
+}
+
+.modal-title{
+    font-size:24;
+    font-weight:bold;
+    margin-bottom:10px;
+    color:#000;
+}
+
+.sort-item-label{
+    font-size:18;
+}
+
+.text-ctrl{
+    border-width:1;
+    border-color:#999;
+}
+
+#button-layout{
+    margin-right:25;
+}
+
+.btn-submit{
+    background-color:#1866a3;
+    color:#fff;
+    font-size:16;
+    text-transform: capitalize;
+    vertical-align: middle;
+}
+
+.btn-cancel{
+    background-color:transparent;
+    margin:0 3 0 0;
+    font-size:16;
+    text-transform: capitalize;
+    color:#000;
+    padding: 2 5;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+.sortListItem{
+    font-size:18;
+    padding-top:10;
+    padding-bottom:10;
+}
+
+.memberListItem{
+    font-size:18;
+    padding-top:10;
+    padding-bottom:10;
+}
+
+
+#provider-textField{
+    border-radius:4;
+    font-size:16;
+}
+
+
+#filterScrollViewContent{
+    padding-right:25;
+}
+
+.control-label{
+    font-size:16px;
+    font-weight:bold;
+    margin-top:25;
+    color:#000;
+    margin-bottom:5;
+}
+
+.selectControl{
+    font-size:16;
+    padding:13 0;
+    color:#111;
+    border-bottom-width:1px;
+    border-color:#000;
+    font-weight: normal;
+    background-color:#fff;
+    margin:0px;
+}
+
+.selectControl.selected{
+    background-color: #fff;
+}
+
+.selectControl Image{
+    visibility:hidden;
+}
+
+.selectControl.selected Image{
+    visibility:visible;
+}
+
+
+.mrgTopNil{
+    margin-top:0;
+}

@@ -8,7 +8,6 @@ export function navigatingTo(args: EventData) {
 
 }
 
-
 export function goBack() {
     frame.goBack();
 }

@@ -1,0 +1,117 @@
+<mb-image-slides pageIndicators="true" class="">
+    <mb-image-slide>
+        <GridLayout rows="auto" column="*">
+            <StackLayout width="{{scrWidth}}" height="{{scrHeight}}" row="0" col="0">
+                <GridLayout rows="auto, auto, auto" columns="*">
+                    <StackLayout row="0" columns="0" class="cardHeader">
+                        <Image loadMode="async" src="~/images/icon/close-type3.png" class="closeIcon" horizontalAlignment="right" (touch)="closeCard();"></Image>
+                        <Image loadMode="async" src="~/images/redesign/hb-mycards.png" class="cardsIcon" horizontalAlignment="center"></Image>
+                        <Label text="{{cardDetails.patientName}}" class="font-arial patientName" horizontalAlignment="center"></Label>
+                        <Label text="{{selectedMember.type}}" class="" horizontalAlignment="center"></Label>
+                    </StackLayout>
+                    <GridLayout rows="*" columns="*,100" row="1" col="0" class="memberStack">
+                        <StackLayout row="0" col="0" orientation="vertical" verticalAlignment="middle">
+                            <Label text="Member Services" class="font-arial font-black"></Label>
+                            <Label text="{{ cardDetails.serviceNo}}" class="font-black"></Label>
+                        </StackLayout>
+                        <StackLayout class="callDoctorContainer" col="1" row="0" orientation="vertical" horizontalAlignment="right" (tap)="callPhone(cardDetails.serviceNo)">
+                            <Image loadMode="async" class="call-icon" src="~/images/redesign/call.png"></Image>
+                            <Label class="font-arial" text="Call"></Label>
+                        </StackLayout>
+                    </GridLayout>
+                    <StackLayout orientation="vertical" class="cardFront" row="2" col="0">
+                        <Label text="Member ID: {{ cardDetails.cardNo  }}" class="font-arial"></Label>
+                        <Label text="Member Suffix: {{ cardDetails.suffix + '\u200b'  }}"></Label>
+                        <Label text="RxBin: {{ cardDetails.rxBin + '\u200b'  }}"></Label>
+                        <Label text="PCN: {{ cardDetails.pcn }}"></Label>
+                        <Label text="RxGRP: {{ cardDetails.rxGrp }}"></Label>
+                        <Label text="{{ cardDetails.planName }} {{cardDetails.planType  }}"></Label>
+                        <Label text="CHOICE {{ cardDetails.choice}}"></Label>
+                        <Label text="Copays" class="font-arial copays-header"></Label>
+                        <GridLayout rows="*" columns="35,auto,auto" class="copaydetails" *ngFor="let item of cardDetails.copays">
+                            <Label row="0" col="0" text="${{ item.amount }}" class="font-arial copay-amount"></Label>
+                            <Label row="0" col="1" text="{{ item.name }} "></Label>
+                            <Label row="0" col="2" text="({{ item.suffix }})" [visibility]="(item.suffix != 'PV') ? 'visible' : 'collapsed'"></Label>
+                        </GridLayout>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+    </mb-image-slide>
+    <mb-image-slide>
+        <GridLayout rows="auto" column="*">
+            <StackLayout width="{{scrWidth}}" height="{{scrHeight}}" row="0" col="0">
+                <GridLayout rows="auto, auto" columns="*">
+                    <StackLayout row="0" columns="0" class="cardHeader">
+                        <Image loadMode="async" src="~/images/icon/close-type3.png" class="closeIcon" horizontalAlignment="right" (tap)="closeCard();"></Image>
+                        <Image loadMode="async" src="~/images/redesign/hb-mycards.png" class="cardsIcon" horizontalAlignment="center"></Image>
+                        <Label text="{{cardDetails.patientName}}" class="font-arial patientName" horizontalAlignment="center"></Label>
+                        <Label text="{{selectedMember.type}}" class="" horizontalAlignment="center"></Label>
+                    </StackLayout>
+                    <GridLayout rows="auto,auto,auto,auto,auto,auto" columns="*" row="1" col="0" class="">
+                        <GridLayout rows="*" columns="*,100" row="0" col="0" class="support-container">
+                            <StackLayout row="0" col="0" orientation="vertical" verticalAlignment="middle">
+                                <Label text="Member Service" textWrap="true" class="font-arial font-black support-service"></Label>
+                                <Label text="{{ cardDetails.serviceNo}}" class="font-black"></Label>
+                            </StackLayout>
+                            <StackLayout class="callDoctorContainer" col="1" row="0" orientation="vertical" horizontalAlignment="right" (tap)="callPhone(cardDetails.serviceNo)">
+                                <Image loadMode="async" class="call-icon" src="~/images/redesign/call.png"></Image>
+                                <Label class="font-arial" text="Call"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="*,100" row="1" col="0" class="support-container">
+                            <StackLayout row="0" col="0" orientation="vertical" verticalAlignment="middle">
+                                <Label text="Provider Service" textWrap="true" class="font-arial font-black support-service"></Label>
+                                <Label text="{{ cardDetails.providerServiceNo}}" class="font-black"></Label>
+                            </StackLayout>
+                            <StackLayout class="callDoctorContainer" col="1" row="0" orientation="vertical" horizontalAlignment="right" (tap)="callPhone(cardDetails.providerServiceNo)">
+                                <Image loadMode="async" class="call-icon" src="~/images/redesign/call.png"></Image>
+                                <Label class="font-arial" text="Call"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="*,100" row="2" col="0" class="support-container">
+                            <StackLayout row="0" col="0" orientation="vertical" verticalAlignment="middle">
+                                <Label text="Pre-authorization" textWrap="true" class="font-arial font-black support-service"></Label>
+                                <Label text="{{ cardDetails.preAuthNo}}" class="font-black"></Label>
+                            </StackLayout>
+                            <StackLayout class="callDoctorContainer" col="1" row="0" orientation="vertical" horizontalAlignment="right" (tap)="callPhone(cardDetails.preAuthNo)">
+                                <Image loadMode="async" class="call-icon" src="~/images/redesign/call.png"></Image>
+                                <Label class="font-arial" text="Call"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="*,100" row="3" col="0" class="support-container">
+                            <StackLayout row="0" col="0" orientation="vertical" verticalAlignment="middle">
+                                <Label text="Behavioral Health and Substance Abuse" textWrap="true" class="font-arial font-black support-service"></Label>
+                                <Label text="{{ cardDetails.abuseNo}}" class="font-black"></Label>
+                            </StackLayout>
+                            <StackLayout class="callDoctorContainer" col="1" row="0" orientation="vertical" horizontalAlignment="right" (tap)="callPhone(cardDetails.abuseNo)">
+                                <Image loadMode="async" class="call-icon" src="~/images/redesign/call.png"></Image>
+                                <Label class="font-arial" text="Call"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="*,100" row="4" col="0" class="support-container">
+                            <StackLayout row="0" col="0" orientation="vertical" verticalAlignment="middle">
+                                <Label text="Locate Provider" textWrap="true" class="font-arial font-black support-service"></Label>
+                                <Label text="{{ cardDetails.locateProvNo}}" class="font-black"></Label>
+                            </StackLayout>
+                            <StackLayout class="callDoctorContainer" col="1" row="0" orientation="vertical" horizontalAlignment="right" (tap)="callPhone(cardDetails.locateProvNo)">
+                                <Image loadMode="async" class="call-icon" src="~/images/redesign/call.png"></Image>
+                                <Label class="font-arial" text="Call"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="*,100" row="5" col="0" class="support-container">
+                            <StackLayout row="0" col="0" orientation="vertical" verticalAlignment="middle">
+                                <Label text="Blue Care Line" textWrap="true" class="font-arial font-black support-service"></Label>
+                                <Label text="{{ cardDetails.blueCareNo}}" class="font-black"></Label>
+                            </StackLayout>
+                            <StackLayout class="callDoctorContainer" col="1" row="0" orientation="vertical" horizontalAlignment="right" (tap)="callPhone(cardDetails.blueCareNo)">
+                                <Image loadMode="async" class="call-icon" src="~/images/redesign/call.png"></Image>
+                                <Label class="font-arial" text="Call"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+    </mb-image-slide>
+</mb-image-slides>

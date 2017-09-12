@@ -1,0 +1,124 @@
+.contact-us {
+    background-color: #ddd;
+}
+.contact-us Label {
+    color: #000000;
+    font-weight: 300;
+}
+.contact-us Label.font-arial {
+    font-weight: bold;
+}
+.bold {
+    font-weight: bold;
+}
+.headerSection {
+    background-color: #0068a0;
+    margin-bottom: 17;
+}
+.headerSection .text {
+    padding: 15;
+    border-right-width: 1;
+    border-right-style: solid;
+    border-right-color: #bfd9e7;
+}
+.headerSection Label, .headerSection .font-arial{
+    color: #fff;
+}
+.headerSection .font-arial {
+    margin-right: 10;
+    margin-left: 15;
+}
+.headerSection .call-icon{
+    width:26;
+    height:26;
+} 
+.headerSection .title {
+    font-family: "Arial Bold";
+    font-weight: bold;
+    margin-bottom: 5;
+}
+.headerSection .lightBlue {
+    color: #bfd9e7;
+}
+.lost-id .font-arial,
+.financial-account .font-arial,
+.clinical-support-list .font-arial {
+    margin-top: 10;
+}
+.direct-pay {
+    margin-top: 5;
+}
+.lost-id, .premium,
+.financial-account,
+.clinical-support,
+.clinical-support-list {
+    padding: 15;
+    background-color: #fff;
+}
+.financial-account .title,
+.clinical-support .title {
+    font-size: 17;
+}
+.premium,
+.clinical-support-list {
+    margin-top: 1;
+}
+.financial-account,
+.clinical-support {
+    margin-top: 2;
+}
+.financial-account Label,
+.clinical-support Label {
+    margin-top: 3;
+}
+.detailsSecActive .phone-sec .bold,
+.detailsSecActive .phone-sec .phoneNo {
+    margin-left: 20;
+    margin-right: 20;
+}
+.call Label {
+    margin-top: 5;
+    margin-left: 2;
+    color: #176798;
+}
+.call .call-icon {
+    width:35;
+    height:35;
+}
+.call-deactive Label {
+    margin-top: 5;
+    margin-left: 2;
+    color: #818181;
+}
+.call-deactive .call-icon {
+    width:35;
+    height:35;
+}
+.curveImage {
+    height: 17;
+    width: 100%;
+    background-color: #ddd;
+    margin-bottom: 55;
+}
+.contact-us .deactive .headerSection .phone-deactive,
+.contact-us .deactive .call-deactive {
+    visibility: visible;
+}
+.contact-us .deactive .headerSection .phone,
+.contact-us .deactive .call {
+    visibility: hidden;
+}
+.contact-us .active .headerSection .phone-deactive,
+.contact-us .active .call-deactive  {
+    visibility: hidden;
+}
+.headerSection .phone-deactive {
+    height: 100%;
+    width: 100%;
+    background-color: #176798;
+    opacity: 0.5;
+}
+.active .blue-text Label, .blueColor,
+.phone-sec .blueColor {
+    color: #1866a3;
+}

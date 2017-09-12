@@ -1,0 +1,473 @@
+/*common styles */
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.font-bold {
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.flat-font-bold {
+    font-weight: 700;
+}
+
+.mb15 {
+    margin-bottom: 15;
+}
+
+.mb10 {
+    margin-bottom: 10;
+}
+
+.mt50 {
+    margin-top: 50;
+}
+
+.mt20 {
+    margin-top: 20;
+}
+
+.mt10 {
+    margin-top: 10;
+}
+
+.m10 {
+    margin: 10;
+}
+
+.m15 {
+    margin: 10 15 0 15;
+}
+
+.m20 {
+    margin: 20;
+}
+
+.mt10 {
+    margin-top: 10;
+}
+
+.pb20 {
+    padding-bottom: 20;
+}
+
+.main-container {
+    background-color: white;
+    font: Arial Reg;
+}
+
+.text-field-bordered {
+    border-width: 20;
+    border-color: #b2b2b2;
+    border-style: solid;
+}
+
+.alert-danger {
+    color: red;
+}
+
+.blue-text {
+    color: #1866a3;
+}
+
+.black-text {
+    color: black;
+}
+
+.ml20 {
+    margin-right: 0;
+}
+
+.anchor-text {
+    color: #1866a3;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.m5 {
+    margin-left: 5;
+    margin-right: 5;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.mt5 {
+    margin-top: 5;
+}
+
+
+/*common styles ends here */
+
+
+/* Form choice buttons on switch */
+
+.form-choice-btns,
+{
+    font-weight: bold;
+    /* background-color: white;*/
+    color: #b2b2b2;
+    font-size: 14;
+    border-bottom-color: #dddddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.form-choices {
+    border-bottom-color: #dddddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-top: 0;
+}
+
+.switch-btn-color {
+    color: black;
+    border-bottom-width: 10px;
+    border-bottom-color: #1866a3;
+}
+
+StackLayout.form-fields .form {
+    margin: 0 5 0 5;
+}
+
+
+/* Continue button styles*/
+
+.next-btn {
+    background-color: #1866a3;
+    color: white;
+    font-weight: bold;
+    font-size: 18;
+}
+
+
+/*Form heading styles*/
+
+.form-heading {
+    margin: 10 5 10 5;
+    color: #1866a3;
+    font-size: 23;
+    font-family: Arial Reg;
+}
+
+.form-heading2 {
+    margin: 10 20 0 10;
+    color: #1866a3;
+    font-size: 25;
+    font-family: Arial Reg;
+}
+.body-text-margin{
+     margin: 10 20 20 10;
+}
+
+.form-heading-large {
+    margin: 10 20 10 20;
+    font-size: 32;
+    color: #1866a3;
+    word-wrap: break-word;
+}
+
+
+/*Text field label styles*/
+
+.input-field {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.input-field .label-text {
+    color: black;
+    font-weight: bold;
+    margin: 5 0 0 15;
+    font-size: 15;
+    font-family: "Arial Bold";
+}
+
+.text-field-bordered {
+    height: 42;
+    padding: 10 10 10 15;
+    /* color: #cccccc; */
+    font-size: 15;
+    border-color: #dddddd;
+    border-width: 1;
+}
+
+.get-authenticated,
+.get-authenticated Label {
+    margin: 5 10;
+}
+
+.get-authenticated Label.alert-danger {
+    color: red;
+}
+
+.outer-container {
+    margin: 15;
+}
+
+.action-bar {
+    color: white;
+    background-color: #1866a3;
+    text-align: center;
+}
+
+.dummy-links {
+    color: #1866a3;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.outer-container2 {
+    margin: 10 20
+}
+
+.outer-container2 {
+    margin-top: 10;
+    background-color: white;
+}
+
+.dummy-img-size {
+    width: 200px;
+    height: 200px;
+    margin-top: 0;
+}
+
+Button {
+    text-transform: capitalize;
+}
+
+.tfield-bordered {
+    border: none;
+}
+
+.action-title {
+    font-size: 25;
+    font-family: Arial Reg;
+    vertical-align: middle;
+}
+
+.bodyText {
+    font-size: 18;
+}
+
+.input-field .signin-link {
+    text-align: center;
+    font-size: 18;
+    margin-top: 0;
+
+}
+
+#confirmation-filter-modal {
+    padding: 12 10 10 10;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cancel-image {
+    width: 70px;
+    height: 70px;
+    padding-top: 5;
+    box-sizing: border-box;
+}
+
+.blue {
+    color: blue;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.check-images {
+    width: 50px;
+    height: 50px;
+}
+
+.blue-text {
+    color: #1866a3;
+    font-family: Arial;
+}
+
+.check-alignedtext {
+    padding: 0;
+    margin: 0;
+    font-size: 14;
+    padding-left: 15;
+}
+
+.acceptTerms-container {
+    padding: 0 0;
+}
+
+.UnCheckBox image {
+    height: 15;
+    width: 15;
+}
+
+.sub-text {
+    color: #555;
+    font-size: 15;
+    margin: 0 5 0 5;
+    font-family: Arial Reg;
+}
+
+.header-label {
+    font-size: 24;
+    color: #0068A0;
+    vertical-align: middle;
+    font-family: "Arial Bold";
+    font-weight:bold;
+}
+
+.page-background {
+    background-color: #DEDEDE;
+    height: 100%;
+}
+
+.shadow {
+    background-color: #DEDEDE;
+    vertical-align: top;
+}
+
+
+/*------------------------------------------------New CSS------------*/
+
+.sign-up-txt {
+    font-size: 18;
+    margin: 5;
+    font-family: Arial;
+    font-weight: bold;
+    color: black;
+}
+
+.all-field-txt {
+    font-size: 13;
+    margin: 3;
+    font-family: Arial;
+    font-weight: bold;
+    color: black;
+}
+
+.mt15 {
+    margin-top: 15;
+}
+
+.pwd-info-container {
+    margin: 0 5 10 5;
+}
+
+.pwd-include-span {
+    font-size: 12;
+    font-weight: bold;
+    color: black;
+}
+
+.pwd-info-span {
+    font-size: 12;
+    color: black;
+}
+
+.ml15 {
+    margin-left: 15;
+}
+
+.shadow-img {
+    background-color: #DEDEDE;
+    height: 80;
+    vertical-align: top;
+}
+
+.show-label {
+    background-color: #18669C;
+    font-size: 13;
+    padding: 3 0 3 0;
+    font-weight: bold;
+    color: white;
+    border-radius: 20;
+    width: 70;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Arial Bold";
+}
+
+/* .pwd-pad {
+    padding-right: 110;
+    border-width: 1;
+} */
+
+.mb20 {
+    margin-bottom: 20;
+}
+
+
+
+.flat-blue-button {
+    z-index: -1;
+    background-color: white;
+    color: #1866a3;
+    margin-left:0;
+    padding-left:0;
+}
+Button.primary:highlighted {
+    background-color: #043167;
+    color:white;
+    }
+Button.secondary:hightlighted{
+    color:#043167;
+    background-color: #c6dcee;
+}
+.userTxtFld {
+    border-top-width: 1;
+    border-top-color: #DEDEDE;
+    border-bottom-width: 1;
+    border-bottom-color: #DEDEDE;
+    font-size: 15;
+    height: 42;
+    padding: 10 0 10 15;
+}
+
+TextField {
+    border-top-width: 1;
+    border-top-color: white;
+    border-bottom-width: 1;
+    border-bottom-color: white;
+    padding: 10 0 10 15;
+}
+.pwdTxtFld {
+    border-top-width: 1;
+    border-top-color: #DEDEDE;
+    border-bottom-width: 1;
+    border-bottom-color: #DEDEDE;
+    font-size: 15;
+    height: 42;
+}
+.font14 {
+    color: black;
+    font-size: 12;
+}
+.boldFont {
+    font-weight: bold;
+}
+.font12 {
+    font-size: 13;
+}
+.extrapadding {
+    padding: 10 0 0 0;
+}
+.removePadding {
+    padding: -5 0 0 0;
+}

@@ -1,0 +1,9 @@
+@echo off
+cls
+echo Removing node_modules...
+rmdir node_modules /s /q
+echo Removing android...
+rmdir android /s /q
+echo building android...
+rem call tns build android
+tns run android --emulator

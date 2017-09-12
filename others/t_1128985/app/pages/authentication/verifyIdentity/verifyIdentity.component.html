@@ -1,0 +1,80 @@
+<ActionBar class="header">    
+        <Label text="Authentication" horizontalAlignment="center" class="header-label"></Label>
+   </ActionBar>
+   <GridLayout rows="*" columns="*">
+   <mb-side-menu *mbIfAndroid></mb-side-menu>
+   <StackLayout>
+       <mb-side-menu *mbIfIos></mb-side-menu>
+       <ScrollView>
+           
+           <StackLayout class="page-background">
+               <StackLayout class="caro-container" >
+                   <StackLayout orientation="horizontal" horizontalAlignment="center">
+                       <Button text="1" class="caro-button"></Button>
+                       <Button text="2" class="caro-button "></Button>
+                       <Button text="3" class="caro-button caro-button-selected"></Button>
+                   </StackLayout>
+               </StackLayout>
+           <StackLayout >
+           <StackLayout class="main-container">
+               <StackLayout class=" mb10 black-text inner-container heading-container">
+                       <Label text="Verify Your Identity" class=" heading"></Label>
+                       <Label *ngIf="!isTurnOff" text="There are two ways to verify." textWrap="true" class="sub-text black-text"></Label>
+                </StackLayout>
+                  <StackLayout class="input-field ">
+                               <Label class="label-text inner-container black-text" text="Social Security Number" textWrap="true"></Label>
+                               <StackLayout class="ssn-container">                                
+                                   <TextField  hint="9-digits without dashes" #txtfld1 keyboardType="phone" class="input inner-container" id="ssnId" text="" [(ngModel)]="ssnId" name="ssnId" maxLength="9" (blur)="validCheck(ssnId,'ssnId')"></TextField>
+                               </StackLayout>                            
+                              <Label text="*Required Field" class="alert-danger inner-container" visibility="{{ !isSSnFilled ? 'visible' : 'collapsed' }}"></Label>
+                       <Label text="Invalid format" class="alert-danger inner-container" visibility="{{ !isSSnValid ? 'visible' : 'collapsed' }}"></Label>
+                           </StackLayout>
+              <Button text="Continue" autocapitalizationType="none" class="continue-btn-fullwidth  inner-container" (tap)="continueWithSSN(ssnId)"></Button>
+               <!--<Label text="Cancel" class="cancel-link black-text" (tap)="oncancelFn()"></Label>-->
+   
+               <StackLayout *ngIf="!isTurnOff" class="securityQuestionOption"> 
+                   <GridLayout class="space" columns="*, auto, *" rows="auto">
+                       <StackLayout col="0" class="divider"></StackLayout>
+                       <Label col="1" class="option" text="OR"></Label>
+                       <StackLayout col="2" class="divider"></StackLayout>
+                   </GridLayout>
+                   
+                   <Label class="space" text="Answer Security Questions"></Label>
+                
+                     <android>
+                            <Ripple rippleColor="#d50000">
+                             <Button text="Continue" autocapitalizationType="none" class="continue-btn-fullwidth  inner-container primary" (tap)="continueWithSSN(ssnId)"></Button>
+                            </Ripple>
+                        </android>
+                        <ios>
+                                <Button text="Continue" autocapitalizationType="none" class="continue-btn-fullwidth  inner-container primary" (tap)="continueWithSSN(ssnId)"></Button>
+                        </ios>             
+               </StackLayout>
+                        <android>
+                            <Ripple rippleColor="#d50000">
+                             <Button text=" Cancel" autocapitalizationType="none"  class="flat-cancel-button secondary" (tap)="oncancelFn()"></Button>
+                            </Ripple>
+                        </android>
+                        <ios>
+                                <Button text=" Cancel" autocapitalizationType="none"  class="flat-cancel-button secondary" (tap)="oncancelFn()"></Button>
+                        </ios>   
+             
+   
+           </StackLayout>
+               <StackLayout class="shadow">
+                       <Image  src="~/images/myblue-app2.0-card-shadow.png"></Image>
+              </StackLayout>
+               </StackLayout>
+           </StackLayout>
+          
+       </ScrollView>
+       <StackLayout visibility="{{ busy ? 'visible' : 'collapsed' }}" class="busy-cursor">
+           <ActivityIndicator visibility="{{ busy ? 'visible' : 'collapsed' }}" #activityIndicator width="100" height="100" [busy]="busy"></ActivityIndicator>
+       </StackLayout>
+   </StackLayout>
+   <DockLayout style.verticalAlignment="bottom">
+           <mb-tab></mb-tab>
+   </DockLayout>
+  
+   </GridLayout>
+   

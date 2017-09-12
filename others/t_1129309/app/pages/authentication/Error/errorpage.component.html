@@ -1,0 +1,25 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<StackLayout class="error-container">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <StackLayout class="error-inner-container">
+        <Label text="There was a problem" class="error-heading"></Label>
+        <Label text="authenticating your account" class="error-heading"></Label>
+        <StackLayout col="1" orientation="horizontal">
+            <Label text="Contact Member Services" class="error-heading"> </Label>
+            <Image src="~/images/icon/right_chevron_white.png" class="arrowRightImage"></Image>
+        </StackLayout>
+    </StackLayout>
+</StackLayout>

@@ -1,0 +1,188 @@
+#accountsHome {
+    color: #000;
+    font-size: 16;
+}
+
+ScrollView{
+    margin-bottom:65;
+}
+
+.accountsTitle {
+    border-bottom: solid 1px;
+    border-width: 1;
+    border-color: #ccc;
+    color: #000;
+}
+.accounts {
+    padding-bottom: 200;
+}
+.accountsTitle Label {
+    font-size: 25;
+    margin-top: 10;
+    margin-bottom: 10;
+    font-weight: bold;
+    text-align: center;
+}
+
+.accountsContent{
+    color:#000;
+}
+
+.linksGrid{
+    margin:0 15;
+    padding:12 0;
+    border-bottom-width:1;
+    border-color:#aaa;
+}
+
+.linksGrid.first{
+    border-top-width:1;
+}
+
+.accountName{
+    text-align: center;
+    margin:20 10;
+    font-size:22;
+    font-weight:bold;
+}
+
+.accountsGraphGrid{
+    padding:0 15;
+    margin-bottom:15;
+}
+
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+
+.progressBar{
+    border-width:1;
+    border-color:#aaa;
+    height:15;
+}
+
+.progressMarker{
+    font-size:14;
+}
+
+.available{
+    background-color:#3da848;
+    text-align: left;
+    horizontal-align:left;
+    height:100%;
+}
+
+.pointerLayout{
+    text-align: left;
+    horizontal-align:left;
+}
+.pointer{
+    horizontal-align:right;
+}
+.spentAmount{
+    horizontal-align:right;
+    font-style: italic;
+    font-size:14;
+}
+.italic{
+    font-style: italic;
+}
+
+/* ADDED ADDITIONALY */
+.chartBlue {
+    background-color: #071d49;
+    height:4;
+    margin-top:-12;
+}
+
+
+
+.chartList{
+    border-bottom-width:1;
+    border-color:#aaa;
+    margin:0 15;
+}
+
+.chartList.last{
+    border-width:0;
+}
+
+
+.moreDetail {
+    padding:0 15;
+    margin-bottom:15;
+}
+.moreDetail .text{
+    color: #071d49;
+    font-size: 14;
+}
+.moreDetail .cost{
+    font-size: 14;
+}
+.boxColor {
+    height: 12;
+    width: 25;
+}
+.detailsColor {
+    padding-right: 10;
+}
+.messageText {
+    color: #071d49;
+    font-style: italic;
+    font-size: 14;
+    margin-top: 15;
+    margin-bottom: 20;
+}
+
+.contributionThisYear{
+    height:100%;
+    background-color:#3da848;
+    horizontal-align:left;
+}
+
+.contributionYtd{
+    height:100%;
+    background-color:#6ebe76;
+    horizontal-align:left;
+}
+
+.spentHolder{
+    horizontal-align:left;
+}
+
+.graphProceedIcon{
+    horizontal-align:right;
+}
+.member-service {
+    background-color: #c6dcee;
+    height: 200;
+    padding-top: 20;
+    padding-right: 10;
+}
+.bold {
+    font-weight: bold;
+}
+.member-service Label {
+    font-size: 15;
+}
+.member-service .call {
+    width: 20;
+    margin-right: 3;
+}
+.member-service .call-container Label {
+    color: #1866a3;
+    font-weight: bold;
+    font-size: 16;
+}
+.member-service .call-container {
+    margin-bottom: 85;
+    width: 100%;
+    margin-right: 10;
+}
+.member-service .q-icon{
+    width: 25;
+    margin-left: 10;
+}

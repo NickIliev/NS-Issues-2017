@@ -1,0 +1,73 @@
+<<ActionBar class="header">    
+     <Label text="Authentication" horizontalAlignment="center" class="header-label"></Label>
+</ActionBar>
+<GridLayout rows="*" columns="*">
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<StackLayout>
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView>
+        <StackLayout>
+            <StackLayout class="caro-container" >
+                <StackLayout orientation="horizontal" horizontalAlignment="center">
+                    <Button text="1" class="caro-button"></Button>
+                    <Button text="2" class="caro-button caro-button-selected"></Button>
+                    <Button text="3" class="caro-button"></Button>
+                </StackLayout>
+            </StackLayout>
+          <StackLayout class="page-background">
+            <StackLayout class="main-container">
+            <StackLayout>
+              <StackLayout class=" mb10 black-text inner-container heading-container">
+                    <Label text="Member Information" class=" heading"></Label>
+                    <Label text="All fields are required." textWrap="true" class="sub-text black-text"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="mem-margin">
+                <GridLayout rows="*" columns="*,*" class="mem-heading black-text ">
+                   <Label text="Member ID" class="label-text inner-container" row="0" col="0"></Label>
+                   <Label text="Suffix" class="label-text inner-container" row="0" col="1"></Label>
+                </GridLayout>
+                 <GridLayout rows="*" columns="*,*" class="mem-value">
+                    <TextField maxLength="12" row="0" col="0" hint="12-digits" #txtfld1 class="input inner-container" id="memid" text="" [(ngModel)]="memid" name="memid"  returnKeyType="next" (returnPress)="goToSuffixField()" (ngModelChange)="changeFocus(memid)"></TextField>
+                    <TextField maxLength="2" row="0" col="1" hint="2-digits" #txtfld2 class="input inner-container " id="suffix" text="" [(ngModel)]="suffix" name="suffix"  keyboardType="phone" (blur)="validCheck(memid,suffix)" ></TextField>
+                </GridLayout>
+                    <Label text="*Required Field" class="alert-danger inner-container" visibility="{{ !isMemIdFilled ? 'visible' : 'collapsed' }}"></Label>
+                   <Label text="Invalid format" class="alert-danger inner-container" visibility="{{ !isMemIdValid ? 'visible' : 'collapsed' }}"></Label>
+            </StackLayout>
+            <StackLayout class="memcard-container">
+                 <Image src="~/images/mem card Authxhdpi.png" stretch = "aspectFit"></Image>
+            </StackLayout>
+           
+             <android>
+              <Ripple rippleColor="#d50000">
+                   <Button text="Continue" autocapitalizationType="none" class="continue-btn primary" (tap)="onContinue(memid,suffix)"></Button>
+                </Ripple>
+              </android>
+             <ios>
+              <Button text="Continue" autocapitalizationType="none" class="continue-btn primary" (tap)="onContinue(memid,suffix)"></Button>
+               </ios>
+            <!--<Label text="Cancel" class="cancel-link black-text" (tap)="oncancelFn()"></Label>-->
+             
+              <android>
+               <Ripple rippleColor="#d50000">
+                             <Button text=" Cancel" autocapitalizationType="none"  class="flat-cancel-button secondary" (tap)="oncancelFn()"></Button>
+                 </Ripple>
+               </android>
+               <ios>
+                <Button text=" Cancel" autocapitalizationType="none"  class="flat-cancel-button secondary" (tap)="oncancelFn()"></Button>
+               </ios>
+             </StackLayout>
+            <StackLayout class="shadow">
+                    <Image  src="~/images/myblue-app2.0-card-shadow.png"></Image>
+            </StackLayout>
+            <StackLayout height="185px">
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>
+<DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+</DockLayout>
+
+</GridLayout>

@@ -1,0 +1,11 @@
+{
+	"name": "nicole-test",
+	"main": "app.js",
+	"version": "2.1.1",
+	"author": "nicole@legalsuite.co.za",
+	"description": "Nativescript test app",
+	"license": "Apache-2.0",
+	"android": {
+		"v8Flags": "--expose_gc"
+	}
+}

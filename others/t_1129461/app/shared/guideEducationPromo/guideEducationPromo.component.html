@@ -1,0 +1,19 @@
+
+<mb-image-slides pageIndicators="true" class="">
+    <mb-image-slide *ngFor="let guideImage of guideImages; let i = index">
+        <GridLayout rows="auto" column="*, auto" orientation="horizontal">
+            <StackLayout width="{{scrWidth}}" height="{{scrHeight}}" 
+                style="background-image:url('{{guideImage}}'); background-size: 100% 100%; " row="0" col="1">
+                <!--<Image width="{{scrWidth}}" height="{{scrHeight}}" src="~/images/education_screen_1.png"></Image>-->
+            </StackLayout>
+            <AbsoluteLayout row="0" col="0" class="closeIcon" horizontalAlignment="right">
+                <Image class="blue-close" loadMode="async" *ngIf="i == 0" (tap)="skipPopUp()" src="~/dummyData/close_blue.png"></Image>
+                <Image class="white-close" loadMode="async" *ngIf="i != 0" (tap)="skipPopUp()" src="~/images/icon/close-type3.png"></Image>
+            </AbsoluteLayout>
+            <!--<StackLayout verticalAlignment="bottom" row="0" col="1">
+                <Label *ngIf="i != guideImages.length-1" text="Skip" (tap)="skipPopUp()" [ngClass]="deviceManufacturerName.toLowerCase() === 'samsung' ? 'skipButtonForSamsung' : 'skipButton'"></Label>
+                <Button *ngIf="i == guideImages.length-1" text="Ok" autocapitalizationType="none" (tap)="skipPopUp()" [ngClass]="deviceManufacturerName.toLowerCase() === 'samsung' ? 'okBottomForSamsung' : 'okBottom'"></Button>
+            </StackLayout>-->
+        </GridLayout>
+    </mb-image-slide>
+</mb-image-slides>

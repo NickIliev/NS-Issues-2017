@@ -1,0 +1,115 @@
+<<ActionBar class="header">    
+     <Label text="Authentication" horizontalAlignment="center" class="header-label"></Label>
+</ActionBar>
+<GridLayout rows="*" columns="*">
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<StackLayout>
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView>
+        <StackLayout [formGroup]="personForm">
+            <StackLayout class="caro-container">
+                <StackLayout orientation="horizontal" horizontalAlignment="center">
+                    <Button text="1" class="caro-button caro-button-selected"></Button>
+                    <Button text="2" class="caro-button "></Button>
+                    <Button text="3" class="caro-button "></Button>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout class="page-background">
+            <StackLayout class="main-container">
+                <StackLayout class=" mb10 black-text inner-container heading-container">
+                    <Label text="Personal Information" class=" heading"></Label>
+                    <Label text="All fields are required." textWrap="true" class="sub-text black-text"></Label>
+                </StackLayout>
+                <StackLayout class="form">
+                    <StackLayout >
+                    <StackLayout class="input-field ">
+                            <Label class="label-text inner-container" text="First Name" textWrap="true"></Label>
+                            <StackLayout class=" text-field-bordered  ">
+                                <TextField  hint="First Name" #firstNameField class="input " id="firstName" text="" [(ngModel)]="firstName" name="firstName" formControlName="firstName" returnKeyType="next" (returnPress)="goToLastNameField()" (blur)="validCheck(firstName,'firstName')"></TextField>
+                            </StackLayout>                            
+                            <Label text="Invalid first name" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isFirstNameValid) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isFirstNameFilled) ? 'visible' : 'collapsed' }}"></Label>
+                        </StackLayout>
+                        <StackLayout class="input-field ">
+                            <Label class="label-text inner-container" text="Last Name" textWrap="true"></Label>
+                            <StackLayout class="text-field-bordered ">
+                                <TextField  hint="Last Name" #lastNameField class="input " id="lastName" text="" [(ngModel)]="lastName" name="lastName" formControlName="lastName" returnKeyType="next" (returnPress)="goToDOBField()" (blur)="validCheck(lastName,'lastName')"></TextField>
+                            </StackLayout>
+                            <Label text="Invalid last name" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isLastNameValid) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isLastNameFilled) ? 'visible' : 'collapsed' }}"></Label>
+                        </StackLayout>
+                        <StackLayout class="input-field">
+                            <Label class="label-text inner-container" text="Date of Birth" textWrap="true"></Label>
+                          
+                        <StackLayout class=" text-field-bordered ">
+                              <TextField class="input " id="dob" #DOBTextField text="" [(ngModel)]="dob" name="dob" [hint]="hintText " formControlName="dob" (blur)="validCheck(dob,'dob')" maxLength="10" returnKeyType="next" (returnPress)="goToMoEmail()" (ngModelChange)="autoFormat(dob)" keyboardType="phone" ></TextField>
+                         <!--<StackLayout  class=" inner-container">                                                    
+                          <date-picker-control [datevalue]="currentDate" (dateChange)="setUpdatedDateValue($event)"></date-picker-control>                       
+                           </StackLayout>-->
+                        </StackLayout>
+                           <!--<StackLayout  class="input-field text-field-bordered date-custom-control">                                                    
+                          <mb-date-picker-control [datevalue]="currentDate" (dateChange)="setUpdatedDateValue($event)"></mb-date-picker-control>                       
+                           </StackLayout>-->
+                            <Label text="Please enter a valid Date of Birth" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isDOBValid) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isDOBFilled) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="Minimum age limit is 18" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isAgeValid) ? 'visible' : 'collapsed' }}"></Label>
+                        </StackLayout>
+                        <StackLayout class="input-field " visibility="{{ (register_type=='email') ? 'visible' : 'collapsed' }}">
+                            <Label class="label-text inner-container" text="Mobile Number" textWrap="true"></Label>
+                             <StackLayout class=" text-field-bordered ">
+                            <TextField hint="Enter 10 digit number" #moField class="input  " id="mobileNum" keyboardType="phone" text="" [(ngModel)]="mobileNum" name="mobileNum" (blur)="validCheck(mobileNum,'mobileNum')"
+                                formControlName="mobileNum" maxLength="10" ></TextField>
+                            <!--<StackLayout  class=" inner-container">                                                    
+                                <mobile-formmater-control [numbervalue]="currentNumber" (numberChange)="setUpdatedNumberValue($event)"></mobile-formmater-control>                       
+                            </StackLayout>-->
+                            </StackLayout>
+                            <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isMobileFilled) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="Invalid mobile number" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isValidMobileNo) ? 'visible' : 'collapsed' }}"></Label>
+                        </StackLayout>
+                        <StackLayout class="input-field " visibility="{{ (register_type=='mobile') ? 'visible' : 'collapsed' }}">
+                            <Label class="label-text inner-container" text="Email Address" textWrap="true"></Label>
+                             <StackLayout class=" text-field-bordered  ">
+                            <TextField class="input  "  #emailField hint="yourname@domain.name" id="emailAddress" text="" keyboardType="email" [(ngModel)]="emailAddress" name="emailAddress" formControlName="emailAddress"  (blur)="validCheck(emailAddress,'emailAddress')"></TextField>
+                             </StackLayout>
+                            <Label text="Invalid email address" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isValidEmail) ? 'visible' : 'collapsed' }}"></Label>
+                            <Label text="*Required Field" textWrap="true" class="alert-danger bodyText inner-container" visibility="{{(!isEmailFilled) ? 'visible' : 'collapsed' }}"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                      <android>
+                            <Ripple rippleColor="#d50000">
+                           <Button text="Continue" autocapitalizationType="none" class="continue-btn-innerwidth primary " (tap)="onContinue(firstName,lastName,emailAddress,dob,mobileNum)"></Button>
+                            </Ripple>
+                        </android>
+                        <ios>
+                            <Button text="Continue" autocapitalizationType="none" class="continue-btn-innerwidth primary " (tap)="onContinue(firstName,lastName,emailAddress,dob,mobileNum)"></Button>
+                        </ios>
+                   
+                    <!--<Label text="Cancel" class="cancel-link  black-text " (tap)="oncancelFn()"></Label>-->
+                     <android>
+                            <Ripple rippleColor="#d50000">
+                             <Button text="Cancel" autocapitalizationType="none"  class="flat-cancel-button secondary" (tap)="oncancelFn()"></Button>
+                            </Ripple>
+                        </android>
+                        <ios>
+                             <Button text="Cancel" autocapitalizationType="none"  class="flat-cancel-button secondary" (tap)="oncancelFn()"></Button>
+                        </ios>
+                  
+                </StackLayout>
+            </StackLayout>
+          
+           <StackLayout class="shadow">
+                    <Image loadMode="async" src="~/images/myblue-app2.0-card-shadow.png"></Image>
+                </StackLayout>
+      
+         <StackLayout height="185px">
+                </StackLayout>
+                  </StackLayout>
+           </StackLayout>
+    </ScrollView>
+</StackLayout>
+<DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+    
+
+</GridLayout>

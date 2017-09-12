@@ -1,0 +1,112 @@
+
+/* NEW CSS */
+
+#claim-summary{
+    background-color:#ddd;
+    color:#000;
+}
+
+
+.claim-item.first{
+    margin-top:20;
+}
+
+.claim-item .date-row{
+    background-color:#fff;
+    padding-top:15;
+    padding-left:20;
+    padding-right:20;
+    border-bottom-width:1;
+    border-color:#ddd;
+    padding-bottom:2;
+}
+
+.claim-item .date-value{
+    font-family: "Arial Bold";
+    font-weight:bold;
+}
+
+.claim-item .name-type-row{
+    background-color:#fff;
+    padding-left:20;
+    padding-right:20;
+    padding-top:10;
+    padding-bottom:10;
+    border-bottom-width:1;
+    border-color:#ddd;
+}
+
+.provider-name{
+    font-family: "Arial Bold";
+    font-weight:bold;
+    color:#1866a3;
+    font-size:18;
+}
+
+.pat-name{
+    font-size:17;
+}
+
+
+
+.sub-text{
+    color:#818181;
+    font-size:14;
+}
+
+.claim-item .amount-row{
+    background-color:#fff;
+    padding-left:20;
+    padding-right:20;
+    padding-top:10;
+    padding-bottom:15;
+}
+
+.claim-item Image.proceed-icon{
+    vertical-align: middle;
+    horizontal-align:right;
+}
+
+.amt-values{
+    font-family: "Arial Bold";
+    font-weight:bold;
+}
+
+.amt-values.grey{
+    color:#818181;
+}
+
+.claim-status-container{
+    vertical-align: middle;
+}
+
+.claim-status{
+    padding:1 10;
+    border-radius:25;
+    color:#fff;
+    border-width:1;
+    text-align: center;
+    font-size:14;
+    font-family: "Arial Bold";
+    font-weight:bold;
+    color:#fff; 
+    text-transform: capitalize;
+}
+.claim-summary-listview {
+    margin-bottom: 45;
+}
+
+.claim-status.pending{
+    background-color:#b2b2b2;
+    border-color:#b2b2b2;
+}
+
+.claim-status.completed{
+    background-color:#3da148;
+    border-color:#3da148;
+}
+
+.claim-status.denied{
+    background-color:#C1272D;
+    border-color:#C1272D;
+}

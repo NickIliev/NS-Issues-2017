@@ -1,0 +1,154 @@
+.build-number-gridlayout {
+    border-color: #b2b2b2;
+    border-bottom-width: 2;
+}
+
+.plus-icon-stacklayout {
+    margin: 5 20;
+    /*border-width: 1;*/
+}
+
+.plus-image {
+    height: 100;
+    width: auto;
+}
+
+.registered-label {
+    margin: 10 20 20 20;
+    color: black;
+    font-size: 10;
+    font-weight: bold;
+}
+
+.my-blue-label {
+    margin-top: 20;
+    height: auto;
+    width: 90;
+}
+
+.buildvalue-stacklayout {
+    padding: 0 20 0 20;
+}
+
+.text-label {
+    margin: 25 0 20 10;
+    font-size: 20;
+    color: black;
+}
+
+.version-text-label {
+    margin: 25 0 20 5;
+    font-size: 20;
+    color: black;
+}
+
+.value-label {
+    margin: 25 0 20 0;
+    font-size: 20;
+    color: black;
+}
+
+.header-label {
+    margin: 7 0;
+    font-size: 20;
+    color: black;
+    font-weight: bold;
+    font-family: Arial Bold;
+}
+
+.right-arrow-image {
+    margin: 7 0;
+    height: 22;
+    width: 20;
+}
+
+.each-gridLayout {
+    padding: 5 20;
+    color: #333;
+    border-bottom-color: #b2b2b2;
+    border-bottom-width: 1;
+    /*margin: 0 20;*/
+}
+
+.massachu-text-label {
+    color: #969696;
+    font-weight: bold;
+    font-size: 20;
+}
+
+.privacy-html {
+    color: black;
+    font-size: 18;
+    background-color: white;
+}
+
+
+/*.mb30 {
+    margin-bottom: 30;
+}*/
+
+.privacy-html p {
+    font-size: 19;
+    color: black;
+}
+
+.img-cont {
+    margin-left: 20;
+    margin-top: 5;
+}
+
+.version-cont {
+    font-size: 20;
+    color: #000;
+    /*margin-top: 20;*/
+    margin: 10 20 10 0;
+    /*margin-right: 20;*/
+    /*border-width: 1;*/
+}
+
+.version-label-container {
+    margin-top: 3;
+}
+
+.version-label {
+    text-align: right;
+    font-size: 18;
+}
+
+.version-value {
+    text-align: left;
+    padding-left: 5;
+    font-size: 18;
+}
+
+.mb50 {
+    margin-bottom: 50;
+}
+
+.upper-shadow-img {
+    background-color: #DEDEDE;
+    height: 20;
+    vertical-align: top;
+}
+
+.lower-shadow-img {
+    background-color: #DEDEDE;
+    height: 20;
+    vertical-align: top;
+}
+
+.logo-img-stack {
+    width: 127;
+    /*border-width: 1;*/
+    margin: 10 0 13 30;
+}
+
+.version-outer-stack {
+    border-bottom-color: #b2b2b2;
+    border-bottom-width: 1;
+}
+
+.webViewScroll {
+    /*background: none;*/
+    margin-bottom: 50;
+}

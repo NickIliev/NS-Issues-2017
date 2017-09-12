@@ -1,0 +1,391 @@
+/* .AccountSignIn {
+    font-size: 30;
+    font-family: Arial Reg;
+    font-weight: normal;
+    margin-left: 5;
+} */
+
+
+/* .regInfo image{
+    width: 32;
+    height: 32;
+} */
+
+
+/* .regGrid{
+    color: white;
+} */
+
+
+/* .reg_group{
+    margin: 5 0 5 5;
+} */
+
+
+/* .regNow_pad{
+    padding: 5 0 10 10;
+} */
+
+
+/* .regFooter{
+    color: #000000;
+    margin: 10 20;
+} */
+
+
+/* .reg_contact{
+     text-decoration: underline;
+      color: #1866a3;
+      padding-bottom: 5; 
+} */
+
+
+/* .AccountSectionStackLayout TextField {
+    padding: 10 10 10 15;
+    font-size: 15;
+}
+.AccountSectionStackLayout .changeUserButton{
+    border-color:#fff;
+}
+.AccountSectionStackLayout .changeUserButton{
+    height:40;
+}
+.AccountSectionStackLayout .changeUserButton Image{
+    width: 20;
+    height: 20;
+    margin-top: 10;
+} */
+
+
+/* .userForm{
+    margin: 0 0 20;
+} */
+
+
+/* .AccountSectionStackLayout Label {
+    padding: 0;
+    margin: 0;
+} */
+
+
+/* .buttonStackLayout {
+    padding: 15 0 0 0;
+} */
+
+
+/* .CheckBoxSectionStackLayout {
+    padding: 5 0 5 25;
+} */
+
+
+/* .CheckBox1st {
+    padding: 0 5 0 5;
+    color: #ffffff;
+} */
+
+
+/* .CheckBox2nd {
+    padding: 0 15 0 20;
+    color: #ffffff;
+} */
+
+
+/* .forgottenPasswordLink {
+    text-align: left;
+    padding: 1;
+    text-decoration: underline;
+    font-weight: bold;
+} */
+
+
+/* .forgottenPasswordQ {
+    text-align: center;
+    padding: 0;
+} */
+
+.UnCheckBox Label {
+    font-family: Arial Reg;
+    font-size: 14;
+}
+
+
+/* .UnCheckBox image {
+    height: 15;
+    width: 15;
+} */
+
+.validationCheck {
+    margin-left: 15;
+    padding: 5;
+    color: #a94442;
+    font-weight: bold;
+    font-size: 13;
+}
+
+.touchIDGrid {
+    background-color: white;
+    padding: 10 0 20 0;
+}
+
+.touchID {
+    text-align: center;
+}
+
+.touchID Image {
+    width: 24;
+    height: 24;
+    margin-right: 5;
+}
+
+.touchID Label {
+    color: #18669C;
+    font-weight: bold;
+}
+
+.touchIDDisable {
+    background-color: #5597CC;
+    padding: 10 0;
+}
+
+.touchIDDisable Label {
+    color: #99C0E0
+}
+
+.notify_text Label {
+    color: #000000;
+    padding: 3 0;
+}
+
+.mainStack {
+    border-bottom-width: 10;
+    border-bottom-color: #DEDEDE;
+}
+
+.notify_arrow Image {
+    width: 18;
+    height: 18;
+}
+
+.notification_grid {
+    padding: 10 20;
+    border-left-width: 10;
+    border-left-color: #0068a0;
+}
+
+.checkTouchId {
+    margin-right: 10;
+    margin-left: 25;
+    font-weight: bold;
+    font-size: 11;
+}
+
+.checkTouchId Label {
+    margin: 0 0 0 7;
+}
+
+
+/* .userArrow {
+    width: 14;
+    height: 14;
+} */
+
+
+/* .reg_lbl {
+    margin: 0 0 15 0;
+} */
+
+.RegisterStackLayout {
+    border-color: #DEDEDE;
+    border-bottom-width: 10;
+}
+
+.regStackLbls {
+    border-right-width: 1;
+    border-right-color: #dddddd;
+    color: #fff;
+}
+
+.regLblHead {
+    font-size: 15;
+    padding: 10 15 10 15;
+}
+
+.regLblSubHead {
+    font-size: 13;
+    padding: 0 5 10 15;
+}
+
+.registerNowText {
+    color: #fff;
+    font-weight: bold;
+    font-size: 13;
+    vertical-align: middle;
+    padding: 0 0 0 5;
+    margin-right: 15;
+}
+
+.registerNowText Label {
+    margin: 0;
+    padding: 0 0 0 0;
+}
+
+.registerNowText Image {
+    margin: 0 0 0 5;
+    padding: 0;
+    height: 20;
+    width: 20;
+}
+
+
+/* .AccountSectionStackLayout {
+    background-color: white;
+    margin: 20 0 0;
+} */
+
+
+/* .borderTopBottom {
+    border-top-width: 1;
+    border-bottom-width: 1;
+    border-top-color: #dddddd;
+    border-bottom-color: #dddddd;
+} */
+
+
+/* .UserName,
+.Password {
+    font-size: 15;
+    font-weight: bold;
+    font-family: "Arial Bold";
+    color: black;
+    font-weight: bold;
+} */
+
+
+/* .regForm {
+    padding: 0 0 5 15;
+} */
+
+.Loginsubmit {
+    background-color: #18669C;
+    color: #fff;
+    font-weight: bold;
+    font-size: 19;
+    font-family: "Arial Bold";
+    text-transform: capitalize;
+    margin: 0 15 10 15;
+    height: 55;
+    z-index:-1;
+    border-color: #0068a0;
+}
+
+.ForgotPasswordStack {
+    border-top-width: 1;
+    border-top-color: #dddddd;
+    border-bottom-width: 1;
+    border-bottom-color: #dddddd;
+    padding: 10 0 10 0;
+    text-align: left;
+}
+
+.extraSpace {
+    height: 20;
+    background-color: white;
+}
+
+.forgottenPassword {
+    padding-left: 15;
+    color: #18669C;
+    font-size: 14;
+    font-weight: bold;
+}
+
+.rightArrow {
+    height: 20;
+    width: 20;
+}
+
+.shadow {
+    background-color: #DEDEDE;
+    height: 150;
+    vertical-align: top;
+}
+
+.userPwdLbl {
+    font-size: 15;
+    font-weight: bold;
+    font-family: "Arial Bold";
+    color: black;
+    font-weight: bold;
+    padding: 20 0 0 15;
+}
+
+.userTxtFld {
+    border-top-width: 1;
+    border-top-color: #DEDEDE;
+    border-bottom-width: 1;
+    border-bottom-color: #DEDEDE;
+    font-size: 15;
+    height: 42;
+    padding: 10 0 10 15;
+}
+
+.pwdTxtFld {
+    border-top-width: 1;
+    border-top-color: #DEDEDE;
+    border-bottom-width: 1;
+    border-bottom-color: #DEDEDE;
+    font-size: 15;
+    height: 42;
+}
+
+.UnCheckBox {
+    padding: 20 0 20 10;
+}
+
+.remberCheck {
+    margin-right: 5;
+    margin-left: 25;
+    font-weight: bold;
+    font-size: 11;
+}
+
+.remberCheck Label {
+    margin: 0 0 0 7;
+}
+
+.loginBtn {
+    background-color: #18669C;
+    color: #fff;
+    font-weight: bold;
+    font-size: 19;
+    font-family: "Arial Bold";
+    text-transform: capitalize;
+    margin: 0 15 10 15;
+    height: 55;
+    z-index: -1;
+    border-color: #0068a0;
+}
+Button.primary:highlighted {
+    background-color: #043167;
+    color:white;
+}
+.showBtn {
+    background-color: #18669C;
+    font-size: 13;
+    padding: 3 0 3 0;
+    font-weight: bold;
+    color: white;
+    border-radius: 20;
+    width: 70;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Arial Bold";
+}
+
+TextField {
+    border-top-width: 1;
+    border-top-color: white;
+    border-bottom-width: 1;
+    border-bottom-color: white;
+    padding: 10 0 10 15;
+}

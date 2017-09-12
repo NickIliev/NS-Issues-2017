@@ -1,0 +1,15 @@
+@import 'nativescript-theme-core/css/core.light.css';
+Page {
+    background-color: lemonchiffon;
+}
+
+ActionBar {
+    background-color: steelblue;
+    color: white;
+    vertical-align: center;
+    horizontal-align: center;
+}
+
+.formLayout {
+    padding: 5;
+}

@@ -1,0 +1,150 @@
+.more-icon{
+    horizontal-align:right;
+    vertical-align: top;
+    width:48;
+}
+
+/* THREE DOTS */
+.moreoptions-container {
+    width: 280;
+    height: auto;
+    margin: 10 10 0 0;
+    border-width: 1px;
+    border-color: #ddd; 
+}
+.moreoptions-container.active{
+}
+.more-inner-container {
+    margin: 0 5 0 0;
+}
+.moreInnerIcon {
+    width: 20;
+    height: 20;
+}
+.more-icon image{
+    width: 32;
+    height: 32;
+}
+.more-icon{
+    padding-left: 20;
+}
+.innerLink {
+    color: #666666;
+    padding: 15 10;
+
+}
+
+.rating-icon{
+    margin-right:2;
+    width:16;
+}
+
+.sub-text{
+    font-size:14;
+}
+.black{
+    color:#000;
+}
+
+.main-list-view{
+    background-color:#ddd;
+    margin-bottom:47;
+}
+
+.doctor-details{
+    padding-bottom:10;
+}
+
+
+.doctor-card{
+    margin-bottom:10;
+}
+
+.doctor-card.first{
+    margin-top:22;
+}
+
+.section{
+    border-bottom-width:1;
+    border-color:#ddd;
+    padding-left:20;
+    padding-right:20;
+    padding-top:5;
+    padding-bottom:5;
+    background-color:#fff;
+}
+
+.doctor-name{
+    color:#1866a3;
+    font-size:18;
+    margin-top:5;
+}
+
+
+.review-container{
+    padding-top:10;
+    padding-bottom:10;
+}
+
+.star-container{
+    margin-right:5;
+}
+
+.call-container{
+    vertical-align: middle;
+}
+
+.icon-item{
+    padding:5 10;
+    font-family:"Arial Bold";
+    font-weight:bold;
+    text-align: center;
+}
+
+
+.call-icon, .map-icon{
+    margin-bottom:5;
+    width:36;
+    height:36;
+}
+
+.icon-item.map{
+    color:#92278f;
+}
+.icon-item.call{
+    color:#1866a3;
+    padding-right:0;
+}
+
+
+.filter-form-field{
+    padding:5 15;
+    
+    border-bottom-width:1;
+    border-left-width:1;
+    border-right-width:1;
+    border-color:#ddd;
+    background-color:#fff;
+}
+
+.filter-form-field Label{
+    vertical-align: middle;
+    margin:0 10;
+}
+
+.filter-form-field .control{
+    vertical-align: middle;
+    margin:5 10;
+    border-color:#ddd;
+    border-bottom-width:1;
+    height:24;
+
+}
+
+.filter-form-field .date-icon{
+    width:24;
+    height:24;
+}
+.search-results{
+    background-color: white;
+}

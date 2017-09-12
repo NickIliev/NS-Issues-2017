@@ -1,0 +1,152 @@
+<ActionBar class="header">
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <StackLayout>
+         <mb-header [logo]="showlogo"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <StackLayout class="homeBg">
+        <ScrollView>
+            <StackLayout>
+                 <!--<Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true"  style="text-align: right; padding-right: 5"> </Label>-->
+                
+                <!-- SignIn & Register Details -->
+                <StackLayout class="mbsignCard"  style="background-color: #0068A0;">
+                    <GridLayout rows="auto" columns="*,70" class="mbsignGrid">
+                        <StackLayout orientation="Vertical" class="mbsignView" row="0" col="0">
+                            <Label class="font-bold" text="You are not signed into your account" textWrap="true"> </Label>
+                            <StackLayout orientation="horizontal">
+                                <!--
+                                    <Button class="registerbtn" (touch)="registerUser();" text="Register Now"> </Button>
+                                    <Label text="Don't have a MyBlue account? " textWrap="true"> </Label>
+                                    <Label text="Register Now" class="registerlbl" (touch)="registerUser();" textWrap="true"> </Label>
+                                -->
+                                <Label textWrap="true" (touch)="registerUser();">
+                                    <FormattedString>
+                                        <Span text="Need to create a MyBlue Account? "></Span>
+                                        <Span text="Register Now" fontFamily="Arial Bold"></Span>
+                                    </FormattedString> 
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
+                        <GridLayout rows="*" columns="*" row="0" col="1" verticalAlignment="middle" horizontalAlignment="right" (touch)="loginUser();">
+                            <StackLayout orientation="horizontal" class="mbsignIcon" row="0" col="0">
+                                <Label text="Sign In" textWrap="true"> </Label>
+                                <Image loadMode="async" src="~/images/icon/right_arrow.png" class="arrowImage"></Image>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </StackLayout>
+                <!-- End SignIn & Register Details -->
+                <!--Find a doctor-->
+                 <!--<StackLayout >
+                    <StackLayout class="mbhealthyCard mbStackLayoutSpace"  style="background-color: #ffffff;">
+                        <GridLayout rows="*,*,*" columns="*" class="mbarticleGrid">
+                        <StackLayout orientation="horizontal" class="fadTitile font-arial" row="0">
+                            <Image src="~/images/redesign/find-a-doc-iconhdpi.png"> </Image>
+                            <Label text="Find a Doctor" textWrap="true"></Label>
+                        </StackLayout>
+                        <StackLayout row="1" class="FADList">
+                            <GridLayout rows="*, *" columns="*">
+                                <StackLayout orientation="horizontal" row="0">
+                                    <Image src="~/images/icon/square.png"> </Image>
+                                    <Label text="Find and compare doctors, dentists, hospitals, and other healthcare providers." textWrap="true"></Label>
+                                </StackLayout>
+                                <StackLayout orientation="horizontal" row="1">
+                                    <Image src="~/images/icon/square.png"> </Image>
+                                    <Label text="Get estimates for over 1,600 common medical procedures." textWrap="true"></Label>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+                       
+                    </GridLayout>
+                     <GridLayout rows="*" columns="*">
+                                    <Label text="Search Now" class="searchNow font-arial" verticalAlignment="middle"
+                           horizontalAlignment="right"></Label>
+                     </GridLayout>
+                    </StackLayout>
+                    <StackLayout class="curveImage">
+                        <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                    </StackLayout>
+                </StackLayout>-->
+                <!-- End of find a doctor-->
+                <!-- Healthy Livivng Details -->
+                <StackLayout *ngFor="let item of healthyAricles">
+                    <StackLayout class="mbhealthyCard mbStackLayoutSpace"  style="background-color: #ffffff;">
+                        <GridLayout rows="*,*" columns="*" class="mbarticleGrid">
+                            <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                                <Image loadMode="async" [src]="item.titleImageURL"> </Image>
+                                <Label verticalalignment="center" [text]="item.title" textWrap="true"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="0" class="mbhealthyBanner">
+                                <GridLayout columns="auto, *" rows="auto, 30">
+                                    <Image loadMode="async" [src]="item.imageURL" stretch="fill" class="mbTileImage" rowSpan="2" col="0"></Image>
+                                    <StackLayout orientation="vertical" col="1" rowSpan="2" class="mbhealthyGridTitle" horizontalAlignment="left" verticalAlignment="top">
+                                        <Label [text]="item.subtitle" class="mbhealthySubTitle font-arial" textWrap="true"></Label>
+                                        <Label [text]="item.description" class="mbhealthySub" textWrap="true"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+                                <GridLayout rows="*" columns="*">
+                                    <Label text="Read Article" class="readArticle font-arial" (touch)="articleDetail();" verticalAlignment="middle"
+                                        horizontalAlignment="right"></Label>
+                                </GridLayout>
+                            </StackLayout>
+                        </GridLayout>
+                    </StackLayout>
+                    <StackLayout class="curveImage">
+                        <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="mbStackLayoutSpace"  style="background-color: #ffffff;">
+                    <GridLayout rows="*,*" columns="*" class="mbarticleGrid">
+                        <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                            <Image loadMode="async" src="~/images/redesign/wellness.png"> </Image>
+                            <Label verticalalignment="center" text="Wellness" textWrap="true"></Label>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" class="mbhealthyBanner">
+                            <StackLayout orientation="vertical" class="" horizontalAlignment="left" verticalAlignment="top">
+                                <Label text="Good reasons well" class="mbhealthySubTitle font-arial" textWrap="true"></Label>
+                                <Label text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                                    class="mbhealthySub" textWrap="true"></Label>
+                            </StackLayout>
+                            <GridLayout rows="*" columns="*">
+                                <Label text="Read Article" class="readArticle font-arial" (touch)="articleDetail();" verticalAlignment="middle"
+                                    horizontalAlignment="right"></Label>
+                            </GridLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+                <!--End Healthy Livivng Details -->
+                <StackLayout class="mbStackLayoutSpace"  style="background-color: #ffffff;">
+                    <GridLayout rows="*,*" columns="*" class="">
+                        <StackLayout orientation="horizontal" class="mbContactlogo" row="0" col="0" verticalalignment="middle" horizontalAlignment="center">
+                            <Image loadMode="async" src="~/images/logo.png"> </Image>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" (tap)="contactUs();">
+                            <GridLayout rows="*" columns="*, 50" class="mblblContact">
+                                <Label text="Contact Us" class="font-arial" row="0" col="0"></Label>
+                                <Image loadMode="async" class="arrowImage" src="~/images/icon/right2.png" col="2" verticalalignment="middle" horizontalAlignment="right" row="0"></Image>
+                            </GridLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage bottomSpace">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>                
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+    <StackLayout class="loaderbg" visibility="{{isBusy ? 'visible' : 'collapsed'}}" isUserInteractionEnabled=false>
+        <GridLayout rows="*">
+            <ActivityIndicator row="1" #activityIndicator busy="true" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

@@ -1,0 +1,88 @@
+/* HEAD */
+.sidemenu-head{
+    background-color:#327db3;
+    border-bottom-width:1;
+    border-color:#fff;
+    color:#fff;
+    font-size:14;
+
+}
+.sidemenu-head .info { /* IOS OVERRIDE IN PLATFORM.IOS.CSS */
+    padding:13 5 3 18;   
+    border-right-width:1;
+    border-color:#fff;
+}
+.status-ios {
+    background-color: #1866a3;
+    height: 20;
+}
+.sidemenu-head .info Button { /* ANDROID OVERRIDE IN PLATFORM.ANDROID.CSS */
+    font-family: "Arial Bold";
+    z-index:-1;
+    background-color:#327db3;
+    margin-left:-5;
+    padding-left:5;
+    text-align: left;
+    text-transform: none;
+    font-weight:bold;
+}
+.sidemenu-head .info .user-name {
+    font-family: "Arial Bold";
+    font-weight:bold;
+    font-size:16;
+}
+.sidemenu-head .action { /* IOS OVERRIDE IN PLATFORM.IOS.CSS */
+    font-family: "Arial Bold";
+    padding:20 12 20 12;
+    vertical-align: middle;
+    horizontal-align: center;
+    font-weight: bold;
+}
+.sidemenu-head .action Image{
+    width: 26;
+    margin-left:7;
+}
+
+.sidemenu-head .action .sign-label{
+    margin-top:3;
+
+}
+.signin-btn{
+    border-width:1;
+    border-color:#327db3;
+    height:100%;
+}
+/* MENU */
+.sidemenu{
+    margin-top:10;
+}
+.sidemenu.nomargin{
+    margin-top:0;
+}
+
+.sidemenu-item{
+    text-align: left;
+    color:#fff;
+    padding:0;
+}
+.sidemenu-item .icon{
+    padding:0 0 0 20;
+    vertical-align: middle;
+}
+.sidemenu-item Button{
+    z-index:-1;
+    padding:18 0 18 15;
+    background-color:#1866a3;
+    color:#fff;
+    font-size:16;
+    text-transform: none;
+    margin: -5;
+}
+.sidemenu-item-disabled {
+    color: #ccc;
+}
+.divider{
+    height:1;
+    background-color:#fff;
+    margin:10 0;
+}

@@ -1,0 +1,96 @@
+<RadSideDrawer #RadSideDrawerComponent showOverNavigation="true" drawerContentSize="330" [drawerLocation]="currentLocation"
+    (drawerClosed)="onDrawerClosed()">
+    <GridLayout tkDrawerContent rows="auto,*" columns="*" class="sidedrawer-left" height="100%">
+        <StackLayout col="0" row="0">
+            <!-- Signed In -->
+            <ios>
+                <StackLayout class="status-ios"></StackLayout>
+            </ios>
+            <!-- <android>
+                <StackLayout class="status-android"></StackLayout>
+            </android> -->
+            <GridLayout rows="*" columns="*,auto" class="sidemenu-head" [visibility]="(isLoggedIn || isUnauthenticated) ? 'visible' : 'collapsed'">
+                <StackLayout col="0" orientation="vertical" class="info">
+                    <Label class="greet-label" text="Welcome"></Label>
+                    <Label class="user-name" textWrap="true" [text]="stubbed_username"></Label>
+                </StackLayout>
+                <GridLayout col="1" rows="*" columns="*" class="action" (tap)="logOff();">
+                    <StackLayout col="0" orientation="horizontal" horizontalAlignment="right" class="sign-panel">
+                        <Label class="sign-label" text="Sign Out "></Label>
+                        <Image loadMode="async" src="~/images/redesign/right-white.png"></Image>
+                    </StackLayout>
+                </GridLayout>
+            </GridLayout>
+
+            <!-- Not Logged In -->
+            <GridLayout rows="*" columns="*,115" class="sidemenu-head" [visibility]="(!isLoggedIn && !isUnauthenticated) ? 'visible' : 'collapsed'">
+                <StackLayout col="0" orientation="vertical" class="info">
+                    <Label class="greet-label" textWrap="true" text="Dont have an account?"></Label>
+                    <Button class="" text="Register Now" (tap)="directNaviagte('create');"></Button>
+                </StackLayout>
+                <GridLayout col="1" rows="*" columns="*" class="action" (tap)="directNaviagte('login');">
+                    <StackLayout col="0" orientation="horizontal" horizontalAlignment="right" class="sign-panel">
+                        <Label class="sign-label" text="Sign In "></Label>
+                        <Image loadMode="async" src="~/images/redesign/right-white.png"></Image>
+                    </StackLayout>
+                </GridLayout>
+            </GridLayout>
+        </StackLayout>
+        <ScrollView row="1" col="0">
+            <StackLayout>
+                <StackLayout class="" orientation="vertical" class="sidemenu">
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" col="0" class="icon m-l-20" (tap)="homeNav();" src="~/images/redesign/hb-home.png"></Image>
+                        <Button col="1" text="Home" (tap)="homeNav();"></Button>
+                    </GridLayout>
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" col="0" class="icon m-l-20" (tap)="loginCheckNavigate('cards');" src="~/images/redesign/hb-mycards.png"></Image>
+                        <Button col="1" text="My Cards" (tap)="loginCheckNavigate('cards');"></Button>
+                    </GridLayout>
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" col="0" class="icon m-l-20" (tap)="loginCheckNavigate('claimSummary');" src="~/images/redesign/hb-claims.png"></Image>
+                        <Button col="1" (tap)="loginCheckNavigate('claimSummary');" text="My Claims"></Button>
+                    </GridLayout>
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" col="0" class="icon m-l-20" (tap)="loginCheckNavigate('mydoctors');" src="~/images/redesign/hb-mydoctors.png"></Image>
+                        <Button col="1" text="My Doctors" (tap)="loginCheckNavigate('mydoctors');"></Button>
+                    </GridLayout>
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" col="0" class="icon m-l-20" (tap)="loginCheckNavigate('medication');" src="~/images/redesign/hb-medications.png"></Image>
+                        <Button col="1" text="My Medications" (tap)="loginCheckNavigate('medication');"></Button>
+                    </GridLayout>
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" col="0" class="icon m-l-20" (tap)="loginCheckNavigate('myPlan');" src="~/images/redesign/hb-financial.png"></Image>
+                        <Button col="1" text="My Plan" (tap)="loginCheckNavigate('myPlan');"></Button>
+                    </GridLayout>
+                    <!-- <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal" [ngClass]="sideMenudisable" id="FinancialLayout">
+                        <Image loadMode="async" col="0" class="icon m-l-20" (tap)="loginCheckNavigate('accounts/home');" src="~/images/redesign/hb-financial.png"></Image>
+                        <Button col="1" text="My Financial" (tap)="loginCheckNavigate('accounts/home');"></Button>
+                    </GridLayout> -->
+                    <!-- <GridLayout columns="53, *" rows="*" class="sidemenu-item" id="FADLayout" orientation="horizontal" [ngClass]="sideMenudisable">
+                        <Image loadMode="async" col="0" class="icon m-l-20" (tap)="FADNav();" src="~/images/redesign/hb-fad.png"></Image>
+                        <Button col="1" text="Find a Doctor" (tap)="FADNav();"></Button>
+                    </GridLayout> -->
+                </StackLayout>
+                <StackLayout class="divider"></StackLayout>
+                <StackLayout orientation="vertical" class="sidemenu nomargin">
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" width="30" height="30" col="0" class="icon m-l-20" (tap)="loginCheckNavigate('settings');" src="~/images/redesign/hb-settings.png"></Image>
+                        <Button col="1" text="Settings" (tap)="loginCheckNavigate('settings');"></Button>
+                    </GridLayout>
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" width="30" height="30" col="0" class="icon m-l-20" (tap)="directNaviagte('aboutapp');" src="~/images/redesign/hb-about.png"></Image>
+                        <Button col="1" text="About MyBlue App" (tap)="directNaviagte('aboutapp');"></Button>
+                    </GridLayout>
+                    <GridLayout columns="53, *" rows="*" class="sidemenu-item" orientation="horizontal">
+                        <Image loadMode="async" width="30" height="30" col="0" class="icon m-l-20" (tap)="directNaviagte('contactUs');" src="~/images/redesign/hb-contactus.png"></Image>
+                        <Button col="1" text="Contact Us" (tap)="directNaviagte('contactUs');"></Button>
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+    <StackLayout tkMainContent>
+        <!--<router-outlet></router-outlet>-->
+    </StackLayout>
+</RadSideDrawer>

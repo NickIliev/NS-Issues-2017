@@ -1,0 +1,47 @@
+.closeIcon {
+    width: 20;
+    height: 20;
+}
+.cardHeader {
+    background-color: #1866A3;
+    color: #ffffff;
+    padding: 15 20 10;
+}
+.cardsIcon {
+    width: 36;
+    height: 36;
+    margin-bottom: 10;
+}
+.patientName {
+    font-size: 18;
+}
+.memberStack {
+    padding: 10 20;
+}
+.callDoctorContainer {
+    text-align: center;
+    color: #1866a3;
+    padding: 5 0 5 10;
+}
+.call-icon {
+    margin-bottom: 5;
+    width: 26;
+    height: 26;
+}
+.cardFront {
+    background-color: #1866A3;
+    color: #ffffff;
+    padding: 15 20 10;
+}
+.copays-header {
+    margin-top: 20;
+}
+.cardFront Label {
+    margin-bottom: 1;
+}
+.support-container {
+    border-bottom-width: 1;
+    border-color: #DDDDDD;
+    padding: 3 20;
+}
+.support-service {}

@@ -1,0 +1,336 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+
+
+<GridLayout rows="*" columns="*" id="accountsHome">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView col="0" row="0">
+        <GridLayout rows="*" columns="*">
+
+
+            <StackLayout class="accounts">
+                <!--<Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true"  style="text-align: right; padding-right: 5"> </Label>-->
+                <StackLayout orientation="vertical" class="accountsTitle">
+                    <Label text="My Accounts"></Label>
+                </StackLayout>
+
+                <SegmentedBar *ngIf="currentAccountList.length == 1" [items]="tabItems" selectedIndex="0" (selectedIndexChange)="onTabChange($event)"
+                    class=""></SegmentedBar>
+
+                <StackLayout class="accountsContent">
+
+                    <!-- TAB 1 -->
+                    <StackLayout visibility="{{ isCurrentYearSelected ? 'visible' : 'collapsed' }}">
+
+                        <!-- IF SINGLE ACCOUNT SHOW GRAPH -->
+                        <StackLayout *ngIf="currentAccountList.length == 1">
+                            <StackLayout *ngFor="let item of currentAccountList; let i = index" class="chartList" [ngClass]="i == currentAccountList.length-1 ? 'last' : ''">
+                                <GridLayout columns="*, 15,  15" rows="*, *, *, *, *" class="accountsGraphGrid">
+                                    <!-- ROW 1 - TITLE -->
+                                    <Label col="0" row="0" class="accountName" textWrap="true" text="{{item.name}}"></Label>
+
+                                    <!-- ROW 2 - MARKER LEGEND -->
+                                    <GridLayout columns="60, *, 100" col="0" row="1" class="progressMarker">
+                                        <Label col="0" text="$0"></Label>
+                                        <Label col="1" class="center" text="{{ (item.totalAmount - item.usedAmount) | currency:'USD':true}} Available"></Label>
+                                        <Label col="2" class="right" horizontalAlign="right" text="{{item.totalAmount | currency:'USD':true}}"></Label>
+                                    </GridLayout>
+
+                                    <!-- ROW 3 - Graph -->
+                                    <StackLayout col="0" row="2" class="progressBar">
+                                        <StackLayout width="{{( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100 }} + %" class="available">
+                                            <StackLayout width="{{( (item.contributionsYTD) / item.totalAmount) * 100 }} + %" class="contributionYtd">
+                                                <StackLayout width="{{( (item.contributionsThisYear - item.usedAmount) / item.totalAmount) * 100 }} + %" class="contributionThisYear">
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <!-- ROW 4 - Pointer -->
+                                    <StackLayout col="0" row="3">
+                                        <StackLayout class="pointerLayout" width="{{ (( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100) + 2}} + %">
+                                            <Image class="pointer" width="15" src="~/images/icon/indicator.png"></Image>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <!-- ROW 4 - INVESTED AMOUNT -->
+                                    <StackLayout col="0" row="3" *ngIf="item.showInvestedAmount" width="100%" orientation="horizontal">
+                                        <Label width="{{ ((item.investedAmount / item.totalAmount) * 100) }} + %" class="chartBlue"></Label>
+                                    </StackLayout>
+
+                                    <!-- ROW 5 - Spent Amount -->
+                                    <StackLayout col="0" row="4">
+                                        <StackLayout class="" width="{{ (( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100) +3}} + %" class="spentHolder">
+                                            <Label class="spentAmount" text="{{item.usedAmount | currency:'USD':true}} spent"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <StackLayout col="1" row="0" rowSpan="6"></StackLayout>
+
+                                    <Image class="graphProceedIcon" col="2" row="0" rowSpan="6" src="~/images/proceed.png"></Image>
+
+                                </GridLayout>
+
+                                <StackLayout width="100%" orientation="vertical" horizontalAlignment="left" verticalAlignment="top" class="moreDetail">
+                                    <StackLayout orientation="vertical" *ngFor="let legend of item.legendDetails; let j = index">
+                                        <GridLayout rows="*" columns="35, *, *">
+                                            <StackLayout row="0" col="0" orientation="horizontal" class="detailsColor" horizontalAlignment="left" verticalAlignment="middle">
+                                                <Label backgroundColor="{{legend.color}}" class="boxColor"></Label>
+                                            </StackLayout>
+                                            <StackLayout row="0" col="1" orientation="horizontal" horizontalAlignment="left" verticalAlignment="middle">
+                                                <Label class="text"  [text]="legend.text"></Label>
+                                            </StackLayout>
+                                            <StackLayout row="0"  col="2" orientation="horizontal" horizontalAlignment="left" verticalAlignment="middle">
+                                                <Label class="cost" [text]="legend.cost | currency:'USD':true"></Label>
+                                            </StackLayout>
+                                        </GridLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <!--Legend details end-->
+                                <StackLayout *ngIf="item.annualContributionLimit" orientation="horizontal" class="messageText" horizontalAlignment="center"
+                                    verticalAlignment="middle">
+                                    <Label text="*The annual contribution limit = {{item.annualContributionLimit | currency:'USD':true}}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <!-- / IF SINGLE ACCOUNT -->
+
+                        <!-- IF MULTIPLE ACCOUNTS -->
+                        <StackLayout *ngIf="currentAccountList.length > 1" [nsRouterLink]="['/accounts/myAccounts']">
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid">
+                                <StackLayout col="0">
+                                    <Label text="View All Health Financial Accounts ({{currentAccountList.length}})"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+
+                        <!-- / IF MULTIPLE ACCOUNTS -->
+
+                        <StackLayout class="linksContainer">
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid" [ngClass]="currentAccountList.length == 1 ? 'first' : ''">
+                                <StackLayout col="0">
+                                    <Label text="Action Items ({{actionItemCount}})"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid">
+                                <StackLayout col="0">
+                                    <Label text="Add a Claim"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid">
+                                <StackLayout col="0">
+                                    <Label text="View all Transactions"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+
+                        <Label textWrap="true" class="accountName" text="Additional Options"></Label>
+
+                        <StackLayout class="linksContainer">
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid first">
+                                <StackLayout col="0">
+                                    <Label text="Reimbursement Settings (Check)"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid">
+                                <StackLayout col="0">
+                                    <Label text="Manage Bank Accounts"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <!-- TAB 2 -->
+                    <StackLayout visibility="{{ isPriorYearSelected ? 'visible' : 'collapsed' }}">
+                        <!-- IF SINGLE ACCOUNT SHOW GRAPH -->
+                        <StackLayout *ngIf="priorAccountList.length == 1">
+                            <StackLayout *ngFor="let item of priorAccountList; let i = index" class="chartList" [ngClass]="i == priorAccountList.length-1 ? 'last' : ''">
+                                <GridLayout columns="*, 15,  15" rows="*, *, *, *, *" class="accountsGraphGrid">
+                                    <!-- ROW 1 - TITLE -->
+                                    <Label col="0" row="0" class="accountName" textWrap="true" text="{{item.name}}"></Label>
+
+                                    <!-- ROW 2 - MARKER LEGEND -->
+                                    <GridLayout columns="60, *, 100" col="0" row="1" class="progressMarker">
+                                        <Label col="0" text="$0"></Label>
+                                        <Label col="1" class="center" text="{{ (item.totalAmount - item.usedAmount) | currency:'USD':true}} Available"></Label>
+                                        <Label col="2" class="right" horizontalAlign="right" text="{{item.totalAmount | currency:'USD':true}}"></Label>
+                                    </GridLayout>
+
+                                    <!-- ROW 3 - Graph -->
+                                    <StackLayout col="0" row="2" class="progressBar">
+                                        <StackLayout width="{{( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100 }} + %" class="available">
+                                            <StackLayout width="{{( (item.contributionsYTD) / item.totalAmount) * 100 }} + %" class="contributionYtd">
+                                                <StackLayout width="{{( (item.contributionsThisYear - item.usedAmount) / item.totalAmount) * 100 }} + %" class="contributionThisYear">
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <!-- ROW 4 - Pointer -->
+                                    <StackLayout col="0" row="3">
+                                        <StackLayout class="pointerLayout" width="{{ (( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100) + 2}} + %">
+                                            <Image class="pointer" width="15" src="~/images/icon/indicator.png"></Image>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <!-- ROW 4 - INVESTED AMOUNT -->
+                                    <StackLayout col="0" row="3" *ngIf="item.showInvestedAmount" width="100%" orientation="horizontal">
+                                        <Label width="{{ ((item.investedAmount / item.totalAmount) * 100) }} + %" class="chartBlue"></Label>
+                                    </StackLayout>
+
+                                    <!-- ROW 5 - Spent Amount -->
+                                    <StackLayout col="0" row="4">
+                                        <StackLayout class="" width="{{ (( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100) +3}} + %" class="spentHolder">
+                                            <Label class="spentAmount" text="{{item.usedAmount | currency:'USD':true}} spent"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <StackLayout col="1" row="0" rowSpan="6"></StackLayout>
+
+                                    <Image class="graphProceedIcon" col="2" row="0" rowSpan="6" src="~/images/proceed.png"></Image>
+
+                                </GridLayout>
+
+                                <StackLayout width="100%" orientation="vertical" horizontalAlignment="left" verticalAlignment="top" class="moreDetail">
+                                    <StackLayout orientation="vertical" *ngFor="let legend of item.legendDetails; let j = index">
+                                        <GridLayout rows="*" columns="35, *, *">
+                                            <StackLayout row="0" col="0" orientation="horizontal" class="detailsColor" horizontalAlignment="left" verticalAlignment="middle">
+                                                <Label backgroundColor="{{legend.color}}" class="boxColor"></Label>
+                                            </StackLayout>
+                                            <StackLayout row="0" col="1" orientation="horizontal" horizontalAlignment="left" verticalAlignment="middle">
+                                                <Label class="text"  [text]="legend.text"></Label>
+                                            </StackLayout>
+                                            <StackLayout row="0"  col="2" orientation="horizontal" horizontalAlignment="left" verticalAlignment="middle">
+                                                <Label class="cost" [text]="legend.cost | currency:'USD':true"></Label>
+                                            </StackLayout>
+                                        </GridLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <!--Legend details end-->
+                                <StackLayout *ngIf="item.annualContributionLimit" orientation="horizontal" class="messageText" horizontalAlignment="center"
+                                    verticalAlignment="middle">
+                                    <Label text="*The annual contribution limit = {{item.annualContributionLimit | currency:'USD':true}}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <!-- / IF SINGLE ACCOUNT -->
+
+                        <!-- IF MULTIPLE ACCOUNTS -->
+                        <StackLayout *ngIf="priorAccountList.length > 1" [nsRouterLink]="['/accounts/myAccounts']">
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid">
+                                <StackLayout col="0">
+                                    <Label text="View All Health Financial Accounts ({{priorAccountList.length}})"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+
+                        <!-- / IF MULTIPLE ACCOUNTS -->
+
+                        <StackLayout class="linksContainer">
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid" [ngClass]="priorAccountList.length == 1 ? 'first' : ''">
+                                <StackLayout col="0">
+                                    <Label text="Action Items ({{actionItemCount}})"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid">
+                                <StackLayout col="0">
+                                    <Label text="Add a Claim"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid">
+                                <StackLayout col="0">
+                                    <Label text="View all Transactions"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+
+                        <Label textWrap="true" class="accountName" text="Additional Options"></Label>
+
+                        <StackLayout class="linksContainer">
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid first">
+                                <StackLayout col="0">
+                                    <Label text="Reimbursement Settings (Check)"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                            <GridLayout columns="*, 12" rows="*" class="linksGrid">
+                                <StackLayout col="0">
+                                    <Label text="Manage Bank Accounts"></Label>
+                                </StackLayout>
+                                <StackLayout col="1">
+                                    <Image class="" src="~/images/proceed.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
+    <DockLayout style.verticalAlignment="bottom" class="member-service">
+        <GridLayout rows="*" columns="50,*" orientation="vertical">
+            <StackLayout col="0" row="0">
+                <Image class="q-icon" src="~/images/icon/q_icon.png"></Image>
+            </StackLayout>
+            <StackLayout col="1" row="0">
+                <Label class="bold"  textWrap="true" text="Have a question about financial accounts?"></Label>
+                <Label textWrap="true"  text="Speak with a representative and get answers to any of your account related questions immediately."></Label>
+            </StackLayout>
+            <StackLayout horizontalAlignment="right" orientation="horizontal" col="1" row="0" (tap)="callPhone('1-888-247-2583')" class="call-container"
+                verticalAlignment="bottom">
+                <Image class="call" src="~/images/icon/call.png"></Image>
+                <Label textWrap="true"  text="Call Now"></Label>
+            </StackLayout>
+        </GridLayout>
+    </DockLayout>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+</GridLayout>

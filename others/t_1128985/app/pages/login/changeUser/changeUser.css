@@ -1,0 +1,38 @@
+.online_text label{
+  color: #000000;
+  padding: 3 0;
+}
+
+.online_text{
+  margin: 20;
+}
+
+.online_id{
+padding:10 20;
+border-color: #000000;
+border-bottom-width:2px;
+border-top-width:2px;  
+}
+
+.touchId Image{
+  width: 20;
+  height: 20;
+  margin-right:5; 
+}
+
+.textBlue{
+   color: #1866a3;
+}
+.attention label{
+  padding: 3 0;
+}
+.attention{
+  background-color: #C6DCEE;
+  padding: 10 20; 
+  margin: 0 0 30;
+}
+
+.diffID{
+  margin: 20 0;
+  text-align: center;
+}

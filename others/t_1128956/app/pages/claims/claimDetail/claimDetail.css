@@ -1,0 +1,63 @@
+/* NEW STYLES */
+
+#claim-detail{
+    background-color:#ddd;
+    color:#000;
+}
+
+ScrollView{
+}
+
+.top-shadow{
+    height:17;
+    margin-top:-4;
+    margin-bottom:4;
+}
+.bottom-shadow{
+    height:17;
+    margin-top:-4;
+    margin-bottom:80;
+}
+
+.claim-detail-label, .amount-values{
+    font-family:"Arial Bold";
+    font-weight:bold;
+}
+
+.amount-values{
+    text-align: right;
+}
+
+.section{
+    padding:10 20;
+    background-color:#fff;
+    border-bottom-width:1;
+    border-color:#ddd;
+}
+
+.marginBottom{
+    margin-bottom: 15;
+}
+
+.status-value{
+    text-transform: capitalize;
+    font-family: 'Arial Bold';
+    font-weight: bold;
+}
+
+.status-value.pending{
+    color:#b2b2b2;
+}
+
+.status-value.completed{
+    color:#3da148;
+}
+
+.status-value.denied{
+    color:#C1272D;
+}
+
+.label-text-stacklayout{
+    background-color:#fff;
+    padding:0;
+}

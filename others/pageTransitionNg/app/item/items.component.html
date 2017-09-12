@@ -1,0 +1,24 @@
+
+<RadSideDrawer tkExampleTitle tkToggleNavButton>
+    <StackLayout tkDrawerContent class="sideStackLayout">
+        <StackLayout class="sideTitleStackLayout">
+            <Label text="Navigation Menu"></Label>
+        </StackLayout>
+        <StackLayout class="sideStackLayout">
+            <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
+            <Label text="Social" [nsRouterLink]="['/item', 3]" pageTransition="flip" class="sideLabel"></Label>
+            <Label text="Promotions" [nsRouterLink]="['/item', 3]" pageTransition="flip" class="sideLabel"></Label>
+            <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
+            <Label text="Important" [nsRouterLink]="['/item', 3]" pageTransition="flip" class="sideLabel"></Label>
+            <Label text="Starred" [nsRouterLink]="['/item', 3]" pageTransition="flip" class="sideLabel"></Label>
+            <Label text="Sent Mail" [nsRouterLink]="['/item', 3]" pageTransition="flip" class="sideLabel"></Label>
+            <Label text="Drafts" [nsRouterLink]="['/item', 3]" pageTransition="flip" class="sideLabel"></Label>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout tkMainContent>
+        <StackLayout class="page">
+            <Label text="some Content here" textWrap="true"></Label>
+            
+        </StackLayout>
+    </StackLayout>
+</RadSideDrawer>

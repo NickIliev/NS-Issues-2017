@@ -1,0 +1,47 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image loadMode="async" src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <StackLayout class="mb50">
+        <ScrollView>
+            <StackLayout>
+                <StackLayout class="articleDetailCard"  style="background-color: #fff;">
+                    <StackLayout class="articleDetailBanner">
+                        <Image loadMode="async" src="~/images/redesign/article_banner.png"> </Image>
+                        <StackLayout orientation="vertical" class="articleDetailText">
+                            <StackLayout orientation="horizontal" class="mbarticleTitile font-arial" row="0" col="0">
+                                <Image loadMode="async" src="~/images/redesign/healthy_living.png"> </Image>
+                                <Label text="Healthy Living" textWrap="true"></Label>
+                            </StackLayout>
+                            <Label text="Tanning's Allure Addictions" class="articleDetailSubTitle font-arial" textWrap="true"></Label>
+                            <Label text="March 31, 2017" class="articleDetailSub" textWrap="true"></Label>
+                        </StackLayout>
+                        <GridLayout columns="*" rows="*"  *mbIfAndroid>
+                           <HtmlView [html]="firstWebViewSRC" class="articleContent" ></HtmlView>
+                            <!--<WebView src="http://www.lipsum.com/"></WebView>-->
+                        </GridLayout>
+                        <GridLayout rows="*" columns="*" *mbIfIos style.paddingLeft="18" style.paddingRight="18">
+                            <HtmlView [html]="htmlString" ></HtmlView>
+                            <!--<WebView src="http://www.lipsum.com/"></WebView>-->
+                        </GridLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+</GridLayout>

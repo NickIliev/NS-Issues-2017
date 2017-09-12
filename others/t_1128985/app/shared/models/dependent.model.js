@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var DependentModel = (function () {
+    function DependentModel() {
+    }
+    return DependentModel;
+}());
+exports.DependentModel = DependentModel;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVwZW5kZW50Lm1vZGVsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZGVwZW5kZW50Lm1vZGVsLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUE7SUFBQTtJQU9BLENBQUM7SUFBRCxxQkFBQztBQUFELENBQUMsQUFQRCxJQU9DO0FBUFksd0NBQWMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgRGVwZW5kZW50TW9kZWwge1xuICAgIFwiZmlyc3ROYW1lXCI6IHN0cmluZztcbiAgICBcImxhc3ROYW1lXCI6IHN0cmluZztcbiAgICBcInR5cGVcIjogc3RyaW5nO1xuICAgIFwiaWRcIjogc3RyaW5nO1xuICAgIFwiaXNTZWxlY3RlZFwiPzogYm9vbGVhbjtcbiAgICBcImRpc3BsYXlOYW1lXCI/OiBzdHJpbmc7XG59Il19

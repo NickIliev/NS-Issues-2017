@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var global_service_1 = require("../../shared/services/global.service");
+var LoginService = (function () {
+    function LoginService(_globalService) {
+        this._globalService = _globalService;
+        this.isnotify = false;
+        this.isuserChange = false;
+    }
+    LoginService.prototype.loginUser = function (params) {
+        return this._globalService.globalLoginPost("mobilelogin_stub", params);
+    };
+    return LoginService;
+}());
+LoginService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [global_service_1.GlobalService])
+], LoginService);
+exports.LoginService = LoginService;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9naW4uc2VydmljZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImxvZ2luLnNlcnZpY2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxzQ0FBMkM7QUFDM0MsdUVBQXFFO0FBT3JFLElBQWEsWUFBWTtJQU1yQixzQkFBb0IsY0FBNkI7UUFBN0IsbUJBQWMsR0FBZCxjQUFjLENBQWU7UUFKMUMsYUFBUSxHQUFZLEtBQUssQ0FBQztRQUMxQixpQkFBWSxHQUFZLEtBQUssQ0FBQztJQUlyQyxDQUFDO0lBRUQsZ0NBQVMsR0FBVCxVQUFVLE1BQU07UUFDWixNQUFNLENBQUMsSUFBSSxDQUFDLGNBQWMsQ0FBQyxlQUFlLENBQUMsa0JBQWtCLEVBQUUsTUFBTSxDQUFDLENBQUM7SUFDM0UsQ0FBQztJQUdMLG1CQUFDO0FBQUQsQ0FBQyxBQWRELElBY0M7QUFkWSxZQUFZO0lBRHhCLGlCQUFVLEVBQUU7cUNBTzJCLDhCQUFhO0dBTnhDLFlBQVksQ0FjeEI7QUFkWSxvQ0FBWSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEluamVjdGFibGUgfSBmcm9tIFwiQGFuZ3VsYXIvY29yZVwiO1xyXG5pbXBvcnQgeyBHbG9iYWxTZXJ2aWNlIH0gZnJvbSBcIi4uLy4uL3NoYXJlZC9zZXJ2aWNlcy9nbG9iYWwuc2VydmljZVwiO1xyXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSBcInJ4anMvT2JzZXJ2YWJsZVwiO1xyXG5cclxuaW1wb3J0IHsgTG9naW5Vc2VyIH0gZnJvbSBcIi4vbG9naW4ubW9kZWxcIjtcclxuXHJcblxyXG5ASW5qZWN0YWJsZSgpXHJcbmV4cG9ydCBjbGFzcyBMb2dpblNlcnZpY2Uge1xyXG5cclxuICAgIHB1YmxpYyBpc25vdGlmeTogYm9vbGVhbiA9IGZhbHNlO1xyXG4gICAgcHVibGljIGlzdXNlckNoYW5nZTogYm9vbGVhbiA9IGZhbHNlO1xyXG4gICAgcHVibGljIGlzRW5hYmxlOiBib29sZWFuO1xyXG4gICAgcHVibGljIGlzRW5hYmxlbm90aWZ5OiBib29sZWFuO1xyXG4gICAgY29uc3RydWN0b3IocHJpdmF0ZSBfZ2xvYmFsU2VydmljZTogR2xvYmFsU2VydmljZSkge1xyXG4gICAgfVxyXG5cclxuICAgIGxvZ2luVXNlcihwYXJhbXMpIHtcclxuICAgICAgICByZXR1cm4gdGhpcy5fZ2xvYmFsU2VydmljZS5nbG9iYWxMb2dpblBvc3QoXCJtb2JpbGVsb2dpbl9zdHViXCIsIHBhcmFtcyk7XHJcbiAgICB9XHJcblxyXG5cclxufSJdfQ==

@@ -1,0 +1,93 @@
+<GridLayout>
+	<StackLayout>
+	<ScrollView>
+	<StackLayout id="security-questions-modal">
+	<StackLayout class="cancel-image inner-container " horizontalAlignment="right">
+	<Image src="~/images/icon/close-type2.png" (tap)="close()"></Image>
+	</StackLayout> 
+	<StackLayout [ngSwitch]="questionNo">
+	<StackLayout *ngSwitchCase="'question1'">
+	<StackLayout class="inner-container ">
+	<Label text="Question #1 of 3" textWrap="true" class="blue-text heading-large" ></Label>
+	<Label text="What was the last address you resided at in the last 5 years?" textWrap="true" class="black-text bodyText mt10" ></Label>
+	</StackLayout>
+	<StackLayout class="blue-layout">
+	
+	<StackLayout class="inner-container bodyText">
+	<Label text="Choose one of the following:" textWrap="true" class="blue-text bold"></Label>
+	<StackLayout class="p-10" *ngFor="let option of radioOptions">
+	<StackLayout orientation="horizontal" verticalAlignment="center">
+	<CheckBox #elem [checked]="option.selected" (checkedChange)="elem.checked !== option.selected && changeCheckedRadio(option)" class="checkbox"></CheckBox>
+	<StackLayout verticalAlignment="center">
+	<Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio(option)"></Label>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	
+	</StackLayout>
+	<StackLayout class="inner-container">
+	<Button text="Continue"  autocapitalizationType="none" class="continue-btn-fullwidth security-continue" (tap)="goToNextQuestion('two')" ></Button>
+	<Label text="Cancel" class="cancel-link black-text mt10" (tap)="close()" ></Label>
+	<Label text="Select an option to proceed" class="alert-danger"  visibility="{{ !option1Selected ? 'visible' : 'collapsed' }}"></Label>
+	</StackLayout>
+	</StackLayout>
+
+	<StackLayout *ngSwitchCase="'question2'">
+	<StackLayout class="inner-container ">
+	<Label text="Question #2 of 3" textWrap="true" class="blue-text heading-large" ></Label>
+	<Label text="What was the last address you resided at in the last 5 years?" textWrap="true" class="black-text bodyText mt10" ></Label>
+	</StackLayout>
+	<StackLayout class="blue-layout">
+	<StackLayout class="inner-container bodyText">
+	<Label text="Choose one of the following:" textWrap="true" class="blue-text bold"></Label>
+	<StackLayout class="bodyText">
+	<StackLayout class="p-10" *ngFor="let option of radioOptions2">
+	<StackLayout orientation="horizontal" verticalAlignment="center">
+	<CheckBox #elem2 [checked]="option.selected" (checkedChange)="elem2.checked !== option.selected && changeCheckedRadio2(option)" class="checkbox"></CheckBox>
+	<StackLayout verticalAlignment="center">
+	<Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio2(option)"></Label>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	<StackLayout class="inner-container">
+	<Button text="Continue" autocapitalizationType="none" class="continue-btn-fullwidth security-continue" (tap)="goToNextQuestion('three')" ></Button>
+	<Label text="Cancel" class="cancel-link black-text mt10" (tap)="close()"></Label>
+	<Label text="Select an option to proceed" class="alert-danger"  visibility="{{ !option2Selected ? 'visible' : 'collapsed' }}"></Label>
+	</StackLayout>
+	</StackLayout>
+	
+	<StackLayout *ngSwitchCase="'question3'">
+	<StackLayout class="inner-container ">
+	<Label text="Question #3 of 3" textWrap="true" class="blue-text heading-large" ></Label>
+	<Label text="What was the last address you resided at in the last 5 years?" textWrap="true" class="black-text bodyText mt10" ></Label>
+	</StackLayout>
+	<StackLayout class="blue-layout">
+	<StackLayout class="inner-container bodyText">
+	<Label text="Choose one of the following:" textWrap="true" class="blue-text bold"></Label>
+	<StackLayout class="bodyText">
+	<StackLayout class="p-10" *ngFor="let option of radioOptions3">
+	<StackLayout orientation="horizontal" verticalAlignment="center">
+	<CheckBox #elem3 [checked]="option.selected" (checkedChange)="elem3.checked !== option.selected && changeCheckedRadio3(option)" class="checkbox"></CheckBox>
+	<StackLayout verticalAlignment="center">
+	<Label [text]="option.text" textWrap="true" (tap)="changeCheckedRadio3(option)"></Label>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	<StackLayout class="inner-container">
+	<Button text="Submit" autocapitalizationType="none" class="continue-btn-fullwidth security-continue" (tap)="goToNextQuestion('submit')" ></Button>
+	<Label text="Cancel" class="cancel-link black-text mt10" (tap)="close()"></Label>
+	<Label text="Select an option to proceed" class="alert-danger"  visibility="{{ !option3Selected ? 'visible' : 'collapsed' }}"></Label>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</StackLayout>
+	</ScrollView>
+	</StackLayout>
+	</GridLayout>

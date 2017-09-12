@@ -1,0 +1,35 @@
+<StackLayout class="mobile-formatter-control">
+    <GridLayout rows="*" columns="*,50">
+    <StackLayout class="mobile-inner-container" horizontalAlignment="left" row="0" col="0">
+    <GridLayout rows="50" columns="*,*,*,*,*,*,*,*,*,*,*,*,*" class="grid">
+        <Label text="(" col="0"></Label>
+        <TextField #p1Field [(ngModel)]="p1" id="p1Field" (ngModelChange)="onMobileNoValueChange($event, p1, p1Field, p2Field, 'p1', 'p1Field'); "
+            hint="5" col="1" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+        <TextField #p2Field [(ngModel)]="p2" id="p2Field" (ngModelChange)="onMobileNoValueChange($event, p2, p2Field, p3Field, 'p2', 'p2Field'); "
+            hint="5" col="2" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+        <TextField #p3Field [(ngModel)]="p3" id="p3Field" (ngModelChange)="onMobileNoValueChange($event, p3, p3Field, p4Field, 'p2', 'p3Field');"
+            hint="5" col="3" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+
+        <Label text=")" col="4"></Label>
+         <TextField #p4Field [(ngModel)]="p4" id="p4Field" (ngModelChange)="onMobileNoValueChange($event, p4, p4Field, p5Field, 'p4', 'p4Field'); "
+            hint="5" col="5" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+         <TextField #p5Field [(ngModel)]="p5" id="p5Field" (ngModelChange)="onMobileNoValueChange($event, p5, p5Field, p6Field, 'p5', 'p5Field'); "
+            hint="5" col="6" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+         <TextField #p6Field [(ngModel)]="p6" id="p6Field" (ngModelChange)="onMobileNoValueChange($event, p6, p6Field, p7Field, 'p6', 'p6Field');"
+            hint="5" col="7" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+
+        <Label text="-" col="8"></Label>
+
+         <TextField #p7Field [(ngModel)]="p7" id="p7Field" (ngModelChange)="onMobileNoValueChange($event, p7, p7Field, p8Field, 'p7', 'p7Field'); "
+            hint="5" col="9" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+         <TextField #p8Field [(ngModel)]="p8" id="p8Field" (ngModelChange)="onMobileNoValueChange($event, p8, p8Field, p9Field, 'p8', 'p8Field'); "
+            hint="5" col="10" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+        <TextField #p9Field [(ngModel)]="p9" id="p9Field" (ngModelChange)="onMobileNoValueChange($event, p9, p9Field, p10Field, 'p9', 'p9Field'); "
+            hint="5" col="11" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+         <TextField #p10Field [(ngModel)]="p10" id="p10Field" (ngModelChange)="onMobileNoValueChange($event, p10, p10Field, '', 'p10', 'p10Field');"
+            hint="5" col="12" keyboardType="phone" returnKeyType="next" maxLength="1"></TextField>
+    </GridLayout>
+ </StackLayout>
+ <Label text="X" class="clear" (tap)="clearDate()" row="0" col="1" horizontalAlignment="right"></Label>
+ </GridLayout>
+</StackLayout>

@@ -1,0 +1,27 @@
+{
+  "description": "Nicoles Test App",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "nativescript": {
+    "id": "org.nativescript.test",
+    "tns-ios": {
+      "version": "3.0.0"
+    },
+    "tns-android": {
+      "version": "3.1.1"
+    }
+  },
+  "dependencies": {
+    "buffer": "5.0.7",
+    "nativescript-theme-core": "1.0.4",
+    "tns-core-modules": "3.1.1"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "lazy": "1.0.11",
+    "nativescript-dev-typescript": "0.5.0",
+    "tns-platform-declarations": "^3.2.0",
+    "typescript": "2.5.2"
+  }
+}

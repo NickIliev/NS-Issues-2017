@@ -1,0 +1,340 @@
+@import "nativescript-theme-core/css/core.light.css";
+@import url("./platform.css");
+Page {
+    
+    font-size: 16;
+    background-color: #ffffff;
+}
+.font-arial {
+    font-family: "Arial Bold";
+    font-weight:bold;
+}
+.font-black{
+    color: #000000; 
+}
+.font-grey{
+    color:  #818181;
+}
+.font-bold{
+    font-weight: bold;
+}
+
+.header {
+    background-color: #ffffff;
+    border-bottom-width:1;
+    border-color: #dddddd;    
+    padding: 5 0;
+   
+}
+.headerLogo {
+    width:130;
+}
+ActionBar {
+    color: #ffffff;
+}
+.headerNav {
+    background-color: green;
+}
+.titleText {
+    color: #0068A0;
+    font-size: 22;
+    vertical-align: top;
+    font-family: "Arial Bold";
+    font-weight:bold;
+    text-align: center;
+}
+.hamburgerMenu {
+    padding-top:5;
+    padding-bottom:5;
+}
+
+.hamburgerMenu Image{
+    width:28;
+    vertical-align: middle;
+}
+
+.test {
+    background-color: red;
+    border-width: 1;
+}
+.actionArrow {
+    width: 20;
+    height: 20;
+}
+/***********Generic styles******************/
+
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.font-bold {
+    font-weight: bold;
+}
+.happyBtn {
+    border-radius: 10px;
+    background-color: #1866a3;
+    color: white;
+    font-weight: bold;
+    font-size: 20;
+    margin: 20 0;
+    padding: 0 10;
+    text-transform: capitalize;
+    border-color: #5698cd;
+    border-width: 10px;
+}
+.iosActionbar {
+    width: 91%;
+}
+.white-bg {
+    background-color: #ffffff;
+}
+/*
+.tabGrid{
+}
+*/
+/*****************side Menu Css****************/
+
+.drawerContentText {
+    padding: 10;
+}
+.drawerContentButton {
+    margin: 10;
+}
+.sideStackLayout {
+    color: #ffffff;
+    margin-top: 10;
+}
+.sideLabelSignIn {
+    padding-top: 20;
+    margin: 10 0 20;
+    border-top-width: 3px;
+    border-color: #ffffff;
+    font-weight: 700;
+    font-size: 16;
+}
+.sideLabelSignIn image {
+    width: 20;
+    height: 20;
+    margin: 2 20 0 5;
+}
+.sideTitleSignedin {
+    height: 75;
+    vertical-align: center;
+    background-color: #5698cd;
+    color: #ffffff;
+    font-size: 24;
+    padding-left: 20;
+}
+.sideTitle {
+    vertical-align: center;
+    background-color: #5698cd;
+    color: #ffffff;
+}
+.sideTitleBlue {
+    font-size: 24;
+    padding-left: 20;
+    margin-top: 20;
+}
+.sideTitleSubtext {
+    padding-left: 20;
+    margin-bottom: 10;
+}
+.sideLabel {
+    padding: 5 20 5 20;
+    font-size: 16;
+    margin: 5 0;
+}
+.sidedrawer-left {
+    background-color: #1866a3;
+}
+.sideLightGrayLabel {
+    background-color: lightgray;
+}
+.sideLabel image {
+    width: 24;
+    height: 24;
+    margin-right: 10;
+}
+.menuDivider {
+    margin: 10 0;
+    border-top-width: 3px;
+    border-color: #ffffff;
+}
+/*****************End side Menu Css****************/
+/* Segmented Bar */
+
+SegmentedBar {
+    selected-background-color: #1866a3;
+}
+.loaderbg {
+    background-color: #cccccc;
+    opacity: 0.5;
+}
+.disableText {
+    color: #cccccc;
+}
+
+
+
+/* COMMON STYLE FOR SEARCH AND FILTER WINDOWS */
+
+
+.search-filter-Panel{
+    background-color:#1866a3;
+    color:#fff;
+}
+
+
+/* SEARCH PANEL */
+.search-filter-Panel .search-panel{
+    font-size:15;
+    border-right-width:1;
+    border-color:#fff;
+    width:33.33%;
+}
+
+.search-filter-Panel .search-panel .search-link-container{
+    font-size:14;
+}
+
+.search-filter-Panel.search-active .search-panel{
+    width:83%;
+}
+
+.search-filter-Panel .search-panel Image{
+    width:26;
+    margin-left:20;
+    vertical-align: middle;
+    padding-top:18;
+    padding-bottom:18;
+}
+
+.search-filter-Panel .search-panel Label{
+    background-color:#1866a3;
+    padding-left:5;
+    vertical-align: middle;
+    padding-top:22;
+    padding-bottom:22;
+    padding-right:20;
+    text-align: left;
+}
+
+.search-filter-Panel.search-active .search-panel Image, .search-filter-Panel.search-active .search-panel Label{
+    visibility:collapse;
+}
+
+
+.search-filter-Panel .search-panel .search-field-container{
+    visibility: collapse;
+}
+
+.search-filter-Panel.search-active .search-panel .search-field-container{
+    visibility: visible;
+}
+
+
+.search-filter-Panel .search-panel .search-field-container TextField{
+    background-color:#fff;
+    color:#333;
+    border-radius:3;
+    margin:10 10;
+    padding:12 10 12 20;
+
+}
+
+
+/* FILTER PANEL */
+
+.search-filter-Panel .filter-panel{
+    padding:10 20 10 15;
+    width:66.66%;
+}
+
+.search-filter-Panel.search-active .filter-panel{
+    width:33.33%;
+}
+
+
+.search-filter-Panel .filter-panel Image{
+    width:26;  
+}
+
+.search-filter-Panel .filter-panel .member-name{
+    font-size:17;  
+}
+.search-filter-Panel .filter-panel .member-type{
+    font-size:14;  
+    color:#ddd;
+}
+
+.search-filter-Panel.search-active .filter-panel .member-name{
+    visibility:hidden;
+}
+
+.search-filter-Panel.search-active .filter-panel .member-type{
+    visibility:hidden;
+}
+
+
+
+.filter-window{
+    color:#000;
+    margin:0 10 5 10; 
+    margin-bottom:60;
+    visibility: hidden;
+    height:auto;
+    vertical-align: top;
+}
+
+
+.filter-window .arrow Image{
+    horizontal-align:right;
+    margin-right:20;
+}
+
+.filter-window .header{
+    background-color:#1866a3;
+    border-width:1; 
+    border-top-width:0;
+    border-color:#ddd; 
+}
+
+.filter-window .filter-item{
+    
+    border-bottom-width:1;
+    border-left-width:1;
+    border-right-width:1;
+    border-color:#ddd;
+    background-color:#fff;
+    font-size:17;
+}
+
+.filter-window .filter-item Button{
+    background-color:#fff;
+    z-index:-1;
+    margin:-5 0 -5 -5;
+    padding:16 25;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.filter-window .filter-item Image{
+    visibility: hidden;
+    border-width:1;
+    border-color:#fff;
+    
+
+}
+.bottomSpace {
+    margin-bottom: 45;
+}
+.filter-window .filter-item.selected Image{
+    visibility:visible;
+}
+
+
+.actionBarWithoutBack{
+    text-align: center;
+}

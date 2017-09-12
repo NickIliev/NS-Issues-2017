@@ -1,0 +1,96 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*" class="bg-color">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <StackLayout class="my-plan">
+        <ScrollView>
+            <StackLayout>
+                <!--Plan information-->
+                <StackLayout class="topSection" orientation="vertical">
+                        <!--<Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true"  style="text-align: right; padding-right: 5"> </Label>-->
+                    <GridLayout rows="*, auto" columns="*, auto">
+                        <StackLayout row="0" col="0">
+                            <Label class="title" textWrap="true" text="HMO Blue NE Options Deductible"></Label>
+                        </StackLayout>
+                        <StackLayout class="helpIcon" row="0" col="1" (tap)="showHelpInfoModal()">
+                            <Image src="~/images/redesign/hb-about2.png"></Image>
+                        </StackLayout>
+                    </GridLayout>
+                    <GridLayout rows="*" columns="auto, auto">
+                        <StackLayout horizontalAlignment="left" row="0" col="0" orientation="vertical">
+                            <Label text="Subscriber ID:"></Label>
+                            <Label text="Group:"></Label>
+                            <Label text="Effect Date: "></Label>
+                        </StackLayout>
+                        <StackLayout row="0" col="1" horizontalAlignment="right" orientation="vertical">
+                            <Label class="font-arial" text="  {{accordionList.subscriberId}}   suffix {{accordionList.subscriberIdSuffix}}"></Label>
+                            <Label class="font-arial" text="  {{accordionList.groupNumber}} Horton Furniture"></Label>
+                            <Label class="font-arial" text="  {{accordionList.benefitStartDate}}"></Label>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout orientation="horizontal" class="curveImage">
+                    <Image loadMode="async" verticalAlignment="top" src="~/images/card-shadow.png"></Image>
+                </StackLayout>
+                <!--End Plan information-->
+                <GridLayout rows="*" columns="*" class="bg-white">
+                    <StackLayout orientation="vertical">
+                        <StackLayout *ngFor="let panel of accordionList.provisionList; let i=index">
+                            <!--Header of accordion-->
+                            <GridLayout class="tapSec {{(togglePanel == i) ? 'borderBottom' : ''}}" (tap)="tabClick(i)" columns="auto,*">
+                                <StackLayout horizontalAlignment="left" col="0">
+                                    <Label class="headerTitle" [text]="panel.title"></Label>
+                                </StackLayout>
+                                <StackLayout horizontalAlignment="right" col="1">
+                                    <Image class="bottomIcon" src="{{togglePanel == i ? '~/images/icon/top1.png' : '~/images/icon/bottom1.png'}}"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                            <!--End Header of accordion-->
+                            <!--Expand content-->
+                            <StackLayout orientation="vertical" [visibility]="(togglePanel == i) ? 'visible' : 'collapsed'" class="detailsSecActive">
+                                <StackLayout horizontalAlignment="left" orientation="vertical">
+                                    <StackLayout (tap)="cards()" class="detailsTitleSec" orientation="horizontal" *ngFor="let header of panel.provisionHeader">
+                                        <Label [ngClass]="header.type ? 'blueText' : ''" verticalAlignment="middle" [text]="header.text"></Label>
+                                        <GridLayout columns="auto,*" orientation="horizontal" [visibility]="(header.type) ? 'visible' : 'collapsed'">
+                                            <Label col="0" horizontalAlignment="left" verticalAlignment="middle" class="type" text=" ({{header.type}})"></Label>
+                                            <StackLayout horizontalAlignment="right" verticalAlignment="middle" col="1" class="rightIcon">
+                                                <Image horizontalAlignment="right" src="~/images/icon/right2.png"></Image>
+                                            </StackLayout>
+                                        </GridLayout>
+                                        <Label verticalAlignment="middle" [visibility]="(header.amount) ? 'visible' : 'collapsed'" text=" ${{header.amount}}"></Label>
+                                    </StackLayout>
+                                    <StackLayout [visibility]="(panel.provisionBody) ? 'visible' : 'collapsed'" class="provisionBody" orientation="horizontal" *ngFor="let bodyText of panel.provisionBody">
+                                        <Image class="dotImage" src="~/images/icon/dot1.png"></Image>
+                                        <Label [text]="bodyText"></Label>
+                                    </StackLayout>
+                                    <StackLayout orientation="vertical" [visibility]="(panel.provisionFooter) ? 'visible' : 'collapsed'">
+                                        <Label class="bottomText" textWrap="true" [text]="panel.provisionFooter"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                            <!--End Expand content-->
+                        </StackLayout>
+                    </StackLayout>
+                </GridLayout>
+                <StackLayout orientation="horizontal" class="curveImage">
+                    <Image loadMode="async" verticalAlignment="top" src="~/images/card-shadow.png"></Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+    <DockLayout style.verticalAlignment="bottom" verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+</GridLayout>

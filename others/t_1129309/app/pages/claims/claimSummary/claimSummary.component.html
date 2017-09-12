@@ -1,0 +1,140 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<StackLayout id="claim-summary">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+
+
+    <GridLayout rows="*" columns="*">
+
+
+        <GridLayout rows="auto, *" columns="*" class="claim-summary">
+
+            <!-- SEARCH AND FILTER PANEL -->
+            <StackLayout row="0" class="search-filter-Panel" orientation="horizontal" [ngClass]="isSearchExpanded ? 'search-active' : ''">
+                <StackLayout #searchPanel class="search-panel" orientation="vertical" horizontalAlignment="right">
+
+                    <GridLayout #searchDefaultView columns="auto, *" rows="*" class="search-link-container" (tap)="showExpandedSearchView()">
+                        <Image col="0" src="~/images/redesign/search-white.png"></Image>
+                        <GridLayout columns="*" rows="*" col="1">
+                            <Label row="0" col="0" class="font-arial" text="Search"></Label>
+                        </GridLayout>
+                    </GridLayout>
+
+                    <GridLayout #searchExpandedView columns="*" rows="*" class="search-field-container">
+                        <TextField autocapitalizationType="none" hint="Search"></TextField>
+                    </GridLayout>
+
+
+                </StackLayout>
+
+                <GridLayout class="filter-panel" orientation="horizontal" rows="*" columns="*, auto" (tap)="toggleFilter();">
+                    <StackLayout col="0" orientation="vertical">
+                        <Label class="member-name" text="{{selectedMember.firstName}} {{selectedMember.lastName}}"></Label>
+                        <Label class="member-type" text="{{selectedMember.type}}"></Label>
+                    </StackLayout>
+                    <Image col="1" src="~/images/redesign/down-white.png"></Image>
+                </GridLayout>
+            </StackLayout>
+
+
+
+            <GridLayout rows="*" columns="*" row="1" col="0" colSpan="2">
+                <!-- CLAIMS LIST -->
+                <!--<StackLayout >
+                    <Label text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true" style="text-align: right; padding-right: 5"> </Label>
+                </StackLayout>-->
+                <ListView (pan)="hideAllOverlayWindow()" #claimSummaryListView [items]="claimList" *ngIf="claimList.length" class="claim-summary-listview" (loadMoreItems)="loadMoreClaims($event)"
+                    (itemTap)="loadClaimDetail($event, 'claim')" separatorColor="transparent">
+                    <ng-template let-claim="item" let-index="index">
+                        <ListView.itemTemplate>
+                            <GridLayout columns="*, *, *" rows="auto, auto, auto, 17" class="claim-item" [ngClass]="index == 0 ? 'first' : ''">
+                                <!-- Row 1 -->
+                                <StackLayout class="date-row" col="0" colSpan="3" row="0" orientation="horizontal">
+                                    <Label class="sub-text" text="Date of Service: "></Label>
+                                    <Label class="date-value" text="{{claim.DOS}}"></Label>
+                                </StackLayout>
+
+                                <!-- Row 2 -->
+                                <GridLayout columns="*, 18" col="0" colSpan="3" row="1" class="name-type-row">
+                                    <StackLayout orientation="vertical" col="0">
+                                        <Label class="provider-name" text="{{claim.PrvName}}"></Label>
+                                        <Label class="pat-name" text="{{claim.PatName}}"></Label>
+                                        <Label class="sub-text" text="{{claim.PatRelation}}"></Label>
+                                    </StackLayout>
+                                    <Image col="1" src="~/images/redesign/right_grey.png" class="proceed-icon"></Image>
+                                </GridLayout>
+
+                                <!-- Row 3 -->
+                                <GridLayout col="0" colSpan="3" row="2" columns="*,*,100" rows="*" class="amount-row">
+                                    <StackLayout col="0" orientation="vertical" class="">
+                                        <Label class="sub-text" text="Amount Covered:"></Label>
+                                        <Label class="amt-values" [ngClass]="!claim.PrvSubAmt ? 'grey' : ''" text="{{claim.PrvSubAmt | currency:'USD':true}}"></Label>
+                                    </StackLayout>
+                                    <StackLayout class="" col="1" orientation="vertical">
+                                        <Label class="sub-text" text="What You Owe:"></Label>
+                                        <Label class="amt-values" [ngClass]="!claim.MemOwedAmt ? 'grey' : ''" text="{{claim.MemOwedAmt | currency:'USD':true}}"></Label>
+                                    </StackLayout>
+                                    <StackLayout class="" col="2" orientation="vertical" class="claim-status-container">
+                                        <Label class="claim-status" [ngClass]="claim.ClmStat | ClaimStatus" text="{{claim.ClmStat | ClaimStatus}}"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+
+                                <!-- ROW 4 -->
+                                <StackLayout col="0" colSpan="3" row="3" class="shadow">
+                                    <Image src="~/images/redesign/shadow.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </ListView.itemTemplate>
+                    </ng-template>
+                </ListView>
+                <!-- /CLAIMS LIST -->
+
+            </GridLayout>
+
+            <!-- FILTER WINDOW -->
+            <GridLayout #filterWindow rows="*" columns="*" row="1" col="0" colSpan="2" class="filter-window">
+                <GridLayout rows="12, 40, auto">
+                    <StackLayout class="arrow" row="0" col="0">
+                        <Image class="" src="~/images/redesign/triangle.png" row="0" col="1"></Image>
+                    </StackLayout>
+
+                    <StackLayout class="header" row="1" col="0">
+                    </StackLayout>
+
+                    <StackLayout class="content" row="2" col="0">
+                        <GridLayout *ngFor="let item of memberList; let i = index" class="filter-item" [class.selected]="item.isSelected" rows="*"
+                            columns="*,auto" (tap)="selectMember(item);">
+                            <Button textWrap="true" text="{{item.firstName}} {{item.lastName}}" row="0" col="0" class="option-text" (tap)="selectMember(item);"></Button>
+                            <Image class="" src="~/images/redesign/selected-blue.png" row="0" col="1" (tap)="selectMember(item);"></Image>
+                        </GridLayout>
+                    </StackLayout>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+
+
+
+        <DockLayout style.verticalAlignment="bottom">
+            <mb-tab></mb-tab>
+        </DockLayout>
+
+        <StackLayout class="" visibility="{{isBusy ? 'visible' : 'collapsed'}}" isUserInteractionEnabled=false>
+            <GridLayout rows="*">
+                <ActivityIndicator row="1" #activityIndicator busy="true" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+            </GridLayout>
+        </StackLayout>
+
+    </GridLayout>
+</StackLayout>

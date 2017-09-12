@@ -1,0 +1,134 @@
+/****start three dot css*****/
+.more-icon{
+    horizontal-align:right;
+    vertical-align: top;
+    width:48;
+}
+
+
+.moreoptions-container {
+    width: 280;
+    height: auto;
+    margin: 10 10 0 0;
+     border-width: 1px;
+    border-color: #ddd;
+
+}
+.more-inner-container {
+    margin: 0 5 0 0;
+}
+.moreInnerIcon {
+    width: 20;
+    height: 20;
+}
+.more-icon image{
+    width: 32;
+    height: 32;
+}
+.more-icon{
+    padding-left: 20;
+}
+.innerLink {
+    color: #666666;
+    padding: 15 10;
+}
+/****end three dot css*****/
+/****drp css*****/
+/* SEARCH PANEL */
+
+/* end SEARCH PANEL */
+/* GRID */
+
+ScrollView {
+    margin-bottom: 45;
+}
+
+.main-list-view{
+    background-color:#ddd;
+    margin-bottom:47;
+}
+
+
+.medication-card{
+    margin-bottom:10;
+}
+
+.medication-card.first{
+    margin-top:22;
+}
+
+
+
+.medication-details{
+    padding-top:10;
+}
+
+
+.section{
+    border-bottom-width:1;
+    border-color:#ddd;
+    padding-left:20;
+    padding-right:20;
+    padding-top:5;
+    padding-bottom:3;
+    background-color:#fff;
+}
+
+
+.sub-text {
+    font-size: 13;
+    margin-top:8;
+}
+.black{
+    color:#000;
+}
+
+
+
+.icon-item{
+    padding:5 10;
+    font-family:"Arial Bold";
+    font-weight:bold;
+    text-align: center;
+    font-size:14;
+}
+
+
+.call-icon, .map-icon{
+    margin-bottom:5;
+    width:28;
+    height:28;
+}
+
+.icon-item.map{
+    color:#92278f;
+}
+.icon-item.call{
+    color:#1866a3;
+    padding-right:0;
+}
+
+
+.pharmacy-name, .doctor-details{
+    font-weight:bold;
+    font-family:"Arial Bold";
+    color:#1866a3;
+}
+
+.medication-name, .form-dosage{
+    color:#000;
+    font-weight: bold;
+    font-family: "Arial Bold";
+    font-size:17;
+}
+
+
+
+.Addressdetails{
+    padding-top:10;
+}
+
+
+.call-container {
+    vertical-align: middle;
+}

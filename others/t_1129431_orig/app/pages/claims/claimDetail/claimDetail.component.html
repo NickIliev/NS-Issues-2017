@@ -1,0 +1,118 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*" id="claim-detail">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <!-- CLAIMS DETAIL -->
+    <StackLayout>
+
+        <ScrollView>
+            <StackLayout class="scroll-view-content">
+                <Image class="top-shadow" src="~/images/redesign/shadow.png"></Image>
+                <!--<Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true" style="text-align: right; padding-right: 5"> </Label>-->
+                <GridLayout rows="*" columns="*">
+                    <StackLayout>
+
+                        <StackLayout orientation="horizontal" class="section">
+                            <Label textWrap="true" text="Date of Service: "></Label>
+                            <Label class="claim-detail-label" textWrap="true" text="{{selectedClaim.DOS}}"></Label>
+                            <!-- <Label class="claim-detail-label" textWrap="true" text="{{selectedClaim.PatName}}"></Label> -->
+                        </StackLayout>
+
+                        <StackLayout orientation="vertical" class="section">
+                            <Label class="claim-detail-label" textWrap="true" text="{{selectedClaim.PrvName}}"></Label>
+                            <Label textWrap="true" text="{{selectedClaim.address}}"></Label>
+                            <Label textWrap="true" text="{{selectedClaim.phone}}"></Label>
+                        </StackLayout>
+
+                        <StackLayout orientation="horizontal" class="section">
+                                <Label textWrap="true" text="{{selectedClaim.PatName}}"></Label>
+                        </StackLayout>
+
+                        <StackLayout orientation="horizontal" class="section">
+                            <Label class="claim-detail-label" textWrap="true" text="Claim No. "></Label>
+                            <Label textWrap="true" text="{{selectedClaim.ICN}}"></Label>
+                        </StackLayout>
+
+                        <StackLayout orientation="vertical" class="section">
+
+                            <GridLayout rows="*" columns="*,20">
+                                <StackLayout orientation="horizontal" col="0">
+                                    <Label class="claim-detail-label" textWrap="true" text="Status: "></Label>
+                                    <Label class="status-value" [ngClass]="selectedClaim.ClmStat | ClaimStatus" textWrap="true" text="{{selectedClaim.ClmStat | ClaimStatus }}"></Label>
+                                </StackLayout>
+                                <!-- <Image row="0" col="1" src="~/images/icon/verifyidentity.png" class="info-image" horizontalAlignment="right" (tap)="showOrHideContextualHelp();"></Image> -->
+                            </GridLayout>
+
+                            <!--
+                            <StackLayout class="label-text-stacklayout" visibility="{{(isHelpInfoVisible) ? 'visible' : 'collapsed' }}">
+                                <GridLayout class="" height="130" columns="*" rows="*" *mbIfAndroid>
+                                    <WebView [src]="claimHelpInfoHtml" height="130" class="helpinfo-webview"></WebView>
+                                </GridLayout>
+                                <GridLayout class="" columns="*" rows="*" height="130" *mbIfIos>
+                                    <WebView [src]="claimHelpInfoHtml" height="130" class="helpinfo-webview"></WebView>
+                                </GridLayout>
+                            </StackLayout>
+                            -->
+
+                            <Label *ngIf="selectedClaim.LineMsg" textWrap="true" text="{{selectedClaim.LineMsg}}"></Label>
+                        </StackLayout>
+
+
+
+                        <GridLayout class="section" columns="*,auto" rows="auto,auto,auto,auto,auto">
+ 
+                            <!-- AMOUNT SUBMITTED -->
+                            <Label class="marginBottom" row="0" col="0" text="Amount Submitted"></Label>
+                            <Label row="0" col="1" class="marginBottom amount-values" [text]="selectedClaim.PrvSubAmt| currency:'USD':true"></Label>
+
+                            <!-- AMOUNT ALLOWED -->
+                            <StackLayout orientation="vertical" row="1" col="0">
+                                <Label class="" textWrap="true" text="Amount Allowed"></Label>
+                                <Label class="marginBottom subtext" text="by Blue Cross"></Label>
+                            </StackLayout>
+                            <Label class="marginBottom amount-values" row="1" col="1" [text]="selectedClaim.AlldAmt| currency:'USD':true"></Label>
+
+                            <!-- AMOUNT PAID -->
+                            <StackLayout orientation="vertical" row="2" col="0">
+                                <Label class="" textWrap="true" text="Amount Paid"></Label>
+                                <Label class=" marginBottom subtext" text="by Blue Cross"></Label>
+                            </StackLayout>
+                            <Label class="marginBottom amount-values" row="2" col="1" [text]="selectedClaim.ProAmt | currency:'USD':true"></Label>
+
+                            <!-- AMOUNT DEDUCTIBLE -->
+                            <StackLayout orientation="vertical" row="3" col="0">
+                                <Label class="" textWrap="true" text="Amount Towards"></Label>
+                                <Label class="marginBottom subtext" text="Your Deductible"></Label>
+                            </StackLayout>
+                            <Label class="marginBottom amount-values" row="3" col="1" [text]="selectedClaim.DedAmt| currency:'USD':true"></Label>
+
+                            <!-- TOTAL AMOUNT BILLED -->
+                            <Label class="marginBottom" textWrap="true" row="4" col="0" text="Total Amount Billed"></Label>
+                            <Label class="marginBottom amount-values" row="4" col="1" [text]="selectedClaim.totBilledAmt | currency:'USD':true"></Label>
+
+                        </GridLayout>
+
+                    </StackLayout>
+                </GridLayout>
+                <Image class="bottom-shadow" src="~/images/redesign/shadow.png"></Image>
+            </StackLayout>
+        </ScrollView>
+
+    </StackLayout>
+    <!-- /CLAIMS DETAIL -->
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+</GridLayout>

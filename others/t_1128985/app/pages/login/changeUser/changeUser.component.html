@@ -1,0 +1,48 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" text="Back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView>
+        <StackLayout class="ChangeUserStack">
+            <StackLayout orientation="vertical" class="log_pad online_text">
+                <Label text="Use a different Online ID" class="font-bold"> </Label>
+                <Label text="You can continue to use your current online ID, or choose a different account to sign in." textWrap="true"> </Label>
+            </StackLayout>
+            <StackLayout orientation="vertical" class="log_pad attention">
+                <Label text="Attention!" class="font-bold textBlue"> </Label>
+                <Label text="Touch ID will need to be reactivated each time a new ID is used." textWrap="true"> </Label>
+            </StackLayout>
+
+            <GridLayout rows="*" columns="*, 150" class="online_id">
+                <StackLayout row="0" col="0" orientation="horizontal">
+                    <Label text="Online ID: " class="textBlue"> </Label>
+                    <Label [text]="userName" class=""> </Label>
+                </StackLayout>
+                <StackLayout *ngIf="isTouchIdEnable" row="0" col="1" class="touchId" orientation="horizontal" horizontalAlignment="right">
+                    <Image src="~/images/icon/touch_enable.png"></Image>
+                    <Label text="Enabled" class=""> </Label>
+                </StackLayout>
+                <StackLayout *ngIf="!isTouchIdEnable" row="0" col="1" class="touchId" orientation="horizontal" horizontalAlignment="right">
+                    <Image src="~/images/icon/touch_disabled.png"></Image>
+                    <Label text="Touch ID Off" class=""> </Label>
+                </StackLayout>
+            </GridLayout>
+            <StackLayout orientation="vertical" class="log_pad diffID">
+                <Label (tap)="diffUser();" text="Use a different Online ID" class="font-bold textBlue"> </Label>
+
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

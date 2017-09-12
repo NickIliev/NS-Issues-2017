@@ -1,0 +1,43 @@
+/***************Guide Education window************/
+.guideEducation {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+.mainImage {
+    height: 100%;
+    width: 100%;
+}
+.mainImage Image{
+    height: 100%;
+    width: 100%;
+}
+.skipButton, .skipButtonForSamsung {
+    text-align: center;
+    font-family: "Arial Bold";
+    color: #000000;
+    font-size: 20;
+}
+.closeIcon {
+    z-index: 9;
+}
+.closeIcon Image {
+    width: 25;
+    height: 25;
+    margin: 15;
+}
+.okBottom, .okBottomForSamsung {
+    background-color: #1866a3;
+    width: 100%;
+    padding-top: 10;
+    padding-bottom: 10;
+    margin-right: 20;
+    margin-left: 20;
+    font-family: "Arial Bold";
+    color: #fff;
+    border-radius: 5;
+    text-transform: capitalize;
+    font-size: 20;
+}
+/***************End Guide Education window************/

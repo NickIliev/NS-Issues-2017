@@ -1,0 +1,59 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <StackLayout>
+        <!--<Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true" style="text-align: right; padding-right: 5"> </Label>-->
+        <StackLayout>
+            <StackLayout class="upper-shadow-img">
+                <Image src="~/images/myblue-app2.0-card-shadow.png"></Image>
+            </StackLayout>
+            <GridLayout rows="auto" columns="120, *" class="version-outer-stack">
+                <StackLayout orientation="horizontal" class="logo-img-stack" verticalAlignment="bottom" col="0" row="0">
+                    <Image src="~/images/redesign/logo.png"></Image>
+                </StackLayout>
+                <GridLayout rows="*" columns="*,*" row="0" col="1" class="version-cont">
+                    <GridLayout row="0" col="0" orientation="horizontal" columns="*,auto" rows="*" class="version-label-container">
+                        <Label col="0" row="0" text="Build " class="version-label"></Label>
+                        <Label [text]="buildValue+'\u200b'" row="0" col="1" class="version-value"></Label>
+                    </GridLayout>
+                    <GridLayout row="0" col="1" orientation="horizontal" columns="*,auto" rows="*" class="version-label-container">
+                        <Label col="0" row="0" text="Version " class="version-label"></Label>
+                        <Label [text]="versionNumber+'\u200b'" col="1" row="0" class="version-value"></Label>
+                    </GridLayout>
+                </GridLayout>
+            </GridLayout>
+            <ListView [items]="textList" separatorColor="transparent" height="175" (itemTap)="onItemTap($event)">
+                <ng-template let-header="item" let-i="index">
+                    <ListView.itemTemplate>
+                        <GridLayout rows="auto" columns="*,auto" class="each-gridLayout">
+                            <Label row="0" col="0" [text]="header" class="header-label"></Label>
+                            <Image row="0" col="1" horizontalAlignment="right" src="~/images/proceed.png" class="right-arrow-image"></Image>
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+        <StackLayout class="plus-icon-stacklayout">
+            <Image src="~/images/massu1.png" class="plus-image"></Image>
+        </StackLayout>
+        <StackLayout class="upper-shadow-img" height="200">
+            <Image src="~/images/myblue-app2.0-card-shadow.png"></Image>
+        </StackLayout>
+    </StackLayout>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+</GridLayout>

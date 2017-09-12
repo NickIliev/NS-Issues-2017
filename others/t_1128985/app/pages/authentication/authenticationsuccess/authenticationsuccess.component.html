@@ -1,0 +1,35 @@
+<ActionBar class="header">
+    <Label text="Authentication" horizontalAlignment="center" class="header-label"></Label>
+</ActionBar>
+<GridLayout rows="*" columns="*">
+    <StackLayout>
+        <ScrollView>
+            <StackLayout class="page-background">
+                <StackLayout class="main-container">
+                    <!--Continue Button StackLayout Starts-->
+                    <StackLayout class=" mb10 black-text inner-container heading-container auth-success-container">
+                        <Label text="All done!" class="heading"></Label>
+                        <Label text="You now have full access to your personal and plan information." textWrap="true" class="sub-text black-text"></Label>
+                     
+                        <android>
+                            <Ripple rippleColor="#d50000">
+                             <Button id="continueToMyBlueButton" text="Continue to My Blue" autocapitalizationType="none" class="continue-my-blue-btn primary" (tap)="close()"></Button>
+                            </Ripple>
+                        </android>
+                        <ios>
+                              <Button id="continueToMyBlueButton" text="Continue to My Blue" autocapitalizationType="none" class="continue-my-blue-btn primary" (tap)="close()"></Button>
+                        </ios>                  
+                    </StackLayout>
+                    <!--Continue Button StackLayout Ends-->
+                </StackLayout>
+                <StackLayout class="shadow">
+                    <Image src="~/images/myblue-app2.0-card-shadow.png"></Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+
+</GridLayout>

@@ -1,0 +1,28 @@
+<Page 
+  xmlns="http://schemas.nativescript.org/tns.xsd" 
+  xmlns:lv="nativescript-telerik-ui-pro/listview" loaded="onLoaded">
+  <Page.actionBar>
+    <ActionBar>
+      <ActionBar.titleView>
+        <NavigationButton android.systemIcon="ic_menu_back" tap="{{onBack}}"></NavigationButton>
+        <StackLayout>
+          <StackLayout>
+            <Label text="List"/>
+          </StackLayout>
+        </StackLayout>
+      </ActionBar.titleView>
+    </ActionBar>
+  </Page.actionBar>
+  <DockLayout>
+    <lv:RadListView id="filenoteListView" items="{{dataItems}}">
+      <lv:RadListView.listViewLayout>
+        <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+      </lv:RadListView.listViewLayout>
+      <lv:RadListView.itemTemplate>
+        <StackLayout orientation="vertical">
+          <Label fontSize="20" text="{{description}}"/>
+        </StackLayout>
+      </lv:RadListView.itemTemplate>
+    </lv:RadListView>
+  </DockLayout>
+</Page>

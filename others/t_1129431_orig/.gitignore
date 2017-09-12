@@ -1,0 +1,10 @@
+/******Ignnored Files******/
+/hooks
+
+/node_modules
+
+/tsconfig.json
+/app/*.js
+*.js
+/platforms
+app/pages/home/anonymousHome/anonymousHome.component.ts

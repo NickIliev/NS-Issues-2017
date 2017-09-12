@@ -1,0 +1,68 @@
+<StackLayout id="claim-filter-modal">
+    <GridLayout columns="*, 18" rows="*, 50" verticalAlignment="top">
+        <!-- FILTER CONTROLS -->
+        <ScrollView col="0" row="0" colSpan="2">
+            <StackLayout id="filterScrollViewContent">
+                <GridLayout rows="auto, auto" cols="*">
+                    <StackLayout row="0" cssClass="page-header">
+                        <Label text="Sort By" class="control-label mrgTopNil"></Label>
+                    </StackLayout>
+
+                    <StackLayout row="1">
+                        <GridLayout *ngFor="let item of sortingLookupList" [class.selected]="item.isSelected===true" rows="*" columns="*, 15" class="selectControl" (tap)="sortItemSelected(item, sortingLookupList)">
+                            <Label col="0" [text]="item.text"></Label>
+                            <Image src="~/images/check.png" col="1"></Image>
+                        </GridLayout>
+                    </StackLayout>
+                </GridLayout>
+
+
+                <!-- PROVIDER -->
+                <Label text="Provider" class="control-label"></Label>
+                <TextField id="provider-textfield" text="" hint="Enter first name or last name"></TextField>
+
+
+                <!-- MEMBERS -->
+                <Label text="Members" class="control-label"></Label>
+                <GridLayout columns="*, 15" rows="*" [class.selected]="isAllSelected(memberLookupList)" class="selectControl" (tap)="onSelectAll($event, memberLookupList)">
+                    <Label col="0" text="All" class="test1"></Label>
+                    <Image src="~/images/check.png" class="test2" col="1"></Image>
+                </GridLayout>
+                <GridLayout *ngFor="let item of memberLookupList" rows="*" columns="*, 15" [class.selected]="item.isSelected===true" class="selectControl" (tap)="itemSelectUnselect(item, memberLookupList)">
+                    <Label col="0" [text]="item.text"></Label>
+                    <Image src="~/images/check.png" col="1"></Image>
+                </GridLayout>
+                
+                <!-- VISIT TYPES -->
+                <Label text="Visit Types" class="control-label"></Label>
+                <GridLayout columns="*, 15" rows="*" [class.selected]="isAllSelected(visitTypeLookupList)" class="selectControl" (tap)="onSelectAll($event, visitTypeLookupList)">
+                    <Label col="0" text="All" class="test1"></Label>
+                    <Image src="~/images/check.png" class="test2" col="1"></Image>
+                </GridLayout>
+                <GridLayout *ngFor="let item of visitTypeLookupList" rows="*" columns="*, 15" [class.selected]="item.isSelected===true" class="selectControl" (tap)="itemSelectUnselect(item, visitTypeLookupList)">
+                    <Label col="0" [text]="item.text"></Label>
+                    <Image src="~/images/check.png" col="1"></Image>
+                </GridLayout>
+                
+                <!-- CLAIM STATUS TYPES -->
+                <Label text="Claim Status Type" class="control-label"></Label>
+                <GridLayout columns="*, 15" rows="*" [class.selected]="isAllSelected(statusLookupList)" class="selectControl" (tap)="onSelectAll($event, statusLookupList)">
+                    <Label col="0" text="All" class="test1"></Label>
+                    <Image src="~/images/check.png" class="test2" col="1"></Image>
+                </GridLayout>
+                <GridLayout *ngFor="let item of statusLookupList" rows="*" columns="*, 15" [class.selected]="item.isSelected===true" class="selectControl" (tap)="itemSelectUnselect(item, statusLookupList)">
+                    <Label col="0" [text]="item.text"></Label>
+                    <Image src="~/images/check.png" col="1"></Image>
+                </GridLayout>
+                
+            </StackLayout>
+        </ScrollView>
+        <!-- FILTER BUTTONS -->
+        <GridLayout id="button-layout" columns="*,120,140,*" rows="60" col="0" row="1" colSpan="2" orientation="horizontal">
+            <StackLayout col="0"></StackLayout>
+            <Label class="btn-cancel" (tap)="onClose()" col="1" text="Cancel"></Label>
+            <Button class="btn-submit" (tap)="onApplyFilter()" col="2" text="Filter"></Button>
+            <StackLayout col="3"></StackLayout>
+        </GridLayout>
+    </GridLayout>
+</StackLayout>

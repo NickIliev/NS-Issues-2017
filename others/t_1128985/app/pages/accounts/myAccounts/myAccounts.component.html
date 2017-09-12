@@ -1,0 +1,178 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView>
+        <StackLayout orientation="vertical">
+    
+            <!--<Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true"  style="text-align: right; padding-right: 5"> </Label>-->
+
+            <StackLayout orientation="vertical" class="accountsTitle">
+                <Label text="My Accounts"></Label>
+            </StackLayout>
+            <SegmentedBar [items]="tabItems" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChange($event)"></SegmentedBar>
+
+            <StackLayout class="accountsContent">
+                <StackLayout visibility="{{ isCurrentYearSelected ? 'visible' : 'collapsed' }}">
+
+                    <StackLayout *ngFor="let item of currentAccountList; let i = index" class="chartList" [ngClass]="i == currentAccountList.length-1 ? 'last' : ''">
+                        <GridLayout columns="*, 15,  15" rows="*, *, *, *, *" class="accountsGraphGrid">
+                            <!-- ROW 1 - TITLE -->
+                            <Label col="0" row="0" class="accountName" textWrap="true" text="{{item.name}}"></Label>
+
+                            <!-- ROW 2 - MARKER LEGEND -->
+                            <GridLayout columns="60, *, 100" col="0" row="1" class="progressMarker">
+                                <Label col="0" text="$0"></Label>
+                                <Label col="1" class="center" text="{{ (item.totalAmount - item.usedAmount) | currency:'USD':true}} Available"></Label>
+                                <Label col="2" class="right" horizontalAlign="right" text="{{item.totalAmount | currency:'USD':true}}"></Label>
+                            </GridLayout>
+
+                            <!-- ROW 3 - Graph -->
+                            <StackLayout col="0" row="2" class="progressBar">
+                                <StackLayout width="{{( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100 }} + %" class="available">
+                                    <StackLayout width="{{( (item.contributionsYTD) / item.totalAmount) * 100 }} + %" class="contributionYtd">
+                                        <StackLayout width="{{( (item.contributionsThisYear - item.usedAmount) / item.totalAmount) * 100 }} + %" class="contributionThisYear">
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+
+                            <!-- ROW 4 - Pointer -->
+                            <StackLayout col="0" row="3">
+                                <StackLayout class="pointerLayout" width="{{ (( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100) + 2}} + %">
+                                    <Image class="pointer" width="15" src="~/images/icon/indicator.png"></Image>
+                                </StackLayout>
+                            </StackLayout>
+                            <!-- ROW 4 - INVESTED AMOUNT -->
+                            <StackLayout col="0" row="3" *ngIf="item.showInvestedAmount" width="100%" orientation="horizontal">
+                                <Label width="{{ ((item.investedAmount / item.totalAmount) * 100) }} + %" class="chartBlue"></Label>
+                            </StackLayout>
+
+                            <!-- ROW 5 - Spent Amount -->
+                            <StackLayout col="0" row="4">
+                                <StackLayout class="" width="{{ (( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100) +3}} + %" class="spentHolder">
+                                    <Label class="spentAmount" text="{{item.usedAmount | currency:'USD':true}} spent"></Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout col="1" row="0" rowSpan="6"></StackLayout>
+
+                            <Image class="graphProceedIcon" col="2" row="0" rowSpan="6" src="~/images/proceed.png"></Image>
+
+                        </GridLayout>
+
+                        <StackLayout width="100%" orientation="vertical" horizontalAlignment="left" verticalAlignment="top" class="moreDetail">
+                            <StackLayout orientation="vertical" *ngFor="let legend of item.legendDetails; let j = index">
+                                <GridLayout rows="*" columns="35, *, *">
+                                    <StackLayout row="0" col="0" orientation="horizontal" class="detailsColor" horizontalAlignment="left" verticalAlignment="middle">
+                                        <Label backgroundColor="{{legend.color}}" class="boxColor"></Label>
+                                    </StackLayout>
+                                    <StackLayout row="0" col="1" orientation="horizontal" horizontalAlignment="left" verticalAlignment="middle">
+                                        <Label class="text"  [text]="legend.text"></Label>
+                                    </StackLayout>
+                                    <StackLayout row="0"  col="2" orientation="horizontal" horizontalAlignment="left" verticalAlignment="middle">
+                                        <Label class="cost" [text]="legend.cost | currency:'USD':true"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <!--Legend details end-->
+                        <StackLayout *ngIf="item.annualContributionLimit" orientation="horizontal" class="messageText" horizontalAlignment="center"
+                            verticalAlignment="middle">
+                            <Label text="*The annual contribution limit = {{item.annualContributionLimit | currency:'USD':true}}"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout visibility="{{ isPriorYearSelected ? 'visible' : 'collapsed' }}">
+                    <StackLayout *ngFor="let item of priorAccountList; let i = index" class="chartList" [ngClass]="i == priorAccountList.length-1 ? 'last' : ''">
+                        <GridLayout columns="*, 15,  15" rows="*, *, *, *, *" class="accountsGraphGrid">
+                            <!-- ROW 1 - TITLE -->
+                            <Label col="0" row="0" class="accountName" textWrap="true" text="{{item.name}}"></Label>
+
+                            <!-- ROW 2 - MARKER LEGEND -->
+                            <GridLayout columns="60, *, 100" col="0" row="1" class="progressMarker">
+                                <Label col="0" text="$0"></Label>
+                                <Label col="1" class="center" text="{{ (item.totalAmount - item.usedAmount) | currency:'USD':true}} Available"></Label>
+                                <Label col="2" class="right" horizontalAlign="right" text="{{item.totalAmount | currency:'USD':true}}"></Label>
+                            </GridLayout>
+
+                            <!-- ROW 3 - Graph -->
+                            <StackLayout col="0" row="2" class="progressBar">
+                                <StackLayout width="{{( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100 }} + %" class="available">
+                                    <StackLayout width="{{( (item.contributionsYTD) / item.totalAmount) * 100 }} + %" class="contributionYtd">
+                                        <StackLayout width="{{( (item.contributionsThisYear - item.usedAmount) / item.totalAmount) * 100 }} + %" class="contributionThisYear">
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+
+                            <!-- ROW 4 - Pointer -->
+                            <StackLayout col="0" row="3">
+                                <StackLayout class="pointerLayout" width="{{ (( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100) + 2}} + %">
+                                    <Image class="pointer" width="15" src="~/images/icon/indicator.png"></Image>
+                                </StackLayout>
+                            </StackLayout>
+                            <!-- ROW 4 - INVESTED AMOUNT -->
+                            <StackLayout col="0" row="3" *ngIf="item.showInvestedAmount" width="100%" orientation="horizontal">
+                                <Label width="{{ ((item.investedAmount / item.totalAmount) * 100) }} + %" class="chartBlue"></Label>
+                            </StackLayout>
+
+                            <!-- ROW 5 - Spent Amount -->
+                            <StackLayout col="0" row="4">
+                                <StackLayout class="" width="{{ (( (item.totalAmount - item.usedAmount) / item.totalAmount) * 100) +3}} + %" class="spentHolder">
+                                    <Label class="spentAmount" text="{{item.usedAmount | currency:'USD':true}} spent"></Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout col="1" row="0" rowSpan="6"></StackLayout>
+
+                            <Image class="graphProceedIcon" col="2" row="0" rowSpan="6" src="~/images/proceed.png"></Image>
+
+                        </GridLayout>
+
+                        <StackLayout width="100%" orientation="vertical" horizontalAlignment="left" verticalAlignment="top" class="moreDetail">
+                            <StackLayout orientation="vertical" *ngFor="let legend of item.legendDetails; let j = index">
+                                <GridLayout rows="*" columns="35, *, *">
+                                    <StackLayout row="0" col="0" orientation="horizontal" class="detailsColor" horizontalAlignment="left" verticalAlignment="middle">
+                                        <Label backgroundColor="{{legend.color}}" class="boxColor"></Label>
+                                    </StackLayout>
+                                    <StackLayout row="0" col="1" orientation="horizontal" horizontalAlignment="left" verticalAlignment="middle">
+                                        <Label class="text"  [text]="legend.text"></Label>
+                                    </StackLayout>
+                                    <StackLayout row="0"  col="2" orientation="horizontal" horizontalAlignment="left" verticalAlignment="middle">
+                                        <Label class="cost" [text]="legend.cost | currency:'USD':true"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <!--Legend details end-->
+                        <StackLayout *ngIf="item.annualContributionLimit" orientation="horizontal" class="messageText" horizontalAlignment="center"
+                            verticalAlignment="middle">
+                            <Label text="*The annual contribution limit = {{item.annualContributionLimit | currency:'USD':true}}"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+</GridLayout>

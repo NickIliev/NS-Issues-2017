@@ -1,0 +1,45 @@
+<GridLayout rows="*" columns="*" id="authenticateSharedPromoModal">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout class="authenticateWindow" orientation="vertical">
+                <StackLayout orientation="horizontal" horizontalAlignment="right" class="closeBtn" (tap)="close()">
+                    <Image loadMode="async" src="~/images/icon/close-type2.png"></Image>
+                </StackLayout>
+                <StackLayout class="windowPadding">
+                    <StackLayout orientation="horizontal">
+                        <Label text="Authenticate your account now" class="mainHeader font-bold"></Label>
+                    </StackLayout>
+                    <StackLayout orientation="horizontal">
+                        <Label textWrap="true" text="Unlock all your member benefits and get access to:" class="subHeader"></Label>
+                    </StackLayout>
+                    <StackLayout orientation="vertical" class="list-stacklayout">
+                        <StackLayout orientation="horizontal">
+                            <Label class="blue-box"></Label>
+                            <Label text="Member Plan Details" class="listView"></Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal">
+                            <Label class="blue-box"></Label>
+                            <Label text="Full access to Claims Details" class="listView"></Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal">
+                            <Label class="blue-box"></Label>
+                            <Label text="Manage Financial Accounts" class="listView"></Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal">
+                            <Label class="blue-box"></Label>
+                            <Label text="Get Reimbursements" class="listView"></Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal">
+                            <Label class="blue-box"></Label>
+                            <Label text="Secure Messaging" class="listView"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout orientation="vertical" class="btnSection">
+                <Button text="Authenticate Now" autocapitalizationType="none" (tap)="authenticateMe()" class="yesAuthenticate"></Button>
+                <Label text="Continue with limited access" class="mayBeLater" (tap)="verifyMe()"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

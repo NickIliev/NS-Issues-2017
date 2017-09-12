@@ -1,0 +1,76 @@
+
+/*****header********/
+Page {
+  font-family: "Roboto-Light";
+}
+/*.imageSlider {
+     margin-bottom: 20;
+}*/
+.okBottom {
+    margin-bottom: 80;
+}
+.skipButton {
+    margin-bottom: 80;
+}
+.guideEducation {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+.mainImage {
+    height: 100%;
+    width: 100%;
+}
+.mainImage Image{
+    height: 100%;
+    width: 100%;
+}
+.skipButton {
+    text-align: center;
+    font-family: "Arial Bold";
+    color: #000000;
+    font-size: 20;
+}
+.closeIcon {
+    z-index: 9;
+}
+.closeIcon Image {
+    width: 25;
+    height: 25;
+    margin: 15;
+}
+.okBottom {
+    background-color: #1866a3;
+    width: 100%;
+    margin-right: 20;
+    margin-left: 20;
+    font-family: "Arial Bold";
+    color: #fff;
+    border-radius: 5;
+    text-transform: capitalize;
+    font-size: 20;
+}
+
+
+/* HAMBURGER SIDE MENU */
+.sidemenu-head .info Button{
+    margin-top:-12;
+}
+
+.hamburgerMenu {
+    padding: 0 20 0 25;
+}
+
+
+/* CLAIMS */
+.filter-window .filter-item Image{
+    padding-left:20;
+    padding-right:20;
+}
+.flat-button-margin{
+    margin-top:-12;
+}
+.scroll-home {
+    margin-bottom: 50;
+}

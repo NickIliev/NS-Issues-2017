@@ -1,0 +1,66 @@
+/*.date-picker-control{
+    padding:3;
+    border-radius:5;
+    background-color:#fff;
+    text-align: center;
+    color:#000;
+}
+
+.grid{
+    vertical-align: bottom;
+}
+
+.date-picker-control label{
+    margin-top:10;
+    font-weight: bold;
+}
+
+.date-picker-control TextField{
+    border-color:#fff;
+    border-width:1;
+    color:#000;
+}*/
+/* date picker styles */
+.date-picker-control{
+    margin:0;
+    padding:0;
+    border-radius:5;    
+    text-align: center;
+    color:#000;
+}
+
+.grid{
+    vertical-align: middle;
+     margin:0;
+    padding:0;
+}
+
+.date-picker-control Label{
+    margin-bottom:15;
+    font-weight: bold;
+    text-align:center;
+    vertical-align:middle;
+     color:#b2b2b2;
+}
+
+.date-picker-control TextField{
+   background-color:white;
+    border:none;
+   color:#b2b2b2;
+}
+.grid TextField{
+    border:none;
+     margin-bottom:12;   
+    text-align:left;
+    vertical-align:middle;
+    border-color:#F2F4F4; 
+   margin-left:0;
+   margin-right:0;
+   padding-left:0;
+   padding-right:0;
+}
+.date-inner-container{width:55%;text-align:left;}
+.clear{padding-right:10;vertical-align:middle;margin-top:5;font-weight:bold;}
+
+
+/* date picker styles ends here */

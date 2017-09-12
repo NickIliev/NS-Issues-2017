@@ -1,0 +1,30 @@
+<GridLayout id="visit-history-modal" rows="*" columns="*">
+    <StackLayout>
+        <GridLayout rows="180,auto,*" columns="*">
+            <StackLayout row="0" class="header-section" col="0" orientation="vertical" horizontalAlignment="center">
+                <StackLayout orientation="horizontal" class="modalClose" (tap)="closeModal();" horizontalAlignment="right">
+                    <Image src="~/images/icon/close-type3.png"></Image>
+                </StackLayout>
+                <Image src="~/images/redesign/hb-mydoctors.png"></Image>
+                <Label class="title font-arial" horizontalAlignment="center" textWrap="true" text="{{selectedMember.firstName}} {{selectedMember.lastName}}"> </Label>
+                <Label class="sub-title" horizontalAlignment="center" textWrap="true" [text]="selectedMember.type"> </Label>
+            </StackLayout>
+            <StackLayout row="1"  col="0" orientation="vertical" horizontalAlignment="center" class="doctor-details">
+                <Label textWrap="true" class="font-arial" text="Visit History with {{selectedDoctor.name}}, MD"> </Label>
+                <Label textWrap="true" class="speciality" [text]="selectedDoctor.speciality"> </Label>
+            </StackLayout>
+            <StackLayout row="2" col="0" orientation="vertical" horizontalAlignment="center">
+                <ScrollView>
+                    <StackLayout class="visitDateTop">
+                        <StackLayout horizontalAlignment="center" orientation="horizontal" class="visitDates" *ngFor="let item of selectedDoctor.visits; let i = index">
+                            <Label textWrap="true" [text]="item"> </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </GridLayout>
+    </StackLayout>
+    <DockLayout style.verticalAlignment="bottom" class="button-layout">
+        <Button text="Close" class="font-arial" autocapitalizationType="none" (tap)="closeModal();"></Button>
+    </DockLayout>
+</GridLayout>

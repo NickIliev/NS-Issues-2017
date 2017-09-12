@@ -1,0 +1,65 @@
+.header-section {
+    background-color: #1866a3;
+    width: 100%;
+}
+.header-section Image{
+    height: 50;
+    width: 50;
+}
+.header-section .title {
+    margin-top: 15;
+    font-size: 22;
+    color: #fff;
+}
+.header-section .sub-title {
+    margin-top: 0;
+    font-size: 19;
+    color: #fff;
+}
+.modalClose Image {
+    width: 26;
+}
+.modalClose {
+    width: 80;
+    padding: 5 10 0 15;
+}
+.doctor-details{
+    text-align: center;
+    margin-top: 15;
+    font-size: 17;
+    color: #000;
+}
+.doctor-details .speciality {
+    font-size:15;
+    margin-top: 0;
+    color: #000;
+}
+.visitDateTop {
+    margin-top: 30;
+    margin-bottom: 80;
+    border-color: #E5E5E5;
+    border-top-width: 1;
+}
+.visitDates{
+    border-color: #E5E5E5;
+    color: #000;
+    border-bottom-width: 1;
+    font-size: 16;
+    width: 100%;
+    padding: 13 0;
+}
+.button-layout {
+    width: 100%;
+    padding: 0 15;
+    margin-bottom: 15;
+}
+.button-layout button {
+    background-color:#1866a3;
+    color:#fff;
+    font-size: 18;
+    padding: 18 0;
+    z-index:-1;
+    text-transform: capitalize;
+    border-color: transparent;
+    font-weight: bold;
+}

@@ -1,0 +1,41 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var router_1 = require("nativescript-angular/router");
+var nativescript_module_1 = require("nativescript-angular/nativescript.module");
+var forms_1 = require("nativescript-angular/forms");
+var modal_dialog_1 = require("nativescript-angular/modal-dialog");
+var medication_component_1 = require("./medication.component");
+var ViewPrescriptionModal_component_1 = require("./ViewPrescriptionModal/ViewPrescriptionModal.component");
+var shared_module_1 = require("../../shared/shared.module");
+var medication_service_1 = require("./medication.service");
+var nativescript_locate_address_1 = require("nativescript-locate-address");
+exports.routerConfig = [
+    {
+        path: "",
+        component: medication_component_1.MedicationComponent
+    }
+];
+var MedicationModule = (function () {
+    function MedicationModule() {
+    }
+    return MedicationModule;
+}());
+MedicationModule = __decorate([
+    core_1.NgModule({
+        schemas: [core_1.NO_ERRORS_SCHEMA],
+        imports: [
+            nativescript_module_1.NativeScriptModule,
+            router_1.NativeScriptRouterModule,
+            forms_1.NativeScriptFormsModule,
+            router_1.NativeScriptRouterModule.forChild(exports.routerConfig),
+            shared_module_1.SharedModule
+        ],
+        declarations: [medication_component_1.MedicationComponent, ViewPrescriptionModal_component_1.ViewPrescriptionModalComponent],
+        providers: [modal_dialog_1.ModalDialogService, medication_service_1.MedicationService, nativescript_locate_address_1.LocateAddress],
+        entryComponents: [ViewPrescriptionModal_component_1.ViewPrescriptionModalComponent],
+    }),
+    __metadata("design:paramtypes", [])
+], MedicationModule);
+exports.MedicationModule = MedicationModule;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVkaWNhdGlvbi5tb2R1bGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZWRpY2F0aW9uLm1vZHVsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHNDQUEyRDtBQUMzRCxzREFBdUU7QUFDdkUsZ0ZBQThFO0FBQzlFLG9EQUFxRTtBQUNyRSxrRUFBdUU7QUFDdkUsK0RBQTZEO0FBQzdELDJHQUF5RztBQUN6Ryw0REFBMEQ7QUFDMUQsMkRBQXlEO0FBQ3pELDJFQUE0RDtBQUUvQyxRQUFBLFlBQVksR0FBRztJQUN4QjtRQUNJLElBQUksRUFBRSxFQUFFO1FBQ1IsU0FBUyxFQUFFLDBDQUFtQjtLQUNqQztDQUNKLENBQUM7QUFnQkYsSUFBYSxnQkFBZ0I7SUFDekI7SUFBZ0IsQ0FBQztJQUNyQix1QkFBQztBQUFELENBQUMsQUFGRCxJQUVDO0FBRlksZ0JBQWdCO0lBZDVCLGVBQVEsQ0FBQztRQUNOLE9BQU8sRUFBRSxDQUFDLHVCQUFnQixDQUFDO1FBQzNCLE9BQU8sRUFBRTtZQUNMLHdDQUFrQjtZQUNsQixpQ0FBd0I7WUFDeEIsK0JBQXVCO1lBQ3ZCLGlDQUF3QixDQUFDLFFBQVEsQ0FBQyxvQkFBWSxDQUFDO1lBQy9DLDRCQUFZO1NBQ2Y7UUFDRCxZQUFZLEVBQUUsQ0FBQywwQ0FBbUIsRUFBRSxnRUFBOEIsQ0FBQztRQUNuRSxTQUFTLEVBQUUsQ0FBQyxpQ0FBa0IsRUFBRSxzQ0FBaUIsRUFBRSwyQ0FBYSxDQUFDO1FBQ2pFLGVBQWUsRUFBRSxDQUFDLGdFQUE4QixDQUFDO0tBQ3BELENBQUM7O0dBRVcsZ0JBQWdCLENBRTVCO0FBRlksNENBQWdCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmdNb2R1bGUsIE5PX0VSUk9SU19TQ0hFTUEgfSBmcm9tIFwiQGFuZ3VsYXIvY29yZVwiO1xuaW1wb3J0IHsgTmF0aXZlU2NyaXB0Um91dGVyTW9kdWxlIH0gZnJvbSBcIm5hdGl2ZXNjcmlwdC1hbmd1bGFyL3JvdXRlclwiO1xuaW1wb3J0IHsgTmF0aXZlU2NyaXB0TW9kdWxlIH0gZnJvbSBcIm5hdGl2ZXNjcmlwdC1hbmd1bGFyL25hdGl2ZXNjcmlwdC5tb2R1bGVcIjtcbmltcG9ydCB7IE5hdGl2ZVNjcmlwdEZvcm1zTW9kdWxlIH0gZnJvbSBcIm5hdGl2ZXNjcmlwdC1hbmd1bGFyL2Zvcm1zXCI7XG5pbXBvcnQgeyBNb2RhbERpYWxvZ1NlcnZpY2UgfSBmcm9tIFwibmF0aXZlc2NyaXB0LWFuZ3VsYXIvbW9kYWwtZGlhbG9nXCI7XG5pbXBvcnQgeyBNZWRpY2F0aW9uQ29tcG9uZW50IH0gZnJvbSBcIi4vbWVkaWNhdGlvbi5jb21wb25lbnRcIjtcbmltcG9ydCB7IFZpZXdQcmVzY3JpcHRpb25Nb2RhbENvbXBvbmVudCB9IGZyb20gXCIuL1ZpZXdQcmVzY3JpcHRpb25Nb2RhbC9WaWV3UHJlc2NyaXB0aW9uTW9kYWwuY29tcG9uZW50XCI7XG5pbXBvcnQgeyBTaGFyZWRNb2R1bGUgfSBmcm9tIFwiLi4vLi4vc2hhcmVkL3NoYXJlZC5tb2R1bGVcIjtcbmltcG9ydCB7IE1lZGljYXRpb25TZXJ2aWNlIH0gZnJvbSBcIi4vbWVkaWNhdGlvbi5zZXJ2aWNlXCI7XG5pbXBvcnQgeyBMb2NhdGVBZGRyZXNzIH0gZnJvbSBcIm5hdGl2ZXNjcmlwdC1sb2NhdGUtYWRkcmVzc1wiO1xuXG5leHBvcnQgY29uc3Qgcm91dGVyQ29uZmlnID0gW1xuICAgIHtcbiAgICAgICAgcGF0aDogXCJcIixcbiAgICAgICAgY29tcG9uZW50OiBNZWRpY2F0aW9uQ29tcG9uZW50XG4gICAgfVxuXTtcblxuQE5nTW9kdWxlKHtcbiAgICBzY2hlbWFzOiBbTk9fRVJST1JTX1NDSEVNQV0sXG4gICAgaW1wb3J0czogW1xuICAgICAgICBOYXRpdmVTY3JpcHRNb2R1bGUsXG4gICAgICAgIE5hdGl2ZVNjcmlwdFJvdXRlck1vZHVsZSxcbiAgICAgICAgTmF0aXZlU2NyaXB0Rm9ybXNNb2R1bGUsXG4gICAgICAgIE5hdGl2ZVNjcmlwdFJvdXRlck1vZHVsZS5mb3JDaGlsZChyb3V0ZXJDb25maWcpLFxuICAgICAgICBTaGFyZWRNb2R1bGVcbiAgICBdLFxuICAgIGRlY2xhcmF0aW9uczogW01lZGljYXRpb25Db21wb25lbnQsIFZpZXdQcmVzY3JpcHRpb25Nb2RhbENvbXBvbmVudF0sXG4gICAgcHJvdmlkZXJzOiBbTW9kYWxEaWFsb2dTZXJ2aWNlLCBNZWRpY2F0aW9uU2VydmljZSwgTG9jYXRlQWRkcmVzc10sXG4gICAgZW50cnlDb21wb25lbnRzOiBbVmlld1ByZXNjcmlwdGlvbk1vZGFsQ29tcG9uZW50XSxcbn0pXG5cbmV4cG9ydCBjbGFzcyBNZWRpY2F0aW9uTW9kdWxlIHtcbiAgICBjb25zdHJ1Y3RvcigpIHsgfVxufVxuIl19

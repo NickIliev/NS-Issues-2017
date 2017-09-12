@@ -1,0 +1,255 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <GridLayout rows="58,*" columns="*" class="cardScreen">
+        <!-- FILTER BUTTON -->
+        <StackLayout class="dropDownBtnLayout" orientation="horizontal" row="0" col="0" verticalAlignment="middle">
+            <GridLayout columns="*, 47" rows="*" (tap)="toggleFilter();">
+                <StackLayout row="0" col="0" orientation="vertical" horizontalAlignment="left" verticalAlignment="middle">
+                    <Label horizontalAlignment="left" class="selected-label-name" textWrap="true" text="{{getSelectedMember(memberList).firstName}} {{getSelectedMember(memberList).lastName}}"></Label>
+                    <Label horizontalAlignment="left" class="selected-label" textWrap="true" [text]="getSelectedMember(memberList).type"></Label>
+                </StackLayout>
+                <StackLayout class="dropdown-icon" row="0" col="1" verticalAlignment="middle">
+                    <Image src="~/images/redesign/down-white.png"></Image>
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+        <!-- /FILTER BUTTON -->
+        <StackLayout class="page-inner-container" row="1" col="0">
+            <!--<Label text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true" style="text-align: right; padding-right: 5"> </Label>-->
+            <ScrollView (scroll)="onScroll($event)" #cardsView>
+                <StackLayout>
+                    <GridLayout rows="*" columns="*" (tap)="bodyTap()">
+                        <GridLayout row="0" col="0">
+                            <StackLayout class="relative">
+                                <!--  <StackLayout id="cardMemberLayout" orientation="horizontal">
+                            <GridLayout columns="*, 32" rows="auto">
+                                <Label class="member-label" text="Steve (Subscriber)" col="0"></Label>
+                                <Image class="down-icon" src="~/images/downarrow.png" col="1"></Image>
+                            </GridLayout>
+                        </StackLayout>-->
+                                <StackLayout class="cards-container">
+                                    <StackLayout orientation="horizontal">
+                                        <GridLayout rows="20,*,*" columns="*" class="mt10">
+
+                                            <!-- THREE DOTS MENU LINK -->
+                                            <StackLayout row="0" col="0" horizontalAlignment="right" (touch)="showOptions(selectedMemberId)">
+                                                <Image class="more-icon" src="~/images/redesign/vertical-three-dots.png"></Image>
+                                            </StackLayout>
+
+                                            <!-- THREE DOTS MENU CONTENT -->
+
+
+                                            <StackLayout #idCardView row="1" col="0" id="card-container">
+                                                <!-- FRONT -->
+                                                <StackLayout class="card-item cards-wrapper-margin front-card" (tap)="containerTap()">
+                                                    <GridLayout rows="auto, *, 30" columns="140,*,*">
+                                                        <!-- ROW 1 -->
+                                                        <StackLayout col="0" class="logo-container">
+                                                            <Image width="100" verticalAlignment="top" class="" src="~/images/logo.png"></Image>
+                                                        </StackLayout>
+                                                        <StackLayout col="1" orientation="vertical" class="planName">
+                                                            <Label text="{{selectedMember.cardDetails.planName}}"></Label>
+                                                            <Label text="{{selectedMember.cardDetails.planType}}"></Label>
+                                                        </StackLayout>
+
+                                                        <!-- ROW 2 -->
+                                                        <GridLayout colSpan="3" col="0" row="1" class="stripeContainer">
+                                                            <GridLayout columns="*,*,*,*,*" rows="auto,auto">
+                                                                <StackLayout colSpan="3" col="0" row="0" class="detail-item">
+                                                                    <Label text="{{selectedMember.cardDetails.patientName}}"></Label>
+                                                                    <Label text="{{selectedMember.cardDetails.cardNo}}"></Label>
+                                                                    <Label text="MEMBER SUFFIX: {{selectedMember.cardDetails.suffix}}"></Label>
+                                                                </StackLayout>
+                                                                <StackLayout col="3" colSpan="2" row="0" class="detail-item">
+                                                                    <Label text="Member Service"></Label>
+                                                                    <Label text="{{selectedMember.cardDetails.serviceNo}}"></Label>
+                                                                    <Label text="RxBin: {{selectedMember.cardDetails.rxBin}} PCN: {{selectedMember.cardDetails.pcn}}"></Label>
+                                                                    <Label text="RxGRP: {{selectedMember.cardDetails.rxGrp}}"></Label>
+                                                                </StackLayout>
+
+                                                                <StackLayout colSpan="3" col="0" row="1" class="detail-item last">
+                                                                    <Label text="Copays"></Label>
+                                                                    <StackLayout orientation="horizontal" *ngFor="let item of selectedMember.cardDetails.copays">
+                                                                        <Label text="{{ item.suffix }} "></Label>
+                                                                        <Label text=" {{ item.amount }} "></Label>
+                                                                    </StackLayout>
+                                                                </StackLayout>
+                                                                <StackLayout col="3" colSpan="2" row="1" class="detail-item last">
+                                                                    <Label text="CHOICE {{selectedMember.cardDetails.choice}}"></Label>
+                                                                </StackLayout>
+                                                            </GridLayout>
+                                                        </GridLayout>
+
+                                                        <!-- ROW 3 -->
+                                                        <StackLayout row="2" colSpan="3" class="bottom-logo">
+                                                            <Image class="" src="~/images/card-bottom-logo.png"></Image>
+                                                        </StackLayout>
+                                                    </GridLayout>
+                                                </StackLayout>
+                                                <!-- BACK-->
+                                                <StackLayout class="card-item cards-wrapper-margin back front-card" (tap)="containerBackTap()">
+                                                    <GridLayout columns="*,*" rows="auto,auto, auto" class="card-back-content">
+
+                                                        <StackLayout class="card-web-link" row="0" col="0" colSpan="2">
+                                                            <Label class="bold" text="www.bluecrossma.com"></Label>
+                                                        </StackLayout>
+
+                                                        <StackLayout col="0" row="1" class="card-back-col">
+                                                            <Label class="paragraph" textWrap="true" text="This card is for identification only. It is not proof of membership, nor does it guarantee coverage."></Label>
+                                                            <Label class="paragraph" textWrap="true" text="To the Provider: submit claims  to the Blue Cross and/or Blue Shield Plan servicing your area. Be sure to include the three-letter prefix followed by the nine-digit number."></Label>
+                                                        </StackLayout>
+                                                        <StackLayout col="1" row="1" class="card-contact card-back-col">
+                                                            <StackLayout orientation="horizontal">
+                                                                <Label text="Member Service: "></Label>
+                                                                <Label text="{{selectedMember.cardDetails.memberServiceNo}}" class="bold"></Label>
+                                                            </StackLayout>
+                                                            <StackLayout orientation="horizontal">
+                                                                <Label text="Provider Service: "></Label>
+                                                                <Label text="{{selectedMember.cardDetails.providerServiceNo}}" class="bold"></Label>
+                                                            </StackLayout>
+                                                            <StackLayout orientation="horizontal">
+                                                                <Label text="Pre-authorization: "></Label>
+                                                                <Label text="{{selectedMember.cardDetails.preAuthNo}}" class="bold"></Label>
+                                                            </StackLayout>
+                                                            <Label text="Behavioral Health and Substance"></Label>
+                                                            <StackLayout orientation="horizontal">
+                                                                <Label text="Abuse: "></Label>
+                                                                <Label text="{{selectedMember.cardDetails.abuseNo}}" class="bold"></Label>
+                                                            </StackLayout>
+                                                            <StackLayout orientation="horizontal">
+                                                                <Label text="Locate Provider: "></Label>
+                                                                <Label text="{{selectedMember.cardDetails.locateProvNo}}" class="bold"></Label>
+                                                            </StackLayout>
+                                                            <StackLayout orientation="horizontal">
+                                                                <Label text="Blue Care Line: "></Label>
+                                                                <Label text="{{selectedMember.cardDetails.blueCareNo}}" class="bold"></Label>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                        <StackLayout class="disclaimer" col="1" row="2">
+                                                            <Label textWrap="true" text="Blue Cross and Blue Shield of Massachusetts, Inc, an Independent Licensee of the Blue Cross and Blue Shield Association, administers claims payment only and does not assume financial risk for claims."></Label>
+                                                        </StackLayout>
+                                                    </GridLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <StackLayout row="1" col="0" class="moreoptions-container" *ngIf="showMoreOptions" (tap)="keepOpen();">
+                                                <StackLayout class="more-inner-container">
+                                                    <GridLayout rows="*" columns="50,*" (tap)="saveImage()" class="more-item">
+                                                        <Image class="more-list-icon" src="~/images/icon/download@2x.png" row="0" col="0"></Image>
+                                                        <Label text="Download" row="0" col="1" class="option-text"></Label>
+                                                    </GridLayout>
+                                                    <GridLayout rows="*" columns="50,*" class="mt20 more-item" (tap)="sendClientEmail();">
+                                                        <Image class="more-list-icon" src="~/images/icon/email@2x.png" row="0" col="0"></Image>
+                                                        <Label text="Email" row="0" col="1" class="option-text"></Label>
+                                                    </GridLayout>
+                                                    <GridLayout rows="*" columns="50,*" class="mt20 more-item" (tap)="printImage()">
+                                                        <Image class="more-list-icon" src="~/images/icon/print@2x.png" row="0" col="0"></Image>
+                                                        <Label text="Print" row="0" col="1" class="option-text"></Label>
+                                                    </GridLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </GridLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout orientation="horizontal">
+                                    <Image verticalAlignment="top" src="~/images/card-shadow.png"></Image>
+                                </StackLayout>
+                            </StackLayout>
+                        </GridLayout>
+                        <StackLayout style="background-color: #F8F8FF; width:290;" class="blured-layout email-container" *ngIf="isEmailClicked">
+                            <StackLayout class="email-container">
+                                <StackLayout horizontalAlignment="center" class="alignCenter">
+                                    <Label text="Email my card" class="email-heading" textWrap="true"></Label>
+                                    <Label text="{{getSelectedMember(memberList).firstName}} {{getSelectedMember(memberList).lastName}}'s" class="email-subheading1"
+                                        textWrap="true"></Label>
+                                    <Label text="medical card is selected." class="email-subheading2" textWrap="true"></Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <TextField keyboardType="email" hint="enter email addresses" id="emailid" name="emailid" [(ngModel)]="emailid" class="email-textfield"
+                                        autocorrect="false"></TextField>
+                                    <Label text="*Invalid Email ID" textWrap="true" class="invalidEmail" visibility="{{(invalidEmailLbl) ? 'visible' : 'collapsed' }}"></Label>
+                                </StackLayout>
+                                <!--<StackLayout orientation="horizontal">
+                            <Button text="Cancel" class="email-cancel-buttons" (tap)="cancelBtn()" horizontalAlignment="center" ></Button>
+                            <Button text="Send" class="email-send-buttons" (tap)="successMsg(emailid)"  horizontalAlignment="center"></Button>
+                        </StackLayout>-->
+                                <GridLayout columns="*, *" rows="*" class="btn-container">
+                                    <Label id="btnMobile" text="Cancel" class="choice-btns cancel-btn" (tap)="cancelBtn()" row="0" col="0"></Label>
+                                    <Label text="Send" (tap)="successMsg(emailid)" row="0" col="1" class="choice-btns"></Label>
+                                </GridLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout style="background-color: #F8F8FF;  width:290;" class="blured-layout" *ngIf="isEmailSent">
+                            <StackLayout class="email-container-success">
+                                <StackLayout horizontalAlignment="center" class="alignCenter">
+                                    <Label text="Email my card" class="email-heading-success" textWrap="true"></Label>
+                                    <Label text="Your email was sent successfully." class="email-subheading1-success" textWrap="true"></Label>
+                                </StackLayout>
+                                <StackLayout horizontalAlignment="center" class="alignCenter btn-container2">
+                                    <Label text="OK" class="email-ok-buttons" (tap)="okBtn()"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+
+                    </GridLayout>
+                    <StackLayout height="185px">
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+        <!-- Dropdown open -->
+        <!--<StackLayout verticalAlignment="top" class="drp-container" row="1" col="0" rowSpan="2" style="background-color:white;"
+            *ngIf="isDrpShow" (tap)="keepDrpOpen();">
+            <StackLayout class="drp-inner-container">
+                <GridLayout class="drpInnerLink drp-header" rows="*" columns="*,50">
+                    <Label text="Members" verticalAlignment="middle" verticalAlignment="middle" row="0" colSpan="2" class="option-text"></Label>
+                </GridLayout>
+                <StackLayout *ngFor="let item of MemebersDisplayName; let i = index">
+                    <GridLayout class=" drpInnerLink" [class.selected]="item.isSelected" rows="*" columns="*,50" (tap)="selectMember(item);">
+                        <Label text="{{item.displayName}}" row="0" col="0" class="option-text"></Label>
+                        <Image class="moreInnerIcon" src="~/images/icon/select icon@2x.png" row="0" col="1"></Image>
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>-->
+
+        <GridLayout #filterWindow rows="*" columns="*" row="1" col="0" colSpan="2" class="filter-window">
+            <GridLayout rows="12, 40, auto">
+                <StackLayout class="arrow" row="0" col="0">
+                    <Image class="" src="~/images/redesign/triangle.png" row="0" col="1"></Image>
+                </StackLayout>
+
+                <StackLayout class="header" row="1" col="0">
+                </StackLayout>
+
+                <StackLayout class="content" row="2" col="0">
+                    <GridLayout *ngFor="let item of memberList; let i = index" class="filter-item" [class.selected]="item.isSelected" rows="*"
+                        columns="*,auto" (tap)="selectMember(item);">
+                        <Button textWrap="true" text="{{item.firstName}} {{item.lastName}}" row="0" col="0" class="option-text" (tap)="selectMember(item);"></Button>
+                        <Image class="" src="~/images/redesign/selected-blue.png" row="0" col="1" (tap)="selectMember(item);"></Image>
+                    </GridLayout>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout>
+
+
+
+    </GridLayout>
+    <DockLayout style.verticalAlignment="bottom" row="2" col="0">
+        <mb-tab></mb-tab>
+    </DockLayout>
+</GridLayout>

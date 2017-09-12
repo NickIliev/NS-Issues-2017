@@ -1,0 +1,45 @@
+<<ActionBar class="header">
+    <Label [text]="title" horizontalAlignment="center" class="header-label"></Label>
+    </ActionBar>
+    <StackLayout>
+        <ScrollView>
+            <StackLayout class="page-background">
+                <StackLayout class="main-container">
+                    <StackLayout class="outer-container" [formGroup]="verifyForm">
+                        <StackLayout>
+                            <Label text="Enter Your Verification Code" textWrap="true" class="form-heading2"></Label>
+                        </StackLayout>
+                        <Label text="A 6-digit verification code has been sent to your email. Please enter the code in the field below." textWrap="true" class=" body-text-margin bodyText"></Label>
+                        <GridLayout columns="*, *,*,*,*,*" rows="auto" class=" body-text-margin">
+                            <TextView #txtfield1 text="" row="1" col="0" keyboardType="phone" class="tfield-bordered align-center" [(ngModel)]="col1Input" formControlName="col1Input" (ngModelChange)="changeFocus(col1Input,'2')" maxLength="1"></TextView>
+                            <TextView #txtfield2 text="" row="1" col="1" keyboardType="phone" class="tfield-bordered align-center" [(ngModel)]="col2Input" formControlName="col2Input" (ngModelChange)="changeFocus(col2Input,'3')" maxLength="1"></TextView>
+                            <TextView #txtfield3 text="" row="1" col="2" keyboardType="phone" class="tfield-bordered align-center" [(ngModel)]="col3Input" formControlName="col3Input" (ngModelChange)="changeFocus(col3Input,'4')" maxLength="1"></TextView>
+                            <TextView #txtfield4 text="" row="1" col="3" keyboardType="phone" class="tfield-bordered align-center" [(ngModel)]="col4Input" formControlName="col4Input" (ngModelChange)="changeFocus(col4Input,'5')" maxLength="1"></TextView>
+                            <TextView #txtfield5 text="" row="1" col="4" keyboardType="phone" class="tfield-bordered align-center" [(ngModel)]="col5Input" formControlName="col5Input" (ngModelChange)="changeFocus(col5Input,'6')" maxLength="1"></TextView>
+                            <TextView #txtfield6 text="" row="1" col="5" keyboardType="phone" class="tfield-bordered align-center" [(ngModel)]="col6Input" formControlName="col6Input" (ngModelChange)="changeFocus(col6Input,'')" maxLength="1"></TextView>
+                        </GridLayout>
+                        <StackLayout class="input-field  body-text-margin bodyText pb20">
+                            <Label text="Didn't receive your verification code?" textWrap="true"></Label>
+                            <!--<Label class="anchor-text " text="Send it again" textWrap="true" (tap)="happyNavigate()"></Label>-->
+                              <android>
+                            <Ripple rippleColor="#d50000">
+                            <Button text="Send it again" autocapitalizationType="none"  class="flat-blue-button text-underline text-left  flat-button-margin ios-padding5 secondary" (tap)="happyNavigate()"></Button>
+                            </Ripple>
+                        </android>
+                        <ios>
+                             <Button text="Send it again" autocapitalizationType="none"  class="flat-blue-button text-underline text-left  flat-button-margin ios-padding5 secondary" (tap)="happyNavigate()"></Button>
+                        </ios>
+                           
+                        </StackLayout>
+                        <!-- <StackLayout class="input-field  mt50">
+        <Button text="Continue"  (tap)="verifyUser()"  isEnabled="{{verifyForm.valid}}" autocapitalizationType="none" class="next-btn"></Button>
+    </StackLayout> -->
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="shadow">
+                    <Image src="~/images/myblue-app2.0-card-shadow.png"></Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+         
+    </StackLayout>

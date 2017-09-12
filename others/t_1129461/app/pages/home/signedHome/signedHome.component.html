@@ -1,0 +1,452 @@
+<ActionBar class="header">
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <StackLayout>
+        <mb-header [logo]="showlogo"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <StackLayout class="homeBg">
+        <ScrollView>
+            <StackLayout>
+                <!--<Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true" style="text-align: right; padding-right: 5"> </Label>-->
+                <!-- Authentication Success Details  -->
+                <StackLayout class="SuccessCard authentication-success-card" *ngIf="isAuthenticationSuccess" style="background-color: #ffffff; ">
+                    <GridLayout rows="*" columns="*">
+                        <StackLayout row="0" col="0">
+                            <GridLayout rows="*" columns="*,40" class="authentication-success-info SucessGrid">
+                                <StackLayout row="0" col="0">
+                                    <Label class="head" textWrap="true" text="Congratulations!"></Label>
+                                    <Label textWrap="true">
+                                        <FormattedString>
+                                            <Span text="Now that you're authenticated, you have access to all the new features the " color="#000" ></Span>
+                                            <Span  style="color:#BBBCBF; font-weight:bold; font-size:16;" text="MY"></Span>
+                                            <Span  style="color:#1176C0; font-weight:bold; font-size:16;" text="BLUE"></Span>
+                                            <Span text=" app has to offer."></Span>
+                                        </FormattedString>
+                                    </Label>
+                                </StackLayout>
+                                <Image loadMode="async" src="~/images/icon/close_type_2.png" row="0" col="1" horizontalAlignment="right" verticalAlignment="top" (tap)="successAuthenticationClose()"></Image>
+                            </GridLayout>
+                            <StackLayout orientation="vertical" class="explore">
+                                <Label text="Start Exploring"></Label>
+                                <Image loadMode="async" src="~/images/icon/downarrow.png"></Image>
+                            </StackLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <!-- End Authentication Details -->
+
+                <!-- Authenticate Details -->
+                <StackLayout class="signCard" [visibility]="(isUnauthenticated) ? 'visible' : 'collapsed'" style="background-color: #F78A14;">
+                    <GridLayout rows="*,*" columns="*" class="signGrid">
+                        <StackLayout orientation="horizontal" class="signView" row="0" col="0">
+                            <Label text="You must Authenticate your Account to get the full app." class="authenticateText whitecol" textWrap="true"> </Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal" class="signAccount" row="1" col="0">
+                            <GridLayout rows="*" columns="*">
+                                <StackLayout orientation="horizontal" row="0" col="0" class="signIcon link_pad whitecol" horizontalAlignment="right" verticalAlignment="middle" (tap)="authenticateMe();">
+                                    <Label text="Authenticate Now" textWrap="true"> </Label>
+                                    <Image loadMode="async" src="~/images/icon/right_arrow.png" class="arrowImage"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <!-- End Authenticate Details -->
+
+                <!-- Success Details -->
+                <StackLayout class="SuccessCard StackLayoutSpace" [visibility]="(isUnauthenticated && isUnauthenticatedClose) ? 'visible' : 'collapsed'" style="background-color: #ffffff; ">
+                    <GridLayout rows="*,*,*,*,*,*" columns="*" class="SucessGrid">
+                        <GridLayout rows="*" columns="*,40" row="0" col="0" class="sucessClose">
+                            <Label text="Success!" row="0" col="0"></Label>
+                            <Image loadMode="async" src="~/images/icon/close_type_2.png" row="0" col="1" horizontalAlignment="right" verticalAlignment="top" (tap)="successCardClose()"></Image>
+                        </GridLayout>
+                        <Label text="Your phone number is now verified." class="successPhone" row="1" col="0"></Label>
+                        <GridLayout rows="*" columns="50,*" row="2" col="0" class="sucessTick">
+                            <Image loadMode="async" src="~/images/tick-mark.png" row="0" col="0" horizontalAlignment="left" verticalAlignment="top"></Image>
+                            <Label text="Limited Access" row="0" col="1"></Label>
+                        </GridLayout>
+                        <Label text="Get fully authenticated and receive access to all your BCBSMA features" class="successAuthenticate" row="3" col="0" textWrap="true"></Label>
+                        <StackLayout row="4" col="0" class="successList">
+                            <GridLayout rows="*,*,*,*" columns="*">
+                                <StackLayout orientation="horizontal" row="0">
+                                    <Image loadMode="async" src="~/images/icon/square.png"> </Image>
+                                    <Label text="View member card & plan details" textWrap="true"></Label>
+                                </StackLayout>
+                                <StackLayout orientation="horizontal" row="1">
+                                    <Image loadMode="async" src="~/images/icon/square.png"> </Image>
+                                    <Label text="Manage claims" textWrap="true"></Label>
+                                </StackLayout>
+                                <StackLayout orientation="horizontal" row="2">
+                                    <Image loadMode="async" src="~/images/icon/square.png"> </Image>
+                                    <Label text="Manage your financial accounts" textWrap="true"></Label>
+                                </StackLayout>
+                                <StackLayout orientation="horizontal" row="3">
+                                    <Image loadMode="async" src="~/images/icon/square.png"> </Image>
+                                    <Label text="Get access to family members health info" textWrap="true"></Label>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+                        <Button text="Authenticate This Account" autocapitalizationType="none" (tap)="authenticateMe()" class="successBtn" row="5" col="0"></Button>
+                    </GridLayout>
+                </StackLayout>
+                <!-- End Success Details -->
+
+                <!-- Find a Doctor Details -->
+                <StackLayout *mbIfTurnOff>
+                    <StackLayout class="FADCard StackLayoutSpace" [visibility]="(isUnauthenticated) ? 'visible' : 'collapsed'" style="background-color: #ffffff;">
+                        <GridLayout rows="*,*,*" columns="*" class="FADGrid">
+                            <StackLayout orientation="horizontal" class="FADTitile" row="0">
+                                <Image loadMode="async" src="~/images/icon/find_a_doctor_.png"> </Image>
+                                <Label text="Find a Doctor" textWrap="true"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" class="FADList">
+                                <GridLayout rows="*, *" columns="*">
+                                    <StackLayout orientation="horizontal" row="0">
+                                        <Image loadMode="async" src="~/images/icon/dot.png"> </Image>
+                                        <Label text="Find and compare doctors, dentists, hospitals, and other healthcare providers." textWrap="true"></Label>
+                                    </StackLayout>
+                                    <StackLayout orientation="horizontal" row="1">
+                                        <Image loadMode="async" src="~/images/icon/dot.png"> </Image>
+                                        <Label text="Get estimates for over 1,600 common medical procedures." textWrap="true"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                            <GridLayout rows="*" columns="*,185" row="2" class="FADView">
+                                <StackLayout col="0">
+                                </StackLayout>
+                                <StackLayout col="1" orientation="horizontal" verticalAlignment="middle" horizontalAlignment="right" (tap)="happyNavigate();">
+                                    <Label text="Find a Doctor"> </Label>
+                                    <Image loadMode="async" src="~/images/icon/right_arrow.png" class="arrowImage"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </GridLayout>
+                    </StackLayout>
+                </StackLayout>
+                <!-- End Find a Doctor Details -->
+
+                <!-- Basic Details -->
+                <StackLayout class="mbintroCard" style="background-color: #ffffff;" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <GridLayout rows="*, *" columns="*,*,*" class="mbintroGrid" *ngIf="!isTurnOff">
+                        <StackLayout orientation="horizontal" class="mbUser" row="0" col="0" colSpan="3" horizontalAlignment="center">
+                            <Label text="Welcome to Blue Cross, "> </Label>
+                            <Label [text]="username"> </Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal" (tap)="myPlan();" row="1" col="0" class="mbintroStack font-arial">
+                            <Image loadMode="async" src="~/images/redesign/plan.png "></Image>
+                            <Label verticalalignment="center" text="My Plan"></Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal" (tap)="cards();" row="1" col="1" class="mbintroStack font-arial">
+                            <Image loadMode="async" src="~/images/redesign/cards.png"></Image>
+                            <Label verticalalignment="center" text="My Cards"></Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal" (tap)="happyNavigate();" row="1" col="2" class="mbintroStack font-arial">
+                            <Image loadMode="async" src="~/images/redesign/find_dr.png "></Image>
+                            <Label verticalalignment="center" text="Find a Dr."></Label>
+                        </StackLayout>
+                    </GridLayout>
+
+                    <GridLayout rows="*, *" columns="*,*" class="mbintroGrid" *ngIf="isTurnOff">
+                        <StackLayout orientation="horizontal" class="mbUser" row="0" col="0" colSpan="2" horizontalAlignment="center">
+                            <Label text="Welcome to Blue Cross, "> </Label>
+                            <Label [text]="username"> </Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal" (tap)="myPlan();" row="1" col="0" class="mbintroStack font-arial">
+                            <Image loadMode="async" src="~/images/redesign/plan.png "></Image>
+                            <Label verticalalignment="center" text="My Plan"></Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal" (tap)="cards();" row="1" col="1" class="mbintroStack font-arial">
+                            <Image loadMode="async" src="~/images/redesign/cards.png"></Image>
+                            <Label verticalalignment="center" text="My Cards"></Label>
+                        </StackLayout>
+                    </GridLayout>
+
+                </StackLayout>
+                <StackLayout class="curveImage" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+                <!-- End Basic Details -->
+
+                <!-- financial Details -->
+                <StackLayout class="mbfinancialCard" style="background-color: #ffffff;" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <GridLayout rows="*,*" columns="*" class="mbfinancialGrid">
+                        <GridLayout rows="*" columns="*,100" row="0" col="0" class="" (tap)="accounts()">
+                            <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                                <Image loadMode="async" src="~/images/redesign/financial.png"> </Image>
+                                <Label verticalalignment="center" text="My Financials" textWrap="true"></Label>
+                            </StackLayout>
+                            <StackLayout class="more-icon" horizontalAlignment="right" row="0" col="1">
+                                <Image loadMode="async" src="~/images/redesign/vertical-three-dots.png"></Image>
+                            </StackLayout>
+                        </GridLayout>
+                        <StackLayout row="1" col="0" orientation="vertical">
+                            <StackLayout orientation="horizontal" class="mbfinStack" (tap)="accounts()">
+                                <!-- <Label textWrap="true" class="mbfinLabel">
+                                        <FormattedString>
+                                            <Label class="mbfinNumber" text="{{ financial.alertsCount }} "></Label>
+                                            <Label  class="font-arial mbFinalerts" text=" Financial alerts"></Label>
+                                             <Label  class="mbfinArrow" text=" / "></Span>
+                                              <Label class="mbfinNumber" text="{{ financial.reimbursementsCount }} "></Label>
+                                            <Label  class="font-arial mbFinalerts" text=" Reimbursements"></Label>
+                                        </FormattedString>
+                                    </Label> -->
+                                <Label verticalalignment="bottom" class="mbfinNumber" text="{{ financial.alertsCount }} "></Label>
+                                <Label verticalalignment="bottom" class="font-arial mbFinalerts" text=" Financial alerts"></Label>
+                                <Label verticalalignment="bottom" class="mbfinArrow" text=" / "></Label>
+                                <Label verticalalignment="bottom" class="mbfinNumber" text="{{ financial.reimbursementsCount }} "></Label>
+                                <Label verticalalignment="bottom" class="font-arial mbFinalerts" text=" Reimbursements"></Label>
+                            </StackLayout>
+                            <StackLayout class="sliderCard" style="background-color: #ffffff;" (tap)="accounts()">
+                                <GridLayout rows="*" columns="*" class="slideGrid">
+                                    <StackLayout row="1" col="0">
+                                        <mb-slides pageIndicators="true">
+                                            <mb-slide *ngFor="let item of chartItems; let i = index">
+                                                <GridLayout rows="auto,auto" columns="*">
+                                                    <StackLayout row="0" col="0" orientation="horizontal" class="HSAHeader">
+                                                        <Label text="{{ item.account }} " class="font-arial"> </Label>
+                                                        <Label text="{{ item.year }}" class=""> </Label>
+                                                    </StackLayout>
+                                                    <StackLayout style.marginLeft="0" width="80%" row="1" col="0" horizontalAlignment="center">
+                                                        <GridLayout rows="*,*,*,*" columns="*">
+                                                            <StackLayout row="0" col="0" orientation="horizontal" class="legendMainStack">
+                                                                <StackLayout orientation="vertical" width="{{ item.availablePlot }} + %" class="legendStack">
+                                                                    <Label text="${{ item.available }}" class="legendPlot font-arial"> </Label>
+                                                                    <Label text="Available" class="legendText"> </Label>
+                                                                </StackLayout>
+                                                                <StackLayout orientation="vertical" width="{{ item.investedPlot }} + %" class="legendStack">
+                                                                    <Label text="${{ item.invested }}" class="legendPlot font-arial"> </Label>
+                                                                    <Label text="Invested" class="legendText"> </Label>
+                                                                </StackLayout>
+                                                                <StackLayout orientation="vertical" width="{{ item.ytdPlot }} + %" class="legendStack" horizontalAlignment="right">
+                                                                    <Label text="${{ item.ytd }}" class="legendPlot font-arial"> </Label>
+                                                                    <Label text="YTD" class="legendText"> </Label>
+                                                                </StackLayout>
+                                                                <!--<Label class="totalNumber" [text]="item.Contributions | currency:'USD':true"> </Label>-->
+                                                            </StackLayout>
+                                                            <StackLayout width="100%" orientation="horizontal" row="1" col="0">
+                                                                <Label width="{{ item.availablePlot }} + %" height="25" class="ChartGreen"> </Label>
+                                                                <Label width="{{ item.investedPlot }} + %" height="25" class="Chartviolet"> </Label>
+                                                                <Label width="{{ item.ytdPlot }} + %" height="25" class="chartBlue"> </Label>
+                                                                <Label width="{{ item.leftOverPlot }} + %" height="25" class="chartwhite"> </Label>
+                                                            </StackLayout>
+                                                            <StackLayout class="graph-shadow" row="2" col="0">
+                                                                <Image loadMode="async" width="85%" src="~/images/redesign/graph_shadow.png" horizontalAlignment="left"></Image>
+                                                            </StackLayout>
+                                                            <StackLayout width="100%" class="yrmaxtxt" orientation="horizontal" row="3" col="0" horizontalAlignment="right">
+                                                                <Label text="${{ item.yrMax }} yr max" class=""> </Label>
+                                                            </StackLayout>
+                                                        </GridLayout>
+                                                    </StackLayout>
+                                                </GridLayout>
+
+                                            </mb-slide>
+                                        </mb-slides>
+                                    </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+                <!-- End financial Details -->
+                <!-- Claims Details -->
+                <StackLayout class="mbClaimsCard" style="background-color: #ffffff;" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <GridLayout rows="*,*" columns="*" class="mbClaimsGrid">
+                        <StackLayout (tap)="claimsnav()" orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                            <Image loadMode="async" src="~/images/redesign/claims.png"> </Image>
+                            <Label verticalalignment="center" text="My Claims" textWrap="true"></Label>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" orientation="vertical">
+                            <StackLayout (tap)="claimsnav()" orientation="horizontal" class="mbclaimsStack">
+                                <!-- <Label textWrap="true" class="lastClaims">
+                                        <FormattedString>
+                                            <Span class="claimsLastCount" text="{{ claimsList.newClaims }} "></Span>
+                                            <Span  class="font-arial lastClaimstxt" text=" New Claims since your last visit"></Span>
+                                        </FormattedString>
+                                    </Label> -->
+                                <Label verticalalignment="bottom" class="claimsLastCount" text="{{ claimsList.newClaims }} "></Label>
+                                <Label verticalalignment="bottom" class="font-arial lastClaimstxt" text=" New Claims since your last visit"></Label>
+                            </StackLayout>
+                            <StackLayout (tap)="claimsnav()" orientation="vertical" class="mbclaimslatest">
+                                <Label textWrap="true" text="Latest Claim" class="mbclaimslatestlbl font-grey"></Label>
+                            </StackLayout>
+                            <ListView [items]="claimsList.recent" class="claim-listview" separatorColor="transparent" (itemTap)="loadClaimDetail()">
+                                <ng-template let-claim="item" let-index="index">
+                                    <ListView.itemTemplate>
+                                        <GridLayout rows="*" columns="*,auto" class="claimsDetail mbclaimsStack">
+                                            <GridLayout row="0" col="0" rows="*" columns="auto,*">
+                                                <Label [text]="claim.PrvName" row="0" col="0" class="font-arial claimsType"></Label>
+                                                <StackLayout orientation="horizontal" class="claimsCovered" row="0" col="1" horizontalAlignment="center">
+                                                    <Label text="Covered: " class="font-arial font-black"></Label>
+                                                    <!--<Label [text]="claimsList.covered | currency:'USD':true"></Label>-->
+                                                    <Label class="integer" [text]="claim.PrvSubAmt | currency:'USD':true | FormatDecimal:0"></Label>
+                                                    <Label class="decimal" text="."></Label>
+                                                    <Label class="decimal" verticalalignment="top" [text]="claim.PrvSubAmt | FormatDecimal:1"></Label>
+                                                </StackLayout>
+                                            </GridLayout>
+                                            <Label [text]="claim.ClmStat | ClaimStatus" [ngClass]="claim.ClmStat | ClaimStatus" class="font-arial claim-status" row="0" col="1" horizontalAlignment="right"></Label>
+                                        </GridLayout>
+                                    </ListView.itemTemplate>
+                                </ng-template>
+                            </ListView>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage moveUp" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+                <!-- End Claims Details -->
+                <!-- Doctor Details -->
+                <StackLayout class="mbdoctorsCard" style="background-color: #ffffff;" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <GridLayout rows="*,*" columns="*" class="mbdoctorsGrid">
+                        <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0" (tap)="myDoctors()">
+                            <Image loadMode="async" src="~/images/redesign/myDoctor.png"> </Image>
+                            <Label verticalalignment="center" text="My Doctors" textWrap="true"></Label>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" orientation="vertical">
+                            <StackLayout orientation="horizontal" class="mbDoctorVisit" (tap)="myDoctors()">
+                                <Label text="Last Vist: " class="font-grey"></Label>
+                                <Label text="{{ doctorList.LastVisit }} (Yesterday)" class="font-black font-arial"></Label>
+                            </StackLayout>
+                            <GridLayout rows="*" columns="*,auto" class="mbclaimsStack">
+                                <StackLayout orientation="vertical" row="0" col="0" verticalalignment="middle" class="doctorDetail" (tap)="myDoctors()">
+                                    <Label text="{{ doctorList.name }}, MD" class="font-arial doctorName"> </Label>
+                                    <Label text="{{ doctorList.specialist }}" class="font-arial font-black"> </Label>
+                                </StackLayout>
+                                <StackLayout orientation="horizontal" row="0" col="1" verticalalignment="middle" class="doctorDetail">
+                                    <StackLayout orientation="vertical" class="doctor-map font-arial" (tap)="showmap(doctorList.address1, doctorList.city, doctorList.state, doctorList.zipcode);">
+                                        <Image loadMode="async" src="~/images/redesign/map.png"></Image>
+                                        <Label text="Map"> </Label>
+                                    </StackLayout>
+                                    <StackLayout orientation="vertical" class="doctor-call font-arial" (tap)="callPhone(doctorList.mobile)">
+                                        <Image loadMode="async" src="~/images/redesign/call.png"></Image>
+                                        <Label text="Call"> </Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+                <!--End Doctor Details -->
+
+                <!-- medications Details -->
+                <StackLayout class="mbmedicationsCard" style="background-color: #ffffff;" (tap)="medicationNav()" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <GridLayout rows="*,*" columns="*" class="mbmedicationsGrid">
+                        <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                            <Image loadMode="async" src="~/images/redesign/medications.png"> </Image>
+                            <Label verticalalignment="center" text="My Medications" textWrap="true"></Label>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" orientation="vertical">
+                            <StackLayout orientation="horizontal" class="mbDoctorVisit">
+                                <Label text="Last Date of Fill: " class="font-grey"></Label>
+                                <Label text="{{ medicationList.LastVisit }} (Yesterday)" class="font-black font-arial"></Label>
+                            </StackLayout>
+
+                            <StackLayout orientation="vertical" row="0" col="0" class="mbclaimsStack medicationStack">
+                                <Label text="{{ medicationList.medicationName }}" class="font-arial doctorName"> </Label>
+                                <GridLayout rows="*" columns="auto, auto,auto" class="medicaitondetails">
+                                    <StackLayout orientation="horizontal" row="0" col="0" class="medicaiton-dosage">
+                                        <Label text="Dosage: " verticalalignment="bottom" class="medicationlbl font-grey"></Label>
+                                        <Label [text]="medicationList.dosage" class="medicationtxt"></Label>
+                                    </StackLayout>
+                                    <StackLayout orientation="horizontal" row="0" col="1" class="medicaiton-form">
+                                        <Label text="Form: " verticalalignment="bottom" class="medicationlbl font-grey"></Label>
+                                        <Label [text]="medicationList.form" class="medicationtxt"></Label>
+                                    </StackLayout>
+                                    <StackLayout orientation="horizontal" row="0" col="2" class="medicaiton-frequency">
+                                        <Label text="Frequency: " verticalalignment="bottom" class="medicationlbl font-grey"></Label>
+                                        <Label [text]="medicationList.frequency" textWrap="true" class="medicationtxt"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage" [visibility]="(isLoggedIn) ? 'visible' : 'collapsed'">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+                <!--End medications Details -->
+
+                <!-- Healthy Livivng Details -->
+                <StackLayout *ngFor="let item of healthyAricles">
+                    <StackLayout class="mbhealthyCard mbStackLayoutSpace" style="background-color: #ffffff;">
+                        <GridLayout rows="*,*" columns="*" class="mbarticleGrid">
+                            <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                                <Image loadMode="async" [src]="item.titleImageURL"> </Image>
+                                <Label verticalalignment="center" [text]="item.title" textWrap="true"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="0" class="mbhealthyBanner">
+                                <GridLayout columns="auto, *" rows="auto, 30">
+                                    <Image loadMode="async" [src]="item.imageURL" stretch="fill" class="mbTileImage" rowSpan="2" col="0"></Image>
+                                    <StackLayout orientation="vertical" col="1" rowSpan="2" class="mbhealthyGridTitle" horizontalAlignment="left" verticalAlignment="top">
+                                        <Label [text]="item.subtitle" class="mbhealthySubTitle font-arial" textWrap="true"></Label>
+                                        <Label [text]="item.description" class="mbhealthySub" textWrap="true"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+                                <GridLayout rows="*" columns="*">
+                                    <Label text="Read Article" class="readArticle font-arial" (touch)="articleDetail();" verticalAlignment="middle" horizontalAlignment="right"></Label>
+                                </GridLayout>
+                            </StackLayout>
+                        </GridLayout>
+                    </StackLayout>
+                    <StackLayout class="curveImage">
+                        <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="mbStackLayoutSpace" style="background-color: #ffffff;">
+                    <GridLayout rows="*,*" columns="*" class="mbarticleGrid">
+                        <StackLayout orientation="horizontal" class="mbGridTitile font-arial" row="0" col="0">
+                            <Image loadMode="async" src="~/images/redesign/wellness.png"> </Image>
+                            <Label verticalalignment="center" text="Good reasons" textWrap="true"></Label>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" class="mbhealthyBanner">
+                            <StackLayout orientation="vertical" class="" horizontalAlignment="left" verticalAlignment="top">
+                                <Label text="Good reasons well" class="mbhealthySubTitle font-arial" textWrap="true"></Label>
+                                <Label text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout." class="mbhealthySub" textWrap="true"></Label>
+                            </StackLayout>
+                            <GridLayout rows="*" columns="*">
+                                <Label text="Read Article" class="readArticle font-arial" (touch)="articleDetail();" verticalAlignment="middle" horizontalAlignment="right"></Label>
+                            </GridLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+                <!--End Healthy Livivng Details -->
+                <StackLayout class="mbStackLayoutSpace" style="background-color: #ffffff;">
+                    <GridLayout rows="*,*" columns="*" class="">
+                        <StackLayout orientation="horizontal" class="mbContactlogo" row="0" col="0" verticalalignment="middle" horizontalAlignment="center">
+                            <Image loadMode="async" src="~/images/logo.png"> </Image>
+                        </StackLayout>
+                        <StackLayout row="1" col="0" (tap)="contactUs();">
+                            <GridLayout rows="*" columns="*, 50" class="mblblContact">
+                                <Label text="Contact Us" class="font-arial" row="0" col="0"></Label>
+                                <Image loadMode="async" class="arrowImage" src="~/images/icon/right2.png" col="2" verticalalignment="middle" horizontalAlignment="right" row="0"></Image>
+                            </GridLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+                <StackLayout class="curveImage bottomSpace">
+                    <Image loadMode="async" src="~/images/redesign/shadow.png"></Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+    <StackLayout class="loaderbg" visibility="{{isBusy ? 'visible' : 'collapsed'}}" isUserInteractionEnabled=false>
+        <GridLayout rows="*">
+            <ActivityIndicator row="1" #activityIndicator busy="true" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

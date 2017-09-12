@@ -1,0 +1,5 @@
+<StackLayout (tap)="onStackTap()">
+    <Label [text]="connectionStatus" textWrap="true"></Label>
+    <Label text="Toggle switch"></Label>
+    <Switch [checked]="switchStatus" (checkedChange)="onSecondChecked($event)" isUserInteractionEnabled="false" (loaded)="onSwitchLoaded($event)"></Switch>
+</StackLayout>

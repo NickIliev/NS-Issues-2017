@@ -1,0 +1,75 @@
+#authenticateSharedPromoModal {
+    background-color: #fff;
+}
+.authenticateWindow {
+    padding-bottom: 10;
+    z-index: 999;
+    color: black;
+}
+.windowPadding {
+    padding: 0 10 10 30;
+}
+.listView {
+    margin: 0 0 0 0;
+    padding: 0 0 8 0;
+    font-size: 14;
+    color: black;
+    font-weight: bold;
+}
+.mainHeader {
+    margin: 20 20 10 0;
+    color: black;
+    font-size: 20;
+    width: 100%;
+}
+.subHeader {
+    color: black;
+    font-size: 14;
+    font-style: normal;
+    padding: 0 20 0 0;
+}
+.btnSection {
+    background-color: #ffffff;
+    padding: 0 10 10 10;
+}
+.yesAuthenticate {
+    background-color: #1866a3;
+    font-size: 18;
+    font-weight: bold;
+    height: 50;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+.mayBeLater {
+    color: #1866a3;
+    font-size: 17;
+    font-weight: bold;
+    background-color: #ffffff;
+    height: 50;
+    margin-bottom: 10;
+    text-align: center;
+    text-transform: capitalize;
+    z-index: -1;
+}
+.closeBtn {
+    height: 25;
+    width: 25;
+    margin: 15 15 10 0;
+}
+.headerImg {
+    width: 225;
+}
+.list-stacklayout {
+    padding: 20 10 50 0;
+}
+.blue-box {
+    background-color: #1866a3;
+    height: 10;
+    width: 10;
+    margin: 10 15 0 15;
+}
+.listImages {
+    height: 35;
+    width: 35;
+    margin: 0 15 10 0;
+}

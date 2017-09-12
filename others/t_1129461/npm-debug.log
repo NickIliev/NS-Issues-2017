@@ -1,0 +1,2970 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@3.10.9
+3 info using node@v6.9.2
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData @angular/common
+20 silly mapToRegistry name @angular/common
+21 silly mapToRegistry scope (from package name) @angular
+22 verbose mapToRegistry no registry URL found in name for scope @angular
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: '@angular/common',
+25 silly mapToRegistry   scope: '@angular',
+25 silly mapToRegistry   escapedName: '@angular%2fcommon',
+25 silly mapToRegistry   name: '@angular/common',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcommon
+27 silly fetchNamedPackageData @angular/compiler
+28 silly mapToRegistry name @angular/compiler
+29 silly mapToRegistry scope (from package name) @angular
+30 verbose mapToRegistry no registry URL found in name for scope @angular
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry data Result {
+33 silly mapToRegistry   raw: '@angular/compiler',
+33 silly mapToRegistry   scope: '@angular',
+33 silly mapToRegistry   escapedName: '@angular%2fcompiler',
+33 silly mapToRegistry   name: '@angular/compiler',
+33 silly mapToRegistry   rawSpec: '',
+33 silly mapToRegistry   spec: 'latest',
+33 silly mapToRegistry   type: 'tag' }
+34 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcompiler
+35 silly fetchNamedPackageData @angular/core
+36 silly mapToRegistry name @angular/core
+37 silly mapToRegistry scope (from package name) @angular
+38 verbose mapToRegistry no registry URL found in name for scope @angular
+39 silly mapToRegistry using default registry
+40 silly mapToRegistry registry https://registry.npmjs.org/
+41 silly mapToRegistry data Result {
+41 silly mapToRegistry   raw: '@angular/core',
+41 silly mapToRegistry   scope: '@angular',
+41 silly mapToRegistry   escapedName: '@angular%2fcore',
+41 silly mapToRegistry   name: '@angular/core',
+41 silly mapToRegistry   rawSpec: '',
+41 silly mapToRegistry   spec: 'latest',
+41 silly mapToRegistry   type: 'tag' }
+42 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcore
+43 silly fetchNamedPackageData @angular/forms
+44 silly mapToRegistry name @angular/forms
+45 silly mapToRegistry scope (from package name) @angular
+46 verbose mapToRegistry no registry URL found in name for scope @angular
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry data Result {
+49 silly mapToRegistry   raw: '@angular/forms',
+49 silly mapToRegistry   scope: '@angular',
+49 silly mapToRegistry   escapedName: '@angular%2fforms',
+49 silly mapToRegistry   name: '@angular/forms',
+49 silly mapToRegistry   rawSpec: '',
+49 silly mapToRegistry   spec: 'latest',
+49 silly mapToRegistry   type: 'tag' }
+50 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fforms
+51 silly fetchNamedPackageData @angular/http
+52 silly mapToRegistry name @angular/http
+53 silly mapToRegistry scope (from package name) @angular
+54 verbose mapToRegistry no registry URL found in name for scope @angular
+55 silly mapToRegistry using default registry
+56 silly mapToRegistry registry https://registry.npmjs.org/
+57 silly mapToRegistry data Result {
+57 silly mapToRegistry   raw: '@angular/http',
+57 silly mapToRegistry   scope: '@angular',
+57 silly mapToRegistry   escapedName: '@angular%2fhttp',
+57 silly mapToRegistry   name: '@angular/http',
+57 silly mapToRegistry   rawSpec: '',
+57 silly mapToRegistry   spec: 'latest',
+57 silly mapToRegistry   type: 'tag' }
+58 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fhttp
+59 silly fetchNamedPackageData @angular/platform-browser
+60 silly mapToRegistry name @angular/platform-browser
+61 silly mapToRegistry scope (from package name) @angular
+62 verbose mapToRegistry no registry URL found in name for scope @angular
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry https://registry.npmjs.org/
+65 silly mapToRegistry data Result {
+65 silly mapToRegistry   raw: '@angular/platform-browser',
+65 silly mapToRegistry   scope: '@angular',
+65 silly mapToRegistry   escapedName: '@angular%2fplatform-browser',
+65 silly mapToRegistry   name: '@angular/platform-browser',
+65 silly mapToRegistry   rawSpec: '',
+65 silly mapToRegistry   spec: 'latest',
+65 silly mapToRegistry   type: 'tag' }
+66 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser
+67 silly fetchNamedPackageData @angular/platform-browser-dynamic
+68 silly mapToRegistry name @angular/platform-browser-dynamic
+69 silly mapToRegistry scope (from package name) @angular
+70 verbose mapToRegistry no registry URL found in name for scope @angular
+71 silly mapToRegistry using default registry
+72 silly mapToRegistry registry https://registry.npmjs.org/
+73 silly mapToRegistry data Result {
+73 silly mapToRegistry   raw: '@angular/platform-browser-dynamic',
+73 silly mapToRegistry   scope: '@angular',
+73 silly mapToRegistry   escapedName: '@angular%2fplatform-browser-dynamic',
+73 silly mapToRegistry   name: '@angular/platform-browser-dynamic',
+73 silly mapToRegistry   rawSpec: '',
+73 silly mapToRegistry   spec: 'latest',
+73 silly mapToRegistry   type: 'tag' }
+74 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+75 silly fetchNamedPackageData @angular/router
+76 silly mapToRegistry name @angular/router
+77 silly mapToRegistry scope (from package name) @angular
+78 verbose mapToRegistry no registry URL found in name for scope @angular
+79 silly mapToRegistry using default registry
+80 silly mapToRegistry registry https://registry.npmjs.org/
+81 silly mapToRegistry data Result {
+81 silly mapToRegistry   raw: '@angular/router',
+81 silly mapToRegistry   scope: '@angular',
+81 silly mapToRegistry   escapedName: '@angular%2frouter',
+81 silly mapToRegistry   name: '@angular/router',
+81 silly mapToRegistry   rawSpec: '',
+81 silly mapToRegistry   spec: 'latest',
+81 silly mapToRegistry   type: 'tag' }
+82 silly mapToRegistry uri https://registry.npmjs.org/@angular%2frouter
+83 silly fetchNamedPackageData aes-js
+84 silly mapToRegistry name aes-js
+85 silly mapToRegistry using default registry
+86 silly mapToRegistry registry https://registry.npmjs.org/
+87 silly mapToRegistry data Result {
+87 silly mapToRegistry   raw: 'aes-js',
+87 silly mapToRegistry   scope: null,
+87 silly mapToRegistry   escapedName: 'aes-js',
+87 silly mapToRegistry   name: 'aes-js',
+87 silly mapToRegistry   rawSpec: '',
+87 silly mapToRegistry   spec: 'latest',
+87 silly mapToRegistry   type: 'tag' }
+88 silly mapToRegistry uri https://registry.npmjs.org/aes-js
+89 silly fetchNamedPackageData codelyzer
+90 silly mapToRegistry name codelyzer
+91 silly mapToRegistry using default registry
+92 silly mapToRegistry registry https://registry.npmjs.org/
+93 silly mapToRegistry data Result {
+93 silly mapToRegistry   raw: 'codelyzer',
+93 silly mapToRegistry   scope: null,
+93 silly mapToRegistry   escapedName: 'codelyzer',
+93 silly mapToRegistry   name: 'codelyzer',
+93 silly mapToRegistry   rawSpec: '',
+93 silly mapToRegistry   spec: 'latest',
+93 silly mapToRegistry   type: 'tag' }
+94 silly mapToRegistry uri https://registry.npmjs.org/codelyzer
+95 silly fetchNamedPackageData crypto-js
+96 silly mapToRegistry name crypto-js
+97 silly mapToRegistry using default registry
+98 silly mapToRegistry registry https://registry.npmjs.org/
+99 silly mapToRegistry data Result {
+99 silly mapToRegistry   raw: 'crypto-js',
+99 silly mapToRegistry   scope: null,
+99 silly mapToRegistry   escapedName: 'crypto-js',
+99 silly mapToRegistry   name: 'crypto-js',
+99 silly mapToRegistry   rawSpec: '',
+99 silly mapToRegistry   spec: 'latest',
+99 silly mapToRegistry   type: 'tag' }
+100 silly mapToRegistry uri https://registry.npmjs.org/crypto-js
+101 silly fetchNamedPackageData nativescript-adobe-analytics
+102 silly mapToRegistry name nativescript-adobe-analytics
+103 silly mapToRegistry using default registry
+104 silly mapToRegistry registry https://registry.npmjs.org/
+105 silly mapToRegistry data Result {
+105 silly mapToRegistry   raw: 'nativescript-adobe-analytics',
+105 silly mapToRegistry   scope: null,
+105 silly mapToRegistry   escapedName: 'nativescript-adobe-analytics',
+105 silly mapToRegistry   name: 'nativescript-adobe-analytics',
+105 silly mapToRegistry   rawSpec: '',
+105 silly mapToRegistry   spec: 'latest',
+105 silly mapToRegistry   type: 'tag' }
+106 silly mapToRegistry uri https://registry.npmjs.org/nativescript-adobe-analytics
+107 silly fetchNamedPackageData nativescript-angular
+108 silly mapToRegistry name nativescript-angular
+109 silly mapToRegistry using default registry
+110 silly mapToRegistry registry https://registry.npmjs.org/
+111 silly mapToRegistry data Result {
+111 silly mapToRegistry   raw: 'nativescript-angular',
+111 silly mapToRegistry   scope: null,
+111 silly mapToRegistry   escapedName: 'nativescript-angular',
+111 silly mapToRegistry   name: 'nativescript-angular',
+111 silly mapToRegistry   rawSpec: '',
+111 silly mapToRegistry   spec: 'latest',
+111 silly mapToRegistry   type: 'tag' }
+112 silly mapToRegistry uri https://registry.npmjs.org/nativescript-angular
+113 silly fetchNamedPackageData nativescript-cardview
+114 silly mapToRegistry name nativescript-cardview
+115 silly mapToRegistry using default registry
+116 silly mapToRegistry registry https://registry.npmjs.org/
+117 silly mapToRegistry data Result {
+117 silly mapToRegistry   raw: 'nativescript-cardview',
+117 silly mapToRegistry   scope: null,
+117 silly mapToRegistry   escapedName: 'nativescript-cardview',
+117 silly mapToRegistry   name: 'nativescript-cardview',
+117 silly mapToRegistry   rawSpec: '',
+117 silly mapToRegistry   spec: 'latest',
+117 silly mapToRegistry   type: 'tag' }
+118 silly mapToRegistry uri https://registry.npmjs.org/nativescript-cardview
+119 silly fetchNamedPackageData nativescript-checkbox
+120 silly mapToRegistry name nativescript-checkbox
+121 silly mapToRegistry using default registry
+122 silly mapToRegistry registry https://registry.npmjs.org/
+123 silly mapToRegistry data Result {
+123 silly mapToRegistry   raw: 'nativescript-checkbox',
+123 silly mapToRegistry   scope: null,
+123 silly mapToRegistry   escapedName: 'nativescript-checkbox',
+123 silly mapToRegistry   name: 'nativescript-checkbox',
+123 silly mapToRegistry   rawSpec: '',
+123 silly mapToRegistry   spec: 'latest',
+123 silly mapToRegistry   type: 'tag' }
+124 silly mapToRegistry uri https://registry.npmjs.org/nativescript-checkbox
+125 silly fetchNamedPackageData nativescript-contacts
+126 silly mapToRegistry name nativescript-contacts
+127 silly mapToRegistry using default registry
+128 silly mapToRegistry registry https://registry.npmjs.org/
+129 silly mapToRegistry data Result {
+129 silly mapToRegistry   raw: 'nativescript-contacts',
+129 silly mapToRegistry   scope: null,
+129 silly mapToRegistry   escapedName: 'nativescript-contacts',
+129 silly mapToRegistry   name: 'nativescript-contacts',
+129 silly mapToRegistry   rawSpec: '',
+129 silly mapToRegistry   spec: 'latest',
+129 silly mapToRegistry   type: 'tag' }
+130 silly mapToRegistry uri https://registry.npmjs.org/nativescript-contacts
+131 silly fetchOtherPackageData nativescript-contacts-lite@./nativescript-contacts-lite-0.2.3.tgz
+132 silly cache add args [ 'nativescript-contacts-lite@./nativescript-contacts-lite-0.2.3.tgz',
+132 silly cache add   null ]
+133 verbose cache add spec nativescript-contacts-lite@./nativescript-contacts-lite-0.2.3.tgz
+134 silly fetchNamedPackageData nativescript-drop-down
+135 silly mapToRegistry name nativescript-drop-down
+136 silly mapToRegistry using default registry
+137 silly mapToRegistry registry https://registry.npmjs.org/
+138 silly mapToRegistry data Result {
+138 silly mapToRegistry   raw: 'nativescript-drop-down',
+138 silly mapToRegistry   scope: null,
+138 silly mapToRegistry   escapedName: 'nativescript-drop-down',
+138 silly mapToRegistry   name: 'nativescript-drop-down',
+138 silly mapToRegistry   rawSpec: '',
+138 silly mapToRegistry   spec: 'latest',
+138 silly mapToRegistry   type: 'tag' }
+139 silly mapToRegistry uri https://registry.npmjs.org/nativescript-drop-down
+140 silly fetchNamedPackageData nativescript-email
+141 silly mapToRegistry name nativescript-email
+142 silly mapToRegistry using default registry
+143 silly mapToRegistry registry https://registry.npmjs.org/
+144 silly mapToRegistry data Result {
+144 silly mapToRegistry   raw: 'nativescript-email',
+144 silly mapToRegistry   scope: null,
+144 silly mapToRegistry   escapedName: 'nativescript-email',
+144 silly mapToRegistry   name: 'nativescript-email',
+144 silly mapToRegistry   rawSpec: '',
+144 silly mapToRegistry   spec: 'latest',
+144 silly mapToRegistry   type: 'tag' }
+145 silly mapToRegistry uri https://registry.npmjs.org/nativescript-email
+146 silly fetchNamedPackageData nativescript-fingerprint-auth
+147 silly mapToRegistry name nativescript-fingerprint-auth
+148 silly mapToRegistry using default registry
+149 silly mapToRegistry registry https://registry.npmjs.org/
+150 silly mapToRegistry data Result {
+150 silly mapToRegistry   raw: 'nativescript-fingerprint-auth',
+150 silly mapToRegistry   scope: null,
+150 silly mapToRegistry   escapedName: 'nativescript-fingerprint-auth',
+150 silly mapToRegistry   name: 'nativescript-fingerprint-auth',
+150 silly mapToRegistry   rawSpec: '',
+150 silly mapToRegistry   spec: 'latest',
+150 silly mapToRegistry   type: 'tag' }
+151 silly mapToRegistry uri https://registry.npmjs.org/nativescript-fingerprint-auth
+152 silly fetchNamedPackageData nativescript-geolocation
+153 silly mapToRegistry name nativescript-geolocation
+154 silly mapToRegistry using default registry
+155 silly mapToRegistry registry https://registry.npmjs.org/
+156 silly mapToRegistry data Result {
+156 silly mapToRegistry   raw: 'nativescript-geolocation',
+156 silly mapToRegistry   scope: null,
+156 silly mapToRegistry   escapedName: 'nativescript-geolocation',
+156 silly mapToRegistry   name: 'nativescript-geolocation',
+156 silly mapToRegistry   rawSpec: '',
+156 silly mapToRegistry   spec: 'latest',
+156 silly mapToRegistry   type: 'tag' }
+157 silly mapToRegistry uri https://registry.npmjs.org/nativescript-geolocation
+158 silly fetchNamedPackageData nativescript-iqkeyboardmanager
+159 silly mapToRegistry name nativescript-iqkeyboardmanager
+160 silly mapToRegistry using default registry
+161 silly mapToRegistry registry https://registry.npmjs.org/
+162 silly mapToRegistry data Result {
+162 silly mapToRegistry   raw: 'nativescript-iqkeyboardmanager',
+162 silly mapToRegistry   scope: null,
+162 silly mapToRegistry   escapedName: 'nativescript-iqkeyboardmanager',
+162 silly mapToRegistry   name: 'nativescript-iqkeyboardmanager',
+162 silly mapToRegistry   rawSpec: '',
+162 silly mapToRegistry   spec: 'latest',
+162 silly mapToRegistry   type: 'tag' }
+163 silly mapToRegistry uri https://registry.npmjs.org/nativescript-iqkeyboardmanager
+164 silly fetchNamedPackageData nativescript-loading-indicator
+165 silly mapToRegistry name nativescript-loading-indicator
+166 silly mapToRegistry using default registry
+167 silly mapToRegistry registry https://registry.npmjs.org/
+168 silly mapToRegistry data Result {
+168 silly mapToRegistry   raw: 'nativescript-loading-indicator',
+168 silly mapToRegistry   scope: null,
+168 silly mapToRegistry   escapedName: 'nativescript-loading-indicator',
+168 silly mapToRegistry   name: 'nativescript-loading-indicator',
+168 silly mapToRegistry   rawSpec: '',
+168 silly mapToRegistry   spec: 'latest',
+168 silly mapToRegistry   type: 'tag' }
+169 silly mapToRegistry uri https://registry.npmjs.org/nativescript-loading-indicator
+170 silly fetchNamedPackageData nativescript-locate-address
+171 silly mapToRegistry name nativescript-locate-address
+172 silly mapToRegistry using default registry
+173 silly mapToRegistry registry https://registry.npmjs.org/
+174 silly mapToRegistry data Result {
+174 silly mapToRegistry   raw: 'nativescript-locate-address',
+174 silly mapToRegistry   scope: null,
+174 silly mapToRegistry   escapedName: 'nativescript-locate-address',
+174 silly mapToRegistry   name: 'nativescript-locate-address',
+174 silly mapToRegistry   rawSpec: '',
+174 silly mapToRegistry   spec: 'latest',
+174 silly mapToRegistry   type: 'tag' }
+175 silly mapToRegistry uri https://registry.npmjs.org/nativescript-locate-address
+176 silly fetchNamedPackageData nativescript-permissions
+177 silly mapToRegistry name nativescript-permissions
+178 silly mapToRegistry using default registry
+179 silly mapToRegistry registry https://registry.npmjs.org/
+180 silly mapToRegistry data Result {
+180 silly mapToRegistry   raw: 'nativescript-permissions',
+180 silly mapToRegistry   scope: null,
+180 silly mapToRegistry   escapedName: 'nativescript-permissions',
+180 silly mapToRegistry   name: 'nativescript-permissions',
+180 silly mapToRegistry   rawSpec: '',
+180 silly mapToRegistry   spec: 'latest',
+180 silly mapToRegistry   type: 'tag' }
+181 silly mapToRegistry uri https://registry.npmjs.org/nativescript-permissions
+182 silly fetchNamedPackageData nativescript-phone
+183 silly mapToRegistry name nativescript-phone
+184 silly mapToRegistry using default registry
+185 silly mapToRegistry registry https://registry.npmjs.org/
+186 silly mapToRegistry data Result {
+186 silly mapToRegistry   raw: 'nativescript-phone',
+186 silly mapToRegistry   scope: null,
+186 silly mapToRegistry   escapedName: 'nativescript-phone',
+186 silly mapToRegistry   name: 'nativescript-phone',
+186 silly mapToRegistry   rawSpec: '',
+186 silly mapToRegistry   spec: 'latest',
+186 silly mapToRegistry   type: 'tag' }
+187 silly mapToRegistry uri https://registry.npmjs.org/nativescript-phone
+188 silly fetchNamedPackageData nativescript-printer
+189 silly mapToRegistry name nativescript-printer
+190 silly mapToRegistry using default registry
+191 silly mapToRegistry registry https://registry.npmjs.org/
+192 silly mapToRegistry data Result {
+192 silly mapToRegistry   raw: 'nativescript-printer',
+192 silly mapToRegistry   scope: null,
+192 silly mapToRegistry   escapedName: 'nativescript-printer',
+192 silly mapToRegistry   name: 'nativescript-printer',
+192 silly mapToRegistry   rawSpec: '',
+192 silly mapToRegistry   spec: 'latest',
+192 silly mapToRegistry   type: 'tag' }
+193 silly mapToRegistry uri https://registry.npmjs.org/nativescript-printer
+194 silly fetchNamedPackageData nativescript-rich-textfield
+195 silly mapToRegistry name nativescript-rich-textfield
+196 silly mapToRegistry using default registry
+197 silly mapToRegistry registry https://registry.npmjs.org/
+198 silly mapToRegistry data Result {
+198 silly mapToRegistry   raw: 'nativescript-rich-textfield',
+198 silly mapToRegistry   scope: null,
+198 silly mapToRegistry   escapedName: 'nativescript-rich-textfield',
+198 silly mapToRegistry   name: 'nativescript-rich-textfield',
+198 silly mapToRegistry   rawSpec: '',
+198 silly mapToRegistry   spec: 'latest',
+198 silly mapToRegistry   type: 'tag' }
+199 silly mapToRegistry uri https://registry.npmjs.org/nativescript-rich-textfield
+200 silly fetchNamedPackageData nativescript-screenshot
+201 silly mapToRegistry name nativescript-screenshot
+202 silly mapToRegistry using default registry
+203 silly mapToRegistry registry https://registry.npmjs.org/
+204 silly mapToRegistry data Result {
+204 silly mapToRegistry   raw: 'nativescript-screenshot',
+204 silly mapToRegistry   scope: null,
+204 silly mapToRegistry   escapedName: 'nativescript-screenshot',
+204 silly mapToRegistry   name: 'nativescript-screenshot',
+204 silly mapToRegistry   rawSpec: '',
+204 silly mapToRegistry   spec: 'latest',
+204 silly mapToRegistry   type: 'tag' }
+205 silly mapToRegistry uri https://registry.npmjs.org/nativescript-screenshot
+206 silly fetchNamedPackageData nativescript-secure-storage
+207 silly mapToRegistry name nativescript-secure-storage
+208 silly mapToRegistry using default registry
+209 silly mapToRegistry registry https://registry.npmjs.org/
+210 silly mapToRegistry data Result {
+210 silly mapToRegistry   raw: 'nativescript-secure-storage',
+210 silly mapToRegistry   scope: null,
+210 silly mapToRegistry   escapedName: 'nativescript-secure-storage',
+210 silly mapToRegistry   name: 'nativescript-secure-storage',
+210 silly mapToRegistry   rawSpec: '',
+210 silly mapToRegistry   spec: 'latest',
+210 silly mapToRegistry   type: 'tag' }
+211 silly mapToRegistry uri https://registry.npmjs.org/nativescript-secure-storage
+212 silly fetchNamedPackageData nativescript-telerik-ui-pro
+213 silly mapToRegistry name nativescript-telerik-ui-pro
+214 silly mapToRegistry using default registry
+215 silly mapToRegistry registry https://registry.npmjs.org/
+216 silly mapToRegistry data Result {
+216 silly mapToRegistry   raw: 'nativescript-telerik-ui-pro',
+216 silly mapToRegistry   scope: null,
+216 silly mapToRegistry   escapedName: 'nativescript-telerik-ui-pro',
+216 silly mapToRegistry   name: 'nativescript-telerik-ui-pro',
+216 silly mapToRegistry   rawSpec: '',
+216 silly mapToRegistry   spec: 'latest',
+216 silly mapToRegistry   type: 'tag' }
+217 silly mapToRegistry uri https://registry.npmjs.org/nativescript-telerik-ui-pro
+218 silly fetchNamedPackageData nativescript-testfairy
+219 silly mapToRegistry name nativescript-testfairy
+220 silly mapToRegistry using default registry
+221 silly mapToRegistry registry https://registry.npmjs.org/
+222 silly mapToRegistry data Result {
+222 silly mapToRegistry   raw: 'nativescript-testfairy',
+222 silly mapToRegistry   scope: null,
+222 silly mapToRegistry   escapedName: 'nativescript-testfairy',
+222 silly mapToRegistry   name: 'nativescript-testfairy',
+222 silly mapToRegistry   rawSpec: '',
+222 silly mapToRegistry   spec: 'latest',
+222 silly mapToRegistry   type: 'tag' }
+223 silly mapToRegistry uri https://registry.npmjs.org/nativescript-testfairy
+224 silly fetchNamedPackageData nativescript-theme-core
+225 silly mapToRegistry name nativescript-theme-core
+226 silly mapToRegistry using default registry
+227 silly mapToRegistry registry https://registry.npmjs.org/
+228 silly mapToRegistry data Result {
+228 silly mapToRegistry   raw: 'nativescript-theme-core',
+228 silly mapToRegistry   scope: null,
+228 silly mapToRegistry   escapedName: 'nativescript-theme-core',
+228 silly mapToRegistry   name: 'nativescript-theme-core',
+228 silly mapToRegistry   rawSpec: '',
+228 silly mapToRegistry   spec: 'latest',
+228 silly mapToRegistry   type: 'tag' }
+229 silly mapToRegistry uri https://registry.npmjs.org/nativescript-theme-core
+230 silly fetchNamedPackageData nativescript-timedatepicker
+231 silly mapToRegistry name nativescript-timedatepicker
+232 silly mapToRegistry using default registry
+233 silly mapToRegistry registry https://registry.npmjs.org/
+234 silly mapToRegistry data Result {
+234 silly mapToRegistry   raw: 'nativescript-timedatepicker',
+234 silly mapToRegistry   scope: null,
+234 silly mapToRegistry   escapedName: 'nativescript-timedatepicker',
+234 silly mapToRegistry   name: 'nativescript-timedatepicker',
+234 silly mapToRegistry   rawSpec: '',
+234 silly mapToRegistry   spec: 'latest',
+234 silly mapToRegistry   type: 'tag' }
+235 silly mapToRegistry uri https://registry.npmjs.org/nativescript-timedatepicker
+236 silly fetchNamedPackageData nativescript-toast
+237 silly mapToRegistry name nativescript-toast
+238 silly mapToRegistry using default registry
+239 silly mapToRegistry registry https://registry.npmjs.org/
+240 silly mapToRegistry data Result {
+240 silly mapToRegistry   raw: 'nativescript-toast',
+240 silly mapToRegistry   scope: null,
+240 silly mapToRegistry   escapedName: 'nativescript-toast',
+240 silly mapToRegistry   name: 'nativescript-toast',
+240 silly mapToRegistry   rawSpec: '',
+240 silly mapToRegistry   spec: 'latest',
+240 silly mapToRegistry   type: 'tag' }
+241 silly mapToRegistry uri https://registry.npmjs.org/nativescript-toast
+242 silly fetchNamedPackageData ng-http-interceptor
+243 silly mapToRegistry name ng-http-interceptor
+244 silly mapToRegistry using default registry
+245 silly mapToRegistry registry https://registry.npmjs.org/
+246 silly mapToRegistry data Result {
+246 silly mapToRegistry   raw: 'ng-http-interceptor',
+246 silly mapToRegistry   scope: null,
+246 silly mapToRegistry   escapedName: 'ng-http-interceptor',
+246 silly mapToRegistry   name: 'ng-http-interceptor',
+246 silly mapToRegistry   rawSpec: '',
+246 silly mapToRegistry   spec: 'latest',
+246 silly mapToRegistry   type: 'tag' }
+247 silly mapToRegistry uri https://registry.npmjs.org/ng-http-interceptor
+248 silly fetchNamedPackageData reflect-metadata
+249 silly mapToRegistry name reflect-metadata
+250 silly mapToRegistry using default registry
+251 silly mapToRegistry registry https://registry.npmjs.org/
+252 silly mapToRegistry data Result {
+252 silly mapToRegistry   raw: 'reflect-metadata',
+252 silly mapToRegistry   scope: null,
+252 silly mapToRegistry   escapedName: 'reflect-metadata',
+252 silly mapToRegistry   name: 'reflect-metadata',
+252 silly mapToRegistry   rawSpec: '',
+252 silly mapToRegistry   spec: 'latest',
+252 silly mapToRegistry   type: 'tag' }
+253 silly mapToRegistry uri https://registry.npmjs.org/reflect-metadata
+254 silly fetchNamedPackageData rxjs
+255 silly mapToRegistry name rxjs
+256 silly mapToRegistry using default registry
+257 silly mapToRegistry registry https://registry.npmjs.org/
+258 silly mapToRegistry data Result {
+258 silly mapToRegistry   raw: 'rxjs',
+258 silly mapToRegistry   scope: null,
+258 silly mapToRegistry   escapedName: 'rxjs',
+258 silly mapToRegistry   name: 'rxjs',
+258 silly mapToRegistry   rawSpec: '',
+258 silly mapToRegistry   spec: 'latest',
+258 silly mapToRegistry   type: 'tag' }
+259 silly mapToRegistry uri https://registry.npmjs.org/rxjs
+260 silly fetchNamedPackageData tns-core-modules
+261 silly mapToRegistry name tns-core-modules
+262 silly mapToRegistry using default registry
+263 silly mapToRegistry registry https://registry.npmjs.org/
+264 silly mapToRegistry data Result {
+264 silly mapToRegistry   raw: 'tns-core-modules',
+264 silly mapToRegistry   scope: null,
+264 silly mapToRegistry   escapedName: 'tns-core-modules',
+264 silly mapToRegistry   name: 'tns-core-modules',
+264 silly mapToRegistry   rawSpec: '',
+264 silly mapToRegistry   spec: 'latest',
+264 silly mapToRegistry   type: 'tag' }
+265 silly mapToRegistry uri https://registry.npmjs.org/tns-core-modules
+266 silly fetchNamedPackageData tns-platform-declarations
+267 silly mapToRegistry name tns-platform-declarations
+268 silly mapToRegistry using default registry
+269 silly mapToRegistry registry https://registry.npmjs.org/
+270 silly mapToRegistry data Result {
+270 silly mapToRegistry   raw: 'tns-platform-declarations',
+270 silly mapToRegistry   scope: null,
+270 silly mapToRegistry   escapedName: 'tns-platform-declarations',
+270 silly mapToRegistry   name: 'tns-platform-declarations',
+270 silly mapToRegistry   rawSpec: '',
+270 silly mapToRegistry   spec: 'latest',
+270 silly mapToRegistry   type: 'tag' }
+271 silly mapToRegistry uri https://registry.npmjs.org/tns-platform-declarations
+272 silly fetchNamedPackageData tslib
+273 silly mapToRegistry name tslib
+274 silly mapToRegistry using default registry
+275 silly mapToRegistry registry https://registry.npmjs.org/
+276 silly mapToRegistry data Result {
+276 silly mapToRegistry   raw: 'tslib',
+276 silly mapToRegistry   scope: null,
+276 silly mapToRegistry   escapedName: 'tslib',
+276 silly mapToRegistry   name: 'tslib',
+276 silly mapToRegistry   rawSpec: '',
+276 silly mapToRegistry   spec: 'latest',
+276 silly mapToRegistry   type: 'tag' }
+277 silly mapToRegistry uri https://registry.npmjs.org/tslib
+278 silly fetchNamedPackageData tslint
+279 silly mapToRegistry name tslint
+280 silly mapToRegistry using default registry
+281 silly mapToRegistry registry https://registry.npmjs.org/
+282 silly mapToRegistry data Result {
+282 silly mapToRegistry   raw: 'tslint',
+282 silly mapToRegistry   scope: null,
+282 silly mapToRegistry   escapedName: 'tslint',
+282 silly mapToRegistry   name: 'tslint',
+282 silly mapToRegistry   rawSpec: '',
+282 silly mapToRegistry   spec: 'latest',
+282 silly mapToRegistry   type: 'tag' }
+283 silly mapToRegistry uri https://registry.npmjs.org/tslint
+284 silly fetchNamedPackageData zone.js
+285 silly mapToRegistry name zone.js
+286 silly mapToRegistry using default registry
+287 silly mapToRegistry registry https://registry.npmjs.org/
+288 silly mapToRegistry data Result {
+288 silly mapToRegistry   raw: 'zone.js',
+288 silly mapToRegistry   scope: null,
+288 silly mapToRegistry   escapedName: 'zone.js',
+288 silly mapToRegistry   name: 'zone.js',
+288 silly mapToRegistry   rawSpec: '',
+288 silly mapToRegistry   spec: 'latest',
+288 silly mapToRegistry   type: 'tag' }
+289 silly mapToRegistry uri https://registry.npmjs.org/zone.js
+290 silly cache add parsed spec Result {
+290 silly cache add   raw: 'nativescript-contacts-lite@./nativescript-contacts-lite-0.2.3.tgz',
+290 silly cache add   scope: null,
+290 silly cache add   escapedName: 'nativescript-contacts-lite',
+290 silly cache add   name: 'nativescript-contacts-lite',
+290 silly cache add   rawSpec: './nativescript-contacts-lite-0.2.3.tgz',
+290 silly cache add   spec: '/Users/niliev/Downloads/t_1129461/nativescript-contacts-lite-0.2.3.tgz',
+290 silly cache add   type: 'local' }
+291 silly addLocalTarball shasum (computed) 0aa697b66a4695a33062e664e9578b18b313f0fa
+292 verbose addTmpTarball /Users/niliev/Downloads/t_1129461/nativescript-contacts-lite-0.2.3.tgz not in flight; adding
+293 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+294 verbose request uri https://registry.npmjs.org/@angular%2fcommon
+295 verbose request no auth needed
+296 info attempt registry request try #1 at 9:29:35 AM
+297 verbose request using bearer token for auth
+298 verbose request id ddcc49026fc92140
+299 verbose etag "59aad654-1eb09"
+300 http request GET https://registry.npmjs.org/@angular%2fcommon
+301 verbose request uri https://registry.npmjs.org/@angular%2fcompiler
+302 verbose request no auth needed
+303 info attempt registry request try #1 at 9:29:35 AM
+304 verbose request using bearer token for auth
+305 verbose etag W/"59aad659-1eb76"
+306 verbose lastModified Sat, 02 Sep 2017 16:03:37 GMT
+307 http request GET https://registry.npmjs.org/@angular%2fcompiler
+308 verbose request uri https://registry.npmjs.org/@angular%2fforms
+309 verbose request no auth needed
+310 info attempt registry request try #1 at 9:29:35 AM
+311 verbose request using bearer token for auth
+312 verbose etag W/"59aad663-1d578"
+313 verbose lastModified Sat, 02 Sep 2017 16:03:47 GMT
+314 http request GET https://registry.npmjs.org/@angular%2fforms
+315 verbose request uri https://registry.npmjs.org/@angular%2fcore
+316 verbose request no auth needed
+317 info attempt registry request try #1 at 9:29:35 AM
+318 verbose request using bearer token for auth
+319 verbose etag W/"59aad660-1e246"
+320 verbose lastModified Sat, 02 Sep 2017 16:03:44 GMT
+321 http request GET https://registry.npmjs.org/@angular%2fcore
+322 verbose request uri https://registry.npmjs.org/@angular%2fplatform-browser
+323 verbose request no auth needed
+324 info attempt registry request try #1 at 9:29:35 AM
+325 verbose request using bearer token for auth
+326 verbose etag W/"59aad670-21fc8"
+327 verbose lastModified Sat, 02 Sep 2017 16:04:00 GMT
+328 http request GET https://registry.npmjs.org/@angular%2fplatform-browser
+329 verbose request uri https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+330 verbose request no auth needed
+331 info attempt registry request try #1 at 9:29:35 AM
+332 verbose request using bearer token for auth
+333 verbose etag "59aad673-26048"
+334 http request GET https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+335 verbose request uri https://registry.npmjs.org/aes-js
+336 verbose request no auth needed
+337 info attempt registry request try #1 at 9:29:36 AM
+338 verbose request using bearer token for auth
+339 verbose etag W/"59a76509-7f8f"
+340 verbose lastModified Thu, 31 Aug 2017 01:23:21 GMT
+341 http request GET https://registry.npmjs.org/aes-js
+342 verbose request uri https://registry.npmjs.org/crypto-js
+343 verbose request no auth needed
+344 info attempt registry request try #1 at 9:29:36 AM
+345 verbose request using bearer token for auth
+346 verbose etag W/"59b3dec7-558a"
+347 verbose lastModified Sat, 09 Sep 2017 12:29:59 GMT
+348 http request GET https://registry.npmjs.org/crypto-js
+349 verbose request uri https://registry.npmjs.org/nativescript-adobe-analytics
+350 verbose request no auth needed
+351 info attempt registry request try #1 at 9:29:36 AM
+352 verbose request using bearer token for auth
+353 verbose etag W/"5832bf33-1bb"
+354 verbose lastModified Mon, 21 Nov 2016 09:32:35 GMT
+355 http request GET https://registry.npmjs.org/nativescript-adobe-analytics
+356 verbose request uri https://registry.npmjs.org/@angular%2fhttp
+357 verbose request no auth needed
+358 info attempt registry request try #1 at 9:29:36 AM
+359 verbose request using bearer token for auth
+360 verbose etag W/"59aad667-1f15c"
+361 verbose lastModified Sat, 02 Sep 2017 16:03:51 GMT
+362 http request GET https://registry.npmjs.org/@angular%2fhttp
+363 verbose request uri https://registry.npmjs.org/@angular%2frouter
+364 verbose request no auth needed
+365 info attempt registry request try #1 at 9:29:36 AM
+366 verbose request using bearer token for auth
+367 verbose etag W/"59aad680-28dfb"
+368 verbose lastModified Sat, 02 Sep 2017 16:04:16 GMT
+369 http request GET https://registry.npmjs.org/@angular%2frouter
+370 verbose request uri https://registry.npmjs.org/codelyzer
+371 verbose request no auth needed
+372 info attempt registry request try #1 at 9:29:36 AM
+373 verbose request using bearer token for auth
+374 verbose etag W/"59b6e31f-14345"
+375 verbose lastModified Mon, 11 Sep 2017 19:25:19 GMT
+376 http request GET https://registry.npmjs.org/codelyzer
+377 verbose request uri https://registry.npmjs.org/nativescript-cardview
+378 verbose request no auth needed
+379 info attempt registry request try #1 at 9:29:36 AM
+380 verbose request using bearer token for auth
+381 verbose etag W/"594af1a0-109b2"
+382 verbose lastModified Wed, 21 Jun 2017 22:22:24 GMT
+383 http request GET https://registry.npmjs.org/nativescript-cardview
+384 verbose addTmpTarball validating metadata from /Users/niliev/Downloads/t_1129461/nativescript-contacts-lite-0.2.3.tgz
+385 verbose tar unpack /Users/niliev/Downloads/t_1129461/nativescript-contacts-lite-0.2.3.tgz
+386 verbose tar unpacking to /var/folders/rb/9lm6jx514pdf6xp6_hb0cb4s1d6fht/T/npm-43066-7c1eb497/unpack-f31db7da
+387 silly gentlyRm /var/folders/rb/9lm6jx514pdf6xp6_hb0cb4s1d6fht/T/npm-43066-7c1eb497/unpack-f31db7da is being purged
+388 verbose gentlyRm don't care about contents; nuking /var/folders/rb/9lm6jx514pdf6xp6_hb0cb4s1d6fht/T/npm-43066-7c1eb497/unpack-f31db7da
+389 verbose request uri https://registry.npmjs.org/nativescript-contacts
+390 verbose request no auth needed
+391 info attempt registry request try #1 at 9:29:36 AM
+392 verbose request using bearer token for auth
+393 verbose etag W/"5936bdea-a85c"
+394 verbose lastModified Tue, 06 Jun 2017 14:36:26 GMT
+395 http request GET https://registry.npmjs.org/nativescript-contacts
+396 verbose request uri https://registry.npmjs.org/nativescript-drop-down
+397 verbose request no auth needed
+398 info attempt registry request try #1 at 9:29:36 AM
+399 verbose request using bearer token for auth
+400 verbose etag W/"598419fb-cb59"
+401 verbose lastModified Fri, 04 Aug 2017 06:53:47 GMT
+402 http request GET https://registry.npmjs.org/nativescript-drop-down
+403 verbose request uri https://registry.npmjs.org/nativescript-email
+404 verbose request no auth needed
+405 info attempt registry request try #1 at 9:29:36 AM
+406 verbose request using bearer token for auth
+407 verbose etag W/"5990bc74-624d"
+408 verbose lastModified Sun, 13 Aug 2017 20:54:12 GMT
+409 http request GET https://registry.npmjs.org/nativescript-email
+410 verbose request uri https://registry.npmjs.org/nativescript-fingerprint-auth
+411 verbose request no auth needed
+412 info attempt registry request try #1 at 9:29:36 AM
+413 verbose request using bearer token for auth
+414 verbose etag W/"599ab3f4-3ec4"
+415 verbose lastModified Mon, 21 Aug 2017 10:20:36 GMT
+416 http request GET https://registry.npmjs.org/nativescript-fingerprint-auth
+417 verbose request uri https://registry.npmjs.org/nativescript-iqkeyboardmanager
+418 verbose request no auth needed
+419 info attempt registry request try #1 at 9:29:36 AM
+420 verbose request using bearer token for auth
+421 verbose etag W/"5978cc6b-1bbd"
+422 verbose lastModified Wed, 26 Jul 2017 17:07:55 GMT
+423 http request GET https://registry.npmjs.org/nativescript-iqkeyboardmanager
+424 verbose request uri https://registry.npmjs.org/nativescript-geolocation
+425 verbose request no auth needed
+426 info attempt registry request try #1 at 9:29:36 AM
+427 verbose request using bearer token for auth
+428 verbose etag W/"598d95fd-6acb"
+429 verbose lastModified Fri, 11 Aug 2017 11:33:17 GMT
+430 http request GET https://registry.npmjs.org/nativescript-geolocation
+431 verbose request uri https://registry.npmjs.org/nativescript-loading-indicator
+432 verbose request no auth needed
+433 info attempt registry request try #1 at 9:29:36 AM
+434 verbose request using bearer token for auth
+435 verbose etag W/"59303b6d-5892"
+436 verbose lastModified Thu, 01 Jun 2017 16:06:05 GMT
+437 http request GET https://registry.npmjs.org/nativescript-loading-indicator
+438 verbose request uri https://registry.npmjs.org/nativescript-locate-address
+439 verbose request no auth needed
+440 info attempt registry request try #1 at 9:29:36 AM
+441 verbose request using bearer token for auth
+442 verbose etag W/"59447296-275e"
+443 verbose lastModified Sat, 17 Jun 2017 00:06:46 GMT
+444 http request GET https://registry.npmjs.org/nativescript-locate-address
+445 verbose request uri https://registry.npmjs.org/nativescript-checkbox
+446 verbose request no auth needed
+447 info attempt registry request try #1 at 9:29:36 AM
+448 verbose request using bearer token for auth
+449 verbose etag W/"59742c46-1516a"
+450 verbose lastModified Sun, 23 Jul 2017 04:55:34 GMT
+451 http request GET https://registry.npmjs.org/nativescript-checkbox
+452 verbose request uri https://registry.npmjs.org/nativescript-angular
+453 verbose request no auth needed
+454 info attempt registry request try #1 at 9:29:36 AM
+455 verbose request using bearer token for auth
+456 verbose etag W/"59b43156-abc0d"
+457 verbose lastModified Sat, 09 Sep 2017 18:22:14 GMT
+458 http request GET https://registry.npmjs.org/nativescript-angular
+459 verbose request uri https://registry.npmjs.org/nativescript-phone
+460 verbose request no auth needed
+461 info attempt registry request try #1 at 9:29:36 AM
+462 verbose request using bearer token for auth
+463 verbose etag W/"597784c6-597c"
+464 verbose lastModified Tue, 25 Jul 2017 17:49:58 GMT
+465 http request GET https://registry.npmjs.org/nativescript-phone
+466 verbose request uri https://registry.npmjs.org/nativescript-rich-textfield
+467 verbose request no auth needed
+468 info attempt registry request try #1 at 9:29:36 AM
+469 verbose request using bearer token for auth
+470 verbose etag "58e3cb05-222b"
+471 http request GET https://registry.npmjs.org/nativescript-rich-textfield
+472 verbose request uri https://registry.npmjs.org/nativescript-screenshot
+473 verbose request no auth needed
+474 info attempt registry request try #1 at 9:29:36 AM
+475 verbose request using bearer token for auth
+476 verbose etag W/"561bbca1-b21"
+477 verbose lastModified Mon, 12 Oct 2015 13:58:57 GMT
+478 http request GET https://registry.npmjs.org/nativescript-screenshot
+479 verbose request uri https://registry.npmjs.org/nativescript-secure-storage
+480 verbose request no auth needed
+481 info attempt registry request try #1 at 9:29:36 AM
+482 verbose request using bearer token for auth
+483 verbose etag W/"598e1f63-46d7"
+484 verbose lastModified Fri, 11 Aug 2017 21:19:31 GMT
+485 http request GET https://registry.npmjs.org/nativescript-secure-storage
+486 verbose request uri https://registry.npmjs.org/nativescript-testfairy
+487 verbose request no auth needed
+488 info attempt registry request try #1 at 9:29:36 AM
+489 verbose request using bearer token for auth
+490 verbose etag W/"5981e858-2bb2"
+491 verbose lastModified Wed, 02 Aug 2017 14:57:28 GMT
+492 http request GET https://registry.npmjs.org/nativescript-testfairy
+493 verbose request uri https://registry.npmjs.org/nativescript-theme-core
+494 verbose request no auth needed
+495 info attempt registry request try #1 at 9:29:36 AM
+496 verbose request using bearer token for auth
+497 verbose etag W/"59333765-8693"
+498 verbose lastModified Sat, 03 Jun 2017 22:25:41 GMT
+499 http request GET https://registry.npmjs.org/nativescript-theme-core
+500 verbose request uri https://registry.npmjs.org/nativescript-timedatepicker
+501 verbose request no auth needed
+502 info attempt registry request try #1 at 9:29:36 AM
+503 verbose request using bearer token for auth
+504 verbose etag W/"59155374-5a5b"
+505 verbose lastModified Fri, 12 May 2017 06:17:24 GMT
+506 http request GET https://registry.npmjs.org/nativescript-timedatepicker
+507 verbose request uri https://registry.npmjs.org/nativescript-toast
+508 verbose request no auth needed
+509 info attempt registry request try #1 at 9:29:36 AM
+510 verbose request using bearer token for auth
+511 verbose etag W/"5966ff5a-abfe"
+512 verbose lastModified Thu, 13 Jul 2017 05:04:26 GMT
+513 http request GET https://registry.npmjs.org/nativescript-toast
+514 verbose request uri https://registry.npmjs.org/ng-http-interceptor
+515 verbose request no auth needed
+516 info attempt registry request try #1 at 9:29:36 AM
+517 verbose request using bearer token for auth
+518 verbose etag W/"596668db-11e9f"
+519 verbose lastModified Wed, 12 Jul 2017 18:22:19 GMT
+520 http request GET https://registry.npmjs.org/ng-http-interceptor
+521 verbose request uri https://registry.npmjs.org/reflect-metadata
+522 verbose request no auth needed
+523 info attempt registry request try #1 at 9:29:36 AM
+524 verbose request using bearer token for auth
+525 verbose etag W/"59a520bb-70be"
+526 verbose lastModified Tue, 29 Aug 2017 08:07:23 GMT
+527 http request GET https://registry.npmjs.org/reflect-metadata
+528 verbose request uri https://registry.npmjs.org/rxjs
+529 verbose request no auth needed
+530 info attempt registry request try #1 at 9:29:36 AM
+531 verbose request using bearer token for auth
+532 verbose etag W/"59b2e034-2be0f"
+533 verbose lastModified Fri, 08 Sep 2017 18:23:48 GMT
+534 http request GET https://registry.npmjs.org/rxjs
+535 verbose request uri https://registry.npmjs.org/nativescript-telerik-ui-pro
+536 verbose request no auth needed
+537 info attempt registry request try #1 at 9:29:36 AM
+538 verbose request using bearer token for auth
+539 verbose etag W/"59b68b43-ff399"
+540 verbose lastModified Mon, 11 Sep 2017 13:10:27 GMT
+541 http request GET https://registry.npmjs.org/nativescript-telerik-ui-pro
+542 verbose request uri https://registry.npmjs.org/tns-platform-declarations
+543 verbose request no auth needed
+544 info attempt registry request try #1 at 9:29:36 AM
+545 verbose request using bearer token for auth
+546 verbose etag W/"59b1377f-9edf"
+547 verbose lastModified Thu, 07 Sep 2017 12:11:43 GMT
+548 http request GET https://registry.npmjs.org/tns-platform-declarations
+549 verbose request uri https://registry.npmjs.org/tslib
+550 verbose request no auth needed
+551 info attempt registry request try #1 at 9:29:36 AM
+552 verbose request using bearer token for auth
+553 verbose etag W/"594685ef-4369"
+554 verbose lastModified Sun, 18 Jun 2017 13:53:51 GMT
+555 http request GET https://registry.npmjs.org/tslib
+556 verbose request uri https://registry.npmjs.org/tslint
+557 verbose request no auth needed
+558 info attempt registry request try #1 at 9:29:36 AM
+559 verbose request using bearer token for auth
+560 verbose etag W/"59a5162f-488a6"
+561 verbose lastModified Tue, 29 Aug 2017 07:22:23 GMT
+562 http request GET https://registry.npmjs.org/tslint
+563 verbose request uri https://registry.npmjs.org/zone.js
+564 verbose request no auth needed
+565 info attempt registry request try #1 at 9:29:36 AM
+566 verbose request using bearer token for auth
+567 verbose etag W/"599dcc29-2ba15"
+568 verbose lastModified Wed, 23 Aug 2017 18:40:41 GMT
+569 http request GET https://registry.npmjs.org/zone.js
+570 verbose request uri https://registry.npmjs.org/nativescript-printer
+571 verbose request no auth needed
+572 info attempt registry request try #1 at 9:29:36 AM
+573 verbose request using bearer token for auth
+574 verbose etag W/"592bda9d-3074"
+575 verbose lastModified Mon, 29 May 2017 08:23:57 GMT
+576 http request GET https://registry.npmjs.org/nativescript-printer
+577 verbose request uri https://registry.npmjs.org/nativescript-permissions
+578 verbose request no auth needed
+579 info attempt registry request try #1 at 9:29:36 AM
+580 verbose request using bearer token for auth
+581 verbose etag W/"5892f347-4f5c"
+582 verbose lastModified Thu, 02 Feb 2017 08:52:23 GMT
+583 http request GET https://registry.npmjs.org/nativescript-permissions
+584 verbose request uri https://registry.npmjs.org/tns-core-modules
+585 verbose request no auth needed
+586 info attempt registry request try #1 at 9:29:36 AM
+587 verbose request using bearer token for auth
+588 verbose etag W/"59b3e30c-14de26"
+589 verbose lastModified Sat, 09 Sep 2017 12:48:12 GMT
+590 http request GET https://registry.npmjs.org/tns-core-modules
+591 silly gunzTarPerm modes [ '755', '644' ]
+592 silly gunzTarPerm extractEntry package.json
+593 silly gunzTarPerm extractEntry README.md
+594 silly gunzTarPerm extractEntry LICENSE
+595 silly gunzTarPerm extractEntry constants.android.js
+596 silly gunzTarPerm extractEntry constants.ios.js
+597 silly gunzTarPerm extractEntry contacts-helper.android.js
+598 silly gunzTarPerm extractEntry contacts-helper.ios.js
+599 silly gunzTarPerm extractEntry contacts.ios.js
+600 silly gunzTarPerm extractEntry get-contacts-worker.js
+601 silly gunzTarPerm extractEntry index.js
+602 silly gunzTarPerm extractEntry contacts.android.js
+603 silly gunzTarPerm extractEntry jsconfig.json
+604 silly gunzTarPerm extractEntry platforms/android/AndroidManifest.xml
+605 http 304 https://registry.npmjs.org/nativescript-theme-core
+606 verbose headers { server: 'nginx/1.10.1',
+606 verbose headers   'last-modified': 'Sat, 03 Jun 2017 22:25:41 GMT',
+606 verbose headers   etag: '"59333765-8693"',
+606 verbose headers   'cache-control': 'max-age=300',
+606 verbose headers   'accept-ranges': 'bytes',
+606 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+606 verbose headers   via: '1.1 varnish',
+606 verbose headers   connection: 'keep-alive',
+606 verbose headers   'x-served-by': 'cache-hhn1535-HHN',
+606 verbose headers   'x-cache': 'MISS',
+606 verbose headers   'x-cache-hits': '0',
+606 verbose headers   'x-timer': 'S1505197776.450073,VS0,VE1',
+606 verbose headers   vary: 'Accept-Encoding, Accept' }
+607 silly get cb [ 304,
+607 silly get   { server: 'nginx/1.10.1',
+607 silly get     'last-modified': 'Sat, 03 Jun 2017 22:25:41 GMT',
+607 silly get     etag: '"59333765-8693"',
+607 silly get     'cache-control': 'max-age=300',
+607 silly get     'accept-ranges': 'bytes',
+607 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+607 silly get     via: '1.1 varnish',
+607 silly get     connection: 'keep-alive',
+607 silly get     'x-served-by': 'cache-hhn1535-HHN',
+607 silly get     'x-cache': 'MISS',
+607 silly get     'x-cache-hits': '0',
+607 silly get     'x-timer': 'S1505197776.450073,VS0,VE1',
+607 silly get     vary: 'Accept-Encoding, Accept' } ]
+608 verbose etag https://registry.npmjs.org/nativescript-theme-core from cache
+609 verbose get saving nativescript-theme-core to /Users/niliev/.npm/registry.npmjs.org/nativescript-theme-core/.cache.json
+610 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+611 http 304 https://registry.npmjs.org/nativescript-checkbox
+612 verbose headers { server: 'nginx/1.10.1',
+612 verbose headers   'last-modified': 'Sun, 23 Jul 2017 04:55:34 GMT',
+612 verbose headers   etag: '"59742c46-1516a"',
+612 verbose headers   'cache-control': 'max-age=300',
+612 verbose headers   'accept-ranges': 'bytes',
+612 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+612 verbose headers   via: '1.1 varnish',
+612 verbose headers   connection: 'keep-alive',
+612 verbose headers   'x-served-by': 'cache-hhn1538-HHN',
+612 verbose headers   'x-cache': 'MISS',
+612 verbose headers   'x-cache-hits': '0',
+612 verbose headers   'x-timer': 'S1505197776.448819,VS0,VE2',
+612 verbose headers   vary: 'Accept-Encoding, Accept' }
+613 silly get cb [ 304,
+613 silly get   { server: 'nginx/1.10.1',
+613 silly get     'last-modified': 'Sun, 23 Jul 2017 04:55:34 GMT',
+613 silly get     etag: '"59742c46-1516a"',
+613 silly get     'cache-control': 'max-age=300',
+613 silly get     'accept-ranges': 'bytes',
+613 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+613 silly get     via: '1.1 varnish',
+613 silly get     connection: 'keep-alive',
+613 silly get     'x-served-by': 'cache-hhn1538-HHN',
+613 silly get     'x-cache': 'MISS',
+613 silly get     'x-cache-hits': '0',
+613 silly get     'x-timer': 'S1505197776.448819,VS0,VE2',
+613 silly get     vary: 'Accept-Encoding, Accept' } ]
+614 verbose etag https://registry.npmjs.org/nativescript-checkbox from cache
+615 verbose get saving nativescript-checkbox to /Users/niliev/.npm/registry.npmjs.org/nativescript-checkbox/.cache.json
+616 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+617 http 304 https://registry.npmjs.org/nativescript-contacts
+618 verbose headers { server: 'nginx/1.10.1',
+618 verbose headers   'last-modified': 'Tue, 06 Jun 2017 14:36:26 GMT',
+618 verbose headers   etag: '"5936bdea-a85c"',
+618 verbose headers   'cache-control': 'max-age=300',
+618 verbose headers   'accept-ranges': 'bytes',
+618 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+618 verbose headers   via: '1.1 varnish',
+618 verbose headers   connection: 'keep-alive',
+618 verbose headers   'x-served-by': 'cache-hhn1528-HHN',
+618 verbose headers   'x-cache': 'MISS',
+618 verbose headers   'x-cache-hits': '0',
+618 verbose headers   'x-timer': 'S1505197776.441767,VS0,VE3',
+618 verbose headers   vary: 'Accept-Encoding, Accept' }
+619 silly get cb [ 304,
+619 silly get   { server: 'nginx/1.10.1',
+619 silly get     'last-modified': 'Tue, 06 Jun 2017 14:36:26 GMT',
+619 silly get     etag: '"5936bdea-a85c"',
+619 silly get     'cache-control': 'max-age=300',
+619 silly get     'accept-ranges': 'bytes',
+619 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+619 silly get     via: '1.1 varnish',
+619 silly get     connection: 'keep-alive',
+619 silly get     'x-served-by': 'cache-hhn1528-HHN',
+619 silly get     'x-cache': 'MISS',
+619 silly get     'x-cache-hits': '0',
+619 silly get     'x-timer': 'S1505197776.441767,VS0,VE3',
+619 silly get     vary: 'Accept-Encoding, Accept' } ]
+620 verbose etag https://registry.npmjs.org/nativescript-contacts from cache
+621 verbose get saving nativescript-contacts to /Users/niliev/.npm/registry.npmjs.org/nativescript-contacts/.cache.json
+622 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+623 http 304 https://registry.npmjs.org/nativescript-phone
+624 verbose headers { server: 'nginx/1.10.1',
+624 verbose headers   'last-modified': 'Tue, 25 Jul 2017 17:49:58 GMT',
+624 verbose headers   etag: '"597784c6-597c"',
+624 verbose headers   'cache-control': 'max-age=300',
+624 verbose headers   'accept-ranges': 'bytes',
+624 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+624 verbose headers   via: '1.1 varnish',
+624 verbose headers   connection: 'keep-alive',
+624 verbose headers   'x-served-by': 'cache-hhn1539-HHN',
+624 verbose headers   'x-cache': 'MISS',
+624 verbose headers   'x-cache-hits': '0',
+624 verbose headers   'x-timer': 'S1505197776.449756,VS0,VE1',
+624 verbose headers   vary: 'Accept-Encoding, Accept' }
+625 silly get cb [ 304,
+625 silly get   { server: 'nginx/1.10.1',
+625 silly get     'last-modified': 'Tue, 25 Jul 2017 17:49:58 GMT',
+625 silly get     etag: '"597784c6-597c"',
+625 silly get     'cache-control': 'max-age=300',
+625 silly get     'accept-ranges': 'bytes',
+625 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+625 silly get     via: '1.1 varnish',
+625 silly get     connection: 'keep-alive',
+625 silly get     'x-served-by': 'cache-hhn1539-HHN',
+625 silly get     'x-cache': 'MISS',
+625 silly get     'x-cache-hits': '0',
+625 silly get     'x-timer': 'S1505197776.449756,VS0,VE1',
+625 silly get     vary: 'Accept-Encoding, Accept' } ]
+626 verbose etag https://registry.npmjs.org/nativescript-phone from cache
+627 verbose get saving nativescript-phone to /Users/niliev/.npm/registry.npmjs.org/nativescript-phone/.cache.json
+628 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+629 http 304 https://registry.npmjs.org/nativescript-iqkeyboardmanager
+630 verbose headers { server: 'nginx/1.10.1',
+630 verbose headers   'last-modified': 'Wed, 26 Jul 2017 17:07:55 GMT',
+630 verbose headers   etag: '"5978cc6b-1bbd"',
+630 verbose headers   'cache-control': 'max-age=300',
+630 verbose headers   'accept-ranges': 'bytes',
+630 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+630 verbose headers   via: '1.1 varnish',
+630 verbose headers   connection: 'keep-alive',
+630 verbose headers   'x-served-by': 'cache-hhn1549-HHN',
+630 verbose headers   'x-cache': 'MISS',
+630 verbose headers   'x-cache-hits': '0',
+630 verbose headers   'x-timer': 'S1505197776.443636,VS0,VE2',
+630 verbose headers   vary: 'Accept-Encoding, Accept' }
+631 silly get cb [ 304,
+631 silly get   { server: 'nginx/1.10.1',
+631 silly get     'last-modified': 'Wed, 26 Jul 2017 17:07:55 GMT',
+631 silly get     etag: '"5978cc6b-1bbd"',
+631 silly get     'cache-control': 'max-age=300',
+631 silly get     'accept-ranges': 'bytes',
+631 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+631 silly get     via: '1.1 varnish',
+631 silly get     connection: 'keep-alive',
+631 silly get     'x-served-by': 'cache-hhn1549-HHN',
+631 silly get     'x-cache': 'MISS',
+631 silly get     'x-cache-hits': '0',
+631 silly get     'x-timer': 'S1505197776.443636,VS0,VE2',
+631 silly get     vary: 'Accept-Encoding, Accept' } ]
+632 verbose etag https://registry.npmjs.org/nativescript-iqkeyboardmanager from cache
+633 verbose get saving nativescript-iqkeyboardmanager to /Users/niliev/.npm/registry.npmjs.org/nativescript-iqkeyboardmanager/.cache.json
+634 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+635 http 304 https://registry.npmjs.org/nativescript-screenshot
+636 verbose headers { server: 'nginx/1.10.1',
+636 verbose headers   'last-modified': 'Mon, 12 Oct 2015 13:58:57 GMT',
+636 verbose headers   etag: '"561bbca1-b21"',
+636 verbose headers   'cache-control': 'max-age=300',
+636 verbose headers   'accept-ranges': 'bytes',
+636 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+636 verbose headers   via: '1.1 varnish',
+636 verbose headers   connection: 'keep-alive',
+636 verbose headers   'x-served-by': 'cache-hhn1525-HHN',
+636 verbose headers   'x-cache': 'MISS',
+636 verbose headers   'x-cache-hits': '0',
+636 verbose headers   'x-timer': 'S1505197776.443665,VS0,VE1',
+636 verbose headers   vary: 'Accept-Encoding, Accept' }
+637 silly get cb [ 304,
+637 silly get   { server: 'nginx/1.10.1',
+637 silly get     'last-modified': 'Mon, 12 Oct 2015 13:58:57 GMT',
+637 silly get     etag: '"561bbca1-b21"',
+637 silly get     'cache-control': 'max-age=300',
+637 silly get     'accept-ranges': 'bytes',
+637 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+637 silly get     via: '1.1 varnish',
+637 silly get     connection: 'keep-alive',
+637 silly get     'x-served-by': 'cache-hhn1525-HHN',
+637 silly get     'x-cache': 'MISS',
+637 silly get     'x-cache-hits': '0',
+637 silly get     'x-timer': 'S1505197776.443665,VS0,VE1',
+637 silly get     vary: 'Accept-Encoding, Accept' } ]
+638 verbose etag https://registry.npmjs.org/nativescript-screenshot from cache
+639 verbose get saving nativescript-screenshot to /Users/niliev/.npm/registry.npmjs.org/nativescript-screenshot/.cache.json
+640 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+641 http 304 https://registry.npmjs.org/nativescript-testfairy
+642 verbose headers { server: 'nginx/1.10.1',
+642 verbose headers   'last-modified': 'Wed, 02 Aug 2017 14:57:28 GMT',
+642 verbose headers   etag: '"5981e858-2bb2"',
+642 verbose headers   'cache-control': 'max-age=300',
+642 verbose headers   'accept-ranges': 'bytes',
+642 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+642 verbose headers   via: '1.1 varnish',
+642 verbose headers   connection: 'keep-alive',
+642 verbose headers   'x-served-by': 'cache-hhn1549-HHN',
+642 verbose headers   'x-cache': 'MISS',
+642 verbose headers   'x-cache-hits': '0',
+642 verbose headers   'x-timer': 'S1505197776.445481,VS0,VE2',
+642 verbose headers   vary: 'Accept-Encoding, Accept' }
+643 silly get cb [ 304,
+643 silly get   { server: 'nginx/1.10.1',
+643 silly get     'last-modified': 'Wed, 02 Aug 2017 14:57:28 GMT',
+643 silly get     etag: '"5981e858-2bb2"',
+643 silly get     'cache-control': 'max-age=300',
+643 silly get     'accept-ranges': 'bytes',
+643 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+643 silly get     via: '1.1 varnish',
+643 silly get     connection: 'keep-alive',
+643 silly get     'x-served-by': 'cache-hhn1549-HHN',
+643 silly get     'x-cache': 'MISS',
+643 silly get     'x-cache-hits': '0',
+643 silly get     'x-timer': 'S1505197776.445481,VS0,VE2',
+643 silly get     vary: 'Accept-Encoding, Accept' } ]
+644 verbose etag https://registry.npmjs.org/nativescript-testfairy from cache
+645 verbose get saving nativescript-testfairy to /Users/niliev/.npm/registry.npmjs.org/nativescript-testfairy/.cache.json
+646 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+647 http 304 https://registry.npmjs.org/tns-platform-declarations
+648 verbose headers { server: 'nginx/1.10.1',
+648 verbose headers   'last-modified': 'Thu, 07 Sep 2017 12:11:43 GMT',
+648 verbose headers   etag: '"59b1377f-9edf"',
+648 verbose headers   'cache-control': 'max-age=300',
+648 verbose headers   'accept-ranges': 'bytes',
+648 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+648 verbose headers   via: '1.1 varnish',
+648 verbose headers   connection: 'keep-alive',
+648 verbose headers   'x-served-by': 'cache-hhn1529-HHN',
+648 verbose headers   'x-cache': 'MISS',
+648 verbose headers   'x-cache-hits': '0',
+648 verbose headers   'x-timer': 'S1505197776.445564,VS0,VE1',
+648 verbose headers   vary: 'Accept-Encoding, Accept' }
+649 silly get cb [ 304,
+649 silly get   { server: 'nginx/1.10.1',
+649 silly get     'last-modified': 'Thu, 07 Sep 2017 12:11:43 GMT',
+649 silly get     etag: '"59b1377f-9edf"',
+649 silly get     'cache-control': 'max-age=300',
+649 silly get     'accept-ranges': 'bytes',
+649 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+649 silly get     via: '1.1 varnish',
+649 silly get     connection: 'keep-alive',
+649 silly get     'x-served-by': 'cache-hhn1529-HHN',
+649 silly get     'x-cache': 'MISS',
+649 silly get     'x-cache-hits': '0',
+649 silly get     'x-timer': 'S1505197776.445564,VS0,VE1',
+649 silly get     vary: 'Accept-Encoding, Accept' } ]
+650 verbose etag https://registry.npmjs.org/tns-platform-declarations from cache
+651 verbose get saving tns-platform-declarations to /Users/niliev/.npm/registry.npmjs.org/tns-platform-declarations/.cache.json
+652 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+653 http 304 https://registry.npmjs.org/nativescript-geolocation
+654 verbose headers { server: 'nginx/1.10.1',
+654 verbose headers   'last-modified': 'Fri, 11 Aug 2017 11:33:17 GMT',
+654 verbose headers   etag: '"598d95fd-6acb"',
+654 verbose headers   'cache-control': 'max-age=300',
+654 verbose headers   'accept-ranges': 'bytes',
+654 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+654 verbose headers   via: '1.1 varnish',
+654 verbose headers   connection: 'keep-alive',
+654 verbose headers   'x-served-by': 'cache-hhn1548-HHN',
+654 verbose headers   'x-cache': 'MISS',
+654 verbose headers   'x-cache-hits': '0',
+654 verbose headers   'x-timer': 'S1505197776.442892,VS0,VE2',
+654 verbose headers   vary: 'Accept-Encoding, Accept' }
+655 silly get cb [ 304,
+655 silly get   { server: 'nginx/1.10.1',
+655 silly get     'last-modified': 'Fri, 11 Aug 2017 11:33:17 GMT',
+655 silly get     etag: '"598d95fd-6acb"',
+655 silly get     'cache-control': 'max-age=300',
+655 silly get     'accept-ranges': 'bytes',
+655 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+655 silly get     via: '1.1 varnish',
+655 silly get     connection: 'keep-alive',
+655 silly get     'x-served-by': 'cache-hhn1548-HHN',
+655 silly get     'x-cache': 'MISS',
+655 silly get     'x-cache-hits': '0',
+655 silly get     'x-timer': 'S1505197776.442892,VS0,VE2',
+655 silly get     vary: 'Accept-Encoding, Accept' } ]
+656 verbose etag https://registry.npmjs.org/nativescript-geolocation from cache
+657 verbose get saving nativescript-geolocation to /Users/niliev/.npm/registry.npmjs.org/nativescript-geolocation/.cache.json
+658 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+659 http 304 https://registry.npmjs.org/aes-js
+660 verbose headers { server: 'nginx/1.10.1',
+660 verbose headers   'last-modified': 'Thu, 31 Aug 2017 01:23:21 GMT',
+660 verbose headers   etag: '"59a76509-7f8f"',
+660 verbose headers   'cache-control': 'max-age=300',
+660 verbose headers   'accept-ranges': 'bytes',
+660 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+660 verbose headers   via: '1.1 varnish',
+660 verbose headers   connection: 'keep-alive',
+660 verbose headers   'x-served-by': 'cache-hhn1524-HHN',
+660 verbose headers   'x-cache': 'MISS',
+660 verbose headers   'x-cache-hits': '0',
+660 verbose headers   'x-timer': 'S1505197776.449670,VS0,VE2',
+660 verbose headers   vary: 'Accept-Encoding, Accept' }
+661 silly get cb [ 304,
+661 silly get   { server: 'nginx/1.10.1',
+661 silly get     'last-modified': 'Thu, 31 Aug 2017 01:23:21 GMT',
+661 silly get     etag: '"59a76509-7f8f"',
+661 silly get     'cache-control': 'max-age=300',
+661 silly get     'accept-ranges': 'bytes',
+661 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+661 silly get     via: '1.1 varnish',
+661 silly get     connection: 'keep-alive',
+661 silly get     'x-served-by': 'cache-hhn1524-HHN',
+661 silly get     'x-cache': 'MISS',
+661 silly get     'x-cache-hits': '0',
+661 silly get     'x-timer': 'S1505197776.449670,VS0,VE2',
+661 silly get     vary: 'Accept-Encoding, Accept' } ]
+662 verbose etag https://registry.npmjs.org/aes-js from cache
+663 verbose get saving aes-js to /Users/niliev/.npm/registry.npmjs.org/aes-js/.cache.json
+664 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+665 http 304 https://registry.npmjs.org/crypto-js
+666 verbose headers { server: 'nginx/1.10.1',
+666 verbose headers   'last-modified': 'Sat, 09 Sep 2017 12:29:59 GMT',
+666 verbose headers   etag: '"59b3dec7-558a"',
+666 verbose headers   'cache-control': 'max-age=300',
+666 verbose headers   'accept-ranges': 'bytes',
+666 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+666 verbose headers   via: '1.1 varnish',
+666 verbose headers   connection: 'keep-alive',
+666 verbose headers   'x-served-by': 'cache-hhn1546-HHN',
+666 verbose headers   'x-cache': 'MISS',
+666 verbose headers   'x-cache-hits': '0',
+666 verbose headers   'x-timer': 'S1505197776.449251,VS0,VE2',
+666 verbose headers   vary: 'Accept-Encoding, Accept' }
+667 silly get cb [ 304,
+667 silly get   { server: 'nginx/1.10.1',
+667 silly get     'last-modified': 'Sat, 09 Sep 2017 12:29:59 GMT',
+667 silly get     etag: '"59b3dec7-558a"',
+667 silly get     'cache-control': 'max-age=300',
+667 silly get     'accept-ranges': 'bytes',
+667 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+667 silly get     via: '1.1 varnish',
+667 silly get     connection: 'keep-alive',
+667 silly get     'x-served-by': 'cache-hhn1546-HHN',
+667 silly get     'x-cache': 'MISS',
+667 silly get     'x-cache-hits': '0',
+667 silly get     'x-timer': 'S1505197776.449251,VS0,VE2',
+667 silly get     vary: 'Accept-Encoding, Accept' } ]
+668 verbose etag https://registry.npmjs.org/crypto-js from cache
+669 verbose get saving crypto-js to /Users/niliev/.npm/registry.npmjs.org/crypto-js/.cache.json
+670 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+671 http 304 https://registry.npmjs.org/reflect-metadata
+672 verbose headers { server: 'nginx/1.10.1',
+672 verbose headers   'last-modified': 'Tue, 29 Aug 2017 08:07:23 GMT',
+672 verbose headers   etag: '"59a520bb-70be"',
+672 verbose headers   'cache-control': 'max-age=300',
+672 verbose headers   'accept-ranges': 'bytes',
+672 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+672 verbose headers   via: '1.1 varnish',
+672 verbose headers   connection: 'keep-alive',
+672 verbose headers   'x-served-by': 'cache-hhn1527-HHN',
+672 verbose headers   'x-cache': 'MISS',
+672 verbose headers   'x-cache-hits': '0',
+672 verbose headers   'x-timer': 'S1505197776.446269,VS0,VE7',
+672 verbose headers   vary: 'Accept-Encoding, Accept' }
+673 silly get cb [ 304,
+673 silly get   { server: 'nginx/1.10.1',
+673 silly get     'last-modified': 'Tue, 29 Aug 2017 08:07:23 GMT',
+673 silly get     etag: '"59a520bb-70be"',
+673 silly get     'cache-control': 'max-age=300',
+673 silly get     'accept-ranges': 'bytes',
+673 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+673 silly get     via: '1.1 varnish',
+673 silly get     connection: 'keep-alive',
+673 silly get     'x-served-by': 'cache-hhn1527-HHN',
+673 silly get     'x-cache': 'MISS',
+673 silly get     'x-cache-hits': '0',
+673 silly get     'x-timer': 'S1505197776.446269,VS0,VE7',
+673 silly get     vary: 'Accept-Encoding, Accept' } ]
+674 verbose etag https://registry.npmjs.org/reflect-metadata from cache
+675 verbose get saving reflect-metadata to /Users/niliev/.npm/registry.npmjs.org/reflect-metadata/.cache.json
+676 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+677 http 304 https://registry.npmjs.org/nativescript-fingerprint-auth
+678 verbose headers { server: 'nginx/1.10.1',
+678 verbose headers   'last-modified': 'Mon, 21 Aug 2017 10:20:36 GMT',
+678 verbose headers   etag: '"599ab3f4-3ec4"',
+678 verbose headers   'cache-control': 'max-age=300',
+678 verbose headers   'accept-ranges': 'bytes',
+678 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+678 verbose headers   via: '1.1 varnish',
+678 verbose headers   connection: 'keep-alive',
+678 verbose headers   'x-served-by': 'cache-hhn1547-HHN',
+678 verbose headers   'x-cache': 'MISS',
+678 verbose headers   'x-cache-hits': '0',
+678 verbose headers   'x-timer': 'S1505197776.446419,VS0,VE2',
+678 verbose headers   vary: 'Accept-Encoding, Accept' }
+679 silly get cb [ 304,
+679 silly get   { server: 'nginx/1.10.1',
+679 silly get     'last-modified': 'Mon, 21 Aug 2017 10:20:36 GMT',
+679 silly get     etag: '"599ab3f4-3ec4"',
+679 silly get     'cache-control': 'max-age=300',
+679 silly get     'accept-ranges': 'bytes',
+679 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+679 silly get     via: '1.1 varnish',
+679 silly get     connection: 'keep-alive',
+679 silly get     'x-served-by': 'cache-hhn1547-HHN',
+679 silly get     'x-cache': 'MISS',
+679 silly get     'x-cache-hits': '0',
+679 silly get     'x-timer': 'S1505197776.446419,VS0,VE2',
+679 silly get     vary: 'Accept-Encoding, Accept' } ]
+680 verbose etag https://registry.npmjs.org/nativescript-fingerprint-auth from cache
+681 verbose get saving nativescript-fingerprint-auth to /Users/niliev/.npm/registry.npmjs.org/nativescript-fingerprint-auth/.cache.json
+682 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+683 http 304 https://registry.npmjs.org/nativescript-rich-textfield
+684 verbose headers { server: 'nginx/1.10.1',
+684 verbose headers   'last-modified': 'Tue, 04 Apr 2017 16:34:13 GMT',
+684 verbose headers   etag: '"58e3cb05-222b"',
+684 verbose headers   'cache-control': 'max-age=300',
+684 verbose headers   'accept-ranges': 'bytes',
+684 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+684 verbose headers   via: '1.1 varnish',
+684 verbose headers   connection: 'keep-alive',
+684 verbose headers   'x-served-by': 'cache-hhn1538-HHN',
+684 verbose headers   'x-cache': 'MISS',
+684 verbose headers   'x-cache-hits': '0',
+684 verbose headers   'x-timer': 'S1505197776.454520,VS0,VE1',
+684 verbose headers   vary: 'Accept-Encoding, Accept' }
+685 silly get cb [ 304,
+685 silly get   { server: 'nginx/1.10.1',
+685 silly get     'last-modified': 'Tue, 04 Apr 2017 16:34:13 GMT',
+685 silly get     etag: '"58e3cb05-222b"',
+685 silly get     'cache-control': 'max-age=300',
+685 silly get     'accept-ranges': 'bytes',
+685 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+685 silly get     via: '1.1 varnish',
+685 silly get     connection: 'keep-alive',
+685 silly get     'x-served-by': 'cache-hhn1538-HHN',
+685 silly get     'x-cache': 'MISS',
+685 silly get     'x-cache-hits': '0',
+685 silly get     'x-timer': 'S1505197776.454520,VS0,VE1',
+685 silly get     vary: 'Accept-Encoding, Accept' } ]
+686 verbose etag https://registry.npmjs.org/nativescript-rich-textfield from cache
+687 verbose get saving nativescript-rich-textfield to /Users/niliev/.npm/registry.npmjs.org/nativescript-rich-textfield/.cache.json
+688 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+689 http 304 https://registry.npmjs.org/nativescript-drop-down
+690 verbose headers { server: 'nginx/1.10.1',
+690 verbose headers   'last-modified': 'Fri, 04 Aug 2017 06:53:47 GMT',
+690 verbose headers   etag: '"598419fb-cb59"',
+690 verbose headers   'cache-control': 'max-age=300',
+690 verbose headers   'accept-ranges': 'bytes',
+690 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+690 verbose headers   via: '1.1 varnish',
+690 verbose headers   connection: 'keep-alive',
+690 verbose headers   'x-served-by': 'cache-hhn1539-HHN',
+690 verbose headers   'x-cache': 'MISS',
+690 verbose headers   'x-cache-hits': '0',
+690 verbose headers   'x-timer': 'S1505197776.454333,VS0,VE1',
+690 verbose headers   vary: 'Accept-Encoding, Accept' }
+691 silly get cb [ 304,
+691 silly get   { server: 'nginx/1.10.1',
+691 silly get     'last-modified': 'Fri, 04 Aug 2017 06:53:47 GMT',
+691 silly get     etag: '"598419fb-cb59"',
+691 silly get     'cache-control': 'max-age=300',
+691 silly get     'accept-ranges': 'bytes',
+691 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+691 silly get     via: '1.1 varnish',
+691 silly get     connection: 'keep-alive',
+691 silly get     'x-served-by': 'cache-hhn1539-HHN',
+691 silly get     'x-cache': 'MISS',
+691 silly get     'x-cache-hits': '0',
+691 silly get     'x-timer': 'S1505197776.454333,VS0,VE1',
+691 silly get     vary: 'Accept-Encoding, Accept' } ]
+692 verbose etag https://registry.npmjs.org/nativescript-drop-down from cache
+693 verbose get saving nativescript-drop-down to /Users/niliev/.npm/registry.npmjs.org/nativescript-drop-down/.cache.json
+694 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+695 http 304 https://registry.npmjs.org/nativescript-telerik-ui-pro
+696 verbose headers { server: 'nginx/1.10.1',
+696 verbose headers   'last-modified': 'Mon, 11 Sep 2017 13:10:27 GMT',
+696 verbose headers   etag: '"59b68b43-ff399"',
+696 verbose headers   'cache-control': 'max-age=300',
+696 verbose headers   'accept-ranges': 'bytes',
+696 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+696 verbose headers   via: '1.1 varnish',
+696 verbose headers   connection: 'keep-alive',
+696 verbose headers   'x-served-by': 'cache-hhn1533-HHN',
+696 verbose headers   'x-cache': 'MISS',
+696 verbose headers   'x-cache-hits': '0',
+696 verbose headers   'x-timer': 'S1505197776.449299,VS0,VE2',
+696 verbose headers   vary: 'Accept-Encoding, Accept' }
+697 silly get cb [ 304,
+697 silly get   { server: 'nginx/1.10.1',
+697 silly get     'last-modified': 'Mon, 11 Sep 2017 13:10:27 GMT',
+697 silly get     etag: '"59b68b43-ff399"',
+697 silly get     'cache-control': 'max-age=300',
+697 silly get     'accept-ranges': 'bytes',
+697 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+697 silly get     via: '1.1 varnish',
+697 silly get     connection: 'keep-alive',
+697 silly get     'x-served-by': 'cache-hhn1533-HHN',
+697 silly get     'x-cache': 'MISS',
+697 silly get     'x-cache-hits': '0',
+697 silly get     'x-timer': 'S1505197776.449299,VS0,VE2',
+697 silly get     vary: 'Accept-Encoding, Accept' } ]
+698 verbose etag https://registry.npmjs.org/nativescript-telerik-ui-pro from cache
+699 verbose get saving nativescript-telerik-ui-pro to /Users/niliev/.npm/registry.npmjs.org/nativescript-telerik-ui-pro/.cache.json
+700 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+701 http 304 https://registry.npmjs.org/nativescript-email
+702 verbose headers { server: 'nginx/1.10.1',
+702 verbose headers   'last-modified': 'Sun, 13 Aug 2017 20:54:12 GMT',
+702 verbose headers   etag: '"5990bc74-624d"',
+702 verbose headers   'cache-control': 'max-age=300',
+702 verbose headers   'accept-ranges': 'bytes',
+702 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+702 verbose headers   via: '1.1 varnish',
+702 verbose headers   connection: 'keep-alive',
+702 verbose headers   'x-served-by': 'cache-hhn1546-HHN',
+702 verbose headers   'x-cache': 'MISS',
+702 verbose headers   'x-cache-hits': '0',
+702 verbose headers   'x-timer': 'S1505197776.452153,VS0,VE2',
+702 verbose headers   vary: 'Accept-Encoding, Accept' }
+703 silly get cb [ 304,
+703 silly get   { server: 'nginx/1.10.1',
+703 silly get     'last-modified': 'Sun, 13 Aug 2017 20:54:12 GMT',
+703 silly get     etag: '"5990bc74-624d"',
+703 silly get     'cache-control': 'max-age=300',
+703 silly get     'accept-ranges': 'bytes',
+703 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+703 silly get     via: '1.1 varnish',
+703 silly get     connection: 'keep-alive',
+703 silly get     'x-served-by': 'cache-hhn1546-HHN',
+703 silly get     'x-cache': 'MISS',
+703 silly get     'x-cache-hits': '0',
+703 silly get     'x-timer': 'S1505197776.452153,VS0,VE2',
+703 silly get     vary: 'Accept-Encoding, Accept' } ]
+704 verbose etag https://registry.npmjs.org/nativescript-email from cache
+705 verbose get saving nativescript-email to /Users/niliev/.npm/registry.npmjs.org/nativescript-email/.cache.json
+706 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+707 http 304 https://registry.npmjs.org/nativescript-loading-indicator
+708 verbose headers { server: 'nginx/1.10.1',
+708 verbose headers   'last-modified': 'Thu, 01 Jun 2017 16:06:05 GMT',
+708 verbose headers   etag: '"59303b6d-5892"',
+708 verbose headers   'cache-control': 'max-age=300',
+708 verbose headers   'accept-ranges': 'bytes',
+708 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+708 verbose headers   via: '1.1 varnish',
+708 verbose headers   connection: 'keep-alive',
+708 verbose headers   'x-served-by': 'cache-hhn1527-HHN',
+708 verbose headers   'x-cache': 'MISS',
+708 verbose headers   'x-cache-hits': '0',
+708 verbose headers   'x-timer': 'S1505197776.453617,VS0,VE2',
+708 verbose headers   vary: 'Accept-Encoding, Accept' }
+709 silly get cb [ 304,
+709 silly get   { server: 'nginx/1.10.1',
+709 silly get     'last-modified': 'Thu, 01 Jun 2017 16:06:05 GMT',
+709 silly get     etag: '"59303b6d-5892"',
+709 silly get     'cache-control': 'max-age=300',
+709 silly get     'accept-ranges': 'bytes',
+709 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+709 silly get     via: '1.1 varnish',
+709 silly get     connection: 'keep-alive',
+709 silly get     'x-served-by': 'cache-hhn1527-HHN',
+709 silly get     'x-cache': 'MISS',
+709 silly get     'x-cache-hits': '0',
+709 silly get     'x-timer': 'S1505197776.453617,VS0,VE2',
+709 silly get     vary: 'Accept-Encoding, Accept' } ]
+710 verbose etag https://registry.npmjs.org/nativescript-loading-indicator from cache
+711 verbose get saving nativescript-loading-indicator to /Users/niliev/.npm/registry.npmjs.org/nativescript-loading-indicator/.cache.json
+712 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+713 http 304 https://registry.npmjs.org/nativescript-angular
+714 verbose headers { server: 'nginx/1.10.1',
+714 verbose headers   'last-modified': 'Sat, 09 Sep 2017 18:22:14 GMT',
+714 verbose headers   etag: '"59b43156-abc0d"',
+714 verbose headers   'cache-control': 'max-age=300',
+714 verbose headers   'accept-ranges': 'bytes',
+714 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+714 verbose headers   via: '1.1 varnish',
+714 verbose headers   connection: 'keep-alive',
+714 verbose headers   'x-served-by': 'cache-hhn1521-HHN',
+714 verbose headers   'x-cache': 'MISS',
+714 verbose headers   'x-cache-hits': '0',
+714 verbose headers   'x-timer': 'S1505197776.453561,VS0,VE2',
+714 verbose headers   vary: 'Accept-Encoding, Accept' }
+715 silly get cb [ 304,
+715 silly get   { server: 'nginx/1.10.1',
+715 silly get     'last-modified': 'Sat, 09 Sep 2017 18:22:14 GMT',
+715 silly get     etag: '"59b43156-abc0d"',
+715 silly get     'cache-control': 'max-age=300',
+715 silly get     'accept-ranges': 'bytes',
+715 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+715 silly get     via: '1.1 varnish',
+715 silly get     connection: 'keep-alive',
+715 silly get     'x-served-by': 'cache-hhn1521-HHN',
+715 silly get     'x-cache': 'MISS',
+715 silly get     'x-cache-hits': '0',
+715 silly get     'x-timer': 'S1505197776.453561,VS0,VE2',
+715 silly get     vary: 'Accept-Encoding, Accept' } ]
+716 verbose etag https://registry.npmjs.org/nativescript-angular from cache
+717 verbose get saving nativescript-angular to /Users/niliev/.npm/registry.npmjs.org/nativescript-angular/.cache.json
+718 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+719 http 304 https://registry.npmjs.org/tslint
+720 verbose headers { server: 'nginx/1.10.1',
+720 verbose headers   'last-modified': 'Tue, 29 Aug 2017 07:22:23 GMT',
+720 verbose headers   etag: '"59a5162f-488a6"',
+720 verbose headers   'cache-control': 'max-age=300',
+720 verbose headers   'accept-ranges': 'bytes',
+720 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+720 verbose headers   via: '1.1 varnish',
+720 verbose headers   connection: 'keep-alive',
+720 verbose headers   'x-served-by': 'cache-hhn1544-HHN',
+720 verbose headers   'x-cache': 'MISS',
+720 verbose headers   'x-cache-hits': '0',
+720 verbose headers   'x-timer': 'S1505197776.461777,VS0,VE3',
+720 verbose headers   vary: 'Accept-Encoding, Accept' }
+721 silly get cb [ 304,
+721 silly get   { server: 'nginx/1.10.1',
+721 silly get     'last-modified': 'Tue, 29 Aug 2017 07:22:23 GMT',
+721 silly get     etag: '"59a5162f-488a6"',
+721 silly get     'cache-control': 'max-age=300',
+721 silly get     'accept-ranges': 'bytes',
+721 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+721 silly get     via: '1.1 varnish',
+721 silly get     connection: 'keep-alive',
+721 silly get     'x-served-by': 'cache-hhn1544-HHN',
+721 silly get     'x-cache': 'MISS',
+721 silly get     'x-cache-hits': '0',
+721 silly get     'x-timer': 'S1505197776.461777,VS0,VE3',
+721 silly get     vary: 'Accept-Encoding, Accept' } ]
+722 verbose etag https://registry.npmjs.org/tslint from cache
+723 verbose get saving tslint to /Users/niliev/.npm/registry.npmjs.org/tslint/.cache.json
+724 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+725 http 304 https://registry.npmjs.org/ng-http-interceptor
+726 verbose headers { server: 'nginx/1.10.1',
+726 verbose headers   'last-modified': 'Wed, 12 Jul 2017 18:22:19 GMT',
+726 verbose headers   etag: '"596668db-11e9f"',
+726 verbose headers   'cache-control': 'max-age=300',
+726 verbose headers   'accept-ranges': 'bytes',
+726 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+726 verbose headers   via: '1.1 varnish',
+726 verbose headers   connection: 'keep-alive',
+726 verbose headers   'x-served-by': 'cache-hhn1528-HHN',
+726 verbose headers   'x-cache': 'MISS',
+726 verbose headers   'x-cache-hits': '0',
+726 verbose headers   'x-timer': 'S1505197776.464863,VS0,VE2',
+726 verbose headers   vary: 'Accept-Encoding, Accept' }
+727 silly get cb [ 304,
+727 silly get   { server: 'nginx/1.10.1',
+727 silly get     'last-modified': 'Wed, 12 Jul 2017 18:22:19 GMT',
+727 silly get     etag: '"596668db-11e9f"',
+727 silly get     'cache-control': 'max-age=300',
+727 silly get     'accept-ranges': 'bytes',
+727 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+727 silly get     via: '1.1 varnish',
+727 silly get     connection: 'keep-alive',
+727 silly get     'x-served-by': 'cache-hhn1528-HHN',
+727 silly get     'x-cache': 'MISS',
+727 silly get     'x-cache-hits': '0',
+727 silly get     'x-timer': 'S1505197776.464863,VS0,VE2',
+727 silly get     vary: 'Accept-Encoding, Accept' } ]
+728 verbose etag https://registry.npmjs.org/ng-http-interceptor from cache
+729 verbose get saving ng-http-interceptor to /Users/niliev/.npm/registry.npmjs.org/ng-http-interceptor/.cache.json
+730 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+731 http 304 https://registry.npmjs.org/rxjs
+732 verbose headers { server: 'nginx/1.10.1',
+732 verbose headers   'last-modified': 'Fri, 08 Sep 2017 18:23:48 GMT',
+732 verbose headers   etag: '"59b2e034-2be0f"',
+732 verbose headers   'cache-control': 'max-age=300',
+732 verbose headers   'accept-ranges': 'bytes',
+732 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+732 verbose headers   via: '1.1 varnish',
+732 verbose headers   connection: 'keep-alive',
+732 verbose headers   'x-served-by': 'cache-hhn1546-HHN',
+732 verbose headers   'x-cache': 'MISS',
+732 verbose headers   'x-cache-hits': '0',
+732 verbose headers   'x-timer': 'S1505197776.467157,VS0,VE2',
+732 verbose headers   vary: 'Accept-Encoding, Accept' }
+733 silly get cb [ 304,
+733 silly get   { server: 'nginx/1.10.1',
+733 silly get     'last-modified': 'Fri, 08 Sep 2017 18:23:48 GMT',
+733 silly get     etag: '"59b2e034-2be0f"',
+733 silly get     'cache-control': 'max-age=300',
+733 silly get     'accept-ranges': 'bytes',
+733 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+733 silly get     via: '1.1 varnish',
+733 silly get     connection: 'keep-alive',
+733 silly get     'x-served-by': 'cache-hhn1546-HHN',
+733 silly get     'x-cache': 'MISS',
+733 silly get     'x-cache-hits': '0',
+733 silly get     'x-timer': 'S1505197776.467157,VS0,VE2',
+733 silly get     vary: 'Accept-Encoding, Accept' } ]
+734 verbose etag https://registry.npmjs.org/rxjs from cache
+735 verbose get saving rxjs to /Users/niliev/.npm/registry.npmjs.org/rxjs/.cache.json
+736 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+737 http 304 https://registry.npmjs.org/nativescript-toast
+738 verbose headers { server: 'nginx/1.10.1',
+738 verbose headers   'last-modified': 'Thu, 13 Jul 2017 05:04:26 GMT',
+738 verbose headers   etag: '"5966ff5a-abfe"',
+738 verbose headers   'cache-control': 'max-age=300',
+738 verbose headers   'accept-ranges': 'bytes',
+738 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+738 verbose headers   via: '1.1 varnish',
+738 verbose headers   connection: 'keep-alive',
+738 verbose headers   'x-served-by': 'cache-hhn1535-HHN',
+738 verbose headers   'x-cache': 'MISS',
+738 verbose headers   'x-cache-hits': '0',
+738 verbose headers   'x-timer': 'S1505197776.473874,VS0,VE1',
+738 verbose headers   vary: 'Accept-Encoding, Accept' }
+739 silly get cb [ 304,
+739 silly get   { server: 'nginx/1.10.1',
+739 silly get     'last-modified': 'Thu, 13 Jul 2017 05:04:26 GMT',
+739 silly get     etag: '"5966ff5a-abfe"',
+739 silly get     'cache-control': 'max-age=300',
+739 silly get     'accept-ranges': 'bytes',
+739 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+739 silly get     via: '1.1 varnish',
+739 silly get     connection: 'keep-alive',
+739 silly get     'x-served-by': 'cache-hhn1535-HHN',
+739 silly get     'x-cache': 'MISS',
+739 silly get     'x-cache-hits': '0',
+739 silly get     'x-timer': 'S1505197776.473874,VS0,VE1',
+739 silly get     vary: 'Accept-Encoding, Accept' } ]
+740 verbose etag https://registry.npmjs.org/nativescript-toast from cache
+741 verbose get saving nativescript-toast to /Users/niliev/.npm/registry.npmjs.org/nativescript-toast/.cache.json
+742 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+743 http 304 https://registry.npmjs.org/nativescript-secure-storage
+744 verbose headers { server: 'nginx/1.10.1',
+744 verbose headers   'last-modified': 'Fri, 11 Aug 2017 21:19:31 GMT',
+744 verbose headers   etag: '"598e1f63-46d7"',
+744 verbose headers   'cache-control': 'max-age=300',
+744 verbose headers   'accept-ranges': 'bytes',
+744 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+744 verbose headers   via: '1.1 varnish',
+744 verbose headers   connection: 'keep-alive',
+744 verbose headers   'x-served-by': 'cache-hhn1540-HHN',
+744 verbose headers   'x-cache': 'MISS',
+744 verbose headers   'x-cache-hits': '0',
+744 verbose headers   'x-timer': 'S1505197776.471240,VS0,VE1',
+744 verbose headers   vary: 'Accept-Encoding, Accept' }
+745 silly get cb [ 304,
+745 silly get   { server: 'nginx/1.10.1',
+745 silly get     'last-modified': 'Fri, 11 Aug 2017 21:19:31 GMT',
+745 silly get     etag: '"598e1f63-46d7"',
+745 silly get     'cache-control': 'max-age=300',
+745 silly get     'accept-ranges': 'bytes',
+745 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+745 silly get     via: '1.1 varnish',
+745 silly get     connection: 'keep-alive',
+745 silly get     'x-served-by': 'cache-hhn1540-HHN',
+745 silly get     'x-cache': 'MISS',
+745 silly get     'x-cache-hits': '0',
+745 silly get     'x-timer': 'S1505197776.471240,VS0,VE1',
+745 silly get     vary: 'Accept-Encoding, Accept' } ]
+746 verbose etag https://registry.npmjs.org/nativescript-secure-storage from cache
+747 verbose get saving nativescript-secure-storage to /Users/niliev/.npm/registry.npmjs.org/nativescript-secure-storage/.cache.json
+748 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+749 http 304 https://registry.npmjs.org/zone.js
+750 verbose headers { server: 'nginx/1.10.1',
+750 verbose headers   'last-modified': 'Wed, 23 Aug 2017 18:40:41 GMT',
+750 verbose headers   etag: '"599dcc29-2ba15"',
+750 verbose headers   'cache-control': 'max-age=300',
+750 verbose headers   'accept-ranges': 'bytes',
+750 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+750 verbose headers   via: '1.1 varnish',
+750 verbose headers   connection: 'keep-alive',
+750 verbose headers   'x-served-by': 'cache-hhn1530-HHN',
+750 verbose headers   'x-cache': 'MISS',
+750 verbose headers   'x-cache-hits': '0',
+750 verbose headers   'x-timer': 'S1505197776.466799,VS0,VE2',
+750 verbose headers   vary: 'Accept-Encoding, Accept' }
+751 silly get cb [ 304,
+751 silly get   { server: 'nginx/1.10.1',
+751 silly get     'last-modified': 'Wed, 23 Aug 2017 18:40:41 GMT',
+751 silly get     etag: '"599dcc29-2ba15"',
+751 silly get     'cache-control': 'max-age=300',
+751 silly get     'accept-ranges': 'bytes',
+751 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+751 silly get     via: '1.1 varnish',
+751 silly get     connection: 'keep-alive',
+751 silly get     'x-served-by': 'cache-hhn1530-HHN',
+751 silly get     'x-cache': 'MISS',
+751 silly get     'x-cache-hits': '0',
+751 silly get     'x-timer': 'S1505197776.466799,VS0,VE2',
+751 silly get     vary: 'Accept-Encoding, Accept' } ]
+752 verbose etag https://registry.npmjs.org/zone.js from cache
+753 verbose get saving zone.js to /Users/niliev/.npm/registry.npmjs.org/zone.js/.cache.json
+754 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+755 http 304 https://registry.npmjs.org/tns-core-modules
+756 verbose headers { server: 'nginx/1.10.1',
+756 verbose headers   'last-modified': 'Sat, 09 Sep 2017 12:48:12 GMT',
+756 verbose headers   etag: '"59b3e30c-14de26"',
+756 verbose headers   'cache-control': 'max-age=300',
+756 verbose headers   'accept-ranges': 'bytes',
+756 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+756 verbose headers   via: '1.1 varnish',
+756 verbose headers   connection: 'keep-alive',
+756 verbose headers   'x-served-by': 'cache-hhn1538-HHN',
+756 verbose headers   'x-cache': 'MISS',
+756 verbose headers   'x-cache-hits': '0',
+756 verbose headers   'x-timer': 'S1505197776.472641,VS0,VE1',
+756 verbose headers   vary: 'Accept-Encoding, Accept' }
+757 silly get cb [ 304,
+757 silly get   { server: 'nginx/1.10.1',
+757 silly get     'last-modified': 'Sat, 09 Sep 2017 12:48:12 GMT',
+757 silly get     etag: '"59b3e30c-14de26"',
+757 silly get     'cache-control': 'max-age=300',
+757 silly get     'accept-ranges': 'bytes',
+757 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+757 silly get     via: '1.1 varnish',
+757 silly get     connection: 'keep-alive',
+757 silly get     'x-served-by': 'cache-hhn1538-HHN',
+757 silly get     'x-cache': 'MISS',
+757 silly get     'x-cache-hits': '0',
+757 silly get     'x-timer': 'S1505197776.472641,VS0,VE1',
+757 silly get     vary: 'Accept-Encoding, Accept' } ]
+758 verbose etag https://registry.npmjs.org/tns-core-modules from cache
+759 verbose get saving tns-core-modules to /Users/niliev/.npm/registry.npmjs.org/tns-core-modules/.cache.json
+760 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+761 http 304 https://registry.npmjs.org/nativescript-printer
+762 verbose headers { server: 'nginx/1.10.1',
+762 verbose headers   'last-modified': 'Mon, 29 May 2017 08:23:57 GMT',
+762 verbose headers   etag: '"592bda9d-3074"',
+762 verbose headers   'cache-control': 'max-age=300',
+762 verbose headers   'accept-ranges': 'bytes',
+762 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+762 verbose headers   via: '1.1 varnish',
+762 verbose headers   connection: 'keep-alive',
+762 verbose headers   'x-served-by': 'cache-hhn1541-HHN',
+762 verbose headers   'x-cache': 'MISS',
+762 verbose headers   'x-cache-hits': '0',
+762 verbose headers   'x-timer': 'S1505197776.473670,VS0,VE1',
+762 verbose headers   vary: 'Accept-Encoding, Accept' }
+763 silly get cb [ 304,
+763 silly get   { server: 'nginx/1.10.1',
+763 silly get     'last-modified': 'Mon, 29 May 2017 08:23:57 GMT',
+763 silly get     etag: '"592bda9d-3074"',
+763 silly get     'cache-control': 'max-age=300',
+763 silly get     'accept-ranges': 'bytes',
+763 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+763 silly get     via: '1.1 varnish',
+763 silly get     connection: 'keep-alive',
+763 silly get     'x-served-by': 'cache-hhn1541-HHN',
+763 silly get     'x-cache': 'MISS',
+763 silly get     'x-cache-hits': '0',
+763 silly get     'x-timer': 'S1505197776.473670,VS0,VE1',
+763 silly get     vary: 'Accept-Encoding, Accept' } ]
+764 verbose etag https://registry.npmjs.org/nativescript-printer from cache
+765 verbose get saving nativescript-printer to /Users/niliev/.npm/registry.npmjs.org/nativescript-printer/.cache.json
+766 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+767 http 304 https://registry.npmjs.org/nativescript-locate-address
+768 verbose headers { server: 'nginx/1.10.1',
+768 verbose headers   'last-modified': 'Sat, 17 Jun 2017 00:06:46 GMT',
+768 verbose headers   etag: '"59447296-275e"',
+768 verbose headers   'cache-control': 'max-age=300',
+768 verbose headers   'accept-ranges': 'bytes',
+768 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+768 verbose headers   via: '1.1 varnish',
+768 verbose headers   connection: 'keep-alive',
+768 verbose headers   'x-served-by': 'cache-hhn1525-HHN',
+768 verbose headers   'x-cache': 'MISS',
+768 verbose headers   'x-cache-hits': '0',
+768 verbose headers   'x-timer': 'S1505197776.444695,VS0,VE42',
+768 verbose headers   vary: 'Accept-Encoding, Accept' }
+769 silly get cb [ 304,
+769 silly get   { server: 'nginx/1.10.1',
+769 silly get     'last-modified': 'Sat, 17 Jun 2017 00:06:46 GMT',
+769 silly get     etag: '"59447296-275e"',
+769 silly get     'cache-control': 'max-age=300',
+769 silly get     'accept-ranges': 'bytes',
+769 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+769 silly get     via: '1.1 varnish',
+769 silly get     connection: 'keep-alive',
+769 silly get     'x-served-by': 'cache-hhn1525-HHN',
+769 silly get     'x-cache': 'MISS',
+769 silly get     'x-cache-hits': '0',
+769 silly get     'x-timer': 'S1505197776.444695,VS0,VE42',
+769 silly get     vary: 'Accept-Encoding, Accept' } ]
+770 verbose etag https://registry.npmjs.org/nativescript-locate-address from cache
+771 verbose get saving nativescript-locate-address to /Users/niliev/.npm/registry.npmjs.org/nativescript-locate-address/.cache.json
+772 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+773 http 304 https://registry.npmjs.org/codelyzer
+774 verbose headers { server: 'nginx/1.10.1',
+774 verbose headers   'last-modified': 'Mon, 11 Sep 2017 19:25:19 GMT',
+774 verbose headers   etag: '"59b6e31f-14345"',
+774 verbose headers   'cache-control': 'max-age=300',
+774 verbose headers   'accept-ranges': 'bytes',
+774 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+774 verbose headers   via: '1.1 varnish',
+774 verbose headers   connection: 'keep-alive',
+774 verbose headers   'x-served-by': 'cache-hhn1524-HHN',
+774 verbose headers   'x-cache': 'MISS',
+774 verbose headers   'x-cache-hits': '0',
+774 verbose headers   'x-timer': 'S1505197776.451050,VS0,VE44',
+774 verbose headers   vary: 'Accept-Encoding, Accept' }
+775 silly get cb [ 304,
+775 silly get   { server: 'nginx/1.10.1',
+775 silly get     'last-modified': 'Mon, 11 Sep 2017 19:25:19 GMT',
+775 silly get     etag: '"59b6e31f-14345"',
+775 silly get     'cache-control': 'max-age=300',
+775 silly get     'accept-ranges': 'bytes',
+775 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+775 silly get     via: '1.1 varnish',
+775 silly get     connection: 'keep-alive',
+775 silly get     'x-served-by': 'cache-hhn1524-HHN',
+775 silly get     'x-cache': 'MISS',
+775 silly get     'x-cache-hits': '0',
+775 silly get     'x-timer': 'S1505197776.451050,VS0,VE44',
+775 silly get     vary: 'Accept-Encoding, Accept' } ]
+776 verbose etag https://registry.npmjs.org/codelyzer from cache
+777 verbose get saving codelyzer to /Users/niliev/.npm/registry.npmjs.org/codelyzer/.cache.json
+778 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+779 http 304 https://registry.npmjs.org/nativescript-adobe-analytics
+780 verbose headers { server: 'nginx/1.10.1',
+780 verbose headers   'last-modified': 'Mon, 21 Nov 2016 09:32:35 GMT',
+780 verbose headers   etag: '"5832bf33-1bb"',
+780 verbose headers   'cache-control': 'max-age=300',
+780 verbose headers   'accept-ranges': 'bytes',
+780 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+780 verbose headers   via: '1.1 varnish',
+780 verbose headers   connection: 'keep-alive',
+780 verbose headers   'x-served-by': 'cache-hhn1527-HHN',
+780 verbose headers   'x-cache': 'MISS',
+780 verbose headers   'x-cache-hits': '0',
+780 verbose headers   'x-timer': 'S1505197776.454968,VS0,VE44',
+780 verbose headers   vary: 'Accept-Encoding, Accept' }
+781 silly get cb [ 304,
+781 silly get   { server: 'nginx/1.10.1',
+781 silly get     'last-modified': 'Mon, 21 Nov 2016 09:32:35 GMT',
+781 silly get     etag: '"5832bf33-1bb"',
+781 silly get     'cache-control': 'max-age=300',
+781 silly get     'accept-ranges': 'bytes',
+781 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+781 silly get     via: '1.1 varnish',
+781 silly get     connection: 'keep-alive',
+781 silly get     'x-served-by': 'cache-hhn1527-HHN',
+781 silly get     'x-cache': 'MISS',
+781 silly get     'x-cache-hits': '0',
+781 silly get     'x-timer': 'S1505197776.454968,VS0,VE44',
+781 silly get     vary: 'Accept-Encoding, Accept' } ]
+782 verbose etag https://registry.npmjs.org/nativescript-adobe-analytics from cache
+783 verbose get saving nativescript-adobe-analytics to /Users/niliev/.npm/registry.npmjs.org/nativescript-adobe-analytics/.cache.json
+784 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+785 http 304 https://registry.npmjs.org/nativescript-cardview
+786 verbose headers { server: 'nginx/1.10.1',
+786 verbose headers   'last-modified': 'Wed, 21 Jun 2017 22:22:24 GMT',
+786 verbose headers   etag: '"594af1a0-109b2"',
+786 verbose headers   'cache-control': 'max-age=300',
+786 verbose headers   'accept-ranges': 'bytes',
+786 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+786 verbose headers   via: '1.1 varnish',
+786 verbose headers   connection: 'keep-alive',
+786 verbose headers   'x-served-by': 'cache-hhn1527-HHN',
+786 verbose headers   'x-cache': 'MISS',
+786 verbose headers   'x-cache-hits': '0',
+786 verbose headers   'x-timer': 'S1505197776.453428,VS0,VE47',
+786 verbose headers   vary: 'Accept-Encoding, Accept' }
+787 silly get cb [ 304,
+787 silly get   { server: 'nginx/1.10.1',
+787 silly get     'last-modified': 'Wed, 21 Jun 2017 22:22:24 GMT',
+787 silly get     etag: '"594af1a0-109b2"',
+787 silly get     'cache-control': 'max-age=300',
+787 silly get     'accept-ranges': 'bytes',
+787 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+787 silly get     via: '1.1 varnish',
+787 silly get     connection: 'keep-alive',
+787 silly get     'x-served-by': 'cache-hhn1527-HHN',
+787 silly get     'x-cache': 'MISS',
+787 silly get     'x-cache-hits': '0',
+787 silly get     'x-timer': 'S1505197776.453428,VS0,VE47',
+787 silly get     vary: 'Accept-Encoding, Accept' } ]
+788 verbose etag https://registry.npmjs.org/nativescript-cardview from cache
+789 verbose get saving nativescript-cardview to /Users/niliev/.npm/registry.npmjs.org/nativescript-cardview/.cache.json
+790 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+791 http 304 https://registry.npmjs.org/nativescript-timedatepicker
+792 verbose headers { server: 'nginx/1.10.1',
+792 verbose headers   'last-modified': 'Fri, 12 May 2017 06:17:24 GMT',
+792 verbose headers   etag: '"59155374-5a5b"',
+792 verbose headers   'cache-control': 'max-age=300',
+792 verbose headers   'accept-ranges': 'bytes',
+792 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+792 verbose headers   via: '1.1 varnish',
+792 verbose headers   connection: 'keep-alive',
+792 verbose headers   'x-served-by': 'cache-hhn1538-HHN',
+792 verbose headers   'x-cache': 'MISS',
+792 verbose headers   'x-cache-hits': '0',
+792 verbose headers   'x-timer': 'S1505197776.472818,VS0,VE55',
+792 verbose headers   vary: 'Accept-Encoding, Accept' }
+793 silly get cb [ 304,
+793 silly get   { server: 'nginx/1.10.1',
+793 silly get     'last-modified': 'Fri, 12 May 2017 06:17:24 GMT',
+793 silly get     etag: '"59155374-5a5b"',
+793 silly get     'cache-control': 'max-age=300',
+793 silly get     'accept-ranges': 'bytes',
+793 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+793 silly get     via: '1.1 varnish',
+793 silly get     connection: 'keep-alive',
+793 silly get     'x-served-by': 'cache-hhn1538-HHN',
+793 silly get     'x-cache': 'MISS',
+793 silly get     'x-cache-hits': '0',
+793 silly get     'x-timer': 'S1505197776.472818,VS0,VE55',
+793 silly get     vary: 'Accept-Encoding, Accept' } ]
+794 verbose etag https://registry.npmjs.org/nativescript-timedatepicker from cache
+795 verbose get saving nativescript-timedatepicker to /Users/niliev/.npm/registry.npmjs.org/nativescript-timedatepicker/.cache.json
+796 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+797 http 304 https://registry.npmjs.org/nativescript-permissions
+798 verbose headers { server: 'nginx/1.10.1',
+798 verbose headers   'last-modified': 'Thu, 02 Feb 2017 08:52:23 GMT',
+798 verbose headers   etag: '"5892f347-4f5c"',
+798 verbose headers   'cache-control': 'max-age=300',
+798 verbose headers   'accept-ranges': 'bytes',
+798 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+798 verbose headers   via: '1.1 varnish',
+798 verbose headers   connection: 'keep-alive',
+798 verbose headers   'x-served-by': 'cache-hhn1524-HHN',
+798 verbose headers   'x-cache': 'MISS',
+798 verbose headers   'x-cache-hits': '0',
+798 verbose headers   'x-timer': 'S1505197776.469730,VS0,VE88',
+798 verbose headers   vary: 'Accept-Encoding, Accept' }
+799 silly get cb [ 304,
+799 silly get   { server: 'nginx/1.10.1',
+799 silly get     'last-modified': 'Thu, 02 Feb 2017 08:52:23 GMT',
+799 silly get     etag: '"5892f347-4f5c"',
+799 silly get     'cache-control': 'max-age=300',
+799 silly get     'accept-ranges': 'bytes',
+799 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+799 silly get     via: '1.1 varnish',
+799 silly get     connection: 'keep-alive',
+799 silly get     'x-served-by': 'cache-hhn1524-HHN',
+799 silly get     'x-cache': 'MISS',
+799 silly get     'x-cache-hits': '0',
+799 silly get     'x-timer': 'S1505197776.469730,VS0,VE88',
+799 silly get     vary: 'Accept-Encoding, Accept' } ]
+800 verbose etag https://registry.npmjs.org/nativescript-permissions from cache
+801 verbose get saving nativescript-permissions to /Users/niliev/.npm/registry.npmjs.org/nativescript-permissions/.cache.json
+802 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+803 silly resolveWithNewModule nativescript-theme-core@1.0.4 checking installable status
+804 silly cache add args [ 'nativescript-theme-core@1.0.4', null ]
+805 verbose cache add spec nativescript-theme-core@1.0.4
+806 silly cache add parsed spec Result {
+806 silly cache add   raw: 'nativescript-theme-core@1.0.4',
+806 silly cache add   scope: null,
+806 silly cache add   escapedName: 'nativescript-theme-core',
+806 silly cache add   name: 'nativescript-theme-core',
+806 silly cache add   rawSpec: '1.0.4',
+806 silly cache add   spec: '1.0.4',
+806 silly cache add   type: 'version' }
+807 silly addNamed nativescript-theme-core@1.0.4
+808 verbose addNamed "1.0.4" is a plain semver version for nativescript-theme-core
+809 silly mapToRegistry name nativescript-theme-core
+810 silly mapToRegistry using default registry
+811 silly mapToRegistry registry https://registry.npmjs.org/
+812 silly mapToRegistry data Result {
+812 silly mapToRegistry   raw: 'nativescript-theme-core',
+812 silly mapToRegistry   scope: null,
+812 silly mapToRegistry   escapedName: 'nativescript-theme-core',
+812 silly mapToRegistry   name: 'nativescript-theme-core',
+812 silly mapToRegistry   rawSpec: '',
+812 silly mapToRegistry   spec: 'latest',
+812 silly mapToRegistry   type: 'tag' }
+813 silly mapToRegistry uri https://registry.npmjs.org/nativescript-theme-core
+814 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-theme-core not in flight; fetching
+815 silly resolveWithNewModule nativescript-phone@1.3.0 checking installable status
+816 silly cache add args [ 'nativescript-phone@1.3.0', null ]
+817 verbose cache add spec nativescript-phone@1.3.0
+818 silly cache add parsed spec Result {
+818 silly cache add   raw: 'nativescript-phone@1.3.0',
+818 silly cache add   scope: null,
+818 silly cache add   escapedName: 'nativescript-phone',
+818 silly cache add   name: 'nativescript-phone',
+818 silly cache add   rawSpec: '1.3.0',
+818 silly cache add   spec: '1.3.0',
+818 silly cache add   type: 'version' }
+819 silly addNamed nativescript-phone@1.3.0
+820 verbose addNamed "1.3.0" is a plain semver version for nativescript-phone
+821 silly mapToRegistry name nativescript-phone
+822 silly mapToRegistry using default registry
+823 silly mapToRegistry registry https://registry.npmjs.org/
+824 silly mapToRegistry data Result {
+824 silly mapToRegistry   raw: 'nativescript-phone',
+824 silly mapToRegistry   scope: null,
+824 silly mapToRegistry   escapedName: 'nativescript-phone',
+824 silly mapToRegistry   name: 'nativescript-phone',
+824 silly mapToRegistry   rawSpec: '',
+824 silly mapToRegistry   spec: 'latest',
+824 silly mapToRegistry   type: 'tag' }
+825 silly mapToRegistry uri https://registry.npmjs.org/nativescript-phone
+826 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-phone not in flight; fetching
+827 silly resolveWithNewModule nativescript-testfairy@1.1.0 checking installable status
+828 silly cache add args [ 'nativescript-testfairy@1.1.0', null ]
+829 verbose cache add spec nativescript-testfairy@1.1.0
+830 silly cache add parsed spec Result {
+830 silly cache add   raw: 'nativescript-testfairy@1.1.0',
+830 silly cache add   scope: null,
+830 silly cache add   escapedName: 'nativescript-testfairy',
+830 silly cache add   name: 'nativescript-testfairy',
+830 silly cache add   rawSpec: '1.1.0',
+830 silly cache add   spec: '1.1.0',
+830 silly cache add   type: 'version' }
+831 silly addNamed nativescript-testfairy@1.1.0
+832 verbose addNamed "1.1.0" is a plain semver version for nativescript-testfairy
+833 silly mapToRegistry name nativescript-testfairy
+834 silly mapToRegistry using default registry
+835 silly mapToRegistry registry https://registry.npmjs.org/
+836 silly mapToRegistry data Result {
+836 silly mapToRegistry   raw: 'nativescript-testfairy',
+836 silly mapToRegistry   scope: null,
+836 silly mapToRegistry   escapedName: 'nativescript-testfairy',
+836 silly mapToRegistry   name: 'nativescript-testfairy',
+836 silly mapToRegistry   rawSpec: '',
+836 silly mapToRegistry   spec: 'latest',
+836 silly mapToRegistry   type: 'tag' }
+837 silly mapToRegistry uri https://registry.npmjs.org/nativescript-testfairy
+838 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-testfairy not in flight; fetching
+839 silly resolveWithNewModule nativescript-checkbox@2.1.11 checking installable status
+840 silly cache add args [ 'nativescript-checkbox@2.1.11', null ]
+841 verbose cache add spec nativescript-checkbox@2.1.11
+842 silly cache add parsed spec Result {
+842 silly cache add   raw: 'nativescript-checkbox@2.1.11',
+842 silly cache add   scope: null,
+842 silly cache add   escapedName: 'nativescript-checkbox',
+842 silly cache add   name: 'nativescript-checkbox',
+842 silly cache add   rawSpec: '2.1.11',
+842 silly cache add   spec: '2.1.11',
+842 silly cache add   type: 'version' }
+843 silly addNamed nativescript-checkbox@2.1.11
+844 verbose addNamed "2.1.11" is a plain semver version for nativescript-checkbox
+845 silly mapToRegistry name nativescript-checkbox
+846 silly mapToRegistry using default registry
+847 silly mapToRegistry registry https://registry.npmjs.org/
+848 silly mapToRegistry data Result {
+848 silly mapToRegistry   raw: 'nativescript-checkbox',
+848 silly mapToRegistry   scope: null,
+848 silly mapToRegistry   escapedName: 'nativescript-checkbox',
+848 silly mapToRegistry   name: 'nativescript-checkbox',
+848 silly mapToRegistry   rawSpec: '',
+848 silly mapToRegistry   spec: 'latest',
+848 silly mapToRegistry   type: 'tag' }
+849 silly mapToRegistry uri https://registry.npmjs.org/nativescript-checkbox
+850 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-checkbox not in flight; fetching
+851 silly resolveWithNewModule nativescript-iqkeyboardmanager@1.1.0 checking installable status
+852 silly cache add args [ 'nativescript-iqkeyboardmanager@1.1.0', null ]
+853 verbose cache add spec nativescript-iqkeyboardmanager@1.1.0
+854 silly cache add parsed spec Result {
+854 silly cache add   raw: 'nativescript-iqkeyboardmanager@1.1.0',
+854 silly cache add   scope: null,
+854 silly cache add   escapedName: 'nativescript-iqkeyboardmanager',
+854 silly cache add   name: 'nativescript-iqkeyboardmanager',
+854 silly cache add   rawSpec: '1.1.0',
+854 silly cache add   spec: '1.1.0',
+854 silly cache add   type: 'version' }
+855 silly addNamed nativescript-iqkeyboardmanager@1.1.0
+856 verbose addNamed "1.1.0" is a plain semver version for nativescript-iqkeyboardmanager
+857 silly mapToRegistry name nativescript-iqkeyboardmanager
+858 silly mapToRegistry using default registry
+859 silly mapToRegistry registry https://registry.npmjs.org/
+860 silly mapToRegistry data Result {
+860 silly mapToRegistry   raw: 'nativescript-iqkeyboardmanager',
+860 silly mapToRegistry   scope: null,
+860 silly mapToRegistry   escapedName: 'nativescript-iqkeyboardmanager',
+860 silly mapToRegistry   name: 'nativescript-iqkeyboardmanager',
+860 silly mapToRegistry   rawSpec: '',
+860 silly mapToRegistry   spec: 'latest',
+860 silly mapToRegistry   type: 'tag' }
+861 silly mapToRegistry uri https://registry.npmjs.org/nativescript-iqkeyboardmanager
+862 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-iqkeyboardmanager not in flight; fetching
+863 silly resolveWithNewModule aes-js@3.1.0 checking installable status
+864 silly cache add args [ 'aes-js@^3.1.0', null ]
+865 verbose cache add spec aes-js@^3.1.0
+866 silly cache add parsed spec Result {
+866 silly cache add   raw: 'aes-js@^3.1.0',
+866 silly cache add   scope: null,
+866 silly cache add   escapedName: 'aes-js',
+866 silly cache add   name: 'aes-js',
+866 silly cache add   rawSpec: '^3.1.0',
+866 silly cache add   spec: '>=3.1.0 <4.0.0',
+866 silly cache add   type: 'range' }
+867 silly addNamed aes-js@>=3.1.0 <4.0.0
+868 verbose addNamed ">=3.1.0 <4.0.0" is a valid semver range for aes-js
+869 silly addNameRange { name: 'aes-js', range: '>=3.1.0 <4.0.0', hasData: false }
+870 silly mapToRegistry name aes-js
+871 silly mapToRegistry using default registry
+872 silly mapToRegistry registry https://registry.npmjs.org/
+873 silly mapToRegistry data Result {
+873 silly mapToRegistry   raw: 'aes-js',
+873 silly mapToRegistry   scope: null,
+873 silly mapToRegistry   escapedName: 'aes-js',
+873 silly mapToRegistry   name: 'aes-js',
+873 silly mapToRegistry   rawSpec: '',
+873 silly mapToRegistry   spec: 'latest',
+873 silly mapToRegistry   type: 'tag' }
+874 silly mapToRegistry uri https://registry.npmjs.org/aes-js
+875 verbose addNameRange registry:https://registry.npmjs.org/aes-js not in flight; fetching
+876 silly resolveWithNewModule nativescript-screenshot@0.0.2 checking installable status
+877 silly cache add args [ 'nativescript-screenshot@0.0.2', null ]
+878 verbose cache add spec nativescript-screenshot@0.0.2
+879 silly cache add parsed spec Result {
+879 silly cache add   raw: 'nativescript-screenshot@0.0.2',
+879 silly cache add   scope: null,
+879 silly cache add   escapedName: 'nativescript-screenshot',
+879 silly cache add   name: 'nativescript-screenshot',
+879 silly cache add   rawSpec: '0.0.2',
+879 silly cache add   spec: '0.0.2',
+879 silly cache add   type: 'version' }
+880 silly addNamed nativescript-screenshot@0.0.2
+881 verbose addNamed "0.0.2" is a plain semver version for nativescript-screenshot
+882 silly mapToRegistry name nativescript-screenshot
+883 silly mapToRegistry using default registry
+884 silly mapToRegistry registry https://registry.npmjs.org/
+885 silly mapToRegistry data Result {
+885 silly mapToRegistry   raw: 'nativescript-screenshot',
+885 silly mapToRegistry   scope: null,
+885 silly mapToRegistry   escapedName: 'nativescript-screenshot',
+885 silly mapToRegistry   name: 'nativescript-screenshot',
+885 silly mapToRegistry   rawSpec: '',
+885 silly mapToRegistry   spec: 'latest',
+885 silly mapToRegistry   type: 'tag' }
+886 silly mapToRegistry uri https://registry.npmjs.org/nativescript-screenshot
+887 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-screenshot not in flight; fetching
+888 silly resolveWithNewModule nativescript-contacts@1.5.3 checking installable status
+889 silly cache add args [ 'nativescript-contacts@1.5.3', null ]
+890 verbose cache add spec nativescript-contacts@1.5.3
+891 silly cache add parsed spec Result {
+891 silly cache add   raw: 'nativescript-contacts@1.5.3',
+891 silly cache add   scope: null,
+891 silly cache add   escapedName: 'nativescript-contacts',
+891 silly cache add   name: 'nativescript-contacts',
+891 silly cache add   rawSpec: '1.5.3',
+891 silly cache add   spec: '1.5.3',
+891 silly cache add   type: 'version' }
+892 silly addNamed nativescript-contacts@1.5.3
+893 verbose addNamed "1.5.3" is a plain semver version for nativescript-contacts
+894 silly mapToRegistry name nativescript-contacts
+895 silly mapToRegistry using default registry
+896 silly mapToRegistry registry https://registry.npmjs.org/
+897 silly mapToRegistry data Result {
+897 silly mapToRegistry   raw: 'nativescript-contacts',
+897 silly mapToRegistry   scope: null,
+897 silly mapToRegistry   escapedName: 'nativescript-contacts',
+897 silly mapToRegistry   name: 'nativescript-contacts',
+897 silly mapToRegistry   rawSpec: '',
+897 silly mapToRegistry   spec: 'latest',
+897 silly mapToRegistry   type: 'tag' }
+898 silly mapToRegistry uri https://registry.npmjs.org/nativescript-contacts
+899 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-contacts not in flight; fetching
+900 silly resolveWithNewModule reflect-metadata@0.1.8 checking installable status
+901 silly cache add args [ 'reflect-metadata@0.1.8', null ]
+902 verbose cache add spec reflect-metadata@0.1.8
+903 silly cache add parsed spec Result {
+903 silly cache add   raw: 'reflect-metadata@0.1.8',
+903 silly cache add   scope: null,
+903 silly cache add   escapedName: 'reflect-metadata',
+903 silly cache add   name: 'reflect-metadata',
+903 silly cache add   rawSpec: '0.1.8',
+903 silly cache add   spec: '0.1.8',
+903 silly cache add   type: 'version' }
+904 silly addNamed reflect-metadata@0.1.8
+905 verbose addNamed "0.1.8" is a plain semver version for reflect-metadata
+906 silly mapToRegistry name reflect-metadata
+907 silly mapToRegistry using default registry
+908 silly mapToRegistry registry https://registry.npmjs.org/
+909 silly mapToRegistry data Result {
+909 silly mapToRegistry   raw: 'reflect-metadata',
+909 silly mapToRegistry   scope: null,
+909 silly mapToRegistry   escapedName: 'reflect-metadata',
+909 silly mapToRegistry   name: 'reflect-metadata',
+909 silly mapToRegistry   rawSpec: '',
+909 silly mapToRegistry   spec: 'latest',
+909 silly mapToRegistry   type: 'tag' }
+910 silly mapToRegistry uri https://registry.npmjs.org/reflect-metadata
+911 verbose addNameVersion registry:https://registry.npmjs.org/reflect-metadata not in flight; fetching
+912 silly resolveWithNewModule crypto-js@3.1.9-1 checking installable status
+913 silly cache add args [ 'crypto-js@^3.1.9-1', null ]
+914 verbose cache add spec crypto-js@^3.1.9-1
+915 silly cache add parsed spec Result {
+915 silly cache add   raw: 'crypto-js@^3.1.9-1',
+915 silly cache add   scope: null,
+915 silly cache add   escapedName: 'crypto-js',
+915 silly cache add   name: 'crypto-js',
+915 silly cache add   rawSpec: '^3.1.9-1',
+915 silly cache add   spec: '>=3.1.9-1 <4.0.0',
+915 silly cache add   type: 'range' }
+916 silly addNamed crypto-js@>=3.1.9-1 <4.0.0
+917 verbose addNamed ">=3.1.9-1 <4.0.0" is a valid semver range for crypto-js
+918 silly addNameRange { name: 'crypto-js', range: '>=3.1.9-1 <4.0.0', hasData: false }
+919 silly mapToRegistry name crypto-js
+920 silly mapToRegistry using default registry
+921 silly mapToRegistry registry https://registry.npmjs.org/
+922 silly mapToRegistry data Result {
+922 silly mapToRegistry   raw: 'crypto-js',
+922 silly mapToRegistry   scope: null,
+922 silly mapToRegistry   escapedName: 'crypto-js',
+922 silly mapToRegistry   name: 'crypto-js',
+922 silly mapToRegistry   rawSpec: '',
+922 silly mapToRegistry   spec: 'latest',
+922 silly mapToRegistry   type: 'tag' }
+923 silly mapToRegistry uri https://registry.npmjs.org/crypto-js
+924 verbose addNameRange registry:https://registry.npmjs.org/crypto-js not in flight; fetching
+925 silly resolveWithNewModule nativescript-geolocation@3.0.1 checking installable status
+926 silly cache add args [ 'nativescript-geolocation@3.0.1', null ]
+927 verbose cache add spec nativescript-geolocation@3.0.1
+928 silly cache add parsed spec Result {
+928 silly cache add   raw: 'nativescript-geolocation@3.0.1',
+928 silly cache add   scope: null,
+928 silly cache add   escapedName: 'nativescript-geolocation',
+928 silly cache add   name: 'nativescript-geolocation',
+928 silly cache add   rawSpec: '3.0.1',
+928 silly cache add   spec: '3.0.1',
+928 silly cache add   type: 'version' }
+929 silly addNamed nativescript-geolocation@3.0.1
+930 verbose addNamed "3.0.1" is a plain semver version for nativescript-geolocation
+931 silly mapToRegistry name nativescript-geolocation
+932 silly mapToRegistry using default registry
+933 silly mapToRegistry registry https://registry.npmjs.org/
+934 silly mapToRegistry data Result {
+934 silly mapToRegistry   raw: 'nativescript-geolocation',
+934 silly mapToRegistry   scope: null,
+934 silly mapToRegistry   escapedName: 'nativescript-geolocation',
+934 silly mapToRegistry   name: 'nativescript-geolocation',
+934 silly mapToRegistry   rawSpec: '',
+934 silly mapToRegistry   spec: 'latest',
+934 silly mapToRegistry   type: 'tag' }
+935 silly mapToRegistry uri https://registry.npmjs.org/nativescript-geolocation
+936 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-geolocation not in flight; fetching
+937 silly resolveWithNewModule nativescript-rich-textfield@1.0.0 checking installable status
+938 silly cache add args [ 'nativescript-rich-textfield@1.0.0', null ]
+939 verbose cache add spec nativescript-rich-textfield@1.0.0
+940 silly cache add parsed spec Result {
+940 silly cache add   raw: 'nativescript-rich-textfield@1.0.0',
+940 silly cache add   scope: null,
+940 silly cache add   escapedName: 'nativescript-rich-textfield',
+940 silly cache add   name: 'nativescript-rich-textfield',
+940 silly cache add   rawSpec: '1.0.0',
+940 silly cache add   spec: '1.0.0',
+940 silly cache add   type: 'version' }
+941 silly addNamed nativescript-rich-textfield@1.0.0
+942 verbose addNamed "1.0.0" is a plain semver version for nativescript-rich-textfield
+943 silly mapToRegistry name nativescript-rich-textfield
+944 silly mapToRegistry using default registry
+945 silly mapToRegistry registry https://registry.npmjs.org/
+946 silly mapToRegistry data Result {
+946 silly mapToRegistry   raw: 'nativescript-rich-textfield',
+946 silly mapToRegistry   scope: null,
+946 silly mapToRegistry   escapedName: 'nativescript-rich-textfield',
+946 silly mapToRegistry   name: 'nativescript-rich-textfield',
+946 silly mapToRegistry   rawSpec: '',
+946 silly mapToRegistry   spec: 'latest',
+946 silly mapToRegistry   type: 'tag' }
+947 silly mapToRegistry uri https://registry.npmjs.org/nativescript-rich-textfield
+948 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-rich-textfield not in flight; fetching
+949 silly resolveWithNewModule tns-platform-declarations@3.2.0 checking installable status
+950 silly cache add args [ 'tns-platform-declarations@^3.1.1', null ]
+951 verbose cache add spec tns-platform-declarations@^3.1.1
+952 silly cache add parsed spec Result {
+952 silly cache add   raw: 'tns-platform-declarations@^3.1.1',
+952 silly cache add   scope: null,
+952 silly cache add   escapedName: 'tns-platform-declarations',
+952 silly cache add   name: 'tns-platform-declarations',
+952 silly cache add   rawSpec: '^3.1.1',
+952 silly cache add   spec: '>=3.1.1 <4.0.0',
+952 silly cache add   type: 'range' }
+953 silly addNamed tns-platform-declarations@>=3.1.1 <4.0.0
+954 verbose addNamed ">=3.1.1 <4.0.0" is a valid semver range for tns-platform-declarations
+955 silly addNameRange { name: 'tns-platform-declarations',
+955 silly addNameRange   range: '>=3.1.1 <4.0.0',
+955 silly addNameRange   hasData: false }
+956 silly mapToRegistry name tns-platform-declarations
+957 silly mapToRegistry using default registry
+958 silly mapToRegistry registry https://registry.npmjs.org/
+959 silly mapToRegistry data Result {
+959 silly mapToRegistry   raw: 'tns-platform-declarations',
+959 silly mapToRegistry   scope: null,
+959 silly mapToRegistry   escapedName: 'tns-platform-declarations',
+959 silly mapToRegistry   name: 'tns-platform-declarations',
+959 silly mapToRegistry   rawSpec: '',
+959 silly mapToRegistry   spec: 'latest',
+959 silly mapToRegistry   type: 'tag' }
+960 silly mapToRegistry uri https://registry.npmjs.org/tns-platform-declarations
+961 verbose addNameRange registry:https://registry.npmjs.org/tns-platform-declarations not in flight; fetching
+962 silly resolveWithNewModule nativescript-fingerprint-auth@4.0.0 checking installable status
+963 silly cache add args [ 'nativescript-fingerprint-auth@4.0.0', null ]
+964 verbose cache add spec nativescript-fingerprint-auth@4.0.0
+965 silly cache add parsed spec Result {
+965 silly cache add   raw: 'nativescript-fingerprint-auth@4.0.0',
+965 silly cache add   scope: null,
+965 silly cache add   escapedName: 'nativescript-fingerprint-auth',
+965 silly cache add   name: 'nativescript-fingerprint-auth',
+965 silly cache add   rawSpec: '4.0.0',
+965 silly cache add   spec: '4.0.0',
+965 silly cache add   type: 'version' }
+966 silly addNamed nativescript-fingerprint-auth@4.0.0
+967 verbose addNamed "4.0.0" is a plain semver version for nativescript-fingerprint-auth
+968 silly mapToRegistry name nativescript-fingerprint-auth
+969 silly mapToRegistry using default registry
+970 silly mapToRegistry registry https://registry.npmjs.org/
+971 silly mapToRegistry data Result {
+971 silly mapToRegistry   raw: 'nativescript-fingerprint-auth',
+971 silly mapToRegistry   scope: null,
+971 silly mapToRegistry   escapedName: 'nativescript-fingerprint-auth',
+971 silly mapToRegistry   name: 'nativescript-fingerprint-auth',
+971 silly mapToRegistry   rawSpec: '',
+971 silly mapToRegistry   spec: 'latest',
+971 silly mapToRegistry   type: 'tag' }
+972 silly mapToRegistry uri https://registry.npmjs.org/nativescript-fingerprint-auth
+973 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-fingerprint-auth not in flight; fetching
+974 silly resolveWithNewModule nativescript-drop-down@3.0.2 checking installable status
+975 silly cache add args [ 'nativescript-drop-down@3.0.2', null ]
+976 verbose cache add spec nativescript-drop-down@3.0.2
+977 silly cache add parsed spec Result {
+977 silly cache add   raw: 'nativescript-drop-down@3.0.2',
+977 silly cache add   scope: null,
+977 silly cache add   escapedName: 'nativescript-drop-down',
+977 silly cache add   name: 'nativescript-drop-down',
+977 silly cache add   rawSpec: '3.0.2',
+977 silly cache add   spec: '3.0.2',
+977 silly cache add   type: 'version' }
+978 silly addNamed nativescript-drop-down@3.0.2
+979 verbose addNamed "3.0.2" is a plain semver version for nativescript-drop-down
+980 silly mapToRegistry name nativescript-drop-down
+981 silly mapToRegistry using default registry
+982 silly mapToRegistry registry https://registry.npmjs.org/
+983 silly mapToRegistry data Result {
+983 silly mapToRegistry   raw: 'nativescript-drop-down',
+983 silly mapToRegistry   scope: null,
+983 silly mapToRegistry   escapedName: 'nativescript-drop-down',
+983 silly mapToRegistry   name: 'nativescript-drop-down',
+983 silly mapToRegistry   rawSpec: '',
+983 silly mapToRegistry   spec: 'latest',
+983 silly mapToRegistry   type: 'tag' }
+984 silly mapToRegistry uri https://registry.npmjs.org/nativescript-drop-down
+985 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-drop-down not in flight; fetching
+986 silly resolveWithNewModule nativescript-telerik-ui-pro@3.1.0-2017-8-16-6 checking installable status
+987 silly cache add args [ 'nativescript-telerik-ui-pro@3.1.0-2017-8-16-6', null ]
+988 verbose cache add spec nativescript-telerik-ui-pro@3.1.0-2017-8-16-6
+989 silly cache add parsed spec Result {
+989 silly cache add   raw: 'nativescript-telerik-ui-pro@3.1.0-2017-8-16-6',
+989 silly cache add   scope: null,
+989 silly cache add   escapedName: 'nativescript-telerik-ui-pro',
+989 silly cache add   name: 'nativescript-telerik-ui-pro',
+989 silly cache add   rawSpec: '3.1.0-2017-8-16-6',
+989 silly cache add   spec: '3.1.0-2017-8-16-6',
+989 silly cache add   type: 'version' }
+990 silly addNamed nativescript-telerik-ui-pro@3.1.0-2017-8-16-6
+991 verbose addNamed "3.1.0-2017-8-16-6" is a plain semver version for nativescript-telerik-ui-pro
+992 silly mapToRegistry name nativescript-telerik-ui-pro
+993 silly mapToRegistry using default registry
+994 silly mapToRegistry registry https://registry.npmjs.org/
+995 silly mapToRegistry data Result {
+995 silly mapToRegistry   raw: 'nativescript-telerik-ui-pro',
+995 silly mapToRegistry   scope: null,
+995 silly mapToRegistry   escapedName: 'nativescript-telerik-ui-pro',
+995 silly mapToRegistry   name: 'nativescript-telerik-ui-pro',
+995 silly mapToRegistry   rawSpec: '',
+995 silly mapToRegistry   spec: 'latest',
+995 silly mapToRegistry   type: 'tag' }
+996 silly mapToRegistry uri https://registry.npmjs.org/nativescript-telerik-ui-pro
+997 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-telerik-ui-pro not in flight; fetching
+998 silly resolveWithNewModule nativescript-loading-indicator@2.3.2 checking installable status
+999 silly cache add args [ 'nativescript-loading-indicator@2.3.2', null ]
+1000 verbose cache add spec nativescript-loading-indicator@2.3.2
+1001 silly cache add parsed spec Result {
+1001 silly cache add   raw: 'nativescript-loading-indicator@2.3.2',
+1001 silly cache add   scope: null,
+1001 silly cache add   escapedName: 'nativescript-loading-indicator',
+1001 silly cache add   name: 'nativescript-loading-indicator',
+1001 silly cache add   rawSpec: '2.3.2',
+1001 silly cache add   spec: '2.3.2',
+1001 silly cache add   type: 'version' }
+1002 silly addNamed nativescript-loading-indicator@2.3.2
+1003 verbose addNamed "2.3.2" is a plain semver version for nativescript-loading-indicator
+1004 silly mapToRegistry name nativescript-loading-indicator
+1005 silly mapToRegistry using default registry
+1006 silly mapToRegistry registry https://registry.npmjs.org/
+1007 silly mapToRegistry data Result {
+1007 silly mapToRegistry   raw: 'nativescript-loading-indicator',
+1007 silly mapToRegistry   scope: null,
+1007 silly mapToRegistry   escapedName: 'nativescript-loading-indicator',
+1007 silly mapToRegistry   name: 'nativescript-loading-indicator',
+1007 silly mapToRegistry   rawSpec: '',
+1007 silly mapToRegistry   spec: 'latest',
+1007 silly mapToRegistry   type: 'tag' }
+1008 silly mapToRegistry uri https://registry.npmjs.org/nativescript-loading-indicator
+1009 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-loading-indicator not in flight; fetching
+1010 silly resolveWithNewModule nativescript-email@1.5.1 checking installable status
+1011 silly cache add args [ 'nativescript-email@1.5.1', null ]
+1012 verbose cache add spec nativescript-email@1.5.1
+1013 silly cache add parsed spec Result {
+1013 silly cache add   raw: 'nativescript-email@1.5.1',
+1013 silly cache add   scope: null,
+1013 silly cache add   escapedName: 'nativescript-email',
+1013 silly cache add   name: 'nativescript-email',
+1013 silly cache add   rawSpec: '1.5.1',
+1013 silly cache add   spec: '1.5.1',
+1013 silly cache add   type: 'version' }
+1014 silly addNamed nativescript-email@1.5.1
+1015 verbose addNamed "1.5.1" is a plain semver version for nativescript-email
+1016 silly mapToRegistry name nativescript-email
+1017 silly mapToRegistry using default registry
+1018 silly mapToRegistry registry https://registry.npmjs.org/
+1019 silly mapToRegistry data Result {
+1019 silly mapToRegistry   raw: 'nativescript-email',
+1019 silly mapToRegistry   scope: null,
+1019 silly mapToRegistry   escapedName: 'nativescript-email',
+1019 silly mapToRegistry   name: 'nativescript-email',
+1019 silly mapToRegistry   rawSpec: '',
+1019 silly mapToRegistry   spec: 'latest',
+1019 silly mapToRegistry   type: 'tag' }
+1020 silly mapToRegistry uri https://registry.npmjs.org/nativescript-email
+1021 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-email not in flight; fetching
+1022 silly resolveWithNewModule nativescript-angular@3.0.0 checking installable status
+1023 silly cache add args [ 'nativescript-angular@3.0.0', null ]
+1024 verbose cache add spec nativescript-angular@3.0.0
+1025 silly cache add parsed spec Result {
+1025 silly cache add   raw: 'nativescript-angular@3.0.0',
+1025 silly cache add   scope: null,
+1025 silly cache add   escapedName: 'nativescript-angular',
+1025 silly cache add   name: 'nativescript-angular',
+1025 silly cache add   rawSpec: '3.0.0',
+1025 silly cache add   spec: '3.0.0',
+1025 silly cache add   type: 'version' }
+1026 silly addNamed nativescript-angular@3.0.0
+1027 verbose addNamed "3.0.0" is a plain semver version for nativescript-angular
+1028 silly mapToRegistry name nativescript-angular
+1029 silly mapToRegistry using default registry
+1030 silly mapToRegistry registry https://registry.npmjs.org/
+1031 silly mapToRegistry data Result {
+1031 silly mapToRegistry   raw: 'nativescript-angular',
+1031 silly mapToRegistry   scope: null,
+1031 silly mapToRegistry   escapedName: 'nativescript-angular',
+1031 silly mapToRegistry   name: 'nativescript-angular',
+1031 silly mapToRegistry   rawSpec: '',
+1031 silly mapToRegistry   spec: 'latest',
+1031 silly mapToRegistry   type: 'tag' }
+1032 silly mapToRegistry uri https://registry.npmjs.org/nativescript-angular
+1033 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-angular not in flight; fetching
+1034 silly resolveWithNewModule tslint@5.7.0 checking installable status
+1035 silly cache add args [ 'tslint@^5.4.2', null ]
+1036 verbose cache add spec tslint@^5.4.2
+1037 silly cache add parsed spec Result {
+1037 silly cache add   raw: 'tslint@^5.4.2',
+1037 silly cache add   scope: null,
+1037 silly cache add   escapedName: 'tslint',
+1037 silly cache add   name: 'tslint',
+1037 silly cache add   rawSpec: '^5.4.2',
+1037 silly cache add   spec: '>=5.4.2 <6.0.0',
+1037 silly cache add   type: 'range' }
+1038 silly addNamed tslint@>=5.4.2 <6.0.0
+1039 verbose addNamed ">=5.4.2 <6.0.0" is a valid semver range for tslint
+1040 silly addNameRange { name: 'tslint', range: '>=5.4.2 <6.0.0', hasData: false }
+1041 silly mapToRegistry name tslint
+1042 silly mapToRegistry using default registry
+1043 silly mapToRegistry registry https://registry.npmjs.org/
+1044 silly mapToRegistry data Result {
+1044 silly mapToRegistry   raw: 'tslint',
+1044 silly mapToRegistry   scope: null,
+1044 silly mapToRegistry   escapedName: 'tslint',
+1044 silly mapToRegistry   name: 'tslint',
+1044 silly mapToRegistry   rawSpec: '',
+1044 silly mapToRegistry   spec: 'latest',
+1044 silly mapToRegistry   type: 'tag' }
+1045 silly mapToRegistry uri https://registry.npmjs.org/tslint
+1046 verbose addNameRange registry:https://registry.npmjs.org/tslint not in flight; fetching
+1047 silly resolveWithNewModule nativescript-toast@1.4.6 checking installable status
+1048 silly cache add args [ 'nativescript-toast@1.4.6', null ]
+1049 verbose cache add spec nativescript-toast@1.4.6
+1050 silly cache add parsed spec Result {
+1050 silly cache add   raw: 'nativescript-toast@1.4.6',
+1050 silly cache add   scope: null,
+1050 silly cache add   escapedName: 'nativescript-toast',
+1050 silly cache add   name: 'nativescript-toast',
+1050 silly cache add   rawSpec: '1.4.6',
+1050 silly cache add   spec: '1.4.6',
+1050 silly cache add   type: 'version' }
+1051 silly addNamed nativescript-toast@1.4.6
+1052 verbose addNamed "1.4.6" is a plain semver version for nativescript-toast
+1053 silly mapToRegistry name nativescript-toast
+1054 silly mapToRegistry using default registry
+1055 silly mapToRegistry registry https://registry.npmjs.org/
+1056 silly mapToRegistry data Result {
+1056 silly mapToRegistry   raw: 'nativescript-toast',
+1056 silly mapToRegistry   scope: null,
+1056 silly mapToRegistry   escapedName: 'nativescript-toast',
+1056 silly mapToRegistry   name: 'nativescript-toast',
+1056 silly mapToRegistry   rawSpec: '',
+1056 silly mapToRegistry   spec: 'latest',
+1056 silly mapToRegistry   type: 'tag' }
+1057 silly mapToRegistry uri https://registry.npmjs.org/nativescript-toast
+1058 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-toast not in flight; fetching
+1059 silly resolveWithNewModule nativescript-secure-storage@2.1.0 checking installable status
+1060 silly cache add args [ 'nativescript-secure-storage@2.1.0', null ]
+1061 verbose cache add spec nativescript-secure-storage@2.1.0
+1062 silly cache add parsed spec Result {
+1062 silly cache add   raw: 'nativescript-secure-storage@2.1.0',
+1062 silly cache add   scope: null,
+1062 silly cache add   escapedName: 'nativescript-secure-storage',
+1062 silly cache add   name: 'nativescript-secure-storage',
+1062 silly cache add   rawSpec: '2.1.0',
+1062 silly cache add   spec: '2.1.0',
+1062 silly cache add   type: 'version' }
+1063 silly addNamed nativescript-secure-storage@2.1.0
+1064 verbose addNamed "2.1.0" is a plain semver version for nativescript-secure-storage
+1065 silly mapToRegistry name nativescript-secure-storage
+1066 silly mapToRegistry using default registry
+1067 silly mapToRegistry registry https://registry.npmjs.org/
+1068 silly mapToRegistry data Result {
+1068 silly mapToRegistry   raw: 'nativescript-secure-storage',
+1068 silly mapToRegistry   scope: null,
+1068 silly mapToRegistry   escapedName: 'nativescript-secure-storage',
+1068 silly mapToRegistry   name: 'nativescript-secure-storage',
+1068 silly mapToRegistry   rawSpec: '',
+1068 silly mapToRegistry   spec: 'latest',
+1068 silly mapToRegistry   type: 'tag' }
+1069 silly mapToRegistry uri https://registry.npmjs.org/nativescript-secure-storage
+1070 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-secure-storage not in flight; fetching
+1071 http 304 https://registry.npmjs.org/@angular%2fplatform-browser
+1072 verbose headers { server: 'nginx/1.10.1',
+1072 verbose headers   'last-modified': 'Sat, 02 Sep 2017 16:04:00 GMT',
+1072 verbose headers   etag: '"59aad670-21fc8"',
+1072 verbose headers   'cache-control': 'max-age=0',
+1072 verbose headers   'accept-ranges': 'bytes',
+1072 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1072 verbose headers   via: '1.1 varnish',
+1072 verbose headers   connection: 'keep-alive',
+1072 verbose headers   'x-served-by': 'cache-hhn1547-HHN',
+1072 verbose headers   'x-cache': 'MISS',
+1072 verbose headers   'x-cache-hits': '0',
+1072 verbose headers   'x-timer': 'S1505197776.418816,VS0,VE207' }
+1073 silly get cb [ 304,
+1073 silly get   { server: 'nginx/1.10.1',
+1073 silly get     'last-modified': 'Sat, 02 Sep 2017 16:04:00 GMT',
+1073 silly get     etag: '"59aad670-21fc8"',
+1073 silly get     'cache-control': 'max-age=0',
+1073 silly get     'accept-ranges': 'bytes',
+1073 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1073 silly get     via: '1.1 varnish',
+1073 silly get     connection: 'keep-alive',
+1073 silly get     'x-served-by': 'cache-hhn1547-HHN',
+1073 silly get     'x-cache': 'MISS',
+1073 silly get     'x-cache-hits': '0',
+1073 silly get     'x-timer': 'S1505197776.418816,VS0,VE207' } ]
+1074 verbose etag https://registry.npmjs.org/@angular%2fplatform-browser from cache
+1075 verbose get saving @angular/platform-browser to /Users/niliev/.npm/registry.npmjs.org/_40angular_252fplatform-browser/.cache.json
+1076 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+1077 http 304 https://registry.npmjs.org/@angular%2fcommon
+1078 verbose headers { server: 'nginx/1.10.1',
+1078 verbose headers   'last-modified': 'Sat, 02 Sep 2017 16:03:32 GMT',
+1078 verbose headers   etag: '"59aad654-1eb09"',
+1078 verbose headers   'cache-control': 'max-age=0',
+1078 verbose headers   'accept-ranges': 'bytes',
+1078 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1078 verbose headers   via: '1.1 varnish',
+1078 verbose headers   connection: 'keep-alive',
+1078 verbose headers   'x-served-by': 'cache-hhn1525-HHN',
+1078 verbose headers   'x-cache': 'MISS',
+1078 verbose headers   'x-cache-hits': '0',
+1078 verbose headers   'x-timer': 'S1505197776.420346,VS0,VE219' }
+1079 silly get cb [ 304,
+1079 silly get   { server: 'nginx/1.10.1',
+1079 silly get     'last-modified': 'Sat, 02 Sep 2017 16:03:32 GMT',
+1079 silly get     etag: '"59aad654-1eb09"',
+1079 silly get     'cache-control': 'max-age=0',
+1079 silly get     'accept-ranges': 'bytes',
+1079 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1079 silly get     via: '1.1 varnish',
+1079 silly get     connection: 'keep-alive',
+1079 silly get     'x-served-by': 'cache-hhn1525-HHN',
+1079 silly get     'x-cache': 'MISS',
+1079 silly get     'x-cache-hits': '0',
+1079 silly get     'x-timer': 'S1505197776.420346,VS0,VE219' } ]
+1080 verbose etag https://registry.npmjs.org/@angular%2fcommon from cache
+1081 verbose get saving @angular/common to /Users/niliev/.npm/registry.npmjs.org/_40angular_252fcommon/.cache.json
+1082 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+1083 http 304 https://registry.npmjs.org/@angular%2fcompiler
+1084 verbose headers { server: 'nginx/1.10.1',
+1084 verbose headers   'last-modified': 'Sat, 02 Sep 2017 16:03:37 GMT',
+1084 verbose headers   etag: '"59aad659-1eb76"',
+1084 verbose headers   'cache-control': 'max-age=0',
+1084 verbose headers   'accept-ranges': 'bytes',
+1084 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1084 verbose headers   via: '1.1 varnish',
+1084 verbose headers   connection: 'keep-alive',
+1084 verbose headers   'x-served-by': 'cache-hhn1545-HHN',
+1084 verbose headers   'x-cache': 'MISS',
+1084 verbose headers   'x-cache-hits': '0',
+1084 verbose headers   'x-timer': 'S1505197776.435996,VS0,VE215' }
+1085 silly get cb [ 304,
+1085 silly get   { server: 'nginx/1.10.1',
+1085 silly get     'last-modified': 'Sat, 02 Sep 2017 16:03:37 GMT',
+1085 silly get     etag: '"59aad659-1eb76"',
+1085 silly get     'cache-control': 'max-age=0',
+1085 silly get     'accept-ranges': 'bytes',
+1085 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1085 silly get     via: '1.1 varnish',
+1085 silly get     connection: 'keep-alive',
+1085 silly get     'x-served-by': 'cache-hhn1545-HHN',
+1085 silly get     'x-cache': 'MISS',
+1085 silly get     'x-cache-hits': '0',
+1085 silly get     'x-timer': 'S1505197776.435996,VS0,VE215' } ]
+1086 verbose etag https://registry.npmjs.org/@angular%2fcompiler from cache
+1087 verbose get saving @angular/compiler to /Users/niliev/.npm/registry.npmjs.org/_40angular_252fcompiler/.cache.json
+1088 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+1089 http 304 https://registry.npmjs.org/@angular%2fhttp
+1090 verbose headers { server: 'nginx/1.10.1',
+1090 verbose headers   'last-modified': 'Sat, 02 Sep 2017 16:03:51 GMT',
+1090 verbose headers   etag: '"59aad667-1f15c"',
+1090 verbose headers   'cache-control': 'max-age=0',
+1090 verbose headers   'accept-ranges': 'bytes',
+1090 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1090 verbose headers   via: '1.1 varnish',
+1090 verbose headers   connection: 'keep-alive',
+1090 verbose headers   'x-served-by': 'cache-hhn1522-HHN',
+1090 verbose headers   'x-cache': 'MISS',
+1090 verbose headers   'x-cache-hits': '0',
+1090 verbose headers   'x-timer': 'S1505197776.450785,VS0,VE229' }
+1091 silly get cb [ 304,
+1091 silly get   { server: 'nginx/1.10.1',
+1091 silly get     'last-modified': 'Sat, 02 Sep 2017 16:03:51 GMT',
+1091 silly get     etag: '"59aad667-1f15c"',
+1091 silly get     'cache-control': 'max-age=0',
+1091 silly get     'accept-ranges': 'bytes',
+1091 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1091 silly get     via: '1.1 varnish',
+1091 silly get     connection: 'keep-alive',
+1091 silly get     'x-served-by': 'cache-hhn1522-HHN',
+1091 silly get     'x-cache': 'MISS',
+1091 silly get     'x-cache-hits': '0',
+1091 silly get     'x-timer': 'S1505197776.450785,VS0,VE229' } ]
+1092 verbose etag https://registry.npmjs.org/@angular%2fhttp from cache
+1093 verbose get saving @angular/http to /Users/niliev/.npm/registry.npmjs.org/_40angular_252fhttp/.cache.json
+1094 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+1095 http 304 https://registry.npmjs.org/@angular%2fforms
+1096 verbose headers { server: 'nginx/1.10.1',
+1096 verbose headers   'last-modified': 'Sat, 02 Sep 2017 16:03:47 GMT',
+1096 verbose headers   etag: '"59aad663-1d578"',
+1096 verbose headers   'cache-control': 'max-age=0',
+1096 verbose headers   'accept-ranges': 'bytes',
+1096 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1096 verbose headers   via: '1.1 varnish',
+1096 verbose headers   connection: 'keep-alive',
+1096 verbose headers   'x-served-by': 'cache-hhn1548-HHN',
+1096 verbose headers   'x-cache': 'MISS',
+1096 verbose headers   'x-cache-hits': '0',
+1096 verbose headers   'x-timer': 'S1505197776.443501,VS0,VE239' }
+1097 silly get cb [ 304,
+1097 silly get   { server: 'nginx/1.10.1',
+1097 silly get     'last-modified': 'Sat, 02 Sep 2017 16:03:47 GMT',
+1097 silly get     etag: '"59aad663-1d578"',
+1097 silly get     'cache-control': 'max-age=0',
+1097 silly get     'accept-ranges': 'bytes',
+1097 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1097 silly get     via: '1.1 varnish',
+1097 silly get     connection: 'keep-alive',
+1097 silly get     'x-served-by': 'cache-hhn1548-HHN',
+1097 silly get     'x-cache': 'MISS',
+1097 silly get     'x-cache-hits': '0',
+1097 silly get     'x-timer': 'S1505197776.443501,VS0,VE239' } ]
+1098 verbose etag https://registry.npmjs.org/@angular%2fforms from cache
+1099 verbose get saving @angular/forms to /Users/niliev/.npm/registry.npmjs.org/_40angular_252fforms/.cache.json
+1100 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+1101 http 304 https://registry.npmjs.org/@angular%2fcore
+1102 verbose headers { server: 'nginx/1.10.1',
+1102 verbose headers   'last-modified': 'Sat, 02 Sep 2017 16:03:44 GMT',
+1102 verbose headers   etag: '"59aad660-1e246"',
+1102 verbose headers   'cache-control': 'max-age=0',
+1102 verbose headers   'accept-ranges': 'bytes',
+1102 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1102 verbose headers   via: '1.1 varnish',
+1102 verbose headers   connection: 'keep-alive',
+1102 verbose headers   'x-served-by': 'cache-hhn1521-HHN',
+1102 verbose headers   'x-cache': 'MISS',
+1102 verbose headers   'x-cache-hits': '0',
+1102 verbose headers   'x-timer': 'S1505197776.453549,VS0,VE255' }
+1103 silly get cb [ 304,
+1103 silly get   { server: 'nginx/1.10.1',
+1103 silly get     'last-modified': 'Sat, 02 Sep 2017 16:03:44 GMT',
+1103 silly get     etag: '"59aad660-1e246"',
+1103 silly get     'cache-control': 'max-age=0',
+1103 silly get     'accept-ranges': 'bytes',
+1103 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1103 silly get     via: '1.1 varnish',
+1103 silly get     connection: 'keep-alive',
+1103 silly get     'x-served-by': 'cache-hhn1521-HHN',
+1103 silly get     'x-cache': 'MISS',
+1103 silly get     'x-cache-hits': '0',
+1103 silly get     'x-timer': 'S1505197776.453549,VS0,VE255' } ]
+1104 verbose etag https://registry.npmjs.org/@angular%2fcore from cache
+1105 verbose get saving @angular/core to /Users/niliev/.npm/registry.npmjs.org/_40angular_252fcore/.cache.json
+1106 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+1107 http 304 https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+1108 verbose headers { server: 'nginx/1.10.1',
+1108 verbose headers   'last-modified': 'Sat, 02 Sep 2017 16:04:03 GMT',
+1108 verbose headers   etag: '"59aad673-26048"',
+1108 verbose headers   'cache-control': 'max-age=0',
+1108 verbose headers   'accept-ranges': 'bytes',
+1108 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1108 verbose headers   via: '1.1 varnish',
+1108 verbose headers   connection: 'keep-alive',
+1108 verbose headers   'x-served-by': 'cache-hhn1543-HHN',
+1108 verbose headers   'x-cache': 'MISS',
+1108 verbose headers   'x-cache-hits': '0',
+1108 verbose headers   'x-timer': 'S1505197776.428850,VS0,VE294' }
+1109 silly get cb [ 304,
+1109 silly get   { server: 'nginx/1.10.1',
+1109 silly get     'last-modified': 'Sat, 02 Sep 2017 16:04:03 GMT',
+1109 silly get     etag: '"59aad673-26048"',
+1109 silly get     'cache-control': 'max-age=0',
+1109 silly get     'accept-ranges': 'bytes',
+1109 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1109 silly get     via: '1.1 varnish',
+1109 silly get     connection: 'keep-alive',
+1109 silly get     'x-served-by': 'cache-hhn1543-HHN',
+1109 silly get     'x-cache': 'MISS',
+1109 silly get     'x-cache-hits': '0',
+1109 silly get     'x-timer': 'S1505197776.428850,VS0,VE294' } ]
+1110 verbose etag https://registry.npmjs.org/@angular%2fplatform-browser-dynamic from cache
+1111 verbose get saving @angular/platform-browser-dynamic to /Users/niliev/.npm/registry.npmjs.org/_40angular_252fplatform-browser-dynamic/.cache.json
+1112 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+1113 silly resolveWithNewModule ng-http-interceptor@3.1.2 checking installable status
+1114 silly cache add args [ 'ng-http-interceptor@3.1.2', null ]
+1115 verbose cache add spec ng-http-interceptor@3.1.2
+1116 silly cache add parsed spec Result {
+1116 silly cache add   raw: 'ng-http-interceptor@3.1.2',
+1116 silly cache add   scope: null,
+1116 silly cache add   escapedName: 'ng-http-interceptor',
+1116 silly cache add   name: 'ng-http-interceptor',
+1116 silly cache add   rawSpec: '3.1.2',
+1116 silly cache add   spec: '3.1.2',
+1116 silly cache add   type: 'version' }
+1117 silly addNamed ng-http-interceptor@3.1.2
+1118 verbose addNamed "3.1.2" is a plain semver version for ng-http-interceptor
+1119 silly mapToRegistry name ng-http-interceptor
+1120 silly mapToRegistry using default registry
+1121 silly mapToRegistry registry https://registry.npmjs.org/
+1122 silly mapToRegistry data Result {
+1122 silly mapToRegistry   raw: 'ng-http-interceptor',
+1122 silly mapToRegistry   scope: null,
+1122 silly mapToRegistry   escapedName: 'ng-http-interceptor',
+1122 silly mapToRegistry   name: 'ng-http-interceptor',
+1122 silly mapToRegistry   rawSpec: '',
+1122 silly mapToRegistry   spec: 'latest',
+1122 silly mapToRegistry   type: 'tag' }
+1123 silly mapToRegistry uri https://registry.npmjs.org/ng-http-interceptor
+1124 verbose addNameVersion registry:https://registry.npmjs.org/ng-http-interceptor not in flight; fetching
+1125 silly resolveWithNewModule rxjs@5.2.0 checking installable status
+1126 silly cache add args [ 'rxjs@5.2.0', null ]
+1127 verbose cache add spec rxjs@5.2.0
+1128 silly cache add parsed spec Result {
+1128 silly cache add   raw: 'rxjs@5.2.0',
+1128 silly cache add   scope: null,
+1128 silly cache add   escapedName: 'rxjs',
+1128 silly cache add   name: 'rxjs',
+1128 silly cache add   rawSpec: '5.2.0',
+1128 silly cache add   spec: '5.2.0',
+1128 silly cache add   type: 'version' }
+1129 silly addNamed rxjs@5.2.0
+1130 verbose addNamed "5.2.0" is a plain semver version for rxjs
+1131 silly mapToRegistry name rxjs
+1132 silly mapToRegistry using default registry
+1133 silly mapToRegistry registry https://registry.npmjs.org/
+1134 silly mapToRegistry data Result {
+1134 silly mapToRegistry   raw: 'rxjs',
+1134 silly mapToRegistry   scope: null,
+1134 silly mapToRegistry   escapedName: 'rxjs',
+1134 silly mapToRegistry   name: 'rxjs',
+1134 silly mapToRegistry   rawSpec: '',
+1134 silly mapToRegistry   spec: 'latest',
+1134 silly mapToRegistry   type: 'tag' }
+1135 silly mapToRegistry uri https://registry.npmjs.org/rxjs
+1136 verbose addNameVersion registry:https://registry.npmjs.org/rxjs not in flight; fetching
+1137 http 304 https://registry.npmjs.org/@angular%2frouter
+1138 verbose headers { server: 'nginx/1.10.1',
+1138 verbose headers   'last-modified': 'Sat, 02 Sep 2017 16:04:16 GMT',
+1138 verbose headers   etag: '"59aad680-28dfb"',
+1138 verbose headers   'cache-control': 'max-age=0',
+1138 verbose headers   'accept-ranges': 'bytes',
+1138 verbose headers   date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1138 verbose headers   via: '1.1 varnish',
+1138 verbose headers   connection: 'keep-alive',
+1138 verbose headers   'x-served-by': 'cache-hhn1548-HHN',
+1138 verbose headers   'x-cache': 'MISS',
+1138 verbose headers   'x-cache-hits': '0',
+1138 verbose headers   'x-timer': 'S1505197776.447222,VS0,VE324' }
+1139 silly get cb [ 304,
+1139 silly get   { server: 'nginx/1.10.1',
+1139 silly get     'last-modified': 'Sat, 02 Sep 2017 16:04:16 GMT',
+1139 silly get     etag: '"59aad680-28dfb"',
+1139 silly get     'cache-control': 'max-age=0',
+1139 silly get     'accept-ranges': 'bytes',
+1139 silly get     date: 'Tue, 12 Sep 2017 06:29:36 GMT',
+1139 silly get     via: '1.1 varnish',
+1139 silly get     connection: 'keep-alive',
+1139 silly get     'x-served-by': 'cache-hhn1548-HHN',
+1139 silly get     'x-cache': 'MISS',
+1139 silly get     'x-cache-hits': '0',
+1139 silly get     'x-timer': 'S1505197776.447222,VS0,VE324' } ]
+1140 verbose etag https://registry.npmjs.org/@angular%2frouter from cache
+1141 verbose get saving @angular/router to /Users/niliev/.npm/registry.npmjs.org/_40angular_252frouter/.cache.json
+1142 verbose correctMkdir /Users/niliev/.npm correctMkdir not in flight; initializing
+1143 silly resolveWithNewModule nativescript-printer@1.2.0 checking installable status
+1144 silly cache add args [ 'nativescript-printer@1.2.0', null ]
+1145 verbose cache add spec nativescript-printer@1.2.0
+1146 silly cache add parsed spec Result {
+1146 silly cache add   raw: 'nativescript-printer@1.2.0',
+1146 silly cache add   scope: null,
+1146 silly cache add   escapedName: 'nativescript-printer',
+1146 silly cache add   name: 'nativescript-printer',
+1146 silly cache add   rawSpec: '1.2.0',
+1146 silly cache add   spec: '1.2.0',
+1146 silly cache add   type: 'version' }
+1147 silly addNamed nativescript-printer@1.2.0
+1148 verbose addNamed "1.2.0" is a plain semver version for nativescript-printer
+1149 silly mapToRegistry name nativescript-printer
+1150 silly mapToRegistry using default registry
+1151 silly mapToRegistry registry https://registry.npmjs.org/
+1152 silly mapToRegistry data Result {
+1152 silly mapToRegistry   raw: 'nativescript-printer',
+1152 silly mapToRegistry   scope: null,
+1152 silly mapToRegistry   escapedName: 'nativescript-printer',
+1152 silly mapToRegistry   name: 'nativescript-printer',
+1152 silly mapToRegistry   rawSpec: '',
+1152 silly mapToRegistry   spec: 'latest',
+1152 silly mapToRegistry   type: 'tag' }
+1153 silly mapToRegistry uri https://registry.npmjs.org/nativescript-printer
+1154 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-printer not in flight; fetching
+1155 silly resolveWithNewModule nativescript-locate-address@1.0.2 checking installable status
+1156 silly cache add args [ 'nativescript-locate-address@1.0.2', null ]
+1157 verbose cache add spec nativescript-locate-address@1.0.2
+1158 silly cache add parsed spec Result {
+1158 silly cache add   raw: 'nativescript-locate-address@1.0.2',
+1158 silly cache add   scope: null,
+1158 silly cache add   escapedName: 'nativescript-locate-address',
+1158 silly cache add   name: 'nativescript-locate-address',
+1158 silly cache add   rawSpec: '1.0.2',
+1158 silly cache add   spec: '1.0.2',
+1158 silly cache add   type: 'version' }
+1159 silly addNamed nativescript-locate-address@1.0.2
+1160 verbose addNamed "1.0.2" is a plain semver version for nativescript-locate-address
+1161 silly mapToRegistry name nativescript-locate-address
+1162 silly mapToRegistry using default registry
+1163 silly mapToRegistry registry https://registry.npmjs.org/
+1164 silly mapToRegistry data Result {
+1164 silly mapToRegistry   raw: 'nativescript-locate-address',
+1164 silly mapToRegistry   scope: null,
+1164 silly mapToRegistry   escapedName: 'nativescript-locate-address',
+1164 silly mapToRegistry   name: 'nativescript-locate-address',
+1164 silly mapToRegistry   rawSpec: '',
+1164 silly mapToRegistry   spec: 'latest',
+1164 silly mapToRegistry   type: 'tag' }
+1165 silly mapToRegistry uri https://registry.npmjs.org/nativescript-locate-address
+1166 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-locate-address not in flight; fetching
+1167 silly resolveWithNewModule zone.js@0.8.17 checking installable status
+1168 silly cache add args [ 'zone.js@~0.8.5', null ]
+1169 verbose cache add spec zone.js@~0.8.5
+1170 silly cache add parsed spec Result {
+1170 silly cache add   raw: 'zone.js@~0.8.5',
+1170 silly cache add   scope: null,
+1170 silly cache add   escapedName: 'zone.js',
+1170 silly cache add   name: 'zone.js',
+1170 silly cache add   rawSpec: '~0.8.5',
+1170 silly cache add   spec: '>=0.8.5 <0.9.0',
+1170 silly cache add   type: 'range' }
+1171 silly addNamed zone.js@>=0.8.5 <0.9.0
+1172 verbose addNamed ">=0.8.5 <0.9.0" is a valid semver range for zone.js
+1173 silly addNameRange { name: 'zone.js', range: '>=0.8.5 <0.9.0', hasData: false }
+1174 silly mapToRegistry name zone.js
+1175 silly mapToRegistry using default registry
+1176 silly mapToRegistry registry https://registry.npmjs.org/
+1177 silly mapToRegistry data Result {
+1177 silly mapToRegistry   raw: 'zone.js',
+1177 silly mapToRegistry   scope: null,
+1177 silly mapToRegistry   escapedName: 'zone.js',
+1177 silly mapToRegistry   name: 'zone.js',
+1177 silly mapToRegistry   rawSpec: '',
+1177 silly mapToRegistry   spec: 'latest',
+1177 silly mapToRegistry   type: 'tag' }
+1178 silly mapToRegistry uri https://registry.npmjs.org/zone.js
+1179 verbose addNameRange registry:https://registry.npmjs.org/zone.js not in flight; fetching
+1180 silly resolveWithNewModule tns-core-modules@3.2.0 checking installable status
+1181 silly cache add args [ 'tns-core-modules@^3.1.1', null ]
+1182 verbose cache add spec tns-core-modules@^3.1.1
+1183 silly cache add parsed spec Result {
+1183 silly cache add   raw: 'tns-core-modules@^3.1.1',
+1183 silly cache add   scope: null,
+1183 silly cache add   escapedName: 'tns-core-modules',
+1183 silly cache add   name: 'tns-core-modules',
+1183 silly cache add   rawSpec: '^3.1.1',
+1183 silly cache add   spec: '>=3.1.1 <4.0.0',
+1183 silly cache add   type: 'range' }
+1184 silly addNamed tns-core-modules@>=3.1.1 <4.0.0
+1185 verbose addNamed ">=3.1.1 <4.0.0" is a valid semver range for tns-core-modules
+1186 silly addNameRange { name: 'tns-core-modules',
+1186 silly addNameRange   range: '>=3.1.1 <4.0.0',
+1186 silly addNameRange   hasData: false }
+1187 silly mapToRegistry name tns-core-modules
+1188 silly mapToRegistry using default registry
+1189 silly mapToRegistry registry https://registry.npmjs.org/
+1190 silly mapToRegistry data Result {
+1190 silly mapToRegistry   raw: 'tns-core-modules',
+1190 silly mapToRegistry   scope: null,
+1190 silly mapToRegistry   escapedName: 'tns-core-modules',
+1190 silly mapToRegistry   name: 'tns-core-modules',
+1190 silly mapToRegistry   rawSpec: '',
+1190 silly mapToRegistry   spec: 'latest',
+1190 silly mapToRegistry   type: 'tag' }
+1191 silly mapToRegistry uri https://registry.npmjs.org/tns-core-modules
+1192 verbose addNameRange registry:https://registry.npmjs.org/tns-core-modules not in flight; fetching
+1193 silly resolveWithNewModule codelyzer@3.2.0 checking installable status
+1194 silly cache add args [ 'codelyzer@^3.0.1', null ]
+1195 verbose cache add spec codelyzer@^3.0.1
+1196 silly cache add parsed spec Result {
+1196 silly cache add   raw: 'codelyzer@^3.0.1',
+1196 silly cache add   scope: null,
+1196 silly cache add   escapedName: 'codelyzer',
+1196 silly cache add   name: 'codelyzer',
+1196 silly cache add   rawSpec: '^3.0.1',
+1196 silly cache add   spec: '>=3.0.1 <4.0.0',
+1196 silly cache add   type: 'range' }
+1197 silly addNamed codelyzer@>=3.0.1 <4.0.0
+1198 verbose addNamed ">=3.0.1 <4.0.0" is a valid semver range for codelyzer
+1199 silly addNameRange { name: 'codelyzer', range: '>=3.0.1 <4.0.0', hasData: false }
+1200 silly mapToRegistry name codelyzer
+1201 silly mapToRegistry using default registry
+1202 silly mapToRegistry registry https://registry.npmjs.org/
+1203 silly mapToRegistry data Result {
+1203 silly mapToRegistry   raw: 'codelyzer',
+1203 silly mapToRegistry   scope: null,
+1203 silly mapToRegistry   escapedName: 'codelyzer',
+1203 silly mapToRegistry   name: 'codelyzer',
+1203 silly mapToRegistry   rawSpec: '',
+1203 silly mapToRegistry   spec: 'latest',
+1203 silly mapToRegistry   type: 'tag' }
+1204 silly mapToRegistry uri https://registry.npmjs.org/codelyzer
+1205 verbose addNameRange registry:https://registry.npmjs.org/codelyzer not in flight; fetching
+1206 silly resolveWithNewModule nativescript-cardview@2.0.2 checking installable status
+1207 silly cache add args [ 'nativescript-cardview@2.0.2', null ]
+1208 verbose cache add spec nativescript-cardview@2.0.2
+1209 silly cache add parsed spec Result {
+1209 silly cache add   raw: 'nativescript-cardview@2.0.2',
+1209 silly cache add   scope: null,
+1209 silly cache add   escapedName: 'nativescript-cardview',
+1209 silly cache add   name: 'nativescript-cardview',
+1209 silly cache add   rawSpec: '2.0.2',
+1209 silly cache add   spec: '2.0.2',
+1209 silly cache add   type: 'version' }
+1210 silly addNamed nativescript-cardview@2.0.2
+1211 verbose addNamed "2.0.2" is a plain semver version for nativescript-cardview
+1212 silly mapToRegistry name nativescript-cardview
+1213 silly mapToRegistry using default registry
+1214 silly mapToRegistry registry https://registry.npmjs.org/
+1215 silly mapToRegistry data Result {
+1215 silly mapToRegistry   raw: 'nativescript-cardview',
+1215 silly mapToRegistry   scope: null,
+1215 silly mapToRegistry   escapedName: 'nativescript-cardview',
+1215 silly mapToRegistry   name: 'nativescript-cardview',
+1215 silly mapToRegistry   rawSpec: '',
+1215 silly mapToRegistry   spec: 'latest',
+1215 silly mapToRegistry   type: 'tag' }
+1216 silly mapToRegistry uri https://registry.npmjs.org/nativescript-cardview
+1217 verbose addNameVersion registry:https://registry.npmjs.org/nativescript-cardview not in flight; fetching
+1218 verbose get https://registry.npmjs.org/nativescript-theme-core not expired, no request
+1219 verbose stack TypeError: Cannot convert undefined or null to object
+1219 verbose stack     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:125:29)
+1219 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+1219 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:20:8
+1219 verbose stack     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:174:7)
+1219 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:241:18
+1219 verbose stack     at FSReqWrap.oncomplete (fs.js:123:15)
+1220 verbose cwd /Users/niliev/Downloads/t_1129461
+1221 error Darwin 15.6.0
+1222 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+1223 error node v6.9.2
+1224 error npm  v3.10.9
+1225 error Cannot convert undefined or null to object
+1226 error If you need help, you may report this error at:
+1226 error     <https://github.com/npm/npm/issues>
+1227 verbose exit [ 1, true ]

@@ -1,0 +1,219 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image loadMode="async" src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView>
+        <StackLayout class="settings">
+               <!--<Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true"  style="text-align: right; padding-right: 5"> </Label>-->
+            <GridLayout columns="*, *" rows="auto" class="tabHeader">
+                <Button text="Profile Settings" autocapitalizationType="none" row="1" col="0" (tap)="onSelectedIndexChange('profileSettings')" [ngClass]="{'active': isProfileSettingsSelected, 'deactive' : !isProfileSettingsSelected }"></Button>
+                <Button text="Preference Settings" autocapitalizationType="none" row="1" col="1" (tap)="onSelectedIndexChange('preferenceSettings')" [ngClass]="{'active': isPreferenceSettingsSelected, 'deactive' : !isPreferenceSettingsSelected }"></Button>
+            </GridLayout>
+            <StackLayout class="settingsContent">
+                <StackLayout class="profileSettings" [visibility]="isProfileSettingsSelected ? 'visible' : 'collapsed'">
+                    <!--<CardView class="cardSection" radius="0" style="background-color: #ffffff;">-->
+                        <StackLayout orientation="horizontal">
+                            <Label class="bold font-arial" text="Name: "></Label>
+                            <Label text="Gretchen Sorensen"></Label>
+                        </StackLayout>
+                        <StackLayout orientation="horizontal">
+                            <Label class="bold font-arial" text="Date of Birth: "></Label>
+                            <Label text="1/22/2033"></Label>
+                        </StackLayout>
+
+                        <StackLayout class="contactSec">
+                            <GridLayout rows="*" columns="*, 50" class="listView">
+                                <StackLayout orientation="horizontal" row="0" col="0" class="text">
+                                    <Label horizontalAlignment="left" class="bold font-arial" text="Mobile Number: "></Label>
+                                    <Label horizontalAlignment="left" [text]="formatMobileNumber(mobileText)"></Label>
+                                </StackLayout>
+                                <StackLayout (tap)="isMobileClicked = true; mobileNumber = null;" orientation="horizontal" row="0" col="1" class="rightarrow-icon">
+                                    <Image loadMode="async" row="0" col="1" class="rightarrow-icon" src="~/images/icon/right2.png" verticalAlignment="middle"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                            <GridLayout rows="*" columns="*, 50" class="listView">
+                                <StackLayout orientation="horizontal" row="0" col="0" class="text">
+                                    <Label class="bold font-arial" text="Email Address: "></Label>
+                                    <Label textWrap="true" [ngClass]="emailDisable === 'Add your email address' ? 'disabled' : ''" [text]="emailDisable"></Label>
+                                </StackLayout>
+                                <StackLayout (tap)="isEmailClicked = true; emailid = '';" orientation="horizontal" row="0" col="1" class="rightarrow-icon">
+                                    <Image loadMode="async" src="~/images/icon/right2.png" verticalAlignment="middle"></Image>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+
+                        <StackLayout orientation="horizontal" class="curveImage">
+                            <Image loadMode="async" verticalAlignment="top" src="~/images/card-shadow.png"></Image>
+                        </StackLayout>
+                    <!--</CardView>-->
+
+                    <!--<CardView>-->
+                        <StackLayout class="pwdSection">
+                            <StackLayout orientation="vertical">
+                                <Label class="bold font-arial" text="Update your Password"></Label>
+                                <Label class="leftText" textWrap="true" text="Your current password is required to make any changes."></Label>
+                            </StackLayout>
+
+                            <StackLayout orientation="vertical">
+                                <GridLayout rows="auto, *" columns="*">
+                                    <Label row="0" col="0" class="bold font-arial" text="Current Password"></Label>
+                                    <GridLayout class="textFieldBorder" row="1" col="0"rows="*" columns="*">
+                                        <!--<TextField #currentPwd class="input text-field-bordered" secure="true" text="" [(ngModel]="currentPwd"></TextField>-->
+                                        <TextField [visibility]="(!(isMobileClicked) && !(isEmailClicked)) ? 'visible' : 'collapsed'" #currentPwd row="0" col="0" class="input text-field-bordered" secure="true" text=""></TextField>
+                                        <StackLayout (tap)="showPassword('currentPwd')" horizontalAlignment="right" row="0" col="0">
+                                            <Button (tap)="showPassword('currentPwd')" class="show" [text]="showPasswordBtn.currentPwd"></Button>
+                                        </StackLayout>
+                                    </GridLayout>
+                                </GridLayout>
+                            </StackLayout>
+
+                            <StackLayout orientation="vertical" class="newPwd">
+                                <GridLayout rows="auto, *" columns="*">
+                                    <Label row="0" col="0" class="bold font-arial" text="New Password"></Label>
+                                    <GridLayout class="textFieldBorder" row="1" col="0" rows="*" columns="*">
+                                        <!--<TextField #newPwd class="input text-field-bordered" secure="true" text="" [(ngModel)]="newPswd"></TextField>-->
+                                        <TextField [visibility]="(!(isMobileClicked) && !(isEmailClicked)) ? 'visible' : 'collapsed'" #newPwd row="0" col="0" class="input text-field-bordered" secure="true" text=""></TextField>
+                                        <StackLayout (tap)="showPassword('newPwd')" horizontalAlignment="right" row="0" col="0">
+                                            <Button (tap)="showPassword('newPwd')" class="show" [text]="showPasswordBtn.newPwd"></Button>
+                                        </StackLayout>
+                                    </GridLayout>
+                                </GridLayout>
+                                <StackLayout>
+                                    <Label text="Password didnt match the minimum criteria " textWrap="true" class="alert-danger bodyText ml15" visibility="{{(!isPasswordValid) ? 'visible' : 'collapsed' }}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout orientation="vertical" class="limitationMsg">
+                                <Label textWrap="true" class="lightBold" text="Minimum Password Requirements"></Label>
+                                <StackLayout orientation="horizontal">
+                                    <Image loadMode="async" class="dotImage" verticalAlignment="top" src="~/images/icon/dot1.png"></Image>
+                                    <Label textWrap="true" text="7 Characters in length"></Label>
+                                </StackLayout>
+                                <StackLayout orientation="horizontal">
+                                    <Image loadMode="async" class="dotImage" verticalAlignment="top" src="~/images/icon/dot1.png"></Image>
+                                    <Label textWrap="true" text="Include at least 1 number, uppercase letter, and special character"></Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout orientation="vertical">
+                                <Button autocapitalizationType="none" (tap)="updateClicked()" class="updateBtn" text="Update"></Button>
+                                <Button autocapitalizationType="none" (tap)="goBack()" class="cancelBtn" text="Cancel"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                    <!--</CardView>-->
+                </StackLayout>
+
+                <StackLayout class="preferenceSettings" visibility="{{ isPreferenceSettingsSelected ? 'visible' : 'collapsed' }}">
+                    <GridLayout rows="*" columns="80, *" class="preferenceList">
+                        <!--<StackLayout orientation="vertical">-->
+                            <StackLayout horizontalAlignment="center" verticalAlignment="top" orientation="horizontal" row="0" col="0">
+                                <Switch #marketingCommunications checked="true" row="0" col="0"></Switch>
+                            </StackLayout>
+                            <StackLayout orientation="vertical" row="0" col="1">
+                                <Label textWrap="true" class="title" text="Marketing Communications"></Label>
+                                <Label textWrap="true" class="msg" text="By activating this feature, you agree to receive information from Blue Cross Blue Shield of Massachusetts."></Label>
+                            </StackLayout>
+                        <!--</StackLayout>-->
+                    </GridLayout>
+                    <GridLayout rows="*" columns="80, *" class="preferenceList">
+                        <!--<StackLayout orientation="vertical">-->
+                            <StackLayout horizontalAlignment="center" verticalAlignment="top" orientation="horizontal" row="0" col="0">
+                                <Switch #emailNotification checked="false" row="0" col="0"></Switch>
+                            </StackLayout>
+                            <StackLayout orientation="horizontal" row="0" col="1">
+                                <Label textWrap="true" class="title" text="Email notification and promotions"></Label>
+                            </StackLayout>
+                        <!--</StackLayout>-->
+                    </GridLayout>
+                    <GridLayout rows="*" columns="80, *" class="preferenceList">
+                        <!--<StackLayout orientation="vertical">-->
+                            <StackLayout horizontalAlignment="center" verticalAlignment="top" orientation="horizontal" row="0" col="0">
+                                <Switch #textMsg checked="true" row="0" col="0"></Switch>
+                            </StackLayout>
+                            <StackLayout orientation="horizontal" row="0" col="1">
+                                <Label textWrap="true" class="title" text="Text messages"></Label>
+                            </StackLayout>
+                        <!--</StackLayout>-->
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout orientation="horizontal" class="curveImageBttom">
+                <Image loadMode="async" verticalAlignment="top" src="~/images/card-shadow.png"></Image>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    <DockLayout style.verticalAlignment="bottom" row="0" col="0">
+        <mb-tab></mb-tab>
+    </DockLayout>
+    <GridLayout row="0" col="0" rows="auto" columns="auto" [visibility]="isEmailClicked ? 'visible' : 'collapsed'">
+        <StackLayout row="0" col="0" style="z-index: -1; height: 100%; width: 100%; background-color: #000; opacity: 0.6;">
+        </StackLayout>
+        <StackLayout row="0" col="0" class="blured-layout email-container" horizontalAlignment="center" verticalAlignment="top">
+            <StackLayout class="email-container">
+                <StackLayout horizontalAlignment="center" class="alignCenter">
+                    <Label text="Email Address" class="email-heading" textWrap="true"></Label>
+                    <Label text="Enter your email address below" class="email-subheading2" textWrap="true"></Label>
+                    <StackLayout>
+                        <Label text="Password didnt match the minimum criteria " textWrap="true" class="alert-danger bodyText" [visibility]="!(isNewPasswordValid) ? 'visible' : 'collapsed'"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <TextField keyboardType="email" hint="e. name@address.com" id="emailid" name="emailid" [(ngModel)]="emailid" class="email-textfield"
+                        autocorrect="false"></TextField>
+                    <Label text="*Invalid Email ID" textWrap="true" [ngClass]="(invalidEmailLbl) ? 'invalidEmail' : 'invalidEmailDisable'"></Label>
+                </StackLayout>
+                <GridLayout columns="*, *" rows="*" class="btn-container">
+                    <Button text="Cancel" class="cancel-btn" (tap)="isEmailClicked = false; invalidEmailLbl = false;" row="0" col="0"></Button>
+                    <Button text="Save" [ngClass]="emailid.length > 0 ? 'cancel-btn': ''" row="0" col="1" (tap)="saveEmail(emailid);"></Button>
+                </GridLayout>
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+    <GridLayout row="0" col="0" rows="auto" columns="auto" [visibility]="isMobileClicked ? 'visible' : 'collapsed'">
+        <StackLayout row="0" col="0" style="z-index: -1; height: 100%; width: 100%; background-color: #000; opacity: 0.6;">
+        </StackLayout>
+        <StackLayout row="0" col="0" class="blured-layout email-container" horizontalAlignment="center" verticalAlignment="top">
+            <StackLayout class="email-container">
+                <StackLayout horizontalAlignment="center" class="alignCenter">
+                    <Label text="Mobile Number" class="email-heading" textWrap="true"></Label>
+                    <Label text="Enter your 10-digit mobile number" class="email-subheading2" textWrap="true"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <TextField keyboardType="phone" maxLength="10" hint="e. 1234567890" id="mobileNumber" name="mobileNumber" [(ngModel)]="mobileNumber" class="email-textfield"
+                        autocorrect="false"></TextField>
+                    <Label text="*Invalid Mobile Number" textWrap="true" [ngClass]="(invalidMobileLbl) ? 'invalidEmail' : 'invalidEmailDisable'"></Label>
+                </StackLayout>
+                <GridLayout columns="*, *" rows="*" class="btn-container">
+                    <Button text="Cancel" class="cancel-btn" (tap)="isMobileClicked = false; invalidMobileLbl = false;" row="0" col="0"></Button>
+                    <Button text="Save" [ngClass]="mobileNumber ? 'cancel-btn': ''" row="0" col="1" (tap)="saveMobile(mobileNumber);"></Button>
+                </GridLayout>
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+    <GridLayout row="0" col="0" rows="auto" columns="auto" [visibility]="emailRequired ? 'visible' : 'collapsed'">
+        <StackLayout row="0" col="0" style="z-index: -1; height: 100%; width: 100%; background-color: #000; opacity: 0.6;">
+        </StackLayout>
+        <StackLayout row="0" col="0" class="blured-layout email-container" horizontalAlignment="center" verticalAlignment="top">
+            <StackLayout class="email-container">
+                <StackLayout horizontalAlignment="center" class="alignCenter">
+                    <Label text="An email address is required to receive emails" class="email-heading" textWrap="true"></Label>
+                </StackLayout>
+                <GridLayout columns="*, *" rows="*" class="btn-container">
+                    <Button text="Ok" row="0" col="1" (tap)="emailRequired = false; isEmailClicked = true;"></Button>
+                </GridLayout>
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+</GridLayout>

@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var DependentModel = (function () {
+    function DependentModel() {
+    }
+    return DependentModel;
+}());
+exports.DependentModel = DependentModel;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVwZW5kZW50Lm1vZGVsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZGVwZW5kZW50Lm1vZGVsLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUE7SUFBQTtJQU9BLENBQUM7SUFBRCxxQkFBQztBQUFELENBQUMsQUFQRCxJQU9DO0FBUFksd0NBQWMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgRGVwZW5kZW50TW9kZWwge1xyXG4gICAgXCJmaXJzdE5hbWVcIjogc3RyaW5nO1xyXG4gICAgXCJsYXN0TmFtZVwiOiBzdHJpbmc7XHJcbiAgICBcInR5cGVcIjogc3RyaW5nO1xyXG4gICAgXCJpZFwiOiBzdHJpbmc7XHJcbiAgICBcImlzU2VsZWN0ZWRcIj86IGJvb2xlYW47XHJcbiAgICBcImRpc3BsYXlOYW1lXCI/OiBzdHJpbmc7XHJcbn0iXX0=

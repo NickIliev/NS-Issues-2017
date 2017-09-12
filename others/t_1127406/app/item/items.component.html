@@ -1,0 +1,14 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<StackLayout class="page">
+    <android>
+        <Ripple rippleColor="#d50000">
+            <Button text="Button test" (tap)="onTap()"></Button>
+        </Ripple>
+    </android>
+    <ios>
+        <Button text="Button test" class="myBtn" (tap)="onTap()"></Button>
+    </ios>
+    <Label [text]="buttonTapped" textWrap="true"></Label>
+</StackLayout>

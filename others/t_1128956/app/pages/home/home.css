@@ -1,0 +1,860 @@
+/**** SignIn & Register Details *****/
+
+.signCard {
+    /*background-color: #F78A14;*/
+    margin-bottom: 20;
+    color: #fff;
+}
+.cardPadding {
+    margin: 10 0 20;
+}
+.cardViewSpace {
+    margin-top: 20;
+}
+.signIcon image {
+    margin: 0 0 0 5;
+}
+.signView {
+    margin: 0 20 0;
+    border-bottom-width: 5px;
+    border-color: #FFCC99;
+    padding-bottom: 15;
+}
+.signAccount {
+    background-color: #D47100;
+    padding: 5 20;
+}
+.signGrid {
+    margin: 10 0 0;
+}
+.signIcon {
+    font-weight: 700;
+    padding: 5 0;
+}
+.whitecol{
+    color: #ffffff;
+}
+/**** End SignIn & Register Details *****/
+/*********Find a Doctor Details **********/
+
+.FADCard {
+    /*background-color: #ffffff;*/
+    
+    color: black;
+    margin: 10 0 20;
+}
+.FADGrid {
+    margin: 10 0 0;
+}
+.FADTitile {
+    color: black;
+    font-size: 24;
+    /*border-bottom-width: 5px;
+    border-color: #c389cc;*/
+    margin-bottom: 5;
+    padding-bottom: 15px;
+    /*margin: 0 10;*/
+}
+.FADTitile image {
+    width: 32;
+    height: 32;
+    padding-left:0;
+    margin-left:0;
+    margin-right: 5;
+}
+.FADView {
+   
+    margin-top: 10;
+    padding: 10 20;
+   
+}
+
+.fadTitile {
+    color: #7F7F7F;
+    font-size: 18;
+    padding-bottom: 10;
+    margin: 0 20 0;
+}
+.fadTitile image {
+    width: 30;
+    height: 30;
+    margin-right: 10;
+}
+
+.FADList {
+    /*margin: 0 20 10 20;*/
+     margin: 0 20 0 30;
+    color: black;
+}
+.FADList Label {
+    margin-bottom: 10;
+}
+.FADList image {
+    width: 18px;
+    height: 18px;
+    margin-top: -20;
+    margin-right: 20;
+}
+/********* End Find a Doctor Details **********/
+/*********Healthy Livivng Details **********/
+
+.healthyCard {
+    /*background-color: #ffffff;*/
+    
+    color: #1866a3;
+    margin: 10 0 0;
+}
+.healthyTitile {
+    margin: 10 20 10;
+    color: #1866a3;
+    font-size: 24;
+}
+.articleGrid {
+    margin: 10 0 0;
+}
+.healthyTitile image {
+    width: 32;
+    height: 32;
+    margin-right: 5;
+}
+.healthyViewArticle {
+    background-color: #5698CD;
+    color: #ffffff;
+    padding: 10 20;
+    font-weight: 700;
+}
+.healthyViewArticle image {
+    margin: 0 0 0 10;
+}
+.healthyBannerText {
+    margin: 10 20;
+}
+.healthySub {
+    color: #5698cd
+}
+.healthySubTitle {
+    font-size: 20;
+    color: #1866A3;
+}
+.healthyGrid {
+    border-bottom-width: 3px;
+    border-color: #5698cd;
+}
+.healthyGridBanner {
+    width: 120;
+    height: 120;
+    margin-right: 10;
+}
+.healthyGridArrow {
+    width: 20;
+    height: 20;
+}
+.healthyGridArrow {
+    margin-right: 20;
+}
+.healthyList {
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-color: #1866a3;
+}
+.healthyGridTitle {
+    vertical-align: middle;
+}
+/********* End Healthy Livivng Details **********/
+/*********Basic Details **********/
+
+.basicCard {
+    /*  background-color: #5698CD; */
+    
+    color: #fff;
+    margin-top: 10;
+}
+.basicTile {
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+.basicTile image {
+    width: 75;
+    height: 75;
+}
+.basicMainTile {
+    margin: 20 0;
+}
+/*********End Basic Details **********/
+
+/************PCP Doctor Details**************/
+
+.pcpCard {
+    /* background-color: #87319E; */
+    
+    color: #fff;
+    margin: 10 0 0;
+}
+.pcpGrid {
+    margin: 10 0 0;
+}
+.pcpTitile {
+    margin: 10 20;
+    color: #fff;
+    font-size: 24;
+    border-bottom-width: 5px;
+    border-color: #C389CC;
+    margin-bottom: 5;
+    padding-bottom: 15px;
+}
+.pcpTitile label {
+    margin: 10 0;
+}
+.pcpTitile image {
+    width: 32;
+    height: 32;
+    margin-right: 5;
+}
+.pcpList {
+    margin: 10 20;
+}
+.pcp-item image {
+    width: 20;
+    height: 20;
+}
+.pcp-item {
+    margin: 5 0;
+}
+.pcpSubtitle {
+    color: #C389CC;
+}
+.pcpViewDoctor {
+    background-color: #663381;
+    margin-top: 10;
+    padding: 10 20;
+    font-weight: 700;
+}
+.pcpViewDoctor image {
+    margin: 0 0 0 10;
+}
+/************End PCP Doctor Details**************/
+/************Claims Details**************/
+
+.claimsCard {
+    /*background-color: #5698CD; */
+    
+    color: #fff;
+    margin: 10 0 0;
+}
+.claimsGrid {
+    margin: 10 0 0;
+}
+.claimsTitile {
+    margin: 10 20;
+    color: #ffffff;
+    font-size: 24;
+    border-bottom-width: 5px;
+    border-color: #8EBADD;
+    margin-bottom: 5;
+    padding-bottom: 15px;
+}
+.claimsTitile label {
+    margin: 10 0;
+}
+.claimsTitile image {
+    width: 32;
+    height: 32;
+    margin-right: 5;
+}
+.claimsList {
+    margin: 10 20;
+}
+.claims-item image {
+    width: 20;
+    height: 20;
+}
+.claims-item {
+    margin: 5 0
+}
+.claims-item StackLayout {
+    margin: 5 0;
+}
+.claimsType image {
+    width: 20;
+    height: 20;
+    margin-right: 2;
+}
+.claimstick image {
+    margin-right: 5;
+    width: 18;
+    height: 18;
+}
+.claimsView {
+    background-color: #1866A3;
+    margin-top: 10;
+    padding: 10 20;
+    font-weight: 700;
+}
+.claimsView image {
+    margin: 0 0 0 10;
+}
+/************End Claims Details**************/
+/************prescription Details**************/
+
+.prescriptionCard {
+    /* background-color: #EB9E31; */
+    
+    color: #fff;
+    margin: 10 0 0;
+}
+.prescriptionGrid {
+    margin: 10 0 0;
+}
+.prescriptionTitile {
+    margin: 10 20;
+    color: #fff;
+    font-size: 24;
+    border-bottom-width: 5px;
+    border-color: #ffcc99;
+    margin-bottom: 5;
+    padding-bottom: 15px;
+}
+.prescriptionTitile label {
+    margin: 10 0;
+}
+.prescriptionTitile image {
+    width: 32;
+    height: 32;
+    margin-right: 5;
+}
+.prescriptionList {
+    margin: 10 20;
+}
+.prescriptionView {
+    background-color: #d47100;
+    margin-top: 10;
+    padding: 10 20;
+    font-weight: 700;
+}
+.prescriptionView image {
+    margin: 0 0 0 10;
+}
+/************End prescription Details**************/
+/**************contact Card**********************/
+
+.contactCard {
+    /*  background-color: #071D49; */
+    
+    color: #ffffff;
+    margin: 10 0 0;
+}
+.contactCard image {
+    margin: 0 0 0 10;
+}
+.contactGrid {
+    margin: 10 20;
+}
+.contactGrid label {
+    margin: 0 0 5;
+}
+.contactTitle {
+    font-size: 20;
+}
+/**************End contact Card**********************/
+/****************Success Card***************/
+
+.successCard {
+    /*background-color: #ffffff; */
+    
+    color: #000000;
+    margin: 10 0 20;
+}
+/****************End Success Card**************/
+
+.authenticateView {
+    margin: 15 20 25;
+}
+/*.SuccessCard {
+    background-color: #ffffff;
+    color: #000000;
+}*/
+
+.sucessClose label {
+    color: #1866a3;
+    font-size: 30;
+    font-weight: 600;
+}
+.SucessGrid {
+    margin: 10 20;
+}
+.sucessClose Image {
+    width: 24;
+    height: 24;
+}
+.successPhone {
+    margin: 10 0 0;
+}
+.sucessTick {
+    color: #1866a3;
+    font-size: 20;
+    margin: 15 0;
+}
+.sucessTick Image {
+    width: 32;
+    height: 32;
+}
+.successAuthenticate {
+    font-size: 20;
+    font-weight: 600;
+}
+.successList {
+    margin: 10 0;
+    color: #4c4c4c;
+}
+.successList Label {
+    margin-bottom: 5;
+}
+.successList image {
+    width: 32px;
+    height: 32px;
+    margin-top: -5;
+    margin-right: 5;
+}
+.successBtn {
+    border-radius: 10px;
+    background-color: #1866a3;
+    color: white;
+    font-weight: bold;
+    font-size: 20;
+    margin: 20 0;
+    text-transform: capitalize;
+    border-color: #5698cd;
+    border-width: 3px;
+}
+.authenticatePadding {
+    margin: 0 0 10;
+}
+/****************End Success Card**************/
+
+.link_pad {
+    padding: 10 0 10 10;
+}
+.register_CardPadding {
+    margin-bottom: 10;
+}
+.authentication-success-card {
+    margin-bottom: 10;
+}
+.authentication-success-info label {
+    color: #000;
+    font-size: 15;
+}
+.authentication-success-info label.head {
+    font-weight: bold;
+    margin-bottom: 2;
+}
+.authentication-success-info image {
+    width: 24;
+    height: 24;
+}
+.explore {
+    padding: 10 0;
+    text-align: center;
+    background-color: #f78a14;
+    color: #fff;
+    font-size: 18;
+}
+.explore image {
+    width: 24;
+    height: 24;
+    margin-top: 5;
+}
+/*****************New UI Redesign ***********************/
+
+.homeBg {
+    background-color: #dddddd;
+    color: #000000;
+}
+.WhiteCard{
+    background-color: #ffffff;
+}
+.mbsignGrid {
+    padding: 0 20;
+}
+.mbsignCard {
+    /*background-color: #F78A14;*/
+    
+    color: #ffffff;
+    margin: 0 0 15;
+}
+.mbsignView {
+    border-color: #ffffff;
+    border-right-width: 1;
+    padding: 10 5;
+    font-size: 14;
+}
+.mbsignView Label {
+    margin: 5 0;
+}
+.mbsignIcon {
+    padding: 20 0 20 5;
+    text-align: right;
+    font-weight: bold;
+    font-size: 14;
+}
+.mbsignIcon image {
+    margin: 0 0 0 5;
+}
+.arrowImage {
+    width: 18;
+    height: 18;
+}
+.registerbtn {
+    z-index: -1;
+    background-color: #0068A0;
+    color: #ffffff;
+    margin: -10 0 0;
+    padding: 0 5;
+    text-transform: none;
+    font-weight: bold;
+}
+.registerlbl {
+    font-weight: bold;
+}
+.mbGridTitile {
+    color: #7F7F7F;
+    font-size: 18;
+    padding-bottom: 10;
+    margin: 0 20 0;
+}
+.mbGridTitile image {
+    width: 30;
+    height: 30;
+    margin-right: 10;
+}
+.curveImage {
+    height: 17;
+    width: 100%;
+    background-color: #ddd;
+}
+.curveImage.moveUp{
+    margin-top:-17;
+}
+.mbhealthyBanner {
+    margin: 0 20;
+}
+.mbhealthyGridTitle {
+    padding: 0 0 0 10;
+}
+.mbhealthySubTitle {
+    font-size: 20;
+    margin-bottom: 5;
+}
+.mbTileImage {
+    width: 100;
+    height: 100;
+}
+.mbhealthyBanner {
+    color: #000000;
+}
+.mbarticleGrid {
+    margin: 15 0 0;
+}
+.readArticle {
+    color: #0068A0;
+    margin: 10 0 10 0;
+}
+.searchNow {
+    color: #0068A0;
+    margin: 10 20 10 20;
+}
+.mbContactlogo Image {
+    width: 150;
+}
+.mbContactlogo {
+    border-bottom-width: 1;
+    border-color: #DDDDDD;
+    width: 100%;
+    padding: 20 0 15;
+    margin: 0 0 15;
+}
+.mblblContact {
+    color: #0068A0;
+    margin: 0 20 15;
+}
+/************Healthy Living Detail Article**************/
+
+.articleDetailText {
+    margin: 0 20;
+}
+.articleDetailSubTitle {
+    color: #000000;
+    font-size: 20;
+}
+.articleDetailSub {
+    color: #1866a3;
+    margin-top: 5;
+}
+.articleContent {
+    color: #4c4c4c;
+    margin: 0 20;
+}
+.mbarticleTitile {
+    color: #7F7F7F;
+    font-size: 20;
+    padding: 10 0;
+}
+.mbarticleTitile image {
+    width: 30;
+    height: 30;
+    margin-right: 10;
+}
+/************End Healthy Living Detail Article**************/
+/*************************intro card******************************/
+
+.mbintroStack {
+    margin-left: 5;
+    font-size: 15;
+}
+.mbintroGrid {
+    padding: 15 0 20;
+}
+.mbintroStack Image {
+    /*width: 28;
+    height: 28;*/
+    
+    width: 26;
+    height: 26;
+    margin-right: 5;
+}
+.mbintroGrid {
+    color: #000000;
+    margin: 0 20;
+}
+.mbUser {
+    color: #0068A0;
+    margin-bottom: 15;
+    font-size: 20;
+}
+/*************************end intro card*************************/
+/*************************Claims card******************************/
+
+.mbClaimsGrid {
+    margin: 15 0;
+}
+.mbclaimsStack,
+.mbclaimslatestlbl {
+    margin: 0 20;
+}
+.claimsLastCount {
+    color: #0068A0;
+    font-size: 28;
+}
+.lastClaimstxt {
+    color: #000000;
+    font-size: 16;
+}
+.mbclaimslatest {
+    border-bottom-width: 1;
+    border-color: #dddddd;
+    margin: 5 0 0;
+    font-size: 14;
+}
+.claimsDetail {
+    padding-top: 17;
+    padding-bottom: 17;
+    font-size: 14;
+}
+.claimsType {
+    color: #0068A0;
+}
+.claimsCovered {
+    margin-left: 10;
+}
+.claim-status {
+    padding: 1 10;
+    border-radius: 25;
+    color: #fff;
+    border-width: 1;
+    text-align: center;
+    font-size: 12;
+    font-family: "Arial Bold";
+    color: #fff;
+    text-transform: capitalize;
+}
+.claim-status.pending {
+    background-color: #b2b2b2;
+    border-color: #b2b2b2;
+}
+.claim-status.completed {
+    background-color: #3da148;
+    border-color: #3da148;
+}
+.claim-status.denied {
+    background-color: #C1272D;
+    border-color: #C1272D;
+}
+.integer {
+    text-align: right;
+}
+.decimal {
+    font-size: 12;
+}
+/*************************End Claims card******************************/
+/*************************Doctors card******************************/
+
+.mbdoctorsGrid {
+    margin: 15 0;
+}
+.mbDoctorVisit {
+    border-bottom-width: 1;
+    border-color: #dddddd;
+    margin: 5 0 0;
+    font-size: 14;
+    padding: 0 20;
+}
+.doctorDetail {
+    padding-top: 15;
+}
+.doctorName {
+    color: #0068A0;
+    font-size: 17;
+}
+.doctor-map {
+    color: #9E1893;
+    padding-right: 12;
+}
+.doctor-call {
+    color: #0068A0;
+    padding-left: 12;
+}
+.doctor-map Label,
+.doctor-call Label {
+    margin-top: 5
+}
+.doctor-map Image,
+.doctor-call Image {
+    width: 32;
+    height: 32;
+}
+/*************************end Doctors card******************************/
+/*************************medications card******************************/
+
+.mbmedicationsGrid {
+    margin: 15 0;
+}
+.medicaiton-form,
+.medicaiton-frequency {
+    margin-left: 10;
+}
+.medicationlbl {
+    font-size: 12;
+}
+.medicationtxt {
+    color: #000000;
+    font-weight: bold;
+    font-size: 14;
+}
+.medicationStack {
+    margin-top: 15;
+}
+/*************************end medications card******************************/
+/*************************financial Details card******************************/
+
+.mbfinancialGrid {
+    margin: 15 0;
+}
+.more-icon image {
+    width: 20;
+    height: 20;
+}
+.more-icon {
+    margin-right: 20;
+}
+.mbfinArrow {
+    color: #0068A0;
+    font-size: 26;
+}
+.mbfinNumber {
+    color: #0068A0;
+    font-size: 24;
+}
+.mbfinStack {
+    padding: 0 20;
+    border-bottom-width: 1;
+    border-color: #dddddd;
+    margin-bottom: 15;
+}
+/***chart****/
+
+.sliderCard {
+    margin: 0 0 0;
+    /* background-color: #ffffff; */
+}
+.legendAvailable {
+    text-align: left;
+    margin-top: -7;
+}
+.legendTotal {
+    color: #000000;
+}
+.chartPlot {
+    margin-top: 10;
+}
+.chartTitle {
+    font-size: 18;
+    font-weight: 700;
+    padding: 20 20 0;
+    color: #000000;
+}
+.legendStack {
+    text-align: right;
+    border-right-width: 1;
+    border-color: #DDDDDD;
+    padding: 0 5 0 0;
+}
+.legendText {
+    font-size: 12;
+}
+.chartwhite {
+    background-color: #ffffff;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-color: #dddddd;
+}
+.ChartGreen {
+    background-color: #3da148;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-left-width: 3px;
+    border-color: #3da148;
+}
+.Chartviolet {
+    background-color: #92278f;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-left-width: 3px;
+    border-color: #92278f;
+}
+.chartBlue {
+    background-color: #1866A3;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-left-width: 3px;
+    border-color: #1866A3;
+}
+.HSAHeader {
+    padding: 0 20;
+    margin-bottom: 15;
+}
+.legendMainStack {
+    margin-bottom: 10;
+}
+.graph-shadow{
+    width: 100%;
+    height: 20;
+
+    background-color: transparent;
+}
+.yrmaxtxt{
+    margin-top: -10;
+    background-color: transparent;
+}
+/*************************endfinancial Details card******************************/

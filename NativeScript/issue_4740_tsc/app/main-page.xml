@@ -3,7 +3,7 @@
 
     <StackLayout class="p-20">
 
-        <Button text="go to sub" tap="onTap" class="btn"/>
+        <Button loaded="onButtonLoaded" text="go to sub" tap="onTap" class="btn"/>
 
     </StackLayout>
 </Page>

@@ -1,0 +1,181 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image src="~/images/icon/ios_back.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+<GridLayout rows="*" columns="*" id="my-doctors">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+
+    <GridLayout rows="auto, *" columns="*" id="doctor-list-grid">
+
+        <!-- SEARCH AND FILTER PANEL -->
+        <StackLayout row="0" class="search-filter-Panel" orientation="horizontal" [ngClass]="isSearchExpanded ? 'search-active' : ''">
+            <StackLayout #searchPanel class="search-panel" orientation="vertical" horizontalAlignment="right">
+
+                <GridLayout #searchDefaultView columns="auto, *" rows="*" class="search-link-container" (tap)="showExpandedSearchView()">
+                    <Image col="0" src="~/images/redesign/search-white.png"></Image>
+                    <GridLayout columns="*" rows="*" col="1">
+                        <Label row="0" col="0" class="font-arial" text="Search"></Label>
+                    </GridLayout>
+                </GridLayout>
+
+                <GridLayout #searchExpandedView columns="*" rows="*" class="search-field-container">
+                    <TextField autocapitalizationType="none" hint="Search"></TextField>
+                </GridLayout>
+
+
+            </StackLayout>
+
+            <GridLayout class="filter-panel" orientation="horizontal" rows="*" columns="*, auto" (tap)="toggleFilter();">
+                <StackLayout col="0" orientation="vertical">
+                    <Label class="member-name" text="{{selectedMember.firstName}} {{selectedMember.lastName}}"></Label>
+                    <Label class="member-type" text="{{selectedMember.type}}"></Label>
+                </StackLayout>
+                <Image col="1" src="~/images/redesign/down-white.png"></Image>
+            </GridLayout>
+        </StackLayout>
+
+        <!-- Main Content -->
+        <ScrollView #mainListView row="1" class="main-list-view" (scroll)="hideThreeDotsMenu()">
+            <StackLayout (tap)="closePopMenu()">
+                <StackLayout *ngFor="let item of doctorsList; let i = index">
+                    <GridLayout rows="*" columns="*" class="doctor-card" [ngClass]="i == 0 ? 'first' : ''">
+                        <StackLayout col="0" row="0">
+                            <!-- ROW 1 -->
+                            <GridLayout class="section" rows="30" columns="*, 80">
+                                <StackLayout verticalAlignment="bottom" row="0" col="0" orientation="horizontal">
+                                    <Label class="sub-text" text="Last Visit: " textWrap="true"> </Label>
+                                    <Label class="sub-text black font-arial" text="{{item.visits[0]}}"></Label>
+                                </StackLayout>
+
+                                <StackLayout row="0" col="1" class="more-icon" (tap)="showOptions(i)">
+                                    <Image class="" src="~/images/redesign/vertical-three-dots.png"></Image>
+                                </StackLayout>
+                            </GridLayout>
+
+                            <!-- ROW 2 -->
+                            <GridLayout class="section" rows="*" columns="*, auto">
+                                <StackLayout col="0" orientation="vertical" class="doctor-details">
+                                    <Label class="bold font-arial doctor-name" text="{{item.name}}, MD"></Label>
+                                    <Label class="black font-arial" [text]="item.speciality"></Label>
+                                    <StackLayout orientation="vertical">
+                                        <Label [text]="item.address1"></Label>
+                                        <Label text="{{item.city}}, {{item.state}} {{item.zipcode}}"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <GridLayout rows="*" columns="*,*" class="call-container" col="1">
+                                    <StackLayout orientation="vertical" col="0" class="icon-item map" (tap)="locateAddress(item.address1, item.city, item.state, item.zipcode)">
+                                        <Image class="map-icon" src="~/images/redesign/map.png"></Image>
+                                        <Label class="pink" text="Map"></Label>
+                                    </StackLayout>
+                                    <StackLayout orientation="vertical" col="1" class="icon-item call" (tap)="callPhone(item.mobile)">
+                                        <Image class="call-icon" src="~/images/redesign/call.png"></Image>
+                                        <Label class="blue" text="Call"></Label>
+                                    </StackLayout>
+                                </GridLayout>
+                            </GridLayout>
+
+                            <!-- ROW 3 -->
+                            <GridLayout rows="auto" columns="auto,*" class="section review-container" *mbIfTurnOff>
+                                <StackLayout orientation="horizontal" class="star-container">
+                                    <Image class="rating-icon" src="~/images/icon/star.png" col="0"></Image>
+                                    <Image class="rating-icon" src="~/images/icon/star.png" col="0"></Image>
+                                    <Image class="rating-icon" src="~/images/icon/star.png" col="0"></Image>
+                                    <Image class="rating-icon" src="~/images/icon/star.png" col="0"></Image>
+                                    <Image class="rating-icon" src="~/images/icon/star.png" col="0"></Image>
+                                </StackLayout>
+
+                                <Label text="{{item.review.total}} reviews" col="1"></Label>
+                            </GridLayout>
+
+                            <Image src="~/images/redesign/shadow.png"></Image>
+
+
+
+                        </StackLayout>
+
+                        <!-- More Options Menu -->
+                        <StackLayout class="moreoptions-container" *ngIf="i==cardIndex" row="0" col="0" style="background-color:#fff;" (tap)="keepOpen();"
+                            horizontalAlignment="right" verticalAlignment="top">
+                            <StackLayout class="more-inner-container">
+                                <GridLayout class="innerLink" rows="*" columns="50,*" (tap)="saveContact(item)">
+                                    <Image class="moreInnerIcon" src="~/images/icon/add_contacts.png" row="0" col="0"></Image>
+                                    <Label text="Add doctor to contacts" row="0" col="1" class="option-text"></Label>
+                                </GridLayout>
+                                <GridLayout rows="*" class="innerLink" columns="50,*" (tap)="showVisitHistory(item)">
+                                    <Image class="moreInnerIcon" src="~/images/icon/view_history.png" row="0" col="0"></Image>
+                                    <Label text="View visit history" row="0" col="1" class="option-text"></Label>
+                                </GridLayout>
+                                <GridLayout rows="*" class="innerLink" columns="50,*">
+                                    <Image class="moreInnerIcon" src="~/images/icon/view_claim.png" row="0" col="0"></Image>
+                                    <Label text="View claim" row="0" col="1" class="option-text"></Label>
+                                </GridLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <!-- /DOCTORS LIST -->
+
+        <!-- FILTER WINDOW -->
+        <GridLayout #filterWindow rows="*" columns="*" row="1" class="filter-window">
+            <GridLayout rows="12, 40, auto">
+                <StackLayout class="arrow" row="0" col="0">
+                    <Image class="" src="~/images/redesign/triangle.png" row="0" col="1"></Image>
+                </StackLayout>
+
+                <StackLayout class="header" row="1" col="0">
+                </StackLayout>
+
+
+                <ScrollView row="2" col="0" class="content">
+                    <StackLayout>
+                        <GridLayout *ngFor="let item of memberList; let i = index" class="filter-item" [class.selected]="item.isSelected" rows="*"
+                            columns="*,auto" (tap)="selectMember(item);">
+                            <Button textWrap="true" text="{{item.firstName}} {{item.lastName}}" row="0" col="0" class="option-text" (tap)="selectMember(item);"></Button>
+                            <Image class="" src="~/images/redesign/selected-blue.png" row="0" col="1" (tap)="selectMember(item);"></Image>
+                        </GridLayout>
+                        <!--
+                        MMAR-1399 - Spike story code 
+                        <GridLayout columns="auto, *, auto" orientation="horizontal" class="filter-form-field">
+                            <Label col="0" text="Select Date"></Label>
+                            <Label [text]="filterDate" col="1" class="control" (tap)="showDatepicker()"></Label>
+                            <Image col="2" src="~/images/redesign/date.png" (tap)="showDatepicker();" class="date-icon"></Image>
+                        </GridLayout>
+                        -->
+                    </StackLayout>
+
+                    
+                </ScrollView> 
+
+            </GridLayout>
+        </GridLayout>
+
+
+
+    </GridLayout>
+
+    <DockLayout style.verticalAlignment="bottom">
+        <mb-tab></mb-tab>
+    </DockLayout>
+
+    <StackLayout class="" visibility="{{isBusy ? 'visible' : 'collapsed'}}" isUserInteractionEnabled=false>
+        <GridLayout rows="*">
+            <ActivityIndicator row="1" #activityIndicator busy="true" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+        </GridLayout>
+    </StackLayout>
+
+</GridLayout>

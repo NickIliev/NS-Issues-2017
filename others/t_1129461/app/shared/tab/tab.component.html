@@ -1,0 +1,27 @@
+<GridLayout columns="*, *, *, *, *" rows="auto" dock="bottom" class="tabGrid">
+    <GridLayout row="0" col="0" columns="*" rows="*" (tap)="home();">
+        <Image loadMode="async" src="~/images/redesign/bottom-nav-home.png" row="0"></Image>
+        <Image loadMode="async" [visibility]="(this.currentPage.indexOf('/home/') !== -1) ? 'visible' : 'hidden'" src="~/images/redesign/bottom-nav-home-selected.png" row="0"></Image>
+        <!-- <Label text="Home" row="1"></Label> -->
+    </GridLayout>
+    <GridLayout row="0" col="1" columns="*" rows="*" (tap)="loginCheckNavigate('cards');">
+        <Image loadMode="async" src="~/images/redesign/bottom-nav-mycards.png" row="0"></Image>
+        <Image loadMode="async" [visibility]="(this.currentPage.indexOf('cards') !== -1) ? 'visible' : 'hidden'" src="~/images/redesign/bottom-nav-mycards-selected.png" row="0"></Image>
+        <!-- <Label text="My Cards" row="1"></Label> -->
+    </GridLayout>
+    <GridLayout row="0" col="2" columns="*" rows="*" (tap)="loginCheckNavigate('medication');">
+        <Image loadMode="async" src="~/images/redesign/bottom-nav-mymeds.png" row="0"></Image>
+        <Image loadMode="async" [visibility]="(this.currentPage.indexOf('medication') !== -1) ? 'visible' : 'hidden'" src="~/images/redesign/bottom-nav-mymeds-selected.png" row="0"></Image>
+        <!-- <Label text="My Medications" row="1"></Label> -->
+    </GridLayout>
+    <GridLayout row="0" col="3" columns="*" rows="*" (tap)="loginCheckNavigate('claimSummary');">
+        <Image loadMode="async" src="~/images/redesign/bottom-nav-myclaims.png" row="0"></Image>
+        <Image loadMode="async" [visibility]="(this.currentPage.indexOf('claimSummary') !== -1) ? 'visible' : 'hidden'" src="~/images/redesign/bottom-nav-myclaims-selected.png" row="0"></Image>
+        <!-- <Label text="My Claims" row="1"></Label> -->
+    </GridLayout>
+    <GridLayout row="0" col="4" columns="*" rows="*" (tap)="loginCheckNavigate('mydoctors');">
+        <Image loadMode="async" src="~/images/redesign/bottom-nav-mydocs.png" row="0"></Image>
+        <Image loadMode="async" [visibility]="(this.currentPage.indexOf('mydoctors') !== -1) ? 'visible' : 'hidden'" src="~/images/redesign/bottom-nav-mydocs-selected.png" row="0"></Image>
+        <!-- <Label text="Doctors" row="1"></Label> -->
+    </GridLayout>
+</GridLayout>

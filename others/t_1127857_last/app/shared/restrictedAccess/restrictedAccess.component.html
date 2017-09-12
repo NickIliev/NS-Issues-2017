@@ -1,0 +1,51 @@
+<GridLayout rows="*" columns="*" id="authenticateSharedPromoModal">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout class="authenticateWindow" orientation="vertical">
+                <StackLayout orientation="vertical">
+                    <Image loadMode="async" horizontalAlignment="right" class="closeBtn" (tap)="goBack()" src="~/dummyData/close_blue.png"></Image>
+                    <Image loadMode="async" horizontalAlignment="center" class="headerImg" src="~/dummyData/header.png"></Image>
+                </StackLayout>
+                <StackLayout class="windowPadding">
+                    <StackLayout orientation="horizontal">
+                        <Label text="Verify your MyBlue account" fontWeight="bold" class="mainHeader"></Label>
+                    </StackLayout>
+                    <StackLayout orientation="horizontal">
+                        <Label textWrap="true" text="Unlock access to your personal health information and benefits" class="subHeader" style="font-weight: 250;"></Label>
+                    </StackLayout>
+                    <StackLayout class="list-stacklayout">
+                        <GridLayout rows="*" columns="50,*">
+                            <Image row="0" col="0" loadMode="async" horizontalAlignment="right" class="listImages" src="~/dummyData/i1.png"></Image>
+                            <Label row="0" col="1" horizontalAlignment="left" verticalAlignment="center" textWrap="true" text="View your medical plan details"
+                                class="listView"></Label>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="50,*">
+                            <Image row="0" col="0" loadMode="async" horizontalAlignment="right" class="listImages" src="~/dummyData/i2.png"></Image>
+                            <Label row="0" col="1" horizontalAlignment="left" verticalAlignment="center" textWrap="true" text="Review claim information"
+                                class="listView"></Label>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="50,*">
+                            <Image row="0" col="0" loadMode="async" horizontalAlignment="right" class="listImages" src="~/dummyData/i3.png"></Image>
+                            <Label row="0" col="1" horizontalAlignment="left" verticalAlignment="center" textWrap="true" text="Quickly access your member ID cards"
+                                class="listView"></Label>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="50,*">
+                            <Image row="0" col="0" loadMode="async" horizontalAlignment="right" class="listImages" src="~/dummyData/i4.png"></Image>
+                            <Label row="0" col="1" horizontalAlignment="left" verticalAlignment="center" textWrap="true" text="View your medication history"
+                                class="listView"></Label>
+                        </GridLayout>
+                        <GridLayout rows="*" columns="50,*">
+                            <Image row="0" col="0" loadMode="async" horizontalAlignment="right" class="listImages" src="~/dummyData/i5.png"></Image>
+                            <Label row="0" col="1" horizontalAlignment="left" verticalAlignment="center" textWrap="true" text="View doctorvisit history & contact information"
+                                class="listView"></Label>
+                        </GridLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout orientation="vertical" class="btnSection">
+                <Button text="Connect my Account" autocapitalizationType="none" (tap)="authenticate()" class="yesAuthenticate"></Button>
+                <Button text="Not Now" autocapitalizationType="none" class="mayBeLater" (tap)="mayBeLater()"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

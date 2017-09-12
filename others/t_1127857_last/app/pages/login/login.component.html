@@ -1,0 +1,137 @@
+<ActionBar class="header">
+    <NavigationButton ios.position="left" *mbIfAndroid android.systemIcon="ic_menu_back" text="Back" (tap)="goBack()"></NavigationButton>
+    <NavigationButton *mbIfIos visibility="collapse"></NavigationButton>
+    <ActionItem *mbIfIos>
+        <Image loadMode="async" src="~/images/icon/left.png" (tap)="goBack();" class="actionArrow"></Image>
+    </ActionItem>
+    <StackLayout class="iosActionbar" *mbIfIos>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+    <StackLayout *mbIfAndroid>
+        <mb-header [title]="title"></mb-header>
+    </StackLayout>
+</ActionBar>
+
+<mb-side-menu *mbIfAndroid></mb-side-menu>
+
+<GridLayout rows="*" columns="*">
+    <mb-side-menu *mbIfIos></mb-side-menu>
+    <ScrollView>
+        <StackLayout class="PageStackLayout" aria-orientation="horizontal" style="background-color: #ffffff;">
+            <Label  text="Load Time :  {{ pageTimeDifference }} ms " textWrap="true" style="text-align: right; padding-right: 5"> </Label>
+            <GridLayout rows="*" columns="*,130" class="RegisterStackLayout" style="background-color: #18669C;">
+                <StackLayout row="0" col="0" orientation="vertical" class="regStackLbls" verticalAlignment="top" horizontalAlignment="left">
+                    <Label text="Not Registered?" textWrap="true" class="font-bold regLblHead"> </Label>
+                    <Label text="Create a MyBlue Account to access your personal and plan information." class="regLblSubHead" textWrap="true"> </Label>
+                </StackLayout>
+                <StackLayout row="0" col="1" verticalAlignment="center" horizontalAlignment="right" class="registerNowText" (touch)="registerNow()" pageTransition="none">
+                    <StackLayout orientation="horizontal">
+                        <Label text="Register Now"> </Label>
+                        <Image loadMode="async" src="~/images/icon/right_arrow.png"></Image>
+                    </StackLayout>
+                </StackLayout>
+            </GridLayout>
+            <StackLayout class="mainStack" visibility="{{ isnotify ? 'visible' : 'collapsed' }}">
+                <GridLayout rows="*" columns="*, 45" class="notification_grid">
+                    <StackLayout class="notify_text" row="0" col="0" orientation="vertical" visibility="{{ isEnablenotify ? 'visible' : 'collapsed' }}">
+                        <Label text="For security, ‘Touch ID’ and ‘Remember Me’ has been disabled" textWrap="true" class="font-bold"> </Label>
+                        <Label text="You will need to re-enable it on your next sign in." textWrap="true" class=""> </Label>
+                    </StackLayout>
+                    <StackLayout class="notify_text" row="0" col="0" orientation="vertical" visibility="{{ !isEnablenotify ? 'visible' : 'collapsed' }}">
+                        <Label text="For security, ‘Remember Me’ has been reset" textWrap="true" class="font-bold"> </Label>
+                        <Label text="You will need to re-enable it on your next sign in." textWrap="true" class=""> </Label>
+                    </StackLayout>
+                    <StackLayout row="0" col="1" class="notify_arrow" orientation="horizontal" horizontalAlignment="right">
+                        <Image loadMode="async" (tap)="nofiyClose();" src="~/images/icon/close_type_2.png"></Image>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="mainStack" visibility="{{ (isTouchIDdisableNotification && isTouchIDdisableNotificationclose) ? 'visible' : 'collapsed' }}">
+                <GridLayout rows="*" columns="*, 45" class="notification_grid">
+                    <StackLayout class="notify_text" row="0" col="0" orientation="vertical">
+                        <Label text="Touch ID has been temporarily disabled" textWrap="true" class="font-bold"> </Label>
+                        <Label text="It will be re-enabled after you sign in using your username and password." textWrap="true" class=""> </Label>
+                    </StackLayout>
+                    <StackLayout row="0" col="1" class="notify_arrow" orientation="horizontal" horizontalAlignment="right">
+                        <Image loadMode="async" (tap)="nofiyClose();" src="~/images/icon/close_type_2.png"></Image>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout class="mainStack" visibility="{{ isLoginApi ? 'visible' : 'collapsed' }}">
+                <GridLayout rows="*" columns="*, 45" class="notification_grid">
+                    <StackLayout class="notify_text" row="0" col="0" orientation="vertical">
+                        <Label text="Authentication Failed!!" textWrap="true" class="font-bold"> </Label>
+                        <Label text="Authentication failed from API please enter the valid credentials" textWrap="true" class=""> </Label>
+                    </StackLayout>
+                    <StackLayout row="0" col="1" class="notify_arrow" orientation="horizontal" horizontalAlignment="right">
+                        <Image loadMode="async" (tap)="nofiyClose();" src="~/images/icon/close_type_2.png"></Image>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+            <StackLayout style="background-color: white;">
+                <Label class="userPwdLbl" text="Username"></Label>
+                <TextField class="userTxtFld" #userNametxt id="userName" autocapitalizationType="none" hint="Username" [(ngModel)]='userName' returnKeyType="next" (returnPress)="goToPasswordField()"></TextField>
+                <Label id="lblUserNameReq" text="*Required Field" textWrap="true" class="validationCheck" visibility="{{(isUserNameFilled) ? 'collapsed' : 'visible' }}"></Label>
+
+                <Label class="userPwdLbl" text="Password"></Label>
+                <GridLayout rows="*" columns="*,100" class="pwdTxtFld">
+                    <TextField autocorrect="false" #passwordtxt id="password" secure="true" [(ngModel)]='password' (ngModelChange)="savingText(password)" hint="Password" [text]="password"></TextField>
+                    <StackLayout row="0" col="1" verticalAlignment="center" horizontalAlignment="center">
+                        <Label text="Show" #showText class="showBtn" (tap)="showPassword()"></Label>
+                    </StackLayout>
+                </GridLayout>
+                <Label id="lblPasswordReq" [text]="lblPassword" textWrap="true" class="validationCheck" visibility="{{(!isPasswordFilled) ? 'visible' : 'collapsed' }}"></Label>
+                <GridLayout rows="*" columns="*,*" orientation="horizontal" class="UnCheckBox">
+                    <StackLayout row="0" col="0" class="remberCheck" orientation="horizontal" verticalAlignment="center" horizontalAlignment="center">
+                        <!--<Image *ngIf="isremember === false" src="res://uncheckedbox"> </Image>
+                        <Image *ngIf="isremember === true" src="res://checked_box"> </Image>-->
+                        <GridLayout rows="*" columns="45,*">
+                            <Switch row="0" col="0" #rememberSwitch checked="true" (checkedChange)="toggleisremember($event)"></Switch>
+                            <StackLayout row="0" col="1" verticalAlignment="center" horizontalAlignment="left">
+                                <Label text="Remember Me" textWrap="true"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </StackLayout>
+                    <StackLayout row="0" col="1" class="checkTouchId" orientation="horizontal" verticalAlignment="center" horizontalAlignment="center">
+                        <!--<Image *ngIf="isEnable === false" src="res://uncheckedbox"> </Image>
+                        <Image *ngIf="isEnable === true" src="res://checked_box"> </Image>-->
+                        <GridLayout rows="*" columns="45,*">
+                            <Switch row="0" col="0" #enableTouchIDSwitch checked="false" (checkedChange)="toggleisEnable($event)"></Switch>
+                            <StackLayout row="0" col="1" verticalAlignment="center" horizontalAlignment="left">
+                                <Label text="Touch ID" textWrap="true"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </StackLayout>
+                </GridLayout>
+                <Button id="btnSubmit" text="Sign in" [isUserInteractionEnabled]="signInInteraction" class="loginBtn" autocapitalizationType="none" (tap)="Login(userName, password)"></Button>
+                <GridLayout #touchIDStack rows="*" columns="*" visibility="{{ touchID ? 'visible' : 'collapsed' }}" [visibility] [ngClass]="touchIDGrid">
+                    <StackLayout class="touchID" orientation="horizontal" horizontalAlignment="center" row="0" column="0" [isUserInteractionEnabled]="touchIDInteraction" (tap)="doVerifyFingerprintWithCustomFallback();">
+                        <Image loadMode="async" [src]="touchID_src"></Image>
+                        <Label text="Sign In using Touch ID"> </Label>
+                    </StackLayout>
+                </GridLayout>
+                <StackLayout orientation="horizontal">
+                    <GridLayout rows="*" columns="*,40" (tap)="ForgotPassword()" class="ForgotPasswordStack">
+                        <Label row="0" col="0" text="Forgot password?" (tap)="ForgotPassword()" class="forgottenPassword"> </Label>
+                        <Image loadMode="async" row="0" col="1" class="rightArrow" src="~/images/icon/right.png"></Image>
+                    </GridLayout>
+                    <!--
+                    <StackLayout orientation="horizontal" class="ForgotPassword" *ngIf="isuserChange">
+                        <Label text="Change your" class="forgottenPassword"> </Label>
+                        <Label text="UserName" (tap)="changeUser()" class="forgottenPasswordLink"> </Label>
+                    </StackLayout>
+                    -->
+                </StackLayout>
+                <StackLayout class="extraSpace"></StackLayout>
+                <StackLayout class="shadow">
+                    <Image loadMode="async" src="~/images/myblue-app2.0-card-shadow.png"></Image>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+    <DockLayout style.verticalAlignment="bottom" class="footerTab">
+        <mb-tab></mb-tab>
+    </DockLayout>
+
+</GridLayout>
