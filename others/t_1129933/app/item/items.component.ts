@@ -22,7 +22,6 @@ export class ItemsComponent implements OnInit {
 
     onListLoaded(args) {
         this.lv = <ListView>args.object;
-        console.log(this.lv);
         this.lv.ios.cellLayoutMarginsFollowReadableWidth = false;
     }
 }
