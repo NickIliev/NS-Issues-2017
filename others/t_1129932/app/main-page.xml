@@ -6,18 +6,16 @@
         </ActionBar>
     </Page.actionBar>
 
-    <rc:RadCalendar id="calendar" eventsViewMode="Inline" viewMode="Month" selectionMode="Single" eventSource="{{ calendarEvents }}">
+<rc:RadCalendar id="calendar" eventsViewMode="Inline" viewMode="Month" selectionMode="Single" eventSource="{{ calendarEvents }}">
 
-        <rc:RadCalendar.monthViewStyle>
-            <rc:CalendarMonthViewStyle backgroundColor="Gray" showTitle="true" showWeekNumbers="true" showDayNames="true" >
-
-                <rc:CalendarMonthviewStyle.inlineEventCellStyle>
-                    <rc:InlineEventCellStyle cellBackgroundColor="LightPink" eventTextColor="Gold" eventFontName="Avenir" eventFontStyle="BoldItalic" eventTextSize="12" 
-                                            timeTextColor="DeepSkyBlue" timeFontName="Courier" timeFontStyle="Regular" timeTextSize="14"/>
-                </rc:CalendarMonthviewStyle.inlineEventCellStyle>
-
-            </rc:CalendarMonthViewStyle>
-        </rc:RadCalendar.monthViewStyle>
-        
-    </rc:RadCalendar>
+    <rc:RadCalendar.monthViewStyle>
+        <rc:CalendarMonthViewStyle backgroundColor="Gray" showTitle="true" showWeekNumbers="true" showDayNames="true" >
+            <rc:CalendarMonthviewStyle.inlineEventCellStyle>
+                <rc:InlineEventCellStyle cellBackgroundColor="LightPink" eventTextColor="Gold" eventFontName="Avenir" eventFontStyle="BoldItalic" eventTextSize="12" 
+                                        timeTextColor="DeepSkyBlue" timeFontName="Courier" timeFontStyle="Regular" timeTextSize="14"/>
+            </rc:CalendarMonthviewStyle.inlineEventCellStyle>
+        </rc:CalendarMonthViewStyle>
+    </rc:RadCalendar.monthViewStyle>
+    
+</rc:RadCalendar> <!-- closing tag of RadCalendar -->
 </Page>
