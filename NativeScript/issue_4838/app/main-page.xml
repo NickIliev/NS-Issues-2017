@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+	<TabView id="tabViewContainer">
+		<TabView.items>
+			<TabViewItem title="Tab 1">
+				<TabViewItem.view>
+					<GridLayout rows="200, 200" columns="200, 200" backgroundColor="gray">
+						<Label text="0, 0" row="0" col="0" />
+						<Label text="0, 1" row="0" col="1" />
+						<Label text="1, 0" row="1" col="0" />
+						<Label text="1, 1" row="1" col="1" />
+					</GridLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Tab 2">
+				<TabViewItem.view>
+					<StackLayout class="p-20">
+						<Label text="Tap the button" class="h1 text-center" />
+						<Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active" />
+						<Label text="{{ message }}" class="h2 text-center" textWrap="true" />
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+		</TabView.items>
+	</TabView>
+</Page>
