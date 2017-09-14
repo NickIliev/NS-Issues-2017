@@ -1,9 +1,9 @@
 
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
 
-    <ListView items="{{ items }}"  loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
+    <ListView items="{{ items }}" loadMoreItems="onLoadMoreItems"  loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
         <ListView.itemTemplate>
-            <Label text="ala bala" textWrap="true" />
+            <Label text="ala bala" height="50" textWrap="true" />
         </ListView.itemTemplate>
     </ListView>
 </Page>
