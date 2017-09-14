@@ -1,0 +1,9 @@
+
+<StackLayout class="page">
+    <ListView [items]="items" (loadMoreItems)="onLoadMore($event)" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>
