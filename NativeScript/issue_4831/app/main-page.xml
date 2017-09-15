@@ -1,0 +1,37 @@
+<!--
+The markup in NativeScript apps contains a series of user interface components, each
+of which NativeScript renders with a platform-specific iOS or Android native control.
+You can find a full list of user interface components you can use in your app at
+https://docs.nativescript.org/ui/components.
+-->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+	<TabView class="tabview-look" selectedTabTextColor="#990000" loaded="mainContentLoaded" id="tabView1">
+		<TabView.items>
+			<TabViewItem title="&#xE7F4;">
+				<TabViewItem.view>
+					<label text="Some text" horizontalAlignment="center" textwrap="true" />
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="&#xE22B;">
+				<TabViewItem.view>
+                    <label text="Some text" horizontalAlignment="center" textwrap="true" />
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="&#xE616;">
+				<TabViewItem.view>
+					<label text="Check calendar" horizontalAlignment="center" textwrap="true" />
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="&#xE0BF;">
+				<TabViewItem.view>
+					<label text="Ask Questions" horizontalAlignment="center" textwrap="true" />
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="&#xE0E0;">
+				<TabViewItem.view>
+					<label text="Recent updates go here" horizontalAlignment="center" textwrap="true" />
+				</TabViewItem.view>
+			</TabViewItem>
+		</TabView.items>
+	</TabView>
+</Page>
