@@ -1,18 +1,27 @@
-﻿
-@import 'nativescript-theme-core/css/core.light.css';
+﻿@import 'nativescript-theme-core/css/core.light.css';
 
 .btn {
     font-size: 18;
 }
 
+
+/* NOT Centered when using MaterialIcons font */
 .tabview-look {
     background-color: #fff;
-    font-family: Material Icons, MaterialIcons;
+    font-family: "MaterialIcons", "Material Icons";
     font-size: 30;
 }
 
+/* centered when using icmoon font */
 .tabview-iconMoon {
     background-color: #fff;
-    font-family: icomoon;
+    font-family: "icomoon";
+    font-size: 30;
+}
+
+/* NOT Centered when using Nasalization icon font */
+.tabview-nasa {
+    background-color: #fff;
+    font-family: "Nasalization";
     font-size: 30;
 }
