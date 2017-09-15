@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui-pro/listview"  navigatingTo="navigatingTo" class="page">
+    <StackLayout class="p-20" id="container" height="300">
+        <Label text="Tap the button" class="h1 text-center"/>
+    </StackLayout>
+</Page>
