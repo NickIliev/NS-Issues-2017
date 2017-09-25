@@ -1,0 +1,7 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <StackLayout tap="{{ onTap }}" class="p-20" backgroundColor="yellow" height="500" width="250">
+        <Label text="Tap anywhere in the yellow box to trigger the sound effect" textWrap="true" />
+        
+    </StackLayout>
+</Page>
