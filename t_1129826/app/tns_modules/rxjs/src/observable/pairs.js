@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var PairsObservable_1 = require("./PairsObservable");
+exports.pairs = PairsObservable_1.PairsObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFpcnMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJwYWlycy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHFEQUFzRDtBQUV6QyxRQUFBLEtBQUssR0FBRyxpQ0FBZSxDQUFDLE1BQU0sQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7ICBQYWlyc09ic2VydmFibGUgIH0gZnJvbSAnLi9QYWlyc09ic2VydmFibGUnO1xyXG5cclxuZXhwb3J0IGNvbnN0IHBhaXJzID0gUGFpcnNPYnNlcnZhYmxlLmNyZWF0ZTsiXX0=

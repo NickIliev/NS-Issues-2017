@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var last_1 = require("../../operator/last");
+Observable_1.Observable.prototype.last = last_1.last;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFzdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImxhc3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSwrQ0FBOEM7QUFDOUMsNENBQTJDO0FBRTNDLHVCQUFVLENBQUMsU0FBUyxDQUFDLElBQUksR0FBUSxXQUFJLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICcuLi8uLi9PYnNlcnZhYmxlJztcbmltcG9ydCB7IGxhc3QgfSBmcm9tICcuLi8uLi9vcGVyYXRvci9sYXN0JztcblxuT2JzZXJ2YWJsZS5wcm90b3R5cGUubGFzdCA9IDxhbnk+bGFzdDtcblxuZGVjbGFyZSBtb2R1bGUgJy4uLy4uL09ic2VydmFibGUnIHtcbiAgaW50ZXJmYWNlIE9ic2VydmFibGU8VD4ge1xuICAgIGxhc3Q6IHR5cGVvZiBsYXN0O1xuICB9XG59Il19

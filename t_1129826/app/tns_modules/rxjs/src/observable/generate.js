@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var GenerateObservable_1 = require("./GenerateObservable");
+exports.generate = GenerateObservable_1.GenerateObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2VuZXJhdGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJnZW5lcmF0ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDJEQUEwRDtBQUU3QyxRQUFBLFFBQVEsR0FBRyx1Q0FBa0IsQ0FBQyxNQUFNLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBHZW5lcmF0ZU9ic2VydmFibGUgfSBmcm9tICcuL0dlbmVyYXRlT2JzZXJ2YWJsZSc7XG5cbmV4cG9ydCBjb25zdCBnZW5lcmF0ZSA9IEdlbmVyYXRlT2JzZXJ2YWJsZS5jcmVhdGU7XG4iXX0=

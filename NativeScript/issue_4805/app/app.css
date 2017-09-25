@@ -1,0 +1,12 @@
+﻿
+@import 'nativescript-theme-core/css/core.light.css';
+
+.page {
+    background-color: green;
+    font-size: 18;
+}
+
+.action-bar {
+    background-color: blue;
+    color: red;
+}

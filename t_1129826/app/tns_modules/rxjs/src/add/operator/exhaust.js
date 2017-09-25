@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var exhaust_1 = require("../../operator/exhaust");
+Observable_1.Observable.prototype.exhaust = exhaust_1.exhaust;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXhoYXVzdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImV4aGF1c3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSwrQ0FBOEM7QUFDOUMsa0RBQWlEO0FBRWpELHVCQUFVLENBQUMsU0FBUyxDQUFDLE9BQU8sR0FBRyxpQkFBTyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBleGhhdXN0IH0gZnJvbSAnLi4vLi4vb3BlcmF0b3IvZXhoYXVzdCc7XG5cbk9ic2VydmFibGUucHJvdG90eXBlLmV4aGF1c3QgPSBleGhhdXN0O1xuXG5kZWNsYXJlIG1vZHVsZSAnLi4vLi4vT2JzZXJ2YWJsZScge1xuICBpbnRlcmZhY2UgT2JzZXJ2YWJsZTxUPiB7XG4gICAgZXhoYXVzdDogdHlwZW9mIGV4aGF1c3Q7XG4gIH1cbn0iXX0=

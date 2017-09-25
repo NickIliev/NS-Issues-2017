@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var ArrayObservable_1 = require("./ArrayObservable");
+exports.of = ArrayObservable_1.ArrayObservable.of;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoib2YuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJvZi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHFEQUFzRDtBQUV6QyxRQUFBLEVBQUUsR0FBRyxpQ0FBZSxDQUFDLEVBQUUsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7ICBBcnJheU9ic2VydmFibGUgIH0gZnJvbSAnLi9BcnJheU9ic2VydmFibGUnO1xuXG5leHBvcnQgY29uc3Qgb2YgPSBBcnJheU9ic2VydmFibGUub2Y7Il19

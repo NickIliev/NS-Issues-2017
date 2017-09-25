@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var using_1 = require("../../observable/using");
+Observable_1.Observable.using = using_1.using;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNpbmcuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1c2luZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtDQUE4QztBQUM5QyxnREFBOEQ7QUFFOUQsdUJBQVUsQ0FBQyxLQUFLLEdBQUcsYUFBVyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgT2JzZXJ2YWJsZSB9IGZyb20gJy4uLy4uL09ic2VydmFibGUnO1xuaW1wb3J0IHsgdXNpbmcgYXMgc3RhdGljVXNpbmcgfSBmcm9tICcuLi8uLi9vYnNlcnZhYmxlL3VzaW5nJztcblxuT2JzZXJ2YWJsZS51c2luZyA9IHN0YXRpY1VzaW5nO1xuXG5kZWNsYXJlIG1vZHVsZSAnLi4vLi4vT2JzZXJ2YWJsZScge1xuICBuYW1lc3BhY2UgT2JzZXJ2YWJsZSB7XG4gICAgZXhwb3J0IGxldCB1c2luZzogdHlwZW9mIHN0YXRpY1VzaW5nO1xuICB9XG59Il19

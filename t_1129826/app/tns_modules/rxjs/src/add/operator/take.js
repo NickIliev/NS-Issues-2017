@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var take_1 = require("../../operator/take");
+Observable_1.Observable.prototype.take = take_1.take;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFrZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRha2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSwrQ0FBOEM7QUFDOUMsNENBQTJDO0FBRTNDLHVCQUFVLENBQUMsU0FBUyxDQUFDLElBQUksR0FBRyxXQUFJLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICcuLi8uLi9PYnNlcnZhYmxlJztcbmltcG9ydCB7IHRha2UgfSBmcm9tICcuLi8uLi9vcGVyYXRvci90YWtlJztcblxuT2JzZXJ2YWJsZS5wcm90b3R5cGUudGFrZSA9IHRha2U7XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIGludGVyZmFjZSBPYnNlcnZhYmxlPFQ+IHtcbiAgICB0YWtlOiB0eXBlb2YgdGFrZTtcbiAgfVxufSJdfQ==

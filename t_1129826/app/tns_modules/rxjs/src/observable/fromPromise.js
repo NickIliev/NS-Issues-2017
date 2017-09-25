@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var PromiseObservable_1 = require("./PromiseObservable");
+exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZnJvbVByb21pc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJmcm9tUHJvbWlzZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHlEQUEwRDtBQUU3QyxRQUFBLFdBQVcsR0FBRyxxQ0FBaUIsQ0FBQyxNQUFNLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyAgUHJvbWlzZU9ic2VydmFibGUgIH0gZnJvbSAnLi9Qcm9taXNlT2JzZXJ2YWJsZSc7XG5cbmV4cG9ydCBjb25zdCBmcm9tUHJvbWlzZSA9IFByb21pc2VPYnNlcnZhYmxlLmNyZWF0ZTsiXX0=

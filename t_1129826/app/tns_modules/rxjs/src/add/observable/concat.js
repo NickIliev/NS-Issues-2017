@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var concat_1 = require("../../observable/concat");
+Observable_1.Observable.concat = concat_1.concat;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uY2F0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uY2F0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0NBQThDO0FBQzlDLGtEQUFpRTtBQUVqRSx1QkFBVSxDQUFDLE1BQU0sR0FBRyxlQUFZLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBjb25jYXQgYXMgY29uY2F0U3RhdGljIH0gZnJvbSAnLi4vLi4vb2JzZXJ2YWJsZS9jb25jYXQnO1xuXG5PYnNlcnZhYmxlLmNvbmNhdCA9IGNvbmNhdFN0YXRpYztcblxuZGVjbGFyZSBtb2R1bGUgJy4uLy4uL09ic2VydmFibGUnIHtcbiAgbmFtZXNwYWNlIE9ic2VydmFibGUge1xuICAgIGV4cG9ydCBsZXQgY29uY2F0OiB0eXBlb2YgY29uY2F0U3RhdGljO1xuICB9XG59Il19

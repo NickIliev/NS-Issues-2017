@@ -1,0 +1,7 @@
+<Page navigatingTo="onNavigatingTo">
+    <ListView items="{{ $value }}">
+        <ListView.itemTemplate>
+            <Image src="{{ imageUrl }}" loadAsync="true" />
+        </ListView.itemTemplate>
+    </ListView>
+</Page>

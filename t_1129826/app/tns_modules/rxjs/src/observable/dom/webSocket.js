@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var WebSocketSubject_1 = require("./WebSocketSubject");
+exports.webSocket = WebSocketSubject_1.WebSocketSubject.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid2ViU29ja2V0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsid2ViU29ja2V0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsdURBQXdEO0FBRTNDLFFBQUEsU0FBUyxHQUFHLG1DQUFnQixDQUFDLE1BQU0sQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7ICBXZWJTb2NrZXRTdWJqZWN0ICB9IGZyb20gJy4vV2ViU29ja2V0U3ViamVjdCc7XG5cbmV4cG9ydCBjb25zdCB3ZWJTb2NrZXQgPSBXZWJTb2NrZXRTdWJqZWN0LmNyZWF0ZTsiXX0=

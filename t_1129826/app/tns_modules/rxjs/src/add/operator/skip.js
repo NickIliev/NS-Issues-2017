@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var skip_1 = require("../../operator/skip");
+Observable_1.Observable.prototype.skip = skip_1.skip;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2tpcC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInNraXAudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSwrQ0FBOEM7QUFDOUMsNENBQTJDO0FBRTNDLHVCQUFVLENBQUMsU0FBUyxDQUFDLElBQUksR0FBRyxXQUFJLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICcuLi8uLi9PYnNlcnZhYmxlJztcbmltcG9ydCB7IHNraXAgfSBmcm9tICcuLi8uLi9vcGVyYXRvci9za2lwJztcblxuT2JzZXJ2YWJsZS5wcm90b3R5cGUuc2tpcCA9IHNraXA7XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIGludGVyZmFjZSBPYnNlcnZhYmxlPFQ+IHtcbiAgICBza2lwOiB0eXBlb2Ygc2tpcDtcbiAgfVxufSJdfQ==

@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var map_1 = require("../../operator/map");
+Observable_1.Observable.prototype.map = map_1.map;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWFwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsK0NBQThDO0FBQzlDLDBDQUF5QztBQUV6Qyx1QkFBVSxDQUFDLFNBQVMsQ0FBQyxHQUFHLEdBQUcsU0FBRyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBtYXAgfSBmcm9tICcuLi8uLi9vcGVyYXRvci9tYXAnO1xuXG5PYnNlcnZhYmxlLnByb3RvdHlwZS5tYXAgPSBtYXA7XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIGludGVyZmFjZSBPYnNlcnZhYmxlPFQ+IHtcbiAgICBtYXA6IHR5cGVvZiBtYXA7XG4gIH1cbn0iXX0=

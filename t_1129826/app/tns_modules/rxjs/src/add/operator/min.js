@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var min_1 = require("../../operator/min");
+Observable_1.Observable.prototype.min = min_1.min;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWluLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWluLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsK0NBQThDO0FBQzlDLDBDQUF5QztBQUV6Qyx1QkFBVSxDQUFDLFNBQVMsQ0FBQyxHQUFHLEdBQUcsU0FBRyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBtaW4gfSBmcm9tICcuLi8uLi9vcGVyYXRvci9taW4nO1xuXG5PYnNlcnZhYmxlLnByb3RvdHlwZS5taW4gPSBtaW47XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIGludGVyZmFjZSBPYnNlcnZhYmxlPFQ+IHtcbiAgICBtaW46IHR5cGVvZiBtaW47XG4gIH1cbn0iXX0=

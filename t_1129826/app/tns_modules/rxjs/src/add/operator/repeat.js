@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var repeat_1 = require("../../operator/repeat");
+Observable_1.Observable.prototype.repeat = repeat_1.repeat;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVwZWF0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicmVwZWF0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsK0NBQThDO0FBQzlDLGdEQUErQztBQUUvQyx1QkFBVSxDQUFDLFNBQVMsQ0FBQyxNQUFNLEdBQUcsZUFBTSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyByZXBlYXQgfSBmcm9tICcuLi8uLi9vcGVyYXRvci9yZXBlYXQnO1xuXG5PYnNlcnZhYmxlLnByb3RvdHlwZS5yZXBlYXQgPSByZXBlYXQ7XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIGludGVyZmFjZSBPYnNlcnZhYmxlPFQ+IHtcbiAgICByZXBlYXQ6IHR5cGVvZiByZXBlYXQ7XG4gIH1cbn0iXX0=

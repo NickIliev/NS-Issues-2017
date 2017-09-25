@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var pairwise_1 = require("../../operator/pairwise");
+Observable_1.Observable.prototype.pairwise = pairwise_1.pairwise;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFpcndpc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJwYWlyd2lzZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUNBLCtDQUE4QztBQUM5QyxvREFBbUQ7QUFFbkQsdUJBQVUsQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLG1CQUFRLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICcuLi8uLi9PYnNlcnZhYmxlJztcbmltcG9ydCB7IHBhaXJ3aXNlIH0gZnJvbSAnLi4vLi4vb3BlcmF0b3IvcGFpcndpc2UnO1xuXG5PYnNlcnZhYmxlLnByb3RvdHlwZS5wYWlyd2lzZSA9IHBhaXJ3aXNlO1xuXG5kZWNsYXJlIG1vZHVsZSAnLi4vLi4vT2JzZXJ2YWJsZScge1xuICBpbnRlcmZhY2UgT2JzZXJ2YWJsZTxUPiB7XG4gICAgcGFpcndpc2U6IHR5cGVvZiBwYWlyd2lzZTtcbiAgfVxufSJdfQ==

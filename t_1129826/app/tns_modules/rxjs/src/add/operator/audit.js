@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var audit_1 = require("../../operator/audit");
+Observable_1.Observable.prototype.audit = audit_1.audit;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXVkaXQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJhdWRpdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtDQUE4QztBQUM5Qyw4Q0FBNkM7QUFFN0MsdUJBQVUsQ0FBQyxTQUFTLENBQUMsS0FBSyxHQUFHLGFBQUssQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICcuLi8uLi9PYnNlcnZhYmxlJztcbmltcG9ydCB7IGF1ZGl0IH0gZnJvbSAnLi4vLi4vb3BlcmF0b3IvYXVkaXQnO1xuXG5PYnNlcnZhYmxlLnByb3RvdHlwZS5hdWRpdCA9IGF1ZGl0O1xuXG5kZWNsYXJlIG1vZHVsZSAnLi4vLi4vT2JzZXJ2YWJsZScge1xuICBpbnRlcmZhY2UgT2JzZXJ2YWJsZTxUPiB7XG4gICAgYXVkaXQ6IHR5cGVvZiBhdWRpdDtcbiAgfVxufSJdfQ==

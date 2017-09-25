@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var race_1 = require("../operator/race");
+exports.race = race_1.raceStatic;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmFjZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInJhY2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSx5Q0FBOEM7QUFFakMsUUFBQSxJQUFJLEdBQUcsaUJBQVUsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHJhY2VTdGF0aWMgfSBmcm9tICcuLi9vcGVyYXRvci9yYWNlJztcblxuZXhwb3J0IGNvbnN0IHJhY2UgPSByYWNlU3RhdGljO1xuIl19

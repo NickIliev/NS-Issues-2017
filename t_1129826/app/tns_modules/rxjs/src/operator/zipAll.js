@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var zip_1 = require("./zip");
+/**
+ * @param project
+ * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
+ * @method zipAll
+ * @owner Observable
+ */
+function zipAll(project) {
+    return this.lift(new zip_1.ZipOperator(project));
+}
+exports.zipAll = zipAll;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiemlwQWxsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiemlwQWxsLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkJBQW9DO0FBR3BDOzs7OztHQUtHO0FBQ0gsZ0JBQWtELE9BQXNDO0lBQ3RGLE1BQU0sQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksaUJBQVcsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDO0FBQzdDLENBQUM7QUFGRCx3QkFFQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFppcE9wZXJhdG9yIH0gZnJvbSAnLi96aXAnO1xuaW1wb3J0IHsgT2JzZXJ2YWJsZSB9IGZyb20gJy4uL09ic2VydmFibGUnO1xuXG4vKipcbiAqIEBwYXJhbSBwcm9qZWN0XG4gKiBAcmV0dXJuIHtPYnNlcnZhYmxlPFI+fFdlYlNvY2tldFN1YmplY3Q8VD58T2JzZXJ2YWJsZTxUPn1cbiAqIEBtZXRob2QgemlwQWxsXG4gKiBAb3duZXIgT2JzZXJ2YWJsZVxuICovXG5leHBvcnQgZnVuY3Rpb24gemlwQWxsPFQsIFI+KHRoaXM6IE9ic2VydmFibGU8VD4sIHByb2plY3Q/OiAoLi4udmFsdWVzOiBBcnJheTxhbnk+KSA9PiBSKTogT2JzZXJ2YWJsZTxSPiB7XG4gIHJldHVybiB0aGlzLmxpZnQobmV3IFppcE9wZXJhdG9yKHByb2plY3QpKTtcbn1cbiJdfQ==

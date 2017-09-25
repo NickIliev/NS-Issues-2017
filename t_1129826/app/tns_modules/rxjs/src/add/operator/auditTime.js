@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var auditTime_1 = require("../../operator/auditTime");
+Observable_1.Observable.prototype.auditTime = auditTime_1.auditTime;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXVkaXRUaW1lLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXVkaXRUaW1lLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0NBQThDO0FBQzlDLHNEQUFxRDtBQUVyRCx1QkFBVSxDQUFDLFNBQVMsQ0FBQyxTQUFTLEdBQUcscUJBQVMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICcuLi8uLi9PYnNlcnZhYmxlJztcbmltcG9ydCB7IGF1ZGl0VGltZSB9IGZyb20gJy4uLy4uL29wZXJhdG9yL2F1ZGl0VGltZSc7XG5cbk9ic2VydmFibGUucHJvdG90eXBlLmF1ZGl0VGltZSA9IGF1ZGl0VGltZTtcblxuZGVjbGFyZSBtb2R1bGUgJy4uLy4uL09ic2VydmFibGUnIHtcbiAgaW50ZXJmYWNlIE9ic2VydmFibGU8VD4ge1xuICAgIGF1ZGl0VGltZTogdHlwZW9mIGF1ZGl0VGltZTtcbiAgfVxufSJdfQ==

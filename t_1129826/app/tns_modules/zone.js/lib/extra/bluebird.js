@@ -1,0 +1,21 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+Zone.__load_patch('bluebird', function (global, Zone, api) {
+    // TODO: @JiaLiPassion, we can automatically patch bluebird
+    // if global.Promise = Bluebird, but sometimes in nodejs,
+    // global.Promise is not Bluebird, and Bluebird is just be
+    // used by other libraries such as sequelize, so I think it is
+    // safe to just expose a method to patch Bluebird explicitly
+    var BLUEBIRD = 'bluebird';
+    Zone[Zone.__symbol__(BLUEBIRD)] = function patchBluebird(Bluebird) {
+        Bluebird.setScheduler(function (fn) {
+            Zone.current.scheduleMicroTask(BLUEBIRD, fn);
+        });
+    };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmx1ZWJpcmQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJibHVlYmlyZC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7O0dBTUc7QUFDSCxJQUFJLENBQUMsWUFBWSxDQUFDLFVBQVUsRUFBRSxVQUFDLE1BQVcsRUFBRSxJQUFjLEVBQUUsR0FBaUI7SUFDM0UsMkRBQTJEO0lBQzNELHlEQUF5RDtJQUN6RCwwREFBMEQ7SUFDMUQsOERBQThEO0lBQzlELDREQUE0RDtJQUM1RCxJQUFNLFFBQVEsR0FBRyxVQUFVLENBQUM7SUFDM0IsSUFBWSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsUUFBUSxDQUFDLENBQUMsR0FBRyx1QkFBdUIsUUFBYTtRQUM3RSxRQUFRLENBQUMsWUFBWSxDQUFDLFVBQUMsRUFBWTtZQUNqQyxJQUFJLENBQUMsT0FBTyxDQUFDLGlCQUFpQixDQUFDLFFBQVEsRUFBRSxFQUFFLENBQUMsQ0FBQztRQUMvQyxDQUFDLENBQUMsQ0FBQztJQUNMLENBQUMsQ0FBQztBQUNKLENBQUMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAbGljZW5zZVxuICogQ29weXJpZ2h0IEdvb2dsZSBJbmMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQuXG4gKlxuICogVXNlIG9mIHRoaXMgc291cmNlIGNvZGUgaXMgZ292ZXJuZWQgYnkgYW4gTUlULXN0eWxlIGxpY2Vuc2UgdGhhdCBjYW4gYmVcbiAqIGZvdW5kIGluIHRoZSBMSUNFTlNFIGZpbGUgYXQgaHR0cHM6Ly9hbmd1bGFyLmlvL2xpY2Vuc2VcbiAqL1xuWm9uZS5fX2xvYWRfcGF0Y2goJ2JsdWViaXJkJywgKGdsb2JhbDogYW55LCBab25lOiBab25lVHlwZSwgYXBpOiBfWm9uZVByaXZhdGUpID0+IHtcbiAgLy8gVE9ETzogQEppYUxpUGFzc2lvbiwgd2UgY2FuIGF1dG9tYXRpY2FsbHkgcGF0Y2ggYmx1ZWJpcmRcbiAgLy8gaWYgZ2xvYmFsLlByb21pc2UgPSBCbHVlYmlyZCwgYnV0IHNvbWV0aW1lcyBpbiBub2RlanMsXG4gIC8vIGdsb2JhbC5Qcm9taXNlIGlzIG5vdCBCbHVlYmlyZCwgYW5kIEJsdWViaXJkIGlzIGp1c3QgYmVcbiAgLy8gdXNlZCBieSBvdGhlciBsaWJyYXJpZXMgc3VjaCBhcyBzZXF1ZWxpemUsIHNvIEkgdGhpbmsgaXQgaXNcbiAgLy8gc2FmZSB0byBqdXN0IGV4cG9zZSBhIG1ldGhvZCB0byBwYXRjaCBCbHVlYmlyZCBleHBsaWNpdGx5XG4gIGNvbnN0IEJMVUVCSVJEID0gJ2JsdWViaXJkJztcbiAgKFpvbmUgYXMgYW55KVtab25lLl9fc3ltYm9sX18oQkxVRUJJUkQpXSA9IGZ1bmN0aW9uIHBhdGNoQmx1ZWJpcmQoQmx1ZWJpcmQ6IGFueSkge1xuICAgIEJsdWViaXJkLnNldFNjaGVkdWxlcigoZm46IEZ1bmN0aW9uKSA9PiB7XG4gICAgICBab25lLmN1cnJlbnQuc2NoZWR1bGVNaWNyb1Rhc2soQkxVRUJJUkQsIGZuKTtcbiAgICB9KTtcbiAgfTtcbn0pOyJdfQ==

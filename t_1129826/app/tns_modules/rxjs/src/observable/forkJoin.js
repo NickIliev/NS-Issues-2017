@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var ForkJoinObservable_1 = require("./ForkJoinObservable");
+exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9ya0pvaW4uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJmb3JrSm9pbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDJEQUE0RDtBQUUvQyxRQUFBLFFBQVEsR0FBRyx1Q0FBa0IsQ0FBQyxNQUFNLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyAgRm9ya0pvaW5PYnNlcnZhYmxlICB9IGZyb20gJy4vRm9ya0pvaW5PYnNlcnZhYmxlJztcblxuZXhwb3J0IGNvbnN0IGZvcmtKb2luID0gRm9ya0pvaW5PYnNlcnZhYmxlLmNyZWF0ZTsiXX0=

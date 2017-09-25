@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var toArray_1 = require("../../operator/toArray");
+Observable_1.Observable.prototype.toArray = toArray_1.toArray;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9BcnJheS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRvQXJyYXkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSwrQ0FBOEM7QUFDOUMsa0RBQWlEO0FBRWpELHVCQUFVLENBQUMsU0FBUyxDQUFDLE9BQU8sR0FBRyxpQkFBTyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyB0b0FycmF5IH0gZnJvbSAnLi4vLi4vb3BlcmF0b3IvdG9BcnJheSc7XG5cbk9ic2VydmFibGUucHJvdG90eXBlLnRvQXJyYXkgPSB0b0FycmF5O1xuXG5kZWNsYXJlIG1vZHVsZSAnLi4vLi4vT2JzZXJ2YWJsZScge1xuICBpbnRlcmZhY2UgT2JzZXJ2YWJsZTxUPiB7XG4gICAgdG9BcnJheTogdHlwZW9mIHRvQXJyYXk7XG4gIH1cbn0iXX0=

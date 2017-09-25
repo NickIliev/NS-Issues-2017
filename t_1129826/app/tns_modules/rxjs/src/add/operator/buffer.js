@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../../Observable");
+var buffer_1 = require("../../operator/buffer");
+Observable_1.Observable.prototype.buffer = buffer_1.buffer;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnVmZmVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYnVmZmVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsK0NBQThDO0FBQzlDLGdEQUErQztBQUUvQyx1QkFBVSxDQUFDLFNBQVMsQ0FBQyxNQUFNLEdBQUcsZUFBTSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAnLi4vLi4vT2JzZXJ2YWJsZSc7XG5pbXBvcnQgeyBidWZmZXIgfSBmcm9tICcuLi8uLi9vcGVyYXRvci9idWZmZXInO1xuXG5PYnNlcnZhYmxlLnByb3RvdHlwZS5idWZmZXIgPSBidWZmZXI7XG5cbmRlY2xhcmUgbW9kdWxlICcuLi8uLi9PYnNlcnZhYmxlJyB7XG4gIGludGVyZmFjZSBPYnNlcnZhYmxlPFQ+IHtcbiAgICBidWZmZXI6IHR5cGVvZiBidWZmZXI7XG4gIH1cbn0iXX0=
