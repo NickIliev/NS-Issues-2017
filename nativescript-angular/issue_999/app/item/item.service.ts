@@ -27,10 +27,13 @@ export class ItemService {
             "Details": "",
             "Url": "http://www.ncbi.nlm.nih.gov/pubmed/9701682"
         }
-
     );
 
-    getItems(): [] {
+    getItems(): any[] {
         return this.items;
+    }
+
+    getItem(id: number): any {
+        return this.items.filter(item => item.id === id)[0];
     }
 }

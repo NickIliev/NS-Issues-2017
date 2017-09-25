@@ -1,6 +1,9 @@
 <ActionBar title="My App" class="action-bar">
 </ActionBar>
 
-<StackLayout class="page">
-    <Label *ngFor="let item of items; let i = index; let last = last;" [text]="item.Number"></Label>
-</StackLayout>
+<ScrollView>
+    <StackLayout class="page">
+        <Label *ngFor="let item of items; let i = index; let last = last;"
+                [text]="item.Number"></Label>
+    </StackLayout>
+</ScrollView>
