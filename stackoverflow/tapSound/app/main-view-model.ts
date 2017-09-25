@@ -11,8 +11,7 @@ export class HelloWorldModel extends Observable {
     }
 
     public onTap() {
-        let decorView: any = app.android.startActivity.getWindow().getDecorView();
-        
+        let decorView: any = app.android.startActivity.getWindow().getDecorView() 
         decorView.playSoundEffect(android.view.SoundEffectConstants.CLICK);
     }
 }
