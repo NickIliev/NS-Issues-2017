@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui/listview" navigatingTo="onNavigatingTo" unloaded="pageUnloaded" class="page">
+	<Page.actionBar>
+		<ActionBar title="RLV Refresh" icon="" class="action-bar">
+		</ActionBar>
+	</Page.actionBar>
+    
+	<StackLayout id="container">
+	</StackLayout>
+</Page>
