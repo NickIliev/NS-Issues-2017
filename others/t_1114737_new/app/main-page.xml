@@ -1,11 +1,13 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
 	<StackLayout>
+        <!-- toggle visibility outside ListView works as expected -->
         <Button text="toggle" tap="{{ toggleVisibility }}" />
         <Label text="hide/show" visibility="{{ isItemVisible ? 'visible' : 'collapsed' }}" textWrap="true" />
         
 		<ListView items="{{ items }}" height="500" loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
 			<ListView.itemTemplate>
 				<StackLayout>
+                    <!-- toggle visibility INSIDE ListView does not work  -->
 					<Button text="tap" tap="{{ toggleVisibility }} " />
 					<Label text="hide/show" visibility="{{ isItemVisible ? 'visible' : 'collapsed' }}" textWrap="true" />
 				</StackLayout>
