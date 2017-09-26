@@ -6,13 +6,13 @@
   "nativescript": {
     "id": "org.nativescript.t1114737js",
     "tns-android": {
-      "version": "3.0.1"
+      "version": "3.2.0"
     }
   },
   "dependencies": {
-    "nativescript-telerik-ui": "^2.0.1",
-    "nativescript-theme-core": "~1.0.2",
-    "tns-core-modules": "3.0.1"
+    "nativescript-telerik-ui": "^3.1.1",
+    "nativescript-theme-core": "~1.0.4",
+    "tns-core-modules": "3.2.0"
   },
   "devDependencies": {
     "babel-traverse": "6.4.5",

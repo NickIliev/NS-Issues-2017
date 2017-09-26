@@ -4,7 +4,7 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.t1114737new",
+    "id": "org.nativescript.issue4891",
     "tns-android": {
       "version": "3.2.0"
     },
