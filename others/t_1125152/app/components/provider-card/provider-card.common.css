@@ -1,0 +1,189 @@
+.swipeContainer{
+    padding:0 10% 10% 10%;
+}
+.swipe{
+    width:80;
+    padding:0 5%;
+    horizontal-align:center;
+    vertical-align:center;
+    height:100%
+}
+.swipe Label{
+    color:white;
+    font-size:11;
+    margin:10 0 0 0;
+    width:100%;
+    text-align:center
+}
+.swipeLocations{
+    background-color: #b81f23;
+}
+.swipeSpecialties{
+    background-color:#aa3439;
+}
+.swipeProfile{
+    background-color:#d35b4a;
+}
+.swipeIcon{
+    width:auto;
+    height:30
+}
+.icon{
+    width:12;
+    height:100%;
+}
+.info{
+	font-size:11;
+    letter-spacing:-.03;
+}
+.plusMore{
+    color:white;
+    font-size:10;
+    padding:3;
+    margin:13 0 0 5;
+    horizontal-align:center;
+    vertical-align:center;
+    text-align:center;
+    background-image: ~/images/plusMoreDot.png;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center center;
+}
+.preferredLabel{
+    padding:2.5 5;
+    margin:2.5 0 0 0;
+    font:10;
+    color:white;
+    font-weight:bold;
+    background-color: #9d0525
+}
+.preferredTitle{
+    color:#9d0525;
+    font-weight:bold;
+    font-size:16;
+}
+.subTitle{
+    font-size:16;
+    font-weight:bold;
+    margin:0;
+}
+.distance, .results {
+    font-size: 12;
+}
+
+.CallStackLayout{
+    margin:10 0 0 0;
+    vertical-align:bottom
+}
+.CallStackLayout image{
+    width:8;
+    height:auto
+}
+.CallStackLayout DockLayout{
+    padding:0 10 0 15;
+    height:40
+}
+
+.CallStackLayout Label{
+    margin:0;
+    padding:0;
+    font-size: 11.5;
+    letter-spacing:-.02;
+    color: #fff;
+    font-weight: bold;
+    text-transform:uppercase;
+    vertical-align:center
+}
+.reqAppandschedule {
+    width: 55%;
+    horizontal-align:right;
+    background-color:#bf0d32;
+}
+.selectBtn{
+    width:100%;
+    padding:8 0 8 8;
+    background-color:#513f3c;
+    text-align:left;
+}
+.selectBtn label{
+    font-size:12;
+    color:#fff;
+    text-transform:uppercase; 
+}
+
+.calltodoctor {
+    margin:0 0 0 10;
+    width: 43%;
+    background-color:#9e0425
+}
+.starRating{
+    height:15;
+    background-image: ~/images/five-stars.png;
+    background-position: top left;
+    background-size:cover; 
+}
+.starRatingDefatult{
+    left:0;
+    top:0;
+    height:15;
+    background-image: ~/images/five-stars-grey.png;
+    background-position: top left;
+    background-size:cover; 
+}
+.bestMatch{
+    color:white; 
+    margin:0 0 0 5; 
+    vertical-align:middle; 
+    font-weight:bold
+}
+.spacing{
+    letter-spacing:-.05
+}
+.location{
+    font-size: 10.5;
+    letter-spacing: -.03
+}
+ .headshot{
+    width:90;
+    height:130;
+    margin:0 10 0 0;
+    border-radius: 0;
+    background-repeat:no-repeat;
+    background-size:cover
+}
+
+/*.CallStackLayout{
+    margin:-10 0 0 0;
+    vertical-align:bottom
+}
+.CallStackLayout image{
+    width:8;
+    margin:0 0 0 10;
+    height:auto
+}
+.CallStackLayout DockLayout{
+    height:40
+}
+.CallStackLayout Label{
+    margin:0;
+    padding:0;
+    font-size: 12;
+    font-weight: bold;
+    text-transform:uppercase;
+    vertical-align:center
+}
+.reqAppandschedule {
+    width: 50%;
+    color:#bf0d32;
+    horizontal-align:right;
+}
+.reqAppandschedule Label{
+    color:#bf0d32;
+}
+.calltodoctor {
+    margin:0 0 0 10;
+    horizontal-align:right
+}
+.calltodoctor Label{
+    color:#9e0425;
+}*/

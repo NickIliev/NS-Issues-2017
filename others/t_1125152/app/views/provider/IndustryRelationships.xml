@@ -1,0 +1,3 @@
+ <StackLayout class="tabContent">
+      <HtmlView  html="{{ selectedProvider.IndustryRelationships }}"  />
+    </StackLayout>

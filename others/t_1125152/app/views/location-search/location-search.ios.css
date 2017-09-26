@@ -1,0 +1,7 @@
+@import url("~/views/location-search/location-search.common.css");
+
+
+#SearchBox{
+    margin-left: 15;
+    margin-right: 15;
+}

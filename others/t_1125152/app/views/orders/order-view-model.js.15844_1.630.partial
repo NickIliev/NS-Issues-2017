@@ -1,0 +1,207 @@
+var frameModule = require("ui/frame");
+var topmost = frameModule.topmost();
+var Observable = require("data/observable").Observable;
+var ObservableArray = require("data/observable-array").ObservableArray;
+var constants = require("~/common/constants");
+var utility = require("~/common/utility");
+var token = require("~/common/token");
+var ViewModel = require("~/common/view-model-base");
+var dialogsModule = require("ui/dialogs");
+var timer = require("timer");
+var applicationSettings = require("application-settings");
+
+function OrderViewModel() {
+    var data = {
+        pageTitle: "ReferralOrders",
+        isLoading: true,
+        isError: false,
+        message: "",
+        phone: "",
+        searchResults: {
+            Count: -1,
+            Data: new ObservableArray([])
+        },
+        selectedScreen: 0,
+        reqID: "",
+        dob: "",
+        token: "",
+        patientMRN: "",
+        agreement: "",
+        athenaID: "",
+        orderID: "",
+        searchTerm: "",
+        problem: "",
+        referral: "",
+        date: "",
+        orderingProvider: "",
+        orderReason: "",
+        zipCode: "",
+        fullName: null,
+        preferredPhysicianNPI: "0000000000"
+    };
+    var viewModel = new ViewModel(data);
+
+    viewModel.load = function () {
+        var that = this;
+        applicationSettings.setNumber("orderCount", 0);
+        that.set("isLoading", true);
+        token.updateToken(that.token);
+
+        try {
+            that.set("isError", false);
+            var requestOptions = {
+                url: constants.referralEaseUrl + "Referral/GetReferrals",
+                method: "POST",
+                headers: { "Content-Type": "application/json", "token": that.token },
+                content: JSON.stringify({ RequisitionID: that.reqID, PatientMRN: that.patientMRN, Agreement: that.agreement, Skip: 0, Take: 10 })
+            };
+            //console.log("order url", requestOptions.url);
+            //console.log("order headers", JSON.stringify(requestOptions.headers));
+            //console.log("order content", requestOptions.content);
+            return utility.httpRequest(that, requestOptions,
+                function (response) { // success callback
+                    that.empty();
+                    var i = -1;
+                    var data = response.content.toJSON();
+                    //console.log(JSON.stringify(response));
+                    that.searchResults.Count = data.Count;
+                    //console.log("search count", data.Count);
+                    if (data.Count > 0) {
+                        //console.log("order count", data.Count);
+                        applicationSettings.setNumber("orderCount", data.Count);
+                        that.set("count", data.Count + " Referral order(s) found. Click to schedule.");
+                        data.Data.forEach(function (item) {
+                            i++;
+                            //console.log(i++);
+                            var doneDate = item.ToBeDoneDate;
+                            doneDate = item.ToBeDoneDate.split(" ");
+                            var problem = item.Problem;
+                            problem = problem.split("-");
+                            item.DisplayProblem = problem[0];
+                            item.ToBeDoneDate = doneDate[0];
+                            var searchTerm = item.QOClassificationEntryName;
+                            searchTerm = item.QOClassificationEntryName.split(" Referral");
+                            item.SearchTerm = searchTerm[0];
+                            //console.log("search term", item.SearchTerm);
+                            item.Index = "item" + i;
+                            that.searchResults.Data.push(item);
+                        });
+                        token.updateToken(that.token);
+                    } else if (data.Count < 1) {
+                        that.set("count", "No orders found.");
+                        that.set("isError", true);
+                        that.set("message", "We were unable to find any open referral orders. Please contact University Hospitals at 1-866-UH4-CARE for further assistance.");
+                        var context = {
+                            title: "No orders found",
+                            message: "We were unable to find any open referral orders. Please contact University Hospitals at 1-866-UH4-CARE for further assistance.",
+                            okButtonText: "Try Again",
+                            cancelButtonText: "Contact UH"
+                        }
+                        utility.launchPopup("action", function (data) {
+                            token.updateToken(that.token);
+                            // callback
+                        }, null, context);
+                    };
+                    token.updateToken(that.token);
+                    that.set("isLoading", false);
+                },
+                function () { // error callback
+                    that.set("isLoading", false);
+                    that.set("isError", true);
+                }
+            );
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+
+    viewModel.empty = function () {
+        var that = this;
+        that.searchResults.Data.length = 0;
+        that.searchResults.Count = -1;
+    };
+
+    viewModel.referralTypeAllowed = function () {
+        var that = this;
+        token.updateToken(that.token);
+        var requestOptions = {
+            url: constants.referralEaseUrl + "Referral/IsReferralTypeAllowed?OrderId=" + that.orderID,
+            method: "POST",
+            //content: JSON.stringify({ PatientMRN: that.patientMRN, Skip: 0, Take: 5 }),
+            headers: { "Content-Type": "application/json", "token": that.token }
+        };
+        //console.log("allowed check content", requestOptions.content);
+        return utility.httpRequest(that, requestOptions,
+            function (response) { // success callback
+                token.updateToken(that.token);
+                //console.log("PreferredNPI", that.preferredPhysicianNPI);
+                var data = response.content.toJSON();
+                if (data.Messages.toString() == "Success") {
+                    token.updateToken(that.token);
+                    if (data.Data.IsAllowed == true) {
+                        frameModule.topmost().navigate({
+                            moduleName: "views/referral-providers/main/",
+                            context: {
+                                fullName: that.fullName,
+                                dob: that.dob,
+                                patientMRN: that.patientMRN,
+                                zipCode: that.zipCode,
+                                reqID: that.reqID,
+                                token: that.token,
+                                searchTerm: that.searchTerm,
+                                problem: that.problem,
+                                referral: that.referral,
+                                date: that.date,
+                                orderingProvider: that.orderingProvider,
+                                orderReason: that.orderReason,
+                                AthenaPatientId: that.athenaID,
+                                PreferredPhysicianNPI: that.preferredPhysicianNPI
+                            }
+                        });
+                        that.set("isLoading", false);
+                    } else {
+                        if (data.Data.ContactPhone == null || data.Data.ContactPhone == "") {
+                            that.phone = "1-866-UH4-CARE";
+                        } else {
+                            that.phone = data.Data.ContactPhone;
+                        };
+                        //console.log("not found");
+                        var context = {
+                            title: "This order cannot be scheduled",
+                            message: "UH currently doesn't schedule for this referral type. Please contact " + that.phone + " for further assistance."
+                        };
+                        utility.launchPopup("action", function (data) {
+                            token.updateToken(that.token);
+                            // callback
+                        }, null, context);
+                        that.set("isLoading", false);
+                        //that.set("isError", true);
+                        //that.set("message", "UH currently doesn't schedule for this referral type. Please contact " + phone + " for further assistance.");
+                        //that.set("phone", phone);
+                        that.set("isLoading", false);
+                    }
+                } else {
+                    var context = {
+                        title: "No Providers Found",
+                        message: "UH Currently does not schedule for this type of referral. Please seek direction from your referring provider or contact University Hospitals at 1-866-UH4-CARE for further assistance."
+                    }
+                    utility.launchPopup("action", function (data) {
+                        token.updateToken(that.token);
+                        // callback
+                    }, null, context);
+                    that.set("isLoading", false);
+                }
+                that.set("isLoading", false);
+            },
+            function () { // error callback
+                content.log("error");
+                that.set("isLoading", false);
+            }
+        );
+    };
+
+    return viewModel;
+}
+
+module.exports = OrderViewModel;

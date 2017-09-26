@@ -1,0 +1,181 @@
+<StackLayout>
+      <android loaded="loaded"
+      xmlns:lv="nativescript-telerik-ui/listview"
+      xmlns:card="nativescript-cardview"
+  xmlns:RL="nativescript-ripple">
+        <GridLayout className="gridContainer" rows="auto,*">
+          <StackLayout className="stackInfo" row="0" visibility="{{ isLoading == false && count > 0 ? 'visible' : 'collapsed'}}">
+            <GridLayout className="stackInfoGrid" columns="auto, *, auto" rows="auto, auto">
+              <StackLayout id="{{providerID}}" orientation="vertical" rowSpan="2" col="0" tap="viewProfile">
+                <AbsoluteLayout id="{{providerID}}" height="100%" width="100%"  tap="viewProfile">
+                  <!--<StackLayout className="headshot" backgroundImage="{{ Image }}"></StackLayout>-->
+                  <Image src="{{ Image }}" style="margin:0 10 0 0" horizontalAlignment="left" width="90"/>
+                  <StackLayout width="90" orientation="horizontal" visibility="{{ bestMatch == true ? 'visible' : 'collapsed'}}" verticalAlignment="center" backgroundColor="#9e0425" top="118" padding="2 0 2 2">
+                    <Image src="~/images/icon_checkMarkWhite.png" class="icon" verticalAlignment="middle"/>
+                    <Label text="BEST MATCH" className="bestMatch" fontSize="11"/>
+                  </StackLayout>
+                </AbsoluteLayout>
+                <Label id="{{providerID}}" text="View Profile" className="link" tap="viewProfile" fontSize="13" horizontalAlignment="center"/>               
+              </StackLayout>
+              <StackLayout orientation="horizontal" col="1">
+                <!--<Image class="genderIcon" width="15" src="{{ Gender === 'Male' ? '~/images/ic_male.png' : '~/images/ic_female.png' }}" verticalAlignment="top"/>-->
+                <StackLayout className="details">
+                    <Label id="title" text="{{FullName }}" style="font-weight:bold" className="{{ preferred == true ? 'preferredTitle' : 'subTitle'}}" textWrap="true"/>
+                    <Label text="{{ Specialties }}" textWrap="true"/>
+                  <Label text="PROVIDER RECOMMENDED" className="preferredLabel" visibility="{{ preferred == true ? 'visible' : 'collapsed'}}" />
+                  <StackLayout orientation="horizontal" horizontalAlignment="left" margin="5 0">
+                    <AbsoluteLayout width="90" margin="5 0 0 0" horizontalAlignment="left" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}">
+                      <Image src="~/images/five-stars-grey.png" height="auto" width="90"/>
+                      <StackLayout width="{{ Stars }}" className="starRating"></StackLayout>
+                    </AbsoluteLayout>
+                    <Label text="{{ 'Rating ' + Rating }}" verticalAlignment="bottom" className="distance" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}"/>
+                  </StackLayout>
+
+                  <Label text=" {{ 'Locations: ' + totalLocations}}" margin="5 0 0 0" textWrap="true"/>
+                  <Label text=" {{ Cities }}" textWrap="true"/>
+                </StackLayout>
+              </StackLayout>
+            </GridLayout>
+          </StackLayout>
+          
+          <!--locations-->
+          <GridLayout row="1" rows="*,auto">
+            <StackLayout row="0" className="listContainer" visibility="{{ isLoading == false && count > 0 ? 'visible' : 'collapsed'}}">
+              <lv:RadListView items="{{ providerLocations.Data }}" id="locations">
+                <lv:RadListView.listViewLayout>
+                  <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate >
+                  <card:CardView className="{{ NoAvailability == true ? 'noAvailability' : 'card'}}" radius="{{ NoAvailability == true ? 0 : 4 }}" >
+
+                    <GridLayout columns="auto, *, auto" rows="auto, auto" className="gridContainer stackInfo">
+                      <StackLayout  col="1" row="0" orientation="vertical" class="details">
+                        <Label text="{{ Location.Address1 }}"/>
+                        <Label text="{{ Location.CityStateZip }}"/>
+                      </StackLayout>
+                      <StackLayout col="2" row="0" className="location">
+                        <Label text="{{ Location.AppointmentPhone }}" className="phone" phone="{{ Location.AppointmentPhone }}" tap="contact"/>
+                        <Label text="{{LocationItem + ' of ' + TotalLocations + ' | ' + Location.Distance}}"/>
+                      </StackLayout>
+                      <StackLayout col="1" row="1" colSpan="2" style="margin:5 0 0 0">
+                        <!--<Label text="SuperMed accepted at this location starting 10/1/2017" className="alert" visibility="{{ IsInsuranceRestricted == true ? 'visible' : 'collapsed'}}" fontSize="12" textWrap="true"/>-->
+                        <!--repater for grid of dates & times-->
+                        <Repeater items="{{ JoinedDates }}">
+                          <Repeater.itemsLayout>
+                            <WrapLayout id="{{ LocationIndex }}"/>
+                          </Repeater.itemsLayout>
+                          <Repeater.itemTemplate>
+                            <StackLayout className="daysContainer">
+                              <!--insurance restriction-->
+                              <!--<Label  id="{{ 'btn' + AppointmentId }}" text="{{ ApptTime }}" rippleColor="#ff9999" className="{{ className }}" apptID="{{ AppointmentId}}"  apptTime="{{ AppointmentTime }}" apptTypeID="{{ AppointmentTypeId }}" provID="{{ ProviderID }}" apptDate="{{ AppointmentDate }}" locationIndex="{{ LocationIndex }}" deptID="{{ DepartmentID }}" displayTime="{{ DisplayTime }}" textWrap="true" tap="selectAppt" locationID="{{ LocationID }}" insurance="{{ IsInsuranceRestricted }}"/>-->
+                              <Label  id="{{ 'btn' + AppointmentId }}" text="{{ ApptTime }}" rippleColor="#ff9999" className="{{ className }}" apptID="{{ AppointmentId}}"  apptTime="{{ AppointmentTime }}" apptTypeID="{{ AppointmentTypeId }}" provID="{{ ProviderID }}" apptDate="{{ AppointmentDate }}" locationIndex="{{ LocationIndex }}" deptID="{{ DepartmentID }}" displayTime="{{ DisplayTime }}" textWrap="true" tap="selectAppt" locationID="{{ LocationID }}"/>
+                            </StackLayout>
+                          </Repeater.itemTemplate>
+                        </Repeater>
+                        <Label className="alert" text="No availability at this location"  visibility="{{ NoAvailability == true ? 'visible' : 'collapsed'}}" />
+                        <!--<Image src="~/images/NoAvailability.png" width="98%" height="auto" visibility="collapsed" horizontalAlignment="left"/>-->
+                      </StackLayout>
+                    </GridLayout>
+                  </card:CardView>
+                </lv:RadListView.itemTemplate>
+              </lv:RadListView>
+            </StackLayout>
+            <Label class="button" row="1" text="back to orders" tap="goBack"/>
+          </GridLayout>
+          <StackLayout row="2" className="stackInfo" height="100%" verticalAlignment="center" horizontalAlignment="center" visibility="{{ isLoading == false && count < 1 ? 'visible' : 'collapsed'}}">
+            <Label text="{{ message }}" textAlign="center" textWrap="true" color="#9e0425"/>
+            <Button className="backBtn" text="Back to Providers" tap="goBack" verticalAlignment="center" horizontalAlignment="center" width="100%" margin="10 0"/>
+          </StackLayout>
+          <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+        </GridLayout>
+      </android>
+      <!-- TODO: modularize this menu -->
+      <ios loaded="loaded"
+      xmlns:lv="nativescript-telerik-ui/listview"
+      xmlns:card="nativescript-cardview">
+        <StackLayout>
+          <StackLayout className="stackInfo" row="0" visibility="{{ isLoading == false && count > 0 ? 'visible' : 'collapsed'}}" >
+            <GridLayout className="stackInfoGrid" columns="auto, *, auto" rows="auto, auto">
+              <StackLayout id="{{providerID}}" orientation="vertical" rowSpan="2" col="0" tap="viewProfile">
+                <AbsoluteLayout id="{{providerID}}" height="100%" width="100%"  tap="viewProfile">
+                  <!--<StackLayout className="headshot" backgroundImage="{{ Image }}"></StackLayout>-->
+                  <Image src="{{ Image }}" style="margin:0 10 0 0" horizontalAlignment="left" width="90"/>
+                  <StackLayout width="90" orientation="horizontal" visibility="{{ bestMatch == true ? 'visible' : 'collapsed'}}" verticalAlignment="center" backgroundColor="#9e0425" top="118" padding="2 0 2 2">
+                    <Image src="~/images/icon_checkMarkWhite.png" class="icon" verticalAlignment="middle"/>
+            <Label text="BEST MATCH" className="bestMatch" fontSize="10"/>
+                  </StackLayout>
+                </AbsoluteLayout>
+                <Label id="{{providerID}}" text="View Profile" className="link" tap="viewProfile" fontSize="13" horizontalAlignment="center"/>
+              </StackLayout>
+              <StackLayout orientation="horizontal" col="1">
+                <!--<Image class="genderIcon" width="15" src="{{ Gender === 'Male' ? '~/images/ic_male.png' : '~/images/ic_female.png' }}" verticalAlignment="top"/>-->
+                <StackLayout className="details">
+                  <Label id="title" text="{{FullName }}" style="font-weight:bold" className="{{ preferred == true ? 'preferredTitle' : 'subTitle'}}" textWrap="true"/>
+                  <Label text="{{ Specialties }}" textWrap="true"/>
+                  <Label text="PROVIDER RECOMMENDED" className="preferredLabel" visibility="{{ preferred == true ? 'visible' : 'collapsed'}}" />
+                  <StackLayout orientation="horizontal" horizontalAlignment="left" margin="5 0">
+                    <AbsoluteLayout width="90" margin="5 0 0 0" horizontalAlignment="left" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}">
+                      <Image src="~/images/five-stars-grey.png" height="auto" width="90"/>
+                      <StackLayout width="{{ Stars }}" className="starRating"></StackLayout>
+                    </AbsoluteLayout>
+                    <Label text="{{ 'Rating ' + Rating }}" verticalAlignment="bottom" className="distance" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}"/>
+                  </StackLayout>
+                  <Label text=" {{ 'Locations: ' + totalLocations}}" margin="5 0 0 0" textWrap="true"/>
+                  <Label text=" {{ Cities }}" textWrap="true"/>
+                </StackLayout>
+              </StackLayout>
+            </GridLayout>
+          </StackLayout>
+          <GridLayout row="1" rows="*,auto" style="background-color:#f9f9f9" visibility="{{ isLoading == false && count > 0 ? 'visible' : 'collapsed'}}" >
+            <GridLayout class="listContainer">
+              <lv:RadListView items="{{ providerLocations.Data }}" id="locations">
+                <lv:RadListView.listViewLayout>
+                  <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate >
+                  <card:CardView className="{{ NoAvailability == true ? 'noAvailability' : 'card'}}" radius="{{ NoAvailability == true ? 0 : 4 }}" >
+
+                    <GridLayout columns="auto, *, auto" rows="auto, auto" className="gridContainer stackInfo">
+                      <StackLayout  col="1" row="0" orientation="vertical" class="details">
+                        <Label text="{{ Location.Address1 }}"/>
+                        <Label text="{{ Location.CityStateZip }}"/>
+                      </StackLayout>
+                      <StackLayout col="2" row="0" className="location">
+                        <Label text="{{ Location.AppointmentPhone }}" className="phone" phone="{{ Location.AppointmentPhone }}" tap="contact"/>
+                        <Label text="{{LocationItem + ' of ' + TotalLocations + ' | ' + Location.Distance}}"/>
+                      </StackLayout>
+                      <StackLayout col="1" row="1" colSpan="2" style="margin:5 0 0 0">
+                        <!--<Label text="{{ RestrictedMessage }}" className="alert" visibility="{{ IsInsuranceRestricted == true ? 'visible' : 'collapsed'}}" fontSize="12" textWrap="true"/>-->
+
+                        <!--repater for grid of dates & times-->
+                        <Repeater  items="{{ JoinedDates }}">
+                          <Repeater.itemsLayout>
+                            <WrapLayout id="{{ LocationIndex }}"/>
+                          </Repeater.itemsLayout>
+                          <Repeater.itemTemplate>
+                            <StackLayout className="daysContainer">
+                              <!--insurance restriction-->
+                              <!--<Label  id="{{ 'btn' + AppointmentId }}" text="{{ ApptTime }}" rippleColor="#ff9999" className="{{ className }}" apptID="{{ AppointmentId}}"  apptTime="{{ AppointmentTime }}" apptTypeID="{{ AppointmentTypeId }}" provID="{{ ProviderID }}" apptDate="{{ AppointmentDate }}" locationIndex="{{ LocationIndex }}" deptID="{{ DepartmentID }}" displayTime="{{ DisplayTime }}" textWrap="true" tap="selectAppt" locationID="{{ LocationID }}" insurance="{{ IsInsuranceRestricted }}"/>-->
+                              <Label  id="{{ 'btn' + AppointmentId }}" text="{{ ApptTime }}" rippleColor="#ff9999" className="{{ className }}" apptID="{{ AppointmentId}}"  apptTime="{{ AppointmentTime }}" apptTypeID="{{ AppointmentTypeId }}" provID="{{ ProviderID }}" apptDate="{{ AppointmentDate }}" locationIndex="{{ LocationIndex }}" deptID="{{ DepartmentID }}" displayTime="{{ DisplayTime }}" textWrap="true" tap="selectAppt" locationID="{{ LocationID }}"/>
+                            </StackLayout>
+                          </Repeater.itemTemplate>
+                        </Repeater>
+                        <Label className="alert" text="No availability at this location"  visibility="{{ NoAvailability == true ? 'visible' : 'collapsed'}}" />
+                        <!--<Image src="~/images/NoAvailability.png" width="98%" height="auto" visibility="collapsed" horizontalAlignment="left"/>-->
+                      </StackLayout>
+                    </GridLayout>
+
+                  </card:CardView>
+                </lv:RadListView.itemTemplate>
+              </lv:RadListView>
+            </GridLayout>
+            <Label row="2" className="button" text="Back to Providers" tap="goBack"/>
+          </GridLayout>
+          <StackLayout row="2" className="stackInfo" height="100%" verticalAlignment="center" horizontalAlignment="center" visibility="{{ isLoading == false && count < 1 ? 'visible' : 'collapsed'}}">
+            <Label text="{{ message }}" textAlign="center" textWrap="true" color="#9e0425"/>
+            <Button className="backBtn" text="Back to Providers" tap="goBack" verticalAlignment="center" horizontalAlignment="center" width="100%" margin="10 0"/>
+          </StackLayout>
+          <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+        </StackLayout>
+      </ios>
+</StackLayout>

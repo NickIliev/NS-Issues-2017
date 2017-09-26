@@ -1,0 +1,309 @@
+<android xmlns:RL="nativescript-ripple"
+         xmlns:lv="nativescript-telerik-ui/listview"
+         xmlns:dd="nativescript-drop-down"
+         xmlns:access-uh="~/components/access-uh"
+         xmlns:mi="nativescript-maskedinput">
+   <AbsoluteLayout orientation="vertical" height="100%">
+    <StackLayout width="100%" height="100%" top="0">      
+  <TabView id="mainTabs" selectedColor="#cd3439" tabsBackgroundColor="#f9f9f9" className="tabView">
+    <TabView.items>
+ 
+      <TabViewItem title="Access UH">
+        <TabViewItem.view>
+          <ScrollView>
+            <StackLayout>
+              <GridLayout rows="auto, *" id="main-content">
+                <StackLayout id="stackContact" >
+                  <Label row="0" id="lblcontact" text="Contact UH" class="pageTitle" />
+                  <!--<ActivityIndicator busy="{{ isLoading }}" row="1" />-->
+
+                  <!-- <StackLayout id="mergencyCallContent">
+                    <Label text="If this Is a life threatening "/>
+                    <StackLayout orientation="horizontal">
+                      <Label text="emergency please call "/>
+                      <Label text="9-1-1." tap="dial911" style="color:#bf0d32"/>
+                    </StackLayout>
+                  </StackLayout> -->
+                </StackLayout>
+                <StackLayout row="2" id="stackmedicalAdvice" >
+                  <StackLayout class="indent">
+                    <StackLayout id="lblstackConcern">
+                      <Label  text="Medical Advice or Concerns" id="lblmedicalConcern" />
+                    </StackLayout>
+                    <StackLayout>
+                    <Label class="lebelInline" text="We cannot advise people about their medical conditions online. If you have a medical concern, please contact either your doctor or a University Hospitals specialist by" />
+                    <Label class="lebelInline hyperlink" textWrap="true" text="Requesting an Appointment " tap="requestAppointment" />
+                    <StackLayout orientation="horizontal">
+                    <Label class="lebelInline" textWrap="true" text="online or by calling "/>
+                    <Label id="lblUhCalling" text="1-866-UH4-CARE"  onTap="callToSchedule"/>
+                    </StackLayout>
+                    </StackLayout>
+                    <!-- <Label textWrap="true">
+                      <Label.formattedText>
+                        <FormattedString>
+                          <FormattedString.spans>
+                            <Span text="We cannot advise people about their medical condition online. If you have a medical concern, please contact either your doctor or a University Hospitals specialist by " />
+                            <Span text=" requesting an appointment " />
+                            <Span text="online or by calling"/>
+                          </FormattedString.spans>
+                        </FormattedString>
+                      </Label.formattedText>
+                    </Label> -->
+                  </StackLayout>
+                  <StackLayout  orientation="horizontal" class="callToEmergency">
+                    <Label class="lblUhCalling " text="Call " />
+                    <Label class="lblUhCalling " text="911" tap="call911" style="font-weight:bold;"/>
+                    <Label class="lblUhCalling" text=" for life-threatening emergencies." textWrap="true"/>
+                  </StackLayout>
+                  <StackLayout id="stackInquiries" class="indent">
+                    <Label text="For all other inquiries, please fill out the form below:" id="lblnquiry" textWrap="true"/>
+                  </StackLayout>
+                  
+                  <StackLayout>
+                    <StackLayout  id="backgroundRect"  class="indent form-background">
+                    <StackLayout orientation="horizontal" class="validationfield1" id="validationfield1" >
+                        <Label text="* Indicates required field " id="lblRequired" />
+                      </StackLayout>
+                        <StackLayout id="lbltext1"  orientation="horizontal">
+                          <Label   textWrap="true" >
+                            <Label.formattedText>
+                              <FormattedString>
+                                <FormattedString.spans>
+                                  <!-- <Span text="Please select the category that best describes your inquiry."  fontAttributes="Bold" />
+                                  <Span text="*"   foregroundColor="#bf0d32"  fontAttributes="Bold" /> -->
+                                </FormattedString.spans>
+                              </FormattedString>
+                            </Label.formattedText>
+                          </Label>
+                        </StackLayout>
+                        <!-- <Label text="Required*" id="lblRequired" /> -->
+
+                      <!-- <StackLayout>
+                        <StackLayout>
+                          <dd:DropDown items="{{ categories }}" selectedIndex="{{ selectedIndex }}" id="ddlCategory" class="dropDownContainer"/>
+                        </StackLayout>
+                      </StackLayout> -->
+
+                      <GridLayout rows="auto" cols="auto, *">
+                        <dd:DropDown items="{{ categories }}"  selectedIndex="{{ selectedIndex }}" id="ddlCategory"  class="dropDownContainer" style="color: #ccc;"/>
+                        <!-- <Label zIndex="0" text="Please select the category*" color="#ccc" backgroundColor="white" margin="5px;"/>  -->
+                        <Label zIndex="0" class="icon down-arrow"  color="#ccc" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                      </GridLayout>
+
+                      <!-- <Label text="First Name"  class="Label"/> -->
+                      <TextField id="txtFirstName" hint="First Name*" class="textboxes" text="{{ firstname }}" />
+                      <!-- <Label text="Last Name"  class="Label"/> -->
+                      <TextField id="txtLastName" hint="Last Name*" class="textboxes" text="{{ lastname }}" />
+                      <!-- <Label text="Primary Phone Number"  class="Label"/> -->
+                      <!--<TextField id="txtPrimaryPhNum" hint="xxx-xxx-xxxx" class="textboxes phone" text="{{ primaryphone }}" />-->
+                      <mi:MaskedInput id="primaryphone" mask="999-999-9999" hint="Phone*" placeholder="_" className="maskedInput" backgroundColor="#fff"  text="{{ primaryphone }}" />
+                      <!-- <Label text="Email"  class="Label"/> -->
+                      <TextField id="txtEmail" hint="Email*" class="textboxes" text="{{ email }}" />
+                      <!-- <Label text="Comments"  class="Label"/> -->
+                      <!--<TextField id="txtComments" hint="Comments" />-->
+                      <TextView hint="Comments*" id="txtComments" text="{{ comments }}">
+                      </TextView>
+                      <StackLayout tap="SubmitForm" id="submitButton" >
+                      <Label color="white" text="SUBMIT"  width="157"></Label>         
+                 </StackLayout>
+                      <!-- <RL:Ripple id="submitButtonRipple" rippleColor="#ff9999" onTap="SubmitForm">
+                        <Button id="submitButton" color="#fff" text="Submit  >" />
+                      </RL:Ripple> -->
+                    </StackLayout>
+
+                  </StackLayout>
+                </StackLayout>
+
+              </GridLayout>
+            </StackLayout>
+
+          </ScrollView>
+        </TabViewItem.view>
+      </TabViewItem>
+
+      <TabViewItem title="Explore Health Topics">
+        <TabViewItem.view>
+          <ScrollView>
+            <GridLayout rows="auto, *" id="content2">
+              <access-uh:explore-health />
+
+            </GridLayout>
+          </ScrollView>
+        </TabViewItem.view>
+      </TabViewItem>
+
+    </TabView.items>
+  </TabView>
+  </StackLayout>
+    <StackLayout orientation="horizontal" top="0" width="100%" opacity="0" height="50">
+      <Label id="leftTab" text="Label one" width="50%" class="overlayTabs" tap="{{ clickLeft }}" backgroundColor="blue" color="white" textAlignment="center"/>
+      <Label id="rightTab" text="Label two" width="50%" class="overlayTabs" tap="{{ clickRight }}" backgroundColor ="green" color="white" textAlignment="center"/>
+    </StackLayout>
+  </AbsoluteLayout>
+</android>
+<!--TODO: modularize this menu-->
+<ios xmlns:lv="nativescript-telerik-ui/listview"
+     xmlns:dd="nativescript-drop-down"
+     xmlns:access-uh="~/components/access-uh"
+     xmlns:mi="nativescript-maskedinput">
+  <StackLayout class="ContentHeight">
+
+    <StackLayout id="tabView" orientation="horizontal"  width="100%" >
+      <GridLayout rows="*,auto"  id="TopLeft"   tap="showAccessUH">
+        <StackLayout class="tabTitle" row="0" >
+          <Label text ="Access UH" />
+        </StackLayout>
+        <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}"></StackLayout>
+      </GridLayout>
+      <GridLayout rows="*,auto"  id="TopRight" tap="showEHI"  >
+        <StackLayout class="tabTitle" row="0" >
+          <Label text ="Explore Health Topics" textWrap="true" />
+        </StackLayout>
+        <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}"></StackLayout>
+      </GridLayout>
+    </StackLayout>
+
+
+    <StackLayout row="0" visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}" >
+
+      <ScrollView>
+        <StackLayout>
+          <GridLayout rows="auto, *" id="main-content">
+            <StackLayout id="stackContact" >
+              <Label row="0" id="lblcontact" text="Contact UH" class="pageTitle" />
+              <!--<ActivityIndicator busy="{{ isLoading }}" row="1" />-->
+
+              <!-- <StackLayout id="mergencyCallContent">
+                <Label text="If this is a life-threatening "/>
+                <StackLayout orientation="horizontal">
+                  <Label text="emergency, please call "/>
+                  <Label text="9-1-1." tap="dial911" style="color:#bf0d32"/>
+                </StackLayout>
+              </StackLayout> -->
+            </StackLayout>
+            <StackLayout row="2" id="stackmedicalAdvice" >
+              <StackLayout class="indent">
+                <StackLayout id="lblstackConcern">
+                  <Label  text="Medical Advice or Concerns" id="lblmedicalConcern" />
+                </StackLayout>
+                 <StackLayout>
+                  <Label class="lebelInline" text="We cannot advise people about their medical condition online. If you have a medical concern, please contact either your doctor or a University Hospitals specialist by" />
+                  <Label class="lebelInline hyperlink" textWrap="true" text="Requesting an Appointment " tap="requestAppointment" />
+                  <StackLayout orientation="horizontal">
+                  <Label class="lebelInline" textWrap="true" text="online or by calling "/>
+                  <Label id="lblUhCalling" text="1-866-UH4-CARE"  onTap="callToSchedule"/>
+                  </StackLayout>
+                </StackLayout>
+                <!-- <Label textWrap="true">
+                  <Label.formattedText>
+                    <FormattedString>
+                      <FormattedString.spans>
+                        <Span text="We cannot advise people about their medical condition online. If you have a medical concern, please contact either your doctor or a University Hospitals specialist by requesting an appointment online or by calling " />
+                      </FormattedString.spans>
+                    </FormattedString>
+                  </Label.formattedText>
+                </Label>
+                <Label id="lblUhCalling" text="1-866-UH4-CARE"  onTap="callToSchedule"/> -->
+              </StackLayout>
+              <StackLayout  orientation="horizontal" class="callToEmergency">
+                <Label class="lblUhCalling " text="Call " />
+                <Label class="lblUhCalling " text="911" tap="call911" style="font-weight:bold;"/>
+                <Label class="lblUhCalling" text=" for life-threatening emergencies." textWrap="true"/>
+              </StackLayout>
+              <StackLayout id="stackInquiries" class="indent">
+                <Label text="For all other inquiries, please fill out the form below:" id="lblnquiry" textWrap="true" />
+              </StackLayout>
+              <StackLayout>
+                <!-- <StackLayout  id="backgroundRect"  class="indent">
+
+                 
+                  <StackLayout orientation="horizontal" id="validationfield1">
+                    <StackLayout id="lbltext1"  orientation="horizontal">
+                      <Label   textWrap="true" >
+                        <Label.formattedText>
+                          <FormattedString>
+                            <FormattedString.spans>
+                              <Span text="Please select the category that best describes your inquiry."  fontAttributes="Bold" />
+                              <Span text="*"   foregroundColor="#bf0d32"  fontAttributes="Bold" />
+                            </FormattedString.spans>
+                          </FormattedString>
+                        </Label.formattedText>
+                      </Label>
+                    </StackLayout>
+                    <Label text="Required*" id="lblRequired" />
+                  </StackLayout> -->
+                 <StackLayout  id="backgroundRect"  class="indent form-background">
+                    <StackLayout orientation="horizontal" class="validationfield1" id="validationfield1" >
+                        <Label text="* Indicates required field" id="lblRequired" />
+                      </StackLayout>
+                        <StackLayout id="lbltext1"  orientation="horizontal">
+                          <Label   textWrap="true" >
+                            <Label.formattedText>
+                              <FormattedString>
+                                <FormattedString.spans>
+                                  <!-- <Span text="Please select the category that best describes your inquiry."  fontAttributes="Bold" />
+                                  <Span text="*"   foregroundColor="#bf0d32"  fontAttributes="Bold" /> -->
+                                </FormattedString.spans>
+                              </FormattedString>
+                            </Label.formattedText>
+                          </Label>
+                        </StackLayout>
+
+                    <GridLayout rows="auto" cols="auto, *">
+                    <dd:DropDown items="{{ categories }}"  selectedIndex="{{ selectedIndex }}" id="ddlCategory" class="dropDownContainer1" style="color: #fff !important;"/>
+                    <!-- <Label zIndex="0" hint="Please select the category*" color="#ccc" backgroundColor="#e8e8e8"  margin="5px;" /> -->
+                    <Label zIndex="0" class="icon down-arrow"  color="#fff" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                  </GridLayout>
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="First Name"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout>
+                  <TextField id="txtFirstName" hint="Enter First Name" class="textboxes" text ="{{ firstname }}" /> -->
+                  <TextField id="txtFirstName" hint="First Name*" class="textboxes" text="{{ firstname }}" />
+                  
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Last Name"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <TextField id="txtLastName" hint="Last Name*" class="textboxes" text ="{{ lastname }}" />
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Primary Phone Number"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <!--<TextField id="txtPrimaryPhNum" hint="xxx-xxx-xxxx" class="textboxes" text="{{ primaryphone }}"/>-->
+                  <mi:MaskedInput id="primaryphone" mask="999-999-9999" hint="Phone*" placeholder="_" className="maskedInput1" text="{{ primaryphone }}"/>
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Email"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <TextField id="txtEmail" hint="Email*" class="textboxes" text="{{ email }}" />
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Comments"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout>
+                  <TextView hint="Comments" id="txtComments" text="{{ comments }}">
+                  </TextView>
+                  <Button id="submitButton" text="Submit  >"  tap="SubmitForm" /> -->
+
+                  <TextView hint="Comments*" id="txtComments" text="{{ comments }}">
+                      </TextView>
+                      <StackLayout tap="SubmitForm" id="submitButton" >
+                      <Label color="white" text="SUBMIT"  width="157"></Label>         
+                 </StackLayout>
+                </StackLayout>
+
+              </StackLayout>
+            </StackLayout>
+
+          </GridLayout>
+        </StackLayout>
+
+      </ScrollView>
+    </StackLayout>
+    <StackLayout row="0"  visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}" >
+      <access-uh:explore-health />
+    </StackLayout>
+  </StackLayout>
+</ios>

@@ -1,0 +1,5 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd">
+  <GridLayout>
+    <TextField secure="true" hint="enter text"/>
+  </GridLayout>
+</Page>

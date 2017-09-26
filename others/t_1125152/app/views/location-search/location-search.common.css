@@ -1,0 +1,136 @@
+@import url("~/common/styles/search.css");
+
+#btnSearchIcon {
+    border-radius: 0;
+}
+
+button {
+    border-radius: 0;
+}
+
+#lblResultsCount {
+    margin: 2 0;
+}
+
+#location-list {
+	margin: 5;
+	opacity: 0;
+}
+
+.searchResultItem {
+    border-radius: 0;
+    background-color:#fff;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.searchStackItem{
+    border-color: #cecece;
+    border-width:1;
+    border-style: solid;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    box-shadow: none;
+}
+
+.searchStackItem:last-child{
+    border-bottom-width: 0;
+}
+
+.searchResultItem GridLayout {
+    padding: 20 15;
+}
+
+.locationName {
+    margin-bottom: 5;
+    font-size: 18;
+}
+
+.locationAddress {
+    /*font-size: 14;*/
+}
+
+.lblMapIt {
+    margin-top: 10;
+    font-size: 18;
+    text-decoration: underline;
+    color: #0000ff;
+}
+
+.locationPhone {
+    margin-top: 10;
+    font-size: 18;
+    color: #ed3942;
+}
+
+.locationDetails {
+    
+}
+
+.locationDistance {
+    margin-left: 10;
+    margin-top: 5;
+}
+
+.locationDistance Label {
+    margin-bottom: 14
+}
+
+.checkbox {
+    margin-right: 10;
+}
+
+.checkinSection {
+    width: 100%;
+    margin-top: 18;
+}
+
+.ddCheckin DropDown {
+    width: 70%;
+    height: 100%;
+    border-width: 1;
+    border-style: solid;
+    border-color: #eeeae1;
+    vertical-align: middle;
+}
+
+.ddCheckin Label {
+    color: #ed3942;
+}
+
+.ddCheckin Button {
+    color: #fff;
+    background-color: #bf0d32;
+    width: 30%;
+    border-radius: 0;
+}
+
+#bottomButtons {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+#bottomButtons StackLayout {
+    height: 50;
+}
+
+#bottomButtons StackLayout Label {
+    margin: 15 0;
+    font-size: 15;
+    font-weight: bold;
+    color: #fff;
+}
+
+#bottomButtonLeft,
+#bottomButtonRight {
+    horizontal-align: center;
+    width: 50%;
+}
+
+.wvInQuickerWidget {
+    border-style: solid;
+    border-color: black;
+    border-width: 1;
+    padding: 0;
+}

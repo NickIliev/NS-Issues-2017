@@ -1,0 +1,169 @@
+
+@import url("~/views/provider/provider.common.css");
+
+#tabView > StackLayout {
+    /*vertical-align: bottom;*/
+    background-color:#f9f9f9;
+    height: 50;
+    margin-left: 0;
+    padding: 0 17;
+    vertical-align: center;
+    
+}
+
+#tabView StackLayout.horizontalLine {
+    border-color: #cd3439;
+    border-width:1;
+    height:2;
+
+}
+
+#tap1,#tap2,#tap3,#tap4,#tap5,#tap6,#tap7 {
+horizontal-align:center;
+padding: 0 15;
+font-size:22%;
+  
+}
+/*#tabs {
+    border-color: black;
+    border-width: 1;
+    border-style: solid;
+}*/
+
+#tabs{
+    background-color: #fff;
+    height: 100%;
+    clear: both;
+}
+
+#bottomButtons {
+    height: auto;
+    width:auto;
+    vertical-align: top;
+    padding: 10 15 10 15;
+}
+
+/*.heightfull{
+    height:100%;
+    border: 0 solid transparent;
+    background-color: orange;
+}*/
+.providerInsurance, .providerSpecialInterest{
+    margin: 0;
+    width: 100%;
+    padding: 5 20;
+    border-color: #cecece;
+    border-width:1;
+    border-style: solid;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+.noMargins{
+    background-color: yellow;
+
+}
+#providerName {
+    padding: 0 0;
+}
+#providerHeader {
+    padding-top: 14;
+    padding-bottom: 4;
+}
+
+#providerCerts {
+    margin-bottom: 10;
+   font-size:20%;
+}
+
+.providerCert,
+.providerEducation Label {
+    font-size: 17%;
+}
+#providerAppointmentNumber Label.providerAppointmentNumberValue {
+    margin-left: 0;
+    color: #ed3942;
+}
+
+#myBox{
+
+    background-color:white;
+    padding: 20;
+}
+
+/*.horizontalLine5{
+   height: 2;
+   border-color: #e0e0e0;
+   border-width: 1;
+   border-style: solid;
+   padding: 2;
+}*/
+#bottomButtonLeft {
+    width: 58%;
+    background-color: #bf0d32;
+    margin-left:0;
+    margin-right: 5;
+}
+
+#bottomButtonRight{
+    background-color: #9e0425;
+    width: 43%;
+    margin-left:5;
+    margin-right: 0;
+}
+
+
+.searchStackItem{
+    background-color: #fff;
+    border-color: #cecece;
+    border-width:1;
+    border-style: solid;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    box-shadow: none;
+    position: relative;
+    bottom: 0;
+}
+
+.searchStackItem:last-child{
+    border-bottom-width: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #000;
+}
+
+#horizontalScroll{
+    margin:0;
+    padding:0;
+    
+}
+
+#horizontalScroll #tabView{
+    margin-bottom: 0;
+    border-color: #d1cfd0;
+    border-width:2;
+    border-style: solid;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin-left: 0;
+    height: 47;
+    padding-top: 20;
+}
+
+#horizontalScroll #tabView .horizontalLine{
+    margin-bottom: 0;
+}
+
+#horizontalScroll #tabView .tabViewItems{
+    margin: 0;
+    padding:0;
+}
+
+
+#horizontalScroll #tabView label{
+    font-size: 15;
+    padding-left:20;
+    padding-right:20;
+    padding-bottom: 5;
+}

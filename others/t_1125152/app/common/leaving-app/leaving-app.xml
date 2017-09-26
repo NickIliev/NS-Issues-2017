@@ -1,0 +1,67 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:RL="nativescript-ripple"
+      showingModally="onShowingModally"
+      shownModally="onShownModally"
+      loaded="onLoaded"
+      unloaded="onUnloaded"
+      >
+
+  <android xmlns:RL="nativescript-ripple">
+    <StackLayout id="disclaimerContent" backgroundImage="~/images/common/leaving-app/leavinguhnowscreen.png" >
+
+
+      <DockLayout  orientation="horizontal" width="100%" stretchLastChild="false">
+        <RL:Ripple dock="left" id="imgCancel" rippleColor="#acacac" tap="onTapCancel">
+          <Image src="~/images/common/leaving-app/cancelbtn.png"  tap="onTapCancel" horizontalAlignment="left" />
+        </RL:Ripple>
+        <RL:Ripple dock="right" id="imgContinue" rippleColor="#acacac" tap="onTapContinue">
+          <Image src="~/images/common/leaving-app/continuebtn.png"  tap="onTapContinue" horizontalAlignment="right" />
+        </RL:Ripple>
+      </DockLayout>
+      <StackLayout >
+        <Image  id="imgLeavingtext" src="~/images/common/leaving-app/leavingapptext.png"  />
+      </StackLayout>
+    </StackLayout>
+  </android>
+  <ios>
+    <StackLayout id="disclaimerContent"  backgroundImage="~/images/common/leaving-app/leavinguhnowscreen.png" >
+      <StackLayout  orientation="horizontal">
+        <Image  id="imgCancelIos" src="~/images/common/leaving-app/cancelbtn.png"  tap="onTapCancel" />
+        <Image  id="imgContinueIos" src="~/images/common/leaving-app/continuebtn.png"  tap="onTapContinue" />
+      </StackLayout>
+      <StackLayout >
+        <Image  id="imgLeavingtext" src="~/images/common/leaving-app/leavingapptext.png"  />
+      </StackLayout>
+    </StackLayout>
+
+  </ios>
+
+
+  <!--<StackLayout id="popup">
+
+    <StackLayout id="popupMessage">
+      <Label id="lblTitle" text="{{ title }}" textWrap="true" />
+      <Label id="lblMessage" text="{{ message }}" textWrap="true" />
+
+      <StackLayout id="buttonsRow" orientation="horizontal">
+        <StackLayout id="apply">
+          <android>
+            <Button id="btnApply" color="#fff" tap="onTapContinue" text="{{ type === 'confirm' ? 'Continue' : 'OK' }}" />
+          </android>
+          <ios>
+            <Button id="btnApply" tap="onTapContinue" text="{{ type === 'confirm' ? 'Continue' : 'OK' }}" />
+          </ios>
+        </StackLayout>
+        <StackLayout id="cancel">
+          <android>
+            <Button id="btnCancel" color="#fff" tap="onTapCancel" text="Cancel" visibility="{{ type === 'confirm' ? 'visible' : 'collapsed' }}" />
+          </android>
+          <ios>
+            <Button id="btnCancel" tap="onTapCancel" text="Cancel" visibility="{{ type === 'confirm' ? 'visible' : 'collapsed' }}" />
+          </ios>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+
+  </StackLayout>-->
+</Page>

@@ -1,0 +1,61 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:RL="nativescript-ripple"
+      showingModally="onShowingModally"
+      shownModally="onShownModally"   
+      loaded="onLoaded"
+      unloaded="onUnloaded"
+      cssFile="~/views/provider-search/filters.css"
+      codeFile="~/views/provider-search/condition-select-view.js"
+      xmlns:dd="nativescript-drop-down"
+      xmlns:lv="nativescript-telerik-ui/listview">
+
+      <StackLayout id="filtersPopup">
+
+        <StackLayout id="applyBar" orientation="horizontal">
+            <StackLayout id="cancel">
+                <android>
+                    <RL:Ripple rippleColor="#ff8888" tap="onCancelButtonTap">
+                        <Button id="btnCancel" color="#fff" text="Cancel" />
+                    </RL:Ripple>
+                </android>
+                <ios>
+                    <Button id="btnCancel" tap="onCancelButtonTap" text="Cancel" />
+                </ios>
+            </StackLayout>
+        </StackLayout>
+
+        <!--<StackLayout class="sectionHeader" orientation="horizontal">
+            <Label text="Search by condition..." />
+        </StackLayout>-->
+
+        <StackLayout class="horizontalLine"></StackLayout>
+
+        <StackLayout class="sectionContent">
+            
+            <StackLayout id="conditionFilter" class="sortItem">
+                <StackLayout class="txtField">
+                    <TextField id="txtCondition" hint="Lookup condition..." text="{{ SearchTerm }}"
+                            backgroundColor="#f9f9f9" />
+                </StackLayout>
+
+                <StackLayout className="filtersListView" visibility="{{ !isLoadingResults ? 'visible' : 'collapsed' }}">
+                    <ListView items="{{ Conditions.Data }}" id="lvCondition" itemTap="onSelectCondition" selectionBehavior="Press">            
+                        <ListView.listViewLayout>
+                            <ListView.ListViewLinearLayout scrollDirection="Vertical" />
+                        </ListView.listViewLayout>
+                        <ListView.itemTemplate >
+                            <StackLayout >
+                                <Label text="{{ Name }}" class="listViewItem" width="100%" />
+                            </StackLayout>
+                        </ListView.itemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+
+            <ActivityIndicator busy="{{ isLoadingResults }}" visibility="{{ isLoadingResults ? 'visible' : 'collapsed' }}" />
+            
+        </StackLayout>
+
+    </StackLayout>
+
+</Page>

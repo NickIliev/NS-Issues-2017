@@ -1,0 +1,24 @@
+@import url("~/views/find-phr/find-phr.common.css");
+/*.button {
+border-radius: 20
+}*/
+
+
+#imgphr {
+    width: 43.5%;
+    height: 16%;
+    margin-top: 41.8%;
+    opacity: .8;
+    margin-left: 24%;
+    
+}
+.horizontalLine2 {
+    border-color: #7d7d7d;
+    border-width: 6;
+    height: 3;
+    width: 93%;
+    height: 1.7;
+    margin-top: 3%;
+    
+}
+   

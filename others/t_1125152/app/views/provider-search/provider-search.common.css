@@ -1,0 +1,136 @@
+@import url("~/common/styles/search.css");
+@import url("~/components/provider-card/provider-card.common.css");
+
+.filterText {
+    height: 53;
+    border-radius: 6;
+    width: 100%;
+}
+
+#provider-list {
+    margin: 5;
+    opacity: 0;
+}
+
+.providerSpecialtiesText {
+    font-size: 12;
+}
+
+.locationsList {
+    margin-top: 7;
+}
+
+.locationText {
+    font-size: 11;
+}
+
+.sortItem {
+    padding: 6 17;
+}
+
+.space {
+    padding-left: 12;
+}
+
+#chkPrimaryCare {
+    horizontal-align: right;
+    padding-right: 7;
+}
+
+.checkbox {
+    margin: 0 2.5 0 0;
+}
+
+/*.dropDownContainer{
+
+   background-image: ~/images/ddlarrow.png;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right:79;
+    width:100%;
+   margin-right:10;
+}*/
+
+#bottomButtons {
+    height: 55;
+    width: 100%;
+}
+
+    #bottomButtons StackLayout {
+        height: 60;
+    }
+
+        #bottomButtons StackLayout Label {
+            margin: 15 0;
+            font-size: 16;
+            font-weight: bold;
+            color: #fff;
+        }
+
+            #bottomButtons StackLayout Label.icon {
+                margin-left: 10;
+                font-size: 22;
+            }
+
+#bottomButtonLeft {
+    horizontal-align: center;
+    width: 100%;
+}
+
+.active {
+    background-color: #9e0425;
+}
+
+.inactive {
+    background-color: #cccccc;
+}
+
+#bottomButtonLeftRipple {
+    width: 100%;
+}
+
+.showIns {
+    background-color: #eee;
+}
+
+.closeIns {
+    background-color: transparent;
+}
+
+.closeBtn {
+    width: 25;
+    height: 25;
+    margin: 0 0 0 10;
+    background-image: ~/images/iconCheckCircle.png;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.btnClearIcon {
+    width: 50;
+    margin: 0;
+    horizontal-align: right;
+    background-color: transparent;
+    background-image: none;
+    color: #000;
+    border-color: transparent;
+    border-width: 1 
+}
+
+.apply {
+    width: 15;
+    height: 15;
+    margin: 0 0 0 10;
+    background-image: ~/images/icon_checkMarkWhite.png;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.listViewItem {
+    padding: 10 20;
+    color: #fff;
+    width: 100%;
+    background-color: #8b7867;
+}

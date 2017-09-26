@@ -1,0 +1,35 @@
+@import url("~/common/styles/filters.css");
+
+#popupMessage {
+    padding: 17;
+}
+
+#lblTitle {
+    font-weight: bold;
+    font-size: 20;
+    margin-bottom: 5;
+}
+
+#lblMessage {
+    font-size: 17;
+}
+
+#btnApply,
+#btnCancel {
+    background-color: #8f0422;
+    border-radius:0;
+    text-transform:uppercase;
+    font-size:12
+}
+
+#btnCancel {
+    horizontal-align: left;
+}
+
+#btnApply {
+    horizontal-align: right;
+}
+
+#buttonsRow {
+    margin-top: 20
+}

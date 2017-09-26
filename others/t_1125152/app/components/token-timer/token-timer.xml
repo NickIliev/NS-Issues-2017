@@ -1,0 +1,29 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:RL="nativescript-ripple"
+      showingModally="onShowingModally"
+      shownModally="onShownModally"
+      loaded="onLoaded"
+      unloaded="onUnloaded"
+      cssFile="~/components/token-timer/token-timer.css"
+      codeFile="~/components/token-timer/token-timer.js">
+  <AbsoluteLayout>
+    <Image src="~/images/leaving.jpg" width="100%" height="auto"/>
+    <StackLayout id="popup" style="text-align:center" verticalAlignment="middle" horizontalAlignment="center">
+
+      <StackLayout id="popupMessage" horizontalAlignment="center">
+        <Label id="lblTitle" text="{{ title }}" textWrap="true" width="100%" textAlign="center"/>
+        <Label id="lblMessage" text="{{ message }}" textWrap="true" width="100%" textAlign="center"/>
+        <StackLayout className="timer" orientation="horizontal" width="100%" horizontalAlignment="center">
+          <Label id="mins" text="{{mins}}"/>
+          <Label text=":"/>
+          <Label id="secs" text="{{secs}}"/>
+        </StackLayout>
+        <StackLayout id="buttonsRow" orientation="horizontal" width="100%">
+          <Image src="~/images/leave.png" width="50%" tap="onTapLeave" horizontalAlignment="left"/>
+          <Image src="~/images/continue.png" width="50%" tap="onTapContinue" horizontalAlignment="right" />
+        </StackLayout>
+      </StackLayout>
+
+    </StackLayout>
+  </AbsoluteLayout>
+</Page>

@@ -1,0 +1,159 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:RL="nativescript-ripple"
+      xmlns:maps="nativescript-google-maps-sdk"
+      showingModally="onShowingModally"
+      shownModally="onShownModally"
+      loaded="onLoaded"
+      unloaded="onUnloaded">
+  <android>
+    <StackLayout id="mapView" orientation="vertical" height="100%" width="100%" backgroundColor="white">
+      <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" fontSize="20" width="100%" tap="closeMapView">
+        <StackLayout horizontalAlignment="right" orientation="horizontal" padding="10" width="50%" tap="closeMapView">
+          <Label text="X CLOSE" color="white" horizontalAlignment="right" dock="right" tap="closeMapView"/>
+        </StackLayout>
+      </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, auto" width="100%" height="auto" style="padding:10" backgroundColor="white">
+        <StackLayout col="0" orientation="vertical">
+          <AbsoluteLayout height="100%" width="100%">
+            <!--<StackLayout backgroundImage="{{ Image }}" width="90" height="90"></StackLayout>-->
+            <Image src="{{ Image }}" style="margin:0 10 0 0" horizontalAlignment="left" width="90"/>
+            <StackLayout width="90" orientation="horizontal" visibility="{{ BestMatch == true ? 'visible' : 'collapsed'}}" verticalAlignment="center" backgroundColor="#9e0425" top="118" padding="2 0 2 2">
+              <Image src="~/images/icon_checkMarkWhite.png" class="icon" verticalAlignment="middle"/>
+              <Label text="BEST MATCH" fontSize="11" className="bestMatch" color="white" margin="0 0 0 5" verticalAlignment="middle" style="font-weight:bold"/>
+            </StackLayout>
+          </AbsoluteLayout>
+        </StackLayout>
+        <StackLayout col="1" orientation="vertical">
+          <StackLayout orientation="horizontal" height="100%">
+            <!--<Image class="genderIcon" src="{{ Gender === 'Male' ? '~/images/ic_male.png' : '~/images/ic_female.png' }}" verticalAlignment="top"/>-->
+            <StackLayout orientation="vertical" class="locationDetails">
+              <StackLayout orientation="horizontal">
+                <Label fontSize="16" text="{{ DocName }}" className="{{PreferredProvider == true ? ' preferredTitle' : 'subTitle'}}" textWrap="true"/>
+              </StackLayout>
+              <Label text="{{ Specialties }}" class="info" textWrap="true"/>
+              <Label text="PROVIDER RECOMMENDED" className="preferredLabel" visibility="{{ PreferredProvider == true ? 'visible' : 'collapsed'}}" />
+              <StackLayout orientation="horizontal" horizontalAlignment="left" margin="5 0">
+                <AbsoluteLayout width="80" margin="5 0 0 0" horizontalAlignment="left" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}">
+                  <Image src="~/images/five-stars-grey.png" height="auto" width="80"/>
+                  <StackLayout width="{{ Stars }}" className="starRating"></StackLayout>
+                </AbsoluteLayout>
+                <Label text="{{ 'Rating ' + Rating }}" verticalAlignment="bottom" className="distance" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}"/>
+              </StackLayout>
+              <Repeater items="{{ AllCities }}">
+                <Repeater.itemsLayout>
+                  <WrapLayout />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                  <StackLayout orientation="horizontal" width="47%">
+                    <Label class="info" text="{{ $value }}" />
+                  </StackLayout>
+                </Repeater.itemTemplate>
+              </Repeater>
+              <!--<Label text="{{ 'Locations: ' + TotalLocations + ' - ' + Cities }}" class="info" textWrap="true" margin="5 0 0 0"/>-->
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
+      <StackLayout index="{{ Index }}" tap="selectAppt" visibility="{{ pageTitle == 'Referral Providers' ? 'visible' : 'collapsed'}}" margin="0 5 5 5">
+        <DockLayout orientation="horizontal" className="selectBtn" index="{{ Index }}" tap="selectAppt" visibility="{{ pageTitle == 'Referral Providers' ? 'visible' : 'collapsed'}}" margin="5">
+          <Label text="{{ 'First Available: ' + Availability }}" index="{{ Index }}" tap="selectAppt" dock="left"/>
+          <Image src="~/images/arrowRight.png" width="15" height="15" dock="right" horizontalAlignment="right" margin="0 10 0 0"  index="{{ Index }}" tap="selectAppt"/>
+        </DockLayout>
+      </StackLayout>
+      <StackLayout orientation="horizontal" class="CallStackLayout" visibility="{{ pageTitle == 'Search Providers' ? 'visible' : 'collapsed'}}">
+        <DockLayout orientation="horizontal" class="reqAppandschedule" tap="requestAnAppointment" visibility="{{ ZocDocId != null ? 'collapsed' : 'visible' }}" index="{{ Index }}">
+          <Label text="Request Appointment" dock="left" index="{{ Index }}"/>
+          <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+        </DockLayout>
+        <DockLayout orientation="horizontal" class="reqAppandschedule" tap="onTapZocDocWidget" visibility="{{ ZocDocId != null ? 'visible' : 'collapsed' }}" index="{{ Index }}">
+          <Label text="Schedule Now" dock="left" index="{{ Index }}"/>
+          <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+        </DockLayout>
+        <DockLayout orientation="horizontal" horizontalAlignment="right" dock="right" class="calltodoctor" tap="callAppointmentNumber" visibility="{{ ZocDocId != null ? 'visible' : 'visible' }}" index="{{ Index }}">
+          <Label text="Call To Schedule" dock="left" index="{{ Index }}"/>
+          <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+        </DockLayout>
+      </StackLayout>
+
+      <StackLayout>
+        <maps:mapView latitude="{{ latitude }}" longitude="{{ longitude }}" zoom="{{ zoom }}" bearing="{{ bearing }}" tilt="{{ tilt }}" padding="{{ padding }}" mapReady="onMapReady" markerSelect="onMarkerSelect" markerBeginDragging="onMarkerBeginDragging" markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag" cameraChanged="onCameraChanged" visibility="{{ isMapInitialized ? 'visible' : 'collapsed' }}" height="100%" width="100%" />
+      </StackLayout>
+    </StackLayout>
+  </android>
+  <ios>
+    <StackLayout id="mapView" orientation="vertical" height="100%" width="100%" backgroundColor="white">
+      <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" fontSize="20" width="100%" tap="closeMapView">
+        <StackLayout horizontalAlignment="right" orientation="horizontal" padding="10" width="50%" tap="closeMapView">
+          <Label text="X CLOSE" color="white" horizontalAlignment="right" dock="right" tap="closeMapView"/>
+        </StackLayout>
+      </GridLayout>
+      <GridLayout columns="auto, *" rows="auto, auto" width="100%" height="auto" style="padding:10" backgroundColor="white">
+        <StackLayout col="0" orientation="vertical">
+          <AbsoluteLayout height="100%" width="100%">
+            <!--<StackLayout backgroundImage="{{ Image }}" width="90" height="90"></StackLayout>-->
+            <Image src="{{ Image }}" style="margin:0 10 0 0" horizontalAlignment="left" width="90"/>
+            <StackLayout width="90" orientation="horizontal" visibility="{{ BestMatch == true ? 'visible' : 'collapsed'}}" verticalAlignment="center" backgroundColor="#9e0425" top="118" padding="2 0 2 2">
+              <Image src="~/images/icon_checkMarkWhite.png" class="icon" verticalAlignment="middle"/>
+              <Label text="BEST MATCH" fontSize="10" className="bestMatch spacing" color="white" margin="0 0 0 5" verticalAlignment="middle" style="font-weight:bold"/>
+            </StackLayout>
+          </AbsoluteLayout>
+        </StackLayout>
+        <StackLayout col="1" orientation="vertical">
+          <StackLayout orientation="horizontal" height="100%">
+            <!--<Image class="genderIcon" src="{{ Gender === 'Male' ? '~/images/ic_male.png' : '~/images/ic_female.png' }}" verticalAlignment="top"/>-->
+            <StackLayout orientation="vertical" class="locationDetails">
+              <StackLayout orientation="horizontal">
+                <Label fontSize="16" text="{{ DocName }}" className="{{PreferredProvider == true ? ' preferredTitle' : 'subTitle'}}" textWrap="true"/>
+              </StackLayout>
+              <Label text="{{ Specialties }}" class="info" textWrap="true"/>
+              <Label text="PROVIDER RECOMMENDED" className="preferredLabel" visibility="{{ PreferredProvider == true ? 'visible' : 'collapsed'}}" />
+              <StackLayout orientation="horizontal" horizontalAlignment="left" margin="5 0">
+                <AbsoluteLayout width="80" margin="5 0 0 0" horizontalAlignment="left" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}">
+                  <Image src="~/images/five-stars-grey.png" height="auto" width="80"/>
+                  <StackLayout width="{{ Stars }}" className="starRating"></StackLayout>
+                </AbsoluteLayout>
+                <Label text="{{ 'Rating ' + Rating }}" verticalAlignment="bottom" className="distance" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}"/>
+              </StackLayout>
+              <Repeater items="{{ AllCities }}">
+                <Repeater.itemsLayout>
+                  <WrapLayout />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                  <StackLayout orientation="horizontal" width="47%">
+                    <Label class="info" text="{{ $value }}" />
+                  </StackLayout>
+                </Repeater.itemTemplate>
+              </Repeater>
+              <!--<Label text="{{ 'Locations: ' + TotalLocations + ' - ' + Cities }}" class="info" textWrap="true" margin="5 0 0 0"/>-->
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
+      <StackLayout index="{{ Index }}" tap="selectAppt" visibility="{{ pageTitle == 'Referral Providers' ? 'visible' : 'collapsed'}}" margin="0 5 5 5">
+        <DockLayout orientation="horizontal" className="selectBtn" index="{{ Index }}" tap="selectAppt" visibility="{{ pageTitle == 'Referral Providers' ? 'visible' : 'collapsed'}}" margin="5">
+          <Label text="{{ 'First Available: ' + Availability }}" index="{{ Index }}" tap="selectAppt" dock="left"/>
+          <Image src="~/images/arrowRight.png" width="15" height="15" dock="right" horizontalAlignment="right" margin="0 10 0 0"  index="{{ Index }}" tap="selectAppt"/>
+        </DockLayout>
+      </StackLayout>
+      <StackLayout orientation="horizontal" class="CallStackLayout" visibility="{{ pageTitle == 'Search Providers' ? 'visible' : 'collapsed'}}">
+        <DockLayout orientation="horizontal" class="reqAppandschedule" tap="requestAnAppointment" visibility="{{ ZocDocId != null ? 'collapsed' : 'visible' }}" index="{{ Index }}">
+          <Label text="Request Appointment" dock="left" index="{{ Index }}"/>
+          <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+        </DockLayout>
+        <DockLayout orientation="horizontal" class="reqAppandschedule" tap="onTapZocDocWidget" visibility="{{ ZocDocId != null ? 'visible' : 'collapsed' }}" index="{{ Index }}">
+          <Label text="Schedule Now" dock="left" index="{{ Index }}"/>
+          <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+        </DockLayout>
+        <DockLayout orientation="horizontal" horizontalAlignment="right" dock="right" class="calltodoctor" tap="callAppointmentNumber" visibility="{{ ZocDocId != null ? 'visible' : 'visible' }}" index="{{ Index }}">
+          <Label text="Call To Schedule" dock="left" index="{{ Index }}"/>
+          <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+        </DockLayout>
+      </StackLayout>
+
+      <StackLayout>
+        <maps:mapView latitude="{{ latitude }}" longitude="{{ longitude }}" zoom="{{ zoom }}" bearing="{{ bearing }}" tilt="{{ tilt }}" padding="{{ padding }}" mapReady="onMapReady" markerSelect="onMarkerSelect" markerBeginDragging="onMarkerBeginDragging" markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag" cameraChanged="onCameraChanged" visibility="{{ isMapInitialized ? 'visible' : 'collapsed' }}" height="100%" width="100%" />
+      </StackLayout>
+    </StackLayout>
+
+  </ios>
+</Page>

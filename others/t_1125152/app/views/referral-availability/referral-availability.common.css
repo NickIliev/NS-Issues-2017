@@ -1,0 +1,23 @@
+.preferredLabel{
+    padding:2.5 5;
+    margin:2.5 0 0 0;
+    font:10;
+    color:white;
+    font-weight:bold;
+    background-color: #9d0525
+}
+.bestMatch{
+    font-size:10;
+    color:white; 
+    margin:0 0 0 5; 
+    vertical-align:middle; 
+    font-weight:bold
+}
+ .headshot{
+    width:90;
+    height:118;
+    margin:0 10 0 0;
+    border-radius: 0;
+    background-repeat:no-repeat;
+    background-size:cover
+}

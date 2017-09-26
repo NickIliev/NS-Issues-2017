@@ -1,0 +1,46 @@
+#disclaimerHeading {
+    margin-bottom: 40;
+}
+
+#disclaimerText {
+    margin-bottom: 20;
+}
+
+.disclaimerCheckItem {
+    margin-bottom: 20;
+}
+
+/*.checkbox {
+    vertical-align: top;
+    margin-right:20;
+}*/
+
+/*.checkboxLabel {
+    margin-left: 5;
+}*/
+
+#disclaimerContent{
+    padding: 0 20;
+    padding-top: 35;
+    padding-bottom:0;
+    height:100%;
+    background-position:bottom ;
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+#bottonContent{
+   margin-left:0;
+   margin-top:0; 
+   padding-top:0 !important;     
+}
+
+
+.IagreeBtn {
+    /*margin-top: 10;*/
+    background-image: none;
+    background-color: #9e0425;
+    color: #fff;
+    border-radius:0;
+    text-align:center;
+}

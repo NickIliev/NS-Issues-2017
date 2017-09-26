@@ -1,0 +1,141 @@
+@import url("~/views/referral-providers/referral-providers.common.css");
+@import url("~/components/provider-card/provider-card.common.css");
+Button {
+    margin: 18 0 0 0;
+    background-image: none;
+    background-color: #9e0425;
+    color: #fff;
+    border-radius: 0;
+    text-transform:uppercase
+}
+.preferred{
+    background-image:~/images/star.png;
+    background-size:contain;
+    background-position:left center;
+    background-repeat:no-repeat;
+    width:15;
+    height:100%;
+}
+.preferredTitle{
+    color:#9d0525;
+    font-weight:bold
+}
+.results{
+	horizontal-align:right;
+	vertical-align:top;
+	color:#9e0425
+}
+.orderDetials {
+    padding: 10%;
+}
+
+.distance, .results {
+    font-size: 12;
+}
+.orderDetails .title{
+	font-size:16
+}
+.info{
+	font-size:12
+}
+.card {
+    /*border-width: 1;
+    border-style: solid;
+    border-color: #eeeae1;
+    border-radius: 12;*/
+    background-color: #fff;
+    margin: 10 17;
+    padding: 20 15;
+}
+
+#bottomButtons {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+#bottomButtons StackLayout {
+    height: 50;
+}
+
+#bottomButtons StackLayout Label {
+    margin: 15 0;
+    font-size: 14;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase
+}
+
+#bottomButtonLeft,
+#bottomButtonRight {
+    horizontal-align: center;
+    width: 50%;
+}
+
+#bottomButtonLeftRipple {
+    width: 100%;
+    background-color: #9e0425;
+}
+.checkbox{
+    margin:0 5 0 0;
+}
+.filtersListView {
+    
+}
+
+.listViewItem {
+    padding: 10 20;
+    color: #fff;
+    width:100%;
+    background-color:#8b7867;
+}
+.genderIcon {
+    width: 15;
+    margin:0 10 0 0
+}
+.icon{
+    width:15;
+    height:100%;
+}
+.locatoinDetails Label{
+    font-size:12
+}
+.showIns{
+    background-color:#eee
+}
+.closeIns{
+    background-color:transparent
+}
+.closeBtn {
+    width: 25;
+    height: 25;
+    margin: 0 0 0 10;
+    background-image: ~/images/iconCheckCircle.png;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.btnClearIcon {
+    width: 50;
+    margin: 0;
+    horizontal-align: right;
+    background-image:none;
+    border-color: transparent;
+    border-width: 1 
+}
+.apply{
+    width:15;
+    height:15;
+    margin:0 0 0 10;
+    background-image: ~/images/icon_checkMarkWhite.png;
+    background-position: center center;
+    background-size:contain;
+    background-repeat: no-repeat
+}
+.locations{
+    padding:7 0;
+    text-decoration:underline;
+    /*background-image: ~/images/marker.png;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:left center;*/
+}

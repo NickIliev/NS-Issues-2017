@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      loaded="loaded"     
+      navigatedTo="navigatedTo"
+      navigatedFrom="navigatedFrom"
+      xmlns:RL="nativescript-ripple"
+      actionBarHidden="true" >
+      <StackLayout className="container" backgroundColor="red">
+        <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" height="60" backgroundColor="#9e0425" fontSize="20">
+          <Label text="X CLOSE" color="white" horizontalAlignment="right" tap="close" padding="10 10 10 30"/>
+        </GridLayout>
+        <web-view id="webView" className="webView"></web-view>
+      </StackLayout>
+</Page>

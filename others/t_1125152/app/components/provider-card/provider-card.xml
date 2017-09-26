@@ -1,0 +1,157 @@
+<android cssFile="~/provider-card/provider-card.css">
+  <StackLayout id="provider-card" width="100%" style="padding:10">
+    <GridLayout columns="auto, *" rows="*">
+      <StackLayout col="0" orientation="vertical">
+        <AbsoluteLayout width="100%">
+          <StackLayout className="headshot" backgroundImage="{{ Image }}"></StackLayout>
+          <StackLayout width="90" orientation="horizontal" visibility="{{ BestMatch == true ? 'visible' : 'collapsed'}}" verticalAlignment="center" backgroundColor="#9e0425" top="118" padding="2 0 2 2">
+            <Image src="~/images/icon_checkMarkWhite.png" class="icon" verticalAlignment="middle"/>
+            <Label text="BEST MATCH" className="bestMatch" fontSize="11"/>
+          </StackLayout>
+          <!--<StackLayout width="90" orientation="horizontal" visibility="{{ BestMatch == true ? 'visible' : 'collapsed'}}" verticalAlignment="center" backgroundColor="#9e0425" top="118" padding="2 0 2 2">
+            <Image src="~/images/icon_checkMarkWhite.png" class="icon" verticalAlignment="middle"/>
+            <Label text="BEST MATCH" className="bestMatch" fontSize="11"/>
+          </StackLayout>-->
+        </AbsoluteLayout>
+      </StackLayout>
+      <StackLayout col="1" orientation="vertical">
+        <StackLayout orientation="horizontal" height="100%">
+          <!--<Image class="genderIcon" src="{{ Gender === 'Male' ? '~/images/ic_male.png' : '~/images/ic_female.png' }}" verticalAlignment="top"/>-->
+          <StackLayout orientation="vertical" horizontalAlignment="left">
+            <Label text="{{ FullName }}" className="{{PreferredProvider == true ? ' preferredTitle' : 'subTitle'}}" textWrap="true"/>
+            <Label text="{{ Specialties }}" class="info" textWrap="true"/>
+            <Label text="PROVIDER RECOMMENDED" className="preferredLabel" visibility="{{ PreferredProvider == true ? 'visible' : 'collapsed'}}" />
+            <StackLayout orientation="horizontal" horizontalAlignment="left" margin="2.5 0">
+              <AbsoluteLayout width="80" margin="5 0 0 0" horizontalAlignment="left" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}">
+                <Image src="~/images/five-stars-grey.png" height="auto" width="80"/>
+                <StackLayout width="{{ Stars }}" className="starRating"></StackLayout>
+              </AbsoluteLayout>
+              <Label text="{{ 'Rating ' + Rating }}" verticalAlignment="bottom" className="distance" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}"/>
+            </StackLayout>
+            <!--<Label text="{{ Specialties }}" class="info" textWrap="true" tap="launchMap" index="{{ Index }}" visibility="{{ MoreSpecialties.more > 0 ? 'collapsed' : 'visible'}}"/>
+        <StackLayout orientation="horizontal" visibility="{{ MoreSpecialties.more ? 'visible' : 'collapsed'}}" tap="launchMap" index="{{ Index }}" >
+          <Label text="{{ MoreSpecialties.specialties }}" class="info" textWrap="true" tap="launchMap" index="{{ Index }}"/>
+          <Image src="~/images/iconInfo.png" class="specialties" verticalAlignment="center" tap="launchMap"  index="{{ Index }}"/>
+        </StackLayout>-->
+            <StackLayout col="0" orientation="vertical" padding="7 0" tap="showMap" index="{{ Index }}">
+              <Label text="{{ 'Locations: ' + TotalLocations + ' - View Map'}}" class="info" color="#9e0425" tap="showMap" index="{{ Index }}" fontSize="12"/>
+              <Repeater items="{{ AllCities }}">
+                <Repeater.itemsLayout>
+                  <WrapLayout />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                  <StackLayout orientation="horizontal" width="50%">
+                    <Label class="info" text="{{ $value }}" fontSize="12" />
+                  </StackLayout>
+                </Repeater.itemTemplate>
+              </Repeater>
+            </StackLayout>
+            <!--<Label text="{{ 'Locations: ' + TotalLocations + ' - ' + Cities }}" class="info" textWrap="true" margin="5 0 0 0"/>-->
+            <!--<StackLayout orientation="horizontal" class="CallStackLayout" visibility="{{ pageTitle == 'Search Providers' ? 'visible' : 'collapsed'}}">
+              <Button text="Request Appointment >"  orientation="vertical" visibility="{{ ZocDocId != null ? 'collapsed' : 'visible' }}" backgroundColor="#bf0d32" class="reqAppandschedule" tap="requestAnAppointment"/>
+              <Button text="Schedule Now >"  orientation="vertical" visibility="{{ ZocDocId != null ? 'visible' : 'collapsed' }}" backgroundColor="#bf0d32" class="reqAppandschedule" tap="onTapZocDocWidget" />
+              <Button text="Call to Schedule >"  orientation="vertical" visibility="{{ ZocDocId != null ? 'visible' : 'visible' }}"   backgroundColor="#9e0425" class="calltodoctor" tap="callAppointmentNumber" />
+            </StackLayout>-->
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </GridLayout>
+    <DockLayout orientation="horizontal" className="selectBtn CallStackLayout" visibility="{{ pageTitle == 'Referral Providers' ? 'visible' : 'collapsed'}}">
+      <Label text="{{ 'First Available: ' + Availability }}" index="{{ Index }}" dock="left" fontWeight="bold"/>
+      <Image src="~/images/arrowRight.png" width="15" height="15" dock="right" horizontalAlignment="right" margin="0 10 0 0"/>
+    </DockLayout>
+    <StackLayout orientation="horizontal" class="CallStackLayout" visibility="{{ pageTitle == 'Search Providers' ? 'visible' : 'collapsed'}}">
+      <DockLayout orientation="horizontal" class="reqAppandschedule" tap="requestAnAppointment" visibility="{{ ZocDocId != null ? 'collapsed' : 'visible' }}" index="{{ Index }}">
+        <Label text="Request Appointment" dock="left" index="{{ Index }}"/>
+        <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+      </DockLayout>
+      <DockLayout orientation="horizontal" class="reqAppandschedule" tap="onTapZocDocWidget" visibility="{{ ZocDocId != null ? 'visible' : 'collapsed' }}" index="{{ Index }}">
+        <Label text="Schedule Now" dock="left" index="{{ Index }}"/>
+        <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+      </DockLayout>
+      <DockLayout orientation="horizontal" horizontalAlignment="right" dock="right" class="calltodoctor" tap="callAppointmentNumber" visibility="{{ ZocDocId != null ? 'visible' : 'visible' }}" index="{{ Index }}">
+        <Label text="Call To Schedule" dock="left" index="{{ Index }}"/>
+        <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+      </DockLayout>
+    </StackLayout>
+
+  </StackLayout>
+</android>
+<ios>
+  <GridLayout columns="auto, *" rows="auto, auto, auto" width="100%" style="padding:10">
+      <StackLayout col="0" row="0" orientation="vertical">
+        <AbsoluteLayout width="100%">
+          <StackLayout className="headshot" backgroundImage="{{ Image }}"></StackLayout>
+          <StackLayout width="90" orientation="horizontal" visibility="{{ BestMatch == true ? 'visible' : 'collapsed'}}" verticalAlignment="center" backgroundColor="#9e0425" top="118" padding="2 0 2 2">
+            <Image src="~/images/icon_checkMarkWhite.png" class="icon" verticalAlignment="middle"/>
+            <Label text="BEST MATCH" className="bestMatch spacing" fontSize="10"/>
+          </StackLayout>
+          <!--<StackLayout width="90" orientation="horizontal" visibility="{{ BestMatch == true ? 'visible' : 'collapsed'}}" verticalAlignment="center" backgroundColor="#9e0425" top="118" padding="2 0 2 2">
+            <Image src="ß~/images/icon_checkMarkWhite.png" class="icon" verticalAlignment="middle"/>
+            <Label text="BEST MATCH" className="bestMatch" fontSize="10"/>
+          </StackLayout>-->
+        </AbsoluteLayout>
+      </StackLayout>
+      <StackLayout col="1" row="0" orientation="vertical">
+        <StackLayout orientation="horizontal" height="100%">
+          <!--<Image class="genderIcon" src="{{ Gender === 'Male' ? '~/images/ic_male.png' : '~/images/ic_female.png' }}" verticalAlignment="top"/>-->
+          <StackLayout orientation="vertical" horizontalAlignment="left">
+            <Label text="{{ FullName }}" className="{{PreferredProvider == true ? ' preferredTitle' : 'subTitle'}}" textWrap="true"/>
+            <Label text="{{ Specialties }}" class="info" textWrap="true"/>
+            <Label text="PROVIDER RECOMMENDED" className="preferredLabel" visibility="{{ PreferredProvider == true ? 'visible' : 'collapsed'}}" />
+            <StackLayout orientation="horizontal" horizontalAlignment="left" margin="2.5 0">
+              <AbsoluteLayout width="80" margin="5 0 0 0" horizontalAlignment="left" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}">
+                <Image src="~/images/five-stars-grey.png" height="auto" width="80"/>
+                <StackLayout width="{{ Stars }}" className="starRating"></StackLayout>
+              </AbsoluteLayout>
+              <Label text="{{ 'Rating ' + Rating }}" verticalAlignment="bottom" className="distance" visibility="{{ Rating != null ? 'visible' : 'collapsed'}}"/>
+            </StackLayout>
+            <!--<Label text="{{ Specialties }}" class="info" textWrap="true" tap="launchMap" index="{{ Index }}" visibility="{{ MoreSpecialties.more > 0 ? 'collapsed' : 'visible'}}"/>
+        <StackLayout orientation="horizontal" visibility="{{ MoreSpecialties.more ? 'visible' : 'collapsed'}}" tap="launchMap" index="{{ Index }}" >
+          <Label text="{{ MoreSpecialties.specialties }}" class="info" textWrap="true" tap="launchMap" index="{{ Index }}"/>
+          <Image src="~/images/iconInfo.png" class="specialties" verticalAlignment="center" tap="launchMap"  index="{{ Index }}"/>
+        </StackLayout>-->
+            <StackLayout col="0" orientation="vertical" padding="7 0" tap="showMap" index="{{ Index }}">
+              <Label text="{{ 'Locations: ' + TotalLocations + ' - View Map'}}" class="info" color="#9e0425" tap="showMap" index="{{ Index }}" />
+              <Repeater items="{{ AllCities }}">
+                <Repeater.itemsLayout>
+                  <WrapLayout />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                  <StackLayout orientation="horizontal" width="48%">
+                    <Label class="location" text="{{ $value }}" fontSize="11"/>
+                  </StackLayout>
+                </Repeater.itemTemplate>
+              </Repeater>
+            </StackLayout>
+            <!--<Label text="{{ 'Locations: ' + TotalLocations + ' - ' + Cities }}" class="info" textWrap="true" margin="5 0 0 0"/>-->
+            <!--<StackLayout orientation="horizontal" class="CallStackLayout" visibility="{{ pageTitle == 'Search Providers' ? 'visible' : 'collapsed'}}">
+              <Button text="Request Appointment >"  orientation="vertical" visibility="{{ ZocDocId != null ? 'collapsed' : 'visible' }}" backgroundColor="#bf0d32" class="reqAppandschedule" tap="requestAnAppointment"/>
+              <Button text="Schedule Now >"  orientation="vertical" visibility="{{ ZocDocId != null ? 'visible' : 'collapsed' }}" backgroundColor="#bf0d32" class="reqAppandschedule" tap="onTapZocDocWidget" />
+              <Button text="Call to Schedule >"  orientation="vertical" visibility="{{ ZocDocId != null ? 'visible' : 'visible' }}"   backgroundColor="#9e0425" class="calltodoctor" tap="callAppointmentNumber" />
+            </StackLayout>-->
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    <DockLayout colSpan="2" row="1" orientation="horizontal" className="selectBtn CallStackLayout" visibility="{{ pageTitle == 'Referral Providers' ? 'visible' : 'collapsed'}}">
+      <Label text="{{ 'First Available: ' + Availability }}" index="{{ Index }}" dock="left" fontWeight="bold"/>
+      <Image src="~/images/arrowRight.png" width="15" height="15" dock="right" horizontalAlignment="right" margin="0 10 0 0"/>
+    </DockLayout>
+    <StackLayout colSpan="2" row="1" orientation="horizontal" class="CallStackLayout" visibility="{{ pageTitle == 'Search Providers' ? 'visible' : 'collapsed'}}">
+      <DockLayout orientation="horizontal" class="reqAppandschedule" tap="requestAnAppointment" visibility="{{ ZocDocId != null ? 'collapsed' : 'visible' }}" index="{{ Index }}">
+        <Label text="Request Appointment" dock="left" index="{{ Index }}"/>
+        <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+      </DockLayout>
+      <DockLayout orientation="horizontal" class="reqAppandschedule" tap="onTapZocDocWidget" visibility="{{ ZocDocId != null ? 'visible' : 'collapsed' }}" index="{{ Index }}">
+        <Label text="Schedule Now" dock="left" index="{{ Index }}"/>
+        <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+      </DockLayout>
+      <DockLayout orientation="horizontal" horizontalAlignment="right" dock="right" class="calltodoctor" tap="callAppointmentNumber" visibility="{{ ZocDocId != null ? 'visible' : 'visible' }}" index="{{ Index }}">
+        <Label text="Call To Schedule" dock="left" index="{{ Index }}"/>
+        <Image src="~/images/arrowRight.png" dock="right" horizontalAlignment="right" index="{{ Index }}"/>
+      </DockLayout>
+    </StackLayout>
+
+  </GridLayout>
+
+</ios>

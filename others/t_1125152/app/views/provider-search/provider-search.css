@@ -1,0 +1,19 @@
+@import url("~/views/provider-search/provider-search.common.css");
+
+.searchResultItem {
+    height: auto
+}
+
+.providerImage {
+    margin-right: 10;
+}
+.searchResultItem {
+    /*height: 59;*/
+    height:auto;
+    padding-top: 5;
+    padding:10; 
+    vertical-align: top;
+}
+.distance, .results {
+   font-size: 12;
+}

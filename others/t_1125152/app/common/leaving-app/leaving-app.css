@@ -1,0 +1,50 @@
+@import url("~/common/styles/filters.css");
+
+
+#disclaimerContent {
+    padding-bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center
+}
+
+
+
+
+#imgCancel {
+    width: 48%;
+    height: 20%;
+    margin-top: 55%;
+    opacity:.8;
+}
+
+#imgContinue {
+    width: 48%;
+    height: 20%;
+    margin-top: 55%;
+    opacity:.8;
+}
+
+#imgLeavingtext {
+ horizontal-align: center;
+ width: 50%;
+ margin-top:20%;
+}
+
+
+
+#imgCancelIos {
+    width: 50%;
+    height: 19%;
+    margin-top: 55%;
+    opacity:.8;
+}
+
+#imgContinueIos {
+    width: 50%;
+    height: 20%;
+    margin-top: 55%;
+    opacity:.8;
+}

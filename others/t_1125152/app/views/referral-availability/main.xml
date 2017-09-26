@@ -1,0 +1,30 @@
+<page navigatingTo="navigatingTo"
+      navigatedTo="navigatedTo"
+      loaded="loaded"
+      codeFile="~/views/referral-availability/main-view.js"
+      xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      xmlns:customControls="~/components/drawer-menu"
+      xmlns:action-bar="~/components/action-bar">
+  <page.actionBar>
+    <action-bar:actionBar />
+  </page.actionBar>
+
+  <drawer:rad-side-drawer id="drawer" drawerLocation="Left">
+    <drawer:rad-side-drawer.drawerTransition>
+      <drawer:SlideInOnTopTransition />
+    </drawer:rad-side-drawer.drawerTransition>
+
+    <drawer:rad-side-drawer.mainContent>
+      <StackLayout id="mainContentSection" verticalAlignment="center" orientation="vertical">
+        <StackLayout id="pageContent" visibility="{{ !isLoading ? 'visible' : 'collapsed' }}"></StackLayout>
+        <!--<ActivityIndicator busy="{{ isLoading }}" />-->
+        <!--<ActivityIndicator busy="true" visibility="{{ isLoading ? 'visible' : 'collapsed' }}" />-->
+      </StackLayout>
+    </drawer:rad-side-drawer.mainContent>
+
+    <drawer:rad-side-drawer.drawerContent>
+      <customControls:drawer-menu />
+    </drawer:rad-side-drawer.drawerContent>
+
+  </drawer:rad-side-drawer>
+</page>

@@ -1,0 +1,106 @@
+<page loaded="loaded"
+      codeFile="~/views/orders/orders.js"
+      xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      xmlns:lv="nativescript-telerik-ui/listview"
+      xmlns:customControls="~/components/drawer-menu"
+      xmlns:action-bar="~/components/action-bar"
+       xmlns:card="nativescript-cardview"
+      xmlns:access-uh="~/components/access-uh">
+  <page.actionBar>
+    <action-bar:actionBar />
+  </page.actionBar>
+
+  <drawer:rad-side-drawer id="drawer" drawerLocation="Left">
+    <drawer:rad-side-drawer.drawerTransition>
+      <drawer:SlideInOnTopTransition />
+    </drawer:rad-side-drawer.drawerTransition>
+
+    <drawer:rad-side-drawer.mainContent>
+      <android xmlns:RL="nativescript-ripple">
+        <GridLayout rows="*,auto" padding="0">
+          <StackLayout row="0" className="listContainer" visibility="{{ isLoading == false && isError == false ? 'visible' : 'collapsed'}}">
+            <StackLayout className="stackInfo">
+              <Label text="Referral Orders" className="title"/>
+              <Label text="{{ count }}" horizontalAlignment="left" verticalAlignment="center" textWrap="true"/>
+            </StackLayout>
+            <lv:RadListView items="{{ searchResults.Data }}" itemTap="listSchedule">
+
+              <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+              </lv:RadListView.listViewLayout>
+              <lv:RadListView.itemTemplate >
+                <card:CardView className="card" radius="4" >
+                  <StackLayout orientation="horizontal" class="orderDetails">
+                    <StackLayout orientation="vertical" width="65%">
+                      <Label className="subtitle" text="{{ 'Requisition: ' + RequisitionID }}"/>
+                      <Label text="{{ 'Referral Type: ' + QOClassificationEntryName }}" textWrap="true"/>
+                      <Label text="{{ 'Problem: ' + DisplayProblem }}" textWrap="true"/>
+                      <Label text="{{ 'Date: ' + ToBeDoneDate }}"/>
+                      <Label text="{{ 'Provider: ' + OrderingProviderFirstName + ' ' + OrderingProviderLastName }}"/>
+                    </StackLayout>
+                    <StackLayout orientation="horizontal" className="scheduleBtn" >
+                      <Button text="Schedule" index="{{ Index }}" tap="btnSchedule" />
+                    </StackLayout>
+                  </StackLayout>
+                </card:CardView>
+              </lv:RadListView.itemTemplate>
+            </lv:RadListView>
+          </StackLayout>
+          <Label class="button" row="1" text="Back to Verify" tap="goBack" verticalAlignment="bottom"  visibility="{{ isLoading == false && isError == false ? 'visible' : 'collapsed'}}"/>
+          <StackLayout row="2" className="error" visibility="{{ isLoading == false && isError == true ? 'visible' : 'collapsed'}}" verticalAlignment="center">
+            <Label text ="{{ message }}" textWrap="true" tap="{{ phone != null ? 'contact' : '' }}" phone="{{ phone }}"/>
+          </StackLayout>
+            <Label row="3" text="Enter New Order" class="button" tap="reScan"  visibility="{{ isLoading == false && isError == true ? 'visible' : 'collapsed'}}" verticalAlignment="bottom"/>
+          <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+        </GridLayout>
+      </android>
+      <!-- TODO: modularize this menu -->
+      <ios>
+        <StackLayout orientation="vertical">
+          <StackLayout className="stackInfo" row="0" visibility="{{ isLoading == false && isError == false ? 'visible' : 'collapsed'}}">
+            <Label text="Referral Orders" className="title"/>
+            <Label text="{{ count }}" horizontalAlignment="left" verticalAlignment="center" textWrap="true"/>
+          </StackLayout>
+          <GridLayout rows="*,auto" style="background-color:#f9f9f9" visibility="{{ isLoading == false ? 'visible' : 'collapsed'}}">
+            <GridLayout row="0" class="gridContainer" visibility="{{ isLoading == false && isError == false ? 'visible' : 'collapsed'}}">
+              <lv:RadListView row="0" items="{{ searchResults.Data }}" itemTap="listSchedule">
+
+                <lv:RadListView.listViewLayout>
+                  <lv:ListViewLinearLayout scrollDirection="Vertical"  itemHeight="*"/>
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate >
+                  <card:CardView className="card" radius="4" shadowOffsetWidth="1" shadowOffsetHeight="1">
+                    <StackLayout orientation="horizontal" class="orderDetails">
+                      <StackLayout orientation="vertical" width="65%">
+                        <Label className="subtitle" text="{{ 'Requisition: ' + RequisitionID }}"/>
+                        <Label text="{{ 'Referral Type: ' + QOClassificationEntryName }}" textWrap="true"/>
+                        <Label text="{{ 'Problem: ' + DisplayProblem }}" textWrap="true"/>
+                        <Label text="{{ 'Date: ' + ToBeDoneDate }}"/>
+                        <Label text="{{ 'Provider: ' + OrderingProviderFirstName + ' ' + OrderingProviderLastName }}"/>
+                      </StackLayout>
+                      <StackLayout orientation="horizontal" className="scheduleBtn">
+                        <Button text="Schedule" index="{{ Index }}" tap="btnSchedule" />
+                      </StackLayout>
+                    </StackLayout>
+                  </card:CardView>
+                </lv:RadListView.itemTemplate>
+              </lv:RadListView>
+            </GridLayout>
+            <Label class="button" row="1" text="Back to Verify" tap="goBack"  visibility="{{ isLoading == false && isError == false ? 'visible' : 'collapsed'}}"/>
+            <StackLayout row="2" className="error" visibility="{{ isLoading == false && isError == true ? 'visible' : 'collapsed'}}" verticalAlignment="middle">
+              <Label text ="{{ message }}" textWrap="true" tap="{{ phone != null ? 'contact' : '' }}" phone="{{ phone }}"/>
+            </StackLayout>
+              <Label row="3" class="button" text="Enter New Order" tap="reScan" visibility="{{ isLoading == false && isError == true ? 'visible' : 'collapsed'}}" verticalAlignment="bottom"/>
+          </GridLayout>
+          <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+        </StackLayout>
+      </ios>
+
+    </drawer:rad-side-drawer.mainContent>
+
+    <drawer:rad-side-drawer.drawerContent>
+      <customControls:drawer-menu />
+    </drawer:rad-side-drawer.drawerContent>
+
+  </drawer:rad-side-drawer>
+</page>

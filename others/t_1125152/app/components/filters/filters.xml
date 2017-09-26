@@ -1,0 +1,94 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:RL="nativescript-ripple"
+      showingModally="onShowingModally"
+      shownModally="onShownModally"
+      loaded="onLoaded"
+      unloaded="onUnloaded"
+      cssFile="~/components/filters/filters.css"
+      codeFile="~/components/filters/filters-view.js"
+      xmlns:lv="nativescript-telerik-ui/listview">
+  <ScrollView>
+
+    <AbsoluteLayout id="filter" backgroundColor="#eeeeee" width="100%" height="100%">
+      <GridLayout columns="*,2" width="100%" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" padding="15" fontSize="20" margin="0 0 10 0" top="0">
+        <Label text="SORT &amp; FILTER &#xf1de;" color="white" horizontalAlignment="left" />
+        <Label text="&#9989; DONE" color="white" horizontalAlignment="right" tap="closeFilter"/>
+      </GridLayout>
+      <StackLayout id="sortByName" width="100%" padding="20" backgroundColor="#fff" margin="0 0 15 0" top="65">
+        <StackLayout orientation="horizontal">
+          <Label text="Sort By:" verticalAlignment="center" width="120"/>
+          <StackLayout  orientation="horizontal"  tap="Name" margin="0 10 0 0">
+            <Image id="rdbName" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Name" />
+            <Label text="Name"  tap="Name" />
+          </StackLayout>
+          <StackLayout  orientation="horizontal"  tap="Distance"  margin="0 10 0 0">
+            <Image id="rdbDistance" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Distance" />
+            <Label text="Distance"  tap="Distance" />
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+      <StackLayout padding="20" width="100%" backgroundColor="#fff" top="140">
+        <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+          <StackLayout  orientation="horizontal" margin="0 20 0 0">
+            <Label text="Filter By:" width="120"/>
+            <StackLayout orientation="horizontal" padding="0 5" tap="Male">
+              <Image id="rdbMale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Male" />
+              <Label text="Male"  tap="Male"/>
+            </StackLayout>
+            <StackLayout orientation="horizontal" padding="0 5" tap="Female">
+              <Image id="rdbFemale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Female" />
+              <Label text="Female"  tap="Female" />
+            </StackLayout>
+            <StackLayout orientation="horizontal" padding="0 5" tap="All">
+              <Image id="rdbAll" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="All" />
+              <Label text="Both"  tap="All"/>
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+      <StackLayout id="filterByZip" orientation="horizontal" width="100%" top="215" padding="10" backgroundColor="#eee">
+          <StackLayout orientation="horizontal">            
+            <Label id="zipCodeIcon" className="iconPlusCircle" text="" textWrap="true" margin="0 10 0 0" visibility="collapsed"/>
+            <Label id="zipCodeLabel" text="Add Zip Code" textWrap="true" width="75"/>
+          </StackLayout>
+        <DockLayout padding="0 0 0 10" width="100%" stretchLastChild="true">
+          <StackLayout className="closeBtn" dock="right" opacity="0"></StackLayout>
+          <TextField id="zipCode" hint="Zip Code" keyboardType="number" width="100%" propertyChange="setZipCode" dock="left"/>
+        </DockLayout>
+      </StackLayout>
+      <AbsoluteLayout id="filterByInsurance" orientation="vertical" width="100%" height="90%" top="290">
+          <StackLayout id="insuranceListViewContainer" backgroundColor="#eeeeee" width="100%" height="90%" top="58" opacity="0">
+                <ListView items="{{ Insurance.Insurances.Data }}" id="lvInsurance" itemTap="selectInsurance" selectionBehavior="Press">
+                  <ListView.listViewLayout>
+                    <ListView.ListViewLinearLayout scrollDirection="Vertical" />
+                  </ListView.listViewLayout>
+                  <ListView.itemTemplate>
+                    <StackLayout padding="15">
+                      <Label text="{{ $value }}" class="listViewItem" />
+                    </StackLayout>
+                  </ListView.itemTemplate>
+                </ListView>
+          </StackLayout>          
+        <StackLayout orientation="horizontal" backgroundColor="#eee" width="100%" padding="10">
+          <StackLayout orientation="horizontal" tap="hasFocus" >            
+            <Label id="insuranceIcon" className="iconPlusCircle" text="" textWrap="true" margin="0 10 0 0"  tap="hasFocus" visibility="collapsed" />
+            <Label id="insuranceLabel" text="Add Insurance" textWrap="true" width="75" tap="hasFocus" />
+          </StackLayout>
+          <DockLayout padding="0 0 0 10" width="100%" stretchLastChild="true">
+            <StackLayout id="closeInsuranceFilter" className="closeBtn" tap="close"  dock="right" ></StackLayout>
+            <TextField id="txtInsurance" text="{{ Insurance.SearchTerm }}" hint="Filter By Insurance" tap="hasFocus" dock="left" autocorrect="false" propertyChange="checkInsurance" />
+          </DockLayout>
+        </StackLayout>
+      </AbsoluteLayout>
+      <!--<RL:Ripple width="100%" tap="doFilterSort" margin="15 0 0 0">
+        <StackLayout height="40" orientation="horizontal" horizontalAlignment="center">
+          <Label text="APPLY"  tap="doFilterSort" color="#9e0425"/>
+          <Image src="~/images/right-arrow.png" width="10" height="15" margin="0 0 0 10" />
+        </StackLayout>
+      </RL:Ripple>-->
+    </AbsoluteLayout>
+
+  </ScrollView>
+
+
+</Page>

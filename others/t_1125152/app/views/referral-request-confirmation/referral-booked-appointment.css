@@ -1,0 +1,22 @@
+@import url("~/views/request-an-appointment/request-an-appointment.common.css");
+
+.dropDownContainer {
+    background-image: ~/images/ddlarrow.png;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 79;
+}
+
+#RadioContent {
+    width: 100%;
+  
+}
+
+.checkbox {
+    vertical-align: top;
+    margin-right:20;
+}
+
+.disclaimerCheckItem {
+    margin-bottom: 5;
+}

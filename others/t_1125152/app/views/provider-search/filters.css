@@ -1,0 +1,16 @@
+@import url("~/common/styles/filters.css");
+
+TextField {
+    padding: 17 20;
+    color: #4f4f4f;
+}
+
+.filtersListView {
+    
+}
+
+.listViewItem {
+    padding: 10 20;
+    color: #fff;
+    background-color:#8b7867;
+}

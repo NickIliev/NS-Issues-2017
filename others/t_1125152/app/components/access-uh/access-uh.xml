@@ -1,0 +1,184 @@
+<android xmlns:RL="nativescript-ripple">
+  <AbsoluteLayout>
+    <Image src="~/images/welcome/welcome.jpg" width="100%" height="auto" top="0" />
+    <StackLayout id="menus" width="100%" height="100%" top="0" verticalAlignment="bottom" >
+      
+      <!--active layout-->
+
+      <StackLayout orientation="horizontal" width="100%">
+        <DockLayout width="100%">
+          <RL:Ripple dock="left" class="accessUHRipple" rippleColor="#acacac" width="49.5%" onTap="launchScheduling">
+            <Image id="imgreq" src="~/images/welcome/req-an-appointment.png" width="100%" height="auto" onTap="launchScheduling"/>
+          </RL:Ripple>
+          <RL:Ripple dock="right" class="accessUHRipple" rippleColor="#acacac" width="49.5%" onTap="findPHRTap" horizontalAlignment="right">
+            <Image id="imgphr" src="~/images/welcome/phr.png" width="100%" height="auto" onTap="findPHRTap"/>
+          </RL:Ripple>
+        </DockLayout>
+      </StackLayout>
+      <StackLayout orientation="horizontal" margin="1% 0 0 0" >
+        <RL:Ripple class="accessUHRipple" rippleColor="#acacac"  width="33%" style="margin-right:1%"  onTap="findERTap">
+          <Image  id="imger" src="~/images/welcome/find-urgent-care.png" width="33%" style="margin-right:1%" onTap="findERTap"/>
+        </RL:Ripple>
+        <RL:Ripple class="accessUHRipple" rippleColor="#acacac"  width="33%" onTap="findProviderTap">
+          <Image  id="imgdoctor" src="~/images/welcome/find-a-doctor.png" width="33%"  onTap="findProviderTap"/>
+        </RL:Ripple>
+        <RL:Ripple class="accessUHRipple" rippleColor="#acacac"  width="33%"  style="margin-left:1%;margin-right:0;"  onTap="findLocationTap">
+          <Image  id="imglocation" src="~/images/welcome/find-a-location.png" width="33%" style="margin-left:1%;margin-right:0;" onTap="findLocationTap"/>
+        </RL:Ripple>
+      </StackLayout>
+
+      <!--end active layout-->
+
+      <!--start UH Virtual Visit proof of concept layout-->
+      <!--<StackLayout backgroundColor="white" height="0.5%" width="100%">        
+      </StackLayout>
+      <RL:Ripple dock="left" class="accessUHRipple" rippleColor="#acacac" width="100%" onTap="launchScheduling">
+        <Image id="imgreq" src="~/images/welcome/uhv/req-an-appointment.png" width="100%" height="auto" onTap="launchScheduling"/>
+      </RL:Ripple>      
+      <StackLayout orientation="horizontal" margin=".5% 0" >
+        <RL:Ripple class="accessUHRipple" rippleColor="#acacac" width="33%" style="margin-right:1%"  onTap="findProviderTap">
+          <Image  id="imgdoctor" src="~/images/welcome//uhv/find-a-doctor.png" width="33%"  onTap="findProviderTap"/>
+        </RL:Ripple>
+        <RL:Ripple class="accessUHRipple" rippleColor="#acacac" width="33%" onTap="findLocationTap">
+          <Image  id="imglocation" src="~/images/welcome/uhv/find-a-location.png" width="33%" style="margin-left:1%;margin-right:0;" onTap="findLocationTap"/>
+        </RL:Ripple>
+        <RL:Ripple class="accessUHRipple" rippleColor="#acacac" width="33%"  style="margin-left:1%;margin-right:0;"  onTap="findERTap">
+          <Image  id="imger" src="~/images/welcome/uhv/find-urgent-care.png" width="33%" style="margin-right:1%" onTap="findERTap"/>
+        </RL:Ripple>
+      </StackLayout>
+      <StackLayout orientation="horizontal" width="100%">
+        <DockLayout width="100%">
+          <RL:Ripple dock="left" class="accessUHRipple" rippleColor="#acacac" width="49.7%" onTap="uhVirtualVisit">
+            <Image id="imgreq" src="~/images/welcome/uhv/uh-virtual-visit.png" width="100%" height="auto" onTap="uhVirtualVisit"/>
+          </RL:Ripple>
+          <RL:Ripple dock="right" class="accessUHRipple" rippleColor="#acacac" width="49.7%" onTap="findPHRTap" horizontalAlignment="right">
+            <Image id="imgphr" src="~/images/welcome/uhv/phr.png" width="100%" height="auto" onTap="findPHRTap"/>
+          </RL:Ripple>
+        </DockLayout>
+      </StackLayout>-->
+
+      <!--end UH Virtual Visit proof of concept layout-->
+
+    </StackLayout>
+  </AbsoluteLayout>
+
+
+
+
+
+  <!--<GridLayout rows="*" id="main-content">
+    <ActivityIndicator busy="{{ isLoading }}" row="0" />
+    <DockLayout row="0" stretchLastChild="true">
+      <Image dock="top" src="~/images/welcome/welcomeImage.jpg" />
+      <StackLayout dock="bottom" orientation="horizontal" width="100%">
+        <StackLayout width="50%" orientation="vertical">
+          <RL:Ripple class="accessUHRipple" rippleColor="#acacac" height="50%" onTap="findPHRTap">
+            <StackLayout id="iconPHR">
+              <Image src="~/images/welcome/iconPHR.png" className="findImage" onTap="findPHRTap" />
+            </StackLayout>
+          </RL:Ripple>
+          <RL:Ripple class="accessUHRipple" rippleColor="#acacac" height="50%" onTap="launchScheduling">
+            <StackLayout id="iconReferralEase">
+              <Image src="~/images/welcome/iconReferralEase.png" className="findImage" onTap="launchReferralEase" />
+            </StackLayout>
+          </RL:Ripple>
+        </StackLayout>
+        <StackLayout width="50%">
+          <StackLayout orientation="horizontal" height="50%">
+            <RL:Ripple class="accessUHRipple" rippleColor="#acacac" width="50%" onTap="findProviderTap">
+              <StackLayout id="iconFindProvider">
+                <Image src="~/images/welcome/iconFindProvider.png" className="findImage rightTop" onTap="findProviderTap" />
+              </StackLayout>
+            </RL:Ripple>
+            <RL:Ripple class="accessUHRipple" rippleColor="#acacac" width="50%" height="100%" onTap="findLocationTap">
+              <StackLayout id="iconFindLocation">
+                <Image src="~/images/welcome/iconFindLocation.png" className="findImage rightTop" onTap="findLocationTap" />
+              </StackLayout>
+            </RL:Ripple>
+          </StackLayout>
+          <StackLayout height="50%">
+            <RL:Ripple class="accessUHRipple" rippleColor="#acacac" onTap="findERTap">
+              <StackLayout id="iconFindER">
+                <Image src="~/images/welcome/iconFindER.png" className="findImage" onTap="findERTap"/>
+              </StackLayout>
+            </RL:Ripple>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </DockLayout>
+  </GridLayout>-->
+</android>
+
+<ios>
+  <GridLayout rows="*" id="main-content">
+    <StackLayout id="welcomeContent"  stretch="true"  backgroundImage="~/images/welcome/welcome.jpg">
+    </StackLayout>
+    <DockLayout row="0" stretchLastChild="true">
+      
+      <!--start active layout-->
+      <StackLayout  dock="bottom" id="menus" width="100%" >
+        <StackLayout orientation="horizontal" width="100%" >
+          <Image id="imgreq" src="~/images/welcome/req-an-appointment.png" width="49%" style="margin-right:2%" onTap="launchScheduling"/>
+          <Image id="imgphr" src="~/images/welcome/phr.png" width="49%"  style="margin-right:0;" onTap="findPHRTap"/>
+        </StackLayout>
+        <StackLayout orientation="vertical" width="100%" style="margin-bottom:1%" ></StackLayout>
+        <StackLayout orientation="horizontal" >
+          <Image  id="imger" src="~/images/welcome/find-urgent-care.png" width="33%" style="margin-right:1%" onTap="findERTap"/>
+          <Image  id="imgdoctor" src="~/images/welcome/find-a-doctor.png" width="33%"  onTap="findProviderTap"/>
+          <Image  id="imglocation" src="~/images/welcome/find-a-location.png" width="33%" style="margin-left:1%;margin-right:0;" onTap="findLocationTap"/>
+
+        </StackLayout>
+      </StackLayout>
+      <!--end active layout-->
+
+      <!--start UH Virtual Visit proof of concept layout-->
+      <!--<StackLayout  dock="bottom" width="100%" verticalAlignment="bottom">
+        <StackLayout backgroundColor="white" height="0.5%" width="100%">
+        </StackLayout>
+        <Image id="imgreq" src="~/images/welcome/uhv/req-an-appointment.png" width="100%" height="auto" onTap="launchScheduling" horizontalAlignment="center"/>
+        <DockLayout orientation="horizontal" margin=".5% 0" >
+          <Image id="imgdoctor" dock="left" src="~/images/welcome//uhv/find-a-doctor.png" width="32.5%" onTap="findProviderTap" horizontalAlignment="left"/>
+          <Image id="imglocation" src="~/images/welcome/uhv/find-a-location.png" width="32.5%" onTap="findLocationTap" horizontalAlignment="center" margin="0 1.25%"/>
+          <Image id="imger" dock="right" src="~/images/welcome/uhv/find-urgent-care.png" width="32.5%" onTap="findERTap" horizontalAlignment="right"/>
+        </DockLayout>
+        <DockLayout orientation="horizontal" width="100%">
+          <Image dock="left" id="imgreq" src="~/images/welcome/uhv/uh-virtual-visit.png" width="49.7%" height="auto" onTap="uhVirtualVisit" horizontalAlignment="left" margin="0 1% 0 0"/>
+          <Image dock="right" id="imgphr" src="~/images/welcome/uhv/phr.png" width="49.7%" height="auto" onTap="findPHRTap" horizontalAlignment="right" verticalAlignment="bottom" margin="0 0 0 1%"/>
+        </DockLayout>
+        
+      </StackLayout>-->
+      <!--end UH Virtual Visit proof of concept layout-->
+    </DockLayout>
+  </GridLayout>
+  <!--<GridLayout rows="*" id="main-content">
+    <ActivityIndicator busy="{{ isLoading }}" row="0" />
+    <DockLayout row="0" stretchLastChild="true">
+      <Image dock="top" src="~/images/welcome/welcomeImage.jpg" />
+      <StackLayout dock="bottom" orientation="horizontal" width="100%">
+        <StackLayout width="50%" orientation="vertical">
+          <StackLayout id="iconPHR" height="50%" onTap="findPHRTap" >
+            <Image src="~/images/welcome/iconPHR.png" className="findImage"/>
+          </StackLayout>
+          <StackLayout id="iconReferralEase" height="50%" onTap="launchScheduling" >
+            <Image src="~/images/welcome/request-an-appointment.png" className="findImage"/>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout width="50%">
+          <StackLayout orientation="horizontal" height="50%">
+            <StackLayout id="iconFindProvider" width="50%" onTap="findProviderTap" >
+              <Image src="~/images/welcome/iconFindProvider.png" className="findImage rightTop"/>
+            </StackLayout>
+            <StackLayout id="iconFindLocation" width="50%" height="100%" onTap="findLocationTap" >
+              <Image src="~/images/welcome/iconFindLocation.png" className="findImage rightTop"/>
+            </StackLayout>
+          </StackLayout>
+          <StackLayout height="50%">
+            <StackLayout id="iconFindER" height="100%" onTap="findERTap" >
+              <Image src="~/images/welcome/iconFindER.png" className="findImage"/>
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </DockLayout>
+  </GridLayout>-->
+</ios>

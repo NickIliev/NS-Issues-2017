@@ -1,0 +1,10 @@
+@import url('~/components/action-bar/actionBar.common.css');
+
+#tappableLogo{
+    
+}
+
+.itemright {
+    width: 90;
+    height: 100%;
+}

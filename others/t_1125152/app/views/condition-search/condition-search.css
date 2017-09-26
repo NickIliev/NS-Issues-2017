@@ -1,0 +1,45 @@
+#searchSection {
+    background-color: #eee;
+}
+
+#searchBox {
+    margin: 10;
+}
+
+#provider-list {
+	margin: 5;
+	opacity: 0;
+}
+
+.searchResultItem {
+    background-color: white;
+    padding: 10
+}
+
+.providerName,
+.providerSpecialty,
+.providerGender,
+.providerImage {
+    margin: 0;
+}
+
+.providerImage {
+    width: 60;
+}
+
+.providerDetails {
+    margin-left: 15;
+}
+
+.providerName {
+    font-weight: bold;
+    font-size: 22;
+}
+
+.providerSpecialty {
+    font-size: 16;
+}
+
+.providerSpecialtyIcon {
+    margin-right: 5;
+}

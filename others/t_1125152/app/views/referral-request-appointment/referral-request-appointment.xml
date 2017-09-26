@@ -1,0 +1,96 @@
+<android>
+
+  <GridLayout rows="*,auto" orientation="vertical">
+    <StackLayout row="0" orientation="vertical" className="orderDetails">
+      <StackLayout orientation="vertical" veritcalAlignment="top">
+        <Label text="Confirm Appointment Request" className="title"/>
+        <Label text="{{ referral }}"/>
+        <Label text="{{ referralType }}"/>
+        <Label text="{{ orderReason }}"/>
+      </StackLayout>
+      <StackLayout  className="detailsContainer" orientation="vertical">
+        <Label text="Appointment Details" className="title"/>
+        <StackLayout orientation="vertical" className="locationDetails">
+          <Label text="Practitioner Name" className="subtitle"/>
+          <Label text="{{ practitionerName }}"/>
+        </StackLayout>
+        <StackLayout orientation="vertical" margin="10 0 0 0" className="locationDetails">
+          <Label text="Date &amp; Time" className="subtitle"/>
+          <Label text="{{ appointmentDate }}"/>
+        </StackLayout>
+      </StackLayout>
+      <StackLayout className="detailsContainer" orientation="vertical">
+        <Label text="Appointment Location" className="title"/>
+        <GridLayout columns="auto, *, auto" rows="auto, auto">
+          <StackLayout orientation="vertical" className="locationDetails">
+            <Label className="subtitle" text="Address"/>
+            <Label text="{{ address + ', ' + cityStateZip }}" textWrap="true"/>
+            <StackLayout orientation="vertical" margin="10 0 0 0" visibility="{{ phone.length > 0 ? 'visible' : 'collapsed'}}">
+              <Label text="Phone" className="subtitle" />
+              <Label text="{{ phone }}" color="#9e0425" phone="{{ phone }}"/>
+            </StackLayout>
+          </StackLayout>
+          <StackLayout className="mapInfo">
+            <Label text="{{ distance}}"/>
+            <Label text="Map It" style="color:#9e0425" visibility="collapsed"/>
+          </StackLayout>
+        </GridLayout>
+      </StackLayout>
+    </StackLayout>
+    <DockLayout row="1" orientation="horizontal" width="100%" className="btnContainer">
+      <Label text="Back" tap="goBack" className="goBack button" dock="left"/>
+      <Label text="Confirm" className="button confirm" tap="confirm" dock="right"/>
+    </DockLayout>
+
+    <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+  </GridLayout>
+
+</android>
+<!-- TODO: modularize this menu -->
+<ios>
+  <StackLayout orientation="vertical">
+    <GridLayout rows="*,auto" orientation="vertical">
+      <StackLayout  className="orderDetails" row="0">
+        <StackLayout orientation="vertical" veritcalAlignment="top">
+          <Label text="Confirm Appointment Request" className="title"/>
+          <Label text="{{ referral }}"/>
+          <Label text="{{ referralType }}"/>
+          <Label text="{{ orderReason }}"/>
+        </StackLayout>
+        <StackLayout  className="detailsContainer" orientation="vertical">
+          <Label text="Appointment Details" className="title"/>
+          <StackLayout orientation="vertical" className="locationDetails">
+            <Label text="Practitioner Name" className="subtitle"/>
+            <Label text="{{ practitionerName }}"/>
+          </StackLayout>
+          <StackLayout orientation="vertical" margin="10 0 0 0" className="locationDetails">
+            <Label text="Date &amp; Time" className="subtitle"/>
+            <Label text="{{ appointmentDate }}"/>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout className="detailsContainer" orientation="vertical">
+          <Label text="Appointment Location" className="title"/>
+          <GridLayout columns="auto, *, auto" rows="auto, auto">
+            <StackLayout orientation="vertical" className="locationDetails">
+              <Label className="subtitle" text="Address"/>
+              <Label text="{{ address + ', ' + cityStateZip }}" textWrap="true"/>
+              <StackLayout orientation="vertical" margin="10 0 0 0" visibility="{{ phone.length > 0 ? 'visible' : 'collapsed'}}">
+                <Label text="Phone" className="subtitle" />
+                <Label text="{{ phone }}" color="#9e0425" phone="{{ phone }}"/>
+              </StackLayout>
+            </StackLayout>
+            <StackLayout className="mapInfo">
+              <Label text="{{ distance}}"/>
+              <Label text="Map It" style="color:#9e0425" visibility="collapsed"/>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+      </StackLayout>
+      <DockLayout row="1" orientation="horizontal" width="100%" className="btnContainer">
+        <Label text="Back" tap="goBack" className="goBack button" dock="left"/>
+        <Label text="Confirm" className="button confirm" tap="confirm" dock="right"/>
+      </DockLayout>
+    </GridLayout>
+    <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+  </StackLayout>
+</ios>

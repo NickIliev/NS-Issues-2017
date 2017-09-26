@@ -1,0 +1,425 @@
+<android >
+
+  <GridLayout id="drawer-content" rows="*,*,*,*,*,*,*,*,*" style="margin-bottom:12%;" xmlns:RL="nativescript-ripple">
+    <StackLayout row="0" className="menuItem main-color" orientation="horizontal" style="margin-bottom:.5%;" tap="tapHome">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapHome">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="HOME" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="1" className="menuItem main-color" orientation="horizontal" onTap="tapSMN" style="margin-bottom:.5%;" id="abc">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapSMN">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="SCHEDULE ME NOW"/>
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="2" className="menuItem main-color" orientation="horizontal" tap="tapFindADoctor" style="margin-bottom:.5%;">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapFindADoctor">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="FIND A DOCTOR"/>
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="3" className="menuItem main-color" orientation="horizontal" tap="tapFindALocation" style="margin-bottom:.5%;">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapFindALocation">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="FIND A LOCATION" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="4" className="menuItem main-color" orientation="horizontal" tap="tapFindERUrgentCare" style="margin-bottom:.5%;">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapFindERUrgentCare">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="FIND ER/URGENT CARE" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="5" className="menuItem main-color" orientation="horizontal" tap="tapSymptomChecker" style="margin-bottom:.5%;">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapSymptomChecker">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="SYMPTOM CHECKER"  />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="6" className="menuItem main-color" orientation="horizontal" tap="tapContactUH" style="margin-bottom:.5%;">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapContactUH">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="CONTACT UH" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="7" className="menuItem main-color" orientation="horizontal"  tap="tapTermsOfUse"  style="margin-bottom:.5%;">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapTermsOfUse">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="TERMS OF USE" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="8" className="menuItem main-color" orientation="horizontal"  tap="tapAboutUHNow"  style="margin-bottom:.5%;">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple"   tap="tapAboutUHNow">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="ABOUT UH NOW" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+
+  </GridLayout>
+
+
+  <!--<GridLayout id="drawer-content" rows="*,*,*,*,*,*,*,*,*,*,*,2*" xmlns:RL="nativescript-ripple">
+    <StackLayout row="0" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="tapHome">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Home" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="1" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="tapFindADoctor">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Find a Doctor"/>
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="2" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="tapFindALocation">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Find a Location" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="3" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="goToFindPHR">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="My Personal Health Record" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="4" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="tapFindERUrgentCare">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Find the Nearest ER or Urgent Care" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="5" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="launchReferralEase">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Schedule Your Referral" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="6" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="goToRequestedAppointment">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Request Online" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="7" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="callToSchedule">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Call to Schedule" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="8" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="tapSymptomChecker">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Symptom Checker" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="9" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="tapContactUH">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Contact UH" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+    <StackLayout row="10" className="menuItem main-color" orientation="horizontal">
+      <RL:Ripple rippleColor="#ff8888" class="drawerRipple" tap="tapTermsOfUse">
+        <StackLayout orientation="horizontal">
+          <StackLayout class="menuItemLabel">
+            <Label text="Terms of Use" />
+          </StackLayout>
+          <StackLayout class="menuItemIcon">
+            <Label text="&#xf105;" class="icon" />
+          </StackLayout>
+        </StackLayout>
+      </RL:Ripple>
+    </StackLayout>
+
+    <Image row="11" src="~/images/drawerLogo.png" tap="tapLogo" />
+  </GridLayout>-->
+</android>
+
+<ios>
+
+  <GridLayout id="drawer-content" rows="*,*,*,*,*,*,*,*,*" style="margin-bottom:12%;">
+    <StackLayout row="0" className="menuItem main-color" orientation="horizontal" style="margin-bottom:.5%;" tap="tapHome">
+      <StackLayout class="menuItemLabel">
+        <Label text="HOME" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="1" className="menuItem main-color" orientation="horizontal" onTap="tapSMN" style="margin-bottom:.5%;" id="abc">
+      <StackLayout class="menuItemLabel">
+        <Label text="SCHEDULE ME NOW"/>
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="2" className="menuItem main-color" orientation="horizontal" tap="tapFindADoctor" style="margin-bottom:.5%;">
+      <StackLayout class="menuItemLabel">
+        <Label text="FIND A DOCTOR"/>
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="3" className="menuItem main-color" orientation="horizontal" tap="tapFindALocation" style="margin-bottom:.5%;">
+      <StackLayout class="menuItemLabel">
+        <Label text="FIND A LOCATION" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="4" className="menuItem main-color" orientation="horizontal" tap="tapFindERUrgentCare" style="margin-bottom:.5%;">
+      <StackLayout class="menuItemLabel">
+        <Label text="FIND ER/URGENT CARE" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="5" className="menuItem main-color" orientation="horizontal" tap="tapSymptomChecker" style="margin-bottom:.5%;">
+      <StackLayout class="menuItemLabel">
+        <Label text="SYMPTOM CHECKER"  />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="6" className="menuItem main-color" orientation="horizontal" tap="tapContactUH" style="margin-bottom:.5%;">
+      <StackLayout class="menuItemLabel">
+        <Label text="CONTACT UH" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="7" className="menuItem main-color" orientation="horizontal"  tap="tapTermsOfUse"  style="margin-bottom:.5%;">
+      <StackLayout class="menuItemLabel">
+        <Label text="TERMS OF USE" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="8" className="menuItem main-color" orientation="horizontal" tap="tapAboutUHNow" style="margin-bottom:.5%;">
+      <StackLayout class="menuItemLabel">
+        <Label text="ABOUT UH NOW" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+
+  </GridLayout>
+
+
+  <!--<GridLayout id="drawer-content" rows="*,*,*,*,*,*,*,*,*,*,*,2*">
+    <StackLayout row="0" className="menuItem main-color" orientation="horizontal" tap="tapHome">
+      <StackLayout class="menuItemLabel">
+        <Label text="Home"/>
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="1" className="menuItem main-color" orientation="horizontal" tap="tapFindADoctor">
+      <StackLayout class="menuItemLabel">
+        <Label text="Find a Doctor"/>
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="2" className="menuItem main-color" orientation="horizontal" tap="tapFindALocation">
+      <StackLayout class="menuItemLabel">
+        <Label text="Find a Location" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="3" className="menuItem main-color" orientation="horizontal" tap="goToFindPHR">
+      <StackLayout class="menuItemLabel">
+        <Label text="My Personal Health Record" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="4" className="menuItem main-color" orientation="horizontal" tap="tapFindERUrgentCare">
+      <StackLayout class="menuItemLabel">
+        <Label text="Find the Nearest ER or Urgent Care" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="5" className="menuItem main-color" orientation="horizontal" tap="launchReferralEase">
+      <StackLayout class="menuItemLabel">
+        <Label text="Schedule Your Referral" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="6" className="menuItem main-color" orientation="horizontal" tap="goToRequestedAppointment">
+      <StackLayout class="menuItemLabel">
+        <Label text="Request Online" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="7" className="menuItem main-color" orientation="horizontal" tap="callToSchedule">
+      <StackLayout class="menuItemLabel">
+        <Label text="Call to Schedule" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="8" className="menuItem main-color" orientation="horizontal" tap="tapSymptomChecker">
+      <StackLayout class="menuItemLabel">
+        <Label text="Symptom Checker" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="9" className="menuItem main-color" orientation="horizontal" tap="tapContactUH">
+      <StackLayout class="menuItemLabel">
+        <Label text="Contact UH" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="10" className="menuItem main-color" orientation="horizontal" tap="tapTermsOfUse">
+      <StackLayout class="menuItemLabel">
+        <Label text="Terms of Use" />
+      </StackLayout>
+      <StackLayout class="menuItemIcon">
+        <Label text="&#xf105;" class="icon" />
+      </StackLayout>
+    </StackLayout>
+
+    <Image row="11" src="~/images/drawerLogo.png" tap="tapLogo" />
+  </GridLayout>-->
+</ios>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "958445313734",
+    "firebase_url": "https://uh-now-26da9.firebaseio.com",
+    "project_id": "uh-now-26da9",
+    "storage_bucket": "uh-now-26da9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958445313734:android:3de41bf71206138b",
+        "android_client_info": {
+          "package_name": "org.uhhospitals.uhnow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958445313734-cuqpg7l8rphfet64f0neguaautksfd52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkdeBbgEcdRGwB0NSTFrG7lnHHFfiRTBM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

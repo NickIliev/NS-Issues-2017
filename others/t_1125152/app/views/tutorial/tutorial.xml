@@ -1,0 +1,77 @@
+<Page loaded="loaded"
+      actionBarHidden = "true"
+      codeFile="~/views/tutorial/tutorial.js"
+      xmlns:ns="nativescript-carousel">
+  <android>
+    <AbsoluteLayout width="100%" height="100%">
+      <GridLayout orientation="vertical" width="100%" height="100%">
+        <ns:Carousel row="0" pageChanged="myChangeEvent" showIndicator="true" indicatorColor="#9e0425" indicatorColorUnselected="#cccccc">
+          <ns:CarouselItem id="slide1">
+            <Image src="~/images/tutorial/screens-1.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide2">
+            <Image src="~/images/tutorial/screens-2.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide3">
+            <Image src="~/images/tutorial/screens-3.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide4">
+            <Image src="~/images/tutorial/screens-4.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide5">
+            <Image src="~/images/tutorial/screens-5.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide6">
+            <Image src="~/images/tutorial/screens-6.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide7">
+            <Image src="~/images/tutorial/screens-7.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide8">
+            <Image src="~/images/tutorial/screens-8.jpg" />
+          </ns:CarouselItem>
+        </ns:Carousel>
+      </GridLayout>
+      <StackLayout horizontalAlignment="right" width="100%" orientation="horizontal" tap="skipTutorial" padding="10 5">
+        <Label text="X CLOSE" color="#9e0425" horizontalAlignment="right"  tap="skipTutorial" fontWeight="bold"/>
+      </StackLayout>
+
+    </AbsoluteLayout>
+  </android>
+  <ios>
+    <AbsoluteLayout width="100%" height="100%">
+      <GridLayout orientation="vertical" width="100%" height="100%">
+        <ns:Carousel row="0" pageChanged="myChangeEvent" showIndicator="true" indicatorColor="#9e0425" indicatorColorUnselected="#cccccc">
+          <ns:CarouselItem id="slide1">
+            <Image src="~/images/tutorial/screens-1.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide2">
+            <Image src="~/images/tutorial/screens-2.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide3">
+            <Image src="~/images/tutorial/screens-3.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide4">
+            <Image src="~/images/tutorial/screens-4.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide5">
+            <Image src="~/images/tutorial/screens-5.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide6">
+            <Image src="~/images/tutorial/screens-6.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide7">
+            <Image src="~/images/tutorial/screens-7.jpg" />
+          </ns:CarouselItem>
+          <ns:CarouselItem id="slide8">
+            <Image src="~/images/tutorial/screens-8.jpg" />
+          </ns:CarouselItem>
+        </ns:Carousel>
+      </GridLayout>
+      <StackLayout horizontalAlignment="right" width="100%" orientation="horizontal" tap="skipTutorial" padding="10 5">
+        <Label text="X CLOSE" color="#9e0425" horizontalAlignment="right"  tap="skipTutorial" fontWeight="bold"/>
+      </StackLayout>
+
+    </AbsoluteLayout>
+  </ios>
+</Page>

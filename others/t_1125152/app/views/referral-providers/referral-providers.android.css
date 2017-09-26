@@ -1,0 +1,168 @@
+@import url("~/views/referral-providers/referral-providers.common.css");
+Button {
+    margin: 18 0 0 0;
+    background-image: none;
+    background-color: #9e0425;
+    color: #fff;
+    border-radius: 0;
+    text-transform:uppercase
+}
+TextField{
+    height: 53;
+    border-radius: 6;
+    width: 100%;
+}
+.results{
+	horizontal-align:right;
+	vertical-align:top;
+	color:#9e0425
+}
+.orderDetials {
+    padding: 10%;
+}
+.icon{
+    width:15;
+    height:100%;
+}
+.distance, .results {
+    font-size: 12;
+}
+.orderDetails .title{
+	font-size:16
+}
+.bold{
+    text-transform:uppercase;
+    font-weight:bold;
+    color:#513f3c;
+    margin:-5 0 0 0
+}
+.subTitle{
+    font-size:16;
+    font-weight:bold;
+    margin:0;
+}
+#bottomButtons {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+#bottomButtons StackLayout {
+    height: 50;
+}
+
+#bottomButtons StackLayout Label {
+    margin: 15 0;
+    font-size: 14;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase
+}
+
+#bottomButtonLeft,
+#bottomButtonRight {
+    horizontal-align: center;
+    width: 50%;
+}
+
+#bottomButtonLeftRipple {
+    width: 100%;
+    background-color: #9e0425;
+}
+
+.checkbox{
+    margin:0 2.5 0 0;
+}
+.genderIcon {
+    width: 15;
+    margin:0 10 0 0
+}
+.showIns{
+    background-color:#eee
+}
+.closeIns{
+    background-color:transparen
+}
+.closeBtn {
+    width: 25;
+    height: 25;
+    margin: 0 0 0 10;
+    background-image: ~/images/iconCheckCircle.png;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.btnClearIcon {
+    width: 50;
+    margin: 0;
+    horizontal-align: right;
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 1 
+}
+.apply{
+    width:15;
+    height:15;
+    margin:0 0 0 10;
+    background-image: ~/images/icon_checkMarkWhite.png;
+    background-position: center center;
+    background-size:contain;
+    background-repeat: no-repeat
+}
+.listViewItem {
+    padding: 10 20;
+    color: #fff;
+    width:100%;
+    background-color:#8b7867;
+}
+.submitEnabled {
+    background-color: #9e0425;
+    color: #fff;
+}
+.submitDisabled {
+    background-color: #cccccc;
+    color: #fff;
+}
+.locations{
+    padding:10 0;
+    text-decoration:underline;
+    /*background-image: ~/images/marker.png;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:left center;*/
+}
+.sortTabs{
+    /*border-bottom:1;
+    border-bottom-color:#9e0425;
+    border-bottom-width:2*/
+}
+.midTab{
+    border-right-width:2;
+    border-right-style:solid;
+    border-right-color:#cccccc
+}
+.sortTabs Label{
+    font-size: 14;
+    width:33.3%;
+    padding:15 0;
+    vertical-alignment:center;
+    text-align: center;
+    background-color:#f9f9f9
+}
+.sortTabs .selected{
+    background-color:#9e0425;
+    color:white
+}
+/*SegmentedBar{
+    selected-background-color:#9e0425;
+    color: #9e0425;
+    font-size: 14;
+    text-transform:capitalize;
+    background-color:#f9f9f9
+}
+SegmentedBarItem{
+    color:black
+}
+TabView{
+    background-color:#f9f9f9;
+    selected-background-color:#9e0425;
+}*/

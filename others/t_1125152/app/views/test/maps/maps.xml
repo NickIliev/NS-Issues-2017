@@ -1,0 +1,37 @@
+<page loaded="loaded"
+      codeFile="~/views/test/maps/maps-view.js"
+      xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      xmlns:customControls="~/components/drawer-menu"
+      xmlns:action-bar="~/components/action-bar"
+      xmlns:maps="nativescript-google-maps-sdk">
+    <page.actionBar>
+        <action-bar:actionBar />
+    </page.actionBar>
+
+	<drawer:rad-side-drawer id="drawer" drawerLocation="Left">
+		<drawer:rad-side-drawer.drawerTransition>
+            <drawer:SlideInOnTopTransition />
+		</drawer:rad-side-drawer.drawerTransition>
+
+		<drawer:rad-side-drawer.mainContent>
+            <ScrollView>
+                <GridLayout rows="auto, auto" id="main-content">
+                    <ActivityIndicator busy="{{ isLoading }}" row="0" rowSpan="2" />
+                    <StackLayout row="0">
+                      <maps:mapView latitude="{{ latitude }}" longitude="{{ longitude }}"
+                                  zoom="{{ zoom }}" bearing="{{ bearing }}"
+                                  tilt="{{ tilt }}" mapReady="OnMapReady"
+                              markerSelect="onMarkerSelect"
+                              cameraChanged="onCameraChanged"
+                                    height="500"/>
+                    </StackLayout>
+                </GridLayout>
+            </ScrollView>
+		</drawer:rad-side-drawer.mainContent>
+
+		<drawer:rad-side-drawer.drawerContent>
+            <customControls:drawer-menu />
+		</drawer:rad-side-drawer.drawerContent>
+
+	</drawer:rad-side-drawer>
+</page>

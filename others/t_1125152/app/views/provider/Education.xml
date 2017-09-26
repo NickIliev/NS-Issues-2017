@@ -1,0 +1,36 @@
+<ScrollView>
+      <GridLayout rows="auto" id="main-content">
+        <StackLayout row="0">
+          <StackLayout id="providerPofile" orientation="horizontal">
+            <!--<Image id="providerImage" src="{{ selectedProvider.Image != null ? ('data:image/png;base64,' + selectedProvider.Image) : '~/images/profile.png' }}" />-->
+            <StackLayout id="providerDetails">
+              <StackLayout id="providerCerts" visibility="{{ selectedProvider.Certifications.length > 0  ? 'visible' : 'collapsed' }}">
+                <label class="sectionHeader margintop" text="Board Certifications" textWrap="true"  />
+                <Repeater items="{{ selectedProvider.Certifications }}">
+                  <Repeater.itemTemplate>
+                    <Label text="{{ Name }}" textWrap="true" class="providerCert" />
+                  </Repeater.itemTemplate>
+                </Repeater>
+                <!--<Label text="Board Certification not available." class="providerCert" visibility="{{ selectedProvider.Certifications.length > 0  ? 'collapsed' : 'visible' }}"/>-->
+              </StackLayout>
+              
+             <StackLayout id="myBox"></StackLayout>
+
+              <StackLayout id="providerEdus">
+                <label class="sectionHeader" text="Education &amp; Training" textWrap="true" />
+                <Repeater items="{{ selectedProvider.Educations }}">
+                  <Repeater.itemTemplate>
+                    <StackLayout class="providerEducation">
+                      <Label text="{{ Facility }}" textWrap="true" />
+                      <Label text="{{ Details }}" textWrap="true" />
+                      <Label text="{{ Dates }}" textWrap="true" />
+                      <StackLayout class="horizontalLine2"></StackLayout>
+                    </StackLayout>
+                  </Repeater.itemTemplate>
+                </Repeater>
+              </StackLayout>
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
+    </ScrollView>

@@ -1,0 +1,227 @@
+/*#imgEmergencyCall{
+   padding-top:55;
+}*/
+.indent {
+    padding: 0 20;
+}
+
+#stackmedicalAdvice {
+    margin-top: 0;
+}
+
+#lblmedicalConcern {
+    font: bold;
+}
+
+#lblUhCalling {
+    color: #bf0d32;
+    font: bold;
+}
+.lblUhCalling {
+    color: #bf0d32;
+    /*font: bold;*/
+}
+.callToEmergency{
+    padding :0 20;
+    margin-top: 10;
+    margin-bottom: 10;
+}
+
+.callToEmergency label{
+    font-style: italic;
+}
+#lblstackConcern {
+    margin-bottom: 9;
+}
+
+#stackInquiries {
+    margin-top: 0;
+    margin-bottom: 18;
+}
+
+#backContent {
+    margin-top: 37;
+}
+
+#backgroundRect {
+    background-color: #ede8e4;
+    padding-top: 25;
+}
+
+.Label {
+    font: bold;
+    padding-top: 25;
+    padding-bottom: 14;
+    padding-left: 0;
+}
+
+/* #txtComments {
+    height: 265;
+    margin-right: 16;
+    margin-right: 16;
+    text-align: left;
+    border-radius: 6;
+} */
+
+.textboxes {
+    height: 53;
+    /*width: 340;*/
+    margin-right: 16;
+    border-radius: 6;
+    width: 100%;
+}
+
+/*#lblnquiry {
+    padding-bottom: 20;
+}*/
+
+#lblRequired {
+    float: right;
+    /*padding-left: 80;
+    color: #bf0d32;*/
+}
+
+.bold {
+    font: bold;
+}
+
+#submitButton {
+    margin-top: 10;
+    margin-bottom: 20;
+    border-radius: 0;
+    background-color: #bf0d32;
+    color: #ffffff;
+    text-align: center;
+    padding: 10;
+}
+
+
+#submitButton label{
+    color: white;
+    font-size: 16;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+    /* background-image: url("~/images/arrowRight.png"); */
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 11 13;
+    horizontal-align: center;    
+    padding-right: 15;
+    display: block;
+    margin: 0 auto;
+}
+
+.test {
+    border-width: 1;
+    border-style: solid;
+    border-color: blue;
+}
+
+#mergencyCallContent {
+    background-color: #85dadf;
+    font: bold;
+    padding-top: 18;
+    padding-left: 20;
+    padding-bottom: 13;
+}
+
+/* #validationfield1 {
+    width: 100%;
+} */
+
+    /* #validationfield1 > #lbltext1 {
+        width: 55%;
+    } */
+
+    /* #validationfield1 > #lblRequired {
+        text-align: right;
+        width: 45%;
+    } */
+
+.dial{
+   
+    text-decoration-line:underline;
+}
+.form-background{
+    background-color: #f3efec;
+}
+.validationfield1 {
+    width: 100%;
+    
+}
+
+.validationfield1 label{
+    font-style: italic;
+    text-align: right;
+    width: 100%;
+    padding-right:5;
+}
+
+.dropDownContainer {
+    height: 45;
+    padding: 12 5;
+    border-radius: 0;
+    width: 100%;
+    border-width: 1;
+    border-style: solid ;
+    border-color: #888;
+    box-shadow: inset 0 0 3px 0px #ccc;
+    font-size: 16;
+    padding-left:3;
+    margin:3 0;  
+    
+}
+.textboxes{ 
+    height: 45;
+    padding: 2 5;
+    margin: 3 0;
+    border-radius: 0;
+    width: 100%;
+    border-width: 1;
+    border-style: solid ;
+    border-color: #888;
+    box-shadow: inset 0 0 3px 0px #ccc;
+    font-size: 16;
+    /* color: #ccc; */
+}
+.maskedInput{
+    height: 45;
+    padding: 2 5;
+    margin: 3 0;
+    border-width: 1;
+    border-style: solid ;
+    border-color: #888;
+    box-shadow: inset 0 0 3px 0px #ccc;
+    font-size: 16;
+    
+}
+
+ #txtComments {
+    height: 265;
+    margin-right: 16;
+    margin-right: 0;
+    text-align: left;
+    border-radius: 0;
+    border-width: 1;
+    border-style: solid ;
+    border-color: #888;
+    box-shadow: inset 0 0 3px 0px #ccc;
+    margin-top: 3;
+    padding:5px;
+}  
+
+
+.down-arrow{
+    horizontal-align: right;
+    margin-right: 10;
+}
+
+.pageTitle{
+    color: #bf0d32; 
+}
+.lebelInline{
+     word-break: break-all; white-space: normal;
+}
+.hyperlink{
+    text-decoration: underline; color: #bf0d32;
+}

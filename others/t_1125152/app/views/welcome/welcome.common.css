@@ -1,0 +1,40 @@
+.main{
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:bottom;
+    width:100%;
+    height:100%
+}
+#iconScheduleReferral{
+    background-image:~/images/welcome/referralBackground.png;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:bottom;
+    width:30%;
+    height:200;
+    padding:30;
+    border:none;
+    opacity:.8
+}
+#iconScheduleReferral Image{
+    border:none
+}
+#iconCalltoSchedule{
+    height: 45%
+}
+#iconScheduleOnline Image{
+    height: 52%
+}
+
+#iconScheduleReferral Image{
+    height: 48%
+}
+
+#iconScheduleReferral, #iconScheduleOnline, #iconCalltoSchedule {
+    width: 100%;
+    height: 100%;
+}
+.scheduleHeader{
+    font-size:20;
+    padding:20 0 20 15
+}

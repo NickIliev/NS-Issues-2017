@@ -1,0 +1,37 @@
+<lv:RadListView xmlns:lv="nativescript-telerik-ui/listview"
+ xmlns:card="nativescript-cardview"
+ xmlns:RL="nativescript-ripple"
+items="{{ selectedProvider.Locations }}" backgroundColor="#ffffff"  class="heightfull" >
+  <lv:RadListView.listViewLayout>
+    <lv:RadListView.ListViewLinearLayout scrollDirection="Vertical"/>
+  </lv:RadListView.listViewLayout>
+  <lv:RadListView.itemTemplate>
+    <card:CardView  class="searchResultItem" elevation="0" radius="0">
+
+      <StackLayout orientation="vertical" class="searchStackItem" padding="10 10">
+        <StackLayout orientation="horizontal"  width="100%">
+          <StackLayout orientation="vertical" class="details"  width="75%">
+            <!--<Label class="locationName bold" text="{{ Name }}" textWrap="true" style="text-transform:uppercase;font-size:14;font-weight:bold"  />-->
+            <!--<StackLayout class="locationAddress">-->
+            <StackLayout orientation="vertical" >
+              <Label text="{{ Address }}" textWrap="true" style="font-size:14" />
+              <Label text="{{ City }}" textWrap="true" style="font-size:14" />
+            </StackLayout>
+            <!--</StackLayout>-->
+          </StackLayout>
+          <StackLayout style="margin:5 0 0 0;" width="25%" color="#9e0425" tap="launchMap"  >
+           
+            <Label text="{{ Distance + ' mi' }}" visibility="{{ Distance != null ? 'visible' : 'collapsed' }}" fontSize="11" horizontalAlignment="right"  color="#9e0425"/>
+            <Label text="Map It" visibility="{{ Distance != null ? 'visible' : 'collapsed' }}" fontSize="11" horizontalAlignment="right" color="#9e0425"/>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout orientation="horizontal"  >
+          <Image src="~/images/iconPhoneBlack.png" width="15" height="15" verticalAlignment="top" margin="5 5 0 0"   />
+          <Label id="AppointmentPhoneNo" text="{{ AppointmentPhone }}" textWrap="true" class="locationAppointmentPhone" visibility="{{ AppointmentPhone != null ? 'visible' : 'collapsed' }}" horizontalAlignment="left" verticalAlignment="top" color="#9e0425" fontSize="14"  margin ="5 5 0 0" tap="aapcall"/>
+          <Label text="(866)UH4-CARE" textWrap="true" class="locationAppointmentPhone"  visibility="{{ AppointmentPhone == null ? 'visible' : 'collapsed' }}" horizontalAlignment="right" margin ="5 5 0 0" tap="uhcare"/>
+        </StackLayout>
+      </StackLayout>
+
+    </card:CardView>
+  </lv:RadListView.itemTemplate>
+</lv:RadListView>

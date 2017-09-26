@@ -1,0 +1,100 @@
+<android xmlns:RL="nativescript-ripple"
+         xmlns:access-uh="~/components/access-uh">
+    <AbsoluteLayout orientation="vertical" height="100%">
+    <StackLayout width="100%" height="100%" top="0">     
+<TabView id="mainTabs" selectedColor="#cd3439" tabsBackgroundColor="#f9f9f9" className="tabView">
+    <TabView.items>
+
+      <TabViewItem title="Access UH">
+        <TabViewItem.view>
+ <AbsoluteLayout>
+    <Image src="~/images/welcome/Schedule-Doctor image.jpg" width="100%" height="auto" top="0" />
+    <StackLayout id="menus" width="100%" height="100%" top="0" verticalAlignment="bottom" padding="0 0 0 0">
+      <StackLayout orientation="horizontal" margin="1 0 -2 0" class="scheduleList1">
+        <RL:Ripple rippleColor="#acacac"  width="33.5%" style="margin-right:0.5;margin-left:-2;" onTap="SchedulePrimaryCare">
+          <Image  src="~/images/welcome/schedule-primary-care.png" class="scheduleListImg1" onTap="SchedulePrimaryCare"/>
+        </RL:Ripple>
+        <RL:Ripple rippleColor="#acacac"  width="33.5%" style="margin-right:1;margin-left:1;" onTap="SchedulePediatrician">
+          <Image  src="~/images/welcome/schedule-prediatrician.png" class="scheduleListImg1" onTap="SchedulePediatrician"/>
+        </RL:Ripple>
+        <RL:Ripple rippleColor="#acacac"  width="33.5%" style="margin-left:1;margin-right:0;" onTap="launchReferralEase">
+         <Image  src="~/images/welcome/schedule-specialist.png" class="scheduleListImg1" onTap="launchReferralEase"/>
+        </RL:Ripple>
+      </StackLayout>
+      <StackLayout orientation="horizontal" width="100%" margin="0 0 -2 0" class="scheduleList1">
+        <DockLayout width="100%" stretchLastChild="true">
+          <RL:Ripple dock="left" rippleColor="#acacac" width="50%" style="margin-left:-3;margin-right:1.5;"  onTap="goToRequestedAppointment">
+           <Image  src="~/images/welcome/request-online.png" class="scheduleListImg1" onTap="goToRequestedAppointment"/>
+          </RL:Ripple>
+          <RL:Ripple dock="right" rippleColor="#acacac" width="50.5%" style="margin-left:3;margin-right:0;" onTap="callToSchedule" horizontalAlignment="right">
+            <Image src="~/images/welcome/schedulle-by-phone.png" class="scheduleListImg1" onTap="callToSchedule"/>
+          </RL:Ripple>
+        </DockLayout>
+      </StackLayout>      
+    </StackLayout>
+  </AbsoluteLayout>
+  </TabViewItem.view>
+      </TabViewItem>
+
+      <TabViewItem title="Explore Health Topics">
+        <TabViewItem.view>
+          <access-uh:explore-health />
+        </TabViewItem.view>
+      </TabViewItem>
+
+    </TabView.items>
+  </TabView>
+  </StackLayout>
+    <StackLayout orientation="horizontal" top="0" width="100%" opacity="0" height="50">
+      <Label id="leftTab" text="Label one" width="50%" class="overlayTabs" tap="{{ clickLeft }}" backgroundColor="blue" color="white" textAlignment="center"/>
+      <Label id="rightTab" text="Label two" width="50%" class="overlayTabs" tap="{{ clickRight }}" backgroundColor ="green" color="white" textAlignment="center"/>
+    </StackLayout>
+  </AbsoluteLayout>
+</android>
+
+
+<!-- TODO: modularize this menu -->
+<ios xmlns:access-uh="~/components/access-uh">
+  <StackLayout class="ContentHeight">
+
+    <StackLayout id="tabView" orientation="horizontal"  width="100%" >
+      <GridLayout rows="*,auto"  id="TopLeft"   tap="showAccessUH">
+        <StackLayout class="tabTitle" row="0" >
+          <Label text ="Access UH" />
+        </StackLayout>
+        <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}"></StackLayout>
+      </GridLayout>
+      <GridLayout rows="*,auto"  id="TopRight" tap="showEHI"  >
+        <StackLayout class="tabTitle" row="0" >
+          <Label text ="Explore Health Topics" textWrap="true" />
+        </StackLayout>
+        <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}"></StackLayout>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout visibility="{{ selectedScreen == 0 ? 'visible' : 'collapsed' }}"  >
+      <GridLayout rows="*" id="main-content"> 
+      <StackLayout id="welcomeContent"  stretch="true"  backgroundImage="~/images/welcome/Schedule-Doctor image.jpg">
+    </StackLayout>
+        <DockLayout width="100%" stretchLastChild="true">
+      <StackLayout  dock="bottom" id="menus"  >
+        <StackLayout orientation="horizontal" class="scheduleList" width="100%" margin="1 0 -2 0" >
+          <Image  src="~/images/welcome/schedule-primary-care.png" width="33.5%" style="margin-right:0;margin-left:-4;" class="scheduleListImg"  onTap="SchedulePrimaryCare"/>
+          <Image  src="~/images/welcome/schedule-prediatrician.png" width="33.5%" class="scheduleListImg" onTap="SchedulePediatrician"/>
+          <Image  src="~/images/welcome/schedule-specialist.png" width="34%" style="margin-right:0;margin-left:2;" class="scheduleListImg" onTap="launchReferralEase"/>
+        </StackLayout>
+         <StackLayout orientation="horizontal" class="scheduleList" width="100%" margin="0 0 -2 0">
+          <Image  src="~/images/welcome/request-online.png" width="50%" style="margin-right:0;margin-left:-4;" class="scheduleListImg" onTap="goToRequestedAppointment"/>
+          <Image src="~/images/welcome/schedulle-by-phone.png" width="50.9%" class="scheduleListImg" onTap="callToSchedule"/>
+        </StackLayout>
+      </StackLayout>
+       </DockLayout>
+
+        
+      </GridLayout>
+    </StackLayout>
+    <StackLayout visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}" >
+      <access-uh:explore-health />
+    </StackLayout>
+  </StackLayout>
+</ios>

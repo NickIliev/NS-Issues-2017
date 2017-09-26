@@ -1,0 +1,43 @@
+<action-bar xmlns:RL="nativescript-ripple"
+            className="custom-action-bar"
+            id="actionBar"
+            style="background-color:white">
+<android>
+
+    <ActionBar.titleView>
+        <GridLayout rows="*,*" id="titleView">
+            <StackLayout orientation="horizontal" style="background-color:white;height:56" horizontalAlignment="center">
+                <RL:Ripple id="tappableLogo" rippleColor="#fefefe">
+                    <Image id="logoImage" src="~/images/logo.png"  horizontalAlignment="center"/>
+                </RL:Ripple>
+                <StackLayout id="vertRule">
+                  <Label width="1" height="56" horizontalAlignment="center"/>
+                </StackLayout>
+                <RL:Ripple id="contactUH" rippleColor="#fefefe">
+                  <StackLayout id="contactUHContent" >
+                      <Label text="CONTACT UH" id="lblContactUH" />
+                      <Label text="1-866-UH4-CARE" id="lblContactUHNumber" class="contactUHNumber"  />
+                  </StackLayout>
+                </RL:Ripple>
+            </StackLayout>
+        </GridLayout>
+    </ActionBar.titleView>
+  </android>
+  
+  
+  <ios>
+    
+    <ActionItem tap="callUH" ios.position="right">
+      <ActionItem.actionView >
+        <Image  src="~/images/contactUH.png"  class="itemright" />
+      </ActionItem.actionView>
+    </ActionItem>
+
+    <ActionBar.titleView>
+        <Image  src="~/images/logo.png" id="tappableLogo"  />
+    </ActionBar.titleView>
+
+
+  </ios>
+</action-bar>
+

@@ -1,0 +1,52 @@
+.checkbox{
+    margin:0 5 0 0;
+}
+.closeBtn {
+    width: 25;
+    height: 25;
+    margin: 0 0 0 10;
+    background-image: ~/images/iconCheckCircle.png;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.done{
+    width:15;
+    height:15;
+    margin:0 0 0 10;
+    background-image: ~/images/icon_checkMark.png;
+    background-position: center center;
+    background-size:contain;
+    background-repeat: no-repeat
+}
+.sortItem{
+    padding:10
+}
+.hasValue{
+    color:#9e0425;
+}
+.hasNoValue{
+    color:#4f4f4f
+}
+.iconCheckCircle {
+    width: 25;
+    height: 25;
+    margin: 0 0 0 10;
+    background-image: ~/images/iconCheckCircle.png;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.iconPlusCircle {
+    width: 25   ;
+    height: 25;
+    margin: 0 0 0 10;
+    background-image: ~/images/iconPlusCircle.png;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.iconCheckCircle{
+
+}

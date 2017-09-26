@@ -1,0 +1,105 @@
+#filtersPopup {
+    background-color: #8b7867;
+}
+
+.horizontalLine {
+    border-color: #6a5c4f;
+}
+
+Label.plainLbl {
+    color: #fff;
+}
+
+.sectionHeader {
+    width: 100%;
+    min-height: 50;
+    background-color: #6a5c4f;
+    text-align: left;
+    padding: 0 7;
+    vertical-align: center;
+}
+
+.sectionHeader StackLayout {
+    vertical-align: center;
+}
+
+.sectionHeader Label {
+    color: #fff;
+    margin: 5 0;
+}
+
+.sectionContent {
+    /*padding: 0 7;*/
+}
+
+#applyBar {
+    padding: 2;
+    background-color: #8f0422;
+    width: 100%;
+}
+
+#cancel,
+#apply {
+    width: 50%;
+}
+
+#btnCancel,
+#btnApply {
+    background-image: none;
+    background-color: transparent;
+    color: #fff;
+}
+
+#btnCancel {
+    horizontal-align: left;
+}
+
+#btnApply {
+    horizontal-align: right;
+}
+
+.sortItem,
+.ddlSortItem {
+    padding: 6 7;
+    width: 100%;
+    min-height: 50;
+}
+
+.sortItem .checkbox {
+    width: 20%;
+    horizontal-align: right;
+}
+
+.sortItem .checkbox Image {
+    horizontal-align: right;
+}
+
+.sortItem Label {
+    color: #fff;
+    width: 80%;
+}
+
+.sortItem > StackLayout,
+.ddlSortItem > StackLayout {
+    vertical-align: center;
+}
+
+.btnClearSelection {
+    color: #ff0000;
+    font-size: 20;
+    margin-left: 10;
+}
+
+.sectionContent #listLoadingContainer {
+    margin-top: 15;
+    margin-bottom: 15;
+}
+
+DropDown {
+    padding: 17;
+}
+
+.dropDownContainer {
+    border-radius: 0;
+    background-color: #f9f9f9;
+}

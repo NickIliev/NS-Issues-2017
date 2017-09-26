@@ -1,0 +1,78 @@
+<page loaded="loaded" navigatingTo="navigatingTo"
+      actionBarHidden="true"
+      codeFile="~/views/terms-conditions/terms-conditions.js"
+      xmlns:customControls="~/components/drawer-menu"
+      xmlns:drawer="nativescript-telerik-ui/sidedrawer">
+
+  <drawer:rad-side-drawer id="drawer" drawerLocation="Left">
+    <drawer:rad-side-drawer.drawerTransition>
+      <drawer:SlideInOnTopTransition />
+    </drawer:rad-side-drawer.drawerTransition>
+
+    <drawer:rad-side-drawer.mainContent>
+      <GridLayout rows="*" id="main-content" class="pageContent">
+        <ActivityIndicator busy="{{ isLoading }}" row="0" rowSpan="2" />
+        <StackLayout>
+          <ScrollView>
+            <StackLayout>
+              <GridLayout rows="auto" id="main-content">
+                <StackLayout id="stackContact" >
+                  <android>
+
+                  <StackLayout orientation="horizontal" tap="onBackButtonTap" style="color:white;padding:10 10 10 10; " className="ReturtoUHNow" width="30%">
+      <Image src="~/images/arrow-left-white.png"  tap="onBackButtonTap" width="10%" height="100%" marginRight="10"></Image>
+      <Label color="white" text="Back" tap="onBackButtonTap" style="margin-left:10;" verticalAlignment="center"></Label>
+ </StackLayout>
+                  
+                    <!--<Image tap="onBackButtonTap" src="~/images/backtouhnow.png" className="ReturtoUHNow" width="94%"/>-->
+
+                  </android>
+                  <ios>
+                <StackLayout orientation="horizontal" horizontalAlignment="center" style="padding-top:10;" class="CallStackLayout">
+                    <!--<Button image:src="~/images/arrow-right-white.png" text="Back" tap="onBackButtonTap" style="color:white;padding:10 10 10 10; " className="ReturtoUHNow" width="250px"/>-->
+                     <DockLayout orientation="horizontal" class="back" tap="onBackButtonTap" >
+        <Label text="Back" dock="right" />
+        <Image src="~/images/arrow-left-white.png" dock="left" horizontalAlignment="left" />
+      </DockLayout>
+      </StackLayout>
+                  </ios>
+
+                  <StackLayout row="1">
+                    <Label row="0" id="lblcontact" text="Terms and Conditions" class="pageTitle lblUhCalling" />
+
+                    <Repeater items="{{ terms }}">
+                      <Repeater.itemTemplate>
+                        <StackLayout orientation="vertical" style="margin-right:10px;margin-bottom:20px;">
+                          <Label text="{{ Header }}" class="header" textWrap="true"/>
+                          <Label textWrap="true" class="body">
+                            <Label.formattedText>
+                              <FormattedString>
+                                <FormattedString.spans>
+                                  <Span text="{{ Body }}" />
+                                </FormattedString.spans>
+                              </FormattedString>
+                            </Label.formattedText>
+                          </Label>
+                        </StackLayout>
+                      </Repeater.itemTemplate>
+                    </Repeater>
+
+
+
+                  </StackLayout>
+                </StackLayout>
+              </GridLayout>
+
+            </StackLayout>
+          </ScrollView>
+        </StackLayout>
+      </GridLayout>
+
+    </drawer:rad-side-drawer.mainContent>
+
+    <drawer:rad-side-drawer.drawerContent>
+      <customControls:drawer-menu />
+    </drawer:rad-side-drawer.drawerContent>
+
+  </drawer:rad-side-drawer>
+</page>

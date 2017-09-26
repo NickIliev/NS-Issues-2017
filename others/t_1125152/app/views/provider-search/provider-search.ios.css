@@ -1,0 +1,35 @@
+@import url("~/views/provider-search/provider-search.common.css");
+
+.searchResultItem {
+    height: auto
+}
+
+.providerImage {
+    margin-right: 10;
+}
+.searchResultItem {
+    /*height: 59;*/
+    height:auto;
+    padding-top: 5;
+    padding:10; 
+    vertical-align: top;
+}
+.distance, .results {
+   font-size: 12;
+}
+Textfield {
+font-size: 14;
+}
+#SearchBox{
+    margin-left: 11;
+    margin-right: 12;
+}
+
+#btnSearchIcon {
+    border-radius:none;
+    background-color:#bf0d32;
+}
+
+#icon {
+    font-family: 'FontAwesome', 'fontawesome-webfont';
+}

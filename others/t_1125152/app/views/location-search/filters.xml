@@ -1,0 +1,103 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:RL="nativescript-ripple"
+      showingModally="onShowingModally"
+      shownModally="onShownModally"   
+      loaded="onLoaded"
+      unloaded="onUnloaded"
+      cssFile="~/views/location-search/filters.css"
+      codeFile="~/views/location-search/filters-view.js"
+      xmlns:lv="nativescript-telerik-ui/listview">
+  <StackLayout id="filtersPopup">
+
+    <StackLayout id="applyBar" orientation="horizontal">
+        <StackLayout id="cancel">
+            <android>
+                <RL:Ripple rippleColor="#ff8888" tap="onCancelButtonTap">
+                    <Button id="btnCancel" color="#fff" text="Cancel" />
+                </RL:Ripple>
+            </android>
+            <ios>
+                <Button id="btnCancel" tap="onCancelButtonTap" text="Cancel" />
+            </ios>
+        </StackLayout>
+        <StackLayout id="apply">
+            <android>
+                <RL:Ripple rippleColor="#ff8888" tap="onApplyButtonTap">
+                    <Button id="btnApply" color="#fff" text="Apply" />
+                </RL:Ripple>
+            </android>
+            <ios>
+                <Button id="btnApply" tap="onApplyButtonTap" text="Apply" />
+            </ios>
+        </StackLayout>
+    </StackLayout>
+
+    <StackLayout id="sortBySection" class="sectionHeader" orientation="horizontal">
+        <StackLayout>
+            <Label text="Sort By:" />
+        </StackLayout>
+    </StackLayout>
+
+    <StackLayout class="horizontalLine"></StackLayout>
+
+    <StackLayout class="sectionContent">
+      <StackLayout>
+        <android>
+            <RL:Ripple rippleColor="#5c5c5c" tap="onTapClosestToMe">
+                <StackLayout id="chkClosest" orientation="horizontal" className="sortItem">
+                    <Label text="Closest to my Location" />
+                    <StackLayout class="checkbox">
+                        <Image src="~/images/common/checked.png" visibility="{{ sortByClosest ? 'visible' : 'collapsed' }}" />
+                        <Image src="~/images/common/unchecked.png" visibility="{{ !sortByClosest ? 'visible' : 'collapsed' }}" />
+                    </StackLayout>
+                </StackLayout>
+            </RL:Ripple>
+        </android>
+        <ios>
+            <StackLayout id="chkClosest" orientation="horizontal" className="sortItem" tap="onTapClosestToMe">
+                <Label text="Closest to my Location" />
+                <StackLayout class="checkbox">
+                    <Image src="~/images/common/checked.png" visibility="{{ sortByClosest ? 'visible' : 'collapsed' }}" />
+                    <Image src="~/images/common/unchecked.png" visibility="{{ !sortByClosest ? 'visible' : 'collapsed' }}" />
+                </StackLayout>
+            </StackLayout>
+        </ios>
+      </StackLayout>
+    </StackLayout>
+
+    <StackLayout class="horizontalLine"></StackLayout>
+
+    <StackLayout id="filterBySection" class="sectionHeader" orientation="horizontal">
+        <StackLayout>
+            <Label text="Filter By:" />
+        </StackLayout>
+        <StackLayout id="chkFilterSelectAll" orientation="horizontal" tap="onTapSelectAll">
+            <Label text="Select All" />
+            <StackLayout class="checkbox">
+                <Image src="~/images/common/checked.png" visibility="{{ isFilterSelectAll ? 'visible' : 'collapsed' }}" />
+                <Image src="~/images/common/unchecked.png" visibility="{{ !isFilterSelectAll ? 'visible' : 'collapsed' }}" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+    <StackLayout class="horizontalLine"></StackLayout>
+
+    <StackLayout class="sectionContent">
+        <ListView id="lvFilterBy" items="{{ filterBy }}" itemTap="onTapLocationType">
+            <ListView.itemTemplate>
+                <StackLayout>
+                    <StackLayout orientation="horizontal" className="sortItem">
+                        <Label text="{{ Name }}" />
+                        <StackLayout class="checkbox">
+                            <Image src="~/images/common/checked.png" visibility="{{ isSelected ? 'visible' : 'collapsed' }}" />
+                            <Image src="~/images/common/unchecked.png" visibility="{{ !isSelected ? 'visible' : 'collapsed' }}" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        
+    </StackLayout>
+
+  </StackLayout>
+</Page>

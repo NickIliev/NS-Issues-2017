@@ -1,0 +1,13 @@
+<android>
+
+  <WebView src="https://members.mdlive.com/uhvirtualvisit/ " height="100%" width="100%" loadStarted="onStartLoadingInQuicker" loadFinished="onFinishedLoadingInQuicker"/>
+
+</android>
+<!-- TODO: modularize this menu -->
+<ios>
+  <ActivityIndicator busy="{{ isLoading}}" />
+
+  <StackLayout width="100%" height="100%" visibility="{{ isLoading ? 'collapsed' : 'visible' }}" margin="0 0 0 0" backgroundColor="yellow">
+    <WebView id="webView" src="https://members.mdlive.com/uhvirtualvisit/" height="100%" width="100%" backgroundColor="green"/>    
+  </StackLayout>
+</ios>

@@ -1,0 +1,20 @@
+
+//   /app/App_Resources/Android/app.gradle
+
+android {  
+  defaultConfig {  
+    applicationId = "org.uhhospitals.uhnow"  
+    multiDexEnabled true
+    generatedDensities = []
+  }
+  aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+  }
+  dexOptions {
+    javaMaxHeapSize "8g"
+  }
+}
+
+project.ext {
+    googlePlayServicesVersion = "11.0.2"
+}

@@ -1,0 +1,109 @@
+
+.indent {
+    padding: 0 20;
+}
+
+#stackmedicalAdvice {
+    margin-top: 5;
+    height:100%;
+  
+}
+
+.scroll{
+   background-color: red;
+    height:100%;
+}
+.backgroundRect {
+    background-color: #ede8e4;
+    padding-top: 10; height:100%;
+    padding-bottom:30;
+}
+
+.bgcolour{
+     background-color: #ffffff;
+}
+/*#lblRequired {
+    float: right;*/
+    /*padding-left: 80;*/
+    /*color: #bf0d32;
+}*/
+
+.bold {
+    font: bold;
+}
+
+.submitButton {
+    margin-top: 10;
+    width: 340;
+    margin-bottom: 10;
+    border-radius: 23;
+    background-color: #bf0d32;
+    color: #ffffff;
+    height:55;
+}
+
+.test {
+    border-width: 1;
+    border-style: solid;
+    border-color: blue;
+}
+
+#mergencyCallContent {
+    background-color: #85dadf;
+    padding-top: 18;
+    padding-left: 20;
+    padding-bottom: 13;
+    height: 65;
+}
+
+    #mergencyCallContent > label {
+        font-size: 25;
+        horizontal-align: center;
+        vertical-align: center;
+    }
+
+#referal {
+    padding-bottom: 10;
+    vertical-align: center;
+    horizontal-align: center;
+}
+
+.horizontalLine {
+    height: 1;
+    border-color: #cacaca;
+    border-width: .5;
+    border-style: solid;
+    width: 100%;
+}
+
+#lblthanku {
+    padding-bottom: 10;
+ 
+}
+
+.refercontent {
+    padding-bottom: 20;
+}
+
+#dateApp {
+    padding-top: 10;
+    horizontal-align: center;
+    font: bold;
+   
+}
+
+.subTitle {
+    margin-top: 10;
+    margin-bottom:5;
+    margin-left: 3;
+    margin-right: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 22;
+    
+}
+#lblCall{
+    
+     text-align:center;
+     padding-bottom:50;
+}

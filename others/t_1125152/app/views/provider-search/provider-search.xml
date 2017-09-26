@@ -1,0 +1,380 @@
+<StackLayout>
+
+  <android xmlns:RL="nativescript-ripple"
+      xmlns:lv="nativescript-telerik-ui/listview"
+      xmlns:dd="nativescript-drop-down"
+      xmlns:access-uh="~/components/access-uh"
+      xmlns:provider-card="~/components/provider-card">
+<AbsoluteLayout orientation="vertical" height="100%">
+    <StackLayout width="100%" height="100%" top="0">
+    <TabView id="mainTabs" selectedColor="#cd3439" tabsBackgroundColor="#f9f9f9" className="tabView">
+      <TabView.items>
+        <TabViewItem title="Access UH">
+          <TabViewItem.view>
+            <AbsoluteLayout width="100%" height="100%">
+              <StackLayout width="100%" height="100%">
+                <GridLayout rows="auto,*,auto"  width="100%" height="100%" id="main-content">
+                  <StackLayout row="1" visibility="{{ searchResults.Count != 0 || loadingResults ? 'visible' : 'collapsed' }}">
+                    <lv:RadListView items="{{ searchResults.Data }}" id="providers-list"  loadOnDemandMode="{{ listViewOnDemandMode }}" loadMoreDataRequested="{{ loadMoreResults }}" itemTap="showIndex">
+                      <lv:RadListView.listViewLayout>
+                        <lv:RadListView.ListViewLinearLayout scrollDirection="Vertical" itemHeight="50" />
+                      </lv:RadListView.listViewLayout>
+                      <!--<lv:RadListView.headerItemTemplate>
+                                            <GridLayout backgroundColor="#65a565">
+                                                <Label text="{{ headerTitle }}"/>
+                                            </GridLayout>
+                                        </lv:RadListView.headerItemTemplate>-->
+                      <lv:RadListView.itemTemplate>
+                        <provider-card:provider-card/>
+                      </lv:RadListView.itemTemplate>
+                    </lv:RadListView>
+                  </StackLayout>
+
+                  <!--Filter Button Show filter-->
+                  <StackLayout row="2" id="bottomButtons" tap="showFilter">
+                    <StackLayout orientation="horizontal">
+                      <RL:Ripple id="bottomButtonLeftRipple" rippleColor="#ff9999" tap="showFilter" className="{{ searchType === 1 ? 'active' : 'inactive' }}">
+                        <StackLayout orientation="horizontal" id="bottomButtonLeft" tap="showFilter">
+                          <Label text="REFINE RESULTS" tap="filter" />
+                          <Image src="~/images/iconSliders.png" height="40%" margin="0 0 0 10"/>
+                        </StackLayout>
+                      </RL:Ripple>
+                    </StackLayout>
+                  </StackLayout>
+
+                  <StackLayout row="0" id="searchSection">
+                    <!--<StackLayout orientation="horizontal">-->
+                    <DockLayout>
+                      <Label dock="left" text="Find a Doctor" class="pageTitle"/>
+                      <Label dock="right" id="lblResultsCount" visibility="{{ searchResults.Count === -1 ? 'collapsed' : 'visible' }}" text="{{ searchResults.Count + ' result' + (searchResults.Count === 1 ? '' : 's') + ' found' }}"/>
+                    </DockLayout>
+                    <!--<StackLayout id="chkPrimaryCare" width="50%" orientation="horizontal" tap="onTapPrimaryCare">
+                                            <Label text="Primary Care" tap="onTapPrimaryCare" />
+                                            <StackLayout class="checkbox">
+                                                <Image src="~/images/common/checked.png" tap="onTapPrimaryCare" visibility="{{ isPrimaryCare ? 'visible' : 'collapsed' }}" />
+                                                <Image src="~/images/common/unchecked.png" tap="onTapPrimaryCare" visibility="{{ !isPrimaryCare ? 'visible' : 'collapsed' }}" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>-->
+                    <StackLayout class="horizontalLine"></StackLayout>
+
+                    <GridLayout id="SearchBox" rows="auto" cols="auto, *">
+                      <TextField row="0" col="1" colSpan="2" id="txtSearchBox" text="{{ searchTerm }}" hint="Search by Name, Specialty or Condition" returnKeyType="search" returnPress="onSearchBtnTap"/>
+                      <StackLayout id="searchButtonsContainer" row="0" col="2" orientation="horizontal">
+                        <Button id="btnClearIcon" class="icon" color="#000" text="&#xf00d;" visibility="{{ searchTerm != null && searchTerm != '' ? 'visible' : 'collapsed' }}" tap="clearSearchTerm"  borderWidth="1" borderColor="transparent" />
+                        <RL:Ripple class="searchButtonRipple" rippleColor="#ff9999" onTap="onSearchBtnTap">
+                          <Button id="btnSearchIcon" id="icon" color="#fff" text="&#xf002;" borderWidth="1" borderColor="transparent"/>
+                        </RL:Ripple>
+                      </StackLayout>
+
+                    </GridLayout>
+                    <StackLayout class="horizontalLine"></StackLayout>
+                  </StackLayout>
+                  <ActivityIndicator busy="{{ isSearching }}" row="1" />
+                </GridLayout>
+                <!--</TabViewItem.view>
+            </TabViewItem>
+
+            <TabViewItem title="Explore Health Topics">
+              <TabViewItem.view>
+                <access-uh:explore-health />
+              </TabViewItem.view>
+            </TabViewItem>
+
+          </TabView.items>
+        </TabView>-->
+              </StackLayout>
+              <!--Filter-->
+              <StackLayout id="filter" backgroundColor="#eeeeee" width="100%" height="100%" top="0" opacity="0">
+
+                <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" fontSize="20" width="100%">
+                  <StackLayout horizontalAlignment="left" orientation="horizontal" tap="tapClose" padding="10 20" width="50%">
+                    <Image src="~/images/iconCloseWhte.png" width="13" height="13" horizontalAlignment="right" tap="tapClose" margin="0 3 0 0"/>
+                    <Label text="CLOSE" color="white" horizontalAlignment="left"  tap="tapclose"/>
+                  </StackLayout>
+                  <!--<StackLayout horizontalAlignment="left" orientation="horizontal" tap="resetAll" padding="10 20" width="50%">-->
+                  <!--<Image src="~/images/iconCloseWhte.png" width="13" height="13" horizontalAlignment="right" tap="resetAll"/>
+            <Label text="RESET" color="white" horizontalAlignment="left"  tap="resetAll"/>-->
+                  <!--<Label text="X CLOSE" color="white"  horizontalAlignment="left" tap="tapClose"/>
+          </StackLayout>-->
+                  <StackLayout horizontalAlignment="right" orientation="horizontal" tap="tapApply" padding="10 20" width="50%" >
+                    <Image src="~/images/icon_checkMarkWhite.png" width="15" height="15" horizontalAlignment="right" tap="tapApply"/>
+                    <Label text="APPLY" color="white" horizontalAlignment="right" dock="right" tap="tapApply"/>
+                  </StackLayout>
+                </GridLayout>
+                <AbsoluteLayout width="100%" height="100%">
+
+                  <StackLayout orientation="horizontal" width="100%" style="padding:20; border:1 solid #ccc; background-color:white">
+                    <Label text="Sort By:" verticalAlignment="center" margin="0 5 0 0"/>
+                    <StackLayout  orientation="horizontal"  tap="Name" margin="0 5 0 0">
+                      <Image id="rdbName" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Name" />
+                      <Label text="Name"  tap="Name" />
+                    </StackLayout>
+                    <StackLayout  orientation="horizontal"  tap="Distance"  margin="0 5 0 0">
+                      <Image id="rdbDistance" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Distance" />
+                      <Label text="Distance"  tap="Distance" />
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout  orientation="horizontal" margin="0 5 0 0" padding="20" width="100%" top="50">
+                    <Label text="Gender:" verticalAlignment="center" margin="0 5 0 0"/>
+                    <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Male">
+                      <Image id="rdbMale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Male" />
+                      <Label text="Male"  tap="Male"/>
+                    </StackLayout>
+                    <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Female">
+                      <Image id="rdbFemale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Female" />
+                      <Label text="Female"  tap="Female" />
+                    </StackLayout>
+                    <StackLayout orientation="horizontal" margin="0 5 0 0" tap="All">
+                      <Image id="rdbAll" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="All" />
+                      <Label text="Both" tap="All"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout  orientation="horizontal" margin="0 5 0 0" padding="20" width="100%" top="100">
+                    <Label text="Age Group:" verticalAlignment="center" margin="0 5 0 0"/>
+                    <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Peds">
+                      <Image id="rdbPeds" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Peds" />
+                      <Label text="Peds"  tap="Peds"/>
+                    </StackLayout>
+                    <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Adults">
+                      <Image id="rdbAdults" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Adults" />
+                      <Label text="Adults"  tap="Adults" />
+                    </StackLayout>
+                    <StackLayout orientation="horizontal" margin="0 5 0 0" tap="AllAges">
+                      <Image id="rdbAllAges" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="AllAges" />
+                      <Label text="All" tap="AllAges"/>
+                    </StackLayout>
+                  </StackLayout>
+                  <GridLayout rows="auto" cols="auto, *" width="100%" top="130" padding="20">
+                    <TextField row="0" col="1" id="txtzip" colSpan="2" text="" hint="Closest to City/ZIP" className="filterText" margin="10 0 0 0"/>
+                    <Button row="0" col="2" id="icon" class="btnClearIcon" text="&#xf00d;" tap="clearZip"  borderColor="transparent"/>
+                  </GridLayout>
+
+                  <StackLayout id="insContainer" orientation="vertical" padding="20" width="100%" height="100%" top="210" className="closeIns">
+                    <GridLayout rows="auto" cols="auto, *">
+                      <TextField row="0" col="1" colSpan="2" id="txtInsurance" text="{{ Insurance.SearchTerm }}" className="filterText" width="100%" hint="Filter by Insurance" tap="showIns" autocorrect="false" propertyChange="checkInsurance" returnKeyType="search"/>
+                      <Button row="0" col="2" id="icon" class="btnClearIcon" color="#000" text="&#xf00d;" tap="clearIns" borderColor="transparent"/>
+                    </GridLayout>
+                    <ListView items="{{ Insurance.Insurances.Data }}" id="lvInsurance" itemTap="selectInsurance" selectionBehavior="Press" visibility="{{ isSearching ? 'collapsed' : 'visible'}}">
+                      <ListView.listViewLayout>
+                        <ListView.ListViewLinearLayout scrollDirection="Vertical" />
+                      </ListView.listViewLayout>
+                      <ListView.itemTemplate>
+                        <StackLayout>
+                          <Label text="{{ $value }}" class="listViewItem" />
+                        </StackLayout>
+                      </ListView.itemTemplate>
+                    </ListView>
+                    <ActivityIndicator busy="{{ isSearching }}" style="height:100%;width:50"/>
+                  </StackLayout>
+                </AbsoluteLayout>
+
+              </StackLayout>
+
+              <!--Provider Map-->
+              <!--<provider-card:provider-map id="provider-map" visibility="{{ showMap == true ? 'visible' : 'collapsed' }}" />-->
+
+            </AbsoluteLayout>
+          </TabViewItem.view>
+        </TabViewItem>
+
+        <TabViewItem title="Explore Health Topics">
+          <TabViewItem.view>
+            <access-uh:explore-health />
+          </TabViewItem.view>
+        </TabViewItem>
+
+      </TabView.items>
+    </TabView>
+    </StackLayout>
+    <StackLayout orientation="horizontal" top="0" width="100%" opacity="0" height="50">
+      <Label id="leftTab" text="Label one" width="50%" class="overlayTabs" tap="{{ clickLeft }}" backgroundColor="blue" color="white" textAlignment="center"/>
+      <Label id="rightTab" text="Label two" width="50%" class="overlayTabs" tap="{{ clickRight }}" backgroundColor ="green" color="white" textAlignment="center"/>
+    </StackLayout>
+  </AbsoluteLayout>
+  </android>
+  <!-- TODO: modularize this menu -->
+  <ios xmlns:lv="nativescript-telerik-ui/listview"
+        xmlns:dd="nativescript-drop-down"
+        xmlns:access-uh="~/components/access-uh"
+        xmlns:provider-card="~/components/provider-card">
+      <StackLayout class="ContentHeight" width="100%">
+
+    <StackLayout id="tabView" orientation="horizontal"  width="100%" >
+      <GridLayout rows="*,auto"  id="TopLeft"   tap="showAccessUH">
+        <StackLayout class="tabTitle" row="0" >
+          <Label text ="Access UH" />
+        </StackLayout>
+        <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}"></StackLayout>
+      </GridLayout>
+      <GridLayout rows="*,auto"  id="TopRight" tap="showEHI"  >
+        <StackLayout class="tabTitle" row="0" >
+          <Label text ="Explore Health Topics" textWrap="true" />
+        </StackLayout>
+        <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}"></StackLayout>
+      </GridLayout>
+    </StackLayout>
+        <StackLayout row="0" visibility="{{ selectedScreen == 0 ? 'visible' : 'collapsed' }}"  >
+              <AbsoluteLayout width="100%" height="100%">
+
+          <!--<AbsoluteLayout style="padding:0;margin:0;">-->
+            <GridLayout rows="auto,*,auto"  width="100%" height="100%" id="main-content">
+              <Label id="lblNoRecordsFound" text="There are no search results to display." row="1" visibility="{{ searchResults.Count == 0 && !loadingResults ? 'visible' : 'collapsed' }}" />
+              <StackLayout row="1" visibility="{{ searchResults.Count != 0 || loadingResults ? 'visible' : 'collapsed' }}">
+                <GridLayout>
+                  <lv:RadListView items="{{ searchResults.Data }}" id="providers-list" loadOnDemandMode="{{ listViewOnDemandMode }}" loadMoreDataRequested="{{ loadMoreResults }}" itemTap="showIndex">
+                    <lv:RadListView.listViewLayout>
+                      <lv:ListViewLinearLayout scrollDirection="Vertical" itemHeight="220" itemWidth="100%"/>
+                    </lv:RadListView.listViewLayout>
+                    <lv:RadListView.itemTemplate>
+                      <provider-card:provider-card/>
+                    </lv:RadListView.itemTemplate>
+                  </lv:RadListView>
+                </GridLayout>
+              </StackLayout>
+
+              <!--Filter Button Show filter-->
+              <StackLayout row="2" id="bottomButtons" tap="showFilter" className="{{ searchType === 1 ? 'active' : 'inactive' }}">
+                <StackLayout orientation="horizontal" >
+                  <StackLayout orientation="horizontal" id="bottomButtonLeft" tap="showFilter">
+                    <Label text="REFINE RESULTS" tap="filter" />
+                    <Image src="~/images/iconSliders.png" height="40%" margin="0 0 0 10"/>
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+
+              <StackLayout row="0" id="searchSection">
+                <!--<StackLayout orientation="horizontal">-->
+                <DockLayout>
+                  <Label dock="left" text="Find a Doctor" class="pageTitle"/>
+                  <Label dock="right" id="lblResultsCount" visibility="{{ searchResults.Count === -1 ? 'collapsed' : 'visible' }}" text="{{ searchResults.Count + ' result' + (searchResults.Count === 1 ? '' : 's') + ' found' }}"/>
+                </DockLayout>
+                <!--<StackLayout id="chkPrimaryCare" width="50%" orientation="horizontal" tap="onTapPrimaryCare">
+                                    <Label text="Primary Care" tap="onTapPrimaryCare" />
+                                    <StackLayout class="checkbox" tap="onTapPrimaryCare">
+                                        <Image src="~/images/common/checked.png" tap="onTapPrimaryCare" visibility="{{ isPrimaryCare ? 'visible' : 'collapsed' }}" />
+                                        <Image src="~/images/common/unchecked.png" tap="onTapPrimaryCare" visibility="{{ !isPrimaryCare ? 'visible' : 'collapsed' }}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>-->
+                <StackLayout class="horizontalLine"></StackLayout>
+
+
+                <GridLayout id="SearchBox" rows="auto" cols="auto, *">
+                  <TextField row="0" col="1" colSpan="2" id="txtSearchBox" text="{{ searchTerm }}" hint="Search by Name, Specialty or Condition" returnKeyType="search" returnPress="onSearchBtnTap" />
+                  <StackLayout id="searchButtonsContainer" row="0" col="2" orientation="horizontal">
+                    <Button id="btnClearIcon" class="icon" color="#000" text="&#xf00d;" visibility="{{ searchTerm != null && searchTerm != '' ? 'visible' : 'collapsed' }}" tap="clearSearchTerm" borderWidth="1" borderColor="transparent" />
+                    <Button id="btnSearchIcon" id="icon" color="#fff" backgroundColor="#bf0d32" text="&#xf002;" onTap="onSearchBtnTap" />
+                  </StackLayout>
+                </GridLayout>
+                <StackLayout class="horizontalLine"></StackLayout>
+              </StackLayout>
+              <ActivityIndicator busy="{{ isSearching }}" row="1" />
+
+              <!--Provider Map-->
+            </GridLayout>
+
+            <!--Filter-->
+      <StackLayout id="filter" backgroundColor="#eeeeee" width="100%" height="100%" top="0" opacity="0">
+
+        <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" fontSize="20" width="100%">
+          <StackLayout horizontalAlignment="left" orientation="horizontal" tap="tapClose" padding="10 20" width="50%">
+            <Image src="~/images/iconCloseWhte.png" width="15" height="15" horizontalAlignment="right" tap="tapClose" margin="0 3 0 0"/>
+            <Label text="CLOSE" color="white" horizontalAlignment="left"  tap="tapclose"/>
+          </StackLayout>
+          <!--<StackLayout horizontalAlignment="left" orientation="horizontal" tap="tapClose" padding="10 20" width="50%">-->
+          <!--<Image src="~/images/iconCloseWhte.png" width="13" height="13" horizontalAlignment="right" tap="resetAll"/>
+            <Label text="RESET" color="white" horizontalAlignment="left"  tap="resetAll"/>-->
+          <!--<Label text="X CLOSE" color="white"  horizontalAlignment="left" tap="tapClose"/>
+          </StackLayout>-->
+          <StackLayout horizontalAlignment="right" orientation="horizontal" tap="tapApply" padding="10 20" width="50%" >
+            <Image src="~/images/icon_checkMarkWhite.png" width="15" height="15" horizontalAlignment="right" tap="tapApply"/>
+            <Label text="APPLY" color="white" horizontalAlignment="right" dock="right" tap="tapApply"/>
+          </StackLayout>
+        </GridLayout>
+        <!--<AbsoluteLayout width="100%" height="100%">-->
+
+          <StackLayout orientation="horizontal" width="100%" style="padding:20; border:1 solid #ccc; background-color:white">
+            <Label text="Sort By:" verticalAlignment="center" margin="0 5 0 0"/>
+            <StackLayout  orientation="horizontal"  tap="Name" margin="0 5 0 0">
+              <Image id="rdbName" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Name" />
+              <Label text="Name"  tap="Name" />
+            </StackLayout>
+            <StackLayout  orientation="horizontal"  tap="Distance"  margin="0 5 0 0">
+              <Image id="rdbDistance" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Distance" />
+              <Label text="Distance"  tap="Distance" />
+            </StackLayout>
+          </StackLayout>
+          <StackLayout  orientation="horizontal" margin="0 5 0 0" padding="20" width="100%" top="50">
+            <Label text="Filter By:" verticalAlignment="center" margin="0 5 0 0"/>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Male">
+              <Image id="rdbMale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Male" />
+              <Label text="Male"  tap="Male"/>
+            </StackLayout>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Female">
+              <Image id="rdbFemale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Female" />
+              <Label text="Female"  tap="Female" />
+            </StackLayout>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="All">
+              <Image id="rdbAll" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="All" />
+              <Label text="Both" tap="All"/>
+            </StackLayout>
+          </StackLayout>
+          <StackLayout  orientation="horizontal" margin="0 5 0 0" padding="20" width="100%" top="100">
+            <Label text="Age Group:" verticalAlignment="center" margin="0 5 0 0"/>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Peds">
+              <Image id="rdbPeds" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Peds" />
+              <Label text="Peds"  tap="Peds"/>
+            </StackLayout>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Adults">
+              <Image id="rdbAdults" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Adults" />
+              <Label text="Adults"  tap="Adults" />
+            </StackLayout>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="AllAges">
+              <Image id="rdbAllAges" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="AllAges" />
+              <Label text="All" tap="AllAges"/>
+            </StackLayout>
+          </StackLayout>
+          <GridLayout rows="auto" cols="auto, *" width="100%" top="130" padding="20">
+            <TextField row="0" id="txtzip" col="1" colSpan="2" text="" hint="Closest to City/ZIP" className="filterText" margin="10 0 0 0"/>
+            <Button row="0" col="2" id="icon" class="btnClearIcon" text="&#xf00d;" tap="clearZip" />
+          </GridLayout>
+
+          <StackLayout id="insContainer" orientation="vertical" padding="20" width="100%" height="100%" top="210" className="closeIns">
+            <GridLayout rows="auto" cols="auto, *">
+              <TextField row="0" col="1" colSpan="2" id="txtInsurance" text="{{ Insurance.SearchTerm }}" className="filterText" width="100%" hint="Filter by Insurance" tap="showIns" autocorrect="false" propertyChange="checkInsurance" returnKeyType="search"/>
+              <Button row="0" col="2" id="icon" class="btnClearIcon" color="#000" text="&#xf00d;" tap="clearIns" />
+            </GridLayout>
+            <ListView items="{{ Insurance.Insurances.Data }}" id="lvInsurance" itemTap="selectInsurance" selectionBehavior="Press" visibility="{{ isSearching ? 'collapsed' : 'visible'}}">
+              <ListView.listViewLayout>
+                <ListView.ListViewLinearLayout scrollDirection="Vertical" />
+              </ListView.listViewLayout>
+              <ListView.itemTemplate>
+                <StackLayout>
+                  <Label text="{{ $value }}" class="listViewItem" />
+                </StackLayout>
+              </ListView.itemTemplate>
+            </ListView>
+            <ActivityIndicator busy="{{ isSearching }}" style="height:100%;width:50"/>
+          </StackLayout>
+        <!--</AbsoluteLayout>-->
+
+      </StackLayout>
+
+          </AbsoluteLayout>
+        </StackLayout>
+
+        <StackLayout row="0" visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}" >
+          <access-uh:explore-health />
+        </StackLayout>
+
+
+      
+      <!--Provider Map-->
+      <!--<provider-card:provider-map id="provider-map" visibility="{{ showMap == true ? 'visible' : 'collapsed' }}"/>-->
+    <!--</AbsoluteLayout>-->
+          </StackLayout>
+
+  </ios>
+
+</StackLayout>

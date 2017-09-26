@@ -1,0 +1,37 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:RL="nativescript-ripple"
+      showingModally="onShowingModally"
+      shownModally="onShownModally"
+      loaded="onLoaded"
+      unloaded="onUnloaded"
+      cssFile="~/components/popup/popup.css"
+      codeFile="~/components/popup/popup-view.js">
+    <StackLayout id="popup">
+
+        <StackLayout id="popupMessage">
+            <Label id="lblTitle" text="{{ title }}" textWrap="true" />
+            <Label id="lblMessage" text="{{ message }}" textWrap="true" />
+
+            <StackLayout id="buttonsRow" orientation="horizontal">
+                <StackLayout id="cancel">
+                    <android>
+                        <Button id="btnCancel" color="#fff" tap="onTapCancel" text="Cancel" visibility="{{ type === 'confirm' ? 'visible' : 'collapsed' }}" />
+                    </android>
+                    <ios>
+                        <Button id="btnCancel" tap="onTapCancel" text="Cancel" visibility="{{ type === 'confirm' ? 'visible' : 'collapsed' }}" />
+                    </ios>
+                </StackLayout>
+              
+              <StackLayout id="apply">
+                <android>
+                  <Button id="btnApply" color="#fff" tap="onTapContinue" text="{{ type === 'confirm' ? 'Continue' : 'OK' }}" />
+                </android>
+                <ios>
+                  <Button id="btnApply" tap="onTapContinue" text="{{ type === 'confirm' ? 'Continue' : 'OK' }}" />
+                </ios>
+              </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+</Page>

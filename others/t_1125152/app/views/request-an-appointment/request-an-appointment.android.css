@@ -1,0 +1,39 @@
+/*@import url("~/views/request-an-appointment/request-an-appointment.common.css");*/
+@import url("~/views/request-an-appointment/request-an-appointment.common.css");
+
+#submitButtonRipple {
+    margin-top: 20;
+    width: 100%;
+    height: 60;
+    margin-bottom: 60;
+    background-color: #bf0d32;
+    color: #fff;
+    border-radius: 25;
+}
+
+#RadioContent {
+    width: 100%;
+  
+}
+
+.checkbox {
+    vertical-align: top;
+    margin-right:20;
+}
+
+.disclaimerCheckItem {
+    margin-bottom: 5;
+}
+
+TextField{
+    margin-left:16;
+}
+
+
+#submitButton label{
+    background-size: 35 40;
+    padding-right: 5;
+    /* font-weight: bold; */
+}
+
+

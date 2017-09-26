@@ -1,0 +1,45 @@
+<page loaded="loaded"
+      xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      xmlns:customControls="~/components/drawer-menu"
+      xmlns:action-bar="~/components/action-bar"
+      codeFile="~/views/about-uhnow/about-uhnow-view.js">
+  <page.actionBar>
+    <action-bar:actionBar />
+  </page.actionBar>
+
+  <drawer:rad-side-drawer id="drawer" drawerLocation="Left">
+    <drawer:rad-side-drawer.drawerTransition>
+      <drawer:SlideInOnTopTransition />
+    </drawer:rad-side-drawer.drawerTransition>
+
+    <drawer:rad-side-drawer.mainContent>
+
+        <StackLayout id="disclaimerContent"  backgroundImage="~/images/common/bottomimg.png" >
+          <Label text="About UH Now" fontSize="30" width="100%"/>
+          <StackLayout backgroundColor="#9e0425" height="2" width="100%" margin="5 0 20 0"></StackLayout>
+          <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+            <!--<Image id="understandCheck" src="~/images/common/unchecked.png" class="checkbox" tap="onTapUnderstandItem" />-->
+            <Label  textWrap="true" text="Version Number" color="#9e0425" fontWeight="bold"/>
+            <Label  textWrap="true" text="{{ appVersion }}"  />
+          </StackLayout>
+          <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+            <!--<Image id="understandCheck" src="~/images/common/unchecked.png" class="checkbox" tap="onTapUnderstandItem" />-->
+            <Label  textWrap="true" text="API Version" color="#9e0425" fontWeight="bold"/>
+            <Label  textWrap="true" text="{{ apiVersion}}" />
+          </StackLayout>
+          <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+            <!--<Image id="understandCheck" src="~/images/common/unchecked.png" class="checkbox" tap="onTapUnderstandItem" />-->
+            <Label  textWrap="true" text="Publish Date" color="#9e0425" fontWeight="bold"/>
+            <Label  textWrap="true" text="{{ releaseDate }}" />
+          </StackLayout>
+        </StackLayout>
+
+    </drawer:rad-side-drawer.mainContent>
+
+    <drawer:rad-side-drawer.drawerContent>
+      <customControls:drawer-menu />
+    </drawer:rad-side-drawer.drawerContent>
+
+  </drawer:rad-side-drawer>
+
+</page>

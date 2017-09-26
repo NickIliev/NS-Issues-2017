@@ -1,0 +1,134 @@
+﻿<page loaded="loaded"
+      codeFile="~/views/verify/verify-user.js"
+      xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+      xmlns:customControls="~/components/drawer-menu"
+      xmlns:action-bar="~/components/action-bar"
+      xmlns:verify="~/views/verify">
+  <page.actionBar>
+    <action-bar:actionBar />
+  </page.actionBar>
+
+  <drawer:rad-side-drawer id="drawer" drawerLocation="Left">
+    <drawer:rad-side-drawer.drawerTransition>
+      <drawer:SlideInOnTopTransition />
+    </drawer:rad-side-drawer.drawerTransition>
+
+    <drawer:rad-side-drawer.mainContent>
+      <android>
+        <ScrollView height="100%">
+          <GridLayout rows="*" width="100%" height="100%" style="padding:15%">
+            <StackLayout orientation="vertical"  width="100%" visibility="{{ isLoading ? 'collapsed' : 'visible'}}">
+              <Label text="How would you like to verify your identity?" style="width:100%;" className="title" textWrap="true"/>
+              <!--<Label text="{{ verifyText}}" style="width:100%;"/>-->
+              <Label text=" Choose ONE method:" style="width:100%;"/>
+              <!--<TextField id="dob" autocorrect="false" keyboardType="datetime"/>
+                    <TextField id="ssn" autocorrect="false" keyboardType="number"/>
+                    <TextField id="addr" autocorrect="false"/>-->
+              <StackLayout acc="accordionOne" backgroundColor="#eeeeee" margin="5 0 0 0">
+                <StackLayout id="accordionOne" orientation="horizontal" className="accordion inactive" acc="accordionOne" width="100%" tap="show">
+                  <Label text="Schedule All Orders" acc="accordionOne" horizontalAlignment="left" tap="show"/>
+                </StackLayout>
+                <StackLayout className="accContainer" visibility="{{ showOne ? 'visible' : 'collapsed'}}">
+                  <Label text="Entering your social security number is safe, secure and retrieves all your pending referrals." textWrap="true" />
+                  <StackLayout orientation="horizontal" textAlign="center" horizontalAlignment="center">
+                    <Label text="Enter SSN:" verticalAlignment="center" margin="5 0 0 0" />
+                    <TextField  secure="true" id="ssn" className="textboxes" autocorrect="false" keyboardType="number" hint="999999999"/>
+                    <!--<mi:MaskedInput id="ssn" autocorrect="false" keyboardType="number" secure="true" mask="999-99-9999" hint="***-**-****" placeholder="*" propertyChange="setSSN" height="40" width="100%" borderRadius="5"/>-->
+                    <!--<TextField secure="true" id="ssn3" text="{{ ssn3 }}" className="ssn" autocorrect="false" hint="***" propertyChange="maxChar" maxLength="3"/>
+                            <TextField  secure="true" id="ssn2" className="ssn" autocorrect="false" keyboardType="number" hint="**" />
+                            <TextField  secure="true" id="ssn4" className="ssn" autocorrect="false" keyboardType="number" hint="****" />-->
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+              <StackLayout backgroundColor="#eeeeee" margin="5 0 0 0">
+                <StackLayout id="accordionTwo" orientation="horizontal" className="accordion inactive" acc="accordionTwo" tap="show">
+                  <Label text="Schedule This Order" horizontalAlignment="left" acc="accordionTwo" tap="show"/>
+                </StackLayout>
+                <StackLayout className="accContainer" visibility="{{ showTwo ? 'visible' : 'collapsed'}}">
+                  <StackLayout orientation="horizontal" class="disclaimerCheckItem" tap="onTapAgreementItem">
+                    <Image id="agreementCheck" src="~/images/common/unchecked.png" class="checkbox" tap="onTapAgreementItem" />
+                    <Label class="checkboxLabel" textWrap="true" margin="0 0 0 10" text="{{ 'I would like to only schedule for scanned referral #' + reqID + ' without providing my social security number. I am authorized to schedule this referral on behalf of ' + fullName + '.'}}"  tap="onTapAgreementItem"/>
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+              <StackLayout orientation="horizontal" style="margin:10 0 0 0" visibility="collapsed">
+                <!--<mi:MaskedInput col="0" id="dob" autocorrect="false" mask="99/99/9999" hint="mm/dd/yyyy" placeholder=" " text="{{ dob }}" style="width:49%;horizontal-align:left;margin:0 5 0 0"/>-->
+                <!--<TextField col="0" id="dob" autocorrect="false" hint="DOB mm/dd/yyyy" text="{{ dob }}" style="width:49%;horizontal-align:left;margin:0 5 0 0"/>
+                        <TextField col="1" id="ssn" autocorrect="false" keyboardType="number" hint="Last 4 of SSN "  text="{{ ssn }}" style="width:49%;horizontal-align:right;margin:0 0 0 5"/>-->
+              </StackLayout>
+              <TextField id="addr" autocorrect="false" keyboardType="number" hint="Street Address" text="{{ addr}}" visibility="collapsed"/>
+              <DockLayout orientation="horizontal">
+                <Button text="Rescan" tap="goBack" dock="left" horizontalAlignment="left" className="enabled" width="48%"/>
+                <Button text="Continue" tap="authenticate" dock="right" horizontalAlignment="right" isEnabled="{{ isEnabled == true ? true : false}}" className="{{ isEnabled == true ? 'enabled' : 'disabled' }}" width="48%"/>
+              </DockLayout>
+            </StackLayout>
+            <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+          </GridLayout>
+
+        </ScrollView>
+      </android>
+
+
+      <ios>
+        <ScrollView height="100%">
+
+          <GridLayout rows="*" width="100%" height="100%" style="padding:15%">
+            <StackLayout orientation="vertical"  width="100%" visibility="{{ isLoading == false ? 'visible' : 'collapsed'}}">
+              <Label text="How would you like to verify your identity?" style="width:100%;" className="title" textWrap="true"/>
+              <!--<Label text="{{ verifyText}}" style="width:100%;"/>-->
+              <Label text=" Choose ONE method:" style="width:100%;"/>
+              <!--<TextField id="dob" autocorrect="false" keyboardType="datetime"/>
+                    <TextField id="ssn" autocorrect="false" keyboardType="number"/>
+                    <TextField id="addr" autocorrect="false"/>-->
+              <StackLayout acc="accordionOne" backgroundColor="#eeeeee" margin="5 0 0 0">
+                <StackLayout id="accordionOne" orientation="horizontal" className="accordion inactive" acc="accordionOne" width="100%" tap="show">
+                  <Label text="Schedule All Orders" acc="accordionOne" horizontalAlignment="left" tap="show"/>
+                </StackLayout>
+                <StackLayout className="accContainer" visibility="{{ showOne ? 'visible' : 'collapsed'}}">
+                  <Label text="Entering your social security number is safe, secure and retrieves all your pending referrals." fontSize="14" textWrap="true" />
+                  <StackLayout orientation="horizontal" textAlign="center" horizontalAlignment="center">
+                    <Label text="Enter SSN:" verticalAlignment="center" fontSize="14" margin="5 0 0 0" />
+                    <!--<TextField  secure="true" id="ssn" className="textboxes" autocorrect="false" keyboardType="number" hint="999999999" propertyChange="setSSN"/>-->
+                    <mi:MaskedInput id="ssn" autocorrect="false" keyboardType="number" secure="true" mask="999-99-9999" hint="***-**-****" placeholder="*" propertyChange="setSSN" height="40" width="100%" borderRadius="5"/>
+                    <!--<TextField secure="true" id="ssn3" text="{{ ssn3 }}" className="ssn" autocorrect="false" hint="***" propertyChange="maxChar" maxLength="3"/>
+                    <TextField  secure="true" id="ssn2" className="ssn" autocorrect="false" keyboardType="number" hint="**" />
+                    <TextField  secure="true" id="ssn4" className="ssn" autocorrect="false" keyboardType="number" hint="****" />-->
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+              <StackLayout backgroundColor="#eeeeee" margin="5 0 0 0">
+                <StackLayout id="accordionTwo" orientation="horizontal" className="accordion inactive" acc="accordionTwo" tap="show">
+                  <Label text="Schedule This Order" horizontalAlignment="left" acc="accordionTwo" tap="show"/>
+                </StackLayout>
+                <StackLayout className="accContainer" visibility="{{ showTwo ? 'visible' : 'collapsed'}}">
+                  <StackLayout orientation="horizontal" class="disclaimerCheckItem" tap="onTapAgreementItem">
+                    <Image id="agreementCheck" src="~/images/common/unchecked.png" class="checkbox" />
+                    <Label class="checkboxLabel" textWrap="true" margin="0 0 0 10" fontSize="14" text="{{ 'I would like to only schedule for scanned referral #' + reqID + ' without providing my social security number. I am authorized to schedule this referral on behalf of ' + fullName + '.'}}" />
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+              <StackLayout orientation="horizontal" style="margin:10 0 0 0" visibility="collapsed">
+                <!--<mi:MaskedInput col="0" id="dob" autocorrect="false" mask="99/99/9999" hint="mm/dd/yyyy" placeholder=" " text="{{ dob }}" style="width:49%;horizontal-align:left;margin:0 5 0 0"/>-->
+                <!--<TextField col="0" id="dob" autocorrect="false" hint="DOB mm/dd/yyyy" text="{{ dob }}" style="width:49%;horizontal-align:left;margin:0 5 0 0"/>
+                    <TextField col="1" id="ssn" autocorrect="false" keyboardType="number" hint="Last 4 of SSN "  text="{{ ssn }}" style="width:49%;horizontal-align:right;margin:0 0 0 5"/>-->
+              </StackLayout>
+              <TextField id="addr" autocorrect="false" keyboardType="number" hint="Street Address" text="{{ addr}}" visibility="collapsed"/>
+              <DockLayout orientation="horizontal">
+                <Button text="Rescan" tap="goBack" dock="left" horizontalAlignment="left" className="enabled" width="48%"/>
+                <Button text="Continue" tap="authenticate" dock="right" horizontalAlignment="right" isEnabled="{{ isEnabled == true ? true : false}}" className="{{ isEnabled == true ? 'enabled' : 'disabled' }}" width="48%"/>
+              </DockLayout>
+            </StackLayout>
+            <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+          </GridLayout>
+
+        </ScrollView>
+      </ios>
+
+    </drawer:rad-side-drawer.mainContent>
+
+    <drawer:rad-side-drawer.drawerContent>
+      <customControls:drawer-menu />
+    </drawer:rad-side-drawer.drawerContent>
+
+  </drawer:rad-side-drawer>
+</page>

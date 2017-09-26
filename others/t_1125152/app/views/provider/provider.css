@@ -1,0 +1,63 @@
+
+@import url("~/views/provider/provider.common.css");
+
+#tabView > StackLayout {
+    vertical-align: bottom;
+    background-color:#f9f9f9;
+}
+
+#tabView StackLayout.horizontalLine {
+    border-color: #cd3439;
+    border-width:1;
+    height:2;
+}
+
+#tap1,#tap2,#tap3,#tap4,#tap5,#tap6,#tap7 {
+horizontal-align:center;
+padding: 0 15;
+font-size:22%;
+  
+}
+/*#tabs {
+    border-color: black;
+    border-width: 1;
+    border-style: solid;
+}*/
+
+#bottomButtons {
+    height: auto;
+    width:auto;
+    vertical-align: top;
+   
+}
+
+.heightfull{
+    height:100%
+}
+
+#providerName {
+    padding: 0 0;
+}
+#providerHeader {
+    padding-top: 14;
+    padding-bottom: 4;
+}
+
+#providerAppointmentNumber {
+    padding-top: 4;
+    padding-bottom: 9;
+}
+
+#providerCerts {
+    margin-bottom: 10;
+   font-size:20%;
+}
+
+.providerCert,
+.providerEducation Label {
+    font-size: 17%;
+}
+#providerAppointmentNumber Label.providerAppointmentNumberValue {
+    margin-left: 0;
+    color: #ed3942;
+}

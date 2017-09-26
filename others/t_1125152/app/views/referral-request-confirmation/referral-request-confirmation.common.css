@@ -1,0 +1,138 @@
+/*#imgEmergencyCall{
+   padding-top:55;
+}*/
+.indent {
+    padding: 0 20;
+}
+
+#stackmedicalAdvice {
+    margin-top: 20;
+}
+
+#lblmedicalConcern {
+    font: bold;
+}
+
+#lblUhCalling {
+    color: #bf0d32;
+    font: bold;
+}
+
+#lblstackConcern {
+    margin-bottom: 9;
+}
+
+#stackInquiries {
+    margin-top: 35;
+    margin-bottom: 18;
+}
+
+#backContent {
+    margin-top: 37;
+}
+
+#backgroundRect {
+    background-color: #ede8e4;
+    padding-top: 25;
+}
+
+.Label {
+    font: bold;
+    padding-top: 25;
+    padding-bottom: 14;
+    padding-left: 0;
+}
+
+#txtComments {
+    height: 265;
+    margin-right: 16;
+    margin-right: 16;
+    text-align: left;
+    border-radius: 6;
+}
+.closeSmall{
+    width:48%;
+    margin:0 0 0 5
+}
+.closeBig{
+    width:100%;
+    margin:0
+}
+.textboxes {
+    height: 53;
+    /*width: 340;*/
+    margin-right: 16;
+    border-radius: 6;
+    width: 100%;
+}
+
+.disclaimerCheckItem {
+    margin-bottom: 20;
+}
+
+#lblRequired {
+    float: right;
+    /*padding-left: 80;*/
+    color: #bf0d32;
+}
+
+.bold {
+    font: bold;
+}
+
+#submitButton {
+    margin-top: 20;
+    width: 340;
+    margin-bottom: 60;
+    border-radius: 0;
+    background-color: #bf0d32;
+    color: #ffffff;
+}
+
+.test {
+    border-width: 1;
+    border-style: solid;
+    border-color: blue;
+}
+
+#mergencyCallContent {
+    background-color: #85dadf;
+    font: bold;
+    padding-top: 18;
+    padding-left: 20;
+    padding-bottom: 13;
+}
+
+#validationfield1 {
+    padding-right: 10;
+}
+
+.checkbox {
+    vertical-align: top;
+    padding-right: 0;
+}
+
+.checkboxLabel {
+    margin-left: 0;
+}
+
+#ddltext {
+    padding-top: 5;
+}
+/*.ribbon{
+    width:100%;
+    height:100%;
+      padding-top:5;
+}*/
+#lblprovidername {
+    color: #bf0d32;
+    font: bold;
+}
+
+#providerName {
+    padding: 10 0;
+}
+
+    #providerName > Label {
+        font-size: 20;
+    }

@@ -1,0 +1,15 @@
+var applicationSettingsModule = require("application-settings");
+var app = require("application");
+
+var configObject = {
+    apiUrl: "https://uhnow.uhhospitals.org/Service/api/",
+    analyticsId: "dmzna8gid0sle9e6",
+    googleMapsAPIKey: "AIzaSyAtRVvG3Be3xXiZFR7xp-K-9hy4nZ4hMFs",
+    maxLocationAge: 5 * 60 * 1000, // use cached location for maximum of 5 minutes,
+    secret: (app.ios != null) ? "3E332062-1518-4185-9C7D-AEEC9161A229" : "AA130B2B-02E3-4468-975B-8FF288BAB634",
+    referralEaseUrl: "https://uhnow.uhhospitals.org/Service/api/",
+    symptomCheckerURL: "https://uhnow.uhhospitals.org/Service/symptom-checker.html",
+    InQuickerBaseURL: "https://uh.inquicker.com"
+};
+
+module.exports = configObject;

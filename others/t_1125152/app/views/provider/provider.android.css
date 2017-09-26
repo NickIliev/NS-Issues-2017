@@ -1,0 +1,107 @@
+@import url("~/views/provider/provider.common.css");
+
+#backToResults {
+    height: 131;
+    padding: 0;
+    z-index: 999;
+}
+
+#backToResults StackLayout {
+    width: 100%;
+}
+
+#backToResults > StackLayout > StackLayout,
+#backToResultsContent {
+    height: 30;
+    margin-left: 0;
+    padding: 0 17;
+    vertical-align: center;
+}
+
+#backToResults StackLayout.horizontalLine {
+    width: 100%;
+    height: 1;
+    margin: 0;
+}
+
+.providerEducation .horizontalLine {
+    margin: 10 0;
+}
+
+#bottomButtonLeftRipple {
+    width: 58%;
+    background-color: #bf0d32;
+    margin-left:0;
+    margin-right: 5;
+}
+
+#bottomButtonRightRipple {
+    background-color: #9e0425;
+    width: 43%;
+    margin-left:5;
+    margin-right: 0;
+}
+
+#bottomButtonLeft,
+#bottomButtonRight {
+    width: 100%;
+}
+
+.heightfull{
+    height:100%
+}
+
+#providerName {
+    padding: 0 0;
+}
+#providerHeader {
+    padding-top: 14;
+    padding-bottom: 4;
+}
+
+#providerAppointmentNumber {
+    padding-top: 4;
+    padding-bottom: 9;
+}
+#bottomButtons {
+    height: auto;
+    width:auto;
+    vertical-align: top;
+   padding: 10 10 10 10;
+}
+#providerAppointmentNumber Label.providerAppointmentNumberValue {
+    margin-left: 0;
+    color: #ed3942;
+}
+
+#myBox{
+
+background-color:white;
+padding: 20;
+
+}
+
+/* .horizontalLine5 {
+    height: 2;
+    border-color:#e0e0e0;
+    border-width: 1;
+    border-style: solid;
+} */
+.searchResultItem {
+    border-radius: 0;
+    background-color:#fff;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.searchStackItem{
+    border-bottom-width: 1;
+    border-bottom-style: solid;
+    border-bottom-color: #cacaca;
+}
+
+.searchStackItem:last-child{
+    border-bottom-width: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #000;
+}

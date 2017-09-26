@@ -1,0 +1,12 @@
+{
+  "name": "nativescript-uh-drop-down",
+  "version": "1.0.0",
+  "description": "A NativeScript DropDown widget.",
+  "main": "drop-down.js",
+  "nativescript": {
+    "platforms": {
+      "ios": "1.5.0",
+      "android": "1.5.0"
+    }
+  }
+}

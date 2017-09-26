@@ -1,0 +1,46 @@
+@import url('~/components/action-bar/actionBar.css');
+
+
+#logo{
+    vertical-align: center;
+
+}
+#contactUH{
+     horizontal-align: right;
+    
+
+}
+#contactUH > label{
+      horizontal-align: right;
+         /*vertical-align:right;*/
+}
+.contactUHLabel{
+   padding-left:25; font-weight: bold;
+}
+#titleView{
+    width:100%;
+}
+
+/*///////////////////////////*/
+
+.action-image {
+    width: 160;
+    height: 210;
+    vertical-align: center;
+    horizontal-align: center;
+    margin-top: 10;
+    margin-bottom: 10;
+    
+}
+
+.itemright {
+    width: 90;
+    height: 87;
+    vertical-align: center;
+    horizontal-align: center;
+
+    
+    text-align: right;
+    height: 100%;
+    horizontal-align: right;
+}

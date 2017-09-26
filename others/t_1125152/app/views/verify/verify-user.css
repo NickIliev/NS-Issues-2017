@@ -1,0 +1,95 @@
+﻿@import url('~views/disclaimer.css');
+TextField, TextView, MaskedInput {
+    margin: 10 0 0 0;
+    height: 53;
+    padding-left: 30;
+    color: #9e0425;
+    background-color: #f9f9f9;
+    border-radius: 6;
+}
+Button {
+    margin-top: 18;
+    background-image: none;
+    background-color: #9e0425;
+    color: #fff;
+    border-radius: 0;
+    width:100%;
+    text-transform:uppercase
+} 
+.checkbox {
+    height: 18;
+    width: 18;
+    vertical-align: top;
+}
+.enabled {
+    background-color: #9e0425;
+    color: #fff;
+}
+.disabled {
+    background-color: #cccccc;
+    color: #fff;
+}
+.ssn{
+    margin:0 0 0 5
+}
+TextField {
+    /*width: 340;*/
+    padding:10;
+	width:100%
+}
+
+#backToResults {
+    height: 61;
+    padding: 0;
+    z-index: 999;
+}
+
+#backToResults StackLayout {
+    width: 100%;
+}
+
+#backToResults > StackLayout > StackLayout,
+#backToResultsContent {
+    height: 30;
+    margin-left: 0;
+    padding: 0 17;
+    vertical-align: center;
+}
+
+#backToResults StackLayout.horizontalLine {
+    width: 100%;
+    height: 1;
+    margin: 0;
+}
+.active{
+    background-color: #7e131c;
+    background-image: ~/images/arrow-down-white.png;
+}
+.inactive{
+    background-color:#c71d22;
+    background-image: ~/images/arrow-right-white.png;
+}
+.accordion{
+    background-position: right center;
+    background-repeat: no-repeat;
+    color:white;
+    padding:10
+}
+.accordion Label{
+    color:white;
+    width:70%;
+    text-transform:uppercase
+}
+.accordion Image{
+    width:20;
+    height:20;
+}
+.accContainer{
+    padding:10%
+}
+.accContainer Label{
+    margin:0 0 15 0
+}
+.accContainer Button{
+    margin:15 0 10 0
+}

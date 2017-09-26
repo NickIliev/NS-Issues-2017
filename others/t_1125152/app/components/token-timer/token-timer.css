@@ -1,0 +1,52 @@
+.timer Label{
+    font-size:40;
+    color:#8f0422
+}
+#popup{
+    width:100%;
+    height:100%;
+    padding:0 25% 0 25%;
+    text-align:center;
+    background-size:cover
+}
+#popupMessage {
+    padding: 15% 0 0 0;
+    background-color: white;
+}
+
+#lblTitle {
+    font-weight: bold;
+    font-size: 20;
+    margin-bottom: 5;
+}
+
+#lblMessage {
+    font-size: 20;
+}
+
+#btnContinue,
+#btnLeave {
+    background-color: transparent;
+    width:50%;
+    height:120;
+    border-radius:0
+}
+
+#btnLeave {
+    horizontal-align: right;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #9d0525;
+}
+
+#btnContinue {
+    horizontal-align: left;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #aa3439;
+}
+#buttonsRow {
+    margin-top: 20
+}

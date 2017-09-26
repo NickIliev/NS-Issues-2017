@@ -1,0 +1,71 @@
+<page loaded="loaded" navigatedTo="onNavigatedTo"
+      codeFile="~/views/disclaimer/disclaimer-view.js"
+      xmlns:action-bar="~/components/action-bar">
+  <page.actionBar>
+    <action-bar:actionBarNoNav />
+  </page.actionBar>
+
+  <GridLayout rows="*" id="main-content" class="pageContent">
+    <ActivityIndicator busy="{{ isLoading }}" row="0" rowSpan="2" />
+    <StackLayout>
+      <GridLayout rows="auto">
+        <Image row ="0" id="imgWelcome" src="~/images/common/welcomeimg.png"  />
+
+      </GridLayout>
+      <!--<Label id="disclaimerHeading" class="heading" text="Welcome to UH Now" />-->
+
+      <android>
+      <ScrollView>
+      <AbsoluteLayout>
+        <StackLayout class="agreeContent" height="100%" width="100%" backgroundImage="~/images/common/bottomimg.png" verticalAlignment="bottom">
+                 
+        <StackLayout orientation="horizontal" class="discContent1">
+            <!--<Image id="understandCheck" src="~/images/common/unchecked.png" class="checkbox" tap="onTapUnderstandItem" />-->
+            <Label textWrap="true" text="In order to satisfy legal and compliance we need you to accept the terms of use before you can use the UH Now mobile app."></Label>
+        </StackLayout>
+        
+          <StackLayout orientation="horizontal"  class="disclaimerCheckItem1">
+            <!--<Image id="understandCheck" src="~/images/common/unchecked.png" class="checkbox" tap="onTapUnderstandItem" />-->
+            <Label  textWrap="true" text="I understand that the health conditions and symptom checker do not constitute medical advice or replace my doctor." />
+          </StackLayout>
+          <StackLayout orientation="horizontal" class="disclaimerCheckItem1" id="acceptItem" >
+            <!--<Image id="acceptCheck" src="~/images/common/unchecked.png" class="checkbox" tap="onTapAcceptItem" />-->
+            <WrapLayout  >
+              <Label text="I accept the UH Now " />
+              <Label id="termsLink" class="textLink" text="Terms and Conditions" tap="onTapTermsLink" />
+            </WrapLayout>
+          </StackLayout>
+          <StackLayout orientation="horizontal" xmlns:RL="nativescript-ripple">
+          <RL:Ripple rippleColor="#ff8888" tap="btnIagree" width="100%" class="iagreeStack">
+          <Button text="I AGREE" tap="btnIagree" style="color:white;" class="IagreeBtn" width="100%"/>
+          </RL:Ripple>
+          </StackLayout>
+          </StackLayout>
+       </AbsoluteLayout> 
+       </ScrollView>
+      </android>
+
+      <ios>
+        <StackLayout id="disclaimerContent"  backgroundImage="~/images/common/bottomimg.png" >
+
+          <Label id="disclaimerText" textWrap="true" text="In order to satisfy legal and compliance we need you to accept the terms of use before you can use the UH Now mobile app."></Label>
+          <StackLayout orientation="horizontal" class="disclaimerCheckItem" >
+            <!--<Image id="understandCheck" src="~/images/common/unchecked.png" class="checkbox" />-->
+            <Label  textWrap="true" text="I understand that the health conditions and symptom checker do not constitute medical advice or replace my doctor." />
+          </StackLayout>
+          <StackLayout orientation="horizontal" class="disclaimerCheckItem" id="acceptItem" >
+            <!--<Image id="acceptCheck" src="~/images/common/unchecked.png" class="checkbox" />-->
+            <WrapLayout >
+              <Label text="I accept the UH Now " />
+              <Label id="termsLink" class="textLink" text="Terms and Conditions" tap="onTapTermsLink" />
+            </WrapLayout>
+          </StackLayout>
+          <Button text="I AGREE" tap="btnIagree"  className="IagreeBtn" width="100%"/>
+        </StackLayout>
+      </ios>
+
+
+    </StackLayout>
+
+  </GridLayout>
+</page>

@@ -1,0 +1,357 @@
+<StackLayout>
+  <android
+        xmlns:lv="nativescript-telerik-ui/listview"
+         xmlns:card="nativescript-cardview"
+        xmlns:provider-card="~/components/provider-card"
+        xmlns:RL="nativescript-ripple">
+    <AbsoluteLayout width="100%" height="100%">
+
+      <GridLayout rows="auto,auto,*" width="100%" style="margin:20 0 0 0;height:100%" top="-20">
+        <StackLayout row="0" style="padding:15% 15% 10% 15%" visibility="{{ isLoading == false ? 'visible' : 'collapsed'}}" className="orderDetials">
+          <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center">
+            <Label text="Choose a provider" className="title"/>
+            <Label text="{{ 'Results: ' + count }}" horizontalAlignment="right" verticalAlignment="center" color="#9e0425" className="results"/>
+          </GridLayout>
+          <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center">
+            <Label text="{{ referral }}" className="subTitle"/>
+          </GridLayout>
+          <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center">
+            <Label text="{{ referralType }}" className="info"/>
+            <Label text="{{ date }}" className="info"  horizontalAlignment="right"/>
+          </GridLayout>
+          <Label text="{{ orderReason }}" className="info" textWrap="true"/>
+          <Label text="{{ orderingProvider }}" className="info"/>
+        </StackLayout>
+        <!--<StackLayout row="1" orientation="horizontal" className="sortTabs">
+          <Label text="Best Match" className="selected"  height="50"/>
+          <Label text="Availability" className="midTab"/>
+          <Label text="Location"/>
+        </StackLayout>-->
+        <StackLayout row="2" style="background-color:#f9f9f9;width:100%;" verticalAlignment="top">
+          <Label text="{{ message }}" visibility="{{ count == 0 ? 'visible' : 'collapsed'}}" style="margin:20; color:#9e0425" textWrap="true"/>
+          <GridLayout rows="*,auto">
+            <StackLayout padding="10%">
+              <lv:RadListView id="providers-list" items="{{ searchResults.Data }}" loadOnDemandMode="{{ listViewOnDemandMode }}" loadMoreDataRequested="{{ loadMoreResults }}" loadOnDemandBufferSize="4" itemTap="listAppt">
+                <!--<lv:RadListView id="providers-list" items="{{ searchResults.Data }}" loadOnDemandMode="{{ listViewOnDemandMode }}" loadMoreDataRequested="{{ loadMoreResults }}" loadOnDemandBufferSize="4" itemTap="listAppt" itemSwipeProgressEnded="onSwipeCellFinished" itemSwipeProgressStarted="onSwipeCellStarted" itemSwipeProgressChanged="onCellSwiping" swipeActions="true">-->
+                <lv:RadListView.listViewLayout>
+                  <lv:ListViewLinearLayout scrollDirection="Vertical" itemHeight="225"/>
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate >
+                  <card:CardView class="card" style="margin:0 0 10 0;width:100%" radius="4" >
+                    <provider-card:provider-card/>
+                  </card:CardView>
+                  <!--<lv:RadListView.itemSwipeTemplate>
+                    <GridLayout className="swipeContainer" columns="*, auto, auto, auto" horizontalAlignment="right" tap="viewProfile"  index="{{ Index }}">
+                      <StackLayout id="profile" col="1" className="swipe swipeProfile" tap="viewProfile" orientation="vertical"  index="{{ Index }}">
+                        <Image src="~/images/btnProfile.png" className="swipeIcon" tap="viewProfile"  index="{{ Index }}"/>
+                        <Label text="PROFILE" tap="viewProfile"  index="{{ Index }}"/>
+                      </StackLayout>
+                      <StackLayout id="specialties" col="2" className="swipe swipeSpecialties" tap="moreInfo" orientation="vertical" index="{{ Index }}">
+                        <Image src="~/images/btnSpecialties.png" className="swipeIcon"  index="{{ Index }}"/>
+                        <Label text="SPECILATIES"  index="{{ Index }}"/>
+                      </StackLayout>
+                      <StackLayout id="locations" col="3" className="swipe swipeLocations" tap="moreInfo" orientation="vertical" index="{{ Index }}">
+                        <Image src="~/images/btnLocations.png" className="swipeIcon"  index="{{ Index }}"/>
+                        <Label text="LOCATIONS"  index="{{ Index }}"/>
+                      </StackLayout>
+                    </GridLayout>
+                  </lv:RadListView.itemSwipeTemplate>-->
+                </lv:RadListView.itemTemplate>
+              </lv:RadListView>
+            </StackLayout>
+
+            <!--bottom buttons-->
+            <StackLayout row="3" id="bottomButtons" orientation="horizontal">
+              <StackLayout orientation="horizontal" id="bottomButtonLeft" tap="showFilter" backgroundColor="#9e0425">
+                <Label text="Refine Results" tap="showFilter" />
+                <Image src="~/images/iconSliders.png" height="35%" margin="0 0 0 10" tap="showFilter"/>
+              </StackLayout>
+              <StackLayout orientation="horizontal" id="bottomButtonRight" tap="goBack" backgroundColor="#bf0d32">
+                <Label text="Back to Orders" tap="goBack"/>
+              </StackLayout>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+      </GridLayout>
+
+      <!--filter-->
+      <StackLayout id="filter" backgroundColor="#eeeeee" width="100%" height="100%" visibility="{{ showFilter == true ? 'visible' : 'collapsed'}}" >
+
+        <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" fontSize="20" width="100%">
+          <StackLayout horizontalAlignment="left" orientation="horizontal" tap="closeFilter" padding="10 20" width="50%">
+            <Image src="~/images/iconCloseWhte.png" width="13" height="13" horizontalAlignment="right" tap="closeFilter" margin="0 2 0 0"/>
+            <Label text="CLOSE" color="white" horizontalAlignment="left" tap="closeFilter"/>
+          </StackLayout>
+          <StackLayout horizontalAlignment="right" orientation="horizontal" tap="doFilterSort" padding="10 20" width="50%" >
+            <Image src="~/images/icon_checkMarkWhite.png" width="15" height="15" horizontalAlignment="right" tap="doFilterSort"/>
+            <Label text="APPLY" color="white" horizontalAlignment="right" dock="right" tap="doFilterSort"/>
+          </StackLayout>
+        </GridLayout>
+        <AbsoluteLayout width="100%" height="100%">
+
+          <StackLayout orientation="horizontal" width="100%" style="padding:20; border:1 solid #ccc; background-color:white" visibility="collapsed">
+            <Label text="Sort By:" verticalAlignment="center" margin="0 5 0 0"/>
+            <StackLayout  orientation="horizontal"  tap="Name" margin="0 5 0 0">
+              <Image id="rdbName" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Name" />
+              <Label text="Name"  tap="Name" />
+            </StackLayout>
+            <StackLayout  orientation="horizontal"  tap="Distance"  margin="0 5 0 0">
+              <Image id="rdbDistance" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Distance" />
+              <Label text="Distance"  tap="Distance" />
+            </StackLayout>
+          </StackLayout>
+          <StackLayout  orientation="horizontal" margin="0 5 0 0" padding="20" width="100%" >
+            <Label text="Filter By:" verticalAlignment="center" margin="0 5 0 0"/>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Male">
+              <Image id="rdbMale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Male" />
+              <Label text="Male"  tap="Male"/>
+            </StackLayout>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Female">
+              <Image id="rdbFemale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Female" />
+              <Label text="Female"  tap="Female" />
+            </StackLayout>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="All">
+              <Image id="rdbAll" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="All" />
+              <Label text="Both" tap="All"/>
+            </StackLayout>
+          </StackLayout>
+          <GridLayout rows="auto" cols="auto, *" width="100%" top="30" padding="20">
+            <TextField row="0" col="1" colSpan="2" id="txtzip" hint="Closest to City/ZIP" text="" margin="10 0 0 0"/>
+            <Button row="0" col="2" class="icon btnClearIcon" color="#000" text="&#xf00d;" tap="clearZip" border="none" margin="10 0 0 0"  borderWidth="1" borderColor="transparent"/>
+          </GridLayout>
+
+          <StackLayout id="insContainer" orientation="vertical" padding="20" width="100%" height="100%" top="110" className="closeIns">
+            <GridLayout rows="auto" cols="auto, *" verticalAlignment="top" height="55">
+              <TextField row="0" col="1" colSpan="2" id="txtInsurance" text="{{ Insurance.SearchTerm }}" width="100%" hint="Filter By Insurance" tap="showIns" autocorrect="false" propertyChange="checkInsurance" returnKeyType="search" verticalAlignment="top"/>
+              <Button row="0" col="2" class="icon btnClearIcon" color="#000" text="&#xf00d;" backgroundColor="transparent" tap="clearIns" verticalAlignment="top"  borderWidth="1" borderColor="transparent"/>
+            </GridLayout>
+            <ListView items="{{ Insurance.Insurances.Data }}" id="lvInsurance" itemTap="selectInsurance" selectionBehavior="Press" visibility="{{ isSearching ? 'collapsed' : 'visible'}}">
+              <ListView.listViewLayout>
+                <ListView.ListViewLinearLayout scrollDirection="Vertical" />
+              </ListView.listViewLayout>
+              <ListView.itemTemplate>
+                <StackLayout>
+                  <Label text="{{ $value }}" class="listViewItem" />
+                </StackLayout>
+              </ListView.itemTemplate>
+            </ListView>
+            <ActivityIndicator busy="{{ isSearching }}" style="height:100%;width:50"/>
+          </StackLayout>
+        </AbsoluteLayout>
+
+      </StackLayout>
+
+      <!--zipcode finder-->
+      <StackLayout id="zipFinder" orientation="vertical" width="100%" height="100%" backgroundColor="#eeeeee" visibility="{{ showZipFinder == true ? 'visible' : 'collapsed'}}" >
+        <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" fontSize="20" width="100%">
+          <StackLayout horizontalAlignment="left" orientation="horizontal" padding="10 20" width="50%" visibility="collapsed">
+            <Switch id="zipSwtich" checked="{{ someProperty }}" backgroundColor="white" color="green" tap="saveZip"/>
+            <Label text="SAVE ZIPCODE" color="white" tap="closeZipFinder"/>
+          </StackLayout>
+          <StackLayout horizontalAlignment="right" orientation="horizontal" padding="10 20" width="50%" tap="closeZipFinder">
+            <Label text="X CLOSE" color="white" horizontalAlignment="right" dock="right" tap="closeZipFinder" visibility="{{ isGeoError == false ? 'visible' : 'collapsed'}}"/>
+          </StackLayout>
+        </GridLayout>
+        <GridLayout  columns="auto, *" rows="auto, auto"  padding="10 20" >
+          <StackLayout col="1" orientation="vertical">
+            <StackLayout orientation="horizontal">
+              <StackLayout orientation="vertical" visibility="{{ isGeoError == true ? 'visible' : 'collapsed'}}">
+                <StackLayout orientation="horizontal">
+                  <Image col="0" src="~/images/iconWarning.png" width="25" height="25" verticalAlignment="top" margin="0 15 0 0" />
+                  <Label text="Trouble getting your location" className="title" verticalAlignment="bottom"/>
+                </StackLayout>
+                <Label text="We're having trouble setting your location. To help us find providers in your area please enter a zipcode below:" textWrap="true" />
+              </StackLayout>
+            </StackLayout>
+            <StackLayout orientation="vertical" visibility="{{ isGeoError == false ? 'visible' : 'collapsed'}}">
+              <Label text="Enter new location" className="title" verticalAlignment="bottom"/>
+              <Label text="Enter a new zipcode to find providers in your area" textWrap="true" />
+            </StackLayout>
+            <TextField id="zipCodeInput" text="{{ zipCode }}" hint="Enter Zip Code" keyboardType="number" margin="10 0 0 0"/>
+            <Button text="SUBMIT" tap="findZipCoords" className="{{ zipCode.length != 5 ? 'submitDisabled' : 'submitEnabled' }}" isEnabled="{{ zipCode.length != 5 ? false : true }}"/>
+          </StackLayout>
+        </GridLayout>
+      </StackLayout>
+
+      <!--Provider Map-->
+      <!--<provider-card:provider-map id="provider-map" visibility="{{ showMap == true ? 'visible' : 'collapsed' }}"/>-->
+    </AbsoluteLayout>
+  </android>
+  <!-- TODO: modularize this menu -->
+
+
+  <ios
+      xmlns:lv="nativescript-telerik-ui/listview"
+      xmlns:card="nativescript-cardview"
+      xmlns:provider-card="~/components/provider-card">
+    <!-- new layout -->
+    <AbsoluteLayout width="100%">
+
+      <StackLayout orientation="vertical" width="100%" height="100%" style="margin:20 0 0 0" top="-20">
+        <StackLayout style="padding:15%" visibility="{{ isLoading == false ? 'visible' : 'collapsed'}}" className="orderDetials">
+          <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center">
+            <Label text="Choose a provider" className="title"/>
+            <Label text="{{ 'Results: ' + count }}" horizontalAlignment="right" verticalAlignment="center" color="#9e0425" className="results"/>
+          </GridLayout>
+          <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center">
+            <Label text="{{ referral }}" className="subTitle"/>
+          </GridLayout>
+          <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center">
+            <Label text="{{ referralType }}" className="info"/>
+            <Label text="{{ date }}" className="info"  horizontalAlignment="right"/>
+          </GridLayout>
+          <Label text="{{ orderReason }}" className="info" textWrap="true"/>
+          <Label text="{{ orderingProvider }}" className="info"/>
+        </StackLayout>
+        <GridLayout rows="*,auto" style="background-color:#f9f9f9" visibility="{{ isLoading == false ? 'visible' : 'collapsed'}}">
+          <GridLayout row="0" style="padding:10%">
+            <lv:RadListView id="providers-list" items="{{ searchResults.Data }}" loadOnDemandMode="{{ listViewOnDemandMode }}" loadMoreDataRequested="{{ loadMoreResults }}" loadOnDemandBufferSize="4" itemTap="listAppt">
+              <!--<lv:RadListView id="providers-list" items="{{ searchResults.Data }}" loadOnDemandMode="{{ listViewOnDemandMode }}" loadMoreDataRequested="{{ loadMoreResults }}" loadOnDemandBufferSize="4" itemTap="listAppt" itemSwipeProgressEnded="onSwipeCellFinished" itemSwipeProgressStarted="onSwipeCellStarted" itemSwipeProgressChanged="onCellSwiping" swipeActions="false">-->
+              <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" itemHeight="200"/>
+              </lv:RadListView.listViewLayout>
+              <lv:RadListView.itemTemplate >
+                <card:CardView class="card" style="margin:0 0 10 0;width:100%" radius="4" >
+                  <provider-card:provider-card/>
+                </card:CardView>
+                <lv:RadListView.itemSwipeTemplate>
+                  <GridLayout className="swipeContainer" columns="*, auto, auto, auto" horizontalAlignment="right" tap="viewProfile"  index="{{ Index }}">
+                    <StackLayout id="profile" col="1" className="swipe swipeProfile" tap="viewProfile" orientation="vertical"  index="{{ Index }}">
+                      <Image src="~/images/btnProfile.png" className="swipeIcon" tap="viewProfile"  index="{{ Index }}"/>
+                      <Label text="PROFILE" tap="viewProfile"  index="{{ Index }}"/>
+                    </StackLayout>
+                    <StackLayout id="specialties" col="2" className="swipe swipeSpecialties" tap="moreInfo" orientation="vertical" index="{{ Index }}">
+                      <Image src="~/images/btnSpecialties.png" className="swipeIcon"  index="{{ Index }}"/>
+                      <Label text="SPECILATIES"  index="{{ Index }}"/>
+                    </StackLayout>
+                    <StackLayout id="locations" col="3" className="swipe swipeLocations" tap="moreInfo" orientation="vertical" index="{{ Index }}">
+                      <Image src="~/images/btnLocations.png" className="swipeIcon"  index="{{ Index }}"/>
+                      <Label text="LOCATIONS"  index="{{ Index }}"/>
+                    </StackLayout>
+                  </GridLayout>
+                </lv:RadListView.itemSwipeTemplate>
+              </lv:RadListView.itemTemplate>
+            </lv:RadListView>
+
+          </GridLayout>
+
+          <!--bottom buttons-->
+          <StackLayout row="2" id="bottomButtons" orientation="horizontal">
+            <StackLayout orientation="horizontal" id="bottomButtonLeft" tap="showFilter" backgroundColor="#9e0425">
+              <Label text="Refine Results" tap="showFilter" />
+              <Image src="~/images/iconSliders.png" height="35%" margin="0 0 0 10" tap="showFilter"/>
+            </StackLayout>
+            <StackLayout orientation="horizontal" id="bottomButtonRight" tap="goBack" backgroundColor="#bf0d32">
+              <Label text="Back to Orders" tap="goBack"/>
+            </StackLayout>
+          </StackLayout>
+        </GridLayout>
+        <ActivityIndicator busy="{{ isLoading }}" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" style="height:100%;width:50"/>
+      </StackLayout>
+
+      <!--filter-->
+
+      <StackLayout id="filter" backgroundColor="#eeeeee" width="100%" height="100%" visibility="{{ showFilter == true ? 'visible' : 'collapsed'}}">
+
+        <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" fontSize="20" width="100%">
+          <StackLayout horizontalAlignment="left" orientation="horizontal" tap="closeFilter" padding="10 20" width="50%">
+            <Image src="~/images/iconCloseWhte.png" width="13" height="13" horizontalAlignment="right" tap="closeFilter" margin="0 2 0 0"/>
+            <Label text="CLOSE" color="white" horizontalAlignment="left" tap="closeFilter"/>
+          </StackLayout>
+          <StackLayout horizontalAlignment="right" orientation="horizontal" tap="doFilterSort" padding="10 20" width="50%" >
+            <Image src="~/images/icon_checkMarkWhite.png" width="15" height="15" horizontalAlignment="right" tap="doFilterSort"/>
+            <Label text="APPLY" color="white" horizontalAlignment="right" dock="right" tap="doFilterSort"/>
+          </StackLayout>
+        </GridLayout>
+        <AbsoluteLayout width="100%" height="100%">
+
+          <StackLayout orientation="horizontal" width="100%" style="padding:20; border:1 solid #ccc; background-color:white" visibility="collapsed">
+            <Label text="Sort By:" verticalAlignment="center" margin="0 5 0 0"/>
+            <StackLayout  orientation="horizontal"  tap="Name" margin="0 5 0 0">
+              <Image id="rdbName" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Name" />
+              <Label text="Name"  tap="Name" />
+            </StackLayout>
+            <StackLayout  orientation="horizontal"  tap="Distance"  margin="0 5 0 0">
+              <Image id="rdbDistance" src="~/images/common/radio-unchecked.png" class="checkbox" tap="Distance" />
+              <Label text="Distance"  tap="Distance" />
+            </StackLayout>
+          </StackLayout>
+          <StackLayout  orientation="horizontal" margin="0 5 0 0" padding="20" width="100%" >
+            <Label text="Filter By:" verticalAlignment="center" margin="0 5 0 0"/>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Male">
+              <Image id="rdbMale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Male" />
+              <Label text="Male"  tap="Male"/>
+            </StackLayout>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="Female">
+              <Image id="rdbFemale" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="Female" />
+              <Label text="Female"  tap="Female" />
+            </StackLayout>
+            <StackLayout orientation="horizontal" margin="0 5 0 0" tap="All">
+              <Image id="rdbAll" src="~/images/common/radio-unchecked.png"  class="checkbox" tap="All" />
+              <Label text="Both" tap="All"/>
+            </StackLayout>
+          </StackLayout>
+          <GridLayout rows="auto" cols="auto, *" width="100%" top="30" padding="20">
+            <TextField row="0" col="1" colSpan="2" id="txtzip" hint="Closest to City/ZIP"  text="" margin="10 0 0 0"/>
+            <Button row="0" col="2" class="icon btnClearIcon" color="#000" text="&#xf00d;" backgroundColor="transparent" tap="clearZip" margin="5 0 0 0"  borderWidth="1" borderColor="transparent"/>
+          </GridLayout>
+
+          <StackLayout id="insContainer" orientation="vertical" padding="20" width="100%" height="100%" top="110" className="closeIns">
+            <GridLayout rows="auto" cols="auto, *" verticalAlignment="top" height="55">
+              <TextField row="0" col="1" colSpan="2" id="txtInsurance" text="{{ Insurance.SearchTerm }}" width="100%" hint="Filter By Insurance" tap="showIns" autocorrect="false" propertyChange="checkInsurance" returnKeyType="search" verticalAlignment="top"/>
+              <Button row="0" col="2" class="icon btnClearIcon" color="#000" text="&#xf00d;" backgroundColor="transparent" tap="clearIns" margin="-10 0 0 0" borderWidth="1" borderColor="transparent"/>
+            </GridLayout>
+            <ListView items="{{ Insurance.Insurances.Data }}" id="lvInsurance" itemTap="selectInsurance" selectionBehavior="Press" visibility="{{ isSearching ? 'collapsed' : 'visible'}}">
+              <ListView.listViewLayout>
+                <ListView.ListViewLinearLayout scrollDirection="Vertical" />
+              </ListView.listViewLayout>
+              <ListView.itemTemplate>
+                <StackLayout>
+                  <Label text="{{ $value }}" class="listViewItem" />
+                </StackLayout>
+              </ListView.itemTemplate>
+            </ListView>
+            <ActivityIndicator busy="{{ isSearching }}" style="height:100%;width:50"/>
+          </StackLayout>
+        </AbsoluteLayout>
+      </StackLayout>
+
+      <!--zipFinder-->
+      <StackLayout id="zipFinder" orientation="vertical" width="100%" height="100%" backgroundColor="#eeeeee" visibility="{{ showZipFinder == true ? 'visible' : 'collapsed'}}">
+        <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" backgroundColor="#9e0425" fontSize="20" width="100%">
+          <StackLayout horizontalAlignment="left" orientation="horizontal" padding="10 20" width="50%" visibility="collapsed">
+            <Switch id="zipSwtich" checked="{{ someProperty }}" backgroundColor="white" color="green" tap="saveZip"/>
+            <Label text="SAVE ZIPCODE" color="white" tap="closeZipFinder"/>
+          </StackLayout>
+          <StackLayout horizontalAlignment="right" orientation="horizontal" padding="10 20" width="50%" tap="closeZipFinder">
+            <Label text="X CLOSE" color="white" horizontalAlignment="right" dock="right" tap="closeZipFinder" visibility="{{ isGeoError == false ? 'visible' : 'collapsed'}}"/>
+          </StackLayout>
+        </GridLayout>
+        <GridLayout  columns="auto, *" rows="auto, auto"  padding="10 20" >
+          <StackLayout col="1" orientation="vertical">
+            <StackLayout orientation="horizontal">
+              <StackLayout orientation="vertical" visibility="{{ isGeoError == true ? 'visible' : 'collapsed'}}">
+                <StackLayout orientation="horizontal">
+                  <Image col="0" src="~/images/iconWarning.png" width="25" height="25" verticalAlignment="top" margin="0 15 0 0" />
+                  <Label text="Trouble getting your location" className="title" verticalAlignment="bottom"/>
+                </StackLayout>
+                <Label text="We're having trouble setting your location. To help us find providers in your area please enter a zipcode below:" textWrap="true" />
+              </StackLayout>
+            </StackLayout>
+            <StackLayout orientation="vertical" visibility="{{ isGeoError == false ? 'visible' : 'collapsed'}}">
+              <Label text="Enter new location" className="title" verticalAlignment="bottom"/>
+              <Label text="Enter a new zipcode to find providers in your area" textWrap="true" />
+            </StackLayout>
+            <TextField id="zipCodeInput" text="{{ zipCode }}" hint="Enter Zip Code" keyboardType="number" margin="10 0 0 0"/>
+            <Button text="SUBMIT" tap="findZipCoords" />
+          </StackLayout>
+        </GridLayout>
+      </StackLayout>
+
+      <!--Provider Map-->
+      <!--<provider-card:provider-map id="provider-map" visibility="{{ showMap == true ? 'visible' : 'collapsed' }}"/>-->
+    </AbsoluteLayout>
+  </ios>
+
+</StackLayout>

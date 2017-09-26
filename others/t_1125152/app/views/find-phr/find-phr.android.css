@@ -1,0 +1,26 @@
+@import url("~/views/find-phr/find-phr.common.css");
+
+/*.tileRipple {
+    width: 50%;
+}
+.button {
+border-radius: 20;
+ text-transform:none;
+}*/
+
+.imgphr {
+    width: 48%;
+    height: 20%;
+    margin-top: 35%;
+    opacity: .8;
+    margin-left: 24%;
+}
+.horizontalLine2 {
+    border-color: #7d7d7d;
+    border-width: 2;
+    height: 2;
+    width: 93%;
+    height: 1;
+    margin: 5 5 0 0;
+}
+   

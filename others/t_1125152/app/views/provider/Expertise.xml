@@ -1,0 +1,10 @@
+ <StackLayout>
+      <ListView items="{{ selectedProvider.SpecialInterests }}">
+        <ListView.itemTemplate>
+          <StackLayout class="providerSpecialInterest section">
+            <Label text="{{ $value }}" textWrap="true" class="specialInterestName" />
+          </StackLayout>
+        </ListView.itemTemplate>
+      </ListView>
+      <Label text="Expertise not available" class="tabContent" visibility="{{ selectedProvider.SpecialInterests.length > 0 ? 'collapsed' : 'visible' }}"/>
+    </StackLayout>

@@ -1,0 +1,61 @@
+<android xmlns:RL="nativescript-ripple">
+  <GridLayout rows="*" id="main-content">
+    <ActivityIndicator busy="{{ isLoading }}" row="0" />
+    <DockLayout row="0" stretchLastChild="true">
+      <Label dock="top" text="Schedule Your Appointment" className="scheduleHeader"/>
+      <Image dock="top" src="~/images/welcome/welcomeImage.jpg" />
+      <StackLayout dock="bottom" orientation="horizontal" width="100%">
+        <StackLayout width="50%" orientation="vertical">
+          <RL:Ripple class="accessUHRipple" rippleColor="#acacac" onTap="launchReferralEase">
+            <StackLayout id="iconScheduleReferral">
+              <Image src="~/images/welcome/iconScheduleReferral.png" className="findImage"/>
+            </StackLayout>
+          </RL:Ripple>
+        </StackLayout>
+        <StackLayout width="50%">
+          <StackLayout orientation="vertical">
+            <RL:Ripple class="accessUHRipple" rippleColor="#acacac" height="50%" onTap="findLocationTap">
+              <StackLayout id="iconScheduleOnline">
+                <Image src="~/images/welcome/iconScheduleOnline.png" className="findImage rightTop"/>
+              </StackLayout>
+            </RL:Ripple>
+            <RL:Ripple class="accessUHRipple" rippleColor="#acacac" height="50%" onTap="findERTap">
+              <StackLayout id="iconCalltoSchedule">
+                <Image src="~/images/welcome/iconCalltoSchedule.png" className="findImage"/>
+              </StackLayout>
+            </RL:Ripple>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </DockLayout>
+  </GridLayout>
+</android>
+
+<ios>
+  <GridLayout rows="*" id="main-content">
+    <ActivityIndicator busy="{{ isLoading }}" row="0" />
+    <DockLayout row="0" stretchLastChild="true">
+      <Image dock="top" src="~/images/welcome/welcomeImage.jpg" />
+      <StackLayout dock="bottom" orientation="horizontal" width="100%">
+        <StackLayout id="iconPHR" width="50%" onTap="findPHRTap" >
+          <Image src="~/images/welcome/iconPHR.png" className="findImage"/>
+        </StackLayout>
+        <StackLayout width="50%">
+          <StackLayout orientation="horizontal" height="50%">
+            <StackLayout id="iconFindProvider" width="50%" onTap="findProviderTap" >
+              <Image src="~/images/welcome/iconFindProvider.png" className="findImage rightTop"/>
+            </StackLayout>
+            <StackLayout id="iconFindLocation" width="50%" height="100%" onTap="findLocationTap" >
+              <Image src="~/images/welcome/iconFindLocation.png" className="findImage rightTop"/>
+            </StackLayout>
+          </StackLayout>
+          <StackLayout height="50%">
+            <StackLayout id="iconFindER" height="100%" onTap="findERTap" >
+              <Image src="~/images/welcome/iconFindER.png" className="findImage"/>
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </DockLayout>
+  </GridLayout>
+</ios>

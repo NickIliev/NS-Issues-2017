@@ -1,0 +1,85 @@
+/*.tileList {
+    margin-top: 20;
+   width:100%
+}
+
+.tileList StackLayout {
+    horizontal-align: center;
+    width: 136;
+}
+
+.tileList  Image {
+    width: 136;
+}
+
+.tileList Label {
+     textWrap: true;
+}
+
+.tileList StackLayout.bottomRow {
+    margin-top: 50;
+}
+
+#pageTitle {
+    horizontal-align: center;
+}
+
+/*...............test*/
+/*#stackContact{
+    padding-bottom:10;
+}
+.tileLabel{
+    background-color:#980e2b;
+    color:#ffffff;
+}
+.tilePHR{
+   padding:40 40;
+}
+Image{
+    width:140;
+}*/
+.subTitle {
+    margin: 5 0 0 0;
+}
+
+Button, Label, Image {
+    text-align: center;
+}
+
+.button {
+    horizontal-align: center;
+    margin: 20 0 0 0;
+    background-image: none;
+    color: #fff;
+    width: 75%;
+    border: 0;
+}
+
+#phrContent {
+    padding-bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+
+.ElyriaPortage {
+    margin-right: 2%;
+    margin-left: 3%;
+}
+
+.ParmaStjohn {
+    /*margin-left: 2%;*/
+    margin-right: 3%;
+}
+
+.indent {
+    padding: 0 20;
+}
+
+.indent2 {
+    padding: 0 25;
+   
+}

@@ -1,0 +1,327 @@
+<android xmlns:RL="nativescript-ripple"
+         xmlns:lv="nativescript-telerik-ui/listview"
+         xmlns:maps="nativescript-google-maps-sdk"
+         xmlns:card="nativescript-cardview"
+         xmlns:access-uh="~/components/access-uh">
+         <AbsoluteLayout orientation="vertical" height="100%">
+    <StackLayout width="100%" height="100%" top="0">
+    <TabView id="mainTabs" selectedColor="#cd3439" tabsBackgroundColor="#f9f9f9" className="tabView">
+        <TabView.items>
+
+            <TabViewItem title="Access UH">
+                <TabViewItem.view>
+                    <AbsoluteLayout width="100%" height="100%">
+                        <GridLayout rows="auto, *, auto" id="main-content" width="100%" height="100%">
+                            <Label id="lblNoRecordsFound" text="There are no search results to display." row="1" visibility="{{ searchResults.Count == 0 && !loadingResults ? 'visible' : 'collapsed' }}" />
+                            <StackLayout id="listContainer" row="1" visibility="{{ searchResults.Count != 0 || loadingResults ? 'visible' : 'collapsed' }}" >
+                                <lv:RadListView items="{{ searchResults.Data }}" id="locations-list"
+                                                loadOnDemandMode="{{ listViewOnDemandMode }}"
+                                                loadMoreDataRequested="{{ loadMoreResults }}"
+                                                backgroundColor="#f9f9f9"
+                                                visibility="{{ showList ? 'visible' : 'collapsed' }}">
+                                    <lv:RadListView.listViewLayout>
+                                        <lv:RadListView.ListViewLinearLayout scrollDirection="Vertical"/>
+                                    </lv:RadListView.listViewLayout>
+                                    <lv:RadListView.itemTemplate>
+                                        <StackLayout>
+                                          <card:CardView class="searchResultItem" elevation="0" radius="0">
+
+                                            <StackLayout orientation="vertical" padding="10" class="searchStackItem">
+                                              <StackLayout orientation="horizontal">
+                                                <StackLayout orientation="vertical" class="details" width="75%">
+                                                  <Label class="locationName" text="{{ DisplayName }}"  textWrap="true" style="text-transform:uppercase;font-size:16;font-weight:300" />
+                                                  <StackLayout class="locationAddress">
+                                                    <Label text="{{ Address1 + ', ' + (Address2 != null && Address2 != '' ? Address2 + ', ' : '') }}" textWrap="true" style="font-size:14" />
+                                                    <Label text="{{ City + ', ' + State + ' ' + PostalCode }}" style="font-size:14" />
+                                                  </StackLayout>
+                                                </StackLayout>
+                                                <StackLayout style="margin:5 0 0 0" horizontalAlignment="right" width="25%" color="#9e0425"  tap="launchMap" >
+                                                  <Label text="{{ Distance + ' mi' }}" visibility="{{ Distance != null ? 'visible' : 'collapsed' }}" fontSize="14" horizontalAlignment="right"  color="#9e0425"/>
+                                                  <Label text="Map It" visibility="{{ Distance != null ? 'visible' : 'collapsed' }}" fontSize="14" horizontalAlignment="right"  color="#9e0425"/>
+                                                </StackLayout>
+                                              </StackLayout>
+                                              <StackLayout orientation="vertical">
+                                                <StackLayout orientation="horizontal"  visibility="{{ Phone != null && Phone != '' ? 'visible' : 'collapsed' }}" tap="callLocation" >
+                                                  <Image src="~/images/iconPhoneBlack.png" width="15" height="15" verticalAlignment="top" margin="15 5 0 0" tap="callLocation" />
+                                                  <Label class="locationPhone" text="{{ Phone }}" textWrap="true" tap="callLocation" horizontalAlignment="left" verticalAlignment="top" color="#9e0425"/>
+                                                  <WebView src="{{ InQuickerWidget }}" height="60" width="100%" loadStarted="onStartLoadingInQuicker" loadFinished="onFinishedLoadingInQuicker" visibility="{{ InQuickerWidget != null ? 'visible' : 'collapsed' }}" horizontalAlignment="right" />
+                                                </StackLayout>
+                                              </StackLayout>
+                                            </StackLayout>
+
+                                          </card:CardView>
+                                        </StackLayout>
+                                    </lv:RadListView.itemTemplate>
+                                </lv:RadListView>
+                                <StackLayout visibility="{{ !showList && !loadingResults && searchResults.Count != -1 ? 'visible' : 'collapsed' }}">
+                                    <maps:mapView latitude="{{ mapView.latitude }}" longitude="{{ mapView.longitude }}"
+                                                zoom="{{ mapView.zoom }}" bearing="{{ mapView.bearing }}"
+                                                tilt="{{ mapView.tilt }}" padding="{{ mapView.padding }}" mapReady="onMapReady"
+                                                markerSelect="onMarkerSelect" markerBeginDragging="onMarkerBeginDragging"
+                                                markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag"
+                                                cameraChanged="onCameraChanged"
+                                                visibility="{{ isMapInitialized ? 'visible' : 'collapsed' }}" />
+                                </StackLayout>
+                            </StackLayout>
+                            <ActivityIndicator busy="{{ isSearching }}" row="1" />
+                            <StackLayout row="2" id="bottomButtons" visibility="{{ searchResults.Count != 0 && searchResults.Count != -1 && isMapInitialized ? 'visible' : 'collapsed' }}">
+                                <StackLayout orientation="horizontal">
+                                    <StackLayout orientation="horizontal" id="bottomButtonLeft" tap="showFilter" backgroundColor="#9e0425">
+                                        <Label text="Refine Results" tap="showFilter" />
+                                    </StackLayout>
+                                    <StackLayout orientation="horizontal" id="bottomButtonRight" tap="toggleMapListView" backgroundColor="#bf0d32">
+                                        <Label text="{{ !showList ? 'List View' : 'Map View' }}" tap="toggleMapListView" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout row="0" id="searchSection">
+                              <DockLayout width="100%">
+                                <Label dock="left" text="{{ pageTitle }}" class="pageTitle" textWrap="true" />
+                                <Label dock="right" id="lblResultsCount" visibility="{{ searchResults.Count === -1 ? 'collapsed' : 'visible' }}" text="{{ searchResults.Count + ' result' + (searchResults.Count === 1 ? '' : 's') }}" />
+                              </DockLayout>
+                              <GridLayout id="SearchBox" rows="auto" cols="auto, *">
+                                    <TextField row="0" col="1" colSpan="2" id="txtSearchBox" text="{{ searchTerm }}" hint="Search by City, State or ZIP" returnKeyType="search" returnPress="onSearchBtnTap" />
+                                    <StackLayout id="searchButtonsContainer" row="0" col="2" orientation="horizontal">
+                                        <Button id="btnClearIcon" class="icon" color="#000" text="&#xf00d;" visibility="{{ searchTerm != null && searchTerm != '' ? 'visible' : 'collapsed' }}" tap="clearSearchTerm" borderWidth="1" borderColor="transparent"/>
+                                        <RL:Ripple class="searchButtonRipple" rippleColor="#ff9999" onTap="onSearchBtnTap">
+                                            <Button class="btnSearchIcon icon" color="#fff" text="&#xf002;" />
+                                        </RL:Ripple>
+                                    </StackLayout>
+                                </GridLayout>
+                            </StackLayout>
+                        </GridLayout>
+                        <StackLayout id="filter" backgroundColor="#eeeeee" width="100%" height="100%" top="0" opacity="0">
+                            <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" height="60" backgroundColor="#9e0425" padding="0 20" fontSize="20">
+                                <!--<Label text="Refine Results" color="white" horizontalAlignment="left" />
+                                <Label text="X CLOSE" color="white" horizontalAlignment="right" tap="tapClose"/>-->
+                                <StackLayout horizontalAlignment="left" orientation="horizontal" tap="tapClose" padding="10 20" width="50%">
+            <Image src="~/images/iconCloseWhte.png" width="13" height="13" horizontalAlignment="right" tap="tapClose" margin="0 3 0 0"/>
+            <Label text="CLOSE" color="white" horizontalAlignment="left"  tap="tapClose"/>
+          </StackLayout>
+          <StackLayout horizontalAlignment="right" orientation="horizontal" tap="onTapApply" padding="10 20" width="50%" >
+            <Image src="~/images/icon_checkMarkWhite.png" width="15" height="15" horizontalAlignment="right" tap="onTapApply"/>
+            <Label text="APPLY" color="white" horizontalAlignment="right" dock="right" tap="onTapApply"/>
+          </StackLayout>
+                             <!-- <Label text="CLOSE" color="white"  horizontalAlignment="left" tap="tapClose"/>-->
+                             <!-- <Label text="APPLY"  tap="onTapApply" color="white" horizontalAlignment="right"/>-->
+                            </GridLayout>
+                            <StackLayout height="60" backgroundColor="#757575" padding="0 20" verticalAlignment="center" >
+                                <Label text="Sort By:" width="100%" verticalAlignment="center" color="white"/>
+                            </StackLayout>
+                            <StackLayout padding="0 20">
+                                <StackLayout orientation="horizontal" class="disclaimerCheckItem">
+                                    <StackLayout orientation="horizontal" tap="Distance" padding="20 0">
+                                        <Image class="checkbox" tap="Distance" src="~/images/common/checked.png" visibility="{{ sortByClosest ? 'visible' : 'collapsed' }}" />
+                                        <Image class="checkbox" tap="Distance" src="~/images/common/unchecked.png" visibility="{{ !sortByClosest ? 'visible' : 'collapsed' }}" />
+                                        <Label text="Distance"  tap="Distance" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout height="60" backgroundColor="#757575" padding="0 20" verticalAlignment="center" >
+                                <Label text="Filter By:" width="100%" verticalAlignment="center" color="white"/>
+                            </StackLayout>
+                            <StackLayout>
+                                <GridLayout rows="*" orientation="vertical" class="disclaimerCheckItem" >
+                                    <ListView row="0" id="lvFilterBy" items="{{ filterBy }}" itemTap="onTapLocationType">
+                                        <ListView.itemTemplate>
+                                            <StackLayout>
+                                                <StackLayout orientation="horizontal" className="sortItem" padding="20">
+                                                    <StackLayout class="checkbox">
+                                                        <Image src="~/images/common/checked.png" visibility="{{ isSelected ? 'visible' : 'collapsed' }}" />
+                                                        <Image src="~/images/common/unchecked.png" visibility="{{ !isSelected ? 'visible' : 'collapsed' }}" />
+                                                    </StackLayout>
+                                                    <Label text="{{ Name }}" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ListView.itemTemplate>
+                                    </ListView>
+                                    <!--<RL:Ripple row="2" width="100%" tap="onTapApply">
+                                        <StackLayout height="60" orientation="horizontal" horizontalAlignment="center" tap="onTapApply">
+                                            <Label text="APPLY"  tap="onTapApply" color="#9e0425"/>
+                                            <Image src="~/images/right-arrow.png" tap="onTapApply" width="10" height="15" margin="0 0 0 10" />
+                                        </StackLayout>
+                                    </RL:Ripple>-->
+                                </GridLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </AbsoluteLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+
+            <TabViewItem title="Explore Health Topics">
+                <TabViewItem.view>
+                    <access-uh:explore-health />
+                </TabViewItem.view>
+            </TabViewItem>
+
+        </TabView.items>
+    </TabView>
+    
+    </StackLayout>
+    <StackLayout orientation="horizontal" top="0" width="100%" opacity="0" height="50">
+      <Label id="leftTab" text="Label one" width="50%" class="overlayTabs" tap="{{ clickLeft }}" backgroundColor="blue" color="white" textAlignment="center"/>
+      <Label id="rightTab" text="Label two" width="50%" class="overlayTabs" tap="{{ clickRight }}" backgroundColor ="green" color="white" textAlignment="center"/>
+    </StackLayout>
+  </AbsoluteLayout>
+</android>
+<!-- TODO: modularize this menu -->
+ <ios xmlns:RL="nativescript-ripple"
+     xmlns:lv="nativescript-telerik-ui/listview" 
+     xmlns:maps="nativescript-google-maps-sdk"
+     xmlns:card="nativescript-cardview"
+     xmlns:access-uh="~/components/access-uh">
+     
+    <StackLayout class="ContentHeight">
+
+        <StackLayout id="tabView" orientation="horizontal"  width="100%" >
+            <GridLayout rows="*,auto"  id="TopLeft"   tap="showAccessUH">
+                <StackLayout class="tabTitle" row="0" >
+                    <Label text ="Access UH" />
+                </StackLayout>
+                <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}"></StackLayout>
+            </GridLayout>
+            <GridLayout rows="*,auto"  id="TopRight" tap="showEHI"  >
+                <StackLayout class="tabTitle" row="0" >
+                    <Label text ="Explore Health Topics" textWrap="true" />
+                </StackLayout>
+                <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}"></StackLayout>
+            </GridLayout>
+        </StackLayout>
+
+        <StackLayout visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}" >
+            <AbsoluteLayout width="100%" height="100%">
+                <GridLayout rows="auto, *, auto" id="main-content" width="100%" height="100%">
+                    <Label id="lblNoRecordsFound" text="There are no search results to display." row="1" visibility="{{ searchResults.Count == 0 && !loadingResults ? 'visible' : 'collapsed' }}" />
+                    <StackLayout height="100%" id="listContainer" row="1" visibility="{{ searchResults.Count != 0 || loadingResults ? 'visible' : 'collapsed' }}">
+                        <lv:RadListView height="100%" items="{{ searchResults.Data }}" id="locations-list"
+                                        loadOnDemandMode="{{ listViewOnDemandMode }}"
+                                        loadMoreDataRequested="{{ loadMoreResults }}"
+                                        backgroundColor="#f9f9f9"
+                                        visibility="{{ showList ? 'visible' : 'collapsed' }}">
+                            <lv:RadListView.listViewLayout>
+                                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                            </lv:RadListView.listViewLayout>
+                            <lv:RadListView.itemTemplate>
+                                <StackLayout>
+                                  <StackLayout orientation="vertical" padding="10 20" class="searchStackItem">
+                                      <StackLayout orientation="horizontal">
+                                        <StackLayout orientation="vertical" class="details" width="75%">
+                                          <Label class="locationName" text="{{ DisplayName }}"  textWrap="true" style="text-transform:uppercase;font-size:14;font-weight:300" />
+                                          <StackLayout class="locationAddress">
+                                            <Label text="{{ Address1 + ', ' + (Address2 != null && Address2 != '' ? Address2 + ', ' : '') }}" textWrap="true" style="font-size:12" />
+                                            <Label text="{{ City + ', ' + State + ' ' + PostalCode }}" style="font-size:12" />
+                                          </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout style="margin:5 0 0 0" horizontalAlignment="right" width="25%" color="#9e0425" tap="launchMap" >
+                                          <Label text="{{ Distance + ' mi' }}" visibility="{{ Distance != null ? 'visible' : 'collapsed' }}" fontSize="11" horizontalAlignment="right"  color="#9e0425"/>
+                                          <Label text="Map It" visibility="{{ Distance != null ? 'visible' : 'collapsed' }}" fontSize="11" horizontalAlignment="right" color="#9e0425"/>
+                                        </StackLayout>
+                                      </StackLayout>
+                                      <StackLayout orientation="vertical">
+                                        <StackLayout orientation="horizontal" visibility="{{ Phone != null && Phone != '' ? 'visible' : 'collapsed' }}" >
+                                          <Image src="~/images/iconPhoneBlack.png" width="15" height="15" verticalAlignment="top" margin="10 5 0 0" tap="callLocation" />
+                                          <Label class="locationPhone" text="{{ Phone }}" textWrap="true" tap="callLocation" horizontalAlignment="left" verticalAlignment="top" color="#9e0425" fontSize="13"/>
+                                          <WebView src="{{ InQuickerWidget }}" height="68" width="100%" loadStarted="onStartLoadingInQuicker" loadFinished="onFinishedLoadingInQuicker" visibility="{{ InQuickerWidget != null ? 'visible' : 'collapsed' }}" horizontalAlignment="right" />                                         
+                                        </StackLayout>
+                                      </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </lv:RadListView.itemTemplate>
+                        </lv:RadListView>
+                        <StackLayout height="100%" visibility="{{ !showList && !loadingResults && searchResults.Count != -1 ? 'visible' : 'collapsed' }}">
+                            <maps:mapView height="100%" latitude="{{ mapView.latitude }}" longitude="{{ mapView.longitude }}"
+                                        zoom="{{ mapView.zoom }}" bearing="{{ mapView.bearing }}"
+                                        tilt="{{ mapView.tilt }}" padding="{{ mapView.padding }}" mapReady="onMapReady"
+                                        markerSelect="onMarkerSelect" markerBeginDragging="onMarkerBeginDragging"
+                                        markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag"
+                                        cameraChanged="onCameraChanged"
+                                        visibility="{{ isMapInitialized ? 'visible' : 'collapsed' }}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <ActivityIndicator busy="{{ isSearching }}" row="1" />
+                    <StackLayout row="2" id="bottomButtons" visibility="{{ searchResults.Count != 0 && searchResults.Count != -1 && isMapInitialized ? 'visible' : 'collapsed' }}">
+                        <StackLayout orientation="horizontal">
+                            <StackLayout orientation="horizontal" id="bottomButtonLeft" tap="showFilter" backgroundColor="#9e0425">
+                                <Label text="Refine Results" tap="showFilter" />
+                            </StackLayout>
+                            <StackLayout orientation="horizontal" id="bottomButtonRight" tap="toggleMapListView" backgroundColor="#bf0d32">
+                                <Label text="{{ !showList ? 'List View' : 'Map View' }}"  />
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout row="0" id="searchSection">
+                      <DockLayout width="100%">
+                        <Label dock="left" text="{{ pageTitle }}" class="pageTitle" textWrap="true" />
+                        <Label dock="right" id="lblResultsCount" visibility="{{ searchResults.Count === -1 ? 'collapsed' : 'visible' }}" text="{{ searchResults.Count + ' result' + (searchResults.Count === 1 ? '' : 's') }}" fontSize="12"/>
+                      </DockLayout>
+                      <GridLayout id="SearchBox" rows="auto" cols="auto, *">
+                            <TextField row="0" col="1" colSpan="2" id="txtSearchBox" text="{{ searchTerm }}" hint="Search by City, State or ZIP" returnKeyType="search" returnPress="onSearchBtnTap" />
+                            <StackLayout id="searchButtonsContainer" row="0" col="2" orientation="horizontal">
+                                <Button id="btnClearIcon" class="icon" color="#000" text="&#xf00d;" visibility="{{ searchTerm != null && searchTerm != '' ? 'visible' : 'collapsed' }}" tap="clearSearchTerm"  borderWidth="1" borderColor="transparent"/>
+                                <Button class="btnSearchIcon icon" color="#fff" text="&#xf002;" onTap="onSearchBtnTap" />
+                            </StackLayout>
+                        </GridLayout>
+                        <StackLayout class="horizontalLine"></StackLayout>
+                    </StackLayout>
+                </GridLayout>
+                <StackLayout id="filter" backgroundColor="#eeeeee" width="100%" height="100%" top="0" opacity="0">
+                    <GridLayout columns="*,2" orientation="horizontal" verticalAlignment="center" height="60" backgroundColor="#9e0425" padding="0 20" fontSize="20">
+                      <StackLayout horizontalAlignment="left" orientation="horizontal" tap="tapClose" padding="10 20" width="50%">
+            <Image src="~/images/iconCloseWhte.png" width="13" height="13" horizontalAlignment="right" tap="tapClose" margin="0 3 0 0"/>
+            <Label text="CLOSE" color="white" horizontalAlignment="left"  tap="tapClose"/>
+          </StackLayout>
+          <StackLayout horizontalAlignment="right" orientation="horizontal" tap="onTapApply" padding="10 20" width="50%" >
+            <Image src="~/images/icon_checkMarkWhite.png" width="15" height="15" horizontalAlignment="right" tap="onTapApply"/>
+            <Label text="APPLY" color="white" horizontalAlignment="right" dock="right" tap="onTapApply"/>
+          </StackLayout>
+                      <!--<Label text="X CLOSE" color="white"  horizontalAlignment="left" tap="tapClose"/>-->
+                      <!--<Label text="Refine Results" color="white" horizontalAlignment="right"/>-->
+                      <!--<Label text="APPLY"  tap="onTapApply" color="white" horizontalAlignment="right"/>-->
+                      
+                    </GridLayout>
+                    <StackLayout height="60" backgroundColor="#757575" padding="0 20" verticalAlignment="center" >
+                        <Label text="Sort By:" width="100%" verticalAlignment="center" color="white"/>
+                    </StackLayout>
+                    <StackLayout padding="0 20">
+                        <StackLayout orientation="horizontal" class="disclaimerCheckItem">
+                            <StackLayout orientation="horizontal" tap="Distance" padding="20 0">
+                                <Image class="checkbox" tap="Distance" src="~/images/common/checked.png" visibility="{{ sortByClosest ? 'visible' : 'collapsed' }}" />
+                                <Image class="checkbox" tap="Distance" src="~/images/common/unchecked.png" visibility="{{ !sortByClosest ? 'visible' : 'collapsed' }}" />
+                                <Label text="Distance"  tap="Distance" />
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout height="60" backgroundColor="#757575" padding="0 20" verticalAlignment="center" >
+                        <Label text="Filter By:" width="100%" verticalAlignment="center" color="white"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <GridLayout rows="*" orientation="vertical" class="disclaimerCheckItem" >
+                            <ListView row="0" id="lvFilterBy" items="{{ filterBy }}" itemTap="onTapLocationType">
+                                <ListView.itemTemplate>
+                                    <StackLayout>
+                                        <StackLayout orientation="horizontal" className="sortItem" padding="20">
+                                            <StackLayout class="checkbox">
+                                                <Image src="~/images/common/checked.png" visibility="{{ isSelected ? 'visible' : 'collapsed' }}" />
+                                                <Image src="~/images/common/unchecked.png" visibility="{{ !isSelected ? 'visible' : 'collapsed' }}" />
+                                            </StackLayout>
+                                            <Label text="{{ Name }}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ListView.itemTemplate>
+                            </ListView>
+                            <!--<StackLayout row="2" width="100%" height="60" orientation="horizontal" horizontalAlignment="center" tap="onTapApply">
+                                <Label text="APPLY"  tap="onTapApply" color="#9e0425"/>
+                                <Image src="~/images/right-arrow.png" tap="onTapApply" width="10" height="15" margin="0 0 0 10" />
+                            </StackLayout>-->
+                        </GridLayout>
+                    </StackLayout>
+
+                </StackLayout>
+            </AbsoluteLayout>
+        </StackLayout>
+        <StackLayout visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}" >
+            <access-uh:explore-health />
+        </StackLayout>
+    </StackLayout>
+</ios>

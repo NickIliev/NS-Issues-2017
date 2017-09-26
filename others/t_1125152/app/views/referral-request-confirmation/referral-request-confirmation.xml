@@ -1,0 +1,192 @@
+<android>
+  <ScrollView width="100%" height="100%">
+    <AbsoluteLayout height="100%">
+      <StackLayout className="orderDetails" orientation="vertical" top="0" visibility="{{ isSuccess == true && isLoading == false? 'visible' : 'collapsed'}}">
+        <GridLayout rows="*,auto" orientation="vertical">
+          <StackLayout row="0" orientation="vertical" padding="15%">
+            <StackLayout orientation="vertical" veritcalAlignment="top">
+              <Label text="Appointment scheduled!" className="title" fontSize="25" textWrap="true"/>
+              <Label text="{{ referral }}" visibility="collapsed"/>
+              <Label text="{{ referralType }}" visibility="collapsed"/>
+              <Label text="{{ orderReason }}" visibility="collapsed"/>
+              <Label text="{{ orderingProvider }}" visibility="collapsed"/>
+            </StackLayout>
+            <StackLayout  className="detailsContainer" orientation="vertical" margin="0">
+              <Label text="Appointment Details" className="title"/>
+              <StackLayout orientation="vertical" className="locationDetails" margin="0 0 10 0">
+                <Label text="Practitioner Name" className="subtitle"/>
+                <Label text="{{ practitionerName }}"/>
+              </StackLayout>
+
+              <GridLayout columns="auto, *, auto" rows="auto, auto">
+                <StackLayout orientation="vertical" className="locationDetails">
+                  <Label text="Date &amp; Time" className="subtitle"/>
+                  <Label text="{{ appointmentDate + ' at ' +  appointmentTime }}"/>
+                </StackLayout>
+              </GridLayout>
+            </StackLayout>
+            <StackLayout orientation="horizontal" width="100%" className="btnContainer">
+              <Button text="Add to Calendar" className="reminders" tap="addToCalendar" horizontalAlignment="left" style="width:48%; margin:0 5 0 0"/>
+              <Button text="Email Appt" tap="emailShow" horizontalAlignment="right" className="reminders"/>
+            </StackLayout>
+            <StackLayout className="detailsContainer" orientation="vertical">
+              <Label text="Appointment Location" className="title"/>
+              <GridLayout columns="auto, *, auto" rows="auto, auto">
+                <StackLayout orientation="vertical" className="locationDetails">
+                  <Label className="subtitle" text="Address"/>
+                  <Label text="{{ address + ', ' + cityStateZip }}" textWrap="true"/>
+                  <StackLayout orientation="vertical" margin="10 0 0 0" visibility="{{ phone.length > 0 ? 'visible' : 'collapsed'}}">
+                    <Label text="Phone" className="subtitle" phone="{{ phone }}"/>
+                    <Label text="{{ phone }}" color="#9e0425" phone="{{ phone }}" tap="contact"/>
+                  </StackLayout>
+                </StackLayout>
+                <StackLayout className="mapInfo">
+                  <Label text="{{ distance}}"/>
+                  <Label text="Map It" className="link" tap="launchMap"/>
+                </StackLayout>
+              </GridLayout>
+
+            </StackLayout>
+            <StackLayout orientation="vertical" margin="20 0 10 0" className="locationDetails confirmation">
+              <Label text="Confirmation Number" className="subtitle"/>
+              <Label text="{{ confirmationNumber }}" fontSize="20"/>
+            </StackLayout>
+          </StackLayout>
+          <StackLayout row="1" orientation="horizontal" width="100%" className="btnContainer">
+            <Label text="Schedule More" tap="backToOrders" horizontalAlignment="left" className="showMore" visibility="{{ orderCount > 1  ? 'visible' : 'collapsed'}}" />
+            <Label text="Close" tap="backToMain" horizontalAlignment="right" className="closeBig"/>
+          </StackLayout>
+        </GridLayout>
+        <GridLayout rows="*,auto" orientation="vertical" visibility="{{ isSuccess == false && isLoading == false ? 'visible' : 'collapsed'}}">
+            <StackLayout orientation="vertical" veritcalAlignment="top">
+              <Label text="Scheduling failed for appointment!" className="title" fontSize="30" textWrap="true"/>
+              <Label text="{{ referral }}"/>
+              <Label text="{{ referralType }}"/>
+              <Label text="{{ orderReason }}"/>
+              <Label text="{{ 'Practitioner Name: ' + practitionerName }}"/>
+              <Label text="{{ errorMessage }}" textWrap="true"/>
+            </StackLayout>
+            <StackLayout orientation="horizontal" className="btnContainer">
+              <Label text="Back to Schedule" tap="goBack" className="goBack button"/>
+            </StackLayout>
+        </GridLayout>
+      </StackLayout>
+      <StackLayout id="emailContainer" width="100%" height="100%" backgroundColor="#eeeeee" opacity="0" >
+        <StackLayout horizontalAlignment="right" orientation="horizontal" tap="emailHide"  width="100%" verticalAlignment="center" backgroundColor="#9e0425" padding="15" fontSize="20" margin="0 0 10 0" top="0">
+          <Image src="~/images/icon_checkMarkWhite.png" width="15" height="15" horizontalAlignment="right" tap="emailHide"/>
+          <Label text="DONE" color="white" horizontalAlignment="right" dock="right" tap="emailHide"/>
+        </StackLayout>
+        <StackLayout margin="10" height="100%">
+          <Label text="Enter your email address to have appointment details sent to you" width="100%" style="text-align:center" textWrap="true" horizontalAlignment="center" fontSize="20"/>
+          <GridLayout rows="auto" cols="auto, *" verticalAlignment="top" height="80">
+            <TextField id="emailAddress" hint="Email Address" autocorrect="false" keyboardType="email" text="{{ Email }}"/>
+            <Button class="icon btnClearIcon" color="#000" text="&#xf00d;" tap="clearEmail"/>
+          </GridLayout>
+          <Button id="submit" text="Send Email" tap="isValidEmail" className="" width="100%" margin="10 0"/>
+        </StackLayout>
+      </StackLayout>
+      <StackLayout id="activityContainer" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" >
+        <Label id="bookingMessage" text="Processing Referral Appointment Request. Please do not hit the back button or navigate away from this screen." textWrap="true"/>
+        <ActivityIndicator style="width:50" busy="{{ isLoading }}"/>
+      </StackLayout>
+    </AbsoluteLayout>
+
+  </ScrollView>
+
+</android>
+<!-- TODO: modularize this menu -->
+<ios>
+  <AbsoluteLayout>
+    <StackLayout className="orderDetails" orientation="vertical" top="0" padding="0">
+      <GridLayout rows="*,auto" orientation="vertical" visibility="{{ isSuccess == true && isLoading == false? 'visible' : 'collapsed'}}">
+        <StackLayout row="0" orientation="vertical" padding="15%">
+          <StackLayout orientation="vertical" veritcalAlignment="top">
+            <Label text="Appointment scheduled!" className="title" fontSize="25" textWrap="true"/>
+            <Label text="{{ referral }}" visibility="collapsed"/>
+            <Label text="{{ referralType }}" visibility="collapsed"/>
+            <Label text="{{ orderReason }}" visibility="collapsed"/>
+            <Label text="{{ orderingProvider }}" visibility="collapsed"/>
+          </StackLayout>
+          <StackLayout  className="detailsContainer" orientation="vertical" margin="0">
+            <Label text="Appointment Details" className="title"/>
+            <StackLayout orientation="vertical" className="locationDetails" margin="0 0 10 0">
+              <Label text="Practitioner Name" className="subtitle"/>
+              <Label text="{{ practitionerName }}"/>
+            </StackLayout>
+            <GridLayout columns="auto, *, auto" rows="auto, auto">
+              <StackLayout orientation="vertical" className="locationDetails">
+                <Label text="Date &amp; Time" className="subtitle"/>
+                <Label text="{{ appointmentDate + ' at ' +  appointmentTime }}"/>
+              </StackLayout>
+            </GridLayout>
+          </StackLayout>
+          <StackLayout orientation="horizontal" width="100%" className="btnContainer">
+            <Button text="Add to Calendar" className="reminders" tap="addToCalendar" horizontalAlignment="left" style="width:48%; margin:0 5 0 0"/>
+            <Button text="Email Appt" tap="emailShow" horizontalAlignment="right" className="reminders"/>
+          </StackLayout>
+          <StackLayout className="detailsContainer" orientation="vertical">
+            <Label text="Appointment Location" className="title"/>
+            <GridLayout columns="auto, *, auto" rows="auto, auto">
+              <StackLayout orientation="vertical" className="locationDetails">
+                <Label className="subtitle" text="Address"/>
+                <Label text="{{ address + ', ' + cityStateZip }}" textWrap="true"/>
+                <StackLayout orientation="vertical" margin="10 0 0 0" visibility="{{ phone.length > 0 ? 'visible' : 'collapsed'}}">
+                  <Label text="Phone" className="subtitle" phone="{{ phone }}"/>
+                  <Label text="{{ phone }}" color="#9e0425" phone="{{ phone }}" tap="contact"/>
+                </StackLayout>
+              </StackLayout>
+              <StackLayout className="mapInfo">
+                <Label text="{{ distance}}"/>
+                <Label text="Map It" className="link" tap="launchMap"/>
+              </StackLayout>
+            </GridLayout>
+
+          </StackLayout>
+          <StackLayout orientation="vertical" margin="20 0 10 0" className="locationDetails confirmation">
+            <Label text="Confirmation Number" className="subtitle" textAlign="center"/>
+            <Label text="{{ confirmationNumber }}" fontSize="20" textAlign="center"/>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout row="1" orientation="horizontal" width="100%">
+          <Label text="Schedule More" tap="backToOrders" horizontalAlignment="left" className="showMore" visibility="{{ orderCount > 1  ? 'visible' : 'collapsed'}}" />
+          <Label text="Close" tap="backToMain" horizontalAlignment="right" className="closeBig"/>
+        </StackLayout>
+      </GridLayout>
+      <GridLayout rows="*,auto" orientation="vertical" visibility="{{ isSuccess == false && isLoading == false? 'visible' : 'collapsed'}}">
+        <StackLayout row="0" orientation="vertical" padding="10%">
+          <StackLayout orientation="vertical" veritcalAlignment="top">
+            <Label text="Scheduling failed for appointment!" className="title" fontSize="30" textWrap="true"/>
+            <Label text="{{ referral }}" textWrap="true"/>
+            <Label text="{{ referralType }}" textWrap="true"/>
+            <Label text="{{ orderReason }}" textWrap="true"/>
+            <Label text="{{ 'Practitioner Name: ' + practitionerName }}" textWrap="true"/>
+          </StackLayout>
+          <StackLayout orientation="vertical" veritcalAlignment="top">
+            <Label text="{{ errorMessage }}" textWrap="true"/>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout row="1" orientation="horizontal" className="btnContainer">
+          <Label text="Back to Schedule" tap="goBack" className="button"/>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+    <StackLayout id="emailContainer" width="100%" height="100%" backgroundColor="#eeeeee" opacity="0" >
+      <StackLayout horizontalAlignment="right" orientation="horizontal" tap="emailHide"  width="100%" verticalAlignment="center" backgroundColor="#9e0425" padding="15" fontSize="20" margin="0 0 10 0" top="0">
+        <Image src="~/images/icon_checkMarkWhite.png" width="15" height="15" horizontalAlignment="right" tap="emailHide"/>
+        <Label text="DONE" color="white" horizontalAlignment="right" dock="right" tap="emailHide"/>
+      </StackLayout>
+      <StackLayout margin="10" height="100%">
+        <Label text="Enter your email address to have appointment details sent to you" width="100%" style="text-align:center" textWrap="true" horizontalAlignment="center" fontSize="20"/>
+        <GridLayout rows="auto" cols="auto, *" verticalAlignment="top" height="80">
+          <TextField id="emailAddress" hint="Email Address" autocorrect="false" keyboardType="email" text="{{ Email }}"/>
+          <Button class="icon btnClearIcon" color="#000" text="&#xf00d;" tap="clearEmail"/>
+        </GridLayout>
+        <Button id="submit" text="Send Email" tap="isValidEmail" className="" width="100%" margin="10 0"/>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout id="activityContainer" visibility="{{ isLoading == true ? 'visible' : 'collapsed'}}" >
+      <Label id="bookingMessage" text="Processing Referral Appointment Request. Please do not hit the back button or navigate away from this screen." textWrap="true"/>
+      <ActivityIndicator style="width:50" busy="true"/>
+    </StackLayout>
+  </AbsoluteLayout>
+</ios>

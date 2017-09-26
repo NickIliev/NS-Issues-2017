@@ -1,0 +1,17 @@
+#exploreContent {
+    padding-bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imgsymptomchecker,
+.imgstaywellhealth {
+    width: 49%;
+    vertical-align: bottom;
+}
+
+.imgsymptomchecker {
+    margin-right: 2%
+}

@@ -1,0 +1,48 @@
+<action-bar xmlns:RL="nativescript-ripple" ios.hasShadow="false"
+            className="custom-action-bar" id="actionBar">
+  <android>
+
+    <android:NavigationButton id="drawerButton" icon="res://ic_menu_red" tap="toggleSideDrawer" />
+    <ActionBar.titleView>
+      <GridLayout rows="*,*" id="titleView">
+        <StackLayout orientation="horizontal" style="background-color:white;height:70;padding-top:7;padding-bottom:10;" horizontalAlignment="center">
+          <RL:Ripple id="tappableLogo" rippleColor="#fefefe">
+            <Image id="logoImage" src="~/images/logo.png" style="height:50;"  horizontalAlignment="center"/>
+          </RL:Ripple>
+
+          <RL:Ripple rippleColor="#fefefe">
+            <StackLayout orientation="horizontal">
+              <Image id="contactUH"  src="~/images/contactUH.png"  class="itemright" />
+            </StackLayout>
+          </RL:Ripple>
+        </StackLayout>
+      </GridLayout>
+    </ActionBar.titleView>
+  </android>
+
+  <ios>
+
+    <NavigationButton  text=""/>
+    
+    <ActionItem tap="toggleSideDrawer">
+      <ActionItem.actionView >
+        <Image style="height:30px;" src="~/images/HamburgerMenu.png" height="35"/>
+      </ActionItem.actionView>
+    </ActionItem>
+
+    <ActionItem tap="callUH" ios.position="right">
+      <ActionItem.actionView >
+        <Image  src="~/images/contactUH.png"  class="itemright" />
+      </ActionItem.actionView>
+    </ActionItem>
+
+    <ActionBar.titleView>
+        <Image  src="~/images/logo.png" id="tappableLogo" height="35" class="logo" horizontalAlignment="center"/>
+    </ActionBar.titleView>
+
+
+  </ios>
+</action-bar>
+
+
+

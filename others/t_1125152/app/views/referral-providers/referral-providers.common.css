@@ -1,0 +1,31 @@
+@import url("~/components/provider-card/provider-card.common.css");
+.swipeContainer{
+    padding:0 10% 10% 10%;
+}
+.swipe{
+    width:80;
+    padding:0 5%;
+    horizontal-align:center;
+    vertical-align:center;
+    height:100%
+}
+.swipe Label{
+    color:white;
+    font-size:11;
+    margin:10 0 0 0;
+    width:100%;
+    text-align:center
+}
+.swipeLocations{
+    background-color: #b81f23;
+}
+.swipeSpecialties{
+    background-color:#aa3439;
+}
+.swipeProfile{
+    background-color:#d35b4a;
+}
+.swipeIcon{
+    width:auto;
+    height:30
+}

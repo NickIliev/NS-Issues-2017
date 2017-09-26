@@ -1,0 +1,18 @@
+<StackLayout id="main-content">
+  <DockLayout id="exploreContent" backgroundImage="~/images/explore-health-topics/explore-health-home.jpg">
+    <StackLayout dock="bottom" orientation="horizontal">
+      <ios>
+        <Image id="imgsymptomchecker" class="imgsymptomchecker" src="~/images/explore-health-topics/visit-symptom-checker.png" tap="tileSymptomCheckerTap"/>
+        <Image id="imgstaywellhealth" class="imgstaywellhealth" src="~/images/explore-health-topics/visit-health-library.png" tap="tileExploreConditionsTap"/>
+      </ios>
+      <android xmlns:RL="nativescript-ripple">
+        <RL:Ripple class="imgsymptomchecker" rippleColor="#f9f9f9" tap="tileSymptomCheckerTap">
+          <Image  id="imgsymptomchecker" class="imgsymptomchecker" src="~/images/explore-health-topics/visit-symptom-checker.png" tap="tileSymptomCheckerTap"/>
+        </RL:Ripple>
+        <RL:Ripple class="imgstaywellhealth" rippleColor="#f9f9f9" tap="tileExploreConditionsTap">
+          <Image  id="imgstaywellhealth" class="imgstaywellhealth" src="~/images/explore-health-topics/visit-health-library.png" tap="tileExploreConditionsTap"/>
+        </RL:Ripple>
+      </android>
+    </StackLayout>
+  </DockLayout>
+</StackLayout>

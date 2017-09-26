@@ -1,0 +1,28 @@
+Page {
+	font-size: 16;
+	font-family: "DroidSans"
+}
+.link {
+	background-color: transparent;
+}
+.bold {
+    font-family: 'DroidSans-Bold';
+}
+.ripple {
+    width: 100%;
+    height: 100%;
+}
+.horizontalLine {
+    height: 1;
+    border-color: #eeeae1;
+    border-width: .5;
+    border-style: solid;
+}
+button{
+    border-radius:20;
+    text-transform:capitalize;
+}
+TextField{
+    border-radius:5;
+    text-transform:capitalize
+}

@@ -1,0 +1,29 @@
+#update{
+    width:100%;
+    height:100%;
+    padding:0 25% 0 25%;
+    text-align:left;
+}
+#updateMessage {
+    padding: 15%;
+    background-color:white
+}
+#lblTitle{
+    font-size:20;
+    font-weight: bold;
+    color:#9e0425;
+    margin-bottom:10
+}
+#lblMessage{
+    font-size:16;
+}
+
+/*.checkbox {
+    vertical-align: top;
+    margin-right:20;
+}*/
+
+/*.checkboxLabel {
+    margin-left: 5;
+}*/
+

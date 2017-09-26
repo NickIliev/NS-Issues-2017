@@ -1,0 +1,7 @@
+demo/
+*.png
+*.log
+node_modules/
+*.d.ts
+*.ts
+*.json

@@ -1,0 +1,6 @@
+ <ScrollView>
+      <StackLayout class="tabContent">
+        <WebView src="{{ selectedProvider.Bio }}" height="100%" />
+
+      </StackLayout>
+    </ScrollView>

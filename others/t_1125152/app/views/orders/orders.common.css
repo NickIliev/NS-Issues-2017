@@ -1,0 +1,9 @@
+Button {
+    margin: 18 0 0 0;
+    background-image: none;
+    background-color: #bf0d32;
+    color: #fff;
+    border-radius: 0;
+    text-align:center;
+    text-transform:uppercase
+}

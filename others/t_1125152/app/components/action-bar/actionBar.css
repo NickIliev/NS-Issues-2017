@@ -1,0 +1,12 @@
+@import url('~/components/action-bar/actionBar.common.css');
+
+.custom-action-bar {
+    background-color: #fff;
+    border-width:0;
+    border:none;
+}
+
+.itemright {
+    width: 90;
+    height: 100%;
+}

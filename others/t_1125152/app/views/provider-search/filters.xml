@@ -1,0 +1,128 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:RL="nativescript-ripple"
+      showingModally="onShowingModally"
+      shownModally="onShownModally"   
+      loaded="onLoaded"
+      unloaded="onUnloaded"
+      cssFile="~/views/provider-search/filters.css"
+      codeFile="~/views/provider-search/filters-view.js"
+      xmlns:dd="nativescript-drop-down"
+      xmlns:lv="nativescript-telerik-ui/listview">
+
+      <StackLayout id="filtersPopup">
+
+        <StackLayout id="applyBar" orientation="horizontal">
+            <StackLayout id="cancel">
+                <android>
+                    <RL:Ripple rippleColor="#ff8888" tap="onCancelButtonTap">
+                        <Button id="btnCancel" color="#fff" text="Cancel" />
+                    </RL:Ripple>
+                </android>
+                <ios>
+                    <Button id="btnCancel" tap="onCancelButtonTap" text="Cancel" />
+                </ios>
+            </StackLayout>
+            <StackLayout id="apply">
+                <android>
+                    <RL:Ripple rippleColor="#ff8888" tap="onApplyButtonTap">
+                        <Button id="btnApply" color="#fff" text="Apply" />
+                    </RL:Ripple>
+                </android>
+                <ios>
+                    <Button id="btnApply" tap="onApplyButtonTap" text="Apply" />
+                </ios>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout class="sectionHeader" orientation="horizontal">
+            <Label text="Sort By:" />
+        </StackLayout>
+
+        <StackLayout class="horizontalLine"></StackLayout>
+
+        <StackLayout class="sectionContent">
+        <StackLayout>
+            <StackLayout orientation="horizontal" className="ddlSortItem">
+                <StackLayout class="dropDownContainer">
+                    <dd:DropDown id="ddlSortBy"
+                                items="{{ sortBy.SortTypes }}"
+                                selectedIndex="{{ sortBy.SelectedIndex }}"
+                                width="100%" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        </StackLayout>
+
+        <StackLayout class="horizontalLine"></StackLayout>
+
+        <StackLayout class="sectionHeader" orientation="horizontal">
+            <Label text="Filter By:" />
+        </StackLayout>
+
+        <StackLayout class="horizontalLine"></StackLayout>
+
+        <StackLayout class="sectionContent">
+            <Repeater items="{{ filters }}">
+                <Repeater.itemTemplate>
+                    <StackLayout orientation="horizontal" className="sortItem" tap="removeFilter">
+                        <Label text="{{ display }}" />
+                        <StackLayout className="checkbox">
+                            <Image src="~/images/common/checked.png" />
+                        </StackLayout>
+                    </StackLayout>
+                </Repeater.itemTemplate>
+            </Repeater>
+
+            <StackLayout id="genderFilter" class="ddlSortItem">
+                <StackLayout class="dropDownContainer">
+                    <dd:DropDown id="ddlGenderFilter" items="{{ Gender.Genders }}" selectedIndex="{{ Gender.SelectedIndex }}" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout id="insuranceFilter" class="sortItem">
+                <StackLayout class="txtField">
+                    <TextField id="txtInsurance" hint="Search insurance..." text="{{ Insurance.SearchTerm }}"
+                            backgroundColor="#f9f9f9" />
+                </StackLayout>
+
+                <StackLayout className="filtersListView">
+                    <ListView items="{{ Insurance.Insurances.Data }}" id="lvInsurance" itemTap="selectInsurance" selectionBehavior="Press">            
+                        <ListView.listViewLayout>
+                            <ListView.ListViewLinearLayout scrollDirection="Vertical" />
+                        </ListView.listViewLayout>
+                        <ListView.itemTemplate>
+                            <StackLayout>
+                                <Label text="{{ $value }}" class="listViewItem" />
+                            </StackLayout>
+                        </ListView.itemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout id="conditionFilter" class="sortItem">
+                <StackLayout class="txtField">
+                    <TextField id="txtCondition" hint="Search condition..." text="{{ Condition.SearchTerm }}"
+                            backgroundColor="#f9f9f9" />
+                </StackLayout>
+
+                <StackLayout className="filtersListView">
+                    <ListView items="{{ Condition.Conditions.Data }}" id="lvCondition" itemTap="selectCondition" selectionBehavior="Press">            
+                        <ListView.listViewLayout>
+                            <ListView.ListViewLinearLayout scrollDirection="Vertical" />
+                        </ListView.listViewLayout>
+                        <ListView.itemTemplate>
+                            <StackLayout>
+                                <Label text="{{ Name }}" class="listViewItem" />
+                            </StackLayout>
+                        </ListView.itemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+
+            
+            
+        </StackLayout>
+
+    </StackLayout>
+
+</Page>

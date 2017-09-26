@@ -1,0 +1,48 @@
+<!--<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      xmlns:action-bar="~/components/action-bar"
+      loaded="onLoaded" navigatedTo="onNavigatedTo">
+  <page.actionBar>
+    <action-bar:actionBar />
+  </page.actionBar>-->
+  <android xmlns:access-uh="~/components/access-uh">
+    <TabView id="mainTabs" selectedColor="#cd3439" tabsBackgroundColor="#f9f9f9" className="tabView">
+      <TabView.items>
+        <TabViewItem title="Access UH">
+          <TabViewItem.view>
+            <access-uh:access-uh />
+          </TabViewItem.view>
+        </TabViewItem>
+        <TabViewItem title="Explore Health Topics">
+          <TabViewItem.view>
+            <access-uh:explore-health />
+          </TabViewItem.view>
+        </TabViewItem>
+      </TabView.items>
+    </TabView>
+  </android>
+  <!-- TODO: modularize this menu -->
+  <ios xmlns:access-uh="~/components/access-uh">
+    <StackLayout class="ContentHeight">
+      <StackLayout id="tabView" orientation="horizontal"  width="100%" >
+        <GridLayout rows="*,auto"  id="TopLeft"   tap="showAccessUH">
+          <StackLayout class="tabTitle" row="0" >
+            <Label text ="Access UH" />
+          </StackLayout>
+          <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}"></StackLayout>
+        </GridLayout>
+        <GridLayout rows="*,auto"  id="TopRight" tap="showEHI"  >
+          <StackLayout class="tabTitle" row="0" >
+            <Label text ="Explore Health Topics" textWrap="true" />
+          </StackLayout>
+          <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}"></StackLayout>
+        </GridLayout>
+      </StackLayout>
+      <StackLayout row="0" visibility="{{ selectedScreen == 0 ? 'visible' : 'collapsed' }}"  >
+        <access-uh:access-uh />
+      </StackLayout>
+      <StackLayout row="0" visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}" >
+        <access-uh:explore-health />
+      </StackLayout>
+    </StackLayout>
+  </ios>
+<!--</Page>-->

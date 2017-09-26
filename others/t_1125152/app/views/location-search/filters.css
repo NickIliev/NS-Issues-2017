@@ -1,0 +1,13 @@
+@import url("~/common/styles/filters.css");
+
+#filterBySection > StackLayout {
+    width: 50%;
+}
+
+#chkFilterSelectAll {
+    horizontal-align: right;
+}
+
+#chkFilterSelectAll .checkbox {
+    margin-left: 6;
+}

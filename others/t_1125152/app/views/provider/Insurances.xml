@@ -1,0 +1,11 @@
+<StackLayout>
+      <ListView items="{{ selectedProvider.Insurances }}">
+        <ListView.itemTemplate>
+          <StackLayout class="providerInsurance section">
+            <Label text="{{ $value }}" textWrap="true" class="insuranceName" />
+          </StackLayout>
+        </ListView.itemTemplate>
+      </ListView>
+      <Label text="Insurances not available" class="tabContent" visibility="{{ selectedProvider.Insurances.length > 0 ? 'collapsed' : 'visible' }}"/>
+    </StackLayout>
+  

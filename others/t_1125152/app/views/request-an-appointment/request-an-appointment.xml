@@ -1,0 +1,683 @@
+<android
+      xmlns:lv="nativescript-telerik-ui/listview"
+      xmlns:dd="nativescript-drop-down"
+      xmlns:access-uh="~/components/access-uh"
+      xmlns:mi="nativescript-maskedinput">
+<AbsoluteLayout orientation="vertical" height="100%">
+    <StackLayout width="100%" height="100%" top="0">
+  <TabView id="mainTabs" selectedColor="#cd3439" tabsBackgroundColor="#f9f9f9" className="tabView">
+    <TabView.items>
+
+      <TabViewItem title="Access UH">
+        <TabViewItem.view>
+          <ScrollView>
+            <StackLayout>
+              <GridLayout rows="auto, *" id="main-content">
+                <StackLayout id="stackContact" >
+                  <!--<AbsoluteLayout>
+                    <GridLayout rows="auto,auto,auto" id="backToResults"  >
+
+                      <StackLayout row="0" orientation="horizontal" onTap="goBackToResults" id="back">
+                        <Label text="&#xf104;" class="icon" />
+                        <Label text="Back to Results" class="text" />
+                      </StackLayout>
+                    </GridLayout>
+                  </AbsoluteLayout>-->
+                  <StackLayout row="0"> 
+                    <Label row="0" id="lblcontact" text="Request an Appointment" class="pageTitle lblUhCalling" />
+                  </StackLayout>
+                  <!--<ActivityIndicator busy="{{ isLoading }}" row="1" />-->
+
+
+                  <!-- <StackLayout  class="horizontalLine"></StackLayout>-->
+
+                  
+
+                </StackLayout>
+
+
+                <StackLayout row="2" id="stackmedicalAdvice" >
+                  <StackLayout class="indent">
+                    <!--<StackLayout id="lblstackConcern">
+                      <Label  text="Medical Advice or Concern" id="lblmedicalConcern" />
+                    </StackLayout>-->
+
+                        <StackLayout orientation="horizontal">
+                          <Label text="Call " textWrap="true"/>
+                          <Label textWrap="true" text="1-866-UH4-CARE" tap="tapCallUhCare" class="lblUhCalling"/>
+                        </StackLayout>
+                        <StackLayout orientation="vertical">
+                          <Label text="or fill out the form below to have someone contact you within 24 hours. " textWrap="true"/>
+                        </StackLayout>
+
+                    
+                    <StackLayout row="2" orientation="horizontal" style="margin-top:10;">
+                      <Label textWrap="true">
+                        <Label.formattedText>
+                          <FormattedString>
+                            <FormattedString.spans>
+                              <Span text="Requesting an appointment online for UH Elyria and Parma medical centers physicians is currently unavailable. Please call to schedule:" />
+                            </FormattedString.spans>
+                          </FormattedString>
+                        </Label.formattedText>
+                      </Label>
+                    </StackLayout>
+                    <StackLayout row="3" orientation="horizontal">
+                      <Label  textWrap="true" text="UH Elyria " />
+                      <Label  textWrap="true" text="440-329-7500"   tap="tapCallElyria" class="lblUhCalling"/>
+                    </StackLayout>
+                    <StackLayout row="4" orientation="horizontal">
+                      <Label  textWrap="true" text="UH Parma "/>
+                      <Label  textWrap="true" text="440-743-3000"   tap="TabCallPharma" class="lblUhCalling"/>
+
+                    </StackLayout>
+                  </StackLayout>
+
+                  <StackLayout  orientation="horizontal" class="callToEmergency">
+                    <Label class="lblUhCalling " text="Call " />
+                    <Label class="lblUhCalling " text="911" tap="call911" style="font-weight:bold;"/>
+                    <Label class="lblUhCalling" text=" for life-threatening emergencies." textWrap="true"/>
+
+                  </StackLayout>
+
+                  <StackLayout>
+                    <StackLayout  id="backgroundRect"  class="stack-form-layout">
+
+                    <StackLayout orientation="horizontal">
+                    <StackLayout id="providerName" visibility="{{ provider.FullName &&  provider.Degree != '' ? 'visible' : 'collapsed' }}"  class="userName" >
+                    <Label  id="lblprovidername" text="{{ provider.FullName + ', ' + provider.Degree }}"   />
+                    <Label  id="lblproviderSpeciality" text="{{ provider.Specialties  }}"   />
+                  </StackLayout>
+                  </StackLayout>
+
+                      <StackLayout orientation="horizontal" class="validationfield1" id="validationfield1" >
+                        <Label text="* Indicates required field " id="lblRequired" />
+                      </StackLayout>
+
+                      <StackLayout orientation="horizontal">
+                        <Label text="Patient Information"  class="sectionTitle"/>
+                      </StackLayout>
+
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="This appointment is for"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+
+                      <GridLayout rows="auto" cols="auto, *">
+                        <dd:DropDown zIndex="2" row="0" col="1" colSpan="2"  items="{{ relationShipTypes }}"  selectedIndex="{{ selectedIndexRelationTypes }}" id="ddlRelationshipTypes"  class="dropDownContainer" color="#eee" />
+                        <!-- <Label zIndex="0" text="This appointment is for..." color="#888" /> -->
+                        <Label zIndex="0" class="icon down-arrow"  color="#000" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                      </GridLayout>
+                      <!--Appointment  radiobutton-->
+                      <!-- <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                        <StackLayout  orientation="horizontal" tap="self" >
+                          <Image id="rdbSelf" src="~/images/common/radio_unselected.png"  class="checkbox" tap="self"/>
+                          <Label text="Self"  tap="self" />
+                        </StackLayout>
+                      </StackLayout>
+                      <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                        <StackLayout  orientation="horizontal"  tap="Spouse" >
+                          <Image id="rdbSpouse" src="~/images/common/radio_unselected.png"  class="checkbox" tap="Spouse" />
+                          <Label text="Spouse"  tap="Spouse" />
+                        </StackLayout>
+                      </StackLayout>
+                      <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                        <StackLayout  orientation="horizontal"  tap="Partner" >
+                          <Image id="rdbPartner" src="~/images/common/radio_unselected.png"  class="checkbox" tap="Partner" />
+                          <Label text="Partner"  tap="Partner" />
+                        </StackLayout>
+                      </StackLayout>
+                      <StackLayout orientation="vertical" class="disclaimerCheckItem"  >
+                        <StackLayout  orientation="horizontal"  tap="child" >
+                          <Image id="rdbchild" src="~/images/common/radio_unselected.png"  class="checkbox" tap="child" />
+                          <Label text="Child"  tap="child" />
+                        </StackLayout>
+                      </StackLayout>
+                      <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                        <StackLayout  orientation="horizontal"  tap="other" >
+                          <Image id="rdbOther" src="~/images/common/radio_unselected.png"  class="checkbox" tap="other" />
+                          <Label text="Other"  tap="other" />
+                        </StackLayout>
+                      </StackLayout> -->
+                      <!--Appointment  radiobutton-->
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="First Name"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <TextField id="txtFirstName" hint="First Name*" class="textboxes" text ="{{ firstname }}" tap="ptFirstName"/>
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Last Name"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <TextField id="txtLastName" hint="Last Name*" class="textboxes" text ="{{ lastname }}" tap="ptLastName" />
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Address Line 1"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <!-- <TextField id="txtAddressLine1" hint="Address Line 1*" class="textboxes" text ="{{ addressline1 }}" /> -->
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Address Line 2"  class="Label"/>
+
+                      </StackLayout> -->
+                      <!-- <TextField id="txtAddressLine2" hint="Address Line 2" class="textboxes" text ="{{ addressline2 }}" /> -->
+
+                      <!--<StackLayout orientation="horizontal">
+                        <Label text="City"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout>-->
+                      <!-- <TextField id="txtCity" hint="City*" class="textboxes" text ="{{ city }}" /> -->
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="State"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <!-- <StackLayout >
+                        <dd:DropDown items="{{ states }}" hint="State*" selectedIndex="{{ selectedIndex }}" id="ddlstate"  class="dropDownContainer" />
+                      </StackLayout> -->
+
+                      <!-- <GridLayout rows="auto" cols="auto, *">
+                        <dd:DropDown items="{{ states }}"  selectedIndex="{{ selectedIndex }}" id="ddlstate"  class="dropDownContainer" color="#eee"/> -->
+                        <!-- <Label zIndex="0" text="State*" color="#888" /> -->
+                        <!-- <Label zIndex="0" class="icon down-arrow"  color="#000" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                      </GridLayout> -->
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="ZIP Code"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <TextField id="txtZipCode" keyboardType= "phone" hint="ZIP Code*" class="textboxes" text ="{{ zipcode }}" />
+
+                      <!--Genders DropDown-->
+
+                       <!-- <StackLayout>
+                        <dd:DropDown items="{{ Genders }}" hint="Genders*" selectedIndex="{{ selectedIndexGenders }}" id="ddlGenders"  class="dropDownContainer"  />
+                      </StackLayout> -->
+
+                       <GridLayout rows="auto" cols="auto, *">
+                        <dd:DropDown items="{{ Genders }}"  selectedIndex="{{ selectedIndexGenders }}" id="ddlGenders"  class="dropDownContainer" color="#eee"/>
+                        <!-- <Label zIndex="0" text="Genders*" color="#888" /> -->
+                        <Label zIndex="0" class="icon down-arrow"  color="#000" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                      </GridLayout>
+
+
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Gender"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <!--Gender radiobutton-->
+                      <!-- <StackLayout orientation="vertical" class="disclaimerCheckItem"   >
+                        <StackLayout  orientation="horizontal" tap="chkMale">
+                          <Image id="acceptCheckMale" src="~/images/common/radio_unselected.png"  class="checkbox" tap="chkMale" />
+                          <Label text="Male"  tap="chkMale" />
+                        </StackLayout>
+                      </StackLayout>
+                      <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                        <StackLayout  orientation="horizontal"  tap="chkFemale" >
+                          <Image id="acceptCheckFemale" src="~/images/common/radio_unselected.png"  class="checkbox" tap="chkFemale" />
+                          <Label text="Female"  tap="chkFemale" />
+                        </StackLayout>
+                      </StackLayout> -->
+
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Birth Date"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      
+                      <mi:MaskedInput id="birthdate"  mask="99-99-9999" hint="Birth Date* (MM/DD/YYYY)" placeholder="_" className="textboxes" backgroundColor="#fff" text="{{ birthdate }}"/>
+                      
+                      <!--Contact Information-->
+
+                      <StackLayout orientation="horizontal">
+                        <Label text="Contact Information" class="sectionTitle"/>
+                      </StackLayout>
+
+                         <!-- <StackLayout orientation="vertical" tap="checkUncheckSamePatientInfo" visibility="{{ self ? 'collapsed' : 'visible'}}" >
+                        <StackLayout  orientation="horizontal" tap="checkUncheckSamePatientInfo" >
+                          <Image id="checkUncheckSamePatientInfo" src="{{ SamePatientInfo ? '~/images/common/checked.png' : '~/images/common/unchecked.png' }}"   class="checkbox"  tap="checkUncheckSamePatientInfo"  />
+                          <Label class="checkboxLabel" textWrap="true" text="Same as Patient." tap="checkUncheckSamePatientInfo" />
+                        </StackLayout>
+                      </StackLayout>    -->
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="First Name"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32"  />
+                      </StackLayout> -->
+                      <TextField id="txtFirstNameContact" hint="First Name*" visibility="{{ selectedIndexRelationTypes == 1 ? 'collapsed' : 'visible' }}" class="textboxes"  text="{{ firstnamecontact }}"/>
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Last Name"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;" />
+                      </StackLayout> -->
+                      <TextField id="txtLastNameContact" hint="Last Name*" visibility="{{ selectedIndexRelationTypes == 1 ? 'collapsed' : 'visible' }}" class="textboxes"   text="{{ lastnamecontact }}"/>
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Phone Number"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <mi:MaskedInput id="phoneContact" mask="999-999-9999" hint="Phone*" placeholder="_" className="textboxes" backgroundColor="#fff" text="{{ phoneContact }}"/>
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Email Address"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <TextField id="txtEmailContact" hint="Email Address*" class="textboxes" text ="{{ emailcontact }}" />
+
+                      <StackLayout orientation="horizontal">
+                        <Label text="Appointment Information" class="sectionTitle"/>
+                      </StackLayout>
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Clinical Area/Speciality"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <!-- <StackLayout>
+                        <dd:DropDown items="{{ specialities }}" selectedIndex="{{ selectedIndexspeciality }}" id="ddlspecialities"  class="dropDownContainer"  />
+                      </StackLayout> -->
+
+                      <GridLayout rows="auto" cols="auto, *">
+                        <dd:DropDown items="{{ specialities }}"  selectedIndex="{{ selectedIndexspeciality }}" id="ddlspecialities"  class="dropDownContainer" color="#eee"/>
+                        <!-- <Label zIndex="0" text="This appointment is for.." color="#ccc" backgroundColor="white" margin="5px;"/>  -->
+                        <Label zIndex="0" class="icon down-arrow"  color="#000" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                      </GridLayout>
+
+
+                      
+
+                      <!--<Image src="~/images/common/pinkribbon.png"  class="ribbon test"/>-->
+                      <!--<Label id="ddltext" textWrap="true">
+                        <Label.formattedText>
+                          <FormattedString>
+                            <FormattedString.spans>
+                              <Span text="Please select 'Breast Imaging' to request a mammogram." />
+                            </FormattedString.spans>
+                          </FormattedString>
+                        </Label.formattedText>
+                      </Label>-->
+
+                      <!-- <StackLayout orientation="horizontal">
+                        <Label text="Reason for Appointment"  class="Label"/>
+                        <Label text="*" style="color: #bf0d32;"/>
+                      </StackLayout> -->
+                      <TextView hint="Comments*" id="txtComments" text="{{ reasonforappointment }}">
+                      </TextView>
+
+                      <!-- <Button id="submitButton" text="SUBMIT REQUEST"  tap="SubmitForm" /> -->
+                     <StackLayout tap="SubmitForm" id="submitButton" >
+                      <Label color="white" text="SUBMIT REQUEST"  width="157"></Label>         
+                      <!-- <Image src="~/images/arrowRight.png"  tap="SubmitForm" width="3.2%" height="10%"></Image> -->
+                 </StackLayout>
+
+                    </StackLayout>
+
+                  </StackLayout>
+                </StackLayout>
+
+              </GridLayout>
+            </StackLayout>
+
+          </ScrollView>
+        </TabViewItem.view>
+      </TabViewItem>
+      <TabViewItem title="Explore Health Topics"> 
+        <TabViewItem.view>
+          <ScrollView>
+            <GridLayout rows="auto, *" id="content2">
+              <access-uh:explore-health />
+
+            </GridLayout>
+          </ScrollView>
+        </TabViewItem.view>
+      </TabViewItem>
+
+    </TabView.items>
+  </TabView>
+</StackLayout>
+    <StackLayout orientation="horizontal" top="0" width="100%" opacity="0" height="50">
+      <Label id="leftTab" text="Label one" width="50%" class="overlayTabs" tap="{{ clickLeft }}" backgroundColor="blue" color="white" textAlignment="center"/>
+      <Label id="rightTab" text="Label two" width="50%" class="overlayTabs" tap="{{ clickRight }}" backgroundColor ="green" color="white" textAlignment="center"/>
+    </StackLayout>
+  </AbsoluteLayout>
+</android>
+
+
+<ios xmlns:lv="nativescript-telerik-ui/listview"
+      xmlns:dd="nativescript-drop-down"
+      xmlns:access-uh="~/components/access-uh"
+      xmlns:mi="nativescript-maskedinput">
+  <StackLayout class="ContentHeight">
+
+    <StackLayout id="tabView" orientation="horizontal"  width="100%" >
+      <GridLayout rows="*,auto"  id="TopLeft"   tap="showAccessUH">
+        <StackLayout class="tabTitle" row="0" >
+          <Label text ="Access UH" />
+        </StackLayout>
+        <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}"></StackLayout>
+      </GridLayout>
+      <GridLayout rows="*,auto"  id="TopRight" tap="showEHI"  >
+        <StackLayout class="tabTitle" row="0" >
+          <Label text ="Explore Health Topics" textWrap="true" />
+        </StackLayout>
+        <StackLayout row="1" class="horizontalLine" visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}"></StackLayout>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout row="0" visibility="{{ selectedScreen === 0 ? 'visible' : 'collapsed' }}" >
+
+      <ScrollView>
+        <StackLayout>
+          <GridLayout rows="auto, *" id="main-content">
+            <StackLayout id="stackContact" >
+              <!--<AbsoluteLayout>
+                <GridLayout rows="auto,auto,auto" id="backToResults"  >
+
+                  <StackLayout row="0" orientation="horizontal" onTap="goBackToResults" id="back">
+                    <Label text="&#xf104;" class="icon" />
+                    <Label text="Back to Results" class="text" />
+                  </StackLayout>
+                </GridLayout>
+              </AbsoluteLayout>-->
+              <StackLayout row="0"> 
+                    <Label row="0" id="lblcontact" text="Request an Appointment" class="pageTitle lblUhCalling" />
+                  </StackLayout>
+              <!--<ActivityIndicator busy="{{ isLoading }}" row="1" />-->
+
+
+              <StackLayout class="horizontalLine"></StackLayout>
+
+            
+
+                </StackLayout>
+
+
+            <StackLayout row="2" id="stackmedicalAdvice" >
+              <StackLayout class="indent">
+                <!--<StackLayout id="lblstackConcern">
+                  <Label  text="Medical Advice or Concern" id="lblmedicalConcern" />
+                </StackLayout>-->
+
+                <StackLayout row="1" orientation="horizontal">
+                  <StackLayout  row="0"  orientation="horizontal">
+
+                  </StackLayout>
+                  <StackLayout  row="0"  orientation="vertical">
+                    <StackLayout orientation="horizontal">
+                      <Label text="Call " textWrap="true"/>
+                      <Label textWrap="true" text="1-866-UH4-CARE" tap="tapCallUhCare" class="lblUhCalling"/>
+                    </StackLayout>
+                    <StackLayout orientation="vertical">
+                      <Label text="or fill out the form below to have someone contact you within 24 hours. " textWrap="true"/>
+                    </StackLayout>
+                   
+                  </StackLayout>
+                </StackLayout>
+                <StackLayout row="2" orientation="horizontal" style="margin-top:10;">
+                  <Label textWrap="true">
+                    <Label.formattedText>
+                      <FormattedString>
+                        <FormattedString.spans>
+                          <Span text="Requesting an appointment online for UH Elyria and Parma medical centers physicians is currently unavailable. Please call to schedule:" />
+                        </FormattedString.spans>
+                      </FormattedString>
+                    </Label.formattedText>
+                  </Label>
+                </StackLayout>
+                <StackLayout row="3" orientation="horizontal">
+                  <Label  textWrap="true" text="UH Elyria " />
+                  <Label  textWrap="true" text="440-329-7500"   tap="tapCallElyria" class="lblUhCalling"/>
+                </StackLayout>
+                <StackLayout row="4" orientation="horizontal">
+                  <Label  textWrap="true" text="UH Parma "/>
+                  <Label  textWrap="true" text="440-743-3000"   tap="TabCallPharma" class="lblUhCalling"/>
+
+                </StackLayout>
+              </StackLayout>
+
+             <StackLayout  orientation="horizontal" class="callToEmergency">
+                    <Label class="lblUhCalling " text="Call " />
+                    <Label class="lblUhCalling " text="911" tap="call911" style="font-weight:bold;"/>
+                    <Label class="lblUhCalling" text=" for life-threatening emergencies." textWrap="true"/>
+
+                  </StackLayout>
+
+              <StackLayout>
+                <StackLayout  id="backgroundRect"  class="indent form-background" style="padding-top: 15;">
+
+                   <StackLayout orientation="horizontal">
+                    <StackLayout id="providerName" visibility="{{ provider.FullName &&  provider.Degree != '' ? 'visible' : 'collapsed' }}"  class="userName" >
+                    <Label  id="lblprovidername" text="{{ provider.FullName + ', ' + provider.Degree }}"   />
+                    <Label  id="lblproviderSpeciality" text="{{ provider.Specialties  }}"   />
+                  </StackLayout>
+                  </StackLayout>
+
+                   <StackLayout orientation="horizontal" class="validationfield1" id="validationfield1" >
+                        <Label text="* Indicates required field" id="lblRequired" />
+                      </StackLayout>
+
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="This appointment is for"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+
+                  <StackLayout orientation="horizontal">
+                        <Label text="Patient Information"  class="sectionTitle"/>
+                      </StackLayout>
+                   
+                   <!--Relation Dropdown-->
+                   
+                   <GridLayout rows="auto" cols="auto, *">
+                        <dd:DropDown zIndex="2" row="0" col="1" colSpan="2" items="{{ relationShipTypesIOS }}" hint="This appointment is for... " selectedIndex="{{ selectedIndexRelationTypes }}" id="ddlRelationshipTypes"  class="dropDownContainer" />
+                         <!-- <Label zIndex="0"  text="This appointment is for..." color="#ccc"  margin="5px;"/> -->
+                        <Label zIndex="0" class="icon down-arrow"  color="#000" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                      </GridLayout>
+                      
+
+
+                  <!--Appointment  radiobutton-->
+                  <!-- <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                    <StackLayout  orientation="horizontal" tap="self" >
+                      <Image id="rdbSelf" src="~/images/common/radio_unselected.png"  class="checkbox" tap="self"/>
+                      <Label text="Self"  tap="self" />
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                    <StackLayout  orientation="horizontal"  tap="Spouse" >
+                      <Image id="rdbSpouse" src="~/images/common/radio_unselected.png"  class="checkbox" tap="Spouse" />
+                      <Label text="Spouse"  tap="Spouse" />
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                    <StackLayout  orientation="horizontal"  tap="Partner" >
+                      <Image id="rdbPartner" src="~/images/common/radio_unselected.png"  class="checkbox" tap="Partner" />
+                      <Label text="Partner"  tap="Partner" />
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout orientation="vertical" class="disclaimerCheckItem"  >
+                    <StackLayout  orientation="horizontal"  tap="child" >
+                      <Image id="rdbchild" src="~/images/common/radio_unselected.png"  class="checkbox" tap="child" />
+                      <Label text="Child"  tap="child" />
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                    <StackLayout  orientation="horizontal"  tap="other" >
+                      <Image id="rdbOther" src="~/images/common/radio_unselected.png"  class="checkbox" tap="other" />
+                      <Label text="Other"  tap="other" />
+                    </StackLayout>
+                  </StackLayout> -->
+                  <!--Appointment  radiobutton-->
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="First Name"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <TextField id="txtFirstName" hint="First Name*" class="textboxes" text ="{{ firstname }}" tap="ptFirstName" textChange="onChange"/>
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Last Name"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <TextField id="txtLastName" hint="Last Name*" class="textboxes" text ="{{ lastname }}" tap="ptLastName" />
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Address Line 1"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <!-- <TextField id="txtAddressLine1" hint="Address Line 1*" class="textboxes" text ="{{ addressline1 }}" /> -->
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Address Line 2"  class="Label"/>
+
+                  </StackLayout> -->
+                  <!-- <TextField id="txtAddressLine2" hint="Address Line 2" class="textboxes" text ="{{ addressline2 }}" /> -->
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="City"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <!-- <TextField id="txtCity" hint="City*" class="textboxes" text ="{{ city }}" /> -->
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="State"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+
+                  <!-- <StackLayout  >
+                    <dd:DropDown items="{{ states }}" selectedIndex="{{ selectedIndex }}" id="ddlstate"  class="dropDownContainer"/>
+                  </StackLayout> -->
+
+                  <!-- <GridLayout rows="auto" cols="auto, *">
+                        <dd:DropDown items="{{ states }}"  hint="State*" selectedIndex="{{ selectedIndex }}" id="ddlstate"  class="dropDownContainer" /> -->
+                         <!-- <Label zIndex="0" text="State*" color="#ccc" backgroundColor="white" margin="5px;"/> -->
+                        <!-- <Label zIndex="0" class="icon down-arrow"  color="#000" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                      </GridLayout> -->
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="ZIP Code"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <TextField id="txtZipCode" hint="ZIP Code*" keyboardType= "phone" class="textboxes" text ="{{ zipcode }}" />
+
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Gender"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <!--Gender radiobutton-->
+                  <!-- <StackLayout orientation="vertical" class="disclaimerCheckItem"   >
+                    <StackLayout  orientation="horizontal" tap="chkMale">
+                      <Image id="acceptCheckMale" src="~/images/common/radio_unselected.png"  class="checkbox" tap="chkMale" />
+                      <Label text="Male"  tap="chkMale" />
+                    </StackLayout>
+                  </StackLayout>
+                  <StackLayout orientation="vertical" class="disclaimerCheckItem" >
+                    <StackLayout  orientation="horizontal"  tap="chkFemale" >
+                      <Image id="acceptCheckFemale" src="~/images/common/radio_unselected.png"  class="checkbox" tap="chkFemale" />
+                      <Label text="Female"  tap="chkFemale" />
+                    </StackLayout>
+                  </StackLayout> -->
+
+                 <!--Genders DropDown-->
+
+                 <GridLayout rows="auto" cols="auto, *">
+                        <dd:DropDown items="{{ GendersIOS }}" hint="Gender*" selectedIndex="{{ selectedIndexGenders }}" id="ddlGenders"  class="dropDownContainer" />
+                         <!-- <Label zIndex="0" text="Genders*" color="#ccc" margin="5px;"/>  -->
+                        <Label zIndex="0" class="icon down-arrow"  color="#000" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                 </GridLayout>
+
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Birth Date"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <mi:MaskedInput id="birthdate" mask="99-99-9999" hint="Birth Date*(MM/DD/YYYY)" placeholder="_" class="maskedInput1" backgroundColor="#fff" text="{{ birthdate }}"/>
+
+                  <!--Contact Information-->
+
+                  <StackLayout orientation="horizontal">
+                    <Label text="Contact Information" class="sectionTitle"/>
+                  </StackLayout>
+
+                  <!--<StackLayout orientation="vertical" tap="checkUncheckSamePatientInfo" visibility="{{ self ? 'collapsed' : 'visible'}}" >
+                    <StackLayout  orientation="horizontal" tap="checkUncheckSamePatientInfo" >
+                      <Image id="checkUncheckSamePatientInfo" src="{{ SamePatientInfo ? '~/images/common/checked.png' : '~/images/common/unchecked.png' }}"   class="checkbox"  tap="checkUncheckSamePatientInfo"  />
+                      <Label class="checkboxLabel" textWrap="true" text="Same as Patient." tap="checkUncheckSamePatientInfo" />
+                    </StackLayout>
+                  </StackLayout>-->
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="First Name"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32"  />
+                  </StackLayout> -->
+                  <TextField id="txtFirstNameContact"  hint="First Name*"  class="textboxes" visibility="{{ selectedIndexRelationTypes == 1 ? 'collapsed' : 'visible' }}" text="{{  firstnamecontact }}" />
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Last Name"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;" />
+                  </StackLayout> -->
+                  <TextField id="txtLastNameContact" hint="Last Name*" class="textboxes" visibility="{{ selectedIndexRelationTypes == 1 ? 'collapsed' : 'visible' }}" text="{{  lastnamecontact }}" />
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Phone Number"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <mi:MaskedInput id="phoneContact" mask="999-999-9999" hint="Phone*" placeholder="_" class="maskedInput1" backgroundColor="#fff" text="{{ phoneContact }}"/>
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Email Address"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <TextField id="txtEmailContact" hint="Email Address*" class="textboxes" text ="{{ emailcontact }}" />
+
+                  <StackLayout orientation="horizontal">
+                    <Label text="Appointment Information" class="sectionTitle"/>
+                  </StackLayout>
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Clinical Area/Speciality"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <GridLayout rows="auto" cols="auto, *">
+                    <dd:DropDown items="{{ specialities }}" hint="This appointment is for..." selectedIndex="{{ selectedIndexspeciality }}" id="ddlspecialities" class="dropDownContainer" />
+                    <!-- <Label zIndex="0" text="This appointment is for..." color="#ccc"  margin="5px;" />  -->
+                    <Label zIndex="0" class="icon down-arrow"  color="#000" text="&#xf107;" borderWidth="1" borderColor="transparent" />
+                  </GridLayout>
+
+                  <!--<Image src="~/images/common/pinkribbon.png"  class="ribbon test"/>-->
+                  <!--<Label id="ddltext" textWrap="true">
+                    <Label.formattedText>
+                      <FormattedString>
+                        <FormattedString.spans>
+                          <Span text="Please select 'Breast Imaging' to request a mammogram." />
+                        </FormattedString.spans>
+                      </FormattedString>
+                    </Label.formattedText>
+                  </Label>-->
+
+                  <!-- <StackLayout orientation="horizontal">
+                    <Label text="Reason for Appointment"  class="Label"/>
+                    <Label text="*" style="color: #bf0d32;"/>
+                  </StackLayout> -->
+                  <TextView hint="Comments*" id="txtComments" text="{{ reasonforappointment }}" class="textboxes">
+                  </TextView>
+
+                  <!-- <Button id="submitButton" text="SUBMIT REQUEST"  tap="SubmitForm" /> -->
+                 <StackLayout tap="SubmitForm" id="submitButton" >
+                      <Label color="white" text="SUBMIT REQUEST"   width="157"></Label>         
+                      <!-- <Image src="~/images/arrowRight.png"  tap="SubmitForm" width="3.2%" height="10%"></Image> -->
+                 </StackLayout>
+
+                </StackLayout>
+
+              </StackLayout>
+            </StackLayout>
+
+          </GridLayout>
+        </StackLayout>
+
+      </ScrollView>
+    </StackLayout>
+    <StackLayout row="0"  visibility="{{ selectedScreen === 1 ? 'visible' : 'collapsed' }}" >
+      <access-uh:explore-health />
+    </StackLayout>
+  </StackLayout>
+</ios>

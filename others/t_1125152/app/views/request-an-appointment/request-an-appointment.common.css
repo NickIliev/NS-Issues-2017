@@ -1,0 +1,286 @@
+/*#imgEmergencyCall{
+   padding-top:55;
+}*/
+.indent {
+    padding: 0 20;
+}
+
+.callToEmergency{
+    padding :0 20;
+    margin-top: 10;
+    margin-bottom: 20;
+}
+
+.callToEmergency label{
+    font-style: italic;
+}
+
+.stack-form-layout{
+    padding: 20;
+    background-color: #ede8e4;
+}
+
+.pageTitle{
+    color: #bf0d32; 
+}
+
+.sectionTitle{
+    color: #bf0d32;
+    margin: 0;
+    padding: 3 0;
+    font-weight: normal;
+    font-size: 22;
+}
+
+#stackmedicalAdvice {
+    margin-top: 0;
+}
+
+#lblmedicalConcern {
+    font: bold;
+}
+
+.lblUhCalling {
+    color: #bf0d32;
+    font: bold;
+    font-size: 16;
+}
+
+#lblstackConcern {
+    margin-bottom: 9;
+}
+
+#stackInquiries {
+    margin-top: 35;
+    margin-bottom: 18;
+}
+
+#backContent {
+    margin-top: 37;
+}
+
+
+.Label {
+    font: bold;
+    padding-top: 25;
+    padding-bottom: 14;
+    padding-left: 0;
+}
+
+#txtComments {
+    height: 265;
+    margin-right: 16;
+    margin-right: 0;
+    text-align: left;
+    border-radius: 0;
+    border-width: 1;
+    border-style: solid ;
+    border-color: #888;
+    margin-top: 3;
+    padding:5px;
+} 
+
+.dropDownContainer {
+    /* height: 45; */
+    margin: 3 0;
+    border-radius: 0;
+    width: 100%;
+    border-width: 1;
+    border-style: solid ;
+    border-color: #888;
+    box-shadow: inset 0 0 3px 0px #ccc;
+    font-size: 16;
+    padding: 5 3;
+    placeholder-color:#eee;
+    color: #ccc !important;
+}
+
+.textboxes{ 
+    height: 45;
+    padding: 2 5;
+    margin: 3 0;
+    border-radius: 0;
+    width: 100%;
+    border-width: 1;
+    border-style: solid ;
+    border-color: #888;
+    box-shadow: inset 0 0 3px 0px #ccc;
+    font-size: 16;
+}
+.maskedInput{
+    height: 45;
+    padding: 10 5 0 2;
+    margin: 3 0;
+    border-width: 1;
+    border-style: solid ;
+    border-color: #888;
+    box-shadow: inset 0 0 3px 0px #ccc;
+    font-size: 16;
+}
+.form-background{
+     background-color: #f3efec;
+}
+
+.down-arrow{
+    horizontal-align: right;
+    margin-right: 10;
+}
+.textboxes[hint]{
+    color:#4f4f4f;
+}
+.disclaimerCheckItem {
+    margin-bottom: 20;
+}
+
+.bold {
+    font: bold;
+}
+
+.submitLabel{
+    margin-left: 25%;
+    padding-right: 8;
+    font-weight: bold;
+}
+
+#submitButton {
+    margin-top: 10;
+    margin-bottom: 20;
+    border-radius: 0;
+    background-color: #bf0d32;
+    color: #ffffff;
+    text-align: center;
+    padding: 10;
+}
+
+.reqAppandschedule {
+    width: 47.8%;
+    text-align: center;
+}
+
+#submitButton label{
+    color: white;
+    font-size: 16;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+    /* background-image: url("~/images/arrowRight.png"); */
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 11 13;
+    horizontal-align: center;    
+    padding-right: 15;
+    display: block;
+    margin: 0 auto;
+}
+
+.reqAppandscheduleL, .reqAppandscheduleR {
+    width: 23%;
+    opacity: 0;
+}
+
+.test {
+    border-width: 1;
+    border-style: solid;
+    border-color: blue;
+}
+
+#mergencyCallContent {
+    background-color: #85dadf;
+    font: bold;
+    padding-top: 18;
+    padding-left: 20;
+    padding-bottom: 13;
+}
+
+.validationfield1 {
+    width: 100%;
+    
+}
+
+.validationfield1 label{
+    font-style: italic;
+    text-align: right;
+    width: 100%;
+    padding-right:5;
+    padding-top: 10;
+}
+
+.checkbox {
+    vertical-align: top;
+    padding-right: 0;
+}
+
+.checkboxLabel {
+    margin-left: 0;
+}
+
+#ddltext {
+    padding-top: 5;
+}
+/*.ribbon{
+    width:100%;
+    height:100%;
+      padding-top:5;
+}*/
+#lblprovidername {
+    color: #bf0d32;
+    font: bold;
+}
+
+#providerName {
+   margin-left: 0px;
+}
+
+.userName{
+    margin-top: 0;
+    margin-bottom:0;
+    margin-left: 20;
+    margin-right: 10;
+    padding:0;
+}
+
+    #providerName > Label {
+        font-size: 16;
+    }
+    #providerName #lblproviderSpeciality {
+        font-size: 14;
+    }
+    
+
+
+#backToResults {
+    padding: 0 17;
+    width: 100%;
+    /*height: 60;*/
+    vertical-align: top;
+    border-style: solid;
+    border-width: .5;
+    border-color: #eeeae1;
+}
+
+    #backToResults > StackLayout {
+        width: 100%;
+    }
+
+        #backToResults > StackLayout > StackLayout {
+            height: 50%;
+            margin-left: 17;
+            vertical-align: center;
+        }
+
+    #backToResults StackLayout.horizontalLine {
+        width: 100%;
+        height: 1;
+        margin: 0;
+    }
+
+    #backToResults Label.text {
+        font-size: 17;
+        font-weight: normal;
+        color: #4f4f4f;
+    }
+
+    #backToResults Label.icon {
+        margin-right: 15;
+        font-size: 22;
+        color: #bf0d32;
+    }

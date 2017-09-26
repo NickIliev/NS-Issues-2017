@@ -1,0 +1,23 @@
+@import url("~/views/provider-search/provider-search.common.css");
+
+#btnSearchIcon {
+    border-radius: 0;
+    background-color:#bf0d32
+}
+ Textfield {
+font-size: 14;
+}
+#SearchBox{
+    margin-left: 11;
+    margin-right: 12;
+}
+button {
+    border-radius: 0;
+}
+.distance, .results {
+   font-size: 12;
+}
+
+#icon {
+    font-family: 'FontAwesome', 'fontawesome-webfont';
+}
