@@ -1,0 +1,15 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+	<StackLayout>
+        <Button text="toggle" tap="{{ toggleVisibility }}" />
+        <Label text="hide/show" visibility="{{ isItemVisible ? 'visible' : 'collapsed' }}" textWrap="true" />
+        
+		<ListView items="{{ items }}" height="500" loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
+			<ListView.itemTemplate>
+				<StackLayout>
+					<Button text="tap" tap="{{ toggleVisibility }} " />
+					<Label text="hide/show" visibility="{{ isItemVisible ? 'visible' : 'collapsed' }}" textWrap="true" />
+				</StackLayout>
+			</ListView.itemTemplate>
+		</ListView>
+	</StackLayout>
+</Page>
