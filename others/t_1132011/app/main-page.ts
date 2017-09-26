@@ -1,7 +1,4 @@
 import { EventData } from 'data/observable';
-import { Page } from 'ui/page';
-import { HelloWorldModel } from './main-view-model';
-
 import { fromNativeSource } from "image-source";
 import { takePicture, requestPermissions } from "nativescript-camera";
 import { isIOS, isAndroid} from "platform";
@@ -13,9 +10,6 @@ declare let NSDataBase64EncodingOptions: any;
 declare let ByteArrayOutputStream: any;
 
 export function navigatingTo(args: EventData) {
-    let page = <Page>args.object;
-    page.bindingContext = new HelloWorldModel();
-
     requestPermissions();
 }
 
