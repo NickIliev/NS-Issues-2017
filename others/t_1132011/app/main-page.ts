@@ -35,7 +35,7 @@ export function takePhoto() {
                 console.log(base64String); // our image repesented in  base64 string result
             }
         });
-    }).catch(function (err) {
+    }).catch((err) => {
         console.log("Error -> " + err.message);
     });
 }
