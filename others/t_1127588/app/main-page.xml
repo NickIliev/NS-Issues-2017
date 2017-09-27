@@ -1,0 +1,9 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <StackLayout >
+        <Label text="Tap the button" class="h1 text-center"/>
+        <Button text="TAP" tap="{{ onTap }}" class="my-style"/>
+        <TextField text="{{ message }}" textWrap="true"/>
+    </StackLayout>
+</Page>

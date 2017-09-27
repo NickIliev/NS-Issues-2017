@@ -1,0 +1,21 @@
+<GridLayout columns="20, auto" rows="20,50,auto,20,50" backgroundColor="#103F69">
+    <Label text="Test Line Chart" row="0" colspan="2" color="#ffffff"></Label>
+    <FlexboxLayout row="1" colspan="2" textAlignment="center">
+        <Button id="button" text="Day" (tap)="dayClick()" row="3" colspan="2" width="80"></Button>
+        <Button id="button" text="Week" (tap)="weekClick()" row="3" colspan="2" width="80"></Button>
+        <Button id="button" text="Month" (tap)="monthClick()" row="3" colspan="2" width="80"></Button>
+    </FlexboxLayout>
+
+    <RadCartesianChart tkExampleTitle tkToggleNavButton col="1" row="2" height="450" width="400">
+        <BarSeries tkCartesianSeries [items]="chartData" categoryProperty="{{categoryAxisField}}" valueProperty="{{valueAxisField}}"
+            seriesName="barSeries"> </BarSeries>
+
+        <DateTimeContinuousAxis tkCartesianHorizontalAxis labelFitMode="Rotate" labelRotationAngle="-1.2"
+            verticalLocation="Bottom" labelTextColor="White" lineColor="White" plotData="OnTicks" lineThickness="1" 
+            [dateFormat]="dateFormat" [minimum]="minDate" [maximum]="maxDate" [majorStep]="majorStep"  plotMode="BetweenTicks"></DateTimeContinuousAxis>
+
+        <LinearAxis tkCartesianVerticalAxis majorStep="1" labelTextColor="White" lineColor="White" labelFormat="%.0f"></LinearAxis>
+    </RadCartesianChart>
+
+    <Label text="{{majorStep}}" row="3" colspan="2" color="#ffffff" textAlignment="center"></Label>
+</GridLayout>

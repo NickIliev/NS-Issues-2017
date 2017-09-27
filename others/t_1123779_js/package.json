@@ -1,0 +1,13 @@
+{
+	"description": "NativeScript Application",
+	"license": "SEE LICENSE IN <your-license-filename>",
+	"readme": "NativeScript Application",
+	"repository": "<fill-your-repository-here>",
+	"nativescript": {
+		"id": "org.nativescript.t1123779js"
+	},
+	"dependencies": {
+		"nativescript-theme-core": "~1.0.2",
+		"tns-core-modules": "3.1.0"
+	}
+}

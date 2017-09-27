@@ -1,0 +1,9 @@
+﻿
+.my-style {
+    font-size: 18;
+    background-color:blue;
+}
+
+.my-style:highlighted {
+    background-color:red;
+}
