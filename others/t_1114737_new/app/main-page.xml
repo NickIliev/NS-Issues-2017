@@ -10,6 +10,10 @@
                     <!-- toggle visibility INSIDE ListView does not work  -->
 					<Button text="tap" tap="{{ toggleVisibility }} " />
 					<Label text="hide/show" visibility="{{ isItemVisible ? 'visible' : 'collapsed' }}" textWrap="true" />
+
+					<!-- Using parent binding is also failing -->
+					<!-- <Button text="tap" tap="{{ $parents['ListView'].toggleVisibility }} " />
+					<Label text="hide/show" visibility="{{ $parents['ListView'].isItemVisible ? 'visible' : 'collapsed' }}" textWrap="true" /> -->
 				</StackLayout>
 			</ListView.itemTemplate>
 		</ListView>

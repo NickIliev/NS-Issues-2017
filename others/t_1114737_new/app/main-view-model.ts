@@ -8,7 +8,7 @@ export class HelloWorldModel extends Observable {
     constructor() {
         super();
 
-        this.items = [1, 1, 2, 3, 5, 8, 13, 21, 64];
+        this.items = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 143];
     }
 
     get isItemVisible(): boolean {
