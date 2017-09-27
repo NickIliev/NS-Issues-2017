@@ -1,0 +1,3 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+    <Label text="SUB PAGE" textWrap="true" />
+</Page>

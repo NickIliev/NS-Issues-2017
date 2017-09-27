@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./bundle-config");
+var app = require("application");
+var frameModule = require("ui/frame");
+// comment the default page transtion and the navigation will work as expected
+frameModule.Frame.defaultTransition = { name: "slide" };
+app.start({ moduleName: 'main-page' });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsMkJBQXlCO0FBQ3pCLGlDQUFtQztBQUNuQyxzQ0FBd0M7QUFFeEMsOEVBQThFO0FBQzlFLFdBQVcsQ0FBQyxLQUFLLENBQUMsaUJBQWlCLEdBQUcsRUFBRSxJQUFJLEVBQUUsT0FBTyxFQUFFLENBQUM7QUFFeEQsR0FBRyxDQUFDLEtBQUssQ0FBQyxFQUFFLFVBQVUsRUFBRSxXQUFXLEVBQUUsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFwiLi9idW5kbGUtY29uZmlnXCI7XG5pbXBvcnQgKiBhcyBhcHAgZnJvbSAnYXBwbGljYXRpb24nO1xuaW1wb3J0ICogYXMgZnJhbWVNb2R1bGUgZnJvbSAndWkvZnJhbWUnO1xuXG4vLyBjb21tZW50IHRoZSBkZWZhdWx0IHBhZ2UgdHJhbnN0aW9uIGFuZCB0aGUgbmF2aWdhdGlvbiB3aWxsIHdvcmsgYXMgZXhwZWN0ZWRcbmZyYW1lTW9kdWxlLkZyYW1lLmRlZmF1bHRUcmFuc2l0aW9uID0geyBuYW1lOiBcInNsaWRlXCIgfTtcblxuYXBwLnN0YXJ0KHsgbW9kdWxlTmFtZTogJ21haW4tcGFnZScgfSk7XG4iXX0=
