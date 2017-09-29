@@ -1,0 +1,17 @@
+@import 'nativescript-theme-core/css/core.light.css';
+
+.fa {
+    font-family: "FontAwesome";
+}
+
+.na {
+    font-family: "Nasalization";
+    background-color: #343838;   
+    color: #BCBCBC;
+}
+
+ActionBar {
+    font-family: "Nasalization";
+    background-color: #343838;   
+    color: #BCBCBC;
+}
