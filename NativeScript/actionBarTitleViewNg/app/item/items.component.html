@@ -1,0 +1,17 @@
+<ActionBar title="Title">
+    <ActionBar.titleView>
+        <StackLayout orientation="horizontal">
+            <Label text="lbl 1" textWrap="true"></Label>
+            <Label text="lbl 2" textWrap="true"></Label>
+            <Label text="lbl 3" textWrap="true"></Label>
+        </StackLayout>
+    </ActionBar.titleView>
+</ActionBar>
+
+<StackLayout class="page">
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name" class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>
