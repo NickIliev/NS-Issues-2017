@@ -1,0 +1,41 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:chart="nativescript-pro-ui/chart" navigatingTo="navigatingTo" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+      <chart:RadCartesianChart id="chart">
+        <chart:RadCartesianChart.series>
+          <chart:LineSeries seriesName="series1" items="{{ dataItems }}" categoryProperty="timestamp" valueProperty="series1"/>
+          <chart:LineSeries seriesName="series2" items="{{ dataItems }}" categoryProperty="timestamp" valueProperty="series2" />
+        </chart:RadCartesianChart.series>
+        <chart:RadCartesianChart.verticalAxis>
+          <chart:LinearAxis horizontalLocation="Right"/>
+        </chart:RadCartesianChart.verticalAxis>
+        <chart:RadCartesianChart.horizontalAxis>
+            <!-- <chart:CategoricalAxis/> -->
+            <!-- <chart:DateTimeCategoricalAxis id="catAxis" plotMode="OnTicks" dateFormat="HH:mm" labelFitMode="Rotate" labelRotationAngle="1.2" verticalLocation="Bottom" /> -->
+
+            <!-- Working with majorStep Day-->
+            <!-- <chart:DateTimeContinuousAxis minimum="29/09/2017" maximum="01/10/2017" majorStep="Day" labelFitMode="Rotate" labelRotationAngle="1.2"/> -->
+
+            <!-- CRASHING with majorStep Hour-->
+            <chart:DateTimeContinuousAxis minimum="29/09/2017" maximum="01/10/2017" majorStep="Hour" labelFitMode="Rotate" labelRotationAngle="1.2"/>
+        </chart:RadCartesianChart.horizontalAxis>
+        <chart:RadCartesianChart.palettes>
+          <chart:Palette seriesName="series1">
+            <chart:Palette.entries>
+              <chart:PaletteEntry strokeColor="forestgreen"/>
+            </chart:Palette.entries>
+          </chart:Palette>
+          <chart:Palette seriesName="series2">
+            <chart:Palette.entries>
+              <chart:PaletteEntry strokeColor="steelblue"/>
+            </chart:Palette.entries>
+          </chart:Palette>
+        </chart:RadCartesianChart.palettes>
+      </chart:RadCartesianChart>
+
+</Page>
