@@ -5,6 +5,8 @@ import { ItemService } from "./item.service";
 
 import { TabView } from "ui/tab-view";
 
+import { EventData } from "data/observable";
+
 @Component({
     selector: "ns-items",
     moduleId: module.id,
@@ -25,6 +27,11 @@ export class ItemsComponent implements OnInit {
         let nativeElement = <TabView>this.tabView.nativeElement;
         console.log(nativeElement);
 
-        console.log(nativeElement.android);
+    }
+
+    onTabLoaded(args: EventData) {
+        let tab = <TabView>args.object;
+
+        console.log("ontabLoaded: " + tab.nativeView)
     }
 }

@@ -4,7 +4,7 @@
 
 
 
-<TabView #tabView >
+<TabView #tabView (loaded)="onTabLoaded($event)">
 	<StackLayout *tabItem="{title: 'NativeScript'}" class="page">
 
       <ListView [items]="items" class="list-group">
