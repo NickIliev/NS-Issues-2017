@@ -3,6 +3,8 @@ import { Observable } from 'data/observable';
 export class HelloWorldModel extends Observable {
 
     private _isItemVisible: boolean;
+    private _isSpecificCellVisible
+
     public items: Array<any>
 
     constructor() {
