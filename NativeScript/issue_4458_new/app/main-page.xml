@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+	<StackLayout class="p-20">
+        <Button text="change hint" tap="onChangeHint" />
+        <!-- -dynamically chaning the binded value will not update the placeholder-color on iOS (works on Android) -->
+		<TextField class="form-input" hint="{{ hint }}" autocapitalizationType="none" autocorrect="false" keyboardType="email" returnKeyType="next">
+		</TextField>
+	</StackLayout>
+</Page>
