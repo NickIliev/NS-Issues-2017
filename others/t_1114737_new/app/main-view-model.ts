@@ -1,4 +1,22 @@
-import { Observable } from 'data/observable';
+import { Observable, fromObject } from 'data/observable';
+
+
+class Item extends Observable {
+
+    constructor(public text: string, public isItemVisible: boolean) { 
+        super();
+    }
+
+    public toggleVisibility(args) {
+        console.dir(this);
+
+        console.log(args.object);
+
+        console.log("toggleVisibility value: " + this.isItemVisible);
+
+        this.set("isItemVisible", !this.isItemVisible);
+    }
+}
 
 export class HelloWorldModel extends Observable {
 
@@ -10,7 +28,12 @@ export class HelloWorldModel extends Observable {
     constructor() {
         super();
 
-        this.items = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 143];
+        this.items = [
+            new Item("1", true),
+            new Item("2", true),
+            new Item("3", true),
+            new Item("4", true),
+        ]
     }
 
     get isItemVisible(): boolean {
@@ -24,7 +47,4 @@ export class HelloWorldModel extends Observable {
         }
     }
 
-    public toggleVisibility() {
-        this.isItemVisible = !this.isItemVisible;
-    }
 }
