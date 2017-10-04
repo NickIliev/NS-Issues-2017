@@ -9,9 +9,7 @@ class Item extends Observable {
 
     public toggleVisibility(args) {
         console.dir(this);
-
         console.log(args.object);
-
         console.log("toggleVisibility value: " + this.isItemVisible);
 
         this.set("isItemVisible", !this.isItemVisible);
@@ -20,10 +18,7 @@ class Item extends Observable {
 
 export class HelloWorldModel extends Observable {
 
-    private _isItemVisible: boolean;
-    private _isSpecificCellVisible
-
-    public items: Array<any>
+    public items: Array<any>;
 
     constructor() {
         super();
@@ -35,16 +30,4 @@ export class HelloWorldModel extends Observable {
             new Item("4", true),
         ]
     }
-
-    get isItemVisible(): boolean {
-        return this._isItemVisible;
-    }
-
-    set isItemVisible(value: boolean) {
-        if (this._isItemVisible !== value) {
-            this._isItemVisible = value;
-            this.notifyPropertyChange('isItemVisible', value)
-        }
-    }
-
 }
