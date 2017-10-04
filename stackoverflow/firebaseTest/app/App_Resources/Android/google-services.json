@@ -1,0 +1,42 @@
+{
+    "project_info": {
+      "project_number": "163419353108",
+      "firebase_url": "https://fir-nativescript-angular.firebaseio.com",
+      "project_id": "fir-nativescript-angular",
+      "storage_bucket": "fir-nativescript-angular.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:163419353108:android:6f83b6ef498e9e05",
+          "android_client_info": {
+            "package_name": "org.nativescript.firebaseTest"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "163419353108-7omocroriqqk71t70ct1bija9if38op0.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyBbT4CYgcmI1EBJQokca7hScPd8MtS6FgQ"
+          }
+        ],
+        "services": {
+          "analytics_service": {
+            "status": 1
+          },
+          "appinvite_service": {
+            "status": 1,
+            "other_platform_oauth_client": []
+          },
+          "ads_service": {
+            "status": 2
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

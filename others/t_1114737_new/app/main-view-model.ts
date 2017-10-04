@@ -1,5 +1,4 @@
-import { Observable, fromObject } from 'data/observable';
-
+import { Observable } from 'data/observable';
 
 class Item extends Observable {
 
@@ -8,8 +7,7 @@ class Item extends Observable {
     }
 
     public toggleVisibility(args) {
-        console.dir(this);
-        console.log(args.object);
+        // console.dir(this);
         console.log("toggleVisibility value: " + this.isItemVisible);
 
         this.set("isItemVisible", !this.isItemVisible);
