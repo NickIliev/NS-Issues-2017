@@ -1,16 +1,16 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
 	<StackLayout>
-		<ListView items="{{ items }}" height="500" loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
-			<ListView.itemTemplate>
-				<StackLayout>
-					<Label text="{{ text }}" textWrap="true" />
-				
-                    <!-- toggle visibility INSIDE ListView does not work  -->
-					<Button text="tap" tap="{{ toggleVisibility }} " />
-					<Label text="hide/show" visibility="{{ isItemVisible ? 'visible' : 'collapsed' }}" textWrap="true" />
+<ListView items="{{ items }}" height="500" loaded="onLoaded" itemLoading="onItemLoading" itemTap="onItemTap">
+	<ListView.itemTemplate>
+		<StackLayout>
+			<Label text="{{ text }}" textWrap="true" />
+		
+			<!-- toggle visibility INSIDE ListView does not work  -->
+			<Button text="tap" tap="{{ toggleVisibility }} " />
+			<Label text="hide/show" visibility="{{ isItemVisible ? 'visible' : 'collapsed' }}" textWrap="true" />
 
-				</StackLayout>
-			</ListView.itemTemplate>
-		</ListView>
+		</StackLayout>
+	</ListView.itemTemplate>
+</ListView>
 	</StackLayout>
 </Page>
