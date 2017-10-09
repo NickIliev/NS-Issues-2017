@@ -1,0 +1,48 @@
+<!--
+The template defines the view of the component - what is actually rendered. 
+In NativeScript applications the template is defined with XML using NativeScript UI elements. 
+It is different from HTML. So instead of <input>, <span>, <div> etc. - we have <TextField>, <Label> and layouts.
+The important thing is that although the elements are different - all of the Angular’s template syntax works exactly the same. 
+So you can still use template expressions, bindings, templates as well as all the built-in directives.
+-->
+
+<!--
+The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
+http://docs.nativescript.org/ui/action-bar
+-->
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<TabView selectedIndex="1" selectedColor="#FF0000" iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
+    <StackLayout *tabItem="{title: 'First', iconSource: 'res://icon'}" >
+        <StackLayout class="page">
+            <ListView [items]="items" class="list-group">
+                <ng-template let-item="item">
+                    <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                        class="list-group-item"></Label>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout  *tabItem="{title: 'Second', iconSource: 'res://logo'}">
+        <StackLayout class="page">
+            <ListView [items]="items" class="list-group">
+                <ng-template let-item="item">
+                    <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                        class="list-group-item"></Label>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout  *tabItem="{title: 'Third', iconSource: 'res://icon'}">
+        <StackLayout class="page">
+            <ListView [items]="items" class="list-group">
+                <ng-template let-item="item">
+                    <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                        class="list-group-item"></Label>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</TabView>
+
