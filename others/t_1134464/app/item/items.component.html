@@ -1,0 +1,22 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<GridLayout>
+    <RadListView [items]="items" #list (loaded)="onRadListLoaded($event)">
+        <ng-template tkListItemTemplate let-item="item">
+            <StackLayout orientation="vertical">
+                <Label [nsRouterLink]="['/item', item.id]" [text]="item.name" class="list-group-item"></Label>
+            </StackLayout>
+        </ng-template>
+        <ListViewStaggeredLayout tkListViewLayout scrollDirection="Vertical" [spanCount]="columns">
+        </ListViewStaggeredLayout>
+    </RadListView>
+</GridLayout>
+
+<!-- <ListView [items]="items" class="list-group">
+    <ng-template let-item="item" let-odd="odd" let-even="even">
+        <StackLayout backgroundColor="gray">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name" class="list-group-item"></Label>
+        </StackLayout>
+    </ng-template>
+</ListView> -->
