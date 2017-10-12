@@ -14,7 +14,7 @@ http://docs.nativescript.org/ui/action-bar
 </ActionBar>
 
 <TabView selectedIndex="1" selectedColor="#FF0000" iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
-    <StackLayout *tabItem="{title: 'First', iconSource: 'res://icon'}" >
+    <StackLayout *tabItem="{title: 'First', iconSource: '~/images/logo.png'}" >
         <StackLayout class="page">
             <ListView [items]="items" class="list-group">
                 <ng-template let-item="item">
@@ -24,7 +24,7 @@ http://docs.nativescript.org/ui/action-bar
             </ListView>
         </StackLayout>
     </StackLayout>
-    <StackLayout  *tabItem="{title: 'Second', iconSource: 'res://logo'}">
+    <StackLayout  *tabItem="{title: 'Second', iconSource: '~/images/logo.png'}">
         <StackLayout class="page">
             <ListView [items]="items" class="list-group">
                 <ng-template let-item="item">
@@ -34,7 +34,37 @@ http://docs.nativescript.org/ui/action-bar
             </ListView>
         </StackLayout>
     </StackLayout>
-    <StackLayout  *tabItem="{title: 'Third', iconSource: 'res://icon'}">
+    <StackLayout  *tabItem="{title: 'Third', iconSource: '~/images/logo.png'}">
+        <StackLayout class="page">
+            <ListView [items]="items" class="list-group">
+                <ng-template let-item="item">
+                    <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                        class="list-group-item"></Label>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'First', iconSource: '~/images/logo.png'}" >
+        <StackLayout class="page">
+            <ListView [items]="items" class="list-group">
+                <ng-template let-item="item">
+                    <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                        class="list-group-item"></Label>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout  *tabItem="{title: 'Second', iconSource: '~/images/logo.png'}">
+        <StackLayout class="page">
+            <ListView [items]="items" class="list-group">
+                <ng-template let-item="item">
+                    <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                        class="list-group-item"></Label>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout  *tabItem="{title: 'Third', iconSource: '~/images/logo.png'}">
         <StackLayout class="page">
             <ListView [items]="items" class="list-group">
                 <ng-template let-item="item">
