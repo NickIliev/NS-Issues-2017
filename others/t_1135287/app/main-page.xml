@@ -1,0 +1,18 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-pro-ui/listview" navigatingTo="navigatingTo" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <GridLayout orientation="vertical" rows="auto, *" backgroundColor="gray">
+        <lv:RadListView row="1" items="{{ dataItems }}" selectionBehavior="Press" itemTap="{{ itemTapped }}">
+            <lv:RadListView.itemTemplate>
+                <StackLayout orientation="vertical" class="{{ selected ? 'red-class' : 'white-class'}}">
+                    <Label fontSize="20" text="{{ name }}"/>
+                </StackLayout>
+            </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+    </GridLayout>
+</Page>
