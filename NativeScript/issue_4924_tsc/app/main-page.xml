@@ -1,0 +1,39 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+	<TabView id="tabViewContainer">
+		<TabView.items>
+			<TabViewItem title="Tab 1" iconSource="res://logo">
+				<TabViewItem.view>
+					<StackLayout class="p-20">
+						<Label text="Tap the button" class="h1 text-center" />
+						<Button text="TAP" tap="goTo" class="btn btn-primary btn-active" />
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Tab 2" iconSource="res://logo">
+				<TabViewItem.view>
+					<StackLayout class="p-20">
+						<Label text="Tap the button" class="h1 text-center" />
+						<Button text="TAP" tap="goTo" class="btn btn-primary btn-active" />
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Tab 3" iconSource="res://logo">
+				<TabViewItem.view>
+					<StackLayout class="p-20">
+						<Label text="Tap the button" class="h1 text-center" />
+						<Button text="TAP" tap="goTo" class="btn btn-primary btn-active" />
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="Tab 4" iconSource="res://logo">
+				<TabViewItem.view>
+					<StackLayout class="p-20">
+						<Label text="Tap the button" class="h1 text-center" />
+						<Button text="TAP" tap="goTo" class="btn btn-primary btn-active" />
+
+					</StackLayout>
+				</TabViewItem.view>
+			</TabViewItem>
+		</TabView.items>
+	</TabView>
+</Page>
