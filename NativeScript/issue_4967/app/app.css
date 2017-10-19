@@ -1,0 +1,16 @@
+@import 'nativescript-theme-core/css/core.light.css';
+
+Button {
+    color: #ffffff;
+    width: 80%;
+    height: 60;
+    border-radius: 30;
+    background-color: #999999;
+    font-size: 24;
+    margin-top: 32;
+    text-transform: none;
+}
+
+Button:highlighted {
+    background-color: #000000
+}
