@@ -1,0 +1,10 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:lv="nativescript-pro-ui/listview" navigatingTo="navigatingTo" class="page">
+    <lv:RadListView items="{{ dataItems }}" selectionBehavior="Press" itemSelected="onItemSelected">
+        <lv:RadListView.itemTemplate>
+            <StackLayout orientation="vertical" height="60" backgroundColor="gray" margin="10">
+                <Label fontSize="20" text="{{ $value }}"/>
+            </StackLayout>
+        </lv:RadListView.itemTemplate>
+    </lv:RadListView>
+</Page>

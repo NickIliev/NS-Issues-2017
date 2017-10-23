@@ -1,0 +1,8 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+    <StackLayout>
+        <Label text="Details Page" textWrap="true" />
+        <Button text="Go back" tap="onGoBack" />
+        
+    </StackLayout>
+    
+</Page>
