@@ -1,0 +1,8 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<RadDataForm [source]="prices" tkExampleTitle tkToggleNavButton>
+	<TKEntityProperty tkDataFormProperty name="price" displayName="Price" index="0" [converter]="currencyConverter">
+		<TKPropertyEditor tkEntityPropertyEditor type="Decimal"></TKPropertyEditor>
+	</TKEntityProperty>
+</RadDataForm>
