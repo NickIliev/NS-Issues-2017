@@ -1,0 +1,15 @@
+
+<ActionBar title="My App" class="my-bar">
+    <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="center">
+        <Image src="res://icon" width="50" height="50" class="action-image"></Image>
+    </StackLayout>
+</ActionBar>
+
+<StackLayout class="page">
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>

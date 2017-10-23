@@ -1,0 +1,10 @@
+@import 'nativescript-theme-core/css/core.light.css';
+
+.my-bar {
+    color: #F00;
+    font-size: 24;
+    background-color: #090A22;
+    display: block;
+    text-align: center;
+    background-image: url("~/images/background.png");
+}
