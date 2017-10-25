@@ -1,0 +1,62 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "repository": {
+    "type": "git",
+    "url": "<fill-your-repository-here>"
+  },
+  "nativescript": {
+    "id": "org.nativescript.issue4954",
+    "tns-android": {
+      "version": "3.2.0"
+    },
+    "tns-ios": {
+      "version": "3.2.0"
+    }
+  },
+  "dependencies": {
+    "@angular/animations": "~4.2.0",
+    "@angular/common": "~4.2.0",
+    "@angular/compiler": "~4.2.0",
+    "@angular/core": "~4.2.0",
+    "@angular/forms": "~4.2.0",
+    "@angular/http": "~4.2.0",
+    "@angular/platform-browser": "~4.2.0",
+    "@angular/platform-browser-dynamic": "~4.2.0",
+    "@angular/router": "~4.2.0",
+    "@ngrx/core": "^1.2.0",
+    "angular2-jwt": "^0.2.3",
+    "angular2-uuid": "^1.1.1",
+    "everlive-sdk": "^1.9.4",
+    "luhn": "^2.1.0",
+    "nativescript-angular": "~4.2.0",
+    "nativescript-dom": "^1.1.0",
+    "nativescript-iqkeyboardmanager": "^1.1.0",
+    "nativescript-phone": "^1.3.1",
+    "nativescript-push-notifications": "^0.1.4",
+    "nativescript-theme-core": "~1.0.4",
+    "nativescript-toast": "^1.4.6",
+    "nativescript-tracing": "^1.0.0",
+    "nativescript-webview-interface": "^1.4.1",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "~5.4.2",
+    "tns-core-modules": "^3.2.0",
+    "zone.js": "~0.8.2"
+  },
+  "devDependencies": {
+    "nativescript-dev-typescript": "~0.5.0",
+    "typescript": "~2.4.2",
+    "babel-traverse": "6.22.1",
+    "babel-types": "6.22.0",
+    "babylon": "6.15.0",
+    "lazy": "1.0.11",
+    "nativescript-dev-android-snapshot": "^0.*.*"
+  },
+  "name": "vending-app-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": ""
+}
