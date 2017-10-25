@@ -3,6 +3,9 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
+import { XSRFStrategy } from "@angular/http";
+import { nsXSRFStrategyFactory } from "nativescript-angular/http";
+
 import { ItemService } from "./item/item.service";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
@@ -29,7 +32,8 @@ import { HomeComponent } from "./item/home.component";
         HomeComponent
     ],
     providers: [
-        ItemService
+        ItemService,
+        { provide: XSRFStrategy, useValue: nsXSRFStrategyFactory }
     ],
     schemas: [
         NO_ERRORS_SCHEMA
