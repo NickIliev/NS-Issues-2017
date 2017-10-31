@@ -2,11 +2,13 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:df="nativescript-pro-ui/dataform" navigatingTo="onNavigatingTo" class="page">
     <df:RadDataForm id="myDataForm" source="{{ formData }}" propertyCommitted="{{ onPropertyCommitted }}">
         <df:RadDataForm.properties>
-            <df:EntityProperty name="city" displayName="Your city" valuesProvider="{{ citiesProvider }}">
+
+            <df:EntityProperty name="city" displayName="Your city" converter="{{ converter }}"  valuesProvider="{{ citiesProvider }}">
                 <df:EntityProperty.editor>
                     <df:PropertyEditor type="Picker" />
                 </df:EntityProperty.editor>
             </df:EntityProperty>
+
         </df:RadDataForm.properties>
     </df:RadDataForm>
 </Page>

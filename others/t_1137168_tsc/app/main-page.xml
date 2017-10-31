@@ -1,0 +1,8 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <df:EntityProperty name="city" displayName="Your city" valuesProvider="{{ citiesProvider }}">
+        <df:EntityProperty.editor>
+            <df:PropertyEditor type="Picker" />
+        </df:EntityProperty.editor>
+    </df:EntityProperty>
+</Page>

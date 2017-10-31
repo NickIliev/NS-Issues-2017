@@ -22,31 +22,29 @@ export class ItemsComponent implements OnInit {
         console.log("constructor")
     }
 
-    onRadListLoaded(args) {
-        this.radList = <RadListView>args.object;    
+onRadListLoaded(args) {
+    this.radList = <RadListView>args.object;    
+}
+
+ngOnInit() {  
+    this.items = this.itemService.getItems();
+    applicationOn("orientationChanged", (args: OrientationChangedEventData) => {
+        console.log("orientationChanged");
+
+        if(args.newValue == "portrait") {
+            let staggeredLayout = new ListViewStaggeredLayout();
+            staggeredLayout.scrollDirection = "Vertical";
+            staggeredLayout.spanCount = 2;
+
+            this.radList.listViewLayout = staggeredLayout;
+        } else {
+            let staggeredLayout = new ListViewStaggeredLayout();
+            staggeredLayout.scrollDirection = "Vertical";
+            staggeredLayout.spanCount = 3;
+
+            this.radList.listViewLayout = staggeredLayout;
+        }
+    });  
     }
-
-    ngOnInit() {  
-        this.items = this.itemService.getItems();
-        applicationOn("orientationChanged", (args: OrientationChangedEventData) => {
-            console.log("orientationChanged");
-
-            if(args.newValue == "portrait") {
-                let staggeredLayout = new ListViewStaggeredLayout();
-                staggeredLayout.scrollDirection = "Vertical";
-                staggeredLayout.spanCount = 2;
-
-                this.radList.listViewLayout = staggeredLayout;
-            } else {
-                let staggeredLayout = new ListViewStaggeredLayout();
-                staggeredLayout.scrollDirection = "Vertical";
-                staggeredLayout.spanCount = 3;
-
-                this.radList.listViewLayout = staggeredLayout;
-            }
-
-            
-        });  
-      }
 
 }
