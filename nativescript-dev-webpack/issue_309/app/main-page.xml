@@ -1,0 +1,7 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <GridLayout class="p-20">
+        <WebView id="webView" src="http://docs.nativescript.org" />
+    </GridLayout>
+</Page>
