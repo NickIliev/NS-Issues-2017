@@ -1,0 +1,14 @@
+project.ext {
+    // Uncomment below to change Google Play Services Version
+    //googlePlayServicesVersion = "+"
+}
+
+android {  
+  defaultConfig {  
+    generatedDensities = []
+    applicationId = "org.nativescript.t1138403"  
+  }  
+  aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+  }  
+} 

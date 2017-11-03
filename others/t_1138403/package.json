@@ -1,0 +1,24 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.t1138403",
+    "tns-android": {
+      "version": "3.3.0"
+    }
+  },
+  "dependencies": {
+    "nativescript-google-maps-sdk": "2.4.2",
+    "nativescript-permissions": "^1.2.3",
+    "tns-core-modules": "^3.3.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.7.6",
+    "babel-types": "6.7.7",
+    "babylon": "6.7.0",
+    "filewalker": "0.1.2",
+    "lazy": "1.0.11"
+  }
+}
