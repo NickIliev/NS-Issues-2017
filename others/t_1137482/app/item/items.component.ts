@@ -42,25 +42,34 @@ export class ItemsComponent implements OnInit {
 
                 let imageSource: ImageSource;
 
+                console.log("selected.fileUri: " + selected.fileUri);
+
+                let exif = new android.media.ExifInterface(selected.fileUri);
+                
+                const TAG_ORIENTATION = exif.getAttributeInt(android.media.ExifInterface.TAG_ORIENTATION, android.media.ExifInterface.ORIENTATION_NORMAL);
+                const TAG_GPS_TIMESTAMP = exif.getAttribute(android.media.ExifInterface.TAG_GPS_TIMESTAMP);
+                const TAG_GPS_ALTITUDE = exif.getAttribute(android.media.ExifInterface.TAG_GPS_ALTITUDE);
+                const TAG_GPS_ALTITUDE_REF = exif.getAttribute(android.media.ExifInterface.TAG_GPS_ALTITUDE_REF);
+                const TAG_GPS_DATESTAMP = exif.getAttribute(android.media.ExifInterface.TAG_GPS_DATESTAMP);
+                const TAG_GPS_DEST_LATITUDE = exif.getAttribute(android.media.ExifInterface.TAG_GPS_DEST_LATITUDE);
+                const TAG_GPS_DEST_LONGITUDE = exif.getAttribute(android.media.ExifInterface.TAG_GPS_DEST_LONGITUDE);
+                const TAG_GPS_LATITUDE = exif.getAttribute(android.media.ExifInterface.TAG_GPS_LATITUDE);
+
+                console.log("selected image orientation (EXIF) : " + TAG_ORIENTATION);
+                console.log("selected image TAG_GPS_TIMESTAMP (EXIF) : " + TAG_GPS_TIMESTAMP);
+                console.log("selected image TAG_GPS_ALTITUDE (EXIF) : " + TAG_GPS_ALTITUDE);
+                console.log("selected image TAG_GPS_ALTITUDE_REF (EXIF) : " + TAG_GPS_ALTITUDE_REF);
+                console.log("selected image TAG_GPS_DATESTAMP (EXIF) : " + TAG_GPS_DATESTAMP);
+                console.log("selected image TAG_GPS_DEST_LATITUDE (EXIF) : " + TAG_GPS_DEST_LATITUDE);
+                console.log("selected image TAG_GPS_DEST_LONGITUDE (EXIF) : " + TAG_GPS_DEST_LONGITUDE);
+                console.log("selected image TAG_GPS_LATITUDE (EXIF) : " + TAG_GPS_LATITUDE);
+
                 selected.getImage().then(imgSource => {
                     let folder = fs.knownFolders.documents().path;
                     // let downloads = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DCIM).toString();
-                    let path = fs.path.join(folder, "test.png");
-                    let saved = imgSource.saveToFile(path, "png");
-
-                    this.zone.run(() => {
-                        if(saved) {
-                            let exif = new android.media.ExifInterface(path);
-            
-                            let orientation = exif.getAttributeInt(android.media.ExifInterface.TAG_ORIENTATION, android.media.ExifInterface.ORIENTATION_NORMAL);
-                            let gpsTimestamps = exif.getAttribute(android.media.ExifInterface.TAG_GPS_TIMESTAMP);
-                            
-                            console.log("selected image orientation (EXIF) : " + orientation);
-                            console.log("selected image gpsTimestamps (EXIF) : " + gpsTimestamps);
-                        }
-                    })
+                    let path = fs.path.join(folder, "test.jpg");
+                    let saved = imgSource.saveToFile(path, "jpg");
                 })
-
                 
             });
             
