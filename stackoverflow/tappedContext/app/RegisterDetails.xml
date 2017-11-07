@@ -1,10 +1,4 @@
  <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page" loaded="pageLoaded">
-
-    <Page.actionBar>
-        <ActionBar title="Register" icon="" class="action-bar">
-        </ActionBar>
-    </Page.actionBar>
-
     <StackLayout>
         <Label text="{{ passedData.name }}" />
     </StackLayout>

@@ -12,5 +12,4 @@ function RegisterViewModel() {
 
     return viewModel;
 }
-
 exports.RegisterViewModel = RegisterViewModel;
