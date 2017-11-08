@@ -1,0 +1,23 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page" loaded="loaded">
+    <StackLayout class="p-20">
+        <SearchBar id="searchBar" hint="Search" text="" clear="onClear" submit="onSubmit" />
+        <TabView>
+            <TabView.items>
+                <TabViewItem title="register">
+                    <TabViewItem.view>
+                        <ListView items="{{ shows }}" itemTap="getInfo" >
+                            <ListView.itemTemplate>
+                                <Label text="{{ name }}" />
+                            </ListView.itemTemplate>
+                        </ListView>
+                    </TabViewItem.view>
+                </TabViewItem>
+                <TabViewItem title="Tab 2">
+                    <TabViewItem.view>
+                        <Label text="Label in Tab2" />
+                    </TabViewItem.view>
+                </TabViewItem>
+            </TabView.items>
+        </TabView>
+    </StackLayout>
+</Page>
