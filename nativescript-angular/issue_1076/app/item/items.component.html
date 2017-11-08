@@ -1,0 +1,8 @@
+
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+<StackLayout class="page">
+    <Label *ngIf="!isLandscape" color="blue" fontSize="36" text="Portrait mode" textWrap="true"></Label>
+    <Label *ngIf="isLandscape" color="red" fontSize="36" text="Landscape mode" textWrap="true"></Label>
+</StackLayout>
