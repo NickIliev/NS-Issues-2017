@@ -1,0 +1,27 @@
+<GridLayout rows="*" columns="*,*,*,*,*" orientation="horizontal">
+    <Label row="0" col="0" textWrap="true" class="btn" [class.highlight]="selectedTab === 'calendar'" (tap)="selectTab('calendar')">
+        <FormattedString>
+            <Span text="Calendar" class="page-dashboard-tabbar-btn-text"></Span>
+        </FormattedString>
+    </Label>
+    <Label row="0" col="1" textWrap="true" class="btn" [class.highlight]="selectedTab === 'knowledge'" (tap)="selectTab('knowledge')">
+        <FormattedString>
+            <Span text="Knowledge" class="page-dashboard-tabbar-btn-text"></Span>
+        </FormattedString> 
+    </Label>
+    <Button row="0" col="2" textWrap="true" class="btn" [class.highlight]="selectedTab === 'home'" (tap)="selectTab('home')">
+        <FormattedString>
+             <Span text="Home" class="page-dashboard-tabbar-btn-text"></Span>
+        </FormattedString>
+    </Button>
+    <Label row="0" col="3" textWrap="true" class="btn" [class.highlight]="selectedTab === 'chat'" (tap)="selectTab('chat')">
+        <FormattedString>
+            <Span text="Chat" class="page-dashboard-tabbar-btn-text"></Span>
+        </FormattedString>
+    </Label>
+    <Label row="0" col="4" textWrap="true" class="btn" [class.highlight]="selectedTab === 'setting'" (tap)="selectTab('setting')">
+        <FormattedString>
+            <Span text="Settings" class="page-dashboard-tabbar-btn-text"></Span>
+        </FormattedString>
+    </Label>
+</GridLayout>

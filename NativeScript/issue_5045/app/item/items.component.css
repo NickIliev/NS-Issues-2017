@@ -1,0 +1,8 @@
+GridLayout {
+    background-color: gray;
+}
+
+.highlight {
+    background-color: #ffffff;
+    color: #f4ac5c;  
+}
