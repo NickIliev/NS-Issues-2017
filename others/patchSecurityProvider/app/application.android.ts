@@ -1,5 +1,6 @@
 import * as application from "application";
 
+// the dependency to com.google.android.gms in App_Resources/android/app.grade
 declare let com: any;
 
 // the `JavaProxy` decorator specifies the package and the name for the native *.JAVA file generated. 
