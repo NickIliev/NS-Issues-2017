@@ -1,0 +1,16 @@
+// Add your native dependencies here:
+
+// Uncomment to add recyclerview-v7 dependency
+dependencies {
+  compile "com.google.android.gms:play-services-base:11.4.0"
+}
+
+android {  
+  defaultConfig {  
+    generatedDensities = []
+    applicationId = "org.nativescript.patchSecurityProvider"  
+  }  
+  aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+  }  
+} 
