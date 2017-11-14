@@ -1,0 +1,39 @@
+<Page navigatingTo="navigatingTo"
+  xmlns:drawer="nativescript-pro-ui/sidedrawer"
+  xmlns:js="nativescript-joystick"
+  xmlns:dc="pages/drawer">
+  <Page.actionBar>
+    <ActionBar class="action-bar" title="JoyStick"></ActionBar>
+  </Page.actionBar>
+
+  <drawer:RadSideDrawer id="sideDrawer" drawerLocation="Left">
+    
+      <drawer:RadSideDrawer.drawerContent>
+        <dc:drawer-content />
+      </drawer:RadSideDrawer.drawerContent>
+
+      <drawer:RadSideDrawer.mainContent>
+        <StackLayout xmlns:js="nativescript-joystick">
+          <Button text="Start" tap="{{ startJoystick }}" />
+          <Button text="Stop" tap="{{ stopJoystick }}" />
+
+          <StackLayout orientation="horizontal" >
+            <js:JoyStick
+              padColor="black"
+              buttonColor="white"
+              width="50%"
+              vertical="{{speed}}">
+            </js:JoyStick>
+            <js:JoyStick
+              padColor="blue"
+              buttonColor="red"
+              width="50%"
+              horizontal="{{turnSpeed}}">
+            </js:JoyStick>
+          </StackLayout>
+          
+        </StackLayout>
+        
+      </drawer:RadSideDrawer.mainContent>
+    </drawer:RadSideDrawer>
+</Page>

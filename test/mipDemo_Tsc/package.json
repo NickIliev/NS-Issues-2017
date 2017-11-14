@@ -1,0 +1,30 @@
+{
+	"description": "NativeScript Application",
+	"license": "SEE LICENSE IN <your-license-filename>",
+	"readme": "NativeScript Application",
+	"repository": "<fill-your-repository-here>",
+	"nativescript": {
+		"id": "org.nativescript.mipDemoTsc",
+		"tns-android": {
+			"version": "3.3.1"
+		}
+	},
+	"dependencies": {
+		"nativescript-accelerometer": "^2.0.1",
+		"nativescript-color-picker": "^1.3.2",
+		"nativescript-drop-down": "^3.2.0",
+		"nativescript-joystick": "^0.4.4",
+		"nativescript-mip-ble": "./nativescript-mip-ble-0.2.2.tgz",
+		"nativescript-pro-ui": "^3.2.0",
+		"nativescript-theme-core": "~1.0.2",
+		"tns-core-modules": "~3.3.0"
+	},
+	"devDependencies": {
+		"babel-traverse": "6.26.0",
+		"babel-types": "6.26.0",
+		"babylon": "6.18.0",
+		"lazy": "1.0.11",
+		"nativescript-dev-typescript": "~0.5.0",
+		"typescript": "~2.4.2"
+	}
+}

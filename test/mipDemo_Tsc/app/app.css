@@ -1,0 +1,38 @@
+﻿@import 'nativescript-theme-core/css/core.light.css';
+
+.action-bar {
+    background-color: #ef473a;
+    color: #fff;
+}
+
+.headerContent {
+    color: #fff;
+    background-color: #ef473a;
+    font-size: 20;
+}
+
+.drawerContent {
+    background-color: gray;
+}
+
+.drawerSectionItem {
+    border-color: #111;
+    background-color: #444;
+    color: #fff;
+    
+    font-size: 20;
+    padding: 10;
+}
+
+Button {
+    border-color: #6b46e5;
+    background-color: #886aea;
+    color: #fff;
+    border-width: 5;
+    margin: 2;
+}
+
+.dropdown {
+    font-size: 30;
+    margin: 5, 5, 5, 5;
+}
