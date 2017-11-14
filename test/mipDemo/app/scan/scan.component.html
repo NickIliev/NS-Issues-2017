@@ -1,0 +1,14 @@
+<DockLayout>
+	<Button dock="top" text="GetPermissions" (tap)="getPermissions()"></Button>
+	<Button dock="top" text="Scan" (tap)="scan()"></Button>
+
+	<ListView [items]="devicesAround" (itemTap)="connect($event)">
+		<template let-item="item">
+			<StackLayout padding="5 10 5 10" style="background-color: #7fff7f;">
+				<Label [text]="item.UUID"></Label>
+				<Label [text]="item.name"></Label>
+				<Label [text]="item.state"></Label>
+			</StackLayout>
+		</template>
+	</ListView>
+</DockLayout>
