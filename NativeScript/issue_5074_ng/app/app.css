@@ -1,0 +1,14 @@
+.tab-icon {
+    font-family: 'FontAwesome';
+    font-size: 40;
+}
+
+.tab-icon Label {
+    color: green;
+    font-size: 24;
+}
+
+.tab-icon .label {
+    color: red;
+    font-size: 18;
+}
