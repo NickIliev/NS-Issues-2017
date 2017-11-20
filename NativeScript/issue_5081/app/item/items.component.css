@@ -1,0 +1,14 @@
+
+.sign-up-stack {
+    background-color: #311217;
+    height: 200;
+}
+.sign-up-stack Label {
+    color: white;
+    horizontal-align: center;
+    text-align: center;
+    font-size: 25;
+    border-radius:10;
+    border-color:#FF0000;
+    border-width: 1;
+}
