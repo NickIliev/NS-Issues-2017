@@ -3,29 +3,29 @@
 	<ScrollView>
 		<StackLayout class="p-20">
             <Label text="11" textWrap="true" />
-            <TextField hint="some" />
+            <TextField returnKeyType="next" hint="some" />
             <Label text="22" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="33" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="44" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="55" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="66" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="77" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="88" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="99" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="1010" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="1111" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
             <Label text="1212" textWrap="true" />
-			<TextField hint="some" />
+			<TextField returnKeyType="next" hint="some" />
 		</StackLayout>
 	</ScrollView>
 </Page>
