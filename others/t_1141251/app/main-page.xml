@@ -1,0 +1,27 @@
+
+<Page xmlns:lv="nativescript-pro-ui/listview" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+
+    <GridLayout class="p-20">
+        <lv:RadListView
+                id="myListView"
+                items="{{ items }}"
+                itemTap="onItemTap"
+                itemSelected="onItemSelected"
+                itemDeselected="onItemDeselected"
+                selectionBehavior="Press"
+                multipleSelection="true">
+            <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+            </lv:RadListView.listViewLayout>
+            <lv:RadListView.itemTemplate>
+
+                    <StackLayout >
+                        <Label text="{{ $value }}" textWrap="true" />
+                        <Label text="{{ $value }}" textWrap="true" />
+                        <Label text="{{ $value }}" textWrap="true" />
+                    </StackLayout>
+
+            </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+    </GridLayout>
+</Page>
