@@ -1,0 +1,21 @@
+<!--
+The markup in NativeScript apps contains a series of user interface components, each
+of which NativeScript renders with a platform-specific iOS or Android native control.
+You can find a full list of user interface components you can use in your app at
+https://docs.nativescript.org/ui/components.
+-->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+<ScrollView loaded="onEvent" >
+	<StackLayout class="home-panel">
+        <Button text="Go to Sub Page" tap="nav" backgroundColor="red" color="white"/>
+    
+		<Button text="Click Me" loaded="onEvent" tap="onEvent" height="300"></Button>
+        <Button text="Click Me" loaded="onEvent" tap="onEvent" height="300"></Button>
+        <Button text="Click Me" loaded="onEvent" tap="onEvent" height="300"></Button>
+        <Button text="Click Me" loaded="onEvent" tap="onEvent" height="300"></Button>
+        <Button text="Click Me" loaded="onEvent" tap="onEvent" height="300"></Button>
+        <Button text="Click Me" loaded="onEvent" tap="onEvent" height="300"></Button>
+        <Button text="Click Me" loaded="onEvent" tap="onEvent" height="300"></Button>
+	</StackLayout>
+</ScrollView>
+</Page>
