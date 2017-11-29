@@ -10,3 +10,10 @@ export function navigatingTo(args: EventData) {
 
     camera.requestPermissions();
 }
+
+export function takePhoto() {
+    camera.takePicture().then(res => {
+        let imageAssset = res;
+        console.log(imageAssset)
+    })
+}
