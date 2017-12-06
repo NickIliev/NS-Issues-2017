@@ -1,0 +1,20 @@
+﻿
+@import 'nativescript-theme-core/css/core.light.css';
+
+.btn {
+    font-size: 18;
+}
+
+@keyframes ios_about_button
+{
+    from { opacity: 0; transform: translate(0,40) }
+    to { opacity: 1; transform: translate(0,0) }
+}
+
+Button[id='buy']
+{
+    animation-name: ios_about_button;
+    animation-duration: 1.4s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
