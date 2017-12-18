@@ -1,18 +1,21 @@
-<ActionBar title="My Title" class="action-bar" actionBarHidden="false" backgroundColor="#f33" >
+
+<!-- Workaround for the non working code below -->
+<!-- <ActionBar title="My Title" class="action-bar" actionBarHidden="false" backgroundColor="#f33" >
     <NavigationButton visibility="collapsed"></NavigationButton>
     <ActionItem [visibility]="tabIndex!=1 ? 'visible' : 'collapsed'" ios.systemIcon="12" ios.position="right"></ActionItem>
     <ActionItem [visibility]="tabIndex==2 ? 'visible' : 'collapsed'" ios.systemIcon="4" ios.position="right"></ActionItem>
     <ActionItem [visibility]="tabIndex==1 ? 'visible' : 'collapsed'" ios.systemIcon="16" ios.position="right"></ActionItem>
     <ActionItem ios.systemIcon="4" ios.position="left"></ActionItem>
-</ActionBar>
+</ActionBar> -->
 
-<!-- <ActionBar title="My Title" class="action-bar" actionBarHidden="false" backgroundColor="#f33" >
+
+<ActionBar title="My Title" class="action-bar" actionBarHidden="false" backgroundColor="#f33" >
     <NavigationButton visibility="collapsed"></NavigationButton>
-    <ActionItem *ngIf="tabIndex==0" ios.systemIcon="12" ios.position="right"></ActionItem>
+    <ActionItem *ngIf="tabIndex!=1" ios.systemIcon="12" ios.position="right"></ActionItem>
     <ActionItem *ngIf="tabIndex==1" ios.systemIcon="4" ios.position="right"></ActionItem>
     <ActionItem *ngIf="tabIndex==2" ios.systemIcon="16" ios.position="right"></ActionItem>
     <ActionItem ios.systemIcon="4" ios.position="left"></ActionItem>
-</ActionBar> -->
+</ActionBar>
 
 <TabView selectedIndex="0" (selectedIndexChange)="onSelectedIndexChanged($event)">
     <StackLayout *tabItem="{title: '111'}">
