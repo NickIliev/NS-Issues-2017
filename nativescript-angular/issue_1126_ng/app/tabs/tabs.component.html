@@ -1,0 +1,20 @@
+<ActionBar title="My Title" class="action-bar" actionBarHidden="false" backgroundColor="#f33" >
+    <NavigationButton visibility="collapsed"></NavigationButton>
+    <ActionItem [visibility]="tabIndex!=1 ? 'visible' : 'collapsed'" ios.systemIcon="12" ios.position="right"></ActionItem>
+    <ActionItem [visibility]="tabIndex==2 ? 'visible' : 'collapsed'" ios.systemIcon="4" ios.position="right"></ActionItem>
+    <ActionItem [visibility]="tabIndex==1 ? 'visible' : 'collapsed'" ios.systemIcon="16" ios.position="right"></ActionItem>
+    <ActionItem ios.systemIcon="4" ios.position="left"></ActionItem>
+</ActionBar>
+
+<TabView (selectedIndexChanged)="onSelectedIndexChanged($event)">
+
+    <StackLayout *tabItem="{title: 'Home', iconSource: getIconSource('home')}">
+        <Home></Home>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Browse', iconSource: getIconSource('browse')}">
+        <Browse></Browse>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Search', iconSource: getIconSource('search')}">
+        <Search></Search>
+    </StackLayout>
+</TabView>
