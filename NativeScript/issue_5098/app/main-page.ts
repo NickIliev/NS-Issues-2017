@@ -10,9 +10,14 @@ export function onLoaded() {
     camera.requestPermissions();
 }
 
-
 export function takePhoto() {
-    camera.takePicture()
+
+    let options = {
+        width: 300,
+        height: 200
+    };
+
+    camera.takePicture(options)
         .then((imageAsset: ImageAsset) => {
             let hash = (new Date()).getTime() + Math.floor(Math.random() * 20);
             let folder = fs.knownFolders.documents();
@@ -24,7 +29,6 @@ export function takePhoto() {
 
                     return isSaved;
                 }).then(isSaved => {
-                    console.log(isSaved); // now that the file is saved we can proceed with the background task
 
                     if (isSaved) {
                         let request = {

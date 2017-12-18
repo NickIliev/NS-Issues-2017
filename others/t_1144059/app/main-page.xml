@@ -1,0 +1,25 @@
+<Page loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd">
+
+	<ActionBar title="Home" class="action-bar">
+	</ActionBar>
+	<ScrollView>
+		<TabView id="tab" iosIconRenderingMode="alwaysOriginal">
+			<TabView.items>
+				<TabViewItem title="Tab 111">
+					<TabViewItem.view>
+						<StackLayout class="firstTabContainer" verticalAlignment="center">
+							<Label text="Label in Tab 1" textAlignment="center" />
+						</StackLayout>	
+					</TabViewItem.view>
+				</TabViewItem>
+				<TabViewItem title="Tab 222" >
+					<TabViewItem.view>
+						<StackLayout class="secondTabContainer" verticalAlignment="center">
+							<Label text="Label in Tab 2" textAlignment="center" />
+						</StackLayout>
+					</TabViewItem.view>
+				</TabViewItem>
+			</TabView.items>
+		</TabView>
+	</ScrollView>
+</Page>

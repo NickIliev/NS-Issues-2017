@@ -1,0 +1,7 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+   <StackLayout>
+       <Label text="issue 836" textWrap="true" />
+       
+   </StackLayout>
+</Page>

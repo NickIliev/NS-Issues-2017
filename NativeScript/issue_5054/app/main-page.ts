@@ -15,7 +15,7 @@ export function onListLoaded(args) {
 
     // manually refreshing the ListView will apply all bindings
 
-    setTimeout(function() {
-        list.refresh();
-    }, 200);
+    // setTimeout(function() {
+    //     list.refresh();
+    // }, 200);
 }
