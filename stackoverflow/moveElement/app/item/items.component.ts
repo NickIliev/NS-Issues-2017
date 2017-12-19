@@ -12,6 +12,6 @@ export class ItemsComponent implements OnInit {
     @ViewChild("myStack2") private myStack2: ElementRef;
 
     ngOnInit(): void {
-        this.myStack2.nativeElement.marginTop = 200;
+
     }
 }

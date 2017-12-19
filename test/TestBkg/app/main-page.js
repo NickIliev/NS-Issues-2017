@@ -1,4 +1,3 @@
-var index = 0;
 
 function onPageLoaded(args) {
   console.log("onPageLoaded");
@@ -12,11 +11,14 @@ exports.navigatingTo = navigatingTo;
 
 function webViewLoaded(args) {
   console.log("on webViewLoaded");
+
   const webview = args.object;
-  if (index == 0) {
+  if (!args.object.page.isInitiallyLoaded) {
     webview.src = "https://nativescript.org";
+
+    args.object.page.isInitiallyLoaded = true;
   }
-  index += 1;
+
 }
 exports.webViewLoaded = webViewLoaded;
 
