@@ -23,6 +23,7 @@ export class ItemsComponent implements OnInit {
 
     onTextChanged(args) {
         console.log("onTextChanged");
-        console.dir(args)
+        console.log("Old value: " + args.oldValue);
+        console.log("New value: " + args.value);
     }
 }

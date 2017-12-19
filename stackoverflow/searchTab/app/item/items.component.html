@@ -1,4 +1,9 @@
 
-<StackLayout class="page">
-    <SearchBar [text]="searchPhrase" (textChange)="onTextChanged($event)"></SearchBar>
-</StackLayout>
+<TabView selectedIndex="0" >
+    <StackLayout *tabItem="{title: 'NativeScript'}">
+        <SearchBar [text]="searchPhrase" (textChange)="onTextChanged($event)"></SearchBar>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Icon'}">
+        <SearchBar [text]="searchPhrase" (textChange)="onTextChanged($event)"></SearchBar>
+    </StackLayout>
+</TabView>
