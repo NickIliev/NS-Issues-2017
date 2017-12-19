@@ -20,7 +20,7 @@ class Activity extends android.app.Activity {
     }
 
     protected onSaveInstanceState(outState: android.os.Bundle): void {
-        this._callbacks.onSaveInstanceState(this, outState, super.onSaveInstanceState);
+        // this._callbacks.onSaveInstanceState(this, outState, super.onSaveInstanceState);
     }
 
     protected onStart(): void {
