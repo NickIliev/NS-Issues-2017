@@ -1,4 +1,4 @@
-import { topmost } from "ui/frame";
+import { topmost } from "tns-core-modules/ui/frame";
 
 var navigationEntry = {
     moduleName: "pages/controller/controller-page",

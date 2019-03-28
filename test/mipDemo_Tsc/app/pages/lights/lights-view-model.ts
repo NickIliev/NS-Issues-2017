@@ -1,9 +1,9 @@
-import {Observable} from "data/observable";
+import {Observable} from "tns-core-modules/data/observable";
 
 import {AllMips} from "../../all-mips";
 
 import { ColorPicker } from "nativescript-color-picker";
-import { Color } from "color";
+import { Color } from "tns-core-modules/color";
 
 import {HeadLightState} from "nativescript-mip-ble/mip-types";
 

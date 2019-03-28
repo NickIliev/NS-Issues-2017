@@ -1,4 +1,4 @@
-import { Observable } from "data/observable";
+import { Observable } from "tns-core-modules/data/observable";
 import { startAccelerometerUpdates, stopAccelerometerUpdates } from "nativescript-accelerometer"
 
 import { AllMips } from "../../all-mips";

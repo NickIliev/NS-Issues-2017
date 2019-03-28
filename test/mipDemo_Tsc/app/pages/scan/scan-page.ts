@@ -1,5 +1,5 @@
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 import { Scanner } from "./scan-view-model";
 
 // Event handler for Page "navigatingTo" event attached in main-page.xml

@@ -1,10 +1,6 @@
-//import observable = require("data/observable");
-import { ObservableArray } from "data/observable-array";
-import * as frameModule from "ui/frame";
+import { ObservableArray } from "tns-core-modules/data/observable-array";
 import { BluetoothScanner } from "nativescript-mip-ble/bluetooth.scanner";
 import { MipDevice } from "nativescript-mip-ble/mip-device";
-//import {MipDevice} from "../../services/mip-device";
-
 import { RadListView, ListViewEventData } from "nativescript-pro-ui/listview";
 import { AllMips } from "../../all-mips";
 

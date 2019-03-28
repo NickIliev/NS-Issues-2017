@@ -1,4 +1,4 @@
-import { Observable } from 'data/observable';
+import { Observable } from 'tns-core-modules/data/observable';
 
 import { MipDevice } from "nativescript-mip-ble/mip-device";
 import { MipController } from "nativescript-mip-ble/mip-controller";
